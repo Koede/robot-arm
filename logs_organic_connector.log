@@ -1,0 +1,9 @@
+/home/ubuntu/third-shoulder-wt/.venv/lib/python3.12/site-packages/trimesh/triangles.py:302: RuntimeWarning: invalid value encountered in divide
+  center_mass = integrated[1:4] / volume
+grid [343 323 376] = 41.7 M voxels
+keep-out carved 27 voxels
+sdf built 9.2 s
+skeleton 215798 faces, watertight True vol 93.7 cm3
+bodies before drop: [(np.float64(144.54), [[-286.0, -132.0, -290.0], [-88.0, 49.0, -66.0]]), (np.float64(0.0), [[-234.0, 6.0, -106.0], [-233.0, 7.0, -106.0]]), (np.float64(0.0), [[-120.0, -17.0, -105.0], [-117.0, -17.0, -103.0]])]
+final: watertight True vol 144.5 cm3 faces 216178 bbox [[-286.0, -132.0, -290.0], [-88.0, 49.0, -66.0]] bodies 1
+done 12 s

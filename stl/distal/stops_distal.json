@@ -1,0 +1,42 @@
+{
+ "S3_pos": {
+  "theta": 89.99,
+  "hard": 95
+ },
+ "S3_neg": {
+  "theta": -89.99,
+  "hard": -75
+ },
+ "E_pos": {
+  "theta": 94.04,
+  "hard": 150
+ },
+ "E_neg": {
+  "theta": -89.04,
+  "hard": -5
+ },
+ "W1_pos": {
+  "theta": 270.48,
+  "hard": 85
+ },
+ "W1_neg": {
+  "theta": 89.48,
+  "hard": -85
+ },
+ "W2_pos": {
+  "theta": 116.46,
+  "hard": 85
+ },
+ "W2_neg": {
+  "theta": -106.46,
+  "hard": -75
+ },
+ "W3_pos": {
+  "theta": 141.99,
+  "hard": 35
+ },
+ "W3_neg": {
+  "theta": -131.99,
+  "hard": -25
+ }
+}

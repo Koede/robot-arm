@@ -1,0 +1,406 @@
+{
+ "rev": "f",
+ "spring": {
+  "K_Nm": 3.7755,
+  "k_N_per_mm": 3.6514,
+  "wire_d": 3.2,
+  "D_mean": 33.71,
+  "OD": 36.91,
+  "OD_at_solid": 37.07,
+  "ID": 30.51,
+  "C": 10.53,
+  "N_active": 7.5,
+  "N_total": 9.5,
+  "pitch_free": 10.84,
+  "L_free": 87.7,
+  "L_solid": 30.4,
+  "L_installed_S2_0": 62.7,
+  "L_at_S2_88": 36.5,
+  "L_at_S2_94": 34.5,
+  "margin_to_solid_at_94_mm": 4.1,
+  "deflection_from_free_mm": {
+   "S2_0": 25.0,
+   "S2_m35": 31.6,
+   "S2_88": 51.2,
+   "S2_91": 52.2,
+   "S2_94": 53.3
+  },
+  "stroke_mm": 28.3,
+  "force_N": {
+   "S2_0": 91.3,
+   "S2_m35": 115.4,
+   "S2_88": 186.9,
+   "S2_94": 194.5
+  },
+  "tau_min_MPa": 270.0,
+  "tau_max_MPa": 575.0,
+  "tau_solid_MPa": 618.0,
+  "Sut_MPa": 1868.0,
+  "tau_max_over_Sut": 0.308,
+  "SF_static_vs_0p45Sut": 1.46,
+  "SF_solid_vs_0p45Sut": 1.36,
+  "fatigue_1e7": {
+   "unpeened": {
+    "S_se_MPa": 265.0,
+    "tau_a": 152.0,
+    "tau_m": 422.0,
+    "n_f_Gerber": 1.37
+   },
+   "shot_peened": {
+    "S_se_MPa": 487.0,
+    "tau_a": 152.0,
+    "tau_m": 422.0,
+    "n_f_Gerber": 1.89
+   }
+  },
+  "windable": true,
+  "Bergstrasser_KB": 1.1278,
+  "buckling_free_standing_L0_over_D": 2.6,
+  "buckling_absolutely_stable": true,
+  "buckling_note": "squared + ground ends on flat seats (alpha 0.5): absolutely stable if L0/D < 2.63/alpha = 5.26 (Shigley eq. 10-10); it also runs guided in the tube bore (radial clearance 1.25 at solid)",
+  "stored_energy_J": {
+   "S2_0": 1.14,
+   "S2_88": 4.78,
+   "S2_94": 5.18
+  },
+  "mass_g": 63.5,
+  "spec_note": "PLACEHOLDER vendor: custom wound A228, squared and ground, shot-peened, set removed; or the nearest stock spring re-checked with this script"
+ },
+ "tube": {
+  "cap_y0": 70.0,
+  "cap_len": 8.0,
+  "hub_y1": 100.0,
+  "hub_OD": 23.0,
+  "piston_t": 5.0,
+  "end_t": 6.0,
+  "buffer_t": 6.0,
+  "buffer_gap": 1.0,
+  "wall": 2.5,
+  "radial_clr": 1.25,
+  "buffer": "TPU 85A ring 6 mm (cord-break catch: 4.3 J at 17 m/s -> ~4 kN peak, see balancer_struct.py)",
+  "seat_y": 78.0,
+  "piston_y_S2_0": 140.7,
+  "piston_y_S2_94": 112.5,
+  "ID": 39.57,
+  "OD": 44.57,
+  "inner_end_y": 152.7,
+  "y_end": 158.7,
+  "length": 88.69999999999999
+ },
+ "postcut": {
+  "bal_collar": {
+   "removed_cm3": 0.533,
+   "bodies": 1,
+   "watertight": true,
+   "vol_cm3": 35.01,
+   "bbox_mm": [
+    81.7,
+    64.4,
+    60.5
+   ]
+  },
+  "bal_collar_cap": {
+   "removed_cm3": 0.505,
+   "bodies": 1,
+   "watertight": true,
+   "vol_cm3": 8.77,
+   "bbox_mm": [
+    81.7,
+    8.0,
+    16.5
+   ]
+  }
+ },
+ "bal_anchor": {
+  "material": "PA12-CF",
+  "density": 1.2,
+  "vol_cm3": 83.48,
+  "mass_g": 100.2,
+  "bbox_mm": [
+   88.0,
+   150.7,
+   99.9
+  ],
+  "watertight": true,
+  "fits_256": true,
+  "n_bodies": 1
+ },
+ "bal_tubecap": {
+  "material": "PA12-CF",
+  "density": 1.2,
+  "vol_cm3": 17.36,
+  "mass_g": 20.8,
+  "bbox_mm": [
+   56.0,
+   30.0,
+   56.0
+  ],
+  "watertight": true,
+  "fits_256": true,
+  "n_bodies": 1
+ },
+ "bal_piston": {
+  "material": "PA12-CF",
+  "density": 1.2,
+  "vol_cm3": 7.85,
+  "mass_g": 9.4,
+  "bbox_mm": [
+   39.0,
+   8.0,
+   39.0
+  ],
+  "watertight": true,
+  "fits_256": true,
+  "n_bodies": 1
+ },
+ "bal_collar": {
+  "material": "PA12-CF",
+  "density": 1.2,
+  "vol_cm3": 35.01,
+  "mass_g": 42.0,
+  "bbox_mm": [
+   81.7,
+   64.4,
+   60.5
+  ],
+  "watertight": true,
+  "fits_256": true,
+  "n_bodies": 1
+ },
+ "bal_collar_cap": {
+  "material": "PA12-CF",
+  "density": 1.2,
+  "vol_cm3": 8.77,
+  "mass_g": 10.5,
+  "bbox_mm": [
+   81.7,
+   8.0,
+   16.5
+  ],
+  "watertight": true,
+  "fits_256": true,
+  "n_bodies": 1
+ },
+ "tpu_bal_buffer": {
+  "material": "TPU 85A",
+  "density": 1.21,
+  "vol_cm3": 6.48,
+  "mass_g": 7.8,
+  "bbox_mm": [
+   39.0,
+   6.0,
+   39.0
+  ],
+  "watertight": true,
+  "fits_256": true,
+  "n_bodies": 1
+ },
+ "bal_swivel": {
+  "material": "7075-T6 (machined)",
+  "density": 2.81,
+  "vol_cm3": 4.16,
+  "mass_g": 11.7,
+  "bbox_mm": [
+   13.0,
+   52.3,
+   22.7
+  ],
+  "watertight": true,
+  "fits_256": true,
+  "n_bodies": 1
+ },
+ "bal_sheave": {
+  "material": "6061-T6 (turned) + DU bush",
+  "density": 2.7,
+  "vol_cm3": 0.83,
+  "mass_g": 2.3,
+  "bbox_mm": [
+   5.0,
+   17.0,
+   17.0
+  ],
+  "watertight": true,
+  "fits_256": true,
+  "n_bodies": 1
+ },
+ "s1s2_yoke_bal": {
+  "vol_cm3": 120.84,
+  "delta_vs_original_cm3": -0.619,
+  "watertight": true,
+  "note": "rev d interface, unchanged"
+ },
+ "bumpers": {
+  "pos": {
+   "kind": "pos",
+   "soft_limit_deg": 88.0,
+   "contact_S2_deg": 90.94999999999966,
+   "contact_target_deg": 90.9,
+   "rigid_target_deg": 94.0,
+   "bottomed_rigid_S2_deg": 93.99999999999949,
+   "cap_shift_along_strike_mm": 2.33,
+   "crush_to_rigid_target_mm": 3.78,
+   "usable_crush_mm": 3.78,
+   "L_total_mm": 10.8,
+   "blade_free_len_mm": 6.3,
+   "blade_t_mm": 1.19,
+   "n_blades": 3,
+   "blade_width_y_mm": 14.0,
+   "footprint_w_mm": 18.19,
+   "bottomed_thickness_mm": 7.02,
+   "F_plateau_N": 293.0,
+   "M_plateau_Nm": 22.1,
+   "energy_J": 1.0,
+   "strike_dir": [
+    0.47,
+    0.0,
+    -0.883
+   ],
+   "origin": [
+    -66.38,
+    0.0,
+    -35.67
+   ],
+   "vol_cm3": 1.461,
+   "mass_g_TPU": 1.8,
+   "carrier": {
+    "trim_mm": 2.57,
+    "depth_left_behind_bumper_mm": 7.87,
+    "vol_cm3_before": 0.808,
+    "vol_cm3_after": 0.63,
+    "watertight": true,
+    "face_bearing_MPa_plateau": 1.15,
+    "face_bearing_MPa_3x": 3.45
+   },
+   "watertight": true
+  },
+  "neg": {
+   "kind": "neg",
+   "soft_limit_deg": -30.0,
+   "contact_S2_deg": -35.000000000000085,
+   "contact_target_deg": -35.0,
+   "rigid_target_deg": -39.0,
+   "bottomed_rigid_S2_deg": -38.950000000000145,
+   "cap_shift_along_strike_mm": 2.3,
+   "crush_to_rigid_target_mm": 4.9,
+   "usable_crush_mm": 4.9,
+   "L_total_mm": 12.66,
+   "blade_free_len_mm": 8.16,
+   "blade_t_mm": 1.29,
+   "n_blades": 3,
+   "blade_width_y_mm": 14.0,
+   "footprint_w_mm": 18.29,
+   "bottomed_thickness_mm": 7.76,
+   "F_plateau_N": 223.0,
+   "M_plateau_Nm": 16.8,
+   "energy_J": 0.98,
+   "strike_dir": [
+    0.461,
+    0.0,
+    -0.888
+   ],
+   "origin": [
+    66.73,
+    0.0,
+    34.99
+   ],
+   "vol_cm3": 1.594,
+   "mass_g_TPU": 1.9,
+   "carrier": {
+    "trim_mm": 2.73,
+    "depth_left_behind_bumper_mm": 5.82,
+    "vol_cm3_before": 0.925,
+    "vol_cm3_after": 0.581,
+    "watertight": true,
+    "face_bearing_MPa_plateau": 0.87,
+    "face_bearing_MPa_3x": 2.61
+   },
+   "watertight": true
+  }
+ },
+ "hardware": [
+  {
+   "item": "compression spring, music wire ASTM A228, d 3.2, mean D 33.71 (OD 36.91), 7.50 active / 9.50 total coils, squared + ground, free length 87.7, solid 30.4, k 3.651 N/mm, shot-peened, set removed (custom wound -- PLACEHOLDER vendor/part number; maker trims N_a to hit k on test)",
+   "qty": 1
+  },
+  {
+   "item": "cord: Dyneema SK78 12-strand braid, 1.5 mm (low-creep SK99/DM20 preferred), ~260 mm, spliced eye at B (over the d6 pin), lateral end on the adjuster sleeve (PLACEHOLDER MBL 1700 N)",
+   "qty": 1
+  },
+  {
+   "item": "6061-T6 sheave OD 17, groove root dia 12, width 5, bore 5.5 (turned, PLACEHOLDER shop part); GGB 0404DU bush 4 x 5.5 x 4; ISO 8734 pin 4 x 14 (hardened)",
+   "qty": 1
+  },
+  {
+   "item": "6800ZZ deep-groove bearing 10 x 19 x 5 (swivel shank: No 1 in the cap flange, No 2 in the cap hub, span 23 mm)",
+   "qty": 2
+  },
+  {
+   "item": "DIN 6799 retaining washer RS 8 (e-clip) on the swivel shank groove d 8",
+   "qty": 1
+  },
+  {
+   "item": "ISO 4762 M3 x 8 SHCS (tube cap -> tube flange)",
+   "qty": 3
+  },
+  {
+   "item": "M3 heat-set insert 4.0 OD x 5.7 (tube flange)",
+   "qty": 3
+  },
+  {
+   "item": "ISO 4762 M4 x 30 SHCS cord adjuster + 2 x M4 nut + d4/6 x 6 sleeve (cord eye), Loctite 222",
+   "qty": 1
+  },
+  {
+   "item": "M4 heat-set insert 5.6 OD x 4 (piston)",
+   "qty": 1
+  },
+  {
+   "item": "ISO 7379 shoulder screw d6 x 10, M5 (cord pin B) + spacer sleeve 6.1/9 x 5.25 + M6 washer (cord eye centred on y 50)",
+   "qty": 1
+  },
+  {
+   "item": "M5 heat-set insert 7.0 OD x 9.5 (collar leg)",
+   "qty": 1
+  },
+  {
+   "item": "ISO 7380 button-head screw M4 x 10 (anchor foot -> yoke disc)",
+   "qty": 6
+  },
+  {
+   "item": "M4 heat-set insert 5.6 OD x 4 (yoke disc, depth 4.2)",
+   "qty": 6
+  },
+  {
+   "item": "ISO 4762 M4 x 16 SHCS (collar cap bolts)",
+   "qty": 4
+  },
+  {
+   "item": "M4 heat-set insert 5.6 OD x 8 (collar side-wall end faces)",
+   "qty": 4
+  },
+  {
+   "item": "TPU 95A friction shim 1.0 x 30 x 20 (collar clamp)",
+   "qty": 2
+  }
+ ],
+ "points": {
+  "A_M1": [
+   0.0,
+   50.0,
+   22.0
+  ],
+  "B_M2": [
+   0.0,
+   50.0,
+   47.0
+  ],
+  "sheave_centre_y": 56.75,
+  "swivel_axis": "y-parallel through (A_X, A_Z)",
+  "cord_plane_y": 50.0
+ },
+ "retired_rev_d": [
+  "bal_cap_R/L (renamed bal_collar_cap)",
+  "spring_proxy_1/2",
+  "rev d boss block and hook bosses"
+ ]
+}

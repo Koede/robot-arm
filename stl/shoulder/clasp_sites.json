@@ -1,0 +1,290 @@
+{
+ "F1_upper_trap": {
+  "p": [
+   -165.0,
+   -62.0,
+   -98.9
+  ],
+  "n": [
+   -0.093,
+   0.303,
+   0.948
+  ],
+  "u": [
+   0.024,
+   0.953,
+   -0.302
+  ],
+  "role": "sEMG upper trapezius (shoulder elevation); TOP load pad",
+  "electrodes": 2,
+  "plate": [
+   64,
+   46
+  ],
+  "fillet": 20.0,
+  "area_mm2": 2599.7,
+  "contour": {
+   "roll_H": 3.0,
+   "roll_W": 8.0,
+   "skirt_w": 6.0,
+   "skirt_t": 1.5,
+   "centre_uv": [
+    0.0,
+    0.0
+   ],
+   "foam_relief": [],
+   "ac_uv": null,
+   "stats": {
+    "foam_t_min": 6.79,
+    "foam_t_max": 11.15,
+    "foam_t_mean": 8.02,
+    "area_mm2": 2599.74,
+    "plate_area_mm2": 2599.74,
+    "plate_vol_mm3": 10168.27,
+    "z_in_range": [
+     0.47,
+     12.21
+    ],
+    "skirt_area_mm2": 1226.87,
+    "skirt_foam_t_min": 8.13
+   }
+  }
+ },
+ "F2_ant_delt": {
+  "p": [
+   -234.1,
+   9.7,
+   -120.0
+  ],
+  "n": [
+   -0.699,
+   0.214,
+   0.683
+  ],
+  "u": [
+   -0.578,
+   0.394,
+   -0.715
+  ],
+  "role": "sEMG anterior deltoid (flexion/protraction); FRONT load pad [atlas-seated]",
+  "electrodes": 2,
+  "plate": [
+   70.0,
+   50.0
+  ],
+  "fillet": 12.0,
+  "area_mm2": 2995.6,
+  "contour": {
+   "roll_H": 3.0,
+   "roll_W": 8.0,
+   "skirt_w": 6.0,
+   "skirt_t": 1.5,
+   "centre_uv": [
+    0.0,
+    0.0
+   ],
+   "foam_relief": [],
+   "ac_uv": null,
+   "stats": {
+    "foam_t_min": 4.44,
+    "foam_t_max": 8.81,
+    "foam_t_mean": 6.3,
+    "area_mm2": 2995.63,
+    "plate_area_mm2": 2995.63,
+    "plate_vol_mm3": 10686.19,
+    "z_in_range": [
+     -12.18,
+     8.07
+    ],
+    "skirt_area_mm2": 1375.14,
+    "skirt_foam_t_min": 5.95
+   }
+  }
+ },
+ "F3_pec": {
+  "p": [
+   -260.7,
+   -88.4,
+   -141.2
+  ],
+  "n": [
+   -0.789,
+   0.024,
+   0.614
+  ],
+  "u": [
+   -0.182,
+   0.945,
+   -0.272
+  ],
+  "role": "sEMG upper pectoralis / clavicular (protraction); FRONT load pad [atlas-seated]",
+  "electrodes": 2,
+  "plate": [
+   80.0,
+   56.0
+  ],
+  "fillet": 12.0,
+  "area_mm2": 4356.1,
+  "contour": {
+   "roll_H": 3.0,
+   "roll_W": 8.0,
+   "skirt_w": 6.0,
+   "skirt_t": 1.5,
+   "centre_uv": [
+    0.0,
+    0.0
+   ],
+   "foam_relief": [],
+   "ac_uv": null,
+   "stats": {
+    "foam_t_min": 5.48,
+    "foam_t_max": 9.91,
+    "foam_t_mean": 6.93,
+    "area_mm2": 4356.07,
+    "plate_area_mm2": 4356.07,
+    "plate_vol_mm3": 15252.76,
+    "z_in_range": [
+     -6.18,
+     7.05
+    ],
+    "skirt_area_mm2": 1621.33,
+    "skirt_foam_t_min": 7.29
+   }
+  },
+  "slot_l": 35.0,
+  "slot_t": 3.2,
+  "slot_edge": "+u"
+ },
+ "F4_acromion": {
+  "p": [
+   -190.0,
+   16.0,
+   -104.5
+  ],
+  "n": [
+   -0.111,
+   0.248,
+   0.962
+  ],
+  "u": [
+   0.994,
+   0.019,
+   0.11
+  ],
+  "role": "REFERENCE electrode on bone (acromion); TOP load pad",
+  "electrodes": 1,
+  "plate": [
+   50.0,
+   62.0
+  ],
+  "fillet": 12.0,
+  "area_mm2": 2524.1,
+  "contour": {
+   "roll_H": 3.0,
+   "roll_W": 8.0,
+   "skirt_w": 6.0,
+   "skirt_t": 1.5,
+   "centre_uv": [
+    0.0,
+    2.0
+   ],
+   "foam_relief": [
+    [
+     10.21017152463397,
+     -12.659042680540256,
+     12.0
+    ]
+   ],
+   "ac_uv": [
+    10.21017152463397,
+    -12.659042680540256
+   ],
+   "stats": {
+    "foam_t_min": 5.88,
+    "foam_t_max": 10.1,
+    "foam_t_mean": 7.68,
+    "area_mm2": 2524.07,
+    "plate_area_mm2": 2976.07,
+    "plate_vol_mm3": 10749.97,
+    "z_in_range": [
+     -3.02,
+     7.17
+    ],
+    "skirt_area_mm2": 1333.33,
+    "skirt_foam_t_min": 6.59
+   }
+  }
+ },
+ "R1_scapula": {
+  "p": [
+   -104.1,
+   -33.0,
+   -163.9
+  ],
+  "n": [
+   0.981,
+   0.17,
+   0.09
+  ],
+  "u": [
+   -0.088,
+   -0.017,
+   0.996
+  ],
+  "role": "standoff node over the moving scapula (v3: lifted off skin)",
+  "electrodes": 0,
+  "plate": [
+   34,
+   24
+  ],
+  "fillet": 12.0
+ },
+ "R2_post_axilla": {
+  "p": [
+   -110.7,
+   -20.3,
+   -206.9
+  ],
+  "n": [
+   0.905,
+   0.395,
+   -0.158
+  ],
+  "u": [
+   0.14,
+   0.074,
+   0.987
+  ],
+  "role": "standoff node near the posterior axillary fold (v3: lifted off skin)",
+  "electrodes": 0,
+  "plate": [
+   34,
+   24
+  ],
+  "fillet": 12.0
+ },
+ "F5_mid_trap": {
+  "p": [
+   -118.4,
+   -28.8,
+   -118.5
+  ],
+  "n": [
+   0.835,
+   0.103,
+   0.54
+  ],
+  "u": [
+   -0.087,
+   0.995,
+   -0.055
+  ],
+  "role": "standoff node over the scapular spine (v3: lifted off skin; mid-trap EMG moved to the base layer)",
+  "electrodes": 0,
+  "plate": [
+   46,
+   30
+  ],
+  "fillet": 12.0
+ }
+}

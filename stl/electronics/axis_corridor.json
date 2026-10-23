@@ -1,0 +1,216 @@
+{
+ "S1": {
+  "frame": "F",
+  "blocked_by_part": {
+   "ak_s1": [
+    -60,
+    -60,
+    1
+   ],
+   "yoke": [
+    -52,
+    -52,
+    1
+   ]
+  },
+  "axis_pts_free_ge4mm": [
+   48,
+   52,
+   56
+  ],
+  "max_free_run": 0,
+  "max_free_run_mm": 12,
+  "run_start": 48.0
+ },
+ "S2": {
+  "frame": "M1",
+  "blocked_by_part": {
+   "ak_s2": [
+    -48,
+    -4,
+    12
+   ],
+   "s3_bracket": [
+    20,
+    24,
+    2
+   ],
+   "s2_adapter": [
+    4,
+    16,
+    4
+   ]
+  },
+  "axis_pts_free_ge4mm": [
+   -60,
+   -56,
+   32,
+   36,
+   40,
+   44
+  ],
+  "max_free_run": 0,
+  "max_free_run_mm": 16,
+  "run_start": 32.0
+ },
+ "S3": {
+  "frame": "M2",
+  "blocked_by_part": {
+   "yoke": [
+    -60,
+    -56,
+    2
+   ]
+  },
+  "axis_pts_free_ge4mm": [
+   52,
+   56
+  ],
+  "max_free_run": 0,
+  "max_free_run_mm": 8,
+  "run_start": 52.0
+ },
+ "E": {
+  "frame": "M3",
+  "blocked_by_part": {
+   "xm_elbow": [
+    -20,
+    20,
+    11
+   ],
+   "fork_drive": [
+    28,
+    28,
+    1
+   ]
+  },
+  "axis_pts_free_ge4mm": [
+   -60,
+   -56,
+   -52,
+   -48,
+   -44,
+   -40,
+   -36,
+   36,
+   40,
+   44,
+   48,
+   52,
+   56,
+   60
+  ],
+  "max_free_run": 0,
+  "max_free_run_mm": 28,
+  "run_start": -60.0
+ },
+ "W1": {
+  "frame": "ME",
+  "blocked_by_part": {},
+  "axis_pts_free_ge4mm": [
+   -60,
+   -56,
+   -52,
+   -48,
+   -44,
+   -40,
+   -36,
+   -32,
+   -28,
+   -24,
+   -20,
+   -16,
+   -12,
+   -8,
+   -4,
+   0,
+   4,
+   8,
+   12,
+   16,
+   20,
+   24,
+   28,
+   32,
+   36,
+   40,
+   44,
+   48,
+   52,
+   56,
+   60
+  ],
+  "max_free_run": 0,
+  "max_free_run_mm": 124,
+  "run_start": -60.0
+ },
+ "W2": {
+  "frame": "MW1",
+  "blocked_by_part": {
+   "sts_w2": [
+    -16,
+    16,
+    9
+   ]
+  },
+  "axis_pts_free_ge4mm": [
+   -60,
+   -56,
+   -52,
+   -48,
+   -44,
+   -40,
+   28,
+   40,
+   44,
+   48,
+   52,
+   56,
+   60
+  ],
+  "max_free_run": 0,
+  "max_free_run_mm": 24,
+  "run_start": -60.0
+ },
+ "W3": {
+  "frame": "MW2",
+  "blocked_by_part": {
+   "w2_yoke": [
+    -20,
+    20,
+    2
+   ],
+   "sts_w3": [
+    -16,
+    16,
+    9
+   ],
+   "hand_tray": [
+    -24,
+    24,
+    2
+   ]
+  },
+  "axis_pts_free_ge4mm": [
+   -60,
+   -56,
+   -52,
+   -48,
+   -44,
+   -40,
+   -36,
+   -32,
+   32,
+   36,
+   40,
+   44,
+   48,
+   52,
+   56,
+   60
+  ],
+  "max_free_run": 0,
+  "max_free_run_mm": 32,
+  "run_start": -60.0
+ }
+}

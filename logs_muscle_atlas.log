@@ -1,0 +1,23 @@
+LM C7       [-144.1 -150.   -85. ]  (estimated)
+LM T3       [-119.2 -150.  -156.4]  (estimated)
+LM T7       [-128.5 -150.  -251.7]  (estimated)
+LM ACR_top  [-180.    4. -100.]
+LM ACR_lat  [-180.    8. -104.]
+LM SSR      [-118.9  -96.8 -156.4]  (estimated)
+LM IA       [-125.8  -82.1 -244.1]  (estimated)
+LM AA       [-146.4    0.  -112. ]
+LM NOTCH    [-244.8 -150.  -127.9]  (estimated)
+LM EPI_lat  [-183.    71.8 -455.4]  (estimated)
+trap_up    p=[-165.   -62.   -98.9]     u=[ 0.02  0.95 -0.3 ]    trav=0.0 nearest=delt_post 80 mm  clasp F1 (rigid pad, stable zone)
+trap_mid   p=[-119.9 -125.9 -136. ]     u=[0.13 0.99 0.02]       trav=18.0 nearest=rhomboid 50 mm  base layer (under the rail foam)
+trap_low   p=[-122.7 -130.  -232.9]     u=[0.17 0.48 0.86]       trav=16.7 nearest=rhomboid 48 mm  base layer (under the rail foam)
+rhomboid   p=[-116.6 -121.  -185.7]     u=[-0.01  0.88 -0.48]    trav=26.0 nearest=trap_low 48 mm  base layer (under the rail foam)
+infraspin  p=[-115.5  -36.8 -167. ]     u=[-0.22  0.95  0.24]    trav=31.8 nearest=teres_maj 59 mm  base layer
+teres_maj  p=[-116.9  -55.4 -223.1]     u=[0.17 0.92 0.37]       trav=56.3 nearest=infraspin 59 mm  base layer
+lat_dorsi  p=[-134.2  -83.6 -282.2]     u=[0.03 0.71 0.7 ]       trav=44.5 nearest=teres_maj 68 mm  base layer
+serratus   p=[-213.9  -10.  -239.3]     u=[0.48 0.35 0.81]       trav=None nearest=delt_mid 97 mm  base layer (flank panel)
+delt_ant   p=[-234.1    9.7 -120. ]     u=[-0.58  0.39 -0.72]    trav=0.0 nearest=pec_stern 92 mm  clasp F2 (rigid pad)
+delt_mid   p=[-180.8   69.8 -195.4]     u=[-0.01  0.03 -1.  ]    trav=None nearest=serratus 97 mm  base layer sleeve
+delt_post  p=[-138.5   10.  -121. ]     u=[ 0.56  0.39 -0.73]    trav=3.0 nearest=infraspin 70 mm  base layer sleeve
+pec_clav   p=[-260.7  -88.4 -141.2]     u=[-0.18  0.94 -0.27]    trav=0.0 nearest=pec_stern 49 mm  clasp F3 (rigid pad)
+pec_stern  p=[-273.8  -53.7 -173.8]     u=[-0.06  0.82 -0.57]    trav=None nearest=pec_clav 49 mm  base layer (chest panel)

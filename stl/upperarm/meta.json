@@ -1,0 +1,85 @@
+{
+ "ua_lat": {
+  "vol_cm3": 64.4,
+  "valid": true,
+  "bbox": [
+   88.0,
+   32.7,
+   161.0
+  ],
+  "bodies": 1,
+  "watertight": true,
+  "mass_g_petg": 81.8
+ },
+ "ua_med": {
+  "vol_cm3": 66.6,
+  "valid": true,
+  "bbox": [
+   88.0,
+   24.7,
+   161.0
+  ],
+  "bodies": 1,
+  "watertight": true,
+  "mass_g_petg": 84.6
+ },
+ "fork_drive": {
+  "vol_cm3": 22.9,
+  "valid": true,
+  "bbox": [
+   96.2,
+   7.3,
+   97.7
+  ],
+  "bodies": 1,
+  "watertight": true,
+  "mass_g_petg": 29.0
+ },
+ "fork_idler": {
+  "vol_cm3": 24.3,
+  "valid": true,
+  "bbox": [
+   96.2,
+   6.0,
+   71.4
+  ],
+  "bodies": 1,
+  "watertight": true,
+  "mass_g_petg": 30.9
+ },
+ "fork_bridge": {
+  "vol_cm3": 14.3,
+  "valid": true,
+  "bbox": [
+   19.5,
+   51.0,
+   26.7
+  ],
+  "bodies": 1,
+  "watertight": true,
+  "mass_g_petg": 18.1
+ },
+ "_wiring": {
+  "windows": [],
+  "hub_posts": []
+ },
+ "_elbow_ball": {
+  "R_E": 44.0,
+  "R_EI": 41.6,
+  "LAP_AZ": 125.0,
+  "STOP_BLK": [
+   [
+    88.0,
+    114.0
+   ],
+   [
+    -114.0,
+    -88.0
+   ]
+  ],
+  "R_BRIDGE": 54.0,
+  "PHI_B": 70.0,
+  "CHG": 1.0,
+  "Y_OUT": 24.7
+ }
+}

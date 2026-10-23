@@ -1,0 +1,58 @@
+{
+ "T": 9.0,
+ "w": 1.5,
+ "shells": {
+  "M1": {
+   "err": "Not all meshes are volumes!"
+  },
+  "M2": {
+   "err": "Not all meshes are volumes!"
+  },
+  "M3": {
+   "err": "Not all meshes are volumes!"
+  },
+  "ME": {
+   "err": "Not all meshes are volumes!"
+  },
+  "MW1": {
+   "err": "Not all meshes are volumes!"
+  },
+  "MW2": {
+   "err": "Not all meshes are volumes!"
+  },
+  "MW3": {
+   "err": "Not all meshes are volumes!"
+  }
+ },
+ "exposure": {
+  "S1": {
+   "mean": 1.0,
+   "max": 1.0
+  },
+  "S2": {
+   "mean": 1.0,
+   "max": 1.0
+  },
+  "S3": {
+   "mean": 0.981,
+   "max": 1.0
+  },
+  "E": {
+   "mean": 1.0,
+   "max": 1.0
+  },
+  "W1": {
+   "mean": 1.0,
+   "max": 1.0
+  },
+  "W2": {
+   "mean": 0.971,
+   "max": 1.0
+  },
+  "W3": {
+   "mean": 0.969,
+   "max": 1.0
+  }
+ },
+ "total_mass_g": 0
+}

@@ -1,0 +1,49 @@
+{
+ "poses": 2592,
+ "seconds": 1601,
+ "min_body_mm": -13.0,
+ "min_harness_mm": -8.4,
+ "min_stage_mm": -42.8,
+ "min_M1_mm": 21.4,
+ "min_head_mm": -4.3,
+ "poses_head_inside_60mm": 179,
+ "poses_with_contact": 181,
+ "balancer_included": true,
+ "min_balancer_mm": 20.0,
+ "poses_balancer_below_3mm": 0,
+ "poses_balancer_contact": 0,
+ "S1": [
+  10.0,
+  36.0,
+  62.0,
+  88.0,
+  114.0,
+  140.0
+ ],
+ "S2": [
+  -30.0,
+  -13.142857142857142,
+  3.7142857142857153,
+  20.57142857142857,
+  37.42857142857143,
+  54.28571428571429,
+  71.14285714285714,
+  88.0
+ ],
+ "E_tested": [
+  0.0,
+  30.0,
+  60.0,
+  90.0,
+  120.0,
+  145.0
+ ]
+}
+E max (deg) with 15 mm margin to body+harness, 60 mm to head/neck and 3 mm to stage and balancer, worst over S3 and wrist, rows S1, cols S2
+S1\S2   -30   -13     4    21    37    54    71    88
+   10    90    90    60    60    60    60    -1    -1
+   36    90    90   120   120    90    90    90    60
+   62   145   145   145   120   120   120    90    90
+   88   145   145   145   120   120   120   120    90
+  114   145   145   145   145   120   120   120   120
+  140    -1   145   145   145   145   120   120   120
