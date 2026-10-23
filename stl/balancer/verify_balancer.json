@@ -1,0 +1,67 @@
+{
+ "rev": "e",
+ "_note": "TRIMMED restored subset (mass, gates, bumper contacts); regenerate full file with cad/verify_balancer.py (about 10 min)",
+ "mass": {
+  "masses_g": {
+   "bal_anchor": 100.2,
+   "bal_tubecap": 20.8,
+   "tpu_bal_buffer": 7.8,
+   "bal_piston": 9.4,
+   "bal_swivel": 11.7,
+   "bal_sheave": 2.3,
+   "bal_collar": 42.0,
+   "bal_collar_cap": 10.5,
+   "spring": 63.4,
+   "bearings": 12.2,
+   "hardware_Y": 22.7,
+   "bumpers": 3.7,
+   "pin_set": 6.2,
+   "hardware_A": 14.4,
+   "cord": 0.6
+  },
+  "yoke_side_g": 254.2,
+  "yoke_side_cg": [
+   0.1,
+   89.6,
+   7.2
+  ],
+  "arm_side_g": 73.7,
+  "arm_side_cg": [
+   0.5,
+   14.6,
+   77.8
+  ],
+  "arm_side_cg_xz": [
+   0.5,
+   77.8
+  ],
+  "total_per_arm_g": 327.9,
+  "total_both_arms_g": 655.8,
+  "rev_d_total_per_arm_g": 230.8
+ },
+ "bumper_first_contact": {
+  "tpu_s2_pos_bump": {
+   "first_contact_S2_deg": 91.0,
+   "soft_limit": 88.0,
+   "hard_stop": 91.0
+  },
+  "tpu_s2_neg_bump": {
+   "first_contact_S2_deg": -35.0,
+   "soft_limit": -30.0,
+   "hard_stop": -35.0
+  }
+ },
+ "gates": {
+  "skin_min_mm": 85.03,
+  "skin_ge_2": true,
+  "part_part_min_mm": 3.12,
+  "part_part_ge_3": true,
+  "part_part_fail_lt_1": false,
+  "arm_min_mm_raw": -7.35,
+  "arm_below_3mm_inside_tiers": 20,
+  "elbow_keepout_restricted_cells": 22,
+  "E_bal_min": 97.5,
+  "two_arm_soft_S1_140_mm": 30.81,
+  "two_arm_hard_S1_150_mm": 4.86
+ }
+}

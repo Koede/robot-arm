@@ -1,0 +1,37 @@
+{
+ "main_box": [
+  74.0,
+  132.0,
+  34.0
+ ],
+ "battery_box": [
+  80.0,
+  62.0,
+  77
+ ],
+ "afe_pod_R": [
+  46.0,
+  66.0,
+  24.0
+ ],
+ "imu_pod": [
+  30.2,
+  23.8,
+  7.0
+ ],
+ "estop_turret_mm": 8.0,
+ "estop_xy_local": [
+  -22.5,
+  50.3
+ ],
+ "xt60_xy_local": [
+  18.7,
+  -20.5
+ ],
+ "contents_mass_g": {
+  "afe_pod_R": 43,
+  "main_box": 328,
+  "battery_box": 637,
+  "imu_pod": 6.0
+ }
+}
