@@ -6,9 +6,9 @@
  "reduction": 4.5,
  "contact_mask_identical": true,
  "max_abs_D_diff_mm": 0.0,
- "n_contact": 77,
- "n_frontier": 77,
- "time_s": 54.3,
+ "n_contact": 178,
+ "n_frontier": 164,
+ "time_s": 117.4,
  "pairs": {
   "F-M2": {
    "joints": [

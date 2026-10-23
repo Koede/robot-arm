@@ -55,12 +55,12 @@ vals = {j: np.arange(RL.SOFT[j][0], RL.SOFT[j][1] + 1e-9, s) for j, s in STEP.it
 def axis_dist(pts, w, p):                # perpendicular distance of points (n,3) to the line through p with direction w
     d = pts - np.asarray(p); w = np.asarray(w, float); w = w / np.linalg.norm(w); return np.linalg.norm(d - np.outer(d @ w, w), axis=1)
 def radii(g, h, ns=300):
-    a, b = sorted((DEPTH[g], DEPTH[h])); deep = g if DEPTH[g] > DEPTH[h] else h; shal = h if deep == g else g; r = {}
+    a, b = sorted((DEPTH[g], DEPTH[h])); deep = g; shal = h if DEPTH[g] > DEPTH[h] else h; r = {}   # r_j bounds the motion of the SAMPLED group g's points relative to axis j
     for k in range(a + 1, b + 1):
         j = JN[k - 1]; w0, p0, _ = TW[j]; best = 0.0
         for _ in range(ns):
             q = {jj: float(rng.uniform(*RL.SOFT[jj])) for jj in JN}; q["G"] = 50.0; F = ak.frames(q)
-            Fj = F[shal] if a == k - 1 else F[list(DEPTH)[k - 1]]                 # frame carrying axis j (the group just upstream of joint j)
+            Fj = F[list(DEPTH)[k - 1]]                 # frame carrying axis j (the group just upstream of joint j)
             wc = Fj[:3, :3] @ np.asarray(w0, float); pc = (Fj @ np.r_[p0, 1.0])[:3]
             pts = (np.c_[Vs[deep], np.ones(len(Vs[deep]))] @ F[deep].T)[:, :3]; best = max(best, float(axis_dist(pts, wc, pc).max()))
         r[j] = best * PAD
