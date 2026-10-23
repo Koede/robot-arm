@@ -1,0 +1,139 @@
+deltoid shell voxels 62110 ymax 85.5
+flat shelf voxels removed 740
+core assembly-draft voxels removed: 10589
+facet windows: 17 total window area 7699 mm2
+obstacle carve: {'body': {'min_mm': 9.0, 'carved_vox': 6}, 'clasp': {'min_mm': 0.0, 'carved_vox': 824}, 'wing': {'min_mm': 0.2, 'carved_vox': 97}, 'spine': {'min_mm': 1000.0, 'carved_vox': 0}} | pieces before keep-largest: 8
+{
+ "parts": {
+  "core": {
+   "extents": [
+    140.5,
+    201.2,
+    56.2
+   ],
+   "fits_256": true,
+   "volume_cm3": 85.7,
+   "mass_g_PACF": 99,
+   "watertight": true
+  },
+  "arm_lat": {
+   "extents": [
+    41.3,
+    20.7,
+    41.6
+   ],
+   "fits_256": true,
+   "volume_cm3": 3.5,
+   "mass_g_PACF": 4,
+   "watertight": true
+  },
+  "arm_med": {
+   "extents": [
+    124.8,
+    82.5,
+    25.9
+   ],
+   "fits_256": true,
+   "volume_cm3": 30.9,
+   "mass_g_PACF": 36,
+   "watertight": true
+  }
+ },
+ "splices": {
+  "arm_lat": {
+   "at": [
+    -55.3,
+    75.5,
+    -84.1
+   ],
+   "axis": [
+    -0.902,
+    -0.152,
+    -0.403
+   ],
+   "bolt_axis": [
+    -0.397,
+    -0.067,
+    0.915
+   ]
+  },
+  "arm_med": {
+   "at": [
+    -74.0,
+    -98.0,
+    -81.2
+   ],
+   "axis": [
+    -0.981,
+    0.0,
+    0.196
+   ],
+   "bolt_axis": [
+    0.196,
+    0.0,
+    0.981
+   ]
+  }
+ },
+ "plate_feet": [
+  [
+   -77.5,
+   -48.0,
+   -140.0
+  ],
+  [
+   -77.5,
+   48.0,
+   -140.0
+  ],
+  [
+   -77.5,
+   0.0,
+   -150.0
+  ]
+ ],
+ "clasp_pads": {
+  "F4": [
+   -192.5,
+   21.5,
+   -83.1
+  ],
+  "F1": [
+   -167.1,
+   -55.3,
+   -77.8
+  ]
+ },
+ "obstacle_carve": {
+  "body": {
+   "min_mm": 9.0,
+   "carved_vox": 6
+  },
+  "clasp": {
+   "min_mm": 0.0,
+   "carved_vox": 824
+  },
+  "wing": {
+   "min_mm": 0.2,
+   "carved_vox": 97
+  },
+  "spine": {
+   "min_mm": 1000.0,
+   "carved_vox": 0
+  }
+ },
+ "params": {
+  "G_IN": 3.0,
+  "T_WALL": 3.0,
+  "Z_RIM": -54.0,
+  "R_RIM": 66.0,
+  "STRUT": [
+   18.0,
+   9.0
+  ],
+  "N_FACETS": 360,
+  "shell": "deltoid_arc",
+  "shell_clear_mm": 12.0,
+  "shell_arc_r_mm": 32.0
+ }
+}
