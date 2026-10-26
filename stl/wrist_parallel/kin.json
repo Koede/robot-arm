@@ -1,0 +1,30 @@
+{
+ "params": {
+  "az0": 234.91952203200273,
+  "pol0": 69.97571822734214,
+  "az4": 55.05525090216996,
+  "pol4": 110.33374086223995,
+  "a1": 80.34807380601342,
+  "a2": 76.27155732218142,
+  "b1": 90.68945538742375,
+  "b2": 91.24978862252023
+ },
+ "cost": 0.4395604395604402,
+ "n_targets": 341,
+ "worst_angle_deg": 0.9994951489001416,
+ "mean_angle_deg": 0.4340880529060669,
+ "frac_targets_within_3deg": 1.0,
+ "frac_configs_well_conditioned": 0.9668508287292817,
+ "s_min": 0.15,
+ "serial_range": {
+  "W2": [
+   -70,
+   80
+  ],
+  "W3": [
+   -20,
+   30
+  ]
+ },
+ "note": "direction only; roll about the claw axis is not checked; both assembly branches counted"
+}
