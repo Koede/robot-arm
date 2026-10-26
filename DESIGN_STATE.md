@@ -127,7 +127,24 @@ From `docs/DESIGN_STATE_ADDENDUM_2026-10-22.md` and `specs/SPEC_collision_method
 4. Harness top-pad margin (2.0 %) vs boot mass (~99 g per arm at 0.7x TPU wall): `harness_loads.py` needs `sensor_pods.py` + `electronics_fit.py`.
 5. Pad stall cap: AK70 S1/S2 cap 8.3 -> 8.0 N m (pad stall limit 16.6 N m: 2.00x at 8.3, 2.075x at 8.0); S2 torque SF with the balancer stays 2.77. **Forest to decide.**
 6. Bench / parts items: S2 free fall T12 (phase-short braking f >= 0.80), relays, 1.10 s off-delay stage, main-box heat, bench test T-W1.
-7. Missing from the repo: `collision_body.py`, `gen_tables.py`, `gen_state_table.py`, `harness_loads.py`, `sensor_pods.py`, `electronics_fit.py`, `balancer_freefall.py`, `balancer_struct.py`, `arm_clips.py`, `control_map.py`; specs `SPEC_third_shoulder.md`, `SPEC_balancer.md`, `SPEC_ball_stops.md`; `stl/gates.json`; `stl/electronics/arm_vendor_data.json` and `arm_electrical.json`.
+7. 2026-10-23 decision (rail removal, flexible electrode leads, AFE pods to the spine bridge): not built. Top-pad margin was 2.0 % (14.4 vs 14.7 kPa); the reroute must be tested with `harness_loads.py` / `body_loads.py` first (option A paraspinal strip + clasp, option B small still-strip pad). Then cut the RAIL band and lead slot in `cad/scapular_frame.py` and rerun the wing, pauldron and sweeps.
+7b. Missing from the repo: `collision_body.py`, `gen_tables.py`, `gen_state_table.py`, `harness_loads.py`, `sensor_pods.py`, `electronics_fit.py`, `balancer_freefall.py`, `balancer_struct.py`, `arm_clips.py`, `control_map.py`; specs `SPEC_third_shoulder.md`, `SPEC_balancer.md`, `SPEC_ball_stops.md`; `stl/gates.json`; `stl/electronics/arm_vendor_data.json` and `arm_electrical.json`.
+
+## 13. Joint / connector design studies (2026-10-26)
+
+Seven ideas were studied by parallel agents; each report is in `docs/`, scripts in `cad/`, proxies and JSON in `stl/<study>/`. All verdicts are recommendations; geometry and limit changes are **Forest's decision**. Material strengths in the connector study are UNVERIFIED PLACEHOLDERS (no datasheet in the repo).
+
+| Idea | Verdict | Key numbers | Report |
+|---|---|---|---|
+| Parallel wrist (spherical five-bar, both servos on the forearm) | Change geometry, do not build yet | Direction-only search (`kin.json`) fails the layout check: 82/96 poses collide, roll span 70 deg. Re-search v3: axes along +-y, claw axis within 0.7 deg, min crank gain 0.27; 78/96 poses clean, worst overlap 19.6 mm (forearm tube vs floater 2 at W2 80 / W3 30); roll span 20 deg (+-10 only with a ~6 deg mount offset). W2 -50..+40 clean at every W3. Servo cables cross no moving joint; the claw G cable still crosses >= 2 joints. | `docs/wrist_parallel_report.md` |
+| Bevel-differential wrist | Fallback only | Reproduces serial W2/W3 exactly (hand perpendicular to pinion axis); servo load 1.04 N m, SF 2.8 vs 2.94 N m stall; miter m2.5 Z14/14 in a 49.7 mm sphere; backlash +-0.64 deg = +-1.8 mm at the claw tip, ~2.6x the serial wrist; `forearm_dist` hits the hand bracket in 36/54 poses (tube must be cut back to z ~365, overlapping the W1 gear zone). | `docs/wrist_diff_report.md` |
+| Four-bar elbow drive | Drop | Required elbow torque 2.79 N m; direct drive SF 3.8 at 10.6 N m stall (already passes SF >= 2). Best four-bar a/b/c = 30.1/38.4/46.75 mm, MA 1.385..2.45, mu 32..81 deg, 255 deg crank travel; needs a wider stack (crank y 33..41) and removes 19.9 cm3 (15 %) of the shell. Premise corrected: the XM540 is already fixed and centred on the elbow axis; only 78 g rotates. | `docs/elbow_fourbar_report.md` |
+| Parallel spherical shoulder (3-RRR, 3 x AK70 on the plate) | Drop for now | Covers the S1/S2/S3 set kinematically (design A, 0 deg error, sigma_min 0.21) but packaging fails; the packageable variant crosses a singularity (sigma_min 0.016) and needs 25.9 N m on one motor (> 24.8 peak). Worst AK70 in A: SF 0.83 (1.02 with a spatial balancer) vs gate 2. Removes ~1.0 kg from the moving arm but adds 1.24 kg to the harness; inertia about P unchanged. 5 short search seeds only. | `docs/shoulder_parallel_report.md` |
+| Dual-pin dovetail splice (A) | Change (keep the half-lap) | At V = 197 N: dowel shear 10.0 MPa (SF 6.4) vs M4 11.2 MPa (SF 8.2); no strength gain, adds redundancy (SF 5.3 with one pin lost). Under the 29 N m bound case both are at SF ~0.33 against the placeholder strengths. | `docs/connector_concepts_report.md` |
+| Bayonet-dovetail quick-connect (B) | Build for non-structural shell halves and lids; drop for the clasp/pauldron interface | TPU detent 0.62 N m to lock, 1.22 N m to unlock; axial pull-out ~165 N (load across layers). | same |
+| Compliant flexure hinge (C) | Drop for the claw fingers | 0.8 mm PA-CF leaf at 30 deg reaches 66 MPa = 1.1x the placeholder strength; ~15 deg for 1e5 cycles; TPU leaf buckles at 7 N. | same |
+
+Caveats common to all: pin bosses, bearings, friction and cable re-searches were not modelled; collision proxies are crude; the studies did not see `DESIGN_STATE.md`.
 
 ## Changelog (dated entries recoverable from the repo)
 
@@ -142,3 +159,5 @@ From `docs/DESIGN_STATE_ADDENDUM_2026-10-22.md` and `specs/SPEC_collision_method
 - 2026-10-23: pauldron lateral shelf replaced by the curved deltoid shell; meshes regenerated.
 - 2026-10-25: this file reconstructed from the repo.
 - 2026-10-26: parallel spherical shoulder (3-RRR, 3 x AK70 on the plate) studied: covers the S1/S2/S3 set kinematically but does not package and has no torque margin; recommendation drop (`docs/shoulder_parallel_report.md`, `cad/shoulder_parallel_*.py`, `stl/shoulder_parallel/`). Forest to decide.
+- 2026-10-26: seven joint / connector design studies run in parallel (section 13); verdicts recorded, nothing adopted.
+- 2026-10-26: SDF cache, harness, sweeps, wire searches and validation checks rerun on the current geometry (see `logs/rerun_driver.log`). NOTE: this run builds the wing WITH the rail; Forest's 2026-10-23 decision (`specs/DESIGN_STATE_ADDENDUM_2026-10-23.md`, `specs/SPEC_flex_electrode_leads.md`) removes the rail over the electrodes but requires `harness_loads.py` / `body_loads.py` with rail rows off before any geometry cut. Those scripts are not in the repo, so the rail was not cut and these sweeps describe the pre-decision harness.
