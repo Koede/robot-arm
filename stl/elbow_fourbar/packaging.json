@@ -1,0 +1,291 @@
+{
+ "family": "C_compact_inline",
+ "params": {
+  "a": 30.09,
+  "b": 38.41,
+  "c": 46.75,
+  "ground_g": 25.8,
+  "ground_dir_deg": 177.24,
+  "lever_beta_deg": -165.82,
+  "branch": 1,
+  "motor_orient": 0
+ },
+ "motor": {
+  "motor_center_xz": [
+   1.24,
+   204.23
+  ],
+  "ua_shell_volume_mm3": 130993.0,
+  "wall_in_new_pocket_mm3": 19899.0,
+  "wall_in_new_pocket_pct_of_shell": 15.2,
+  "ball_belt_volume_mm3": 86026.0,
+  "ball_belt_pct_of_shell": 65.7,
+  "shell_outer_extent_ymin_ymax_xmin_xmax_by_z": {
+   "187": [
+    -23.2,
+    23.2,
+    -32.0,
+    32.0
+   ],
+   "190": [
+    -23.3,
+    23.3,
+    -32.0,
+    32.0
+   ],
+   "192": [
+    -23.5,
+    23.5,
+    -38.5,
+    38.5
+   ],
+   "195": [
+    -24.7,
+    24.7,
+    -38.5,
+    38.5
+   ],
+   "197": [
+    -24.7,
+    24.7,
+    -38.5,
+    38.5
+   ],
+   "199": [
+    -24.7,
+    24.7,
+    -38.5,
+    38.5
+   ],
+   "202": [
+    -24.7,
+    24.7,
+    -36.4,
+    36.4
+   ],
+   "204": [
+    -24.7,
+    24.7,
+    -38.1,
+    38.1
+   ],
+   "207": [
+    -24.7,
+    24.7,
+    -39.6,
+    39.6
+   ],
+   "209": [
+    -24.7,
+    24.7,
+    -39.6,
+    39.6
+   ],
+   "211": [
+    -24.7,
+    24.7,
+    -39.9,
+    39.9
+   ],
+   "214": [
+    -24.7,
+    24.7,
+    -40.9,
+    40.9
+   ],
+   "216": [
+    -24.7,
+    24.7,
+    -41.8,
+    41.8
+   ],
+   "219": [
+    -24.7,
+    24.7,
+    -42.5,
+    42.5
+   ],
+   "221": [
+    -24.7,
+    24.7,
+    -43.1,
+    43.1
+   ]
+  }
+ },
+ "S1_tight": {
+  "hits": {
+   "crank|fork_drive": {
+    "n": 156,
+    "ranges": [
+     [
+      -5.0,
+      150.0
+     ]
+    ]
+   }
+  },
+  "min_distance_mm": {
+   "crank-fixed": 1.3,
+   "coupler-fixed": 9.8,
+   "lever-fixed": 18.3,
+   "crank-ME": -13.88,
+   "coupler-ME": 4.8,
+   "lever-ME": 13.3,
+   "crank-lever": 9.0,
+   "crank-coupler": 0.5,
+   "coupler-lever": 0.5
+  }
+ },
+ "S2_clear": {
+  "hits": {},
+  "min_distance_mm": {
+   "crank-fixed": 8.3,
+   "coupler-fixed": 16.8,
+   "lever-fixed": 25.3,
+   "crank-ME": 1.3,
+   "coupler-ME": 11.8,
+   "lever-ME": 20.3,
+   "crank-lever": 9.0,
+   "crank-coupler": 0.5,
+   "coupler-lever": 0.5
+  }
+ },
+ "cable_anchors": [
+  {
+   "A": [
+    42.1,
+    -13.7,
+    168.0
+   ],
+   "B": [
+    55.3,
+    -33.7,
+    268.3
+   ],
+   "L": 191.6,
+   "A_to_new_motor_mm": 22.7,
+   "B_to_new_motor_mm": 54.7,
+   "chord_min_to_new_motor_mm": 14.1,
+   "anchor_y_signs": [
+    -1.0,
+    -1.0
+   ]
+  },
+  {
+   "A": [
+    36.1,
+    -15.7,
+    163.0
+   ],
+   "B": [
+    60.3,
+    -3.7,
+    265.3
+   ],
+   "L": 246.2,
+   "A_to_new_motor_mm": 25.1,
+   "B_to_new_motor_mm": 53.4,
+   "chord_min_to_new_motor_mm": 11.1,
+   "anchor_y_signs": [
+    -1.0,
+    -1.0
+   ]
+  }
+ ],
+ "layer_orders": {
+  "pin_clear_mm": 9.0,
+  "min_dist_bar_to_pin_mm": {
+   "crank|O4": 17.9,
+   "crank|L": 21.0,
+   "coupler|O2": 16.3,
+   "coupler|O4": 21.3,
+   "lever|O2": 0.0,
+   "lever|C": 17.3
+  },
+  "orders": [
+   {
+    "order_inner_to_outer": [
+     "crank",
+     "coupler",
+     "lever"
+    ],
+    "crossings": [
+     "crank bar vs O4 axis",
+     "coupler bar vs O4 axis"
+    ],
+    "min_centre_distance_mm": 17.9,
+    "ok": true
+   },
+   {
+    "order_inner_to_outer": [
+     "crank",
+     "lever",
+     "coupler"
+    ],
+    "crossings": [
+     "crank bar vs O4 axis",
+     "lever bar vs C axis"
+    ],
+    "min_centre_distance_mm": 17.3,
+    "ok": true
+   },
+   {
+    "order_inner_to_outer": [
+     "coupler",
+     "crank",
+     "lever"
+    ],
+    "crossings": [
+     "coupler bar vs O2 axis",
+     "crank bar vs O4 axis",
+     "coupler bar vs O4 axis",
+     "crank bar vs L axis"
+    ],
+    "min_centre_distance_mm": 16.3,
+    "ok": true
+   },
+   {
+    "order_inner_to_outer": [
+     "coupler",
+     "lever",
+     "crank"
+    ],
+    "crossings": [
+     "coupler bar vs O2 axis",
+     "lever bar vs O2 axis",
+     "coupler bar vs O4 axis",
+     "lever bar vs C axis"
+    ],
+    "min_centre_distance_mm": 0.0,
+    "ok": false
+   },
+   {
+    "order_inner_to_outer": [
+     "lever",
+     "crank",
+     "coupler"
+    ],
+    "crossings": [
+     "lever bar vs O2 axis",
+     "crank bar vs L axis"
+    ],
+    "min_centre_distance_mm": 0.0,
+    "ok": false
+   },
+   {
+    "order_inner_to_outer": [
+     "lever",
+     "coupler",
+     "crank"
+    ],
+    "crossings": [
+     "coupler bar vs O2 axis",
+     "lever bar vs O2 axis"
+    ],
+    "min_centre_distance_mm": 0.0,
+    "ok": false
+   }
+  ]
+ }
+}
