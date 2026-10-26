@@ -1,0 +1,246 @@
+{
+ "tag": "4",
+ "step_deg": 10.0,
+ "n_poses": 3094,
+ "arm_kin_match_max_abs": 1.1102230246251565e-16,
+ "design": {
+  "u_motor_axes": [
+   [
+    -0.16108,
+    -0.12241,
+    -0.97932
+   ],
+   [
+    0.50759,
+    0.56804,
+    -0.64783
+   ],
+   [
+    0.65285,
+    -0.68301,
+    -0.32754
+   ]
+  ],
+  "w0_platform_axes_arm_frame": [
+   [
+    0.46338,
+    0.70907,
+    -0.53151
+   ],
+   [
+    0.20334,
+    0.03741,
+    -0.97839
+   ],
+   [
+    -0.34522,
+    -0.76754,
+    -0.54009
+   ]
+  ],
+  "alpha1_deg": [
+   75.24,
+   91.93,
+   84.75
+  ],
+  "alpha2_deg": [
+   82.39,
+   83.54,
+   82.69
+  ],
+  "assembly_sign": [
+   -1.0,
+   1.0,
+   -1.0
+  ],
+  "x": [
+   -142.7672992933305,
+   -78.32744016489401,
+   48.2166950915044,
+   -40.37827024186649,
+   -46.2933926496378,
+   -19.11933058738085,
+   56.8354460675664,
+   -32.10729416522324,
+   10.423713269083773,
+   -78.06769600733153,
+   -114.21727934732434,
+   -32.690051055064586,
+   75.24453924597594,
+   91.93108216551524,
+   84.75360010311253,
+   82.38973541025729,
+   83.53842146468948,
+   82.69446913713233,
+   0.0,
+   1.0,
+   0.0
+  ],
+  "motor_axis_separation_deg": [
+   61.10968592835912,
+   72.58984249118258,
+   81.04897505470711
+  ],
+  "platform_axis_separation_deg": [
+   50.15063592614618,
+   114.65458034402059,
+   64.56333608500046
+  ],
+  "platform_axis_angle_to_arm_z_deg": [
+   122.10729416522322,
+   168.06769600733156,
+   122.69005105506459
+  ]
+ },
+ "coverage": {
+  "n_infeasible": 0,
+  "frac_covered": 1.0,
+  "max_leg_violation_deg": 0.0,
+  "max_rotation_error_deg": 0.0
+ },
+ "jacobian": {
+  "sigma_min_G": 0.01632714138377014,
+  "sigma_max_G": 13.541317889749852,
+  "median_sigma_min": 0.6287104900142528,
+  "cond_max": 85.07206308266214,
+  "detA_sign_changes": true,
+  "min_abs_detA": 0.06188924449295798,
+  "min_abs_b": [
+   0.22925971537370332,
+   0.22592339644847576,
+   0.01619963730701285
+  ],
+  "note": "G maps motor rate to platform rate (omega = G theta_dot); sigma_min is platform rad per motor rad in the weakest direction, sigma_max sets the torque amplification (tau_m = G^T M)"
+ },
+ "assembly_modes_of_8_branches": [
+  {
+   "sgn": [
+    -1,
+    -1,
+    -1
+   ],
+   "poses_ok": 3094,
+   "min_sigma_min": 0.01632277689351231,
+   "detA_sign_flips": true
+  },
+  {
+   "sgn": [
+    1,
+    -1,
+    -1
+   ],
+   "poses_ok": 3094,
+   "min_sigma_min": 0.016321247812564804,
+   "detA_sign_flips": true
+  },
+  {
+   "sgn": [
+    -1,
+    1,
+    -1
+   ],
+   "poses_ok": 3094,
+   "min_sigma_min": 0.01632714138377014,
+   "detA_sign_flips": true
+  },
+  {
+   "sgn": [
+    1,
+    1,
+    -1
+   ],
+   "poses_ok": 3094,
+   "min_sigma_min": 0.01632561106470749,
+   "detA_sign_flips": true
+  },
+  {
+   "sgn": [
+    -1,
+    -1,
+    1
+   ],
+   "poses_ok": 3094,
+   "min_sigma_min": 0.01632773562840484,
+   "detA_sign_flips": true
+  },
+  {
+   "sgn": [
+    1,
+    -1,
+    1
+   ],
+   "poses_ok": 3094,
+   "min_sigma_min": 0.016327119537183365,
+   "detA_sign_flips": true
+  },
+  {
+   "sgn": [
+    -1,
+    1,
+    1
+   ],
+   "poses_ok": 3094,
+   "min_sigma_min": 0.016330386254709794,
+   "detA_sign_flips": true
+  },
+  {
+   "sgn": [
+    1,
+    1,
+    1
+   ],
+   "poses_ok": 3094,
+   "min_sigma_min": 0.016329770440455617,
+   "detA_sign_flips": true
+  }
+ ],
+ "motor_travel_deg": {
+  "per_leg_min": [
+   -315.7,
+   48.4,
+   -210.3
+  ],
+  "per_leg_max": [
+   0.3,
+   215.3,
+   137.1
+  ],
+  "per_leg_range": [
+   316.1,
+   167.0,
+   347.4
+  ],
+  "note": "angle of the proximal link about the motor axis, theta = 0 at e1 (arbitrary reference); the range is what matters. Wrapped about the mean; a range > 340 deg would indicate a branch jump"
+ },
+ "arm_clearance_deg": {
+  "min_angle_distal_arc_to_arm_axis": 39.717602496719756
+ },
+ "torque": {
+  "n_configs": 324,
+  "max_gravity_moment_Nm": 6.551351461527012,
+  "max_motor_torque_per_leg_Nm": [
+   25.86,
+   21.85,
+   11.84
+  ],
+  "max_motor_torque_Nm": 25.86088546072187,
+  "SF_rated_AK70": 0.3209480206161633,
+  "SF_peak_AK70": 0.9589772182266083,
+  "amplification_max": 6.740128503798602,
+  "median_motor_torque_worst_cfg": 3.5663858427737423
+ },
+ "serial_gravity_torque_Nm": {
+  "S1_max": 0.0,
+  "S2_max": 6.536848461429091,
+  "S3_max": 2.906590716921488,
+  "balancer_calc_S2_peak": 6.554
+ },
+ "spatial_balancer": {
+  "K_Nm": 3.727216153815363,
+  "max_residual_moment_Nm": 2.911817775572878,
+  "max_motor_torque_with_balancer_Nm": 20.88906856441974,
+  "SF_rated_with_balancer": 0.39733700784233883,
+  "max_gravity_moment_no_balancer": 6.551351461527012,
+  "note": "zero-length spring from a base point A on the +z axis through P to a point B on the arm axis gives M_b = K e x z for any S1/S2 (S1-independent); same residual physics as the S2 balancer plus the S3/E/wrist offsets"
+ }
+}

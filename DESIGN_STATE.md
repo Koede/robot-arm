@@ -141,3 +141,4 @@ From `docs/DESIGN_STATE_ADDENDUM_2026-10-22.md` and `specs/SPEC_collision_method
 - 2026-10-22: harness rebuild, collision method, collision_body, new elbow loop (see section 11).
 - 2026-10-23: pauldron lateral shelf replaced by the curved deltoid shell; meshes regenerated.
 - 2026-10-25: this file reconstructed from the repo.
+- 2026-10-26: parallel spherical shoulder (3-RRR, 3 x AK70 on the plate) studied: covers the S1/S2/S3 set kinematically but does not package and has no torque margin; recommendation drop (`docs/shoulder_parallel_report.md`, `cad/shoulder_parallel_*.py`, `stl/shoulder_parallel/`). Forest to decide.

@@ -1,0 +1,786 @@
+{
+ "tag": "s4",
+ "R_LEG": [
+  62.0,
+  80.0,
+  98.0
+ ],
+ "flange": [
+  74.0,
+  92.0,
+  110.0
+ ],
+ "static_motor_distances_mm": {
+  "motor1": {
+   "skin": 64.11,
+   "head": 104.04,
+   "plate": 16.07,
+   "clasp": 24.27,
+   "pauldron": 4.24,
+   "centre_xyz": [
+    -16.0,
+    -12.1,
+    -97.1
+   ],
+   "axis": [
+    -0.161,
+    -0.122,
+    -0.979
+   ]
+  },
+  "motor2": {
+   "skin": 153.83,
+   "head": 208.19,
+   "plate": 88.41,
+   "clasp": 101.11,
+   "pauldron": 0.0,
+   "centre_xyz": [
+    59.5,
+    66.5,
+    -75.9
+   ],
+   "axis": [
+    0.508,
+    0.568,
+    -0.648
+   ]
+  },
+  "motor3": {
+   "skin": 171.83,
+   "head": 178.82,
+   "plate": 120.77,
+   "clasp": 133.25,
+   "pauldron": 34.41,
+   "centre_xyz": [
+    88.2,
+    -92.3,
+    -44.3
+   ],
+   "axis": [
+    0.653,
+    -0.683,
+    -0.328
+   ]
+  },
+  "motor1_vs_motor2": 14.65,
+  "motor1_vs_motor3": 47.23,
+  "motor2_vs_motor3": 65.14
+ },
+ "n_poses": 504,
+ "moving_vs_fixed_min_mm": {
+  "platform": {
+   "skin": 81.93,
+   "head": 89.94,
+   "plate": 0.0,
+   "clasp": 16.43,
+   "pauldron": 0.0,
+   "motor1": 0.0,
+   "motor2": 0.0,
+   "motor3": 12.0
+  },
+  "arm_upper": {
+   "skin": 66.63,
+   "head": 47.53,
+   "plate": 24.89,
+   "clasp": 47.55,
+   "pauldron": 30.54,
+   "motor1": 71.23,
+   "motor2": 8.0,
+   "motor3": 60.34
+  },
+  "prox1": {
+   "skin": 113.3,
+   "head": 124.88,
+   "plate": 29.76,
+   "clasp": 47.72,
+   "pauldron": 15.42,
+   "motor1": 1000000000.0,
+   "motor2": 25.18,
+   "motor3": 41.95
+  },
+  "prox2": {
+   "skin": 93.97,
+   "head": 112.48,
+   "plate": 10.36,
+   "clasp": 29.4,
+   "pauldron": 0.0,
+   "motor1": 0.0,
+   "motor2": 1000000000.0,
+   "motor3": 36.17
+  },
+  "prox3": {
+   "skin": 81.02,
+   "head": 89.65,
+   "plate": 8.3,
+   "clasp": 20.03,
+   "pauldron": 0.0,
+   "motor1": 0.0,
+   "motor2": 0.0,
+   "motor3": 1000000000.0
+  },
+  "dist1": {
+   "skin": 114.05,
+   "head": 120.71,
+   "plate": 29.78,
+   "clasp": 48.35,
+   "pauldron": 14.5,
+   "motor1": 8.57,
+   "motor2": 23.87,
+   "motor3": 41.81
+  },
+  "dist2": {
+   "skin": 93.97,
+   "head": 103.51,
+   "plate": 10.35,
+   "clasp": 29.34,
+   "pauldron": 0.0,
+   "motor1": 0.0,
+   "motor2": 8.85,
+   "motor3": 24.51
+  },
+  "dist3": {
+   "skin": 75.92,
+   "head": 85.35,
+   "plate": 0.0,
+   "clasp": 10.82,
+   "pauldron": 0.0,
+   "motor1": 0.0,
+   "motor2": 0.0,
+   "motor3": 6.5
+  }
+ },
+ "moving_vs_fixed_n_below_gate": {
+  "platform": {
+   "skin": 0,
+   "head": 0,
+   "plate": 35,
+   "clasp": 0,
+   "pauldron": 184,
+   "motor1": 314,
+   "motor2": 45,
+   "motor3": 0
+  },
+  "arm_upper": {
+   "skin": 0,
+   "head": 17,
+   "plate": 0,
+   "clasp": 0,
+   "pauldron": 0,
+   "motor1": 0,
+   "motor2": 0,
+   "motor3": 0
+  },
+  "prox1": {
+   "skin": 0,
+   "head": 0,
+   "plate": 0,
+   "clasp": 0,
+   "pauldron": 0,
+   "motor1": 0,
+   "motor2": 0,
+   "motor3": 0
+  },
+  "prox2": {
+   "skin": 0,
+   "head": 0,
+   "plate": 0,
+   "clasp": 0,
+   "pauldron": 402,
+   "motor1": 158,
+   "motor2": 0,
+   "motor3": 0
+  },
+  "prox3": {
+   "skin": 0,
+   "head": 0,
+   "plate": 0,
+   "clasp": 0,
+   "pauldron": 64,
+   "motor1": 41,
+   "motor2": 2,
+   "motor3": 0
+  },
+  "dist1": {
+   "skin": 0,
+   "head": 0,
+   "plate": 0,
+   "clasp": 0,
+   "pauldron": 0,
+   "motor1": 0,
+   "motor2": 0,
+   "motor3": 0
+  },
+  "dist2": {
+   "skin": 0,
+   "head": 0,
+   "plate": 0,
+   "clasp": 0,
+   "pauldron": 425,
+   "motor1": 370,
+   "motor2": 0,
+   "motor3": 0
+  },
+  "dist3": {
+   "skin": 0,
+   "head": 0,
+   "plate": 95,
+   "clasp": 0,
+   "pauldron": 289,
+   "motor1": 146,
+   "motor2": 28,
+   "motor3": 0
+  }
+ },
+ "moving_vs_fixed_worst_pose": {
+  "platform": {
+   "skin": [
+    130.0,
+    88.0,
+    -30.0
+   ],
+   "head": [
+    140.0,
+    -30.0,
+    30.0
+   ],
+   "plate": [
+    70.0,
+    -30.0,
+    30.0
+   ],
+   "clasp": [
+    140.0,
+    -10.0,
+    70.0
+   ],
+   "pauldron": [
+    10.0,
+    -30.0,
+    50.0
+   ],
+   "motor1": [
+    10.0,
+    -30.0,
+    -70.0
+   ],
+   "motor2": [
+    110.0,
+    -10.0,
+    -70.0
+   ],
+   "motor3": [
+    30.0,
+    10.0,
+    90.0
+   ]
+  },
+  "arm_upper": {
+   "skin": [
+    10.0,
+    88.0,
+    10.0
+   ],
+   "head": [
+    140.0,
+    -30.0,
+    -10.0
+   ],
+   "plate": [
+    30.0,
+    88.0,
+    -10.0
+   ],
+   "clasp": [
+    10.0,
+    88.0,
+    10.0
+   ],
+   "pauldron": [
+    50.0,
+    88.0,
+    10.0
+   ],
+   "motor1": [
+    10.0,
+    88.0,
+    10.0
+   ],
+   "motor2": [
+    130.0,
+    88.0,
+    -10.0
+   ],
+   "motor3": [
+    50.0,
+    -30.0,
+    10.0
+   ]
+  },
+  "prox1": {
+   "skin": [
+    50.0,
+    10.0,
+    90.0
+   ],
+   "head": [
+    10.0,
+    10.0,
+    90.0
+   ],
+   "plate": [
+    30.0,
+    -30.0,
+    50.0
+   ],
+   "clasp": [
+    30.0,
+    -10.0,
+    50.0
+   ],
+   "pauldron": [
+    140.0,
+    88.0,
+    70.0
+   ],
+   "motor1": null,
+   "motor2": [
+    110.0,
+    70.0,
+    50.0
+   ],
+   "motor3": [
+    140.0,
+    10.0,
+    -50.0
+   ]
+  },
+  "prox2": {
+   "skin": [
+    90.0,
+    70.0,
+    50.0
+   ],
+   "head": [
+    70.0,
+    70.0,
+    70.0
+   ],
+   "plate": [
+    70.0,
+    50.0,
+    -50.0
+   ],
+   "clasp": [
+    140.0,
+    -30.0,
+    70.0
+   ],
+   "pauldron": [
+    10.0,
+    10.0,
+    -70.0
+   ],
+   "motor1": [
+    10.0,
+    30.0,
+    -70.0
+   ],
+   "motor2": null,
+   "motor3": [
+    10.0,
+    88.0,
+    50.0
+   ]
+  },
+  "prox3": {
+   "skin": [
+    110.0,
+    10.0,
+    -50.0
+   ],
+   "head": [
+    90.0,
+    -10.0,
+    -30.0
+   ],
+   "plate": [
+    110.0,
+    10.0,
+    -30.0
+   ],
+   "clasp": [
+    140.0,
+    10.0,
+    -10.0
+   ],
+   "pauldron": [
+    10.0,
+    10.0,
+    90.0
+   ],
+   "motor1": [
+    10.0,
+    10.0,
+    90.0
+   ],
+   "motor2": [
+    10.0,
+    30.0,
+    90.0
+   ],
+   "motor3": null
+  },
+  "dist1": {
+   "skin": [
+    140.0,
+    -10.0,
+    -70.0
+   ],
+   "head": [
+    130.0,
+    50.0,
+    -70.0
+   ],
+   "plate": [
+    10.0,
+    30.0,
+    90.0
+   ],
+   "clasp": [
+    10.0,
+    30.0,
+    90.0
+   ],
+   "pauldron": [
+    30.0,
+    -30.0,
+    -10.0
+   ],
+   "motor1": [
+    140.0,
+    -30.0,
+    -50.0
+   ],
+   "motor2": [
+    90.0,
+    10.0,
+    90.0
+   ],
+   "motor3": [
+    110.0,
+    50.0,
+    30.0
+   ]
+  },
+  "dist2": {
+   "skin": [
+    30.0,
+    30.0,
+    -30.0
+   ],
+   "head": [
+    140.0,
+    88.0,
+    -10.0
+   ],
+   "plate": [
+    70.0,
+    50.0,
+    -50.0
+   ],
+   "clasp": [
+    90.0,
+    70.0,
+    -30.0
+   ],
+   "pauldron": [
+    10.0,
+    30.0,
+    -70.0
+   ],
+   "motor1": [
+    10.0,
+    -30.0,
+    -70.0
+   ],
+   "motor2": [
+    110.0,
+    -30.0,
+    90.0
+   ],
+   "motor3": [
+    30.0,
+    70.0,
+    -70.0
+   ]
+  },
+  "dist3": {
+   "skin": [
+    90.0,
+    -30.0,
+    50.0
+   ],
+   "head": [
+    90.0,
+    88.0,
+    50.0
+   ],
+   "plate": [
+    10.0,
+    10.0,
+    -70.0
+   ],
+   "clasp": [
+    70.0,
+    10.0,
+    -10.0
+   ],
+   "pauldron": [
+    10.0,
+    -30.0,
+    50.0
+   ],
+   "motor1": [
+    10.0,
+    10.0,
+    90.0
+   ],
+   "motor2": [
+    10.0,
+    30.0,
+    90.0
+   ],
+   "motor3": [
+    30.0,
+    10.0,
+    90.0
+   ]
+  }
+ },
+ "moving_vs_moving": {
+  "platform|prox1": {
+   "min_mm": 0.0,
+   "worst": [
+    10.0,
+    -30.0,
+    -30.0
+   ],
+   "n_below_3mm": 154
+  },
+  "platform|prox2": {
+   "min_mm": 0.0,
+   "worst": [
+    10.0,
+    30.0,
+    -70.0
+   ],
+   "n_below_3mm": 54
+  },
+  "platform|prox3": {
+   "min_mm": 0.0,
+   "worst": [
+    30.0,
+    10.0,
+    90.0
+   ],
+   "n_below_3mm": 2
+  },
+  "platform|dist1": {
+   "min_mm": 0.0,
+   "worst": [
+    10.0,
+    -30.0,
+    -70.0
+   ],
+   "n_below_3mm": 504
+  },
+  "platform|dist2": {
+   "min_mm": 0.0,
+   "worst": [
+    10.0,
+    -30.0,
+    -70.0
+   ],
+   "n_below_3mm": 504
+  },
+  "platform|dist3": {
+   "min_mm": 0.0,
+   "worst": [
+    10.0,
+    -30.0,
+    -70.0
+   ],
+   "n_below_3mm": 504
+  },
+  "arm_upper|prox1": {
+   "min_mm": 54.47,
+   "worst": [
+    10.0,
+    88.0,
+    90.0
+   ],
+   "n_below_3mm": 0
+  },
+  "arm_upper|prox2": {
+   "min_mm": 47.36,
+   "worst": [
+    130.0,
+    88.0,
+    -10.0
+   ],
+   "n_below_3mm": 0
+  },
+  "arm_upper|prox3": {
+   "min_mm": 43.55,
+   "worst": [
+    50.0,
+    -30.0,
+    -10.0
+   ],
+   "n_below_3mm": 0
+  },
+  "arm_upper|dist1": {
+   "min_mm": 54.58,
+   "worst": [
+    10.0,
+    88.0,
+    90.0
+   ],
+   "n_below_3mm": 0
+  },
+  "arm_upper|dist2": {
+   "min_mm": 90.94,
+   "worst": [
+    140.0,
+    88.0,
+    -70.0
+   ],
+   "n_below_3mm": 0
+  },
+  "arm_upper|dist3": {
+   "min_mm": 49.42,
+   "worst": [
+    30.0,
+    10.0,
+    70.0
+   ],
+   "n_below_3mm": 0
+  },
+  "prox1|prox2": {
+   "min_mm": 0.36,
+   "worst": [
+    30.0,
+    50.0,
+    50.0
+   ],
+   "n_below_3mm": 37
+  },
+  "prox1|prox3": {
+   "min_mm": 18.37,
+   "worst": [
+    110.0,
+    -30.0,
+    -30.0
+   ],
+   "n_below_3mm": 0
+  },
+  "prox1|dist2": {
+   "min_mm": 0.0,
+   "worst": [
+    10.0,
+    -10.0,
+    -70.0
+   ],
+   "n_below_3mm": 100
+  },
+  "prox1|dist3": {
+   "min_mm": 17.47,
+   "worst": [
+    50.0,
+    50.0,
+    -50.0
+   ],
+   "n_below_3mm": 0
+  },
+  "prox2|prox3": {
+   "min_mm": 0.0,
+   "worst": [
+    10.0,
+    30.0,
+    90.0
+   ],
+   "n_below_3mm": 1
+  },
+  "prox2|dist1": {
+   "min_mm": 6.13,
+   "worst": [
+    90.0,
+    10.0,
+    90.0
+   ],
+   "n_below_3mm": 0
+  },
+  "prox2|dist3": {
+   "min_mm": 0.0,
+   "worst": [
+    10.0,
+    30.0,
+    90.0
+   ],
+   "n_below_3mm": 7
+  },
+  "prox3|dist1": {
+   "min_mm": 23.78,
+   "worst": [
+    110.0,
+    50.0,
+    30.0
+   ],
+   "n_below_3mm": 0
+  },
+  "prox3|dist2": {
+   "min_mm": 6.63,
+   "worst": [
+    10.0,
+    88.0,
+    70.0
+   ],
+   "n_below_3mm": 0
+  },
+  "dist1|dist2": {
+   "min_mm": 6.26,
+   "worst": [
+    70.0,
+    -10.0,
+    70.0
+   ],
+   "n_below_3mm": 0
+  },
+  "dist1|dist3": {
+   "min_mm": 23.99,
+   "worst": [
+    10.0,
+    -30.0,
+    90.0
+   ],
+   "n_below_3mm": 0
+  },
+  "dist2|dist3": {
+   "min_mm": 6.69,
+   "worst": [
+    10.0,
+    50.0,
+    -70.0
+   ],
+   "n_below_3mm": 0
+  }
+ },
+ "gates_mm": {
+  "skin": 2.0,
+  "head": 60.0,
+  "plate": 3.0,
+  "clasp": 3.0,
+  "pauldron": 3.0
+ },
+ "seconds": 26.2
+}
