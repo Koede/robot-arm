@@ -1,0 +1,25 @@
+{
+ "serial": {
+  "M1_g": 939,
+  "M2_g": 425,
+  "beyond_S3_g": 1042,
+  "note": "balancer adds ~0.23 kg (anchor 100, collar 42, tubecap 21, ...) not included; M1 includes AK70 S2 (621 g), M2 includes XM540 S3 (165 g)",
+  "I_S1_kgm2": 0.0539,
+  "I_S2_kgm2": 0.1158,
+  "I_S3_kgm2": 0.0139,
+  "moving_mass_S1_g": 2406,
+  "actuators_on_arm_g": 786.0,
+  "actuators_on_harness_g": 621.0
+ },
+ "parallel": {
+  "links_g": 174,
+  "platform_g": 271,
+  "beyond_platform_g": 1042,
+  "motors_on_harness_g": 1863.0,
+  "I_axis_z_kgm2": 0.053,
+  "I_axis_y_kgm2": 0.1142,
+  "I_roll_kgm2": 0.0139,
+  "moving_mass_g": 1400,
+  "note": "links lumped at 0.5 mass / 0.6 radius (they move at about half the platform rate); motor-side reflected inertia scales with 1/sigma^2 of G, i.e. 2x to 25x at weak poses"
+ }
+}

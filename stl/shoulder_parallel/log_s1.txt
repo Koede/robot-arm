@@ -1,0 +1,2 @@
+arm_kin match (max abs): 1.1102230246251565e-16
+search seed 1 f 154.0525719680669 {'vmax': np.float64(0.0), 'smin': np.float64(0.07428333817108916), 'smax': np.float64(105.37360697882148)}
