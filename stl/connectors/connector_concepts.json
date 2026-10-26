@@ -1,0 +1,503 @@
+{
+ "units": "mm, deg",
+ "clearance_nominal": 0.25,
+ "variants": [
+  0.15,
+  0.25,
+  0.35
+ ],
+ "negative_test_clearance": -0.1,
+ "concepts": {
+  "A": {
+   "variants": {
+    "c015": {
+     "dims": {
+      "strut_w": 18.0,
+      "strut_t": 9.0,
+      "tongue_len": 16.0,
+      "tongue_root_w": 8.0,
+      "tongue_tip_w": 13.64,
+      "flank_deg": 10.0,
+      "pin_d": 2.5,
+      "pin_x_from_seam": [
+       3.5,
+       12.5
+      ],
+      "pin_pitch": 9.0,
+      "hole_run_d": 2.56,
+      "hole_press_d": 2.4,
+      "cheek_min_mm": 2.18,
+      "clearance": 0.15
+     },
+     "parts": {
+      "core": {
+       "watertight": true,
+       "bodies": 1,
+       "volume_mm3": 4686.9,
+       "extents": [
+        36.0,
+        18.0,
+        9.0
+       ]
+      },
+      "arm": {
+       "watertight": true,
+       "bodies": 1,
+       "volume_mm3": 4160.1,
+       "extents": [
+        36.0,
+        18.0,
+        9.0
+       ]
+      }
+     },
+     "halves_interference_mm3": 0.0,
+     "pin_vs_core_mm3": 0.0,
+     "pin_vs_arm_press_mm3": 5.291
+    },
+    "c025": {
+     "dims": {
+      "strut_w": 18.0,
+      "strut_t": 9.0,
+      "tongue_len": 16.0,
+      "tongue_root_w": 8.0,
+      "tongue_tip_w": 13.64,
+      "flank_deg": 10.0,
+      "pin_d": 2.5,
+      "pin_x_from_seam": [
+       3.5,
+       12.5
+      ],
+      "pin_pitch": 9.0,
+      "hole_run_d": 2.6,
+      "hole_press_d": 2.4,
+      "cheek_min_mm": 2.18,
+      "clearance": 0.25
+     },
+     "parts": {
+      "core": {
+       "watertight": true,
+       "bodies": 1,
+       "volume_mm3": 4683.4,
+       "extents": [
+        36.0,
+        18.0,
+        9.0
+       ]
+      },
+      "arm": {
+       "watertight": true,
+       "bodies": 1,
+       "volume_mm3": 4127.6,
+       "extents": [
+        36.0,
+        18.0,
+        9.0
+       ]
+      }
+     },
+     "halves_interference_mm3": 0.0,
+     "pin_vs_core_mm3": 0.0,
+     "pin_vs_arm_press_mm3": 5.135
+    },
+    "c035": {
+     "dims": {
+      "strut_w": 18.0,
+      "strut_t": 9.0,
+      "tongue_len": 16.0,
+      "tongue_root_w": 8.0,
+      "tongue_tip_w": 13.64,
+      "flank_deg": 10.0,
+      "pin_d": 2.5,
+      "pin_x_from_seam": [
+       3.5,
+       12.5
+      ],
+      "pin_pitch": 9.0,
+      "hole_run_d": 2.64,
+      "hole_press_d": 2.4,
+      "cheek_min_mm": 2.18,
+      "clearance": 0.35
+     },
+     "parts": {
+      "core": {
+       "watertight": true,
+       "bodies": 1,
+       "volume_mm3": 4679.8,
+       "extents": [
+        36.0,
+        18.0,
+        9.0
+       ]
+      },
+      "arm": {
+       "watertight": true,
+       "bodies": 1,
+       "volume_mm3": 4095.1,
+       "extents": [
+        36.0,
+        18.0,
+        9.0
+       ]
+      }
+     },
+     "halves_interference_mm3": 0.0,
+     "pin_vs_core_mm3": 0.0,
+     "pin_vs_arm_press_mm3": 4.978
+    }
+   },
+   "negative_test": {
+    "clearance": -0.1,
+    "halves_interference_mm3": 48.592
+   }
+  },
+  "B": {
+   "variants": {
+    "c015": {
+     "dims": {
+      "base": "30x30x4",
+      "stem_r": 9.0,
+      "stem_len": 10.0,
+      "lug_r_out": 12.0,
+      "lug_deg": 36.0,
+      "lug_t": 3.0,
+      "lug_z": 4.0,
+      "lug_arc_mm": 7.54,
+      "channel_t": 3.3,
+      "channel_travel_deg": 90.0,
+      "detent_d": 3.0,
+      "detent_az_deg": 62.0,
+      "detent_protrusion": 0.6,
+      "detent_hole_d": 3.1,
+      "female": "30x30x14",
+      "clearance": 0.15
+     },
+     "parts": {
+      "male": {
+       "watertight": true,
+       "bodies": 1,
+       "volume_mm3": 6262.4,
+       "extents": [
+        30.0,
+        30.0,
+        14.0
+       ]
+      },
+      "female": {
+       "watertight": true,
+       "bodies": 1,
+       "volume_mm3": 9222.1,
+       "extents": [
+        30.0,
+        30.0,
+        14.0
+       ]
+      }
+     },
+     "interference_vs_rotation_deg_mm3": {
+      "0": 0.0,
+      "30": 0.0,
+      "60": 0.0,
+      "90": 0.0
+     },
+     "locked_pull_out_1mm_interference_mm3": 32.192
+    },
+    "c025": {
+     "dims": {
+      "base": "30x30x4",
+      "stem_r": 9.0,
+      "stem_len": 10.0,
+      "lug_r_out": 12.0,
+      "lug_deg": 36.0,
+      "lug_t": 3.0,
+      "lug_z": 4.0,
+      "lug_arc_mm": 7.54,
+      "channel_t": 3.5,
+      "channel_travel_deg": 90.0,
+      "detent_d": 3.0,
+      "detent_az_deg": 62.0,
+      "detent_protrusion": 0.6,
+      "detent_hole_d": 3.1,
+      "female": "30x30x14",
+      "clearance": 0.25
+     },
+     "parts": {
+      "male": {
+       "watertight": true,
+       "bodies": 1,
+       "volume_mm3": 6262.4,
+       "extents": [
+        30.0,
+        30.0,
+        14.0
+       ]
+      },
+      "female": {
+       "watertight": true,
+       "bodies": 1,
+       "volume_mm3": 9095.3,
+       "extents": [
+        30.0,
+        30.0,
+        14.0
+       ]
+      }
+     },
+     "interference_vs_rotation_deg_mm3": {
+      "0": 0.0,
+      "30": 0.0,
+      "60": 0.0,
+      "90": 0.0
+     },
+     "locked_pull_out_1mm_interference_mm3": 27.538
+    },
+    "c035": {
+     "dims": {
+      "base": "30x30x4",
+      "stem_r": 9.0,
+      "stem_len": 10.0,
+      "lug_r_out": 12.0,
+      "lug_deg": 36.0,
+      "lug_t": 3.0,
+      "lug_z": 4.0,
+      "lug_arc_mm": 7.54,
+      "channel_t": 3.7,
+      "channel_travel_deg": 90.0,
+      "detent_d": 3.0,
+      "detent_az_deg": 62.0,
+      "detent_protrusion": 0.6,
+      "detent_hole_d": 3.1,
+      "female": "30x30x14",
+      "clearance": 0.35
+     },
+     "parts": {
+      "male": {
+       "watertight": true,
+       "bodies": 1,
+       "volume_mm3": 6262.4,
+       "extents": [
+        30.0,
+        30.0,
+        14.0
+       ]
+      },
+      "female": {
+       "watertight": true,
+       "bodies": 1,
+       "volume_mm3": 8965.8,
+       "extents": [
+        30.0,
+        30.0,
+        14.0
+       ]
+      }
+     },
+     "interference_vs_rotation_deg_mm3": {
+      "0": 0.0,
+      "30": 0.0,
+      "60": 0.0,
+      "90": 0.0
+     },
+     "locked_pull_out_1mm_interference_mm3": 23.107
+    }
+   },
+   "negative_test": {
+    "clearance": -0.1,
+    "interference_by_rotation_mm3": {
+     "0": 90.948,
+     "90": 191.267
+    }
+   }
+  },
+  "C": {
+   "variants": {
+    "PACF_c015": {
+     "dims": {
+      "leaf_w": 10.0,
+      "leaf_t": 0.8,
+      "leaf_len": 14.42,
+      "span_h": 12.0,
+      "cross_deg_between_leaves": 67.4,
+      "block": [
+       16.0,
+       10.0,
+       6.0
+      ],
+      "middle_leaf_w": 6.7,
+      "outer_strip_w": 1.5,
+      "slot_between_leaves": 0.15,
+      "clearance": 0.15
+     },
+     "part": {
+      "watertight": true,
+      "bodies": 1,
+      "volume_mm3": 2031.9,
+      "extents": [
+       16.0,
+       10.0,
+       24.0
+      ]
+     },
+     "leaf1_vs_leaf2_interference_mm3": 0.0,
+     "blocks_touch_mm3": 0.0
+    },
+    "TPU_c015": {
+     "dims": {
+      "leaf_w": 10.0,
+      "leaf_t": 1.2,
+      "leaf_len": 14.42,
+      "span_h": 12.0,
+      "cross_deg_between_leaves": 67.4,
+      "block": [
+       16.0,
+       10.0,
+       6.0
+      ],
+      "middle_leaf_w": 6.7,
+      "outer_strip_w": 1.5,
+      "slot_between_leaves": 0.15,
+      "clearance": 0.15
+     },
+     "part": {
+      "watertight": true,
+      "bodies": 1,
+      "volume_mm3": 2087.9,
+      "extents": [
+       16.0,
+       10.0,
+       24.0
+      ]
+     },
+     "leaf1_vs_leaf2_interference_mm3": 0.0,
+     "blocks_touch_mm3": 0.0
+    },
+    "PACF_c025": {
+     "dims": {
+      "leaf_w": 10.0,
+      "leaf_t": 0.8,
+      "leaf_len": 14.42,
+      "span_h": 12.0,
+      "cross_deg_between_leaves": 67.4,
+      "block": [
+       16.0,
+       10.0,
+       6.0
+      ],
+      "middle_leaf_w": 6.5,
+      "outer_strip_w": 1.5,
+      "slot_between_leaves": 0.25,
+      "clearance": 0.25
+     },
+     "part": {
+      "watertight": true,
+      "bodies": 1,
+      "volume_mm3": 2029.6,
+      "extents": [
+       16.0,
+       10.0,
+       24.0
+      ]
+     },
+     "leaf1_vs_leaf2_interference_mm3": 0.0,
+     "blocks_touch_mm3": 0.0
+    },
+    "TPU_c025": {
+     "dims": {
+      "leaf_w": 10.0,
+      "leaf_t": 1.2,
+      "leaf_len": 14.42,
+      "span_h": 12.0,
+      "cross_deg_between_leaves": 67.4,
+      "block": [
+       16.0,
+       10.0,
+       6.0
+      ],
+      "middle_leaf_w": 6.5,
+      "outer_strip_w": 1.5,
+      "slot_between_leaves": 0.25,
+      "clearance": 0.25
+     },
+     "part": {
+      "watertight": true,
+      "bodies": 1,
+      "volume_mm3": 2084.4,
+      "extents": [
+       16.0,
+       10.0,
+       24.0
+      ]
+     },
+     "leaf1_vs_leaf2_interference_mm3": 0.0,
+     "blocks_touch_mm3": 0.0
+    },
+    "PACF_c035": {
+     "dims": {
+      "leaf_w": 10.0,
+      "leaf_t": 0.8,
+      "leaf_len": 14.42,
+      "span_h": 12.0,
+      "cross_deg_between_leaves": 67.4,
+      "block": [
+       16.0,
+       10.0,
+       6.0
+      ],
+      "middle_leaf_w": 6.3,
+      "outer_strip_w": 1.5,
+      "slot_between_leaves": 0.35,
+      "clearance": 0.35
+     },
+     "part": {
+      "watertight": true,
+      "bodies": 1,
+      "volume_mm3": 2027.3,
+      "extents": [
+       16.0,
+       10.0,
+       24.0
+      ]
+     },
+     "leaf1_vs_leaf2_interference_mm3": 0.0,
+     "blocks_touch_mm3": 0.0
+    },
+    "TPU_c035": {
+     "dims": {
+      "leaf_w": 10.0,
+      "leaf_t": 1.2,
+      "leaf_len": 14.42,
+      "span_h": 12.0,
+      "cross_deg_between_leaves": 67.4,
+      "block": [
+       16.0,
+       10.0,
+       6.0
+      ],
+      "middle_leaf_w": 6.3,
+      "outer_strip_w": 1.5,
+      "slot_between_leaves": 0.35,
+      "clearance": 0.35
+     },
+     "part": {
+      "watertight": true,
+      "bodies": 1,
+      "volume_mm3": 2081.0,
+      "extents": [
+       16.0,
+       10.0,
+       24.0
+      ]
+     },
+     "leaf1_vs_leaf2_interference_mm3": 0.0,
+     "blocks_touch_mm3": 0.0
+    }
+   },
+   "negative_test": {
+    "clearance": -0.1,
+    "leaf1_vs_leaf2_interference_mm3": 0.139
+   }
+  }
+ },
+ "all_checks_pass": true,
+ "failures": []
+}

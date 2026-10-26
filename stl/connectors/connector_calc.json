@@ -1,0 +1,208 @@
+{
+ "units": "mm, N, MPa",
+ "placeholders": {
+  "note": "UNVERIFIED PLACEHOLDER: all values in this dict. No datasheet in the repo; round numbers for FDM PA-CF / TPU 95A / hardened steel dowel.",
+  "PACF_UTS_XY": 60.0,
+  "PACF_UTS_Z": 25.0,
+  "PACF_BEARING_XY": 45.0,
+  "PACF_SHEAR_XY": 30.0,
+  "PACF_E_FLEX": 4000.0,
+  "PACF_NU": 0.35,
+  "PACF_SN_SLOPE": 0.09,
+  "STEEL_DOWEL_TAU": 300.0,
+  "BOLT_TAU": 270.0,
+  "TPU_E": 26.0,
+  "TPU_NU": 0.45,
+  "TPU_MU_ON_PACF": 0.5,
+  "TPU_STRAIN_FATIGUE": 0.05
+ },
+ "M_limit_Nmm": 24800.0,
+ "M_source": "cad/plate_pocket.py: 24.8 N m (AK70 peak, S1/S2) limit moment about each axis",
+ "lever_source": "stl/shoulder/pauldron/pauldron.json 'splices' (frame 'at'); lever = |at| from P = origin; P is the S1/S2/S3 intersection",
+ "splice_loads": {
+  "arm_lat": {
+   "at": [
+    -55.3,
+    75.5,
+    -84.1
+   ],
+   "lever_P_to_splice": 125.8,
+   "pad": "F4",
+   "lever_splice_to_pad": 147.4,
+   "V_N": 197.1,
+   "M_splice_Nmm_if_V_acts_at_pad": 29058.0
+  },
+  "arm_med": {
+   "at": [
+    -74.0,
+    -98.0,
+    -81.2
+   ],
+   "lever_P_to_splice": 147.2,
+   "pad": "F1",
+   "lever_splice_to_pad": 102.5,
+   "V_N": 168.5,
+   "M_splice_Nmm_if_V_acts_at_pad": 17269.0
+  }
+ },
+ "governing_splice": "arm_lat",
+ "A_vs_M4": {
+  "M4_halflap": {
+   "bolt_shear_MPa": 11.2,
+   "bolt_shear_SF": 24.1,
+   "bearing_on_PACF_MPa": 5.5,
+   "bearing_SF": 8.2,
+   "one_bolt_lost_bearing_MPa": 10.9,
+   "one_bolt_lost_bearing_SF": 4.1,
+   "bound_case_couple_per_bolt_N": 2422.0,
+   "bound_case_bearing_MPa": 134.5,
+   "bound_case_bolt_shear_MPa": 275.8,
+   "bound_case_bearing_SF": 0.33,
+   "note": "shank-in-shear would give 1.4x lower stress; thread stress area used. Preload friction not counted. Section modulus at the seam: two 4.5 mm halves = 121.5 mm3 (non-composite) .. 243.0 (composite)"
+  },
+  "A_dual_pin": {
+   "pin_shear_MPa": 10.0,
+   "pin_shear_SF": 29.9,
+   "bearing_in_tongue_MPa": [
+    4.3,
+    3.2
+   ],
+   "bearing_in_cheeks_MPa": [
+    4.5,
+    7.0
+   ],
+   "cheek_thickness_mm": [
+    4.38,
+    2.8
+   ],
+   "bearing_SF_worst": 6.4,
+   "one_pin_loose_pin_shear_MPa": 20.1,
+   "one_pin_loose_bearing_worst_MPa": 8.5,
+   "one_pin_loose_bearing_SF": 5.3,
+   "one_pin_loose_joint_still_held_in_t_and_w": "yes: dovetail flanks lock t and w, the remaining pin still blocks z' and the w-slide",
+   "bound_case_couple_per_pin_N": 3229.0,
+   "bound_case_tongue_bearing_MPa": 139.9,
+   "bound_case_bearing_SF": 0.32,
+   "bound_case_pin_shear_MPa": 328.9,
+   "seam_section_modulus_tongue_neck_mm3": 108.0,
+   "note": "pins sit 9 mm apart (M4 bolts 12 mm): the moment couple on the pins is 1.33x the bolt couple; the tongue neck (8 x 9) is 44 % of the strut section modulus (243 mm3)"
+  },
+  "strut_bending_reference": {
+   "strut_section_modulus_mm3": 243.0,
+   "sigma_bound_case_MPa": 119.6,
+   "sigma_over_PACF_UTS_XY": 1.99,
+   "note": "if the wrap-arm really carried V at the pad, the unspliced 18 x 9 strut itself would be over the placeholder strength: the bound case is not a design load, it shows that the splice is not the weak link in that case"
+  }
+ },
+ "A_vs_M4_fe_bearing": {
+  "A_cheek_pin1_x3.5": {
+   "width": 9.0,
+   "edge": 3.5,
+   "thick": 2.9,
+   "hole_d": 2.4,
+   "force_N": 49.275,
+   "nominal_bearing_MPa": 7.08,
+   "fe_peak_vm_in_band_MPa": 5.64,
+   "ratio_peak_to_nominal": 0.8,
+   "n_elem": 670
+  },
+  "A_cheek_pin2_x12.5": {
+   "width": 9.0,
+   "edge": 12.5,
+   "thick": 2.9,
+   "hole_d": 2.4,
+   "force_N": 49.275,
+   "nominal_bearing_MPa": 7.08,
+   "fe_peak_vm_in_band_MPa": 4.93,
+   "ratio_peak_to_nominal": 0.7,
+   "n_elem": 666
+  },
+  "M4_halflap_hole_edge6": {
+   "width": 18.0,
+   "edge": 6.0,
+   "thick": 4.5,
+   "hole_d": 4.5,
+   "force_N": 98.55,
+   "nominal_bearing_MPa": 4.87,
+   "fe_peak_vm_in_band_MPa": 3.85,
+   "ratio_peak_to_nominal": 0.79,
+   "n_elem": 908
+  },
+  "note": "In-plane bearing / tear-out slice with the force toward the nearest free edge (worst in-plane direction). The real pin loads act mostly out of this plane (z'); the slice is a check on edge distance and hole stress concentration, not a full 3D model. FE stress uses plane strain Lame constants (skfem linear_elasticity default) - conservative by ~10 %. Peak is sampled 1.2-2 r from the hole (point-load singularity excluded), so it is a lower bound of the hole-edge value."
+ },
+ "B": {
+  "tpu_pin_d": 3.0,
+  "free_len": 6.5,
+  "protrusion": 0.6,
+  "stiffness_N_per_mm": 28.3,
+  "normal_force_N": 17.0,
+  "compression_strain": 0.092,
+  "lock_in_30deg_ramp": {
+   "tangential_force_per_detent_N": 25.7,
+   "torque_Nm": 0.62,
+   "alpha_deg": 30.0
+  },
+  "unlock_45deg_ramp": {
+   "tangential_force_per_detent_N": 50.9,
+   "torque_Nm": 1.22,
+   "alpha_deg": 45.0
+  },
+  "holding_torque_to_unlock_Nm": 1.22,
+  "tangential_hold_at_lug_radius_N": 102.0,
+  "axial_pullout": {
+   "lug_arc_mm": 6.6,
+   "root_bending_MPa_per_N": 0.0758,
+   "Z_allow_MPa": 12.5,
+   "F_pullout_limit_N": 165.0,
+   "F_pullout_static_N": 330.0,
+   "shear_across_layers_alt": "lug rooted horizontally: load goes through the layer adhesion; if printed with the stem axis in the bed plane (on its side) the lug bending is in-plane and the limit rises to ~396 N (XY strength)"
+  },
+  "play": {
+   "axial_play_mm": 0.5,
+   "note": "channel is lug + 2 clr: 0.5 mm axial rattle at 0.25; a 0.5 mm TPU wave washer / O-ring under the base is needed to preload the lugs against the channel roof (not modelled)"
+  },
+  "chamfer_note": "the ramp angles assume 30/45 deg chamfers on the lug edges and a dome nose; the coupon CAD has square lug edges (add in detail design)"
+ },
+ "C": {
+  "leaf_len": 14.42,
+  "theta_deg": 30.0,
+  "note": "stress = E' t theta / (2 L), uniform-curvature S-bend of a clamped-clamped leaf whose end block rotates by theta (E' = E/(1-nu^2)). Axial stretch of the leaves (second order) and the crossing offset are ignored.",
+  "PACF": {
+   "t": 0.8,
+   "strain_pct": 1.452,
+   "sigma_MPa": 66.2,
+   "sigma_over_UTS_XY": 1.1,
+   "cycles": "static failure at first stroke (stress >= placeholder UTS)",
+   "max_theta_deg_for_1e5_cycles": 15.0,
+   "leaf_len_needed_for_30deg_1e5_mm": 28.9,
+   "leaf_buckling_load_N_each": 323.9,
+   "hinge_stiffness_Nmm_per_rad": 269.7
+  },
+  "PACF_t0.5": {
+   "t": 0.5,
+   "strain_pct": 0.908,
+   "sigma_MPa": 41.37,
+   "sigma_over_UTS_XY": 0.69,
+   "cycles_log10_UNVERIFIED_PLACEHOLDER": 3.4,
+   "max_theta_deg_for_1e5_cycles": 23.9,
+   "leaf_len_needed_for_30deg_1e5_mm": 18.1
+  },
+  "TPU": {
+   "t": 1.2,
+   "strain_pct": 2.178,
+   "sigma_MPa": 0.71,
+   "cycles": "UNVERIFIED PLACEHOLDER: strain 2.2 % vs 5 % working strain assumed for >1e6 cycles in 95A TPU",
+   "leaf_buckling_load_N_each": 7.1,
+   "hinge_stiffness_Nmm_per_rad": 6.5
+  },
+  "pinned_reference": "d3 steel pin in d3.1 running hole (claw_hand.py): no fatigue limit in this range, 0.1 mm radial play, survives the full stroke",
+  "fe_check_linear_small_angle": {
+   "PACF": {
+    "theta_deg": 3.0,
+    "fe_sigma_x_MPa": 5.892,
+    "closed_form_MPa": 6.62,
+    "ratio": 0.89
+   }
+  }
+ }
+}
