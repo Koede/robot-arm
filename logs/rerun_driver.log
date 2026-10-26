@@ -1,0 +1,6 @@
+[2026-10-26T19:54:14Z] stage 1: SDF cache
+stage1 exit 0
+[2026-10-26T19:55:01Z] stage 2: harness
+stage2 exit 0
+[2026-10-26T20:02:10Z] stage 3: sweeps + wire search
+[2026-10-26T20:26:55Z] stage 3 (restart): sweeps + wire search

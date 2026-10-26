@@ -1,58 +1,60 @@
+deltoid shell voxels 62110 ymax 85.5
+flat shelf voxels removed 740
 core assembly-draft voxels removed: 10589
-facet windows: 17 total window area 8170 mm2
-obstacle carve: {'body': {'min_mm': 12.3, 'carved_vox': 0}, 'clasp': {'min_mm': 0.1, 'carved_vox': 645}, 'wing': {'min_mm': 0.3, 'carved_vox': 82}, 'spine': {'min_mm': 1000.0, 'carved_vox': 0}} | pieces before keep-largest: 6
+facet windows: 17 total window area 7699 mm2
+obstacle carve: {'body': {'min_mm': 9.0, 'carved_vox': 6}, 'clasp': {'min_mm': 0.1, 'carved_vox': 822}, 'wing': {'min_mm': 0.1, 'carved_vox': 99}, 'spine': {'min_mm': 1000.0, 'carved_vox': 0}} | pieces before keep-largest: 8
 {
  "parts": {
   "core": {
    "extents": [
-    142.8,
-    234.2,
-    50.4
+    140.5,
+    201.2,
+    56.2
    ],
    "fits_256": true,
-   "volume_cm3": 89.4,
-   "mass_g_PACF": 103,
+   "volume_cm3": 85.7,
+   "mass_g_PACF": 99,
    "watertight": true
   },
   "arm_lat": {
    "extents": [
-    150.2,
-    113.5,
-    18.7
+    41.3,
+    20.7,
+    41.6
    ],
    "fits_256": true,
-   "volume_cm3": 38.5,
-   "mass_g_PACF": 44,
+   "volume_cm3": 3.5,
+   "mass_g_PACF": 4,
    "watertight": true
   },
   "arm_med": {
    "extents": [
-    124.7,
-    82.7,
-    25.7
+    124.8,
+    82.5,
+    25.9
    ],
    "fits_256": true,
-   "volume_cm3": 30.4,
-   "mass_g_PACF": 35,
+   "volume_cm3": 30.9,
+   "mass_g_PACF": 36,
    "watertight": true
   }
  },
  "splices": {
   "arm_lat": {
    "at": [
-    -74.0,
-    97.3,
-    -88.0
+    -55.3,
+    75.5,
+    -84.1
    ],
    "axis": [
-    -0.999,
-    -0.05,
-    0.0
+    -0.902,
+    -0.152,
+    -0.403
    ],
    "bolt_axis": [
-    0.0,
-    0.0,
-    1.0
+    -0.397,
+    -0.067,
+    0.915
    ]
   },
   "arm_med": {
@@ -104,16 +106,16 @@ obstacle carve: {'body': {'min_mm': 12.3, 'carved_vox': 0}, 'clasp': {'min_mm': 
  },
  "obstacle_carve": {
   "body": {
-   "min_mm": 12.3,
-   "carved_vox": 0
+   "min_mm": 9.0,
+   "carved_vox": 6
   },
   "clasp": {
    "min_mm": 0.1,
-   "carved_vox": 645
+   "carved_vox": 822
   },
   "wing": {
-   "min_mm": 0.3,
-   "carved_vox": 82
+   "min_mm": 0.1,
+   "carved_vox": 99
   },
   "spine": {
    "min_mm": 1000.0,
@@ -129,6 +131,9 @@ obstacle carve: {'body': {'min_mm': 12.3, 'carved_vox': 0}, 'clasp': {'min_mm': 
    18.0,
    9.0
   ],
-  "N_FACETS": 360
+  "N_FACETS": 360,
+  "shell": "deltoid_arc",
+  "shell_clear_mm": 12.0,
+  "shell_arc_r_mm": 32.0
  }
 }

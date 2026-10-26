@@ -1,0 +1,42 @@
+{
+ "height_mm": 1667.0,
+ "scale": 1.0,
+ "acromion_top_rel_P": [
+  -180.0,
+  4.0,
+  -100.0
+ ],
+ "gh_joint_rel_P": [
+  -183.0,
+  18.0,
+  -150.0
+ ],
+ "neck_joint_rel_P": [
+  -176.0,
+  -150.0,
+  -85.0
+ ],
+ "head_joint_rel_P": [
+  -185.0,
+  -150.0,
+  23.0
+ ],
+ "head_top_z_rel_P": 175.0,
+ "back_surface_x_rel_P": -108.0,
+ "spine_y_rel_P": -150.0,
+ "watertight": true,
+ "faces": 26756,
+ "a_pose_arm_deg": {
+  "l": 40.2,
+  "r": 40.2
+ },
+ "arm_hang_deg": 10.0
+}
+== muscle_atlas.py --rules
+== clasp_shoulder.py --facets_only
+== organic_connector.py
+== muscle_atlas.py
+== chassis_axilla.py
+== scapular_frame.py
+== shoulder_cowl.py
+== pauldron.py

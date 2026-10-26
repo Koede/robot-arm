@@ -1,4 +1,1 @@
 bases: 4 original + 30 random legal
-W3 anchors after swept keep-out (>= r + 2.0): (174758, 143430) -> (15361, 12373)
-W3 bundle {'area_mm2': 4.31, 'od_mm': 3.0, 'n_wires': 3, 'split': 1} Rmin 12.0 anchors 15361 12373
- tried 8 good 1 {'A': [-10.2, 60.0, 429.0], 'tA': [0.0, 1.0, 0.0], 'B': [35.9, 57.7, 464.0], 'tB': [0.0, 0.0, -1.0], 'L': np.float64(86.5), 'clr': 0.8, 'minrad': 12.1} 1035s

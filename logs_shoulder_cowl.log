@@ -1,4 +1,4 @@
-assembly-draft voxels removed: 250
+assembly-draft voxels removed: 249
 free tab azimuths: [np.float64(250.0), np.float64(255.0), np.float64(260.0), np.float64(265.0), np.float64(270.0), np.float64(275.0), np.float64(280.0), np.float64(285.0), np.float64(290.0)]
 {
  "cowl_thin_wall_frac": 0.0,

@@ -105,12 +105,12 @@
    "carved_vox": 6
   },
   "clasp": {
-   "min_mm": 0.0,
-   "carved_vox": 824
+   "min_mm": 0.1,
+   "carved_vox": 822
   },
   "wing": {
-   "min_mm": 0.2,
-   "carved_vox": 97
+   "min_mm": 0.1,
+   "carved_vox": 99
   },
   "spine": {
    "min_mm": 1000.0,
