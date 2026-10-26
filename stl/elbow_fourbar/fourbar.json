@@ -1,0 +1,1066 @@
+{
+ "required": {
+  "tau_Nm": 2.792,
+  "m_distal_g": 700.5,
+  "cg_above_E_mm": 160.1,
+  "payload_kg": 0.5,
+  "z_tip_mm": 575.0,
+  "fork_mass_g": 78.1,
+  "gravity_term_Nm": 1.1,
+  "payload_term_Nm": 1.692,
+  "source": "verify_distal.py torque section (static, link horizontal): sum over ME+MW1+MW2+MW3 mesh volumes x density + bought masses (STS3215 55 g, wiring) about the elbow axis z=230, + 0.5 kg at Z_TIP 575"
+ },
+ "direct": {
+  "MA": 1.0,
+  "stall_Nm": 10.6,
+  "cont_Nm": 5.3,
+  "SF_stall": 3.8,
+  "SF_cont": 1.9,
+  "note": "direct drive: MA = 1 for every E (horn on the elbow axis); crank travel = elbow travel (145 deg soft)"
+ },
+ "gates": {
+  "travel_max": 300.0,
+  "mu": [
+   30.0,
+   150.0
+  ],
+  "toggle_margin": 12.0,
+  "E_soft": [
+   0,
+   145
+  ],
+  "E_hard": [
+   -5,
+   150
+  ],
+  "boss_clearance_mm": 9.0,
+  "tau_stall": 10.6,
+  "tau_cont": 5.3
+ },
+ "A_free": {
+  "params": {
+   "a": 51.93,
+   "b": 67.16,
+   "c": 81.11,
+   "ground_g": 44.68,
+   "ground_dir_deg": 321.52,
+   "lever_beta_deg": -21.89,
+   "branch": 1,
+   "motor_orient": 0
+  },
+  "O2_xz": [
+   -27.8,
+   34.98
+  ],
+  "violation": 0.0,
+  "feasible": true,
+  "crank_travel_soft_deg": 255.3,
+  "crank_travel_hard_deg": 269.7,
+  "mu_soft": [
+   32.0,
+   80.7
+  ],
+  "mu_hard": [
+   26.8,
+   80.7
+  ],
+  "nu_hard": [
+   32.6,
+   155.6
+  ],
+  "MA_soft": {
+   "min": 1.385,
+   "mean": 1.759,
+   "max": 2.461
+  },
+  "E_at_MA_min": 121.0,
+  "MA_at": {
+   "E0": 1.385,
+   "E145": 1.535
+  },
+  "torque_available_Nm": {
+   "stall_min": 14.68,
+   "cont_min": 7.34,
+   "stall_E0": 14.68,
+   "stall_E145": 16.27
+  },
+  "SF_vs_required": {
+   "stall_min": 5.26,
+   "cont_min": 2.63
+  },
+  "table": [
+   {
+    "E": -5.0,
+    "theta": 6.3,
+    "mu": 28.1,
+    "nu": 39.6,
+    "MA": 1.174,
+    "tau_stall_Nm": 12.45,
+    "tau_cont_Nm": 6.22
+   },
+   {
+    "E": 0.0,
+    "theta": 0.0,
+    "mu": 32.2,
+    "nu": 36.9,
+    "MA": 1.385,
+    "tau_stall_Nm": 14.68,
+    "tau_cont_Nm": 7.34
+   },
+   {
+    "E": 5.0,
+    "theta": -7.6,
+    "mu": 36.9,
+    "nu": 34.7,
+    "MA": 1.645,
+    "tau_stall_Nm": 17.44,
+    "tau_cont_Nm": 8.72
+   },
+   {
+    "E": 10.0,
+    "theta": -16.5,
+    "mu": 42.2,
+    "nu": 33.3,
+    "MA": 1.914,
+    "tau_stall_Nm": 20.29,
+    "tau_cont_Nm": 10.14
+   },
+   {
+    "E": 15.0,
+    "theta": -26.7,
+    "mu": 48.1,
+    "nu": 32.6,
+    "MA": 2.159,
+    "tau_stall_Nm": 22.89,
+    "tau_cont_Nm": 11.44
+   },
+   {
+    "E": 20.0,
+    "theta": -38.0,
+    "mu": 54.3,
+    "nu": 32.7,
+    "MA": 2.344,
+    "tau_stall_Nm": 24.84,
+    "tau_cont_Nm": 12.42
+   },
+   {
+    "E": 25.0,
+    "theta": -50.0,
+    "mu": 60.3,
+    "nu": 33.7,
+    "MA": 2.444,
+    "tau_stall_Nm": 25.9,
+    "tau_cont_Nm": 12.95
+   },
+   {
+    "E": 30.0,
+    "theta": -62.3,
+    "mu": 65.9,
+    "nu": 35.5,
+    "MA": 2.457,
+    "tau_stall_Nm": 26.04,
+    "tau_cont_Nm": 13.02
+   },
+   {
+    "E": 35.0,
+    "theta": -74.4,
+    "mu": 70.6,
+    "nu": 37.8,
+    "MA": 2.402,
+    "tau_stall_Nm": 25.46,
+    "tau_cont_Nm": 12.73
+   },
+   {
+    "E": 40.0,
+    "theta": -86.2,
+    "mu": 74.5,
+    "nu": 40.8,
+    "MA": 2.305,
+    "tau_stall_Nm": 24.43,
+    "tau_cont_Nm": 12.22
+   },
+   {
+    "E": 45.0,
+    "theta": -97.4,
+    "mu": 77.4,
+    "nu": 44.1,
+    "MA": 2.189,
+    "tau_stall_Nm": 23.2,
+    "tau_cont_Nm": 11.6
+   },
+   {
+    "E": 50.0,
+    "theta": -108.1,
+    "mu": 79.3,
+    "nu": 47.8,
+    "MA": 2.071,
+    "tau_stall_Nm": 21.95,
+    "tau_cont_Nm": 10.97
+   },
+   {
+    "E": 55.0,
+    "theta": -118.2,
+    "mu": 80.4,
+    "nu": 51.8,
+    "MA": 1.959,
+    "tau_stall_Nm": 20.77,
+    "tau_cont_Nm": 10.38
+   },
+   {
+    "E": 60.0,
+    "theta": -127.7,
+    "mu": 80.7,
+    "nu": 56.0,
+    "MA": 1.859,
+    "tau_stall_Nm": 19.7,
+    "tau_cont_Nm": 9.85
+   },
+   {
+    "E": 65.0,
+    "theta": -136.8,
+    "mu": 80.4,
+    "nu": 60.4,
+    "MA": 1.771,
+    "tau_stall_Nm": 18.77,
+    "tau_cont_Nm": 9.39
+   },
+   {
+    "E": 70.0,
+    "theta": -145.4,
+    "mu": 79.5,
+    "nu": 65.0,
+    "MA": 1.695,
+    "tau_stall_Nm": 17.97,
+    "tau_cont_Nm": 8.99
+   },
+   {
+    "E": 75.0,
+    "theta": -153.7,
+    "mu": 78.2,
+    "nu": 69.6,
+    "MA": 1.631,
+    "tau_stall_Nm": 17.29,
+    "tau_cont_Nm": 8.64
+   },
+   {
+    "E": 80.0,
+    "theta": -161.8,
+    "mu": 76.4,
+    "nu": 74.4,
+    "MA": 1.576,
+    "tau_stall_Nm": 16.71,
+    "tau_cont_Nm": 8.36
+   },
+   {
+    "E": 85.0,
+    "theta": -169.5,
+    "mu": 74.3,
+    "nu": 79.3,
+    "MA": 1.531,
+    "tau_stall_Nm": 16.22,
+    "tau_cont_Nm": 8.11
+   },
+   {
+    "E": 90.0,
+    "theta": -177.1,
+    "mu": 71.9,
+    "nu": 84.2,
+    "MA": 1.492,
+    "tau_stall_Nm": 15.82,
+    "tau_cont_Nm": 7.91
+   },
+   {
+    "E": 95.0,
+    "theta": -184.5,
+    "mu": 69.2,
+    "nu": 89.3,
+    "MA": 1.461,
+    "tau_stall_Nm": 15.48,
+    "tau_cont_Nm": 7.74
+   },
+   {
+    "E": 100.0,
+    "theta": -191.7,
+    "mu": 66.3,
+    "nu": 94.4,
+    "MA": 1.435,
+    "tau_stall_Nm": 15.21,
+    "tau_cont_Nm": 7.61
+   },
+   {
+    "E": 105.0,
+    "theta": -198.8,
+    "mu": 63.2,
+    "nu": 99.6,
+    "MA": 1.415,
+    "tau_stall_Nm": 15.0,
+    "tau_cont_Nm": 7.5
+   },
+   {
+    "E": 110.0,
+    "theta": -205.8,
+    "mu": 59.9,
+    "nu": 105.0,
+    "MA": 1.399,
+    "tau_stall_Nm": 14.83,
+    "tau_cont_Nm": 7.42
+   },
+   {
+    "E": 115.0,
+    "theta": -212.8,
+    "mu": 56.5,
+    "nu": 110.4,
+    "MA": 1.389,
+    "tau_stall_Nm": 14.73,
+    "tau_cont_Nm": 7.36
+   },
+   {
+    "E": 120.0,
+    "theta": -219.8,
+    "mu": 52.9,
+    "nu": 115.9,
+    "MA": 1.385,
+    "tau_stall_Nm": 14.68,
+    "tau_cont_Nm": 7.34
+   },
+   {
+    "E": 125.0,
+    "theta": -226.7,
+    "mu": 49.1,
+    "nu": 121.6,
+    "MA": 1.387,
+    "tau_stall_Nm": 14.7,
+    "tau_cont_Nm": 7.35
+   },
+   {
+    "E": 130.0,
+    "theta": -233.6,
+    "mu": 45.2,
+    "nu": 127.5,
+    "MA": 1.397,
+    "tau_stall_Nm": 14.8,
+    "tau_cont_Nm": 7.4
+   },
+   {
+    "E": 135.0,
+    "theta": -240.7,
+    "mu": 41.0,
+    "nu": 133.7,
+    "MA": 1.418,
+    "tau_stall_Nm": 15.03,
+    "tau_cont_Nm": 7.52
+   },
+   {
+    "E": 140.0,
+    "theta": -247.8,
+    "mu": 36.7,
+    "nu": 140.2,
+    "MA": 1.458,
+    "tau_stall_Nm": 15.46,
+    "tau_cont_Nm": 7.73
+   },
+   {
+    "E": 145.0,
+    "theta": -255.3,
+    "mu": 32.0,
+    "nu": 147.3,
+    "MA": 1.535,
+    "tau_stall_Nm": 16.27,
+    "tau_cont_Nm": 8.14
+   },
+   {
+    "E": 150.0,
+    "theta": -263.3,
+    "mu": 26.8,
+    "nu": 155.6,
+    "MA": 1.679,
+    "tau_stall_Nm": 17.8,
+    "tau_cont_Nm": 8.9
+   }
+  ]
+ },
+ "B_inline_proximal": {
+  "params": {
+   "a": 56.48,
+   "b": 71.71,
+   "c": 87.78,
+   "ground_g": 48.05,
+   "ground_dir_deg": 179.3,
+   "lever_beta_deg": -163.59,
+   "branch": 1,
+   "motor_orient": 0
+  },
+  "O2_xz": [
+   0.59,
+   -48.05
+  ],
+  "violation": 0.0,
+  "feasible": true,
+  "crank_travel_soft_deg": 253.6,
+  "crank_travel_hard_deg": 268.1,
+  "mu_soft": [
+   32.0,
+   81.2
+  ],
+  "mu_hard": [
+   26.7,
+   81.2
+  ],
+  "nu_hard": [
+   33.5,
+   156.4
+  ],
+  "MA_soft": {
+   "min": 1.385,
+   "mean": 1.747,
+   "max": 2.421
+  },
+  "E_at_MA_min": 0.0,
+  "MA_at": {
+   "E0": 1.385,
+   "E145": 1.551
+  },
+  "torque_available_Nm": {
+   "stall_min": 14.68,
+   "cont_min": 7.34,
+   "stall_E0": 14.68,
+   "stall_E145": 16.44
+  },
+  "SF_vs_required": {
+   "stall_min": 5.26,
+   "cont_min": 2.63
+  },
+  "table": [
+   {
+    "E": -5.0,
+    "theta": 6.3,
+    "mu": 29.2,
+    "nu": 40.8,
+    "MA": 1.181,
+    "tau_stall_Nm": 12.52,
+    "tau_cont_Nm": 6.26
+   },
+   {
+    "E": 0.0,
+    "theta": 0.0,
+    "mu": 33.3,
+    "nu": 38.0,
+    "MA": 1.385,
+    "tau_stall_Nm": 14.68,
+    "tau_cont_Nm": 7.34
+   },
+   {
+    "E": 5.0,
+    "theta": -7.5,
+    "mu": 38.0,
+    "nu": 35.8,
+    "MA": 1.635,
+    "tau_stall_Nm": 17.33,
+    "tau_cont_Nm": 8.66
+   },
+   {
+    "E": 10.0,
+    "theta": -16.4,
+    "mu": 43.3,
+    "nu": 34.3,
+    "MA": 1.892,
+    "tau_stall_Nm": 20.05,
+    "tau_cont_Nm": 10.03
+   },
+   {
+    "E": 15.0,
+    "theta": -26.4,
+    "mu": 49.2,
+    "nu": 33.6,
+    "MA": 2.125,
+    "tau_stall_Nm": 22.53,
+    "tau_cont_Nm": 11.26
+   },
+   {
+    "E": 20.0,
+    "theta": -37.5,
+    "mu": 55.2,
+    "nu": 33.6,
+    "MA": 2.303,
+    "tau_stall_Nm": 24.41,
+    "tau_cont_Nm": 12.21
+   },
+   {
+    "E": 25.0,
+    "theta": -49.3,
+    "mu": 61.1,
+    "nu": 34.5,
+    "MA": 2.401,
+    "tau_stall_Nm": 25.45,
+    "tau_cont_Nm": 12.73
+   },
+   {
+    "E": 30.0,
+    "theta": -61.4,
+    "mu": 66.6,
+    "nu": 36.1,
+    "MA": 2.418,
+    "tau_stall_Nm": 25.63,
+    "tau_cont_Nm": 12.81
+   },
+   {
+    "E": 35.0,
+    "theta": -73.4,
+    "mu": 71.3,
+    "nu": 38.4,
+    "MA": 2.369,
+    "tau_stall_Nm": 25.11,
+    "tau_cont_Nm": 12.55
+   },
+   {
+    "E": 40.0,
+    "theta": -85.0,
+    "mu": 75.1,
+    "nu": 41.3,
+    "MA": 2.278,
+    "tau_stall_Nm": 24.14,
+    "tau_cont_Nm": 12.07
+   },
+   {
+    "E": 45.0,
+    "theta": -96.1,
+    "mu": 77.9,
+    "nu": 44.5,
+    "MA": 2.167,
+    "tau_stall_Nm": 22.97,
+    "tau_cont_Nm": 11.49
+   },
+   {
+    "E": 50.0,
+    "theta": -106.7,
+    "mu": 79.8,
+    "nu": 48.2,
+    "MA": 2.053,
+    "tau_stall_Nm": 21.76,
+    "tau_cont_Nm": 10.88
+   },
+   {
+    "E": 55.0,
+    "theta": -116.7,
+    "mu": 80.9,
+    "nu": 52.1,
+    "MA": 1.945,
+    "tau_stall_Nm": 20.62,
+    "tau_cont_Nm": 10.31
+   },
+   {
+    "E": 60.0,
+    "theta": -126.2,
+    "mu": 81.2,
+    "nu": 56.3,
+    "MA": 1.847,
+    "tau_stall_Nm": 19.58,
+    "tau_cont_Nm": 9.79
+   },
+   {
+    "E": 65.0,
+    "theta": -135.2,
+    "mu": 80.9,
+    "nu": 60.6,
+    "MA": 1.761,
+    "tau_stall_Nm": 18.67,
+    "tau_cont_Nm": 9.34
+   },
+   {
+    "E": 70.0,
+    "theta": -143.8,
+    "mu": 80.0,
+    "nu": 65.1,
+    "MA": 1.687,
+    "tau_stall_Nm": 17.89,
+    "tau_cont_Nm": 8.94
+   },
+   {
+    "E": 75.0,
+    "theta": -152.1,
+    "mu": 78.6,
+    "nu": 69.8,
+    "MA": 1.624,
+    "tau_stall_Nm": 17.22,
+    "tau_cont_Nm": 8.61
+   },
+   {
+    "E": 80.0,
+    "theta": -160.0,
+    "mu": 76.9,
+    "nu": 74.5,
+    "MA": 1.571,
+    "tau_stall_Nm": 16.65,
+    "tau_cont_Nm": 8.32
+   },
+   {
+    "E": 85.0,
+    "theta": -167.8,
+    "mu": 74.7,
+    "nu": 79.4,
+    "MA": 1.526,
+    "tau_stall_Nm": 16.17,
+    "tau_cont_Nm": 8.09
+   },
+   {
+    "E": 90.0,
+    "theta": -175.3,
+    "mu": 72.3,
+    "nu": 84.3,
+    "MA": 1.488,
+    "tau_stall_Nm": 15.77,
+    "tau_cont_Nm": 7.89
+   },
+   {
+    "E": 95.0,
+    "theta": -182.7,
+    "mu": 69.6,
+    "nu": 89.4,
+    "MA": 1.457,
+    "tau_stall_Nm": 15.45,
+    "tau_cont_Nm": 7.72
+   },
+   {
+    "E": 100.0,
+    "theta": -189.9,
+    "mu": 66.7,
+    "nu": 94.5,
+    "MA": 1.432,
+    "tau_stall_Nm": 15.18,
+    "tau_cont_Nm": 7.59
+   },
+   {
+    "E": 105.0,
+    "theta": -197.0,
+    "mu": 63.6,
+    "nu": 99.7,
+    "MA": 1.412,
+    "tau_stall_Nm": 14.97,
+    "tau_cont_Nm": 7.49
+   },
+   {
+    "E": 110.0,
+    "theta": -204.0,
+    "mu": 60.3,
+    "nu": 105.1,
+    "MA": 1.398,
+    "tau_stall_Nm": 14.82,
+    "tau_cont_Nm": 7.41
+   },
+   {
+    "E": 115.0,
+    "theta": -211.0,
+    "mu": 56.8,
+    "nu": 110.5,
+    "MA": 1.389,
+    "tau_stall_Nm": 14.72,
+    "tau_cont_Nm": 7.36
+   },
+   {
+    "E": 120.0,
+    "theta": -217.9,
+    "mu": 53.1,
+    "nu": 116.1,
+    "MA": 1.385,
+    "tau_stall_Nm": 14.68,
+    "tau_cont_Nm": 7.34
+   },
+   {
+    "E": 125.0,
+    "theta": -224.9,
+    "mu": 49.3,
+    "nu": 121.8,
+    "MA": 1.388,
+    "tau_stall_Nm": 14.71,
+    "tau_cont_Nm": 7.36
+   },
+   {
+    "E": 130.0,
+    "theta": -231.8,
+    "mu": 45.4,
+    "nu": 127.8,
+    "MA": 1.399,
+    "tau_stall_Nm": 14.83,
+    "tau_cont_Nm": 7.42
+   },
+   {
+    "E": 135.0,
+    "theta": -238.9,
+    "mu": 41.2,
+    "nu": 134.0,
+    "MA": 1.423,
+    "tau_stall_Nm": 15.08,
+    "tau_cont_Nm": 7.54
+   },
+   {
+    "E": 140.0,
+    "theta": -246.1,
+    "mu": 36.8,
+    "nu": 140.6,
+    "MA": 1.467,
+    "tau_stall_Nm": 15.55,
+    "tau_cont_Nm": 7.77
+   },
+   {
+    "E": 145.0,
+    "theta": -253.6,
+    "mu": 32.0,
+    "nu": 147.9,
+    "MA": 1.551,
+    "tau_stall_Nm": 16.44,
+    "tau_cont_Nm": 8.22
+   },
+   {
+    "E": 150.0,
+    "theta": -261.8,
+    "mu": 26.7,
+    "nu": 156.4,
+    "MA": 1.714,
+    "tau_stall_Nm": 18.17,
+    "tau_cont_Nm": 9.09
+   }
+  ]
+ },
+ "C_compact_inline": {
+  "params": {
+   "a": 30.09,
+   "b": 38.41,
+   "c": 46.75,
+   "ground_g": 25.8,
+   "ground_dir_deg": 177.24,
+   "lever_beta_deg": -165.82,
+   "branch": 1,
+   "motor_orient": 0
+  },
+  "O2_xz": [
+   1.24,
+   -25.77
+  ],
+  "violation": 0.0,
+  "feasible": true,
+  "crank_travel_soft_deg": 254.8,
+  "crank_travel_hard_deg": 269.3,
+  "mu_soft": [
+   32.0,
+   81.4
+  ],
+  "mu_hard": [
+   26.7,
+   81.4
+  ],
+  "nu_hard": [
+   32.9,
+   156.4
+  ],
+  "MA_soft": {
+   "min": 1.385,
+   "mean": 1.755,
+   "max": 2.452
+  },
+  "E_at_MA_min": 120.0,
+  "MA_at": {
+   "E0": 1.385,
+   "E145": 1.551
+  },
+  "torque_available_Nm": {
+   "stall_min": 14.68,
+   "cont_min": 7.34,
+   "stall_E0": 14.68,
+   "stall_E145": 16.44
+  },
+  "SF_vs_required": {
+   "stall_min": 5.26,
+   "cont_min": 2.63
+  },
+  "table": [
+   {
+    "E": -5.0,
+    "theta": 6.3,
+    "mu": 28.6,
+    "nu": 40.2,
+    "MA": 1.177,
+    "tau_stall_Nm": 12.47,
+    "tau_cont_Nm": 6.24
+   },
+   {
+    "E": 0.0,
+    "theta": 0.0,
+    "mu": 32.8,
+    "nu": 37.4,
+    "MA": 1.385,
+    "tau_stall_Nm": 14.68,
+    "tau_cont_Nm": 7.34
+   },
+   {
+    "E": 5.0,
+    "theta": -7.6,
+    "mu": 37.5,
+    "nu": 35.2,
+    "MA": 1.642,
+    "tau_stall_Nm": 17.41,
+    "tau_cont_Nm": 8.71
+   },
+   {
+    "E": 10.0,
+    "theta": -16.4,
+    "mu": 42.9,
+    "nu": 33.7,
+    "MA": 1.908,
+    "tau_stall_Nm": 20.23,
+    "tau_cont_Nm": 10.11
+   },
+   {
+    "E": 15.0,
+    "theta": -26.6,
+    "mu": 48.8,
+    "nu": 32.9,
+    "MA": 2.151,
+    "tau_stall_Nm": 22.8,
+    "tau_cont_Nm": 11.4
+   },
+   {
+    "E": 20.0,
+    "theta": -37.8,
+    "mu": 55.0,
+    "nu": 33.0,
+    "MA": 2.334,
+    "tau_stall_Nm": 24.74,
+    "tau_cont_Nm": 12.37
+   },
+   {
+    "E": 25.0,
+    "theta": -49.8,
+    "mu": 61.0,
+    "nu": 33.9,
+    "MA": 2.434,
+    "tau_stall_Nm": 25.8,
+    "tau_cont_Nm": 12.9
+   },
+   {
+    "E": 30.0,
+    "theta": -62.0,
+    "mu": 66.6,
+    "nu": 35.6,
+    "MA": 2.448,
+    "tau_stall_Nm": 25.95,
+    "tau_cont_Nm": 12.97
+   },
+   {
+    "E": 35.0,
+    "theta": -74.2,
+    "mu": 71.3,
+    "nu": 38.0,
+    "MA": 2.394,
+    "tau_stall_Nm": 25.37,
+    "tau_cont_Nm": 12.69
+   },
+   {
+    "E": 40.0,
+    "theta": -85.9,
+    "mu": 75.2,
+    "nu": 40.8,
+    "MA": 2.297,
+    "tau_stall_Nm": 24.35,
+    "tau_cont_Nm": 12.18
+   },
+   {
+    "E": 45.0,
+    "theta": -97.1,
+    "mu": 78.1,
+    "nu": 44.2,
+    "MA": 2.182,
+    "tau_stall_Nm": 23.13,
+    "tau_cont_Nm": 11.56
+   },
+   {
+    "E": 50.0,
+    "theta": -107.7,
+    "mu": 80.0,
+    "nu": 47.9,
+    "MA": 2.064,
+    "tau_stall_Nm": 21.88,
+    "tau_cont_Nm": 10.94
+   },
+   {
+    "E": 55.0,
+    "theta": -117.8,
+    "mu": 81.1,
+    "nu": 51.8,
+    "MA": 1.953,
+    "tau_stall_Nm": 20.7,
+    "tau_cont_Nm": 10.35
+   },
+   {
+    "E": 60.0,
+    "theta": -127.3,
+    "mu": 81.4,
+    "nu": 56.0,
+    "MA": 1.853,
+    "tau_stall_Nm": 19.64,
+    "tau_cont_Nm": 9.82
+   },
+   {
+    "E": 65.0,
+    "theta": -136.3,
+    "mu": 81.0,
+    "nu": 60.4,
+    "MA": 1.765,
+    "tau_stall_Nm": 18.71,
+    "tau_cont_Nm": 9.36
+   },
+   {
+    "E": 70.0,
+    "theta": -144.9,
+    "mu": 80.1,
+    "nu": 64.9,
+    "MA": 1.69,
+    "tau_stall_Nm": 17.91,
+    "tau_cont_Nm": 8.96
+   },
+   {
+    "E": 75.0,
+    "theta": -153.2,
+    "mu": 78.7,
+    "nu": 69.6,
+    "MA": 1.626,
+    "tau_stall_Nm": 17.24,
+    "tau_cont_Nm": 8.62
+   },
+   {
+    "E": 80.0,
+    "theta": -161.2,
+    "mu": 77.0,
+    "nu": 74.4,
+    "MA": 1.572,
+    "tau_stall_Nm": 16.66,
+    "tau_cont_Nm": 8.33
+   },
+   {
+    "E": 85.0,
+    "theta": -169.0,
+    "mu": 74.8,
+    "nu": 79.3,
+    "MA": 1.527,
+    "tau_stall_Nm": 16.18,
+    "tau_cont_Nm": 8.09
+   },
+   {
+    "E": 90.0,
+    "theta": -176.5,
+    "mu": 72.4,
+    "nu": 84.2,
+    "MA": 1.489,
+    "tau_stall_Nm": 15.78,
+    "tau_cont_Nm": 7.89
+   },
+   {
+    "E": 95.0,
+    "theta": -183.9,
+    "mu": 69.7,
+    "nu": 89.3,
+    "MA": 1.458,
+    "tau_stall_Nm": 15.45,
+    "tau_cont_Nm": 7.73
+   },
+   {
+    "E": 100.0,
+    "theta": -191.1,
+    "mu": 66.8,
+    "nu": 94.5,
+    "MA": 1.432,
+    "tau_stall_Nm": 15.18,
+    "tau_cont_Nm": 7.59
+   },
+   {
+    "E": 105.0,
+    "theta": -198.2,
+    "mu": 63.6,
+    "nu": 99.7,
+    "MA": 1.413,
+    "tau_stall_Nm": 14.97,
+    "tau_cont_Nm": 7.49
+   },
+   {
+    "E": 110.0,
+    "theta": -205.2,
+    "mu": 60.3,
+    "nu": 105.0,
+    "MA": 1.398,
+    "tau_stall_Nm": 14.82,
+    "tau_cont_Nm": 7.41
+   },
+   {
+    "E": 115.0,
+    "theta": -212.2,
+    "mu": 56.8,
+    "nu": 110.5,
+    "MA": 1.389,
+    "tau_stall_Nm": 14.72,
+    "tau_cont_Nm": 7.36
+   },
+   {
+    "E": 120.0,
+    "theta": -219.1,
+    "mu": 53.2,
+    "nu": 116.1,
+    "MA": 1.385,
+    "tau_stall_Nm": 14.68,
+    "tau_cont_Nm": 7.34
+   },
+   {
+    "E": 125.0,
+    "theta": -226.0,
+    "mu": 49.3,
+    "nu": 121.8,
+    "MA": 1.388,
+    "tau_stall_Nm": 14.71,
+    "tau_cont_Nm": 7.35
+   },
+   {
+    "E": 130.0,
+    "theta": -233.0,
+    "mu": 45.4,
+    "nu": 127.8,
+    "MA": 1.399,
+    "tau_stall_Nm": 14.83,
+    "tau_cont_Nm": 7.42
+   },
+   {
+    "E": 135.0,
+    "theta": -240.1,
+    "mu": 41.2,
+    "nu": 134.0,
+    "MA": 1.423,
+    "tau_stall_Nm": 15.08,
+    "tau_cont_Nm": 7.54
+   },
+   {
+    "E": 140.0,
+    "theta": -247.3,
+    "mu": 36.8,
+    "nu": 140.6,
+    "MA": 1.467,
+    "tau_stall_Nm": 15.55,
+    "tau_cont_Nm": 7.77
+   },
+   {
+    "E": 145.0,
+    "theta": -254.8,
+    "mu": 32.0,
+    "nu": 147.9,
+    "MA": 1.551,
+    "tau_stall_Nm": 16.44,
+    "tau_cont_Nm": 8.22
+   },
+   {
+    "E": 150.0,
+    "theta": -262.9,
+    "mu": 26.7,
+    "nu": 156.4,
+    "MA": 1.714,
+    "tau_stall_Nm": 18.16,
+    "tau_cont_Nm": 9.08
+   }
+  ]
+ }
+}
