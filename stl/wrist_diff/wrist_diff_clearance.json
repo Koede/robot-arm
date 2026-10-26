@@ -1,0 +1,356 @@
+{
+ "417_sv22": {
+  "as_is": {
+   "worst_min_dist": {
+    "carrier_ring": 4.842157244264882,
+    "pinions": 0.748650757053507,
+    "hand_bracket": 0.0,
+    "hand": 1.8930839162671427
+   },
+   "n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 36,
+    "hand": 0
+   },
+   "n": 54,
+   "vs_servos_min_dist": {
+    "carrier_ring": 1.1499999999999986,
+    "pinions": 0.0,
+    "hand_bracket": 0.0,
+    "hand": -1.6540742232137884
+   },
+   "vs_servos_n_collide": {
+    "carrier_ring": 0,
+    "pinions": 36,
+    "hand_bracket": 42,
+    "hand": 1
+   }
+  },
+  "tube_cut_at_z387": {
+   "worst_min_dist": {
+    "carrier_ring": 5.7556474545856595,
+    "pinions": 1.688343377839413,
+    "hand_bracket": 0.0,
+    "hand": 6.650274313625988
+   },
+   "n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 36,
+    "hand": 0
+   },
+   "n": 54,
+   "vs_servos_min_dist": {
+    "carrier_ring": 1.1499999999999986,
+    "pinions": 0.0,
+    "hand_bracket": 0.0,
+    "hand": -1.6540742232137884
+   },
+   "vs_servos_n_collide": {
+    "carrier_ring": 0,
+    "pinions": 36,
+    "hand_bracket": 42,
+    "hand": 1
+   }
+  },
+  "tube_cut_at_z372": {
+   "worst_min_dist": {
+    "carrier_ring": 19.598504867859308,
+    "pinions": 16.502238375212013,
+    "hand_bracket": 2.9799263532735267,
+    "hand": 21.082797937737478
+   },
+   "n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 0,
+    "hand": 0
+   },
+   "n": 54,
+   "vs_servos_min_dist": {
+    "carrier_ring": 1.1499999999999986,
+    "pinions": 0.0,
+    "hand_bracket": 0.0,
+    "hand": -1.6540742232137884
+   },
+   "vs_servos_n_collide": {
+    "carrier_ring": 0,
+    "pinions": 36,
+    "hand_bracket": 42,
+    "hand": 1
+   }
+  },
+  "tube_cut_at_z365": {
+   "worst_min_dist": {
+    "carrier_ring": 26.244908830481073,
+    "pinions": 23.14830078237263,
+    "hand_bracket": 10.082578214688803,
+    "hand": 29.336633769623152
+   },
+   "n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 0,
+    "hand": 0
+   },
+   "n": 54,
+   "vs_servos_min_dist": {
+    "carrier_ring": 1.1499999999999986,
+    "pinions": 0.0,
+    "hand_bracket": 0.0,
+    "hand": -1.6540742232137884
+   },
+   "vs_servos_n_collide": {
+    "carrier_ring": 0,
+    "pinions": 36,
+    "hand_bracket": 42,
+    "hand": 1
+   }
+  },
+  "static_overlap_with_as_is_tube": {
+   "side_gear_A": 0.0,
+   "side_gear_B": 0.0,
+   "carrier_ring": 4.870561498549079,
+   "pinions": 9.732233047033617,
+   "hand_bracket": 11.435781478881836,
+   "servos": 0.0
+  }
+ },
+ "417_sv45": {
+  "as_is": {
+   "worst_min_dist": {
+    "carrier_ring": 4.842157244264882,
+    "pinions": 0.748650757053507,
+    "hand_bracket": 0.0,
+    "hand": 1.8930839162671427
+   },
+   "n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 36,
+    "hand": 0
+   },
+   "n": 54,
+   "vs_servos_min_dist": {
+    "carrier_ring": 18.03830179701689,
+    "pinions": 15.225219390574317,
+    "hand_bracket": 2.9799263532735267,
+    "hand": 21.016299358829045
+   },
+   "vs_servos_n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 0,
+    "hand": 0
+   }
+  },
+  "tube_cut_at_z387": {
+   "worst_min_dist": {
+    "carrier_ring": 5.7556474545856595,
+    "pinions": 1.688343377839413,
+    "hand_bracket": 0.0,
+    "hand": 6.650274313625988
+   },
+   "n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 36,
+    "hand": 0
+   },
+   "n": 54,
+   "vs_servos_min_dist": {
+    "carrier_ring": 18.03830179701689,
+    "pinions": 15.225219390574317,
+    "hand_bracket": 2.9799263532735267,
+    "hand": 21.016299358829045
+   },
+   "vs_servos_n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 0,
+    "hand": 0
+   }
+  },
+  "tube_cut_at_z372": {
+   "worst_min_dist": {
+    "carrier_ring": 19.598504867859308,
+    "pinions": 16.502238375212013,
+    "hand_bracket": 2.9799263532735267,
+    "hand": 21.082797937737478
+   },
+   "n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 0,
+    "hand": 0
+   },
+   "n": 54,
+   "vs_servos_min_dist": {
+    "carrier_ring": 18.03830179701689,
+    "pinions": 15.225219390574317,
+    "hand_bracket": 2.9799263532735267,
+    "hand": 21.016299358829045
+   },
+   "vs_servos_n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 0,
+    "hand": 0
+   }
+  },
+  "tube_cut_at_z365": {
+   "worst_min_dist": {
+    "carrier_ring": 26.244908830481073,
+    "pinions": 23.14830078237263,
+    "hand_bracket": 10.082578214688803,
+    "hand": 29.336633769623152
+   },
+   "n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 0,
+    "hand": 0
+   },
+   "n": 54,
+   "vs_servos_min_dist": {
+    "carrier_ring": 18.03830179701689,
+    "pinions": 15.225219390574317,
+    "hand_bracket": 2.9799263532735267,
+    "hand": 21.016299358829045
+   },
+   "vs_servos_n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 0,
+    "hand": 0
+   }
+  },
+  "static_overlap_with_as_is_tube": {
+   "side_gear_A": 0.0,
+   "side_gear_B": 0.0,
+   "carrier_ring": 4.870561498549079,
+   "pinions": 9.732233047033617,
+   "hand_bracket": 11.435781478881836,
+   "servos": 0.0
+  }
+ },
+ "417_sv52": {
+  "as_is": {
+   "worst_min_dist": {
+    "carrier_ring": 4.842157244264882,
+    "pinions": 0.748650757053507,
+    "hand_bracket": 0.0,
+    "hand": 1.8930839162671427
+   },
+   "n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 36,
+    "hand": 0
+   },
+   "n": 54,
+   "vs_servos_min_dist": {
+    "carrier_ring": 25.028040690997088,
+    "pinions": 21.875524947053226,
+    "hand_bracket": 9.979926353273527,
+    "hand": 27.915978275102947
+   },
+   "vs_servos_n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 0,
+    "hand": 0
+   }
+  },
+  "tube_cut_at_z387": {
+   "worst_min_dist": {
+    "carrier_ring": 5.7556474545856595,
+    "pinions": 1.688343377839413,
+    "hand_bracket": 0.0,
+    "hand": 6.650274313625988
+   },
+   "n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 36,
+    "hand": 0
+   },
+   "n": 54,
+   "vs_servos_min_dist": {
+    "carrier_ring": 25.028040690997088,
+    "pinions": 21.875524947053226,
+    "hand_bracket": 9.979926353273527,
+    "hand": 27.915978275102947
+   },
+   "vs_servos_n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 0,
+    "hand": 0
+   }
+  },
+  "tube_cut_at_z372": {
+   "worst_min_dist": {
+    "carrier_ring": 19.598504867859308,
+    "pinions": 16.502238375212013,
+    "hand_bracket": 2.9799263532735267,
+    "hand": 21.082797937737478
+   },
+   "n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 0,
+    "hand": 0
+   },
+   "n": 54,
+   "vs_servos_min_dist": {
+    "carrier_ring": 25.028040690997088,
+    "pinions": 21.875524947053226,
+    "hand_bracket": 9.979926353273527,
+    "hand": 27.915978275102947
+   },
+   "vs_servos_n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 0,
+    "hand": 0
+   }
+  },
+  "tube_cut_at_z365": {
+   "worst_min_dist": {
+    "carrier_ring": 26.244908830481073,
+    "pinions": 23.14830078237263,
+    "hand_bracket": 10.082578214688803,
+    "hand": 29.336633769623152
+   },
+   "n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 0,
+    "hand": 0
+   },
+   "n": 54,
+   "vs_servos_min_dist": {
+    "carrier_ring": 25.028040690997088,
+    "pinions": 21.875524947053226,
+    "hand_bracket": 9.979926353273527,
+    "hand": 27.915978275102947
+   },
+   "vs_servos_n_collide": {
+    "carrier_ring": 0,
+    "pinions": 0,
+    "hand_bracket": 0,
+    "hand": 0
+   }
+  },
+  "static_overlap_with_as_is_tube": {
+   "side_gear_A": 0.0,
+   "side_gear_B": 0.0,
+   "carrier_ring": 4.870561498549079,
+   "pinions": 9.732233047033617,
+   "hand_bracket": 11.435781478881836,
+   "servos": 0.0
+  }
+ }
+}
