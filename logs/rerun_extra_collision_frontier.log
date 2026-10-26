@@ -1,0 +1,20 @@
+grid {'S1': 9, 'S2': 8, 'S3': 6, 'E': 8} poses 3456 | non-adjacent ordered pairs: 42
+ 200 poses 17s
+ 400 poses 34s
+ 600 poses 51s
+ 800 poses 67s
+ 1000 poses 85s
+ 1200 poses 102s
+ 1400 poses 119s
+ 1600 poses 136s
+ 1800 poses 154s
+ 2000 poses 171s
+ 2200 poses 188s
+ 2400 poses 205s
+ 2600 poses 222s
+ 2800 poses 239s
+ 3000 poses 257s
+ 3200 poses 274s
+ 3400 poses 292s
+{'n_poses': 3456, 'n_contact': 124, 'n_free': 3332, 'n_free_reachable': 3332, 'n_free_unreachable': 0, 'n_frontier': 121, 'n_deep_dropped': 3}
+by pair: {'F-ME': {'all_contact': 1, 'frontier': 1}, 'F-MW1': {'all_contact': 5, 'frontier': 4}, 'F-MW2': {'all_contact': 15, 'frontier': 13}, 'F-MW3': {'all_contact': 28, 'frontier': 28}, 'M1-MW2': {'all_contact': 63, 'frontier': 63}, 'M1-MW3': {'all_contact': 9, 'frontier': 9}, 'MW3-F': {'all_contact': 3, 'frontier': 3}}

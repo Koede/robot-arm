@@ -1,0 +1,1 @@
+{'grid_poses': 3456, 'ordered_pairs': 42, 'queries_grid': 145152, 'queries_separable': 32262, 'reduction': 4.5, 'contact_mask_identical': True, 'max_abs_D_diff_mm': 0.0, 'n_contact': 124, 'n_frontier': 121, 'time_s': 91.4}

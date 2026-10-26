@@ -1,1 +1,10 @@
 bases: 4 original + 30 random legal
+W2 anchors after swept keep-out (>= r + 2.0): (227900, 186055) -> (19764, 13300)
+W2 bundle {'area_mm2': 5.25, 'od_mm': 3.29, 'n_wires': 3, 'split': 1} Rmin 13.2 anchors 19764 13300
+ tried 25 good 0 142s
+ tried 50 good 0 477s
+ tried 75 good 0 670s
+ tried 100 good 0 818s
+ tried 125 good 0 958s
+ tried 150 good 0 2291s
+W2 found 0

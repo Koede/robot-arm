@@ -1,0 +1,2 @@
+POE vs arm_kin.frames max |dT| over 300 soft-range poses: 1.71e-13
+{'poses': 3456, 'pairs': 42, 'queries_screw': 63892, 'queries_grid': 145152, 'kin_poe_max_err': 1.7053025658242404e-13, 'contact_mask_identical': True, 'n_contact': 124, 'n_contact_ref': 124, 'n_frontier': 121, 'mismatch_cells': 0, 'time_s': 228.4, 'frontier_edges': 280}

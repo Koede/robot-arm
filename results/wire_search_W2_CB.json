@@ -1,0 +1,15 @@
+{
+ "joint": "W2",
+ "bundle": {
+  "area_mm2": 5.25,
+  "od_mm": 3.29,
+  "n_wires": 3,
+  "split": 1
+ },
+ "k": 4.0,
+ "kind": "ultra",
+ "Rmin": 13.2,
+ "tried": 157,
+ "found": [],
+ "bases": 34
+}

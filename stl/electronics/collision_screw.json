@@ -1,0 +1,354 @@
+{
+ "poses": 3456,
+ "pairs": 42,
+ "queries_screw": 63892,
+ "queries_grid": 145152,
+ "kin_poe_max_err": 1.7053025658242404e-13,
+ "contact_mask_identical": true,
+ "n_contact": 124,
+ "n_contact_ref": 124,
+ "n_frontier": 121,
+ "mismatch_cells": 0,
+ "time_s": 228.4,
+ "per_pair": {
+  "F-M2": {
+   "joints": [
+    "S1",
+    "S2"
+   ],
+   "evals": 143,
+   "cells": 72
+  },
+  "F-M3": {
+   "joints": [
+    "S1",
+    "S2",
+    "S3"
+   ],
+   "evals": 863,
+   "cells": 432
+  },
+  "F-ME": {
+   "joints": [
+    "S1",
+    "S2",
+    "S3",
+    "E"
+   ],
+   "evals": 6911,
+   "cells": 3456
+  },
+  "F-MW1": {
+   "joints": [
+    "S1",
+    "S2",
+    "S3",
+    "E"
+   ],
+   "evals": 6911,
+   "cells": 3456
+  },
+  "F-MW2": {
+   "joints": [
+    "S1",
+    "S2",
+    "S3",
+    "E"
+   ],
+   "evals": 6911,
+   "cells": 3456
+  },
+  "F-MW3": {
+   "joints": [
+    "S1",
+    "S2",
+    "S3",
+    "E"
+   ],
+   "evals": 6911,
+   "cells": 3456
+  },
+  "M1-M3": {
+   "joints": [
+    "S2",
+    "S3"
+   ],
+   "evals": 95,
+   "cells": 48
+  },
+  "M1-ME": {
+   "joints": [
+    "S2",
+    "S3",
+    "E"
+   ],
+   "evals": 767,
+   "cells": 384
+  },
+  "M1-MW1": {
+   "joints": [
+    "S2",
+    "S3",
+    "E"
+   ],
+   "evals": 767,
+   "cells": 384
+  },
+  "M1-MW2": {
+   "joints": [
+    "S2",
+    "S3",
+    "E"
+   ],
+   "evals": 767,
+   "cells": 384
+  },
+  "M1-MW3": {
+   "joints": [
+    "S2",
+    "S3",
+    "E"
+   ],
+   "evals": 767,
+   "cells": 384
+  },
+  "M2-F": {
+   "joints": [
+    "S1",
+    "S2"
+   ],
+   "evals": 143,
+   "cells": 72
+  },
+  "M2-ME": {
+   "joints": [
+    "S3",
+    "E"
+   ],
+   "evals": 95,
+   "cells": 48
+  },
+  "M2-MW1": {
+   "joints": [
+    "S3",
+    "E"
+   ],
+   "evals": 95,
+   "cells": 48
+  },
+  "M2-MW2": {
+   "joints": [
+    "S3",
+    "E"
+   ],
+   "evals": 95,
+   "cells": 48
+  },
+  "M2-MW3": {
+   "joints": [
+    "S3",
+    "E"
+   ],
+   "evals": 95,
+   "cells": 48
+  },
+  "M3-F": {
+   "joints": [
+    "S1",
+    "S2",
+    "S3"
+   ],
+   "evals": 857,
+   "cells": 432
+  },
+  "M3-M1": {
+   "joints": [
+    "S2",
+    "S3"
+   ],
+   "evals": 91,
+   "cells": 48
+  },
+  "M3-MW1": {
+   "joints": [
+    "E"
+   ],
+   "evals": 15,
+   "cells": 8
+  },
+  "M3-MW2": {
+   "joints": [
+    "E"
+   ],
+   "evals": 15,
+   "cells": 8
+  },
+  "M3-MW3": {
+   "joints": [
+    "E"
+   ],
+   "evals": 15,
+   "cells": 8
+  },
+  "ME-F": {
+   "joints": [
+    "S1",
+    "S2",
+    "S3",
+    "E"
+   ],
+   "evals": 6825,
+   "cells": 3456
+  },
+  "ME-M1": {
+   "joints": [
+    "S2",
+    "S3",
+    "E"
+   ],
+   "evals": 767,
+   "cells": 384
+  },
+  "ME-M2": {
+   "joints": [
+    "S3",
+    "E"
+   ],
+   "evals": 95,
+   "cells": 48
+  },
+  "ME-MW2": {
+   "joints": [],
+   "evals": 1,
+   "cells": 1
+  },
+  "ME-MW3": {
+   "joints": [],
+   "evals": 1,
+   "cells": 1
+  },
+  "MW1-F": {
+   "joints": [
+    "S1",
+    "S2",
+    "S3",
+    "E"
+   ],
+   "evals": 6655,
+   "cells": 3456
+  },
+  "MW1-M1": {
+   "joints": [
+    "S2",
+    "S3",
+    "E"
+   ],
+   "evals": 767,
+   "cells": 384
+  },
+  "MW1-M2": {
+   "joints": [
+    "S3",
+    "E"
+   ],
+   "evals": 95,
+   "cells": 48
+  },
+  "MW1-M3": {
+   "joints": [
+    "E"
+   ],
+   "evals": 15,
+   "cells": 8
+  },
+  "MW1-MW3": {
+   "joints": [],
+   "evals": 1,
+   "cells": 1
+  },
+  "MW2-F": {
+   "joints": [
+    "S1",
+    "S2",
+    "S3",
+    "E"
+   ],
+   "evals": 6673,
+   "cells": 3456
+  },
+  "MW2-M1": {
+   "joints": [
+    "S2",
+    "S3",
+    "E"
+   ],
+   "evals": 767,
+   "cells": 384
+  },
+  "MW2-M2": {
+   "joints": [
+    "S3",
+    "E"
+   ],
+   "evals": 95,
+   "cells": 48
+  },
+  "MW2-M3": {
+   "joints": [
+    "E"
+   ],
+   "evals": 15,
+   "cells": 8
+  },
+  "MW2-ME": {
+   "joints": [],
+   "evals": 1,
+   "cells": 1
+  },
+  "MW3-F": {
+   "joints": [
+    "S1",
+    "S2",
+    "S3",
+    "E"
+   ],
+   "evals": 6911,
+   "cells": 3456
+  },
+  "MW3-M1": {
+   "joints": [
+    "S2",
+    "S3",
+    "E"
+   ],
+   "evals": 767,
+   "cells": 384
+  },
+  "MW3-M2": {
+   "joints": [
+    "S3",
+    "E"
+   ],
+   "evals": 95,
+   "cells": 48
+  },
+  "MW3-M3": {
+   "joints": [
+    "E"
+   ],
+   "evals": 15,
+   "cells": 8
+  },
+  "MW3-ME": {
+   "joints": [],
+   "evals": 1,
+   "cells": 1
+  },
+  "MW3-MW1": {
+   "joints": [],
+   "evals": 1,
+   "cells": 1
+  }
+ },
+ "frontier_edges": 280
+}

@@ -4,3 +4,14 @@ stage1 exit 0
 stage2 exit 0
 [2026-10-26T20:02:10Z] stage 3: sweeps + wire search
 [2026-10-26T20:26:55Z] stage 3 (restart): sweeps + wire search
+stage3 exit 0
+[2026-10-26T21:12:10Z] ALL STAGES FINISHED
+[2026-10-26T21:12:10Z] collision_frontier
+collision_frontier exit 0
+[2026-10-26T21:17:10Z] collision_separable
+collision_separable exit 0
+[2026-10-26T21:18:45Z] collision_screw
+collision_screw exit 0
+[2026-10-26T21:22:37Z] verify_balancer
+verify_balancer exit 0
+[2026-10-26T21:30:26Z] EXTRAS FINISHED
