@@ -1,0 +1,76 @@
+name: rerun-heavy-jobs
+
+# Runs run_all_local.py (harness rebuild, SDF cache, sweeps, wire searches, collision checks, balancer check, wrist re-search)
+# on a GitHub runner. Triggers: a push that touches this file or run_all_local.py on the branch below, or a manual dispatch.
+# Results are uploaded as an artifact and pushed to a new branch ci-results/run-<id> (this workflow never touches other branches).
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/friendly-euler-59spol]
+    paths:
+      - ".github/workflows/rerun.yml"
+      - "run_all_local.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rerun-heavy-jobs
+  cancel-in-progress: true
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: System libraries for CadQuery / OCP
+        run: sudo apt-get update && sudo apt-get install -y libgl1 libglu1-mesa libxrender1 libxext6
+
+      - name: Run all heavy jobs
+        run: python run_all_local.py --setup --jobs "$(nproc)"
+
+      - name: Summary
+        if: always()
+        run: |
+          echo '### run_all_local.py driver log' >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          cat logs/local_driver.log >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || echo 'no driver log' >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: results-${{ github.run_id }}
+          if-no-files-found: warn
+          path: |
+            results
+            logs
+            stl/electronics/*.json
+            stl/sweep_full*.json
+            stl/sweep_harness_worst*.json
+            stl/elbow_limits_15mm*.json
+            stl/balancer/verify_balancer.json
+            stl/wrist_parallel/kin_local.json
+
+      - name: Push results to a new branch
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout -b "ci-results/run-${{ github.run_id }}"
+          git add -f results logs || true
+          for g in 'stl/electronics/*.json' 'stl/sweep_full*.json' 'stl/sweep_harness_worst*.json' 'stl/elbow_limits_15mm*.json' \
+                   'stl/balancer/verify_balancer.json' 'stl/wrist_parallel/kin_local.json'; do
+            git add -f $g 2>/dev/null || true
+          done
+          git commit -m "CI results for run ${{ github.run_id }}" || echo "nothing to commit"
+          git push origin HEAD
