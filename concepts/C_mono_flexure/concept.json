@@ -1,0 +1,92 @@
+{
+ "geometries": {
+  "PA12": {
+   "circular_notch": {
+    "k_Nm_per_deg": 0.01508,
+    "eps_pct_at_30deg": 11.98,
+    "theta_max_SF2_deg": 3.8,
+    "parasitic_shift_mm": 0.22,
+    "roll_stiff_Nm_per_deg": 0.0075,
+    "roll_deflection_deg_at_0p35Nm": 46.6,
+    "fatigue_cycles_1e6_at_30deg": 0.0004,
+    "strain_vs_static_limit": "11.98 % vs 3 %"
+   },
+   "elliptical_notch": {
+    "k_Nm_per_deg": 0.00754,
+    "eps_pct_at_30deg": 4.99,
+    "theta_max_SF2_deg": 9.0,
+    "parasitic_shift_mm": 0.44,
+    "roll_stiff_Nm_per_deg": 0.0038,
+    "roll_deflection_deg_at_0p35Nm": 93.2,
+    "fatigue_cycles_1e6_at_30deg": 0.44,
+    "strain_vs_static_limit": "4.99 % vs 3 %"
+   },
+   "cross_strip": {
+    "k_Nm_per_deg": 0.00141,
+    "eps_pct_at_30deg": 0.76,
+    "theta_max_SF2_deg": 58.9,
+    "parasitic_shift_mm": 0.97,
+    "buckling_SF": 4.8,
+    "payload_tip_defl_mm": 0.49,
+    "plate_buckling_SF": 1.49,
+    "roll_stiff_Nm_per_deg": 0.454,
+    "roll_deflection_deg_at_0p35Nm": 0.77,
+    "fatigue_cycles_1e6_at_30deg": 1500000.0,
+    "strain_vs_static_limit": "0.76 % vs 3 %"
+   }
+  },
+  "PA_CF": {
+   "circular_notch": {
+    "k_Nm_per_deg": 0.03549,
+    "eps_pct_at_30deg": 11.98,
+    "theta_max_SF2_deg": 1.3,
+    "parasitic_shift_mm": 0.22,
+    "roll_stiff_Nm_per_deg": 0.0182,
+    "roll_deflection_deg_at_0p35Nm": 19.3,
+    "fatigue_cycles_1e6_at_30deg": 1.5e-07,
+    "strain_vs_static_limit": "11.98 % vs 1 %"
+   },
+   "elliptical_notch": {
+    "k_Nm_per_deg": 0.01774,
+    "eps_pct_at_30deg": 4.99,
+    "theta_max_SF2_deg": 3.0,
+    "parasitic_shift_mm": 0.44,
+    "roll_stiff_Nm_per_deg": 0.0091,
+    "roll_deflection_deg_at_0p35Nm": 38.5,
+    "fatigue_cycles_1e6_at_30deg": 0.00017,
+    "strain_vs_static_limit": "4.99 % vs 1 %"
+   },
+   "cross_strip": {
+    "k_Nm_per_deg": 0.00088,
+    "eps_pct_at_30deg": 0.49,
+    "theta_max_SF2_deg": 30.6,
+    "parasitic_shift_mm": 0.97,
+    "buckling_SF": 3.0,
+    "payload_tip_defl_mm": 0.33,
+    "plate_buckling_SF": 0.93,
+    "roll_stiff_Nm_per_deg": 0.707,
+    "roll_deflection_deg_at_0p35Nm": 0.5,
+    "fatigue_cycles_1e6_at_30deg": 20000.0,
+    "strain_vs_static_limit": "0.49 % vs 1 %"
+   }
+  }
+ },
+ "loads": {
+  "M_tip_Nm_2g": 1.96,
+  "axial_N_2g": 19.6,
+  "crank_r_mm": 15,
+  "rod_lug_radius_mm": 39,
+  "mech_adv": 2.6,
+  "servo_deg_for_30deg_hand": 78.0,
+  "w3_torque_available_Nm": 7.6
+ },
+ "assumptions": "eps_end (1e6 cycles) PA12 0.8 %, PA-CF 0.3 %, slope k=8: ASSUMED; Kt fits assumed; notch strain via Euler-Bernoulli integral; cross-strip PRBM shift; MJF/SLS PA12 (0.45-0.7 mm strips); FDM PA-CF cannot print 0.45 mm strips reliably.",
+ "correction_for_parent_v2": {
+  "note": "wrist_rotary.py flexure leaves: the in-plane dimension perpendicular to x (12 mm) is the beam length L, the x extent (8 mm) is the width b (I had them swapped in verify_wrist_rotary.py).",
+  "corrected": {
+   "k_Nm_per_deg": 0.00037,
+   "strain_pct_35deg": 0.255,
+   "buckling_per_leaf_N": 34.7
+  }
+ }
+}

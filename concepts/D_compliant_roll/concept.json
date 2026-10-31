@@ -1,0 +1,80 @@
+{
+ "D1_helical_tube": {
+  "material": "PA-CF",
+  "wall_mm": 2.0,
+  "mean_dia_mm": 28.0,
+  "pitch_mm": 3.3,
+  "slit_mm": 0.6,
+  "active_turns": 6.0,
+  "wire_len_mm": 528.0,
+  "twist_stiff_Nm_per_deg": 0.00036,
+  "torque_for_35deg_Nm": 0.0125,
+  "twist_strain_pct_35deg": 0.116,
+  "bending_stiff_Nm_per_deg": 0.00082,
+  "tilt_under_payload_1p96Nm_deg": 2384.0,
+  "axial_stiff_N_per_mm": 0.085,
+  "axial_sag_under_20N_mm": 230.0,
+  "euler_buckling_N": 11.75,
+  "chuck_0p35Nm_twist_deg": 980.0,
+  "axial_shortening_under_35deg_twist_mm": "~0 (pure wire bending, 2nd order; coil diameter shrinks ~1.6 % instead = 0.45 mm)",
+  "verdict": "FAILS: bending only 2.3x stiffer than twist (tilts 2384 deg under payload), axial sag 230 mm / Euler buckling 11.8 N < 19.6 N load"
+ },
+ "D2_radial_fins": {
+  "material": "spring steel 0.1 x 3 radial fins, 16 around r 14, length 19.8",
+  "twist_stiff_Nm_per_deg": 0.00402,
+  "torque_for_35deg_Nm": 0.141,
+  "twist_strain_pct_35deg": 0.654,
+  "bending_stiff_Nm_per_deg": 78.783,
+  "tilt_under_payload_1p96Nm_deg": 0.02,
+  "axial_stiff_N_per_mm": 46061.0,
+  "axial_sag_under_20N_mm": 0.0004,
+  "axial_shortening_at_35deg_mm": 2.22,
+  "buckling_N": 77.0,
+  "chuck_0p35Nm_twist_deg": 87.1,
+  "bend_to_twist_ratio": 19602.0,
+  "verdict": "PASSES stiffness: bending 19,600x twist, tilt 0.02 deg under 1.96 N.m, axial sag 0.0004 mm, buckling 77 N vs 19.6 N; twist strain 0.65 % at 35 deg is at the spring-steel limit (0.6 % -> +-32 deg); needs 0.141 N.m servo torque; chuck 0.35 N.m would twist it 87 deg so the R servo must hold position (soft in twist by design); axial shortening 2.2 mm at 35 deg (needs a sliding spline or slack)",
+  "twist_range_for_0p6pct_strain_deg": 32.1
+ },
+ "geometry_D1": {
+  "vol_cm3": 3.668,
+  "bbox": [
+   32.0,
+   32.0,
+   19.8
+  ],
+  "watertight_coil_only": true,
+  "mass_g": 4.4
+ },
+ "comparison": {
+  "rigid_stage": {
+   "parts": [
+    "bearing 6808",
+    "rotor",
+    "pinion",
+    "spindle tube",
+    "top bushing",
+    "3 spokes(in rotor)"
+   ],
+   "count": 5,
+   "mass_g": 76.0
+  },
+  "D1_compliant": {
+   "parts": [
+    "helical core",
+    "crank arm",
+    "tendon"
+   ],
+   "count": 3,
+   "mass_g": 7.7
+  },
+  "D2_fins": {
+   "parts": [
+    "16 fins",
+    "2 clamp rings",
+    "crank"
+   ],
+   "count": 4,
+   "mass_g": 9.7
+  }
+ }
+}

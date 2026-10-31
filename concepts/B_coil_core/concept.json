@@ -1,0 +1,105 @@
+{
+ "spring": {
+  "d": 1.5,
+  "OD": 24.0,
+  "mean_D": 22.5,
+  "active_coils": 6,
+  "total_coils": 8,
+  "pitch_assembled": 1.55,
+  "core_height": 12.4,
+  "C_index": 15.0
+ },
+ "k_bend_Nm_per_deg": 0.001809,
+ "k_torsion_spring_Nm_per_deg": 0.002045,
+ "k_axial_open_N_per_mm": 0.734,
+ "axial_note": "open coil carries ~0.7 N/mm: useless as a column. Tendon + payload compression (254 N) is carried by COIL BIND (close-wound, solid-height contact)",
+ "buckling": "L0/Dm = 0.55 < 2.63 (Wahl squat limit, pinned) -> unconditionally stable; solid-wound anyway",
+ "loads": {
+  "M_Nm_2g": 2.94,
+  "tendon_load_side_N": 164.0,
+  "tendon_total_axial_compression_N": 254.0,
+  "servo_capstan_torque_Nm": 0.98,
+  "servo_SF_vs_2p94": 2.99
+ },
+ "tendon": {
+  "material": "Dyneema 0.8 mm (break ~500 N class, vendor PLACEHOLDER)",
+  "SF_break": 3.1,
+  "stiffness_N_per_mm": 714.0,
+  "capstan_turn_for_30deg_deg": 110.0
+ },
+ "wire_stress_30deg": {
+  "bending_MPa": 164.0,
+  "torsion_MPa": 82.0,
+  "vonMises_MPa": 217.0,
+  "music_wire_yield_MPa": 1500
+ },
+ "contact_Hertz_p0_MPa": 579.0,
+ "tip_deflection_2g": {
+  "tendon_stretch_mm": 0.23,
+  "angle_deg": 0.6,
+  "lateral_shear_mm": 1.0,
+  "at_200mm_tip_mm": 3.0,
+  "lateral_stiffness_N_per_mm": 20.5
+ },
+ "twist": {
+  "spring_alone_Nm_per_deg": 0.002045,
+  "tendon_geometric_Nm_per_deg": 0.173,
+  "deg_at_0p35Nm": 2.0
+ },
+ "parts": {
+  "plane_F": {
+   "watertight": true,
+   "vol_cm3": 6.03
+  },
+  "plane_A2": {
+   "watertight": true,
+   "vol_cm3": 8.73
+  },
+  "hub": {
+   "watertight": true,
+   "vol_cm3": 6.964
+  },
+  "coil_spring": {
+   "watertight": true,
+   "vol_cm3": 0.876
+  },
+  "ptfe_liner": {
+   "watertight": true,
+   "vol_cm3": 1.083
+  },
+  "rim_F": {
+   "watertight": true,
+   "vol_cm3": 0.769
+  },
+  "rim_A2": {
+   "watertight": true,
+   "vol_cm3": 0.769
+  },
+  "tendons": {
+   "watertight": true,
+   "vol_cm3": 0.029
+  },
+  "capstan": {
+   "watertight": true,
+   "vol_cm3": 0.904
+  }
+ },
+ "layout": {
+  "plane_F": [
+   489.0,
+   491.0
+  ],
+  "core": [
+   491.0,
+   503.4
+  ],
+  "plane_A2": [
+   503.4,
+   505.4
+  ],
+  "hand_lift_extra_mm": 9.6,
+  "reach_open_mm": 252.6,
+  "virtual_pivot_z": 497.2,
+  "ROM_note": "+-30 deg: outer-side gap opening 6.0 mm over 6 coils (1.00 mm per coil), inner side stays at bind"
+ }
+}

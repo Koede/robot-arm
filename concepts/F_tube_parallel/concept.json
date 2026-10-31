@@ -1,0 +1,128 @@
+{
+ "gap_19.8": {
+  "tilt_x_deg": [
+   -33.0,
+   38.5
+  ],
+  "tilt_y_deg": [
+   -37.0,
+   37.0
+  ],
+  "twist_deg": [
+   -24.0,
+   24.0
+  ],
+  "leg_len_at_0": [
+   19.8,
+   19.8,
+   19.8
+  ],
+  "cond_at_0": 26944387170.61
+ },
+ "gap_29.8_lift10": {
+  "tilt_x_deg": [
+   -22.0,
+   10.5
+  ],
+  "tilt_y_deg": [
+   -12.5,
+   12.5
+  ],
+  "twist_deg": [
+   -36.0,
+   36.0
+  ],
+  "leg_len_at_0": [
+   29.8,
+   29.8,
+   29.8
+  ],
+  "cond_at_0": 26944387170.61
+ },
+ "gap_35.8_lift16": {
+  "tilt_x_deg": [
+   0,
+   0
+  ],
+  "tilt_y_deg": [
+   0,
+   0
+  ],
+  "twist_deg": [
+   0,
+   0
+  ],
+  "leg_len_at_0": [
+   35.8,
+   35.8,
+   35.8
+  ],
+  "cond_at_0": 26944387170.61
+ },
+ "cond_grid_tx_twist": [
+  [
+   0,
+   0,
+   26944387170.6
+  ],
+  [
+   0,
+   12,
+   3.1
+  ],
+  [
+   0,
+   24,
+   1.6
+  ],
+  [
+   15,
+   0,
+   26944387170.6
+  ],
+  [
+   15,
+   12,
+   3.0
+  ],
+  [
+   15,
+   24,
+   1.6
+  ],
+  [
+   30,
+   0,
+   26944387170.6
+  ],
+  [
+   30,
+   12,
+   3.0
+  ],
+  [
+   30,
+   24,
+   1.6
+  ]
+ ],
+ "load": {
+  "tilt_moment_Nm": 1.96,
+  "leg_force_N": 59.5,
+  "crank_torque_Nm_14mm": 0.83,
+  "micro_servo_Nm": 0.216,
+  "sts3215_Nm": 2.94,
+  "tube_axial_k_N_per_mm": 4760,
+  "tube_axial_defl_mm": 0.012,
+  "servo_backlash_tip_mm_0p3deg": 0.67
+ },
+ "actuators": {
+  "count": 3,
+  "type": "STS3215 (micro servos cannot: 0.216 vs 0.83 N.m)",
+  "mass_g": 165,
+  "vs_now_g": 110,
+  "delta_g": 55,
+  "note": "3-SPS needs the central ball joint (spindle) or it has 3 uncontrolled DOF; servos cannot sit under plane A (W3 servo is there) so they sit outboard at r>=40 on cranks + push-pull cables or legs get rod ends"
+ },
+ "verdict": "tilt +-30 about x needs leg inclination ~; twist limited by ball cone: see ranges"
+}

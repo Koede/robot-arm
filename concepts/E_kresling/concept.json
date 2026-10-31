@@ -1,0 +1,351 @@
+{
+ "neutral": {
+  "H0": 20.0,
+  "phi0_deg": 30.0
+ },
+ "sweep": [
+  {
+   "n": 6,
+   "R": 20,
+   "t": 0.8,
+   "b": 22.52,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -5.73,
+   "bend_Nm_per_deg": 0.03106,
+   "tors_Nm_per_deg": 0.01664,
+   "axial_N_per_mm": 9.536
+  },
+  {
+   "n": 6,
+   "R": 20,
+   "t": 1.0,
+   "b": 22.52,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -5.73,
+   "bend_Nm_per_deg": 0.03882,
+   "tors_Nm_per_deg": 0.0208,
+   "axial_N_per_mm": 11.92
+  },
+  {
+   "n": 6,
+   "R": 20,
+   "t": 1.2,
+   "b": 22.52,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -5.73,
+   "bend_Nm_per_deg": 0.04658,
+   "tors_Nm_per_deg": 0.02496,
+   "axial_N_per_mm": 14.303
+  },
+  {
+   "n": 6,
+   "R": 22,
+   "t": 0.8,
+   "b": 23.01,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -4.74,
+   "bend_Nm_per_deg": 0.03873,
+   "tors_Nm_per_deg": 0.02511,
+   "axial_N_per_mm": 9.828
+  },
+  {
+   "n": 6,
+   "R": 22,
+   "t": 1.0,
+   "b": 23.01,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -4.74,
+   "bend_Nm_per_deg": 0.04841,
+   "tors_Nm_per_deg": 0.03139,
+   "axial_N_per_mm": 12.285
+  },
+  {
+   "n": 6,
+   "R": 22,
+   "t": 1.2,
+   "b": 23.01,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -4.74,
+   "bend_Nm_per_deg": 0.05809,
+   "tors_Nm_per_deg": 0.03767,
+   "axial_N_per_mm": 14.742
+  },
+  {
+   "n": 6,
+   "R": 25,
+   "t": 0.8,
+   "b": 23.82,
+   "rom_pm_deg": 24.9,
+   "twist_deg_per_mm": -3.67,
+   "bend_Nm_per_deg": 0.05125,
+   "tors_Nm_per_deg": 0.04291,
+   "axial_N_per_mm": 10.071
+  },
+  {
+   "n": 6,
+   "R": 25,
+   "t": 1.0,
+   "b": 23.82,
+   "rom_pm_deg": 24.9,
+   "twist_deg_per_mm": -3.67,
+   "bend_Nm_per_deg": 0.06406,
+   "tors_Nm_per_deg": 0.05364,
+   "axial_N_per_mm": 12.589
+  },
+  {
+   "n": 6,
+   "R": 25,
+   "t": 1.2,
+   "b": 23.82,
+   "rom_pm_deg": 24.9,
+   "twist_deg_per_mm": -3.67,
+   "bend_Nm_per_deg": 0.07688,
+   "tors_Nm_per_deg": 0.06437,
+   "axial_N_per_mm": 15.107
+  },
+  {
+   "n": 7,
+   "R": 20,
+   "t": 0.8,
+   "b": 22.52,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -5.73,
+   "bend_Nm_per_deg": 0.02887,
+   "tors_Nm_per_deg": 0.0146,
+   "axial_N_per_mm": 8.797
+  },
+  {
+   "n": 7,
+   "R": 20,
+   "t": 1.0,
+   "b": 22.52,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -5.73,
+   "bend_Nm_per_deg": 0.03608,
+   "tors_Nm_per_deg": 0.01825,
+   "axial_N_per_mm": 10.996
+  },
+  {
+   "n": 7,
+   "R": 20,
+   "t": 1.2,
+   "b": 22.52,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -5.73,
+   "bend_Nm_per_deg": 0.0433,
+   "tors_Nm_per_deg": 0.0219,
+   "axial_N_per_mm": 13.195
+  },
+  {
+   "n": 7,
+   "R": 22,
+   "t": 0.8,
+   "b": 23.01,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -4.74,
+   "bend_Nm_per_deg": 0.03694,
+   "tors_Nm_per_deg": 0.02258,
+   "axial_N_per_mm": 9.302
+  },
+  {
+   "n": 7,
+   "R": 22,
+   "t": 1.0,
+   "b": 23.01,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -4.74,
+   "bend_Nm_per_deg": 0.04617,
+   "tors_Nm_per_deg": 0.02822,
+   "axial_N_per_mm": 11.628
+  },
+  {
+   "n": 7,
+   "R": 22,
+   "t": 1.2,
+   "b": 23.01,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -4.74,
+   "bend_Nm_per_deg": 0.05541,
+   "tors_Nm_per_deg": 0.03386,
+   "axial_N_per_mm": 13.954
+  },
+  {
+   "n": 7,
+   "R": 25,
+   "t": 0.8,
+   "b": 23.82,
+   "rom_pm_deg": 24.9,
+   "twist_deg_per_mm": -3.67,
+   "bend_Nm_per_deg": 0.05085,
+   "tors_Nm_per_deg": 0.04005,
+   "axial_N_per_mm": 9.916
+  },
+  {
+   "n": 7,
+   "R": 25,
+   "t": 1.0,
+   "b": 23.82,
+   "rom_pm_deg": 24.9,
+   "twist_deg_per_mm": -3.67,
+   "bend_Nm_per_deg": 0.06357,
+   "tors_Nm_per_deg": 0.05006,
+   "axial_N_per_mm": 12.395
+  },
+  {
+   "n": 7,
+   "R": 25,
+   "t": 1.2,
+   "b": 23.82,
+   "rom_pm_deg": 24.9,
+   "twist_deg_per_mm": -3.67,
+   "bend_Nm_per_deg": 0.07628,
+   "tors_Nm_per_deg": 0.06007,
+   "axial_N_per_mm": 14.874
+  },
+  {
+   "n": 8,
+   "R": 20,
+   "t": 0.8,
+   "b": 22.52,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -5.73,
+   "bend_Nm_per_deg": 0.02557,
+   "tors_Nm_per_deg": 0.01232,
+   "axial_N_per_mm": 7.704
+  },
+  {
+   "n": 8,
+   "R": 20,
+   "t": 1.0,
+   "b": 22.52,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -5.73,
+   "bend_Nm_per_deg": 0.03196,
+   "tors_Nm_per_deg": 0.0154,
+   "axial_N_per_mm": 9.63
+  },
+  {
+   "n": 8,
+   "R": 20,
+   "t": 1.2,
+   "b": 22.52,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -5.73,
+   "bend_Nm_per_deg": 0.03836,
+   "tors_Nm_per_deg": 0.01848,
+   "axial_N_per_mm": 11.557
+  },
+  {
+   "n": 8,
+   "R": 22,
+   "t": 0.8,
+   "b": 23.01,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -4.74,
+   "bend_Nm_per_deg": 0.03331,
+   "tors_Nm_per_deg": 0.01935,
+   "axial_N_per_mm": 8.294
+  },
+  {
+   "n": 8,
+   "R": 22,
+   "t": 1.0,
+   "b": 23.01,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -4.74,
+   "bend_Nm_per_deg": 0.04164,
+   "tors_Nm_per_deg": 0.02418,
+   "axial_N_per_mm": 10.368
+  },
+  {
+   "n": 8,
+   "R": 22,
+   "t": 1.2,
+   "b": 23.01,
+   "rom_pm_deg": 30.0,
+   "twist_deg_per_mm": -4.74,
+   "bend_Nm_per_deg": 0.04997,
+   "tors_Nm_per_deg": 0.02902,
+   "axial_N_per_mm": 12.442
+  },
+  {
+   "n": 8,
+   "R": 25,
+   "t": 0.8,
+   "b": 23.82,
+   "rom_pm_deg": 24.9,
+   "twist_deg_per_mm": -3.67,
+   "bend_Nm_per_deg": 0.04719,
+   "tors_Nm_per_deg": 0.03517,
+   "axial_N_per_mm": 9.097
+  },
+  {
+   "n": 8,
+   "R": 25,
+   "t": 1.0,
+   "b": 23.82,
+   "rom_pm_deg": 24.9,
+   "twist_deg_per_mm": -3.67,
+   "bend_Nm_per_deg": 0.05898,
+   "tors_Nm_per_deg": 0.04396,
+   "axial_N_per_mm": 11.371
+  },
+  {
+   "n": 8,
+   "R": 25,
+   "t": 1.2,
+   "b": 23.82,
+   "rom_pm_deg": 24.9,
+   "twist_deg_per_mm": -3.67,
+   "bend_Nm_per_deg": 0.07078,
+   "tors_Nm_per_deg": 0.05275,
+   "axial_N_per_mm": 13.646
+  }
+ ],
+ "chosen": {
+  "n": 6,
+  "R": 20.0,
+  "t": 1.0,
+  "H0": 20.0,
+  "phi0_deg": 30.0,
+  "b_mm": 22.52,
+  "a_mm": 20.0,
+  "H_at_phi0_30_60": [
+   22.52,
+   20.0,
+   10.35
+  ],
+  "axial_travel_for_pm30_mm": [
+   -9.65,
+   2.52
+  ],
+  "twist_deg_per_mm_at_neutral": -5.73,
+  "stiffness": {
+   "axial_free_N_per_mm": 11.9196,
+   "torsion_free_Nmm_per_rad": 1191.9564,
+   "bend_free_Nmm_per_rad": 2224.221,
+   "axial_fixed": 36.0567,
+   "torsion_fixed_Nmm_per_rad": 3605.6682,
+   "bend_fixed_Nmm_per_rad": 7211.3364,
+   "coupling_H_phi": 0.8182
+  },
+  "torsion_Nm_per_deg": 0.0208,
+  "bending_Nm_per_deg": 0.03882,
+  "axial_N_per_mm": 11.92,
+  "hinge_strain_pct_over_ROM": 36.4,
+  "payload_moment_Nm_2g": 1.96,
+  "sag_under_payload_deg": 50.5,
+  "axial_load_2g_N": 19.6,
+  "Euler_Pcr_N": 274.4,
+  "buckles": false,
+  "stiffness_uncertainty": "kap_c (fold-zone width) x3 either way; TPU E 20-40 MPa",
+  "bellows_mass_g": 2.9,
+  "bellows_watertight": false,
+  "bellows_volume_cm3": 2.42,
+  "printability": {
+   "print_axis": "z up, TPU 95A, 0.2 mm layers, 3 perimeters at 0.4 mm nozzle for 1.0 mm wall",
+   "panel_overhang_from_vertical_deg": 27.4,
+   "note": "roof triangles (upper panels) lean outward; panels are 1.0 mm = 2.5 perimeters, creases are the same wall (thinning to 0.6 mm at the fold needs 0.2 mm hinge slots), no supports if lean < 45 deg"
+  }
+ }
+}

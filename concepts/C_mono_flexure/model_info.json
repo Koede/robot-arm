@@ -1,0 +1,11 @@
+{
+ "watertight": true,
+ "valid": true,
+ "volume_cm3": 14.797,
+ "mass_g_PA12_1p01": 14.9,
+ "bbox": [
+  25.8,
+  32.0,
+  51.3
+ ]
+}
