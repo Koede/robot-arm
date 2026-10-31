@@ -1,0 +1,9 @@
+contoured F1_upper_trap: area 2600 mm2, foam t 6.8..11.2 (mean 8.0), z_in 0.5..12.2
+contoured F3_pec: area 4356 mm2, foam t 5.5..9.9 (mean 6.9), z_in -6.2..7.0
+contoured F4_acromion: area 2524 mm2, foam t 5.9..10.1 (mean 7.7), z_in -3.0..7.2, AC joint at (10.2, -12.7) in the pad frame
+contoured F2_ant_delt: area 2996 mm2, foam t 4.4..8.8 (mean 6.3), z_in -12.2..8.1
+axilla apex z -217.5, cradle centre [-183.0, 7.3, -261.5], tilt 14.6 deg, lateral face to arm 5.6 mm
+arc R2>cradle waypoint [-121.0, -7.7, -226.5] centre-line clearance 11.0
+frame + contoured plates: watertight True vol 68.4 cm3
+clasp_facets_R ok feet at [('F5_mid_trap', [0.0, -27.46093835015651, -111.62479899312186]), ('F1_upper_trap', [0.0, -45.0, -86.83044609067476]), ('F4_acromion', [0.0, 19.16782949701323, -92.26032153072745]), ('R1_scapula', [0.0, -62.0, -132.0])]
+{'F5_mid_trap>F1_upper_trap': 1, 'F1_upper_trap>F4_acromion': 1, 'F4_acromion>F2_ant_delt': 1, 'F2_ant_delt>F3_pec': 1, 'F5>F4': 2, 'arc F5>R1': 1, 'arc R1>R2': 1, 'arc R2>cradle': 2, 'bridge_F5_mid_trap': 1, 'bridge_F1_upper_trap': 1, 'bridge_F4_acromion': 1, 'bridge_R1_scapula': 1} segments per run
