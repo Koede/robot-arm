@@ -5,26 +5,29 @@ Why the old one read as a shelf: the S1 base is a 136 mm block cantilevered off 
 pauldron was a housing round that block plus struts under it, i.e. a bracketed shelf. This revision keeps every interface (plate
 feet 3 x 2 M4, clasp seats F1/F4 M4 x 12, socket rim / bore, assembly order) and re-forms the part as plate armour:
 
-  CROWN  (pauldron_crown_R)  the "cop": a domed brim round the turning socket (rolled bezel at the bore, 12 deg fall), then two
-         flared, stepped lames wrapping the S1 stage, each ending in a rolled hem. U-shaped, open toward the plate, so it slides on
-         along -x over the bare S1 base exactly like the old core (the AK70 drops in through the bore afterwards). Two ears beside
-         the plate edges carry the spaulder (2 x M3 inserts each).
-  KEEL   (pauldron_keel_R)   a fluted, tapering cup under the S1 motor that sweeps down into the plate (teardrop side profile).
-         It replaces the three plate struts: its feet are the old plate feet (30 x 26 x 5, M4 x 12 SHCS into the tapped plate holes),
-         each screw reached through a tube whose mouth is a round port in the keel (tool access + vent). Its lip nests 0.6-1.0 mm
-         inside the crown's lower hem: 4 x M3 x 8 button heads through the hem into heat-set inserts. Fitted last, straight up.
+  CROWN  (pauldron_crown_R)  the "cop": a domed brim round the turning socket (rolled bezel at the bore, 7 mm quadratic fall),
+         then two flared, bulged, stepped lames wrapping the S1 stage, each ending in a rolled hem. U-shaped, open toward the plate,
+         so it slides on along -x over the bare S1 base exactly like the old core (the AK70 drops in through the bore afterwards).
+         Two ears beside the plate side edges carry the spaulder (2 x M3 heat-set inserts each).
+  KEEL   (pauldron_keel_R)   two stepped, fluted lames under the S1 motor that taper down into the plate (teardrop side profile).
+         It replaces the three plate struts: a 9 x 3 flange on the plate rear face with D13 x 6 bosses on the six old foot holes,
+         M4 heat-set inserts (5.6 x 4) pressed from the plate face, ISO 10642 M4 x 12 countersunk screws from the plate FRONT
+         (chassis_axilla.py now makes those holes 4.5 clearance + csk D9). Its lip nests 0.6-1.4 mm inside the crown's lower hem:
+         4 x M3 x 8 button heads through the hem into radial heat-set inserts. Offered up from below (+z) before the plate bolting.
   SPAULDER (pauldron_spaulder_R) three sculpted lames that run forward from the crown over the shoulder top and land on the clasp
-         seats F1 (upper trapezius) and F4 (acromion): stable zones only (standing decision). Fore-aft medial crest, lames stepped
-         3 mm (rear lame overlaps the next, like real lames), rolled front hems, outer edges curled DOWN and away from the neck
-         (no haute-piece: nothing stands up beside the neck). Bolted to the crown ears (2 x M3 x 10 each side) and to the two clasp
-         seats (M4 x 12 through a counterbore, unchanged contract).
+         seats F1 (upper trapezius) and F4 (acromion): stable zones only (standing decision). Fore-aft crest, lames stepped 3 mm
+         (rear lame overlaps the next, like real lames), rolled hems, outer edges rolled and curled DOWN, rear edge scalloped round
+         the socket, front cut back along the wearer's own arm / neck motion envelope (no haute-piece: nothing stands up beside the
+         neck). Bolted to the crown ears (2 x M3 x 10 each side) and to the two clasp seats (D24 round pads on the D24 clasp bosses,
+         M4 x 12 through a counterbore; contract unchanged).
 
 Ergonomic rules built into the generator (all numbers are verified by verify_armor.py):
   - every surface is placed from clearance fields computed from the meshes, so a re-fit to Forest's mesh is a re-run;
-  - skin >= 10 mm under the spaulder (shoulder top moves a little), >= 3 mm to every other part, >= 3.5 mm (+1 mm sampling margin)
-    to everything that turns with S1 over the HARD range (5..150), and >= 4.5 mm below the M2/M3 arm sweep over the soft box;
-  - lateral edge stops at the acromion line (F4), so the wearer's deltoid is not covered;
-  - medial edge curls down, away from the neck;
+  - skin >= 10 mm under the spaulder, >= 3 mm to every other part, >= 3.5 mm (+1 mm sampling margin) to everything that turns
+    with S1 over the HARD range (5..150), and >= 4.5 mm below the M2/M3 arm sweep over the soft box;
+  - wearer range of motion: the spaulder outline is cut back (5 mm) along the envelope of Forest's arm (abduction / scaption /
+    flexion to 110 deg GH = full elevation at GH:ST 1.7:1, McClure 2001) and head-neck (lateral flexion 50, rotation 90,
+    flexion / extension 70), seats exempt; lateral edge stops at the acromion line, medial edge curls away from the neck;
   - mass budget: no heavier than the harness model's 182 g pauldron (top-pad margin is ~1 %).
 Lames are sculpted, not articulated: nothing under them moves relative to anything else, so articulation would only add rattle
 and pinch points.
@@ -57,7 +60,7 @@ BANDS = [(-57.0, -79.0), (-77.0, -100.0)]               # crown lames; the keel 
 FLARE = 3.0                     # each lame flares 3 mm outward toward its hem
 KEEL_C, KEEL_PX, KEEL_PY, KEEL_OFF = 60.0, 1.2, 2.6, 1.6
 KSTEP_W, KSTEP = 0.45, 3.0      # the keel is two lames: the upper one flares 3 mm by w = 0.45, the lower one restarts inside it   # keel depth below the hem; taper exponents rear (x) / width (y); lip offset
-FEET = json.load(open(os.path.join(SH, "plate.json")))["pauldron_feet"]     # [(y, z)] tapped M4 pairs at z +-7 (chassis_axilla.py)
+FEET = json.load(open(os.path.join(SH, "plate.json")))["pauldron_feet"]     # [(y, z)] M4 pairs at z +-7 (chassis_axilla.py: clearance + csk)
 PLATE_REAR = -80.0
 
 # ------------------------------------------------------------------------------------------------ obstacles
@@ -310,7 +313,7 @@ rib_h = np.where((Z < BANDS[1][1] - 3.0) & (Z > BANDS[1][1] - KEEL_C + 6.0), rib
 ke = I(-g3 - T, g3 - rib_h)                               # shell inside the volume + flutes / crest outside it
 ke = I(ke, I(X_CUT - X, Z - ZLIP))
 del g3, phi0, rib_h, w, sig, sgy
-# plate flange (4 thick, 12 wide) + D13 x 6 insert bosses at the 6 plate holes (ISO 10642 M4 x 12 from the plate front)
+# plate flange (3 thick, 9 wide) + D13 x 6 insert bosses at the 6 plate holes (ISO 10642 M4 x 12 from the plate front)
 ix0 = int(round((X_CUT - lo[0]) / VOX - 0.5)); sec_ = V[ix0]
 flange2 = sec_ & (ndimage.distance_transform_edt(sec_) * VOX <= 9.0) & (gz[None, :] <= BANDS[1][1] - 2.0)   # below the crown hem only
 pads2 = np.zeros_like(sec_); holes_ft = []
@@ -354,9 +357,9 @@ plan &= Xs <= X_R
 plan &= np.hypot(Xs, Ys) >= 88.5                                           # rear edge scalloped concentric with the socket (cowl rim r 82.8 sweeps here)
 pad_c = np.array([c for c, _ in PADS.values()])
 from scipy.spatial import cKDTree
-# wearer range of motion: cut the edges along the envelope of Forest's own arm (abduction / scaption / flexion 0..180, rigid about
-# the glenohumeral centre) and head-neck (right lateral flexion 0..55, right rotation 0..90, flexion / extension 0..70, blended over the
-# cervical span) with ROM_CLR; the two bolted seats are excluded (they sit on the clasp nodes, which already touch the skin by design)
+# wearer range of motion: cut the edges along the envelope of Forest's own arm (abduction / scaption / flexion 0..GH_SHARE, rigid
+# about the glenohumeral centre) and head-neck (right lateral flexion 0..50, right rotation 0..90, flexion / extension 0..70, blended
+# over the cervical span) with ROM_CLR; only the D24 seat pads are exempt (they sit on the clasp bosses, which touch the skin by design)
 ROM_CLR = 5.0
 # the spaulder seats on the acromion (F4) and upper trapezius (F1), which ride with the scapula; relative to the scapula the humerus
 # turns only the glenohumeral share of elevation. McClure et al. 2001 (bone pins): GH:ST = 1.7:1, so full elevation (~175 deg,
@@ -503,9 +506,8 @@ dd = surf_dist(romP); sp = I(sp, (ROM_CLR + 0.5) - dd); del dd
 log("  wearer-ROM carve: %d envelope points" % len(romP))
 # remove slivers left by the carves (anything thinner than ~1.2 mm), seats and posts untouched by construction
 sol = sp < 0; opened = ndimage.binary_opening(sol, structure=ndimage.generate_binary_structure(3, 1), iterations=1)
-sp = I(sp, mask_sdf(opened) - 0.0 * sp) if False else np.where(sol & ~opened, np.float32(VOX), sp)
+sp = np.where(sol & ~opened, np.float32(VOX), sp)
 log("  side-clearance carve done")
-_ok_seats = []
 sp = keep_component(sp); spa_m = mesh_sdf(sp, lo); del sp
 cut = []
 for nm, (c, nrm) in PADS.items():
