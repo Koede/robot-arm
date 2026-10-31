@@ -13,7 +13,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, ".."
 sys.path.insert(0, HERE)
 D, Z_W3 = 57.0, 455.0
 ST_L, ST_W, ST_H, SHAFT_OFF = 45.2, 24.7, 35.0, 11.0          # STS3215 body (L along x here), shaft 11 mm from the body centre (PLACEHOLDER)
-DZ = 24.0                                                     # lift of the whole hand along z (hand floor underside 491.6 -> 515.6)
+import hand_kin as _K; DZ = _K.DZ                                                     # lift of the whole hand along z (hand floor underside 491.6 -> 515.6)
 PL0, PL1 = 493.8, 495.8                                       # carrier plate
 GZ0, GZ1 = 496.0, 503.0                                       # gear band / bearing
 WEB1 = 505.0                                                  # rotor web top
@@ -75,9 +75,7 @@ prox["bearing_6808"] = tube_z(BR_OD / 2, BR_ID / 2, GZ0, GZ1)
 prox["sts_R"] = box(-SHAFT_OFF - ST_L / 2, -SHAFT_OFF + ST_L / 2, YS - ST_W / 2, YS + ST_W / 2, PL0 - ST_H, PL0)
 # ---------------------------------------------------------------- hand palm_tray without the old ears, lifted by DZ
 import hand as Hd
-palm = Hd.parts["palm_tray"]
-palm = palm.cut(box(-30, 30, D - 20, D + 20, 430, 491.6 - 0.001)).cut(box(20, 30, D - 20, D + 20, 493.6, 496.0)).cut(box(-30, -20, D - 20, D + 20, 493.6, 496.0))
-parts["palm_tray_wrist"] = palm.translate((0, 0, DZ))
+parts["palm_tray_wrist"] = Hd.parts["palm_tray"]                         # hand v2 palm: already lifted by DZ and bored for the rotor flange
 DENS = dict(carrier=1.30, rotor=1.20, pinion=1.20, palm_tray_wrist=1.30, flexure_px=1.01, flexure_nx=1.01)
 def export(w, name, sub=""):
     p = os.path.join(OUT, sub, name + ".stl"); os.makedirs(os.path.dirname(p), exist_ok=True); cq.exporters.export(w, p, tolerance=0.02, angularTolerance=0.05); return p

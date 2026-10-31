@@ -68,9 +68,10 @@ for n in Hd.parts:
 N_SERVO = 8; SERVO_G = 13.4                       # 4 finger + 3 thumb + 1 yaw, MG90S class (PLACEHOLDER)
 hw = dict(servos=N_SERVO*SERVO_G, pushrods_balls_pins=12.0, yaw_linkage=3.0, screws_inserts=5.0, pwm_driver_and_6V_buck_PLACEHOLDER=10.0, wiring=4.0)
 hand_g = tot_print + sum(hw.values())
-R['mass'] = dict(printed_g=round(tot_print, 1), hardware_g=hw, hand_total_g=round(hand_g, 1), claw_total_g=178.9, delta_g=round(hand_g - 178.9, 1), per_part_g=mass)
+WRJ = os.path.join(OUT, '..', 'wrist_rotary', 'verify_wrist_rotary.json'); wrist_g = json.load(open(WRJ))['mass_g']['total_added'] if os.path.exists(WRJ) else 0.0
+R['mass'] = dict(printed_g=round(tot_print, 1), hardware_g=hw, hand_total_g=round(hand_g, 1), claw_total_g=178.9, delta_g=round(hand_g - 178.9, 1), wrist_stage_added_g=wrist_g, hand_plus_wrist_vs_claw_g=round(hand_g + wrist_g - 178.9, 1), per_part_g=mass)
 # ---------------------------------------------------------------- S2 + harness impact (scaling from DESIGN_STATE rev f3 numbers)
-dm = (hand_g - 178.9)/1e3; lever_cg = 0.535; tip_extra = (628.0 - 575.0)*1e-3
+dm = (hand_g + wrist_g - 178.9)/1e3; lever_cg = 0.535; tip_extra = (629.2 + K.DZ - 575.0)*1e-3
 dS2 = G*(dm*lever_cg + 0.5*tip_extra*0.6)           # hand CG ~535 mm out; payload held ~0.6 of the tip extension further out
 S2_new = 2.89 + dS2
 R['S2'] = dict(delta_Nm=round(dS2, 3), worst_residual_Nm=round(S2_new, 2), SF_vs_8p3=round(8.3/S2_new, 2), gate_SF2='PASS' if 8.3/S2_new >= 2 else 'FAIL', note='scaled from rev f3 (balancer K 3.789): re-run s2_grid.py for a locked number')

@@ -48,31 +48,32 @@ parts["thumb_meta"] = prism(hull([(0, 0, 7.0), (TL[0], 0, 5.8)]), -6, 6).cut(cyl
 parts["thumb_prox"] = prism(hull([(0, 0, 5.8), (TL[1], 0, 5.0)]), -5.2, 5.2).cut(cylt(1.0, -7, 7, 0, 0)).cut(cylt(1.0, -7, 7, TL[1], 0))
 parts["thumb_dist"] = prism(hull([(0, 0, 5.0), (TL[2] - 3.5, 0, 4.0), (TL[2] - 2.8, 0, 4.0)]), -5.2, 5.2).cut(cylt(1.0, -7, 7, 0, 0))
 parts["thumb_pad"] = prism([(TL[2]*0.2, 4.0), (TL[2]*0.2, 6.0), (TL[2] - 1.0, 5.4), (TL[2] - 1.0, 4.0)], -4.8, 4.8)
-# ---------------------------------------------------------------- palm tray (PETG-CF): W3 ears (contract), floor, palm slab, thenar block, servo pockets
-XF = 26.8; HA_IN, HA_T = 23.3, 3.5; HB0 = 491.6; FT = 493.6
+# ---------------------------------------------------------------- palm tray v2 (PETG-CF): base plate ON the wrist mating plane (no ears, no yoke), palm slab, thenar block, servo pockets
+DZ = K.DZ; XF = 26.8; HB0 = 491.6 + DZ; FT = 493.6 + DZ                    # mating plane z = HB0 (rotor flange top, wrist_rotary.py MATE)
 SV = dict(L=22.8, W=12.2, H=22.7, shaft=6.0)                              # MG90S-class micro servo (PLACEHOLDER)
 PX0, PX1 = -60.0, -34.0                                                   # palm slab x range
-palm = None
-for sx in (-1, 1):
-    x0, x1 = sx*HA_IN, sx*(HA_IN + HA_T)
-    arm = cq.Workplane("YZ").circle(16.0).extrude(x1 - x0).translate((x0, D, Z_W3)).union(box(min(x0, x1), max(x0, x1), D-14, D+14, Z_W3, Z_W3+11+22.6+6))
-    palm = arm if palm is None else palm.union(arm)
-palm = palm.union(box(PX0, XF, D - 52, D + 54, HB0, FT)).union(box(PX0, PX1, D - 52, D + 56, FT, 560.0))
+palm = box(PX0, XF, D - 52, D + 54, HB0, FT).union(box(PX0, PX1, D - 52, D + 56, FT, 560.0 + DZ))
 palm = palm.cut(box(PX1 + 0.01, XF + 1, D + 14.0, D + 62, HB0 - 1, FT + 1))                  # trim the floor plate ahead of the index/thumb so a curled index clears it
+palm = palm.cut(cq.Workplane("XY").circle(11.0).extrude(FT - HB0 + 2).translate((0, D, HB0 - 1)))          # wire port d22 over the rotor neck (neck bore r15, flange r11..19)
+for ang in (45, 135, 225, 315):                                                                               # 4 x M3 clearance on the flange r15 circle (rotor inserts PLACEHOLDER)
+    palm = palm.cut(cq.Workplane("XY").circle(1.7).extrude(FT - HB0 + 2).translate((15.0 * math.cos(math.radians(ang)), D + 15.0 * math.sin(math.radians(ang)), HB0 - 1)))
 FSERV = {}                                                                 # servo pocket centres (u, z_c, x range)
 UF = dict(index=13.5, middle=0.0, ring=-13.5, pinky=-26.5)        # servo-body centre u (fingers sit at K.U; rods fan out on ball ends)
-ZS = 506.0                                                                  # finger-servo shaft z (shaft at the distal end of the body)
+ZS = 506.0 + DZ                                                                  # finger-servo shaft z (shaft at the distal end of the body)
 for nm, u in UF.items():
     zc = ZS - (SV['L']/2 - SV['shaft'])                                     # body centre z (shaft 6 mm from the distal end -> body extends proximally)
     FSERV[nm] = dict(u=u, z0=ZS - SV['L'] + SV['shaft'], z1=ZS + SV['shaft'], x0=PX1 - SV['H'], x1=PX1)
     palm = palm.cut(box(PX1 - SV['H'] - 0.3, PX1 + 0.01, D + u - SV['W']/2 - 0.3, D + u + SV['W']/2 + 0.3, FSERV[nm]['z0'] - 0.3, FSERV[nm]['z1'] + 0.3))
 # thenar block servos (shaft || u): swing + lift at z 496..518.8, flex at z 521..543.8 ; yaw servo (shaft || x) at u 0, z 522..544.8
 TH_U0, TH_U1 = 25.0, 25.0 + SV['H']
-THS = dict(t_swing=dict(x0=PX0 + 0.5, z0=490.0), t_lift=dict(x0=PX0 + 0.5 + SV['W'] + 0.8, z0=490.0), t_flex=dict(x0=PX0 + 0.5, z0=515.5))
+THS = dict(t_swing=dict(x0=PX0 + 0.5, z0=490.0 + DZ), t_lift=dict(x0=PX0 + 0.5 + SV['W'] + 0.8, z0=490.0 + DZ), t_flex=dict(x0=PX0 + 0.5, z0=515.5 + DZ))
 for k_, v_ in THS.items():
     palm = palm.cut(box(v_['x0'] - 0.3, v_['x0'] + SV['W'] + 0.3, D + TH_U0 - 0.3, D + TH_U1 + 0.3, v_['z0'] - 0.3, v_['z0'] + SV['L'] + 0.3))
-YAW = dict(u=0.0, z0=514.0, x0=PX1 - SV['H'], x1=PX1)
+YAW = dict(u=0.0, z0=514.0 + DZ, x0=PX1 - SV['H'], x1=PX1)
 palm = palm.cut(box(YAW['x0'] - 0.3, PX1 + 0.01, D - SV['W']/2 - 0.3, D + SV['W']/2 + 0.3, YAW['z0'] - 0.3, YAW['z0'] + SV['L'] + 0.3))
+palm = palm.cut(box(-14.3, -9.2, D - 28.3, D + 15.1, FT - 1.2, FT + 0.01))                                  # collector groove, crosses the port edge at x -11
+for nm_, u_ in UF.items():                                                  # branch grooves 5 x 1.2 from the collector to each servo pocket
+    palm = palm.cut(box(PX1 - 1.0, -9.7, D + u_ - 2.5, D + u_ + 2.5, FT - 1.2, FT + 0.01))
 parts["thumb_cmc"] = box(-8, 8, -8, 8, -7, 7).cut(cylt(1.1, -10, 10, 0, 0))                                            # CMC housing/cradle (PETG-CF), placed at T0
 parts["palm_tray"] = palm
 parts_info = dict(FSERV=FSERV, THS=THS, YAW=YAW)

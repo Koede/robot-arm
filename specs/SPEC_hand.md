@@ -1,3 +1,20 @@
+# SPEC: HAND v2, rebuilt on the plane-to-plane wrist (2026-10-30 late) -- READ THIS BLOCK FIRST; it supersedes the numbers below where they differ
+
+The hand was regenerated around the new wrist coupling (`SPEC_wrist_rotary.md`): the palm base plate now sits on the rotor mating plane (**z 515.6 = 491.6 + DZ 24**, `hand_kin.DZ` shifts every absolute z: knuckle row, thumb CMC, servo pockets, palm), the old W3 ears and the post-cut hack are gone, and the base has a **d22 wire port** over the rotor neck, **4 x M3 clearance holes on the r15 flange circle**, and wire grooves (collector + 4 branches) to the servo pockets. Scripts re-run in order: `hand.py` -> `wrist_rotary.py` -> `hand_pose.py` -> `verify_hand.py` -> `verify_wrist_rotary.py` -> `render_hand.py` (renders now include the wrist stack).
+| item | v2 result |
+|---|---|
+| open-hand wrist-to-tip from W2 | **243.2 mm** (219 + DZ 24; claw 165) |
+| digit collisions, open / 👉 / ✌️ / 👍 | 0, now also against the rotor, carrier and flexures |
+| 👍 thumbs up | index limited to **65 deg MCP** (95 deg collides with the hub and rotor web); middle, ring, pinky 95 deg |
+| chuck | unchanged: one 0.15 mm middle_prox / ring_mid touch; pad z +24 mm vs the table below |
+| R rotation -170..+170 | all 5 poses clear of the carrier stack (min gap >= 5.77 mm; chuck 10.1) |
+| all 34 hand parts + palm | watertight, positive volume, fit the 256 mm cube |
+| mass | hand 319.5 g (printed 178.3, hardware 141.2) + wrist stage 196 g = **+336.6 g vs the claw 178.9 g** |
+| S2 worst residual (scaled estimate, not re-gridded) | 4.89 N.m, **SF 1.70 vs 8.3: FAIL** (was 2.17 for the hand alone on the old wrist) |
+| harness top pad (mass-proportional estimate) | 15.34 kPa vs 14.7: **FAIL** (-4.3 %) |
+Decisions for Forest (new): (1) the S2 gate now fails with the wrist stage; options: drop the R servo or move it, lighter servo classes, lattice the palm tray, a stronger balancer K, or accept an S2 duty derate; (2) fist: 65 deg index limit vs +10 mm lift; (3) the contract change is now 24 mm longer than the earlier hand (243 vs 219 mm).
+Everything below this block is the 2026-10-30 first version; where it quotes z values, add 24 mm; where it quotes mass or S2, use this block.
+
 # SPEC: HAND, human-layout micro-servo hand with CHUCK mode (2026-10-30, IN DESIGN, not locked)
 
 Requested by Forest (2026-10-30): "a hand that can transform its configuration into a drill chuck ... close its hand organically finger by finger individually ... with micro servos"; refined: "3 of the fingers and the thumb do this ... it should have a human layout"; target poses 👉 👍 ✌️.

@@ -18,10 +18,10 @@ rotor_grp = {"rotor": L("wrist_rotary/rotor.stl"), "palm": L("wrist_rotary/palm_
 P = HP.make_poses()
 def hand_meshes(pose):
     scene, _ = HP.build(pose, P[pose]); out = {}
-    for n, m in HP.to_robot(scene): m = m.copy(); m.apply_translation([0, 0, W.DZ]); out[n] = m
+    for n, m in HP.to_robot(scene): out[n] = m.copy()
     st = []; HP.static_scene(st)
     for n, m in st:
-        if n.startswith("servo_"): m = m.copy(); m.apply_translation([0, 0, W.DZ]); out[n] = m
+        if n.startswith("servo_"): out[n] = m.copy()
     return out
 def mgr(d, T=None):
     cm = trimesh.collision.CollisionManager()
@@ -57,7 +57,7 @@ rotor_only = mgr({"rotor": rotor_grp["rotor"]}); hub_plate = mgr(carrier_grp)
 def digits_hit(pose_dict):
     scene, _ = HP.build("thumbsup", pose_dict); bad = set()
     for n, m in HP.to_robot(scene):
-        m = m.copy(); m.apply_translation([0, 0, W.DZ])
+        m = m.copy()
         for nm, cmx in (("rotor", rotor_only), ("carrier", hub_plate)):
             if cmx.in_collision_single(m): bad.add(f"{n}/{nm}")
     return sorted(bad)

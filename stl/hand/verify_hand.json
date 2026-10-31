@@ -73,7 +73,7 @@
  "thumb_force_N": 3.43,
  "thumb_arm_mm": 44.1,
  "mass": {
-  "printed_g": 186.7,
+  "printed_g": 178.3,
   "hardware_g": {
    "servos": 107.2,
    "pushrods_balls_pins": 12.0,
@@ -82,9 +82,11 @@
    "pwm_driver_and_6V_buck_PLACEHOLDER": 10.0,
    "wiring": 4.0
   },
-  "hand_total_g": 327.9,
+  "hand_total_g": 319.5,
   "claw_total_g": 178.9,
-  "delta_g": 149.0,
+  "delta_g": 140.6,
+  "wrist_stage_added_g": 196.0,
+  "hand_plus_wrist_vs_claw_g": 336.6,
   "per_part_g": {
    "index_prox": 4.3,
    "index_mid": 2.1,
@@ -119,20 +121,20 @@
    "thumb_dist": 3.1,
    "thumb_pad": 0.4,
    "thumb_cmc": 4.6,
-   "palm_tray": 113.9
+   "palm_tray": 105.4
   }
  },
  "S2": {
-  "delta_Nm": 0.938,
-  "worst_residual_Nm": 3.83,
-  "SF_vs_8p3": 2.17,
-  "gate_SF2": "PASS",
+  "delta_Nm": 1.997,
+  "worst_residual_Nm": 4.89,
+  "SF_vs_8p3": 1.7,
+  "gate_SF2": "FAIL",
   "note": "scaled from rev f3 (balancer K 3.789): re-run s2_grid.py for a locked number"
  },
  "harness_top_pad": {
-  "est_kPa": 14.87,
+  "est_kPa": 15.34,
   "limit_kPa": 14.7,
-  "margin_pct": -1.2,
+  "margin_pct": -4.3,
   "gate": "FAIL",
   "note": "mass-proportional estimate; run harness_loads.py + verify_harness.py"
  },
@@ -144,12 +146,12 @@
  "poses": {
   "open": {
    "max_bar_len_err_mm": 0.022,
-   "n_raw_hits": 24,
+   "n_raw_hits": 27,
    "collisions": []
   },
   "chuck": {
    "max_bar_len_err_mm": 0.011,
-   "n_raw_hits": 26,
+   "n_raw_hits": 29,
    "collisions": [
     [
      "middle_prox",
@@ -159,24 +161,24 @@
   },
   "point": {
    "max_bar_len_err_mm": 0.017,
-   "n_raw_hits": 28,
+   "n_raw_hits": 31,
    "collisions": []
   },
   "thumbsup": {
    "max_bar_len_err_mm": 0.005,
-   "n_raw_hits": 29,
+   "n_raw_hits": 31,
    "collisions": []
   },
   "victory": {
    "max_bar_len_err_mm": 0.017,
-   "n_raw_hits": 27,
+   "n_raw_hits": 30,
    "collisions": []
   }
  },
  "open_envelope": {
-  "z_max": 629.2,
+  "z_max": 653.2,
   "contract_Z_TIP": 575.0,
-  "wrist_to_tip_from_W2_mm": 219.2,
+  "wrist_to_tip_from_W2_mm": 243.2,
   "y_range": [
    5.0,
    143.7

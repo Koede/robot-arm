@@ -6,6 +6,7 @@ Chuck axis A = hand axis (x 0, u 0), parallel to z.  Pad centre = distal phalanx
 import numpy as np, json, os
 from scipy.optimize import least_squares, differential_evolution
 HERE = os.path.dirname(os.path.abspath(__file__)); D = 57.0
+DZ = 24.0                                                    # hand lifted rigidly by the plane-to-plane wrist coupling (wrist_rotary.py, mating plane z 491.6 + DZ)
 SC = 0.80                                                    # scale of the 50th-percentile male hand (hand length 189 -> ~151 + wrist), servo bodies are NOT scaled
 # phalanx lengths mm (prox, mid, dist), 50th pct male x SC.  Thumb: metacarpal, prox, dist
 LEN = dict(index=(40, 22, 17), middle=(44, 26, 18), ring=(41, 24, 17), pinky=(32, 18, 16))
@@ -13,7 +14,7 @@ LEN = {k: tuple(round(SC * v, 1) for v in vv) for k, vv in LEN.items()}
 TLEN = tuple(round(0.92 * v, 1) for v in (46, 32, 26))
 PITCH = 23.0
 U = dict(index=PITCH, middle=0.0, ring=-PITCH, pinky=-PITCH - 19.5)      # MCP u positions
-ZM = dict(index=498.0, middle=558.0, ring=535.0, pinky=514.0)               # knuckle line (human arch: middle most distal)
+ZM = dict(index=498.0 + DZ, middle=558.0 + DZ, ring=535.0 + DZ, pinky=514.0 + DZ)               # knuckle line (human arch: middle most distal)
 XMD = dict(index=-20.0, middle=-27.0, ring=-20.0, pinky=-20.0)             # per-finger plane depth (middle finger sits deeper so the yawed index/ring pass in front of it)
 XM = -20.0                                                                  # finger-plane centre x (axis A at x 0)
 PADT = 5.0 + 1.5                                                           # phalanx half thickness 5 + TPU pad 1.5 -> palmar surface offset from axis of phalanx
@@ -89,7 +90,7 @@ if __name__ == "__main__":
 
 
 # ---------------------------------------------------------------- THUMB
-T0 = np.array([-8.0, 41.0, 500.0])        # CMC centre (x,u,z): radial side of the palm, below the index knuckle
+T0 = np.array([-8.0, 41.0, 500.0 + DZ])        # CMC centre (x,u,z): radial side of the palm, below the index knuckle
 K_TIP = 0.75                               # thumb IP = K_TIP * MCP (coupled bar)
 def thumb_chain(axis_az, axis_el, alpha, omega, th1, L=TLEN, tilt_b=0.0):
     ax = np.array([np.cos(np.radians(axis_el))*np.cos(np.radians(axis_az)), np.cos(np.radians(axis_el))*np.sin(np.radians(axis_az)), np.sin(np.radians(axis_el))])

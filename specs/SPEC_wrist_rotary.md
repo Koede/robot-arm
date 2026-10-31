@@ -26,11 +26,12 @@ Plane-to-plane coupling, interconnects carry wires and structure; in-plane rotat
 | W3 sweep -35..+35 (everything beyond W3, open pose) vs the fixed arm | 0 collisions. Smallest gap 0.4 mm = crank disc to the cradle wall (designed running gap, like the horn); flexure to servo/forearm 2.7 mm | pass, 2 flagged < 3 mm |
 | W3 first contact (R servo / carrier vs W2 yoke) | +38.5 / -37.5 deg, beyond the passive stops (+35 / -25) | pass |
 | R sweep -170..+170 in open / chuck / point / victory | 0 collisions; palm + digits to the carrier >= 5.8 mm (open, point), 10.1 (chuck), 6.5 (victory); rotor/hub running gap 0.2 (designed) | pass |
-| 👍 fist (index MCP 95 deg) | **collides** with hub / rotor web and neck | **FAIL** |
+| 👍 fist (index MCP 95 deg) | **collides** with hub / rotor web and neck; with the index at 65 deg the full R sweep is clear (hand v2 pose set) | limit applied |
 | Index curl limit in the fist pose | free to **65 deg MCP** (hit at 70) | firmware limit (default taken, Forest to confirm) |
 | Flexures (2 in parallel) | k = 0.0028 N.m/deg total; strain 0.76 % at 30 deg, 0.89 % at 35 deg (PA12 static limit 3 %); axis shift 0.97 mm; roll stiffness 0.454 N.m/deg each | pass (analytic) |
 | Support loads, 2 g | tip moment about x 1.96 N.m (servo, via crank); tipping about y 0.97 N.m = 14 N couple over the 68 mm spacing; axial 9.8 N each; est. leaf compression 12 N, est. plate-buckling SF 2.4 (concept C alone was 1.49 for 19.6 N) | pass (estimate), print + bench T-C check |
 | R stage torque | 2.94 N.m x 3.25 x 0.9 = 8.6 N.m vs ~0.35 N.m hold | pass |
+| S2 torque with hand + wrist stage (scaled estimate) | worst residual 4.89 N.m, **SF 1.70 vs 8.3** | **FAIL**, re-run `s2_grid.py` |
 | Added mass | **196 g** (R servo 55, bearing 46, carrier 25.9, flexures 30, rotor 22.9, tube 4, rod/lug 2, pinion 2.2, hardware 8) | harness top pad est. ~15.3 vs 14.7 kPa **FAIL** (slope 2.49 kPa/kg; `harness_loads.py` not re-run) |
 
 ## Open items

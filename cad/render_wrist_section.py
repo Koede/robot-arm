@@ -17,7 +17,7 @@ items = [("forearm_dist", L("distal/forearm_dist_R.stl"), "forearm"), ("w2_yoke"
          ("W3 crank", L("wrist_rotary/proxies/w3_crank.stl"), "pad"), ("W3 rod", L("wrist_rotary/proxies/w3_rod.stl"), "pad"), ("palm", L("wrist_rotary/palm_tray_wrist.stl"), "palm")]
 P = HP.make_poses(); scene, _ = HP.build("open", P["open"]); sc = HP.to_robot(scene)
 for n, m in sc:
-    m = m.copy(); m.apply_translation([0, 0, W.DZ]); items.append((n, m, "pad" if n.endswith("pad") else ("thumb" if n.startswith("thumb") else "digit")))
+    m = m.copy(); items.append((n, m, "pad" if n.endswith("pad") else ("thumb" if n.startswith("thumb") else "digit")))
 XCUT = 0.0
 def section(plane):
     out = []

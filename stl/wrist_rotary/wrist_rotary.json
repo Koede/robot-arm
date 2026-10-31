@@ -55,8 +55,8 @@
   ]
  },
  "palm_tray_wrist": {
-  "vol_cm3": 148.92,
-  "g": 193.6,
+  "vol_cm3": 147.438,
+  "g": 191.7,
   "valid": true,
   "watertight": true,
   "bbox": [

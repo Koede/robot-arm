@@ -51,6 +51,7 @@ def static_scene(scene):
 def apply_D(scene):                         # hand frame u -> robot y: add D to y of every mesh not already in robot coords (palm/servos are built in robot coords)
     return scene
 POSES = {}
+INDEX_FIST_MAX = 65
 def make_poses():
     q5 = K.solve_chuck(5.0); thi, thm, thr, psi = [float(v) for v in q5.x]
     th_c = json.load(open(OUT + "/thumb3.json"))
@@ -58,7 +59,7 @@ def make_poses():
     P['open'] = dict(f=dict(index=(0, 0), middle=(0, 0), ring=(0, 0), pinky=(0, 0)), th=(0, 0, 0))
     P['chuck'] = dict(f=dict(index=(thi, psi), middle=(thm, 0), ring=(thr, psi), pinky=(95, 0)), th=tuple(th_c['chuck5']))
     P['point'] = dict(f=dict(index=(0, 0), middle=(95, 0), ring=(95, 0), pinky=(95, 0)), th=(10, 0, 0))
-    P['thumbsup'] = dict(f=dict(index=(95, 0), middle=(95, 0), ring=(95, 0), pinky=(95, 0)), th=(0, 0, 0))
+    P['thumbsup'] = dict(f=dict(index=(INDEX_FIST_MAX, 0), middle=(95, 0), ring=(95, 0), pinky=(95, 0)), th=(0, 0, 0))     # index limited by the wrist stack (verify_wrist_rotary: free to 65 deg)
     P['victory'] = dict(f=dict(index=(0, -30), middle=(0, 0), ring=(95, 0), pinky=(95, 0)), th=tuple(th_c['tuck']))
     return P
 def build(name, P):
@@ -83,10 +84,15 @@ if __name__ == "__main__":
         for n, m in allm:
             if n.startswith('servo_'): continue
             cm.add_object(n, m)
+        WR = os.path.join(OUT, '..', 'wrist_rotary')
+        for wn in ('rotor', 'carrier', 'flexure_px', 'flexure_nx'):
+            if os.path.exists(os.path.join(WR, wn + '.stl')): cm.add_object('wrist_' + wn, trimesh.load(os.path.join(WR, wn + '.stl')))
         hits, names = cm.in_collision_internal(return_names=True)
         def fam(n): return n.split('_')[0]
         bad = []
         for a, b in names:
+            if 'wrist_rotor' in (a, b) and ('palm_tray' in (a, b)): continue          # bonded at the mating plane
+            if a.startswith('wrist_') and b.startswith('wrist_'): continue
             fa, fb_ = fam(a), fam(b)
             if fa == fb_ and fa != 'palm': continue            # same finger: bars/posts share pins by design (checked by bar-length audit)
             if 'palm' in (fa, fb_) and ('knuckle' in a+b or 'cmc' in a+b or 'prox' in a+b): continue   # knuckle/CMC seat on the palm by design

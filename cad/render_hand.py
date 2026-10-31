@@ -6,9 +6,13 @@ import hand_pose as HP, hand_kin as K
 OUTD = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."); os.makedirs(OUTD, exist_ok=True); D = 57.0
 def scene_for(name, P):
     scene, _ = HP.build(name, P); st = []; HP.static_scene(st); allm = HP.to_robot(scene) + st
+    import glob as _g; WR = os.path.join(OUTD, 'stl', 'wrist_rotary'); STD = os.path.join(OUTD, 'stl')
+    for nm_, pth_, col_ in [('w_rotor', WR + '/rotor.stl', [30, 170, 160, 255]), ('w_carrier', WR + '/carrier.stl', [240, 140, 40, 255]), ('w_flex+', WR + '/flexure_px.stl', [220, 190, 40, 255]), ('w_flex-', WR + '/flexure_nx.stl', [220, 190, 40, 255]), ('w_pinion', WR + '/pinion.stl', [20, 120, 110, 255]), ('w_servoR', WR + '/proxies/sts_R.stl', [70, 70, 78, 255]), ('w_sts3', STD + '/distal/proxies/sts_w3_R.stl', [70, 70, 78, 255]), ('w_yoke', STD + '/distal/w2_yoke_R.stl', [130, 145, 175, 255])]:
+        if os.path.exists(pth_):
+            mm_ = trimesh.load(pth_); mm_.visual.face_colors = col_; allm.append((nm_, mm_))
     ms = []
     if name == 'chuck':
-        rod = trimesh.creation.cylinder(radius=5.0, height=140, sections=24); rod.apply_translation([0, D, 640]); rod.visual.face_colors = [225, 225, 235, 255]; allm.append(('bit', rod))
+        rod = trimesh.creation.cylinder(radius=5.0, height=140, sections=24); rod.apply_translation([0, D, 640 + K.DZ]); rod.visual.face_colors = [225, 225, 235, 255]; allm.append(('bit', rod))
     for n, m in allm:
         base = np.array(m.visual.face_colors[0], dtype=float) if len(m.visual.face_colors) else np.array([180, 180, 180, 255.0])
         m = m.copy()
@@ -40,8 +44,8 @@ if __name__ == "__main__":
     P = HP.make_poses(); files = []
     for name, p in P.items():
         ms = scene_for(name, p)
-        if name in ('point', 'thumbsup'): ms = rotx(ms, 90, np.array([-20.0, D, 540.0]))           # thumb up, fingers horizontal for the emoji read
-        allv = np.vstack([m.vertices for n_, m, _ in ms if m.vertices[:,2].min() > 440 or True]); allv = allv[allv[:,2] > 482]; c = (allv.max(0) + allv.min(0))/2; r = (allv.max(0) - allv.min(0)).max()/2*0.9
+        if name in ('point', 'thumbsup'): ms = rotx(ms, 90, np.array([-20.0, D, 540.0 + K.DZ]))           # thumb up, fingers horizontal for the emoji read
+        allv = np.vstack([m.vertices for n_, m, _ in ms if m.vertices[:,2].min() > 440 or True]); allv = allv[allv[:,2] > 482 + K.DZ - 30]; c = (allv.max(0) + allv.min(0))/2; r = (allv.max(0) - allv.min(0)).max()/2*0.9
         fig = plt.figure(figsize=(15, 5.6)); fig.patch.set_facecolor('white')
         views = [(8, 0, 'palm side'), (8, 90, 'thumb side'), (22, 40, '3/4 view')]
         if name in ('point', 'thumbsup'): views = [(8, 0, 'palm side'), (8, 180, 'back of hand'), (22, 40, '3/4 view')]

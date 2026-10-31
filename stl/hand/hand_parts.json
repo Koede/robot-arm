@@ -331,15 +331,15 @@
    ]
   },
   "palm_tray": {
-   "vol_cm3": 159.251,
-   "g": 207.03,
+   "vol_cm3": 147.438,
+   "g": 191.67,
    "valid": true,
    "bbox": [
     86.8,
     108.0,
-    121.0
+    68.4
    ]
   }
  },
- "printed_total_canonical_g": 279.9
+ "printed_total_canonical_g": 264.5
 }

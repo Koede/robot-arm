@@ -1,12 +1,12 @@
 {
  "open": {
   "max_bar_len_err_mm": 0.022,
-  "n_raw_hits": 24,
+  "n_raw_hits": 27,
   "collisions": []
  },
  "chuck": {
   "max_bar_len_err_mm": 0.011,
-  "n_raw_hits": 26,
+  "n_raw_hits": 29,
   "collisions": [
    [
     "middle_prox",
@@ -16,17 +16,17 @@
  },
  "point": {
   "max_bar_len_err_mm": 0.017,
-  "n_raw_hits": 28,
+  "n_raw_hits": 31,
   "collisions": []
  },
  "thumbsup": {
   "max_bar_len_err_mm": 0.005,
-  "n_raw_hits": 29,
+  "n_raw_hits": 31,
   "collisions": []
  },
  "victory": {
   "max_bar_len_err_mm": 0.017,
-  "n_raw_hits": 27,
+  "n_raw_hits": 30,
   "collisions": []
  }
 }
