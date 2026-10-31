@@ -1,34 +1,34 @@
 {
  "gates": {
   "static/crown-stage contents": {
-   "value": 3.12,
+   "value": 3.08,
    "need": 3.0,
    "pass_": true,
    "note": ""
   },
   "static/keel-stage contents": {
-   "value": 3.2,
+   "value": 3.15,
    "need": 3.0,
    "pass_": true,
    "note": ""
   },
   "static/spaulder-stage contents": {
-   "value": 13.38,
+   "value": 12.09,
    "need": 3.0,
    "pass_": true,
    "note": ""
   },
   "static/crown-plate": {
-   "value": 3.5,
+   "value": 3.51,
    "need": 3.0,
    "pass_": true,
    "note": ""
   },
-  "static/spaulder-plate": {
-   "value": 3.83,
+  "static/spaulder-plate outside the 2 rear feet": {
+   "value": 4.12,
    "need": 3.0,
    "pass_": true,
-   "note": ""
+   "note": "feet M3x10 into the tapped plate top edge (designed contact)"
   },
   "static/keel-plate outside the bolted flange": {
    "value": 5.51,
@@ -37,7 +37,7 @@
    "note": "flange face on the plate rear face is the bolted seat"
   },
   "static/crown-clasp": {
-   "value": 14.92,
+   "value": 15.18,
    "need": 3.0,
    "pass_": true,
    "note": ""
@@ -49,37 +49,37 @@
    "note": ""
   },
   "static/spaulder-clasp outside the 2 seats": {
-   "value": 6.89,
+   "value": 4.43,
    "need": 3.0,
    "pass_": true,
    "note": ""
   },
   "static/crown-wing": {
-   "value": 12.22,
+   "value": 21.3,
    "need": 3.0,
    "pass_": true,
    "note": ""
   },
   "static/keel-wing": {
-   "value": 8.73,
+   "value": 8.65,
    "need": 3.0,
    "pass_": true,
    "note": ""
   },
   "static/spaulder-wing": {
-   "value": 10.62,
+   "value": 5.79,
    "need": 3.0,
    "pass_": true,
    "note": ""
   },
   "static/crown-spine bridge": {
-   "value": 54.31,
+   "value": 60.0,
    "need": 3.0,
    "pass_": true,
    "note": ""
   },
   "static/keel-spine bridge": {
-   "value": 51.95,
+   "value": 60.0,
    "need": 3.0,
    "pass_": true,
    "note": ""
@@ -91,70 +91,106 @@
    "note": ""
   },
   "static/crown-skin": {
-   "value": 50.8,
+   "value": 60.0,
    "need": 2.0,
    "pass_": true,
    "note": ""
   },
   "static/keel-skin": {
-   "value": 34.96,
+   "value": 45.33,
    "need": 2.0,
    "pass_": true,
    "note": ""
   },
   "static/spaulder-skin away from the seats": {
-   "value": 16.66,
+   "value": 15.47,
    "need": 10.0,
    "pass_": true,
    "note": "rule 10 mm over the shoulder top"
   },
   "static/spaulder-skin within 35 mm of a seat": {
-   "value": 18.55,
+   "value": 17.35,
    "need": 2.5,
    "pass_": true,
    "note": "seats sit on stable zones (F1 / F4)"
   },
+  "interference/crown-keel volume (mm3)": {
+   "value": -0.0,
+   "need": -0.01,
+   "pass_": true,
+   "note": "must be 0"
+  },
+  "interference/crown-spaulder volume (mm3)": {
+   "value": -0.0,
+   "need": -0.01,
+   "pass_": true,
+   "note": "must be 0"
+  },
+  "interference/keel-spaulder volume (mm3)": {
+   "value": -0.0,
+   "need": -0.01,
+   "pass_": true,
+   "note": "must be 0"
+  },
+  "interference/crown-plate volume (mm3)": {
+   "value": -0.0,
+   "need": -0.01,
+   "pass_": true,
+   "note": "must be 0"
+  },
+  "interference/keel-plate volume (mm3)": {
+   "value": -0.0,
+   "need": -0.01,
+   "pass_": true,
+   "note": "must be 0"
+  },
+  "interference/spaulder-plate volume (mm3)": {
+   "value": -0.0,
+   "need": -0.01,
+   "pass_": true,
+   "note": "must be 0"
+  },
   "joint/keel lip inside crown hem (gap)": {
-   "value": 0.79,
+   "value": 0.46,
    "need": 0.3,
    "pass_": true,
-   "note": "designed nesting gap 0.6-1.4 mm; screws M3x8 at the hem"
+   "note": "designed nesting gap 0.7 mm (rev b: follows the crown flare); screws M3x8 at the hem"
   },
   "static/keel-crown away from the lip": {
-   "value": 1.82,
+   "value": 1.2,
    "need": 1.0,
    "pass_": true,
    "note": ""
   },
-  "static/spaulder-crown away from the ear posts": {
-   "value": 2.03,
+  "static/spaulder-crown (rev b: no ear posts, scalloped over the crown)": {
+   "value": 7.68,
    "need": 1.0,
    "pass_": true,
    "note": ""
   },
   "S1 sweep/crown (hard 5..150)": {
-   "value": 4.33,
+   "value": 4.35,
    "need": 3.0,
    "pass_": true,
-   "note": "worst at S1 60"
+   "note": "worst at S1 87"
   },
   "S1 sweep/keel (hard 5..150)": {
-   "value": 37.01,
+   "value": 37.05,
    "need": 3.0,
    "pass_": true,
-   "note": "worst at S1 5"
+   "note": "worst at S1 52"
   },
   "S1 sweep/spaulder (hard 5..150)": {
-   "value": 5.58,
+   "value": 4.18,
    "need": 3.0,
    "pass_": true,
-   "note": "worst at S1 31"
+   "note": "worst at S1 13"
   },
   "arm sweep/crown (soft box)": {
    "value": 18.03,
    "need": 3.0,
    "pass_": true,
-   "note": "worst at S1/S2/S3 (np.float64(20.0), np.float64(87.0), -70.0)"
+   "note": "worst at S1/S2/S3 (np.float64(45.0), np.float64(87.0), -70.0)"
   },
   "arm sweep/keel (soft box)": {
    "value": 40.0,
@@ -163,16 +199,16 @@
    "note": "worst at S1/S2/S3 (np.float64(10.0), np.float64(-30.0), -70.0)"
   },
   "arm sweep/spaulder (soft box)": {
-   "value": 8.89,
+   "value": 4.18,
    "need": 3.0,
    "pass_": true,
-   "note": "worst at S1/S2/S3 (np.float64(20.0), np.float64(87.0), -70.0)"
+   "note": "worst at S1/S2/S3 (np.float64(45.0), np.float64(87.0), -70.0)"
   },
   "ROM/arm abduction": {
    "value": 999.0,
    "need": 999,
    "pass_": true,
-   "note": "no contact in the tested range; old pauldron None; clasp seat boss 102.5; clasp 5.0; normal 110 GH (171 total) deg"
+   "note": "no contact in the tested range; old pauldron None; clasp seat boss 100.0; clasp 5.0; normal 110 GH (171 total) deg"
   },
   "ROM/arm scaption (30 deg)": {
    "value": 107.5,
@@ -217,10 +253,10 @@
    "note": ""
   },
   "print/crown wall p5": {
-   "value": 1.41,
+   "value": 1.53,
    "need": 1.4,
    "pass_": true,
-   "note": "nominal 1.6 (keel flange 3-6)"
+   "note": "nominal 1.8 rev b (keel flange 3-6)"
   },
   "print/keel watertight + 256 cube": {
    "value": 1.0,
@@ -229,10 +265,10 @@
    "note": ""
   },
   "print/keel wall p5": {
-   "value": 1.43,
+   "value": 1.54,
    "need": 1.4,
    "pass_": true,
-   "note": "nominal 1.6 (keel flange 3-6)"
+   "note": "nominal 1.8 rev b (keel flange 3-6)"
   },
   "print/spaulder watertight + 256 cube": {
    "value": 1.0,
@@ -241,40 +277,41 @@
    "note": ""
   },
   "print/spaulder wall p5": {
-   "value": 1.56,
+   "value": 1.4,
    "need": 1.4,
    "pass_": true,
-   "note": "nominal 1.6 (keel flange 3-6)"
+   "note": "nominal 1.8 rev b (keel flange 3-6)"
   },
   "mass/armour total <= 182 g (harness model's pauldron)": {
-   "value": 10.6,
+   "value": 71.4,
    "need": 0.0,
    "pass_": true,
-   "note": "171.4 g"
+   "note": "110.6 g"
   },
   "assembly/crown slides on along -x over the bare S1 base": {
-   "value": 3.1,
+   "value": 3.15,
    "need": 0.5,
    "pass_": true,
    "note": ""
   },
   "assembly/keel rises +z (stage, motor, crown)": {
-   "value": 0.49,
+   "value": 0.57,
    "need": 0.3,
    "pass_": true,
    "note": "flange slides parallel to the plate face"
   },
-  "assembly/spaulder drops -z onto the ears and seats": {
-   "value": 2.2,
+  "assembly/spaulder drops -z onto the plate top and the 2 clasp seats": {
+   "value": 4.42,
    "need": 0.3,
    "pass_": true,
    "note": ""
   }
  },
+ "spaulder_feet_seat_gap_mm": 4.08,
  "arm_sweep_old_pauldron_mm": [
   19.36,
   [
-   40.0,
+   35.0,
    87.0,
    -70.0
   ]
@@ -284,7 +321,7 @@
    "armour": null,
    "old_pauldron": null,
    "clasp": 5.0,
-   "clasp_seat_bosses": 102.5
+   "clasp_seat_bosses": 100.0
   },
   "arm scaption (30 deg)": {
    "armour": 107.5,
@@ -325,54 +362,54 @@
  },
  "print": {
   "crown": {
-   "volume_cm3": 53.45,
-   "mass_g": 61.5,
+   "volume_cm3": 24.96,
+   "mass_g": 28.7,
    "watertight": true,
    "extents": [
-    176.4,
-    185.9,
+    146.5,
+    142.7,
     45.8
    ],
    "fits_256": true,
-   "wall_p1_mm": 1.04,
-   "wall_p5_mm": 1.41,
-   "wall_median_mm": 1.65,
-   "best_print_up": "-x",
-   "support_area_cm2": 55.3
+   "wall_p1_mm": 1.24,
+   "wall_p5_mm": 1.53,
+   "wall_median_mm": 1.82,
+   "best_print_up": "-z",
+   "support_area_cm2": 18.5
   },
   "keel": {
-   "volume_cm3": 64.6,
-   "mass_g": 74.3,
+   "volume_cm3": 36.43,
+   "mass_g": 41.9,
    "watertight": true,
    "extents": [
-    157.4,
-    170.9,
-    71.7
+    147.5,
+    137.0,
+    23.7
    ],
    "fits_256": true,
-   "wall_p1_mm": 1.37,
-   "wall_p5_mm": 1.43,
-   "wall_median_mm": 1.53,
-   "best_print_up": "+x",
-   "support_area_cm2": 12.2
-  },
-  "spaulder": {
-   "volume_cm3": 30.95,
-   "mass_g": 35.6,
-   "watertight": true,
-   "extents": [
-    127.0,
-    170.2,
-    45.3
-   ],
-   "fits_256": true,
-   "wall_p1_mm": 1.27,
-   "wall_p5_mm": 1.56,
+   "wall_p1_mm": 1.53,
+   "wall_p5_mm": 1.54,
    "wall_median_mm": 1.61,
    "best_print_up": "+x",
-   "support_area_cm2": 15.9
+   "support_area_cm2": 12.0
+  },
+  "spaulder": {
+   "volume_cm3": 34.81,
+   "mass_g": 40.0,
+   "watertight": true,
+   "extents": [
+    126.8,
+    140.7,
+    69.0
+   ],
+   "fits_256": true,
+   "wall_p1_mm": 0.95,
+   "wall_p5_mm": 1.4,
+   "wall_median_mm": 1.81,
+   "best_print_up": "+y",
+   "support_area_cm2": 14.5
   }
  },
- "mass_total_g": 171.4,
+ "mass_total_g": 110.6,
  "all_pass": true
 }

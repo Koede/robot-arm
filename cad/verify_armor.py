@@ -1,5 +1,7 @@
-"""Gates for the armoured pauldron (rev 2026-10-30): crown, keel, spaulder (group F).
-  1 static clearance to every neighbour (stage contents, plate, clasp, wing, spine bridge, wearer skin, each other)
+"""Gates for the armoured pauldron (rev 2026-10-30, masks updated for rev 2026-10-30b flush): crown, keel, spaulder (group F).
+  1 static clearance to every neighbour (stage contents, plate, clasp, wing, spine bridge, wearer skin, each other);
+    rev b: exact interference (manifold boolean volume = 0) for every armour pair and each part vs the plate; the spaulder's
+    2 rear feet on the plate top edge are designed contact (excluded from spaulder-plate); no ear posts any more
   2 S1 sweep: everything that turns with S1 (M1 + balancer M1), HARD range 5..150 deg at 1 deg
   3 arm sweep: M2 / M3 (+ balancer M2) over the SOFT box (S1 10..140 / 5, S2 -30..88 / 2, S3 -70/0/90)
   4 wearer range of motion (ergonomics): first-contact angle of Forest's own arm (abduction, scaption, flexion) and neck
@@ -44,7 +46,13 @@ if not ROM_ONLY:
         gate(f"static/{k}-stage contents", dmin(k, cont)[0], 3.0)
     pp = pts(plate, 0.8)
     gate("static/crown-plate", dmin("crown", pp)[0], 3.0)
-    gate("static/spaulder-plate", dmin("spaulder", pp)[0], 3.0)
+    TOPH = info.get("plate_top_holes", [])                                     # rev b: spaulder rear feet bolt down onto the plate top edge
+    feet = np.zeros(len(pp), bool)
+    for ty_ in TOPH: feet |= (np.abs(pp[:, 1] - ty_) < 12.0) & (pp[:, 2] > -60.0)
+    gate("static/spaulder-plate outside the 2 rear feet", dmin("spaulder", pp, ~feet)[0], 3.0, note="feet M3x10 into the tapped plate top edge (designed contact)")
+    if TOPH:
+        dfe, _ = AT["spaulder"].query(pp[feet & (pp[:, 2] > -55.0)], workers=-1)
+        R["spaulder_feet_seat_gap_mm"] = round(float(dfe.min()), 2)
     kq = AP["keel"][AP["keel"][:, 0] > -74.5]                                     # keel away from its flange / boss seat (x -80..-74)
     gate("static/keel-plate outside the bolted flange", float(cKDTree(pp).query(kq, workers=-1)[0].min()), 3.0, note="flange face on the plate rear face is the bolted seat")
     cp = pts(clasp, 0.8); near = np.min([np.linalg.norm(cp - c, axis=1) for c, _ in PADS.values()], axis=0) < 20.0
@@ -60,12 +68,19 @@ if not ROM_ONLY:
         nearpad = np.min([np.linalg.norm(ap - c, axis=1) for c, _ in PADS.values()], axis=0) < 35.0
         gate("static/spaulder-skin away from the seats", float(min(d[~nearpad].min(), 60)), 10.0, note="rule 10 mm over the shoulder top")
         gate("static/spaulder-skin within 35 mm of a seat", float(min(d[nearpad].min(), 60)), 2.5, note="seats sit on stable zones (F1 / F4)")
+    # part-to-part: exact interference (manifold boolean); sample-based gaps cannot see a 0.1 mm overlap
+    import manifold3d as _mf
+    _M = {k: _mf.Manifold(_mf.Mesh(vert_properties=np.asarray(m.vertices, np.float32), tri_verts=np.asarray(m.faces, np.uint32))) for k, m in ARM.items()}
+    for a_, b_ in (("crown", "keel"), ("crown", "spaulder"), ("keel", "spaulder")):
+        v_ = (_M[a_] ^ _M[b_]).volume(); gate(f"interference/{a_}-{b_} volume (mm3)", -v_, -0.01, note="must be 0")
+    _P = _mf.Manifold(_mf.Mesh(vert_properties=np.asarray(plate.vertices, np.float32), tri_verts=np.asarray(plate.faces, np.uint32)))
+    for k in ARM: v_ = (_M[k] ^ _P).volume(); gate(f"interference/{k}-plate volume (mm3)", -v_, -0.01, note="must be 0")
     # part-to-part: designed joints
-    d, _ = AT["crown"].query(AP["keel"]); lipzone = AP["keel"][:, 2] > -101.0
-    gate("joint/keel lip inside crown hem (gap)", float(d[lipzone].min()), 0.3, note="designed nesting gap 0.6-1.4 mm; screws M3x8 at the hem")
+    d, _ = AT["crown"].query(AP["keel"]); lipzone = AP["keel"][:, 2] > -101.0                     # rev b lip z -100..-94 + hem bosses at z -96
+    gate("joint/keel lip inside crown hem (gap)", float(d[lipzone].min()), 0.3, note="designed nesting gap 0.7 mm (rev b: follows the crown flare); screws M3x8 at the hem")
     gate("static/keel-crown away from the lip", float(d[~lipzone].min()), 1.0)
-    d, _ = AT["crown"].query(AP["spaulder"]); posts = (np.abs(AP["spaulder"][:, 1]) > 78) & (AP["spaulder"][:, 0] > -100) & (AP["spaulder"][:, 2] < -55)
-    gate("static/spaulder-crown away from the ear posts", float(d[~posts].min()), 1.0)
+    d, _ = AT["crown"].query(AP["spaulder"])
+    gate("static/spaulder-crown (rev b: no ear posts, scalloped over the crown)", float(d.min()), 1.0)
 
     # ---------------------------------------------------------------- 2 S1 sweep (hard range)
     m1 = [m for m in G["M1"].values()] + [L("shoulder/stops/s1_lug_R")] + [m for nm, (m, g) in ak.balancer_parts().items() if g == "M1"]
@@ -166,7 +181,7 @@ for k, m in ARM.items():
                  wall_p5_mm=round(float(np.percentile(th, 5)), 2), wall_median_mm=round(float(np.median(th)), 2),
                  best_print_up=best_o[0], support_area_cm2=round(best_o[1] / 100, 1))
     gate(f"print/{k} watertight + 256 cube", 1.0 if (m.is_watertight and m.extents.max() <= 256) else 0.0, 1.0)
-    gate(f"print/{k} wall p5", pr[k]["wall_p5_mm"], 1.4, note="nominal 1.6 (keel flange 3-6)")
+    gate(f"print/{k} wall p5", pr[k]["wall_p5_mm"], 1.4, note="nominal 1.8 rev b (keel flange 3-6)")
 R["print"] = pr
 tot = sum(v["mass_g"] for v in pr.values()); R["mass_total_g"] = round(tot, 1)
 gate("mass/armour total <= 182 g (harness model's pauldron)", 182.0 - tot, 0.0, note=f"{tot:.1f} g")
@@ -180,9 +195,9 @@ kp_ = AP["keel"]
 gate("assembly/keel rises +z (stage, motor, crown)", min(path_min(kp_, [0, 0, -1], np.arange(0.5, 90, 1.0), Fall),
                                                         path_min(kp_[kp_[:, 0] > -76.5], [0, 0, -1], np.arange(0.5, 90, 1.0), crown_t)), 0.3,
      note="flange slides parallel to the plate face")
-sp_ = AP["spaulder"]; obst = cKDTree(np.vstack([cp[~near], pts(plate, 1.0), pts(wing, 1.0)]))
-gate("assembly/spaulder drops -z onto the ears and seats", min(path_min(sp_, [0, 0, 1], np.arange(0.5, 60, 1.0), obst),
-                                                                path_min(sp_[~posts], [0, 0, 1], np.arange(0.5, 60, 1.0), crown_t)), 0.3)
+sp_ = AP["spaulder"]; obst = cKDTree(np.vstack([cp[~near], pp[~feet], pts(wing, 1.0)]))
+gate("assembly/spaulder drops -z onto the plate top and the 2 clasp seats", min(path_min(sp_, [0, 0, 1], np.arange(0.5, 60, 1.0), obst),
+                                                                path_min(sp_, [0, 0, 1], np.arange(0.5, 60, 1.0), crown_t)), 0.3)
 R["all_pass"] = all(v["pass_"] for v in R["gates"].values())
 json.dump(R, open(os.path.join(PD, "verify_armor.json"), "w"), indent=1)  # full run only
 log("ALL PASS" if R["all_pass"] else "SOME GATES FAIL", "| mass %.1f g" % tot)

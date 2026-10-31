@@ -1,46 +1,46 @@
 {
- "rev": "2026-10-30 armour",
+ "rev": "2026-10-30b flush armour",
  "parts": {
   "crown": {
    "extents": [
-    176.4,
-    185.9,
+    146.5,
+    142.7,
     45.8
    ],
    "fits_256": true,
-   "volume_cm3": 53.5,
-   "mass_g_PACF": 61.5,
+   "volume_cm3": 25.0,
+   "mass_g_PACF": 28.7,
    "watertight": true,
-   "faces": 54106
+   "faces": 25594
   },
   "keel": {
    "extents": [
-    157.4,
-    170.9,
-    71.7
+    147.5,
+    137.0,
+    23.7
    ],
    "fits_256": true,
-   "volume_cm3": 64.6,
-   "mass_g_PACF": 74.3,
+   "volume_cm3": 36.4,
+   "mass_g_PACF": 41.9,
    "watertight": true,
-   "faces": 43310
+   "faces": 66872
   },
   "spaulder": {
    "extents": [
-    127.0,
-    170.2,
-    45.3
+    126.8,
+    140.7,
+    69.0
    ],
    "fits_256": true,
-   "volume_cm3": 31.0,
-   "mass_g_PACF": 35.6,
+   "volume_cm3": 34.8,
+   "mass_g_PACF": 40.0,
    "watertight": true,
-   "faces": 45760
+   "faces": 46426
   }
  },
  "params": {
   "VOX": 0.5,
-  "T": 1.65,
+  "T": 1.8,
   "density_g_cm3": 1.15,
   "A_R": 76.0,
   "A_F": 120.0,
@@ -58,12 +58,12 @@
     -100.0
    ]
   ],
-  "FLARE": 3.0,
+  "FLARE": 1.2,
   "KEEL": [
-   60.0,
-   1.2,
-   2.6,
-   1.6
+   14.0,
+   4.0,
+   4.0,
+   0.9
   ],
   "LAME_X": [
    -85.0,
@@ -71,7 +71,7 @@
    -164.0,
    -220.0
   ],
-  "STEP": 3.0,
+  "STEP": 1.5,
   "clearances": {
    "contents": 3.5,
    "s1_sweep": 4.5,
@@ -109,61 +109,27 @@
  },
  "plate_feet": [
   [
-   -48.0,
-   -140.0
+   -50.0,
+   -109.0
   ],
   [
-   48.0,
-   -140.0
-  ],
-  [
-   0.0,
-   -150.0
+   50.0,
+   -109.0
   ]
  ],
  "foot_inserts": [
   [
-   -48.0,
-   -147.0
+   -50.0,
+   -109.0
   ],
   [
-   -48.0,
-   -133.0
-  ],
-  [
-   48.0,
-   -147.0
-  ],
-  [
-   48.0,
-   -133.0
-  ],
-  [
-   0.0,
-   -157.0
-  ],
-  [
-   0.0,
-   -143.0
+   50.0,
+   -109.0
   ]
  ],
- "ear_inserts": [
-  [
-   -81.5,
-   87.25
-  ],
-  [
-   -90.5,
-   87.25
-  ],
-  [
-   -81.5,
-   -87.25
-  ],
-  [
-   -90.5,
-   -87.25
-  ]
+ "plate_top_holes": [
+  -40.0,
+  40.0
  ],
  "hem_joints_phi": [
   35.0,
@@ -171,6 +137,6 @@
   100.0,
   -100.0
  ],
- "spaulder_arm_ceiling_violation_mm2": 1.25,
- "total_mass_g": 171.4
+ "spaulder_arm_ceiling_violation_mm2": 4.0,
+ "total_mass_g": 110.6
 }

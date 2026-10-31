@@ -1,4 +1,16 @@
-"""Armoured pauldron, rev 2026-10-30 (Forest: "It shouldn't be a shelf, it should be more like a shoulder piece of a knight's
+"""Armoured pauldron, rev 2026-10-30b FLUSH (Forest: "Wayyyyyyy too bulky, this thing should sit flush against the shoulder as
+much as possible"). Same three parts as rev a (described below); what rev b changes (SPEC_shoulder_housing.md section 0):
+  CROWN    outline = convex hull of the stage contents (z -112..-50) + the r 66.5 bore at G_IN 3.5, flare 1.2, no bulge, no ears.
+  KEEL     a 14 mm dish under the S1 motor (no fluted cascade), flange <= 6 mm + webs to 2 plate feet (M4 csk at y +-50, z -109,
+           plate.json); the lip follows the crown flare with a 0.7 mm nesting gap (LIP_OFF), inserts at az +-35 / +-100, z -96.
+  SPAULDER draped on the obstacle floor (skin + 10.5, clasp / wing / plate + 3.5, crown + 1): 10 mm max filter, 36 mm grey
+           closing, 7 mm Gaussian; 1.5 mm steps, 2 mm edge curl; 2 rear feet bolted DOWN onto the plate top edge (M3 x 10 into
+           taps at y +-40, plate.json); counterbore crumbs dropped after the boolean.
+  Walls 1.8 mm (rev a 1.6 / 1.65): the flush shells thinned below the 1.4 mm p5 gate at 1.6.
+  Mass ~111 g (rev a 171 g); assembly envelope 277 x 149 x 77 mm (rev a 287 x 186 x 120).
+The rev-a description follows; where it disagrees with the lines above, the lines above hold.
+
+Rev a, 2026-10-30 (Forest: "It shouldn't be a shelf, it should be more like a shoulder piece of a knight's
 armor" ... "really make smart ergonomic choices that are also aesthetically cool").  FIXED part (group F), PA-CF annealed.
 
 Why the old one read as a shelf: the S1 base is a 136 mm block cantilevered off the flat 6061 plate, and the rev 2026-10-13/23
@@ -45,22 +57,24 @@ t0 = time.time()
 def log(*a): print("[%5.0fs]" % (time.time() - t0), *a, flush=True)
 
 VOX = 0.5                       # voxel (mm)
-T = 1.65                        # keel wall (4 perimeters at 0.4 mm + smoothing allowance; the 3-6 mm flange and bosses carry the bolt loads)
-T_C, T_S = 1.6, 1.6              # crown and spaulder walls (covers; 4 perimeters at 0.4 mm)
-BEAD = 1.2                      # rolled-hem radius
+T = 1.8                         # keel wall (4 perimeters at 0.4 mm + smoothing allowance; the 3-6 mm flange and bosses carry the bolt loads)
+T_C, T_S = 1.8, 1.8              # crown and spaulder walls (covers; 4 perimeters at 0.4 mm)
+BEAD = 0.9                      # rolled-hem radius (rev 2026-10-30b: flush, was 1.2)
 PACF = 1.15                     # g/cm3, PA-CF (same density the 2026-10-13 pauldron used)
 G_IN, M1_CLR, ARM_CLR, PART_CLR, SKIN_CLR, FIX_CLR = 3.5, 3.5 + 1.0, 3.5 + 1.0, 3.0 + 0.5, 10.0 + 0.5, 1.0   # +0.5 voxel/sampling margin on the 3 / 10 mm gates
 R_BORE_MIN = 66.0               # socket bore (old R_RIM); grown locally if the S1 sweep needs it
 Z_RIM = -54.0                   # cop top at the bore (old Z_RIM; cowl bottom -50, M1 bumpers -49.5)
-COP_H = 7.0                     # the cop falls 7 mm from the bezel to the brim edge on a quadratic (domed) profile
-BULGE = 2.0                     # each lame bulges 2 mm outward at mid-height on top of its 3 mm flare
+COP_H = 3.0                     # the cop falls 3 mm from the bezel to the wall on a quadratic profile (rev b: was 7)
+BULGE = 0.0                     # rev b (flush): no mid-height bulge (was 2)
 A_R, A_F, B_W, N_SE = 76.0, 120.0, 83.0, 3.0         # crown plan superellipse: rear / front semi-axes, half width, exponent
 X_CUT = -77.0                   # crown and keel stop 3 mm short of the plate rear face (x -80)
 BANDS = [(-57.0, -79.0), (-77.0, -100.0)]               # crown lames; the keel continues the cascade below -100            # crown lames (z top, z hem); 2 mm riser overlap
-FLARE = 3.0                     # each lame flares 3 mm outward toward its hem
-KEEL_C, KEEL_PX, KEEL_PY, KEEL_OFF = 60.0, 1.2, 2.6, 1.6
-KSTEP_W, KSTEP = 0.45, 3.0      # the keel is two lames: the upper one flares 3 mm by w = 0.45, the lower one restarts inside it   # keel depth below the hem; taper exponents rear (x) / width (y); lip offset
-FEET = json.load(open(os.path.join(SH, "plate.json")))["pauldron_feet"]     # [(y, z)] M4 pairs at z +-7 (chassis_axilla.py: clearance + csk)
+FLARE = 1.2                     # each lame steps 1.2 mm outward toward its hem (rev b: was 3)
+KEEL_C, KEEL_PX, KEEL_PY, KEEL_OFF = 14.0, 4.0, 4.0, 0.9     # rev b: a shallow dish under the motor (was a 60 mm keel bowl)
+KSTEP_W, KSTEP = 0.45, 0.0      # the keel is two lames: the upper one flares 3 mm by w = 0.45, the lower one restarts inside it   # keel depth below the hem; taper exponents rear (x) / width (y); lip offset
+PLATE_JS = json.load(open(os.path.join(SH, "plate.json")))
+FEET = PLATE_JS["pauldron_feet"]                 # [(y, z)] single M4 keel feet (chassis_axilla.py rev 2026-10-30b: clearance + csk)
+TOP_HOLES = PLATE_JS["spaulder_top_holes"]       # y of the 2 M3 tapped holes in the plate top edge (spaulder rear feet)
 PLATE_REAR = -80.0
 
 # ------------------------------------------------------------------------------------------------ obstacles
@@ -205,7 +219,14 @@ def finish(m, tol=0.06):
 # crown plan outline: 2D signed distance of the superellipse (positive outside), 0.25 mm raster
 R2 = 0.25; lo2d = np.array([-140.0, -115.0]); n2d = np.array([int(260 / R2), int(230 / R2)])
 x2 = lo2d[0] + R2 * (np.arange(n2d[0]) + 0.5); y2 = lo2d[1] + R2 * (np.arange(n2d[1]) + 0.5); X2, Y2 = np.meshgrid(x2, y2, indexing="ij")
-inside2 = (np.abs(X2) / np.where(X2 >= 0, A_R, A_F)) ** N_SE + (np.abs(Y2) / B_W) ** N_SE <= 1.0
+# rev 2026-10-30b (flush): the outline is the plan hull of the stage contents (z -112..-50) and the socket bore circle, not a
+# decorative superellipse; the crown wall then sits G_IN off the contents
+from scipy.spatial import ConvexHull
+from matplotlib.path import Path as _MP
+_cp = np.vstack([surf_pts(m_, 1.5) for m_ in F_CONT.values()]); _cp = _cp[(_cp[:, 2] > -112.0) & (_cp[:, 2] < -50.0)][:, :2]
+_bc = np.c_[np.cos(np.linspace(0, 2 * np.pi, 360)), np.sin(np.linspace(0, 2 * np.pi, 360))] * (R_BORE_MIN + 0.5)
+_hp = np.vstack([_cp, _bc]); _hp = _hp[ConvexHull(_hp).vertices]
+inside2 = _MP(_hp).contains_points(np.c_[X2.ravel(), Y2.ravel()]).reshape(X2.shape)
 D2r = ((ndimage.distance_transform_edt(~inside2) - ndimage.distance_transform_edt(inside2)) * R2).astype(np.float32)
 def D2(X, Y):
     i = (X - lo2d[0]) / R2 - 0.5; j = (Y - lo2d[1]) / R2 - 0.5
@@ -216,10 +237,11 @@ def flare(Z, ztop, zhem):
 def wall_k(Z, ztop, zhem):
     """horizontal wall width that gives a normal thickness of 1 on the flared / bulged lame (1 / cos of its slope)"""
     t = np.clip((ztop - Z) / (ztop - zhem), 0.0, 1.0); return np.sqrt(1.0 + ((FLARE + BULGE * np.pi * np.cos(np.pi * t)) / (ztop - zhem)) ** 2)
+_RHO_PHI = np.radians(np.arange(0.0, 360.0, 0.5)); _rr = np.linspace(20, 160, 1401)
+_RHO = np.array([_rr[np.argmax(D2(_rr * np.cos(a_), _rr * np.sin(a_)) >= 0)] for a_ in _RHO_PHI])
 def rho(phi):
-    """crown outline radius (superellipse) at azimuth phi (rad)"""
-    c, s_ = np.abs(np.cos(phi)), np.abs(np.sin(phi)); a = np.where(np.cos(phi) >= 0, A_R, A_F)
-    return 1.0 / ((c / a) ** N_SE + (s_ / B_W) ** N_SE) ** (1.0 / N_SE)
+    """crown outline radius at azimuth phi (rad), from the contents hull"""
+    return np.interp(np.mod(phi, 2 * np.pi), _RHO_PHI, _RHO, period=2 * np.pi)
 
 # ---- SDF toolkit (negative inside). Shells are built as true distance fields (unions / intersections of analytic primitives),
 #      so surfaces are clean and wall thickness is exact; voxel booleans are used only to carve hidden keep-out faces.
@@ -261,11 +283,7 @@ cr = U(cr, np.hypot(rc - (R_BORE_MIN + 1.5), Z - (Z_RIM - 1.5)) - 1.5)          
 cr = I(cr, U(R_BORE_MIN - rc, Z - (Z_RIM - 9.0)))                                                   # socket bore stays open
 cr = I(cr, X_CUT - X)                                                                               # 3 mm short of the plate
 del ztop, tc, copk
-EAR_Y, EAR_X, EAR_Z = (81.5, 93.0), (-95.0, X_CUT + 1.0), (-64.0, -57.0)
-EAR_YIN = {1: plate.bounds[1][1] + 3.5, -1: -plate.bounds[0][1] + 3.5}          # 3.5 mm off the plate side edges
-for s_ in (1, -1):                                                                 # ears run 5 mm back over the leg so they are part of it
-    cr = U(cr, I(box_sdf(X, s_ * Y, Z, (EAR_X[0], EAR_YIN[s_], EAR_Z[0]), (X_CUT + 1.0, EAR_Y[1], EAR_Z[1])), -0.5 - d2c))
-    cr = U(cr, I(box_sdf(X, s_ * Y, Z, (X_CUT - 0.5, 77.0, EAR_Z[0]), (X_CUT + 5.0, EAR_Y[1], EAR_Z[1])), -0.5 - d2c))   # root over the leg (behind the plate)
+# rev 2026-10-30b: no ears (they stood out to y +-93); the spaulder now rests on the plate's top edge instead
 # keep-outs: stage contents + G_IN, the S1 sweep (hard range), the plate + 3 mm, and the assembly draft over the bare S1 base
 occ = np.zeros(n, bool)
 for m in F_CONT.values(): occ |= voxelize(m, lo, n)
@@ -283,8 +301,7 @@ def hem_point(phi, off):
     a = np.radians(phi); rr = np.linspace(40, 140, 2001); xs, ys = rr * np.cos(a), rr * np.sin(a)
     d = D2(xs, ys) - off; k = np.argmax(d >= 0); return np.array([xs[k], ys[k], Z_JOIN]), np.array([np.cos(a), np.sin(a), 0.0])
 cut = []
-EAR_HOLES = [(xh, s * 87.25) for s in (1, -1) for xh in (-81.5, -90.5)]
-for xh, yh in EAR_HOLES: cut.append(cyl([xh, yh, EAR_Z[1] - 5.7], [xh, yh, EAR_Z[1] + 1], 2.3))
+EAR_HOLES = []
 for ph in JOIN_PHI:
     p, u = hem_point(ph, float(flare(np.array(Z_JOIN), *BANDS[1])))
     cut.append(cyl(p - u * 1.0, p + u * 8.0, 1.7))
@@ -298,16 +315,19 @@ Xk, Yk = np.meshgrid(gx, gy, indexing="ij"); X, Y, Z = Xk[:, :, None], Yk[:, :, 
 w = np.clip((BANDS[1][1] - Z) / KEEL_C, 0.0, 1.0)
 sig = np.maximum((1.0 - w ** KEEL_PX) ** (1.0 / KEEL_PX), 0.02); sgy = np.maximum((1.0 - w ** KEEL_PY) ** (1.0 / KEEL_PY), 0.02)
 ZLIP = BANDS[1][1] + 6.0
+LIP_OFF = min(KEEL_OFF, float(flare(np.array(Z_JOIN), *BANDS[1])) - 0.7)   # lip outer face at the hem screws
 V = np.zeros(n, bool)
 for k in range(n[2]):                                    # slice by slice: crown outline (offset off_k) scaled about (-77, 0)
     zk = float(gz[k]); s_, sy_ = float(sig[0, 0, k]), float(sgy[0, 0, k]); wk = float(w[0, 0, k])
     if zk < BANDS[1][1] - KEEL_C: continue
     off_k = KEEL_OFF + (KSTEP * wk / KSTEP_W if wk < KSTEP_W else 0.0)
+    if zk > BANDS[1][1]:                                 # lip inside the crown hem: crown inner wall sits at flare(z); keep a 0.7 mm nesting gap
+        off_k = min(off_k, float(flare(np.array(zk), *BANDS[1])) - 0.7)
     V[:, :, k] = D2(X_CUT + (Xk - X_CUT) / s_, Yk / sy_) <= off_k
 g3 = ndimage.gaussian_filter(mask_sdf(V), 1.0)          # 3-D signed distance of the keel volume (smoothed one voxel)
 phi0 = np.degrees(np.arctan2(Y / sgy, (X_CUT + (X - X_CUT) / sig)))
 rib_h = np.zeros(np.broadcast_shapes(phi0.shape, n), np.float32)
-for pc, h, hw in ((0.0, 1.8, 3.0), (45.0, 1.2, 2.4), (-45.0, 1.2, 2.4)):
+for pc, h, hw in ():                                       # rev b: flat dish, no flutes
     rib_h = np.maximum(rib_h, h * np.clip(1.0 - np.abs(phi0 - pc) / hw, 0.0, 1.0) ** 0.5)
 rib_h = np.where((Z < BANDS[1][1] - 3.0) & (Z > BANDS[1][1] - KEEL_C + 6.0), rib_h, 0.0).astype(np.float32)
 ke = I(-g3 - T, g3 - rib_h)                               # shell inside the volume + flutes / crest outside it
@@ -315,16 +335,16 @@ ke = I(ke, I(X_CUT - X, Z - ZLIP))
 del g3, phi0, rib_h, w, sig, sgy
 # plate flange (3 thick, 9 wide) + D13 x 6 insert bosses at the 6 plate holes (ISO 10642 M4 x 12 from the plate front)
 ix0 = int(round((X_CUT - lo[0]) / VOX - 0.5)); sec_ = V[ix0]
-flange2 = sec_ & (ndimage.distance_transform_edt(sec_) * VOX <= 9.0) & (gz[None, :] <= BANDS[1][1] - 2.0)   # below the crown hem only
+flange2 = sec_ & (ndimage.distance_transform_edt(sec_) * VOX <= 6.0) & (gz[None, :] <= BANDS[1][1] - 2.0)   # below the crown hem only
+for (yf, zf) in FEET:                                    # web from the dish edge down to each foot boss
+    flange2 |= (np.abs(Yk[0][:, None] - yf) <= 6.5) & (gz[None, :] >= zf) & (gz[None, :] <= BANDS[1][1] - 2.0)
 pads2 = np.zeros_like(sec_); holes_ft = []
-for (yf, zf) in FEET:
-    for dz in (-7.0, 7.0):
-        holes_ft.append((yf, zf + dz)); pads2 |= np.hypot(Yk[0][:, None] - yf, gz[None, :] - (zf + dz)) <= 6.5
-    pads2 |= (np.abs(Yk[0][:, None] - yf) <= 4.0) & (np.abs(gz[None, :] - zf) <= 7.0)
+for (yf, zf) in FEET:                                    # rev b: one M4 per foot, D13 x 6 boss
+    holes_ft.append((yf, zf)); pads2 |= np.hypot(Yk[0][:, None] - yf, gz[None, :] - zf) <= 6.5
 fl3 = (flange2[None, :, :] & (X >= PLATE_REAR) & (X <= PLATE_REAR + 3.0)) | (pads2[None, :, :] & (X >= PLATE_REAR) & (X <= PLATE_REAR + 6.0))
 ke = U(ke, mask_sdf(fl3)); del fl3, V
 for ph in JOIN_PHI:                                      # radial insert bosses inside the lip for the crown screws
-    p, u = hem_point(ph, KEEL_OFF)
+    p, u = hem_point(ph, LIP_OFF)
     q = np.stack(np.broadcast_arrays(X - p[0], Y - p[1], Z - p[2]), -1).astype(np.float32); a_ = q @ u.astype(np.float32)
     rr_ = np.linalg.norm(q - a_[..., None] * u.astype(np.float32), axis=-1); ke = U(ke, I(rr_ - 4.25, I(a_, -7.5 - a_))); del q, a_, rr_
 occ = np.zeros(n, bool)
@@ -335,10 +355,10 @@ cut = []
 for (yt, zt) in holes_ft:                               # M4 heat-set insert 5.6 x 4 (+0.5) from the plate face
     cut.append(cyl([PLATE_REAR - 1.0, yt, zt], [PLATE_REAR + 4.5, yt, zt], 2.8))
 for ph in JOIN_PHI:
-    p, u = hem_point(ph, KEEL_OFF); cut.append(cyl(p - u * 5.7, p + u * 1.0, 2.3))
+    p, u = hem_point(ph, LIP_OFF); cut.append(cyl(p - u * 5.7, p + u * 1.0, 2.3))
 # S1 bundle port (PLACEHOLDER until the AK70-10 cable exit is measured): medial side, 22 x 12 mm slot along y
 port = trimesh.creation.capsule(height=10.0, radius=6.0, count=[16, 16]); port.apply_transform(trimesh.transformations.rotation_matrix(np.pi / 2, [1, 0, 0]))
-port.apply_scale([1.0, 6.0, 1.0]); port.apply_translation([-20.0, -70.0, -128.0]); cut.append(port)
+port.apply_scale([1.0, 0.5, 1.0]); port.apply_transform(trimesh.transformations.rotation_matrix(np.pi / 2, [1, 0, 0])); port.apply_translation([-20.0, 0.0, -113.0]); cut.append(port)   # rev b: bottom of the dish, PLACEHOLDER
 keel_m = finish(boolean(keel_m, cutters=cut))
 log("keel", keel_m.is_watertight, round(keel_m.volume / 1e3, 1), "cm3")
 
@@ -347,8 +367,8 @@ log("spaulder")
 X_R = -85.0                                                     # rear edge (over the plate top; r >= 84 clears the S1 sweep)
 lo, n, (gx, gy, gz) = grid([-218.0, -102.0, -108.0], [-76.0, 102.0, -38.0])
 lo2 = lo[:2]; n2 = tuple(n[:2]); Xs, Ys = np.meshgrid(gx, gy, indexing="ij")
-poly = np.array([[X_R, -86.0], [X_R, 86.0], [-110.0, 70.0], [-160.0, 48.0], [-196.0, 38.0], [-210.0, 22.0], [-210.0, -24.0],
-                 [-200.0, -58.0], [-184.0, -74.0], [-150.0, -80.0], [-108.0, -84.0]])
+poly = np.array([[X_R, -76.0], [X_R, 74.0], [-120.0, 60.0], [-165.0, 42.0], [-198.0, 36.0], [-210.0, 22.0], [-210.0, -24.0],
+                 [-200.0, -58.0], [-184.0, -72.0], [-150.0, -78.0], [-110.0, -78.0]])          # rev b: no lateral wing; plate-wide at the rear
 from matplotlib.path import Path as MPath
 plan = MPath(poly).contains_points(np.c_[Xs.ravel(), Ys.ravel()]).reshape(n2)
 pd_in = ndimage.distance_transform_edt(plan) * VOX
@@ -384,10 +404,26 @@ for axr, amax in (([-1.0, 0, 0], 50.0), ([0, 0, -1.0], 90.0), ([0, -1.0, 0], 70.
     for a_ in np.arange(0.0, amax + 0.01, 2.0): romP.append(rodr(headp, axr, np.radians(a_) * hw_, NECK))
 romP = np.vstack(romP); romP = romP[np.all((romP > lo - 10) & (romP < lo + VOX * n + 10), axis=1)]
 romP = romP[np.min(np.linalg.norm(romP[:, None, :] - pad_c[None], axis=2), axis=1) > 13.0 + ROM_CLR]   # only the D24 pad itself is exempt
+near_pad = lambda p: np.min([np.linalg.norm(p[:, :2] - c[:2], axis=1) for c, _ in PADS.values()], axis=0) < 12.0
+body_low = body.submesh([np.where(body.triangles_center[:, 2] < -40.0)[0]], append=True)
+floor_ = top_field([(body_low, SKIN_CLR)], lo2, n2, VOX)
+floor_ = np.maximum(floor_, top_field([(clasp, PART_CLR)], lo2, n2, VOX, exempt=near_pad))
+floor_ = np.maximum(floor_, top_field([(wing, PART_CLR), (plate, PART_CLR), (spine, PART_CLR), (crown_m, FIX_CLR)], lo2, n2, VOX))
+# rev 2026-10-30b (flush): the design surface IS the clearance envelope (skin + 10, clasp / wing / plate + 3), smoothed, so the
+# spaulder drapes over the shoulder at the rule distance instead of doming above it; lames are 1.5 mm steps, edges barely roll
+_fin = np.isfinite(floor_)                                  # columns with nothing below take the nearest real floor (no cliffs)
+_, _ix = ndimage.distance_transform_edt(~_fin, return_indices=True); _ff = floor_[tuple(_ix)]
+# drape, not shrink-wrap: max-filter (clearance width), then a grey closing with a 36 mm disc bridges the valleys between the
+# clasp nodes / pads, then a 7 mm Gaussian: one smooth sheet that still sits within a few mm of the highest local obstacle
+_disc = (np.hypot(*np.mgrid[-18:18.01:VOX, -18:18.01:VOX]) <= 18.0)
+env = ndimage.gaussian_filter(ndimage.grey_closing(ndimage.maximum_filter(_ff, size=int(10 / VOX)), footprint=_disc), 7.0 / VOX)
+_loc = ndimage.gaussian_filter(ndimage.maximum_filter(_ff, size=int(10 / VOX)), 3.0 / VOX)   # the rev-b local envelope
+_def = np.maximum(_loc - env, 0.0)                         # where the Gaussian shaved a peak: add it back as a broad, smooth swell
+env = env + ndimage.gaussian_filter(ndimage.maximum_filter(_def, size=int(20 / VOX)), 8.0 / VOX)
+env = np.maximum(env, _loc)                                # (residual sub-0.3 mm only; keeps the floor guarantee)
 # plan trim: pull the edge back wherever the wearer-ROM envelope reaches the shell's height band (design surface, -4..+12 mm), so the
 # trimmed edges keep their rolled bead instead of being carved raw; the 3-D carve below remains as a safety net
-_u0 = np.clip((X_R - Xs) / (X_R + 212.0), 0, 1); _yr = -10.0 - 8.0 * _u0
-_z0 = -48.0 - 30.0 * _u0 ** 2 - (0.0012 + 0.0045 * _u0 ** 0.8) * (Ys - _yr) ** 2
+_z0 = env + T_S / 2 + 0.6                                    # the conformal design surface (rev b)
 romT = cKDTree(romP); cols_ = np.argwhere(plan); forb = np.zeros(n2, bool)
 for dz_ in np.arange(-4.0, 12.01, 1.0):
     q_ = np.c_[lo2 + VOX * (cols_ + 0.5), _z0[plan] + dz_]
@@ -406,26 +442,14 @@ log("  plan trimmed by the wearer-ROM envelope: %.0f cm2 removed" % (forb.sum() 
 psdf = ndimage.gaussian_filter(((ndimage.distance_transform_edt(~plan) - ndimage.distance_transform_edt(plan)) * VOX).astype(np.float32), 1.0)
 psdf = np.maximum(psdf, Xs - X_R)
 din = np.maximum(-psdf, 0.0)
-u = np.clip((X_R - Xs) / (X_R + 212.0), 0, 1)
-y_r = -10.0 - 8.0 * u
-kcam = 0.0012 + 0.0045 * u ** 0.8                          # cross camber grows from the plate seam (rear corners sit on the ears) to the front
-zm = -48.0 - 30.0 * u ** 2 - kcam * (Ys - y_r) ** 2 - 0.06 * np.abs(Ys - y_r) * u ** 0.5      # fore-aft dome, cross camber, crest
-LAME_X = [X_R, -124.0, -164.0, -220.0]; STEP = 3.0
+LAME_X = [X_R, -124.0, -164.0, -220.0]; STEP = 1.5
 lame_id = np.digitize(-Xs, [-LAME_X[1], -LAME_X[2]])           # 0 rear, 1 mid, 2 front
 fr = np.zeros(n2, np.float32)
 for k in range(3):
     m_ = lame_id == k; fr[m_] = ((LAME_X[k] - Xs[m_]) / (LAME_X[k] - LAME_X[k + 1]))
-zm = zm + STEP * fr
 sm = lambda t: np.clip(t, 0, 1) ** 2 * (3 - 2 * np.clip(t, 0, 1))
-curl = 8.0 * np.clip(1.0 - din / 11.0, 0, 1) ** 2 * (Xs < X_R - 12.0)       # outer edges roll down (not the rear seam)
-curl = curl + 9.0 * np.clip(1.0 - din / 22.0, 0, 1) ** 1.6 * sm((Ys - 5.0) / 25.0) * sm((-135.0 - Xs) / 35.0)   # lateral wing over the acromion
-zm = zm - curl
-near_pad = lambda p: np.min([np.linalg.norm(p[:, :2] - c[:2], axis=1) for c, _ in PADS.values()], axis=0) < 12.0
-body_low = body.submesh([np.where(body.triangles_center[:, 2] < -40.0)[0]], append=True)
-floor_ = top_field([(body_low, SKIN_CLR)], lo2, n2, VOX)
-floor_ = np.maximum(floor_, top_field([(clasp, PART_CLR)], lo2, n2, VOX, exempt=near_pad))
-floor_ = np.maximum(floor_, top_field([(wing, PART_CLR), (plate, PART_CLR), (spine, PART_CLR), (crown_m, FIX_CLR)], lo2, n2, VOX,
-                                      exempt=lambda p: (np.abs(p[:, 1]) > EAR_Y[0] - 1.0) & (p[:, 0] < X_CUT + 2.0) & (p[:, 2] > EAR_Z[0] - 1.0)))
+curl = 2.0 * np.clip(1.0 - din / 6.0, 0, 1) ** 2 * (Xs < X_R - 12.0)       # edges roll down 2 mm (visual only; the floor still governs)
+zm = env + T_S / 2 + 0.6 + STEP * fr - curl
 ceil_ = arm_floor(lo2, n2, VOX)
 k_ = int(np.ceil(ARM_CLR / VOX)); cg = np.full(n2, np.inf)
 for di in range(-k_, k_ + 1):
@@ -438,11 +462,11 @@ zm2 = zm.copy(); half = np.full(n2, T_S / 2)
 for it in range(3):                                         # the underside is zm - T/2 * sec (+1.2 at the rolled edge): iterate on the slope
     need = floor_ + np.minimum(half, 0.9 * T_S) + 0.3
     lift = np.where(plan, np.maximum(need - zm, 0.0), 0.0)
-    lift = ndimage.gaussian_filter(ndimage.maximum_filter(lift, size=int(8 / VOX)), 4.0 / VOX)
+    lift = ndimage.gaussian_filter(ndimage.maximum_filter(lift, size=int(16 / VOX)), 7.0 / VOX)
     zm2 = np.where(plan, np.maximum(zm + lift, need), zm); zm2 = np.where(np.isfinite(zm2), zm2, zm)
-    gzx, gzy = np.gradient(zm2, VOX); sec = np.sqrt(1 + gzx ** 2 + gzy ** 2); half = T_S / 2 * sec
+    gzx, gzy = np.gradient(zm2, VOX); sec = np.minimum(np.sqrt(1 + gzx ** 2 + gzy ** 2), 2.5); half = T_S / 2 * sec
 zm2 = np.where(plan, np.maximum(zm2, floor_ + half + 0.3), zm2); zm2 = np.where(np.isfinite(zm2), zm2, zm)
-gzx, gzy = np.gradient(zm2, VOX); sec = np.sqrt(1 + gzx ** 2 + gzy ** 2); half = T_S / 2 * sec
+gzx, gzy = np.gradient(zm2, VOX); sec = np.minimum(np.sqrt(1 + gzx ** 2 + gzy ** 2), 2.5); half = T_S / 2 * sec
 # true 3-D clearance pass: the heightfield floor cannot see an obstacle BESIDE a curled-down edge (the F4 clasp node under the
 # lateral wing). Sample the underside, measure real distances, lift the short columns, repeat.
 from scipy.spatial import cKDTree
@@ -462,12 +486,12 @@ for it in range(4):
     log("  3-D clearance pass %d: worst deficit %.2f mm over %d columns" % (it + 1, deficit.max(), int((deficit > 0).sum())))
     if deficit.max() <= 0.05: break
     lift3 = np.zeros(n2); lift3[plan] = deficit * 1.3
-    lift3 = ndimage.gaussian_filter(ndimage.maximum_filter(lift3, size=int(6 / VOX)), 2.5 / VOX)
+    lift3 = ndimage.gaussian_filter(ndimage.maximum_filter(lift3, size=int(14 / VOX)), 6.0 / VOX)
     lift3 = np.minimum(lift3, np.maximum(4.0 - lift_tot, 0.0)); lift_tot += lift3          # corrective lift capped at 4 mm in total
     zm2 = np.where(plan, zm2 + lift3, zm2)
-    gzx, gzy = np.gradient(zm2, VOX); sec = np.sqrt(1 + gzx ** 2 + gzy ** 2); half = T_S / 2 * sec
+    gzx, gzy = np.gradient(zm2, VOX); sec = np.minimum(np.sqrt(1 + gzx ** 2 + gzy ** 2), 2.5); half = T_S / 2 * sec
 zm2 = np.where(plan & np.isfinite(ceil_), np.minimum(zm2, ceil_ - half - 1.9), zm2)   # never into the arm sweep: the carve trims what then sits too low
-gzx, gzy = np.gradient(zm2, VOX); sec = np.sqrt(1 + gzx ** 2 + gzy ** 2); half = T_S / 2 * sec
+gzx, gzy = np.gradient(zm2, VOX); sec = np.minimum(np.sqrt(1 + gzx ** 2 + gzy ** 2), 2.5); half = T_S / 2 * sec
 bad = plan & (zm2 + half + 1.8 > ceil_ + 0.05)
 log("spaulder: lift max %.1f mm, cells over the arm ceiling: %d (%.0f mm2)" % (float(lift[plan].max()), int(bad.sum()), bad.sum() * VOX * VOX))
 if bad.any():
@@ -483,9 +507,9 @@ for k in (1, 2):                                                                
     sp = U(sp, I(I(np.hypot(X3 - (xb - 0.6), Z - zc_row) - 1.5, np.abs(X3 - xb) - 3.0), Ps))
 edge = I(I(-Ps - 2.0, Ps), I(I((Zm - Hh) - Z, Z - (Zm + Hh + 1.4)), X3 - (X_R - 4.0)))   # outer rolled bead (2 mm band, rolled outward / up)
 sp = U(sp, edge)
-for s_ in (1, -1):                                                                # corner posts onto the crown ears
-    xc_ = sum(EAR_X) / 2 - 1.0
-    sp = U(sp, I(I(I(np.abs(X3 - xc_) - 8.0, np.abs(Y3 - s_ * 87.25) - 5.5), EAR_Z[1] - Z), Z - (Zm + Hh)))
+Z_PT = PLATE_JS["top_z"]                                                          # rear feet resting on the plate's top edge (designed seat)
+for ty_ in TOP_HOLES:
+    sp = U(sp, I(I(I(np.abs(X3 + 84.0) - 3.8, np.abs(Y3 - ty_) - 7.0), Z_PT - Z), Z - (Zm + Hh)))
 for nm, (c, nrm) in PADS.items():                                                 # clasp seats (unchanged contract) + bosses
     uu = np.cross(nrm, [1.0, 0, 0]); uu /= np.linalg.norm(uu); vv = np.cross(nrm, uu)
     q = np.stack(np.broadcast_arrays(X3 - c[0], Y3 - c[1], Z - c[2]), -1).astype(np.float32)
@@ -493,8 +517,7 @@ for nm, (c, nrm) in PADS.items():                                               
     sp = U(sp, I(np.abs(an) - 2.5, np.hypot(au, av) - 12.0))                    # round D24 seat pad on the D24 clasp boss (was 24 x 24 square)
     sp = U(sp, I(I(np.hypot(au, av) - 7.0, -an), Z - (Zm + Hh)))
     del an, au, av
-for s_ in (1, -1):                                                                # keep off the ears below their tops
-    sp = I(sp, -box_sdf(X3, s_ * Y3, Z, (EAR_X[0] - 1, EAR_Y[0] - 3, -200.0), (0.0, 200.0, EAR_Z[1])))
+
 # side clearance: carve the shell back from any obstacle closer than the rule (an edge beside the neck / clasp node side), seats excluded
 def surf_dist(P_):
     mk = np.zeros(n, bool); ij = np.floor((P_ - lo) / VOX).astype(int); ok_ = np.all((ij >= 0) & (ij < n), axis=1); mk[tuple(ij[ok_].T)] = True
@@ -513,10 +536,14 @@ cut = []
 for nm, (c, nrm) in PADS.items():
     cut.append(cyl(c - nrm * 4.0, c + nrm * 3.0, 2.25))                            # M4 clearance through the pad
     cut.append(cyl(c + nrm * 2.5, c + nrm * 40.0, 4.25))                           # counterbore for the M4 x 12 head + key
-for xh, yh in EAR_HOLES:
-    cut.append(cyl([xh, yh, EAR_Z[1] - 1.0], [xh, yh, -30.0], 1.7))
-    cut.append(cyl([xh, yh, EAR_Z[1] + 4.0], [xh, yh, -30.0], 3.4))                # M3 x 10 button head counterbore (4 mm clamp)
+for ty_ in TOP_HOLES:                                                              # M3 x 10 button head into the tapped plate edge (4 mm clamp)
+    cut.append(cyl([-84.0, ty_, Z_PT - 1.0], [-84.0, ty_, -30.0], 1.7))
+    cut.append(cyl([-84.0, ty_, Z_PT + 4.0], [-84.0, ty_, -30.0], 3.3))
 spa_m = finish(boolean(spa_m, cutters=cut))
+_cc = spa_m.split(only_watertight=False)                 # counterbores through the thin shell leave sub-mm3 crumbs: keep the body only
+if len(_cc) > 1:
+    log("  dropped %d crumbs (%.1f mm3)" % (len(_cc) - 1, sum(c.volume for c in _cc) - max(c.volume for c in _cc)))
+    spa_m = max(_cc, key=lambda c: c.volume)
 for nm_, (c_, n_) in PADS.items():                       # both bolted seats must still be part of the spaulder
     dseat = float(np.min(np.linalg.norm(spa_m.vertices - c_, axis=1)))
     assert dseat < 15.0, "seat %s detached from the spaulder (%.1f mm)" % (nm_, dseat)
@@ -528,21 +555,23 @@ arch = os.path.join(ST, "archive", "pauldron_rev2026-10-23"); os.makedirs(arch, 
 for f in glob.glob(os.path.join(OUT, "pauldron_*_R.stl")) + glob.glob(os.path.join(OUT, "pauldron_*_L.stl")):
     if not any(k in os.path.basename(f) for k in ("crown", "keel", "spaulder")): shutil.move(f, os.path.join(arch, os.path.basename(f)))
 parts = {"crown": crown_m, "keel": keel_m, "spaulder": spa_m}
-info = dict(rev="2026-10-30 armour", parts={}, params=dict(VOX=VOX, T=T, density_g_cm3=PACF, A_R=A_R, A_F=A_F, B_W=B_W, N_SE=N_SE, Z_RIM=Z_RIM,
+info = dict(rev="2026-10-30b flush armour", parts={}, params=dict(VOX=VOX, T=T, density_g_cm3=PACF, A_R=A_R, A_F=A_F, B_W=B_W, N_SE=N_SE, Z_RIM=Z_RIM,
             R_BORE_MIN=R_BORE_MIN, BANDS=BANDS, FLARE=FLARE, KEEL=[KEEL_C, KEEL_PX, KEEL_PY, KEEL_OFF], LAME_X=LAME_X, STEP=STEP,
             clearances=dict(contents=G_IN, s1_sweep=M1_CLR, arm=ARM_CLR, part=PART_CLR, skin=SKIN_CLR, fixed=FIX_CLR)),
             pads={k: dict(centre=np.round(c, 2).tolist(), normal=np.round(nn, 3).tolist()) for k, (c, nn) in PADS.items()},
-            plate_feet=FEET, foot_inserts=holes_ft, ear_inserts=EAR_HOLES, hem_joints_phi=JOIN_PHI,
+            plate_feet=FEET, foot_inserts=holes_ft, plate_top_holes=TOP_HOLES, hem_joints_phi=JOIN_PHI,
             spaulder_arm_ceiling_violation_mm2=float(bad.sum() * VOX * VOX))
-def post_simplify(m, tol=0.04):
-    """STL round trip, then manifold3d simplify; kept only if still closed with the same volume (+-0.2 %)"""
+def post_simplify(m, tols=(0.04, 0.03, 0.02)):
+    """STL round trip, then manifold3d simplify; kept only if still closed with the same volume (+-0.2 %); tolerance stepped
+    down until accepted (rev b: the keel at 0.04 lost 0.23 % and was left at 409 k faces, too heavy for the ray wall test)"""
     import manifold3d as mf, tempfile
     p_ = tempfile.mktemp(suffix=".stl"); m.export(p_); r = trimesh.load(p_); os.remove(p_)
-    o = mf.Manifold(mf.Mesh(vert_properties=np.asarray(r.vertices, np.float32), tri_verts=np.asarray(r.faces, np.uint32))).simplify(tol).to_mesh()
-    d = trimesh.Trimesh(o.vert_properties[:, :3], o.tri_verts, process=False)
     if r.volume < 0: r.invert()
-    if d.volume < 0: d.invert()                              # outward normals (a closed manifold can come back inside-out)
-    if d.is_watertight and abs(d.volume - r.volume) < 0.002 * abs(r.volume): return d
+    for tol in tols:
+        o = mf.Manifold(mf.Mesh(vert_properties=np.asarray(r.vertices, np.float32), tri_verts=np.asarray(r.faces, np.uint32))).simplify(tol).to_mesh()
+        d = trimesh.Trimesh(o.vert_properties[:, :3], o.tri_verts, process=False)
+        if d.volume < 0: d.invert()                          # outward normals (a closed manifold can come back inside-out)
+        if d.is_watertight and abs(d.volume - r.volume) < 0.002 * abs(r.volume): return d
     log("  post-simplify rejected"); return r
 parts = {k: post_simplify(m) for k, m in parts.items()}
 for k, m in parts.items():
@@ -565,7 +594,7 @@ def head_at(p, nrm, r=2.85, h=1.65):
     M[:3, 3] = p; sph.apply_transform(M); return sph
 for ph in JOIN_PHI:
     p, u_ = hem_point(ph, float(flare(np.array(Z_JOIN), *BANDS[1])) + T_C); heads.append(head_at(p, u_))
-for xh, yh in EAR_HOLES: heads.append(head_at([xh, yh, EAR_Z[1] + 4.0], [0, 0, 1.0]))
+for ty_ in TOP_HOLES: heads.append(head_at([-84.0, ty_, PLATE_JS["top_z"] + 4.0], [0, 0, 1.0]))
 trimesh.util.concatenate(heads).export(os.path.join(ST, "shoulder", "proxies", "pauldron_rivets_R.stl"))
 json.dump(info, open(os.path.join(OUT, "pauldron.json"), "w"), indent=1)
 log(json.dumps(info["parts"]), "total", info["total_mass_g"], "g")

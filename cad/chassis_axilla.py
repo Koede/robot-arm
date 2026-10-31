@@ -18,10 +18,14 @@ for cy_ in (-68.0, 68.0):                                  # S1 base block footp
     for cz_ in (-100.0, -62.0): seed += circ(cy_, cz_, 8.0)
 for k_, f_ in feet.items():                                # clasp feet bolt pairs, 16 mm radius -> organic bulge round each foot
     for dz_ in f_["bolts_dz"]: seed += circ(f_["y"], f_["z"] + dz_, 16.0)
-# rev 2026-10-13: feet of the faceted pauldron's plate struts (rear face, 2 x M4 each); the outline grows to include them
-PAULDRON_FEET = [(-48.0, -140.0), (48.0, -140.0), (0.0, -150.0)]
-for cy_, cz_ in PAULDRON_FEET:
-    for dz_ in (-7.0, 7.0): seed += circ(cy_, cz_ + dz_, 11.0)
+# rev 2026-10-30b (flush armour): the 2026-10-13 pauldron feet low on the plate (y +-48 / 0, z -133..-157) and the plate area grown
+# for them are gone. The armour's keel dish bolts to 2 feet just under the S1 base; the spaulder rests on the plate's top edge.
+# The wing tongue seat (scapular_frame.py TONGUE: y_rel 72..104 from the spine plane, z -150..-76) stays fully inside the outline.
+PAULDRON_FEET = [(-50.0, -109.0), (50.0, -109.0)]              # keel dish feet, 1 x M4 each (rear face)
+SPAULDER_TOP = [-40.0, 40.0]                                    # 2 x M3 tapped vertically into the plate's top edge (z -54)
+for cy_, cz_ in PAULDRON_FEET: seed += circ(cy_, cz_, 10.0)
+for ty_ in (72.0, 104.0):                                        # wing tongue seat corners (spine plane y -150), down to z -150
+    for tz_ in (-76.0, -150.0): seed += circ(-150.0 + ty_, tz_, 4.0)
 seed = np.array(seed); hull = seed[ConvexHull(seed).vertices]
 Y0, Y1, Z0, Z1 = hull[:, 0].min(), hull[:, 0].max(), hull[:, 1].min(), hull[:, 1].max()
 plate = cq.Workplane("YZ").polyline([tuple(map(float, p)) for p in hull]).close().extrude(T).translate((X0, 0, 0))
@@ -32,14 +36,18 @@ for y in (-62.0, 62.0):                       # S1 base block: 4 x M5 (tap 4.2 -
 for k, f in feet.items():                     # clasp bridge feet: 2 x M4 per foot at +-10 mm
     for dz in f["bolts_dz"]:
         holes.append((3.3, f["y"], f["z"] + dz, "M4 tapped (clasp foot %s)" % k))
-for cy_, cz_ in PAULDRON_FEET:                # pauldron keel feet: 2 x M4 per foot at +-7 mm (rev 2026-10-30: was tapped 3.3, which cannot
-    for dz in (-7.0, 7.0):                     # clamp a screw driven from the plate front; now clearance 4.5 + 90 deg countersink D9.0 for ISO 10642
-        holes.append((4.5, cy_, cz_ + dz, "M4 clearance + csk D9 (pauldron keel foot: ISO 10642 M4 x 12 from the plate front into a 5.6 x 4 insert)"))
-json.dump(dict(pauldron_feet=PAULDRON_FEET, x_rear=X0 + T), open(os.path.join(OUT, "plate.json"), "w"))
+for cy_, cz_ in PAULDRON_FEET:                # keel dish feet: M4 clearance 4.5 + 90 deg countersink D9 on the front (ISO 10642 M4 x 12 from the
+    holes.append((4.5, cy_, cz_, "M4 clearance + csk D9 (armour keel foot: ISO 10642 M4 x 12 from the plate front into a 5.6 x 4 insert)"))   # plate front)
+json.dump(dict(pauldron_feet=PAULDRON_FEET, spaulder_top_holes=SPAULDER_TOP, x_rear=X0 + T, top_z=None), open(os.path.join(OUT, "plate.json"), "w"))
 for d, y, z, why in holes:
     plate = plate.cut(cq.Workplane("YZ").circle(d / 2).extrude(T + 2).translate((X0 - 1, y, z)))
     if "csk" in why:                           # 90 deg countersink on the FRONT face (x = X0), head flush (ISO 10642 M4 head D 8.96)
         plate = plate.cut(cq.Solid.makeCone(4.5 + 0.05 + 1.0, 0.0, 5.55, cq.Vector(X0 - 1.0, y, z), cq.Vector(1, 0, 0)))
+# rev 2026-10-30b: 2 x M3 tapped (tap drill 2.5, 10 deep) vertically into the top edge for the spaulder's rear feet (8 mm edge: 2.75 mm wall each side)
+_ztop = plate.val().BoundingBox().zmax
+for ty_ in SPAULDER_TOP:
+    plate = plate.cut(cq.Workplane("XY").circle(1.25).extrude(10.5).translate((X0 + T / 2, ty_, _ztop - 10.0)))
+json.dump(dict(pauldron_feet=PAULDRON_FEET, spaulder_top_holes=SPAULDER_TOP, x_rear=X0 + T, top_z=round(_ztop, 2)), open(os.path.join(OUT, "plate.json"), "w"))
 # rev 2026-10-13: the spherical relief for the 190 mm ball is gone (the socket cowl's bottom is at z -49.6, above the plate top -54)
 cq.exporters.export(plate, os.path.join(OUT, "chassis_plate_R.stl"), tolerance=0.03, angularTolerance=0.05)
 m = trimesh.load(os.path.join(OUT, "chassis_plate_R.stl")); m.apply_transform(np.diag([1, -1, 1, 1.0]))
