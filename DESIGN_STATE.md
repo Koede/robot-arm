@@ -119,6 +119,9 @@ From `docs/DESIGN_STATE_ADDENDUM_2026-10-22.md` and `specs/SPEC_collision_method
 - Arm vs wearer / harness (`collision_body.py`, not in the repo): 10,368 poses, 1099 contact, 802 frontier, 297 deep. By body: head 526, harness 221, skin 55. Nearest at park M1 -> harness 5.4 mm. Worst frontier: S1 10 / S2 30-45 / S3 50 / E 100-120, claw 29-30 mm from the head.
 - Restricted full sweep (`stl/sweep_full_restricted.json`, 2592 poses, 1601 s; predates the curved pauldron meshes): min body -13.0, harness -8.4, head -4.3 mm; 181 contact poses, 179 inside the 60 mm head zone. The unrestricted `sweep_full.py` has not completed (`logs/sweep_full.log` empty).
 
+## 12a. HAND (2026-10-30, IN DESIGN): human-layout micro-servo hand with chuck mode
+See `specs/SPEC_hand.md`. Alternative end effector to the C3 claw (claw untouched). 8 micro servos (4 finger, 3 thumb, 1 yaw), coupled four-bar fingers, poses open / chuck (Ø3-16 mm on the W1 axis) / 👉 / 👍 / ✌️ solved and collision-checked (4 of 5 clean, chuck has one 0.15 mm touch). Hand 327.9 g (+149 g vs claw), wrist-to-tip 219 mm (+54 mm), chuck holding torque 0.018 N.m. **Not locked: harness top pad FAIL (14.87 vs 14.7 kPa est.), contract change, sweeps not re-run.**
+
 ## 12. Open items
 
 1. **W2 / W3 loops.** The 30-base re-search (`run_local.sh`) did not finish: W2 stopped at 75/400 candidates with 1 marginal hit (clr 0.80, bend 13.2), W3 at 8/400 with 1 marginal hit (clr 0.80, bend 12.1). The `wire_search_W2_CB.json` / `W3_CB.json` in the repo are from a 12-base run. If it still fails: firmware limit W1 >= -30 deg when E < 60, or a rubbing sleeve. **Forest to decide.**
@@ -130,6 +133,8 @@ From `docs/DESIGN_STATE_ADDENDUM_2026-10-22.md` and `specs/SPEC_collision_method
 7. Missing from the repo: `collision_body.py`, `gen_tables.py`, `gen_state_table.py`, `harness_loads.py`, `sensor_pods.py`, `electronics_fit.py`, `balancer_freefall.py`, `balancer_struct.py`, `arm_clips.py`, `control_map.py`; specs `SPEC_third_shoulder.md`, `SPEC_balancer.md`, `SPEC_ball_stops.md`; `stl/gates.json`; `stl/electronics/arm_vendor_data.json` and `arm_electrical.json`.
 
 ## Changelog (dated entries recoverable from the repo)
+
+- **2026-10-30 (WRIST + GRIPPER, HAND):** new human-layout 5-digit micro-servo hand with a drill-chuck mode and 👉 👍 ✌️ poses. Added `cad/hand_kin.py`, `hand.py`, `hand_pose.py`, `verify_hand.py`, `thumb_solve.py`, `render_hand.py` (+ scan studies), `specs/SPEC_hand.md`, `stl/hand/` (34 parts, 5 posed STLs), renders `hand_*.png`. Findings: yaw hinge tilted 45 deg serves both chuck and V-sign; stair-stepped knuckle row (index 498 / ring 535 / middle 558) and a deeper middle finger plane were required for a chuck pose without finger interpenetration; thumb needs 2 CMC axes + built-in 190 deg roll; thumb force (3.4 N) limits chuck grip to 0.018 N.m. Open: harness top-pad FAIL est. 14.87 kPa, wrist-to-tip contract 165 -> 219 mm, pinky crank, full sweeps/keep-out tables not re-run, vendor servo geometry PLACEHOLDER. Decisions needed from Forest: SPEC_hand section 5.
 
 - 2026-10-12c (I1): head keep-out limits (S1 soft min +10, S2 soft min -30); TPU capsule stop pads; ball slot follows S2 hard range.
 - 2026-10-13: shoulder cowl + dome replace the 190 mm ball; faceted clasp and pauldron (Forest: "facet it to my shoulder"); ball shell split in halves.

@@ -1,0 +1,345 @@
+{
+ "parts": {
+  "index_prox": {
+   "vol_cm3": 3.562,
+   "g": 4.27,
+   "valid": true,
+   "bbox": [
+    47.8,
+    11.3,
+    11.0
+   ]
+  },
+  "index_mid": {
+   "vol_cm3": 1.732,
+   "g": 2.08,
+   "valid": true,
+   "bbox": [
+    26.6,
+    11.3,
+    9.6
+   ]
+  },
+  "index_dist": {
+   "vol_cm3": 1.015,
+   "g": 1.22,
+   "valid": true,
+   "bbox": [
+    18.6,
+    11.3,
+    8.4
+   ]
+  },
+  "index_pad": {
+   "vol_cm3": 0.122,
+   "g": 0.15,
+   "valid": true,
+   "bbox": [
+    10.0,
+    7.2,
+    2.0
+   ]
+  },
+  "index_bar_pip": {
+   "vol_cm3": 0.308,
+   "g": 0.37,
+   "valid": true,
+   "bbox": [
+    38.3,
+    1.8,
+    4.8
+   ]
+  },
+  "index_bar_dip": {
+   "vol_cm3": 0.168,
+   "g": 0.2,
+   "valid": true,
+   "bbox": [
+    22.1,
+    1.8,
+    4.8
+   ]
+  },
+  "index_knuckle": {
+   "vol_cm3": 3.291,
+   "g": 4.28,
+   "valid": true,
+   "bbox": [
+    20.0,
+    13.7,
+    13.0
+   ]
+  },
+  "middle_prox": {
+   "vol_cm3": 3.825,
+   "g": 4.59,
+   "valid": true,
+   "bbox": [
+    51.0,
+    11.3,
+    11.0
+   ]
+  },
+  "middle_mid": {
+   "vol_cm3": 1.962,
+   "g": 2.35,
+   "valid": true,
+   "bbox": [
+    29.8,
+    11.3,
+    9.6
+   ]
+  },
+  "middle_dist": {
+   "vol_cm3": 1.064,
+   "g": 1.28,
+   "valid": true,
+   "bbox": [
+    19.4,
+    11.3,
+    8.4
+   ]
+  },
+  "middle_pad": {
+   "vol_cm3": 0.13,
+   "g": 0.16,
+   "valid": true,
+   "bbox": [
+    10.6,
+    7.2,
+    2.0
+   ]
+  },
+  "middle_bar_pip": {
+   "vol_cm3": 0.335,
+   "g": 0.4,
+   "valid": true,
+   "bbox": [
+    41.4,
+    1.8,
+    4.8
+   ]
+  },
+  "middle_bar_dip": {
+   "vol_cm3": 0.193,
+   "g": 0.23,
+   "valid": true,
+   "bbox": [
+    25.0,
+    1.8,
+    4.8
+   ]
+  },
+  "middle_knuckle": {
+   "vol_cm3": 3.291,
+   "g": 4.28,
+   "valid": true,
+   "bbox": [
+    20.0,
+    13.7,
+    13.0
+   ]
+  },
+  "ring_prox": {
+   "vol_cm3": 3.628,
+   "g": 4.35,
+   "valid": true,
+   "bbox": [
+    48.6,
+    11.3,
+    11.0
+   ]
+  },
+  "ring_mid": {
+   "vol_cm3": 1.847,
+   "g": 2.22,
+   "valid": true,
+   "bbox": [
+    28.2,
+    11.3,
+    9.6
+   ]
+  },
+  "ring_dist": {
+   "vol_cm3": 1.015,
+   "g": 1.22,
+   "valid": true,
+   "bbox": [
+    18.6,
+    11.3,
+    8.4
+   ]
+  },
+  "ring_pad": {
+   "vol_cm3": 0.122,
+   "g": 0.15,
+   "valid": true,
+   "bbox": [
+    10.0,
+    7.2,
+    2.0
+   ]
+  },
+  "ring_bar_pip": {
+   "vol_cm3": 0.315,
+   "g": 0.38,
+   "valid": true,
+   "bbox": [
+    39.1,
+    1.8,
+    4.8
+   ]
+  },
+  "ring_bar_dip": {
+   "vol_cm3": 0.18,
+   "g": 0.22,
+   "valid": true,
+   "bbox": [
+    23.5,
+    1.8,
+    4.8
+   ]
+  },
+  "ring_knuckle": {
+   "vol_cm3": 3.291,
+   "g": 4.28,
+   "valid": true,
+   "bbox": [
+    20.0,
+    13.7,
+    13.0
+   ]
+  },
+  "pinky_prox": {
+   "vol_cm3": 3.034,
+   "g": 3.64,
+   "valid": true,
+   "bbox": [
+    41.4,
+    11.3,
+    11.0
+   ]
+  },
+  "pinky_mid": {
+   "vol_cm3": 1.501,
+   "g": 1.8,
+   "valid": true,
+   "bbox": [
+    23.4,
+    11.3,
+    9.6
+   ]
+  },
+  "pinky_dist": {
+   "vol_cm3": 0.967,
+   "g": 1.16,
+   "valid": true,
+   "bbox": [
+    17.8,
+    11.3,
+    8.4
+   ]
+  },
+  "pinky_pad": {
+   "vol_cm3": 0.114,
+   "g": 0.14,
+   "valid": true,
+   "bbox": [
+    9.3,
+    7.2,
+    2.0
+   ]
+  },
+  "pinky_bar_pip": {
+   "vol_cm3": 0.256,
+   "g": 0.31,
+   "valid": true,
+   "bbox": [
+    32.3,
+    1.8,
+    4.8
+   ]
+  },
+  "pinky_bar_dip": {
+   "vol_cm3": 0.145,
+   "g": 0.17,
+   "valid": true,
+   "bbox": [
+    19.4,
+    1.8,
+    4.8
+   ]
+  },
+  "pinky_knuckle": {
+   "vol_cm3": 3.291,
+   "g": 4.28,
+   "valid": true,
+   "bbox": [
+    20.0,
+    13.7,
+    13.0
+   ]
+  },
+  "thumb_meta": {
+   "vol_cm3": 7.996,
+   "g": 9.6,
+   "valid": true,
+   "bbox": [
+    55.1,
+    12.0,
+    14.0
+   ]
+  },
+  "thumb_prox": {
+   "vol_cm3": 4.187,
+   "g": 5.02,
+   "valid": true,
+   "bbox": [
+    40.2,
+    10.4,
+    11.6
+   ]
+  },
+  "thumb_dist": {
+   "vol_cm3": 2.606,
+   "g": 3.13,
+   "valid": true,
+   "bbox": [
+    30.1,
+    10.4,
+    10.0
+   ]
+  },
+  "thumb_pad": {
+   "vol_cm3": 0.296,
+   "g": 0.36,
+   "valid": true,
+   "bbox": [
+    18.1,
+    9.6,
+    2.0
+   ]
+  },
+  "thumb_cmc": {
+   "vol_cm3": 3.523,
+   "g": 4.58,
+   "valid": true,
+   "bbox": [
+    16.0,
+    16.0,
+    14.0
+   ]
+  },
+  "palm_tray": {
+   "vol_cm3": 159.251,
+   "g": 207.03,
+   "valid": true,
+   "bbox": [
+    86.8,
+    108.0,
+    121.0
+   ]
+  }
+ },
+ "printed_total_canonical_g": 279.9
+}

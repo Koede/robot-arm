@@ -1,0 +1,189 @@
+{
+ "servo_curves": {
+  "index": {
+   "rod_len_mm": 12.5,
+   "servo_range_deg": 48.9,
+   "phi_at_0": 117.9,
+   "phi_at_95": 74.3,
+   "min_abs_dphi_dth": 0.01,
+   "max_abs_dphi_dth": 1.1
+  },
+  "middle": {
+   "rod_len_mm": 48.5,
+   "servo_range_deg": 77.0,
+   "phi_at_0": 120.0,
+   "phi_at_95": 49.1,
+   "min_abs_dphi_dth": 0.03,
+   "max_abs_dphi_dth": 1.23
+  },
+  "ring": {
+   "rod_len_mm": 27.5,
+   "servo_range_deg": 67.8,
+   "phi_at_0": 91.5,
+   "phi_at_95": 28.8,
+   "min_abs_dphi_dth": 0.03,
+   "max_abs_dphi_dth": 1.0
+  },
+  "pinky": null
+ },
+ "finger_pad_force_chuck": {
+  "index": {
+   "F_N": 2.93,
+   "lever_mm_per_rad": 92.9,
+   "n_h": [
+    0.86,
+    0.5
+   ]
+  },
+  "middle": {
+   "F_N": 2.34,
+   "lever_mm_per_rad": 102.5,
+   "n_h": [
+    0.9,
+    0.0
+   ]
+  },
+  "ring": {
+   "F_N": 3.02,
+   "lever_mm_per_rad": 97.1,
+   "n_h": [
+    0.86,
+    -0.5
+   ]
+  }
+ },
+ "chuck_balance": {
+  "finger_sum_xu_N": [
+   7.22,
+   -0.04
+  ],
+  "thumb_needed_at_full_finger_torque_N": 7.22,
+  "thumb_capacity_N": 3.43,
+  "finger_torque_scale": 0.474,
+  "pad_forces_scaled_N": {
+   "index": 1.39,
+   "middle": 1.11,
+   "ring": 1.43
+  },
+  "hold_torque_Nm": 0.0184,
+  "mu_assumed": 0.5,
+  "rod_radius_mm": 5.0,
+  "note": "drill-chuck grip torque at W1; mu TPU-on-steel assumed (unmeasured)"
+ },
+ "thumb_force_N": 3.43,
+ "thumb_arm_mm": 44.1,
+ "mass": {
+  "printed_g": 186.7,
+  "hardware_g": {
+   "servos": 107.2,
+   "pushrods_balls_pins": 12.0,
+   "yaw_linkage": 3.0,
+   "screws_inserts": 5.0,
+   "pwm_driver_and_6V_buck_PLACEHOLDER": 10.0,
+   "wiring": 4.0
+  },
+  "hand_total_g": 327.9,
+  "claw_total_g": 178.9,
+  "delta_g": 149.0,
+  "per_part_g": {
+   "index_prox": 4.3,
+   "index_mid": 2.1,
+   "index_dist": 1.2,
+   "index_pad": 0.1,
+   "index_bar_pip": 0.4,
+   "index_bar_dip": 0.2,
+   "index_knuckle": 4.3,
+   "middle_prox": 4.6,
+   "middle_mid": 2.4,
+   "middle_dist": 1.3,
+   "middle_pad": 0.2,
+   "middle_bar_pip": 0.4,
+   "middle_bar_dip": 0.2,
+   "middle_knuckle": 4.3,
+   "ring_prox": 4.4,
+   "ring_mid": 2.2,
+   "ring_dist": 1.2,
+   "ring_pad": 0.1,
+   "ring_bar_pip": 0.4,
+   "ring_bar_dip": 0.2,
+   "ring_knuckle": 4.3,
+   "pinky_prox": 3.6,
+   "pinky_mid": 1.8,
+   "pinky_dist": 1.2,
+   "pinky_pad": 0.1,
+   "pinky_bar_pip": 0.3,
+   "pinky_bar_dip": 0.2,
+   "pinky_knuckle": 4.3,
+   "thumb_meta": 9.6,
+   "thumb_prox": 5.0,
+   "thumb_dist": 3.1,
+   "thumb_pad": 0.4,
+   "thumb_cmc": 4.6,
+   "palm_tray": 113.9
+  }
+ },
+ "S2": {
+  "delta_Nm": 0.938,
+  "worst_residual_Nm": 3.83,
+  "SF_vs_8p3": 2.17,
+  "gate_SF2": "PASS",
+  "note": "scaled from rev f3 (balancer K 3.789): re-run s2_grid.py for a locked number"
+ },
+ "harness_top_pad": {
+  "est_kPa": 14.87,
+  "limit_kPa": 14.7,
+  "margin_pct": -1.2,
+  "gate": "FAIL",
+  "note": "mass-proportional estimate; run harness_loads.py + verify_harness.py"
+ },
+ "printability": {
+  "all_watertight": true,
+  "all_fit_256": true,
+  "failing": []
+ },
+ "poses": {
+  "open": {
+   "max_bar_len_err_mm": 0.022,
+   "n_raw_hits": 24,
+   "collisions": []
+  },
+  "chuck": {
+   "max_bar_len_err_mm": 0.011,
+   "n_raw_hits": 26,
+   "collisions": [
+    [
+     "middle_prox",
+     "ring_mid"
+    ]
+   ]
+  },
+  "point": {
+   "max_bar_len_err_mm": 0.017,
+   "n_raw_hits": 28,
+   "collisions": []
+  },
+  "thumbsup": {
+   "max_bar_len_err_mm": 0.005,
+   "n_raw_hits": 29,
+   "collisions": []
+  },
+  "victory": {
+   "max_bar_len_err_mm": 0.017,
+   "n_raw_hits": 27,
+   "collisions": []
+  }
+ },
+ "open_envelope": {
+  "z_max": 629.2,
+  "contract_Z_TIP": 575.0,
+  "wrist_to_tip_from_W2_mm": 219.2,
+  "y_range": [
+   5.0,
+   143.7
+  ],
+  "x_range": [
+   -60.0,
+   26.8
+  ]
+ }
+}
