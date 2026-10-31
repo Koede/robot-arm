@@ -16,7 +16,7 @@ Wearable supernumerary robot arm ("third shoulder"), one per shoulder, described
 
 Standing design language: ball-and-socket styling at every joint, passive hard stops with TPU capsule facings, DOF and actuator count unchanged by restyling.
 
-Load path: stage -> pauldron -> 8 mm 6061-T6 chassis plate -> scapular frame / spine bridge -> hip belt. The faceted clasp locates sEMG pads and does not carry the arm.
+Load path: stage -> 8 mm 6061-T6 chassis plate -> scapular wing / spine bridge on the paraspinal strip + clasp top and front pads. There is **no backplate and no hip belt** (standing decision, Forest; corrected 2026-10-30 — the 2026-10-25 reconstruction said "hip belt", which contradicts the project record). The pauldron is a fixed cover and parallel tie (plate feet + clasp seats F1/F4); it does not carry the stage.
 
 ## 2. Frames, kinematics, joint limits
 
@@ -48,7 +48,7 @@ Software elbow tiers (`stl/elbow_limits_15mm_restricted.json`, from `sweep_full.
 - Stage parts (`shoulder_stage.py`, `stl/shoulder/meta.json`): s1_base 204.8 cm3, s1_clamp 33.6, s1s2_yoke 121.5, s2_clamp 36.9, s2_adapter 79.7, s3_bracket 103.4, s3_lid 12.7.
 - Shoulder stops (`ball_stops.py`, `stops/stops.json`): S1 lug under the yoke disc striking two posts at r 54.75 (contact 5 / 150); S2 pads at -35 / 92. TPU 95A capsule pads, ~35 % strain at AK70 peak (459 N at r 54). TPU thickness S1 11, S2+ 7.5, S2- 11 mm.
 - Socket cowl + humeral-head dome (`shoulder_cowl.py`, rev 2026-10-13, Forest: "make the shoulders not giant spheres"): replaces the 188 mm / 146 g ball (`ball_shell.py`, retired). Cowl 149.7 x 65 x 110 mm, 91.9 cm3, 117 g PETG, wall p5 3.2 mm, slot gap 3.2 mm (< 4 mm, no fingertip entry, ISO 13857), split at x = 0. Dome R 43.8..46.4, 17.4 cm3, 22 g.
-- Pauldron (`pauldron.py`, group F, rev 2026-10-13 faceted socket + strut web; rev 2026-10-23 curved deltoid shell): socket housing round S1, 3 struts to the plate rear face (2 x M4 each), wrap-arms to clasp nodes F4 (acromion) and F1 (upper trapezius). The lateral side is a swept arc, crown 12 mm off the deltoid, rim curled inboard, outer edge near y 85 instead of 98. Split for 256 mm build volume: core 99 g, arm_lat 4 g, arm_med 36 g (PA-CF), half-lap splices 2 x M4 x 16.
+- **Pauldron rev 2026-10-30, armoured (`pauldron.py`, `verify_armor.py`, spec `specs/SPEC_shoulder_housing.md` rev 2026-10-30; Forest: "it shouldn't be a shelf, it should be more like a shoulder piece of a knight's armor" / "smart ergonomic choices that are also aesthetically cool").** Three PA-CF parts replace the strut-web pauldron: **crown** (domed cop round the socket, rolled bezel, two flared/bulged stepped lames, ears for the spaulder; 61.5 g), **keel** (two stepped, fluted lames tapering from the crown hem into the plate; plate flange + 6 insert bosses on the old foot holes; 74.3 g), **spaulder** (three sculpted lames from the crown over the shoulder top onto clasp seats F1/F4; edges rolled and curled down, rear edge scalloped round the socket, front cut back along Forest's own arm / neck motion envelope; 35.6 g). Total **171.4 g** (budget: the harness model's 182 g). All interfaces kept (plate feet, F1/F4 seats, socket rim, assembly order); seat pads now D24 round on the D24 clasp bosses. Plate pauldron-foot holes changed from tapped to clearance + countersink (`chassis_axilla.py`). The rev 2026-10-13/23 parts are archived in `stl/archive/pauldron_rev2026-10-23/`.
 
 ## 4. Harness and sensing
 
@@ -133,13 +133,17 @@ See `specs/SPEC_hand.md`. **Forest (2026-10-30): "Merge this as the new project 
 
 1. **W2 / W3 loops.** The 30-base re-search (`run_local.sh`) did not finish: W2 stopped at 75/400 candidates with 1 marginal hit (clr 0.80, bend 13.2), W3 at 8/400 with 1 marginal hit (clr 0.80, bend 12.1). The `wire_search_W2_CB.json` / `W3_CB.json` in the repo are from a 12-base run. If it still fails: firmware limit W1 >= -30 deg when E < 60, or a rubbing sleeve. **Forest to decide.**
 2. In-link runs, arm_chain DP, hub link, clips and boot sizes for the new elbow anchors.
-3. `sweep_full.py` (both modes) on the current cowl / curved pauldron, then the firmware keep-out tables (`gen_tables.py`).
+3. `sweep_full.py` (both modes) on the current cowl / **armoured pauldron (rev 2026-10-30)**, then the firmware keep-out tables (`gen_tables.py`). The pauldron's own gates (S1 hard sweep, M2/M3 soft sweep) pass in `verify_armor.py`; the elbow/wrist/hand groups are not in that check.
+8. **Clasp F4 node vs Forest's elevation (found 2026-10-30, not changed):** with the glenohumeral-share arm model (McClure 2001 GH:ST 1.7:1) the clasp's own F4 boss on the acromion is reached at ~95-102 deg GH (~150-160 deg total elevation). Existing harness limitation; the armour adds none beyond it. Worth checking on the first fit (I7).
+9. Armour PLACEHOLDER: the S1 bundle port in the keel (22 x 12 slot, medial) waits for the measured AK70-10 cable exit.
 4. Harness top-pad margin (2.0 %) vs boot mass (~99 g per arm at 0.7x TPU wall): `harness_loads.py` needs `sensor_pods.py` + `electronics_fit.py`.
 5. Pad stall cap: AK70 S1/S2 cap 8.3 -> 8.0 N m (pad stall limit 16.6 N m: 2.00x at 8.3, 2.075x at 8.0); S2 torque SF with the balancer stays 2.77. **Forest to decide.**
 6. Bench / parts items: S2 free fall T12 (phase-short braking f >= 0.80), relays, 1.10 s off-delay stage, main-box heat, bench test T-W1.
 7. Missing from the repo: `collision_body.py`, `gen_tables.py`, `gen_state_table.py`, `harness_loads.py`, `sensor_pods.py`, `electronics_fit.py`, `balancer_freefall.py`, `balancer_struct.py`, `arm_clips.py`, `control_map.py`; specs `SPEC_third_shoulder.md`, `SPEC_balancer.md`, `SPEC_ball_stops.md`; `stl/gates.json`; `stl/electronics/arm_vendor_data.json` and `arm_electrical.json`.
 
 ## Changelog (dated entries recoverable from the repo)
+
+- **2026-10-30d (SHOULDER / WING: armoured pauldron):** Forest asked for the shoulder mount to stop reading as a shelf and become a knight's pauldron, with smart ergonomics. New `cad/pauldron.py` (SDF CAD-as-code, crown + keel + spaulder), `cad/verify_armor.py` (static, S1 hard sweep, M2/M3 soft sweep, wearer range of motion, walls, print, mass, assembly), `cad/scene_shoulder.py` (renders); `cad/chassis_axilla.py`: 6 pauldron-foot holes tapped 3.3 -> clearance 4.5 + csk D9 (the old "screws from the plate front" into tapped holes could not clamp). Mass 171.4 g vs 182 g budget. Ergonomic envelope: arm abduction / scaption / flexion to 110 deg GH (full elevation at GH:ST 1.7:1, McClure 2001) and neck lateral flexion to 50 deg (old part's first contact; normal 42 +- 8, Apti 2023), rotation 90, flexion / extension 70. Renders `armor_*.png`. Results in `stl/shoulder/pauldron/verify_armor.json` and `specs/SPEC_shoulder_housing.md`. Also corrected the reconstruction's load-path line (no hip belt).
 
 - **2026-10-30c (decision):** Forest adopted HAND rev B as the project hand ("Merge this as the new project hand"). Squash-merged `claude/hand-chuck-2026-10-30` into `main`. The C3 claw is now the superseded alternate. The wrist-v3 branch (`claude/hand-coupling-2026-10-30`, rev-A based) still has to be re-integrated with rev B. The open gates from SPEC_hand section 6 carry over.
 

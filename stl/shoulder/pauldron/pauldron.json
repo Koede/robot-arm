@@ -1,134 +1,176 @@
 {
+ "rev": "2026-10-30 armour",
  "parts": {
-  "core": {
+  "crown": {
    "extents": [
-    140.5,
-    201.2,
-    56.2
+    176.4,
+    185.9,
+    45.8
    ],
    "fits_256": true,
-   "volume_cm3": 85.7,
-   "mass_g_PACF": 99,
-   "watertight": true
+   "volume_cm3": 53.5,
+   "mass_g_PACF": 61.5,
+   "watertight": true,
+   "faces": 54106
   },
-  "arm_lat": {
+  "keel": {
    "extents": [
-    41.3,
-    20.7,
-    41.6
+    157.4,
+    170.9,
+    71.7
    ],
    "fits_256": true,
-   "volume_cm3": 3.5,
-   "mass_g_PACF": 4,
-   "watertight": true
+   "volume_cm3": 64.6,
+   "mass_g_PACF": 74.3,
+   "watertight": true,
+   "faces": 43310
   },
-  "arm_med": {
+  "spaulder": {
    "extents": [
-    124.8,
-    82.5,
-    25.9
+    127.0,
+    170.2,
+    45.3
    ],
    "fits_256": true,
-   "volume_cm3": 30.9,
-   "mass_g_PACF": 36,
-   "watertight": true
+   "volume_cm3": 31.0,
+   "mass_g_PACF": 35.6,
+   "watertight": true,
+   "faces": 45760
   }
  },
- "splices": {
-  "arm_lat": {
-   "at": [
-    -55.3,
-    75.5,
-    -84.1
+ "params": {
+  "VOX": 0.5,
+  "T": 1.65,
+  "density_g_cm3": 1.15,
+  "A_R": 76.0,
+  "A_F": 120.0,
+  "B_W": 83.0,
+  "N_SE": 3.0,
+  "Z_RIM": -54.0,
+  "R_BORE_MIN": 66.0,
+  "BANDS": [
+   [
+    -57.0,
+    -79.0
    ],
-   "axis": [
-    -0.902,
-    -0.152,
-    -0.403
+   [
+    -77.0,
+    -100.0
+   ]
+  ],
+  "FLARE": 3.0,
+  "KEEL": [
+   60.0,
+   1.2,
+   2.6,
+   1.6
+  ],
+  "LAME_X": [
+   -85.0,
+   -124.0,
+   -164.0,
+   -220.0
+  ],
+  "STEP": 3.0,
+  "clearances": {
+   "contents": 3.5,
+   "s1_sweep": 4.5,
+   "arm": 4.5,
+   "part": 3.5,
+   "skin": 10.5,
+   "fixed": 1.0
+  }
+ },
+ "pads": {
+  "F4": {
+   "centre": [
+    -192.47,
+    21.52,
+    -83.09
    ],
-   "bolt_axis": [
-    -0.397,
-    -0.067,
-    0.915
+   "normal": [
+    -0.111,
+    0.248,
+    0.962
    ]
   },
-  "arm_med": {
-   "at": [
-    -74.0,
-    -98.0,
-    -81.2
+  "F1": {
+   "centre": [
+    -167.07,
+    -55.26,
+    -77.8
    ],
-   "axis": [
-    -0.981,
-    0.0,
-    0.196
-   ],
-   "bolt_axis": [
-    0.196,
-    0.0,
-    0.981
+   "normal": [
+    -0.093,
+    0.303,
+    0.948
    ]
   }
  },
  "plate_feet": [
   [
-   -77.5,
    -48.0,
    -140.0
   ],
   [
-   -77.5,
    48.0,
    -140.0
   ],
   [
-   -77.5,
    0.0,
    -150.0
   ]
  ],
- "clasp_pads": {
-  "F4": [
-   -192.5,
-   21.5,
-   -83.1
+ "foot_inserts": [
+  [
+   -48.0,
+   -147.0
   ],
-  "F1": [
-   -167.1,
-   -55.3,
-   -77.8
+  [
+   -48.0,
+   -133.0
+  ],
+  [
+   48.0,
+   -147.0
+  ],
+  [
+   48.0,
+   -133.0
+  ],
+  [
+   0.0,
+   -157.0
+  ],
+  [
+   0.0,
+   -143.0
   ]
- },
- "obstacle_carve": {
-  "body": {
-   "min_mm": 9.0,
-   "carved_vox": 6
-  },
-  "clasp": {
-   "min_mm": 0.0,
-   "carved_vox": 824
-  },
-  "wing": {
-   "min_mm": 0.2,
-   "carved_vox": 97
-  },
-  "spine": {
-   "min_mm": 1000.0,
-   "carved_vox": 0
-  }
- },
- "params": {
-  "G_IN": 3.0,
-  "T_WALL": 3.0,
-  "Z_RIM": -54.0,
-  "R_RIM": 66.0,
-  "STRUT": [
-   18.0,
-   9.0
+ ],
+ "ear_inserts": [
+  [
+   -81.5,
+   87.25
   ],
-  "N_FACETS": 360,
-  "shell": "deltoid_arc",
-  "shell_clear_mm": 12.0,
-  "shell_arc_r_mm": 32.0
- }
+  [
+   -90.5,
+   87.25
+  ],
+  [
+   -81.5,
+   -87.25
+  ],
+  [
+   -90.5,
+   -87.25
+  ]
+ ],
+ "hem_joints_phi": [
+  35.0,
+  -35.0,
+  100.0,
+  -100.0
+ ],
+ "spaulder_arm_ceiling_violation_mm2": 1.25,
+ "total_mass_g": 171.4
 }

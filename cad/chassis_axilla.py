@@ -32,12 +32,14 @@ for y in (-62.0, 62.0):                       # S1 base block: 4 x M5 (tap 4.2 -
 for k, f in feet.items():                     # clasp bridge feet: 2 x M4 per foot at +-10 mm
     for dz in f["bolts_dz"]:
         holes.append((3.3, f["y"], f["z"] + dz, "M4 tapped (clasp foot %s)" % k))
-for cy_, cz_ in PAULDRON_FEET:                # pauldron strut feet: 2 x M4 per foot at +-7 mm (screws from the plate front)
-    for dz in (-7.0, 7.0):
-        holes.append((3.3, cy_, cz_ + dz, "M4 tapped (pauldron foot)"))
+for cy_, cz_ in PAULDRON_FEET:                # pauldron keel feet: 2 x M4 per foot at +-7 mm (rev 2026-10-30: was tapped 3.3, which cannot
+    for dz in (-7.0, 7.0):                     # clamp a screw driven from the plate front; now clearance 4.5 + 90 deg countersink D9.0 for ISO 10642
+        holes.append((4.5, cy_, cz_ + dz, "M4 clearance + csk D9 (pauldron keel foot: ISO 10642 M4 x 12 from the plate front into a 5.6 x 4 insert)"))
 json.dump(dict(pauldron_feet=PAULDRON_FEET, x_rear=X0 + T), open(os.path.join(OUT, "plate.json"), "w"))
-for d, y, z, _ in holes:
+for d, y, z, why in holes:
     plate = plate.cut(cq.Workplane("YZ").circle(d / 2).extrude(T + 2).translate((X0 - 1, y, z)))
+    if "csk" in why:                           # 90 deg countersink on the FRONT face (x = X0), head flush (ISO 10642 M4 head D 8.96)
+        plate = plate.cut(cq.Solid.makeCone(4.5 + 0.05 + 1.0, 0.0, 5.55, cq.Vector(X0 - 1.0, y, z), cq.Vector(1, 0, 0)))
 # rev 2026-10-13: the spherical relief for the 190 mm ball is gone (the socket cowl's bottom is at z -49.6, above the plate top -54)
 cq.exporters.export(plate, os.path.join(OUT, "chassis_plate_R.stl"), tolerance=0.03, angularTolerance=0.05)
 m = trimesh.load(os.path.join(OUT, "chassis_plate_R.stl")); m.apply_transform(np.diag([1, -1, 1, 1.0]))
