@@ -1,345 +1,377 @@
 {
  "parts": {
   "index_prox": {
-   "vol_cm3": 3.562,
-   "g": 4.27,
-   "valid": true,
+   "vol_cm3": 2.727,
+   "g_solid": 3.27,
+   "watertight": true,
    "bbox": [
-    47.8,
-    11.3,
-    11.0
+    37.2,
+    15.3,
+    16.4
    ]
   },
   "index_mid": {
-   "vol_cm3": 1.732,
-   "g": 2.08,
-   "valid": true,
+   "vol_cm3": 1.184,
+   "g_solid": 1.42,
+   "watertight": true,
    "bbox": [
-    26.6,
-    11.3,
-    9.6
+    23.0,
+    14.0,
+    12.1
    ]
   },
   "index_dist": {
-   "vol_cm3": 1.015,
-   "g": 1.22,
-   "valid": true,
+   "vol_cm3": 0.996,
+   "g_solid": 1.2,
+   "watertight": true,
    "bbox": [
-    18.6,
-    11.3,
-    8.4
+    17.5,
+    13.2,
+    12.2
    ]
   },
-  "index_pad": {
-   "vol_cm3": 0.122,
-   "g": 0.15,
-   "valid": true,
+  "index_cap": {
+   "vol_cm3": 0.705,
+   "g_solid": 0.85,
+   "watertight": true,
    "bbox": [
-    10.0,
-    7.2,
-    2.0
+    13.3,
+    15.9,
+    14.6
    ]
   },
   "index_bar_pip": {
-   "vol_cm3": 0.308,
-   "g": 0.37,
-   "valid": true,
+   "vol_cm3": 0.062,
+   "g_solid": 0.07,
+   "watertight": true,
    "bbox": [
-    38.3,
-    1.8,
-    4.8
+    37.1,
+    0.9,
+    3.0
    ]
   },
   "index_bar_dip": {
-   "vol_cm3": 0.168,
-   "g": 0.2,
-   "valid": true,
+   "vol_cm3": 0.033,
+   "g_solid": 0.04,
+   "watertight": true,
    "bbox": [
-    22.1,
-    1.8,
-    4.8
+    21.3,
+    0.9,
+    3.0
    ]
   },
-  "index_knuckle": {
-   "vol_cm3": 3.291,
-   "g": 4.28,
-   "valid": true,
+  "index_carrier": {
+   "vol_cm3": 1.098,
+   "g_solid": 1.32,
+   "watertight": true,
    "bbox": [
-    20.0,
-    13.7,
-    13.0
+    12.0,
+    14.7,
+    13.2
    ]
   },
   "middle_prox": {
-   "vol_cm3": 3.825,
-   "g": 4.59,
-   "valid": true,
+   "vol_cm3": 3.225,
+   "g_solid": 3.87,
+   "watertight": true,
    "bbox": [
-    51.0,
-    11.3,
-    11.0
+    40.5,
+    15.7,
+    16.8
    ]
   },
   "middle_mid": {
-   "vol_cm3": 1.962,
-   "g": 2.35,
-   "valid": true,
+   "vol_cm3": 1.487,
+   "g_solid": 1.78,
+   "watertight": true,
    "bbox": [
-    29.8,
-    11.3,
-    9.6
+    26.3,
+    14.3,
+    12.4
    ]
   },
   "middle_dist": {
-   "vol_cm3": 1.064,
-   "g": 1.28,
-   "valid": true,
+   "vol_cm3": 1.125,
+   "g_solid": 1.35,
+   "watertight": true,
    "bbox": [
-    19.4,
-    11.3,
-    8.4
+    18.5,
+    13.4,
+    12.4
    ]
   },
-  "middle_pad": {
-   "vol_cm3": 0.13,
-   "g": 0.16,
-   "valid": true,
+  "middle_cap": {
+   "vol_cm3": 0.713,
+   "g_solid": 0.86,
+   "watertight": true,
    "bbox": [
-    10.6,
-    7.2,
-    2.0
+    13.3,
+    16.0,
+    14.8
    ]
   },
   "middle_bar_pip": {
-   "vol_cm3": 0.335,
-   "g": 0.4,
-   "valid": true,
+   "vol_cm3": 0.068,
+   "g_solid": 0.08,
+   "watertight": true,
    "bbox": [
-    41.4,
-    1.8,
-    4.8
+    40.1,
+    0.9,
+    3.0
    ]
   },
   "middle_bar_dip": {
-   "vol_cm3": 0.193,
-   "g": 0.23,
-   "valid": true,
+   "vol_cm3": 0.038,
+   "g_solid": 0.05,
+   "watertight": true,
    "bbox": [
-    25.0,
-    1.8,
-    4.8
+    24.2,
+    0.9,
+    3.0
    ]
   },
-  "middle_knuckle": {
-   "vol_cm3": 3.291,
-   "g": 4.28,
-   "valid": true,
+  "middle_carrier": {
+   "vol_cm3": 1.144,
+   "g_solid": 1.37,
+   "watertight": true,
    "bbox": [
-    20.0,
-    13.7,
-    13.0
+    12.0,
+    15.0,
+    13.6
    ]
   },
   "ring_prox": {
-   "vol_cm3": 3.628,
-   "g": 4.35,
-   "valid": true,
+   "vol_cm3": 2.619,
+   "g_solid": 3.14,
+   "watertight": true,
    "bbox": [
-    48.6,
-    11.3,
-    11.0
+    37.9,
+    14.9,
+    16.2
    ]
   },
   "ring_mid": {
-   "vol_cm3": 1.847,
-   "g": 2.22,
-   "valid": true,
+   "vol_cm3": 1.238,
+   "g_solid": 1.49,
+   "watertight": true,
    "bbox": [
-    28.2,
-    11.3,
-    9.6
+    25.3,
+    13.6,
+    11.9
    ]
   },
   "ring_dist": {
-   "vol_cm3": 1.015,
-   "g": 1.22,
-   "valid": true,
+   "vol_cm3": 0.951,
+   "g_solid": 1.14,
+   "watertight": true,
    "bbox": [
-    18.6,
-    11.3,
-    8.4
+    17.4,
+    12.9,
+    12.1
    ]
   },
-  "ring_pad": {
-   "vol_cm3": 0.122,
-   "g": 0.15,
-   "valid": true,
+  "ring_cap": {
+   "vol_cm3": 0.69,
+   "g_solid": 0.83,
+   "watertight": true,
    "bbox": [
-    10.0,
-    7.2,
-    2.0
+    13.3,
+    15.6,
+    14.5
    ]
   },
   "ring_bar_pip": {
-   "vol_cm3": 0.315,
-   "g": 0.38,
-   "valid": true,
+   "vol_cm3": 0.064,
+   "g_solid": 0.08,
+   "watertight": true,
    "bbox": [
-    39.1,
-    1.8,
-    4.8
+    37.8,
+    0.9,
+    3.0
    ]
   },
   "ring_bar_dip": {
-   "vol_cm3": 0.18,
-   "g": 0.22,
-   "valid": true,
+   "vol_cm3": 0.037,
+   "g_solid": 0.04,
+   "watertight": true,
    "bbox": [
     23.5,
-    1.8,
-    4.8
+    0.9,
+    3.0
    ]
   },
-  "ring_knuckle": {
-   "vol_cm3": 3.291,
-   "g": 4.28,
-   "valid": true,
+  "ring_carrier": {
+   "vol_cm3": 1.076,
+   "g_solid": 1.29,
+   "watertight": true,
    "bbox": [
-    20.0,
-    13.7,
-    13.0
+    12.0,
+    14.5,
+    13.1
    ]
   },
   "pinky_prox": {
-   "vol_cm3": 3.034,
-   "g": 3.64,
-   "valid": true,
+   "vol_cm3": 1.502,
+   "g_solid": 1.8,
+   "watertight": true,
    "bbox": [
-    41.4,
-    11.3,
-    11.0
+    30.7,
+    13.4,
+    14.8
    ]
   },
   "pinky_mid": {
-   "vol_cm3": 1.501,
-   "g": 1.8,
-   "valid": true,
+   "vol_cm3": 0.629,
+   "g_solid": 0.75,
+   "watertight": true,
    "bbox": [
-    23.4,
-    11.3,
-    9.6
+    19.0,
+    12.3,
+    10.6
    ]
   },
   "pinky_dist": {
-   "vol_cm3": 0.967,
-   "g": 1.16,
-   "valid": true,
+   "vol_cm3": 0.727,
+   "g_solid": 0.87,
+   "watertight": true,
    "bbox": [
-    17.8,
-    11.3,
-    8.4
-   ]
-  },
-  "pinky_pad": {
-   "vol_cm3": 0.114,
-   "g": 0.14,
-   "valid": true,
-   "bbox": [
-    9.3,
-    7.2,
-    2.0
-   ]
-  },
-  "pinky_bar_pip": {
-   "vol_cm3": 0.256,
-   "g": 0.31,
-   "valid": true,
-   "bbox": [
-    32.3,
-    1.8,
-    4.8
-   ]
-  },
-  "pinky_bar_dip": {
-   "vol_cm3": 0.145,
-   "g": 0.17,
-   "valid": true,
-   "bbox": [
-    19.4,
-    1.8,
-    4.8
-   ]
-  },
-  "pinky_knuckle": {
-   "vol_cm3": 3.291,
-   "g": 4.28,
-   "valid": true,
-   "bbox": [
-    20.0,
-    13.7,
-    13.0
-   ]
-  },
-  "thumb_meta": {
-   "vol_cm3": 7.996,
-   "g": 9.6,
-   "valid": true,
-   "bbox": [
-    55.1,
-    12.0,
-    14.0
-   ]
-  },
-  "thumb_prox": {
-   "vol_cm3": 4.187,
-   "g": 5.02,
-   "valid": true,
-   "bbox": [
-    40.2,
-    10.4,
+    16.0,
+    12.2,
     11.6
    ]
   },
-  "thumb_dist": {
-   "vol_cm3": 2.606,
-   "g": 3.13,
-   "valid": true,
+  "pinky_cap": {
+   "vol_cm3": 0.65,
+   "g_solid": 0.79,
+   "watertight": true,
    "bbox": [
-    30.1,
-    10.4,
-    10.0
-   ]
-  },
-  "thumb_pad": {
-   "vol_cm3": 0.296,
-   "g": 0.36,
-   "valid": true,
-   "bbox": [
-    18.1,
-    9.6,
-    2.0
-   ]
-  },
-  "thumb_cmc": {
-   "vol_cm3": 3.523,
-   "g": 4.58,
-   "valid": true,
-   "bbox": [
-    16.0,
-    16.0,
+    13.3,
+    14.8,
     14.0
    ]
   },
-  "palm_tray": {
-   "vol_cm3": 159.251,
-   "g": 207.03,
-   "valid": true,
+  "pinky_bar_pip": {
+   "vol_cm3": 0.052,
+   "g_solid": 0.06,
+   "watertight": true,
    "bbox": [
-    86.8,
-    108.0,
-    121.0
+    31.9,
+    0.9,
+    3.0
+   ]
+  },
+  "pinky_bar_dip": {
+   "vol_cm3": 0.028,
+   "g_solid": 0.03,
+   "watertight": true,
+   "bbox": [
+    18.7,
+    0.9,
+    3.0
+   ]
+  },
+  "pinky_carrier": {
+   "vol_cm3": 0.919,
+   "g_solid": 1.1,
+   "watertight": true,
+   "bbox": [
+    12.0,
+    13.2,
+    11.9
+   ]
+  },
+  "thumb_meta": {
+   "vol_cm3": 8.038,
+   "g_solid": 9.65,
+   "watertight": true,
+   "bbox": [
+    45.3,
+    20.5,
+    19.3
+   ]
+  },
+  "thumb_prox": {
+   "vol_cm3": 2.132,
+   "g_solid": 2.56,
+   "watertight": true,
+   "bbox": [
+    31.5,
+    15.0,
+    13.2
+   ]
+  },
+  "thumb_dist": {
+   "vol_cm3": 1.989,
+   "g_solid": 2.39,
+   "watertight": true,
+   "bbox": [
+    25.2,
+    13.9,
+    12.5
+   ]
+  },
+  "thumb_cap": {
+   "vol_cm3": 0.749,
+   "g_solid": 0.91,
+   "watertight": true,
+   "bbox": [
+    13.8,
+    16.1,
+    14.9
+   ]
+  },
+  "thumb_bar": {
+   "vol_cm3": 0.168,
+   "g_solid": 0.2,
+   "watertight": true,
+   "bbox": [
+    29.6,
+    2.0,
+    3.4
+   ]
+  },
+  "palm_back": {
+   "vol_cm3": 40.903,
+   "g_solid": 53.17,
+   "watertight": true,
+   "bbox": [
+    36.3,
+    80.6,
+    116.9
+   ]
+  },
+  "palm_cover": {
+   "vol_cm3": 15.15,
+   "g_solid": 19.69,
+   "watertight": true,
+   "bbox": [
+    17.3,
+    78.4,
+    106.0
    ]
   }
  },
- "printed_total_canonical_g": 279.9
+ "info": {
+  "index_prox_ball_r": 5.94,
+  "index_mid_ball_r": 5.41,
+  "index_dist_ball_r": 5.1,
+  "middle_prox_ball_r": 6.12,
+  "middle_mid_ball_r": 5.55,
+  "middle_dist_ball_r": 5.2,
+  "ring_prox_ball_r": 5.85,
+  "ring_mid_ball_r": 5.33,
+  "ring_dist_ball_r": 5.0,
+  "pinky_prox_ball_r": 5.22,
+  "pinky_mid_ball_r": 4.79,
+  "pinky_dist_ball_r": 4.54
+ },
+ "SERVO_U": {
+  "index": 19.0,
+  "middle": 5.5,
+  "ring": -8.0,
+  "pinky": -21.5
+ },
+ "Z_SV0": 518.2,
+ "Z_SHAFT": 535.0,
+ "X_SV0": -10.5
 }

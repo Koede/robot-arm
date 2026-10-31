@@ -119,8 +119,14 @@ From `docs/DESIGN_STATE_ADDENDUM_2026-10-22.md` and `specs/SPEC_collision_method
 - Arm vs wearer / harness (`collision_body.py`, not in the repo): 10,368 poses, 1099 contact, 802 frontier, 297 deep. By body: head 526, harness 221, skin 55. Nearest at park M1 -> harness 5.4 mm. Worst frontier: S1 10 / S2 30-45 / S3 50 / E 100-120, claw 29-30 mm from the head.
 - Restricted full sweep (`stl/sweep_full_restricted.json`, 2592 poses, 1601 s; predates the curved pauldron meshes): min body -13.0, harness -8.4, head -4.3 mm; 181 contact poses, 179 inside the 60 mm head zone. The unrestricted `sweep_full.py` has not completed (`logs/sweep_full.log` empty).
 
-## 12a. HAND (2026-10-30, IN DESIGN): human-layout micro-servo hand with chuck mode
-See `specs/SPEC_hand.md`. Alternative end effector to the C3 claw (claw untouched). 8 micro servos (4 finger, 3 thumb, 1 yaw), coupled four-bar fingers, poses open / chuck (Ø3-16 mm on the W1 axis) / 👉 / 👍 / ✌️ solved and collision-checked (4 of 5 clean, chuck has one 0.15 mm touch). Hand 327.9 g (+149 g vs claw), wrist-to-tip 219 mm (+54 mm), chuck holding torque 0.018 N.m. **Not locked: harness top pad FAIL (14.87 vs 14.7 kPa est.), contract change, sweeps not re-run.**
+## 12a. HAND rev B (2026-10-30b, IN DESIGN)
+See `specs/SPEC_hand.md`. Alternative end effector to the C3 claw (claw untouched).
+- 8 micro servos, organic ball-jointed fingers with hidden four-bars.
+- Chuck modes: 4-jaw on Ø13 and 3-jaw on Ø6, bit along the palm normal.
+- Poses: open / point / thumbs-up / victory. No real-mesh interference in any pose.
+- Hand 223.9 g (+45.0 g). Wrist-to-tip 214 mm.
+- Holding torque 0.012-0.024 N.m.
+- **Not locked:** the contract change, unrun sweeps and harness confirmation.
 
 ## 12. Open items
 
@@ -133,6 +139,8 @@ See `specs/SPEC_hand.md`. Alternative end effector to the C3 claw (claw untouche
 7. Missing from the repo: `collision_body.py`, `gen_tables.py`, `gen_state_table.py`, `harness_loads.py`, `sensor_pods.py`, `electronics_fit.py`, `balancer_freefall.py`, `balancer_struct.py`, `arm_clips.py`, `control_map.py`; specs `SPEC_third_shoulder.md`, `SPEC_balancer.md`, `SPEC_ball_stops.md`; `stl/gates.json`; `stl/electronics/arm_vendor_data.json` and `arm_electrical.json`.
 
 ## Changelog (dated entries recoverable from the repo)
+
+- **2026-10-30b (HAND rev B):** rev A rejected by Forest ("this looks terrible"). Rebuilt with the human layout first: human knuckle arch, palm centred on the wrist, SDF organic phalanges with ball knuckles (restoring the standing ball-joint rule), hidden four-bars, TPU caps, sculpted palm. Chuck re-solved as a bunched-fingertip pinch: 4-jaw Ø13 (94/83/93/90 deg) and 3-jaw Ø6. New three.js renderer `cad/render_three.py`. Mass 328 -> 224 g; harness estimate now passes (0.6 % margin). Removed rev-A study scripts and outputs.
 
 - **2026-10-30 (WRIST + GRIPPER, HAND):** new human-layout 5-digit micro-servo hand with a drill-chuck mode and 👉 👍 ✌️ poses. Added `cad/hand_kin.py`, `hand.py`, `hand_pose.py`, `verify_hand.py`, `thumb_solve.py`, `render_hand.py` (+ scan studies), `specs/SPEC_hand.md`, `stl/hand/` (34 parts, 5 posed STLs), renders `hand_*.png`. Findings: yaw hinge tilted 45 deg serves both chuck and V-sign; stair-stepped knuckle row (index 498 / ring 535 / middle 558) and a deeper middle finger plane were required for a chuck pose without finger interpenetration; thumb needs 2 CMC axes + built-in 190 deg roll; thumb force (3.4 N) limits chuck grip to 0.018 N.m. Open: harness top-pad FAIL est. 14.87 kPa, wrist-to-tip contract 165 -> 219 mm, pinky crank, full sweeps/keep-out tables not re-run, vendor servo geometry PLACEHOLDER. Decisions needed from Forest: SPEC_hand section 5.
 

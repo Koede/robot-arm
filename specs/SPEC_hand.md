@@ -1,55 +1,90 @@
-# SPEC: HAND, human-layout micro-servo hand with CHUCK mode (2026-10-30, IN DESIGN, not locked)
+# SPEC: HAND rev B, human-layout micro-servo hand with chuck modes (2026-10-30b, IN DESIGN, not locked)
 
-Requested by Forest (2026-10-30): "a hand that can transform its configuration into a drill chuck ... close its hand organically finger by finger individually ... with micro servos"; refined: "3 of the fingers and the thumb do this ... it should have a human layout"; target poses 👉 👍 ✌️.
-Subsystem: WRIST + GRIPPER (alternative end effector to the C3 claw; the claw spec and files are untouched). Right hand, hand frame = W3 frame (x palm normal, u = y - D thumb side, z absolute). Script chain: `hand_kin.py` -> `thumb_solve.py` -> `hand.py` -> `hand_pose.py` -> `verify_hand.py` -> `render_hand.py`. Design-study scripts: `chuck_scan.py`, `chuck_cad_scan.py`, `final_scan.py`. Outputs: `stl/hand/` (per-part STLs, `poses/hand_<pose>_posed.stl` for viewing, JSON), renders `hand_<pose>.png` at the repository root.
+Requested by Forest (2026-10-30): a hand that can turn into a drill chuck and close finger by finger with micro servos, with a human layout, and poses 👉 👍 ✌️.
+**Rev B replaces rev A** (same day). Forest's verdict on rev A: "this looks terrible". Rev A had put the chuck ahead of the human layout: knuckles stair-stepped 60 mm, palm 34 mm behind the wrist, flat bar fingers with external links. It also broke the standing "ball-styled joints" rule.
+Rev B puts the human layout first:
+- human knuckle arch, palm centred on the wrist;
+- tapered elliptical phalanges with ball knuckles in cups, coupling bars hidden in a dorsal groove;
+- full TPU fingertip caps;
+- servos enclosed in a sculpted palm (thenar and hypothenar bulges, dorsal knuckle hood).
 
-## 1. Concept
-- **Human layout:** palm with a knuckle row, index/middle/ring/pinky each 3 phalanges, thumb on the radial (+u) side. 0.80 x 50th-percentile male hand lengths (index 32.0/17.6/13.6, middle 35.2/20.8/14.4, ring 32.8/19.2/13.6, pinky 25.6/14.4/12.8, thumb 42.3/29.4/23.9 mm; thumb 0.92 x).
-- **Finger:** one micro servo per finger (individual curl). MCP is driven by a crank + pushrod to a ball stud on the proximal tail; **PIP = 1.10 x MCP and DIP = 0.70 x PIP by two ground-linked four-bars** (human synergy, rigid, repeatable). Bar fit error 0.02 mm at 100 deg; verified on the posed CAD: max bar-length error 0.005-0.022 mm in every pose.
-- **Chuck mode:** the hand axis (= W1 roll axis, x 0 / u 0, so W1 spins the bit) is the chuck axis. Index and ring knuckle blocks yaw about a hinge tilted 45 deg from z (**one yaw servo, mirrored**), which tilts their curl planes toward the axis; middle finger curls from below; the thumb swings across and presses from the top (thumb pad normal -x). Four jaws: three finger pads below and to the sides (azimuth about 0 / +-41 deg of yaw) and the thumb pad on top, pad normals 84-94 % radial. Pads sit at z about 549 / 588 / 617 (index / ring / middle): the fingers pinch **staggered along the bit**, because three 8-13 mm wide fingers cannot pinch a thin bit at one z. The palm has no seat; the bit is held by pad friction.
-- **Capacity:** solved for bit diameters 3-16 mm (table below). Above Ø16 the index/ring would need hyperextension.
+Subsystem WRIST + GRIPPER: an alternative end effector to the C3 claw (claw untouched). Interface contract unchanged: W3 ears, floor plate HB0 491.6 / FT 493.6, D 57.
 
-| bit Ø mm | MCP index / middle / ring (deg) | yaw index+ring (deg) | pad z index / ring / middle |
-|---|---|---|---|
-| 3 | 3.2 / 11.3 / 3.2 | 46.0 | 547 / 586 / 615 |
-| 6 | 2.5 / 10.3 / 2.3 | 43.7 | 548 / 587 / 616 |
-| 10 | 1.5 / 9.0 / 1.3 | 41.5 | 549 / 588 / 617 |
-| 16 | 0.2 / 7.2 / 0.0 | 37.4 | 550 / 589 / 619 |
-The chuck "closing stroke" is only 3-11 deg of MCP, i.e. about 6-20 deg of servo: use servo position control with a force limit, not a long stroke.
+**Scripts (run in this order):**
+1. `hand_kin.py`: kinematics and the four-bar fits.
+2. `hand_poses.py`: chuck solver. Env: `RHO_FIX=110`, `RBS`, and `JAW3=1` for the 3-jaw mode.
+3. `hand_pose_lib.py`: the pose library.
+4. `hand.py`: SDF + marching-cubes parts with manifold booleans.
+5. `hand_pose.py`: posed assemblies, bar audit, real-mesh collisions, render scenes.
+6. `verify_hand.py`.
+7. `render_hand.py`, which calls `render_three.py` (three.js in headless Chromium; installs `three` into `cad/_three/` on first run).
 
-## 2. Actuation (8 micro servos, MG90S class, PLACEHOLDER dimensions 22.8 x 12.2 x 22.7, 13.4 g, 0.216 N.m at 4.8 V)
-4 finger flexion (index, middle, ring, pinky) + 3 thumb (swing about x, lift about u, MCP/IP flexion) + 1 yaw (index+ring, mirrored). Thumb roll is built in (190 deg, fixed). Index/middle/ring crank (r 8) + rod curves solved: index rod 12.5 mm, servo range 49 deg; middle 48.5 mm, 77 deg; ring 27.5 mm, 68 deg. **Pinky crank/rod: no valid solution found yet (open item).** Cranks pass near a dead point at one end of travel (dphi/dtheta 0.01-0.03) so grip force there is limited by the crank, not the servo.
-Poses (finger MCP deg, yaw deg; thumb swing/lift/flex deg), from `hand_pose.make_poses()`:
+**Outputs:** `stl/hand/` holds 35 printable parts plus `poses/<pose>/` and `poses/hand_<pose>_posed.stl`. Renders are `hand_<pose>_sheet.png` at the repo root.
+
+## 1. Layout (hand frame: x palm normal, u = y - D toward the thumb, z distal)
+- **Scale:** 0.80 × the 50th-percentile male hand.
+- **Phalanx lengths (mm):** index 32.0 / 18.4 / 14.4, middle 35.2 / 21.6 / 15.2, ring 32.8 / 20.8 / 14.4, pinky 26.4 / 15.2 / 13.6. Thumb 38.4 / 26.4 / 21.6.
+- **Knuckles:**
+  - MCP u: +20 / +3 / -14 / -30.
+  - MCP z: 549 / 552 / 549 / 541. This is a human arch; the middle knuckle sits on the forearm line like the third metacarpal.
+  - Finger planes at x 0. The palm spans x -13 … +15.
+- **Finger width** tapers from 15.6 to 12.4 mm (index).
+- **Fingertip:** a 6.3 mm sphere including a 1.2 mm TPU 85A cap.
+- **Joints:** each phalanx ends in a ball (r = 0.9 × min half-width/thickness), seated in a cup (r + 0.4) in the previous part. Hinge pins are d2 steel: press fit in the cheeks (d1.9), running in the ball (d2.1). Pins sit at least 3.6 mm apart.
+- **Envelope:** open-hand tip z 624.3, so wrist-to-tip from W2 is 214 mm against the 165 mm contract. x -26.8 … +33.2, which no longer reaches behind the wrist.
+
+## 2. Actuation: 8 micro servos (MG90S class, PLACEHOLDER: 22.8 x 12.2 x 22.7 mm, 13.4 g, 0.216 N.m at 4.8 V)
+- **Fingers:** 4 servos, one per finger, for individual curl. Shafts point along +x, under the palm cover. A crank (r 8) and rod pull a palmar flexor lever on the proximal ball, like a flexor tendon.
+- **Synergy:** PIP = 1.10 × MCP and DIP = 0.70 × PIP, through ground-linked four-bars inside the dorsal groove. Bar fit error is 0.05–0.15 mm.
+- **Abduction:** 1 servo, mirrored, driving the index and ring MCP carriers about the palm normal: +psi adducts, -psi spreads.
+- **Thumb:** 3 servos. Two drive a 2-axis CMC (swing about x, lift about u). One drives the coupled MCP/IP flexion (IP = 0.75 × MCP, via a four-bar). Pronation is built in at 110 deg.
+- **Servo pockets:** fingers in a row at z 518–541, u +19 / +5.5 / -8 / -21.5. Two thumb servos in the thenar. Thumb flexion and abduction sit in the carpal row.
+
+## 3. Chuck modes (bit axis along +x, out of the palm; the wrist W2/W3 points it)
+| mode | jaws | bit | jaw spacing (deg) | digit clearance | solve |
+|---|---|---|---|---|---|
+| 4-jaw | index, middle, ring, thumb | Ø13 (capacity about Ø10–16) | 94 / 83 / 93 / 90 | capsule -0.2 mm, real mesh: no interference | `chuck_d13` |
+| 3-jaw (the human "three-jaw chuck" grasp) | thumb, index, middle | Ø6 (capacity about Ø4–8) | 98 / 124 / 138 | capsule -0.14 mm, real mesh: no interference | `chuck3_d6` |
+
+Below about Ø10, four 12.6 mm fingertips spaced 90 deg apart physically overlap, so small bits use the 3-jaw mode. The fingertips grip with their full TPU caps; the thumb is required to use its pad.
+**Grip (conservative: every jaw limited to the weakest one, mu 0.5 assumed, 70 % of stall):**
+- 4-jaw: 1.81 N per jaw, holding **0.0235 N.m**.
+- 3-jaw: 2.58 N per jaw, holding **0.0116 N.m**.
+
+This is a light chuck: it can turn a small bit or screwdriver tip, not drill metal. The middle finger is the weak jaw in 4-jaw mode because its tip moves almost tangent to the bit.
+
+## 4. Pose table (finger MCP deg, with abduction where non-zero; thumb swing / lift / flex deg; thumb pronation 110 deg)
 | pose | index | middle | ring | pinky | thumb |
 |---|---|---|---|---|---|
-| open | 0, 0 | 0 | 0 | 0 | 0 / 0 / 0 |
-| chuck Ø10 | 1.5, yaw 41.5 | 9.0 | 1.3, yaw 41.5 | 95 | 52.0 / 21.2 / 9.4 |
-| 👉 point | 0 | 95 | 95 | 95 | 10 / 0 / 0 |
-| 👍 thumbs up | 95 | 95 | 95 | 95 | 0 / 0 / 0 (thumb extended; render rotated 90 deg about x for the emoji read) |
-| ✌️ victory | 0, yaw -30 (16.7 deg spread) | 0 | 95 | 95 | 80.2 / 72.0 / 10.3 (tucked over ring/pinky) |
-The tilted hinge does both jobs: +yaw tilts the curl plane inward (chuck), -yaw spreads an extended finger (V sign).
+| open | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 / 0.0 / 0.0 |
+| chuck4_d13 | 36.9 / abd 7.5 | 32.1 | 37.1 / abd 7.5 | 76.0 | 48.3 / 12.2 / 0.0 |
+| chuck3_d6 | 41.7 / abd 4.9 | 49.3 | 82.0 / abd 4.9 | 64.0 | 39.3 / 28.3 / 0.0 |
+| thumbsup | 81.0 | 83.0 | 82.0 | 76.0 | 0.0 / -5.0 / 0.0 |
+| point | 0.0 | 83.0 | 82.0 | 76.0 | 79.8 / 41.9 / 40.6 |
+| victory | 0.0 / abd -15.0 | 0.0 | 82.0 | 76.0 | 60.3 / 26.1 / 0.0 |
 
-## 3. Geometry (mm, hand frame)
-Knuckle row (stair-stepped, needed for the chuck): MCP z index 498 / middle 558 / ring 535 / pinky 514; u +23 / 0 / -23 / -42.5; finger plane depth x -20 (index, ring, pinky) and -27 (middle, so the yawed index/ring pass in front of it). Palm slab x -60..-34, u -52..+56 (behind the hand axis: the axis passes 34 mm in front of the palm). W3 ears, floor plate and HB0/D/Z_W3 are the **unchanged interface contract** (ears at |x| 23.3-26.8, floor 491.6-493.6); the floor plate is trimmed for u > 14 ahead of x -34 so a curled index clears it. Thumb CMC at (-8, 41, 500). Open-hand envelope: z max 629.2 (**wrist-to-tip from W2 219 mm vs 165 mm in the contract**), y 5..144, x -60..26.8.
-Finger layers (t): phalanx plate 8 wide, bars outside at 0.4-2.2 mm, posts d2 steel pins (press d2.0 / run d2.1 holes), TPU 85A pads 1.5 mm.
+The fist angle is the largest MCP that keeps 1 mm from the palm: {'index': 81.0, 'middle': 83.0, 'ring': 82.0, 'pinky': 76.0}.
 
-## 4. Verification (`verify_hand.py`, `stl/hand/verify_hand.json`)
-| gate | result | status |
-|---|---|---|
-| Four-bar bar lengths on posed CAD | <= 0.022 mm, all 5 poses | pass |
-| Digit collisions, open / 👉 / 👍 / ✌️ | 0 | pass |
-| Digit collisions, chuck | 1 pair touching: middle_prox / ring_mid, 0.001 mm3, 0.15 mm penetration (tessellation level); the 3 mm part clearance target is NOT met between fingers (designed contact class) | pass with flag |
-| Watertight, positive volume, fits 256 mm cube (all 34 parts) | yes | pass |
-| Chuck jaw force | fingers 2.3-3.0 N each at 70 % servo stall, **thumb capacity 3.4 N vs 7.2 N needed** to balance them: finger torque must be scaled to 0.47 (1.1-1.4 N per pad) | pass with software cap |
-| Chuck holding torque at W1 | **0.018 N.m** (mu 0.5 TPU on steel assumed, Ø10 bit) | light duty: hand-drive a small bit/screwdriver tip, foam/balsa; NOT metal drilling |
-| Mass | hand 327.9 g (printed 186.7 incl. palm tray at 55 % of solid, servos 107.2, hardware 34): **+149 g vs the C3 claw (178.9 g)** | see decisions |
-| S2 worst residual with balancer (scaled from rev f3, not re-gridded) | 3.83 N.m, SF 2.17 vs 8.3 | pass (thin), re-run `s2_grid.py` |
-| Harness top pad (mass-proportional estimate) | 14.87 kPa vs 14.7 | **FAIL (-1.2 %)**, re-run `harness_loads.py` |
-| Wrist sweep, whole-arm sweep, keep-out tables, W3 cable | **not run** | open |
-PLACEHOLDERS: servo geometry/horn/torque, ball rod ends, 6 V rail (buck from the 12 V trunk) and PWM driver in the hand, hinge pins and the yaw linkage geometry (modelled as a servo pocket only), thumb servo shafts, TPU/steel mu.
+## 5. Verification (`verify_hand.py`, `stl/hand/verify_hand.json`, `pose_report.json`)
+| pose | four-bar length error on posed CAD (mm) | real-mesh interference between digits / palm | TPU cap compression on the bit (mm3, designed grip) |
+|---|---|---|---|
+| open | 0.136 | none | - |
+| chuck4_d13 | 0.11 | none | {'index_cap': 13.19, 'middle_cap': 2.74, 'ring_cap': 14.76} |
+| chuck3_d6 | 0.076 | pinky_cap/ring_cap 0.04 mm3 | - |
+| thumbsup | 0.11 | none | - |
+| point | 0.11 | none | - |
+| victory | 0.11 | none | - |
 
-## 5. Decisions for Forest (numbers, no silent choice)
-1. **Contract change:** wrist-to-tip 165 mm (claw) -> 219 mm (open hand); palm 26 mm further toward the body than the claw envelope (x -60 vs -47.6). Invalidates `sweep_full` results and the firmware keep-out tables until re-run.
-2. **Mass:** +149 g breaks the harness top pad (14.87 vs 14.7 kPa). Options: (a) lighter servo class for non-load fingers (4-5 g sub-micro on pinky + yaw: about -30 g), hollow/lattice the palm tray (about -25 g), (b) accept a harness re-fit, (c) keep the claw as the carried end effector and make the hand a swap-in module.
-3. **Chuck scope:** 0.018 N.m is a light chuck. For real drilling torque the hand would need steel jaws on the fingertips or a locking pinch (bigger servos or worm-driven jaws).
-4. Pinky and thumb-tuck refinements (pinky rod, tuck error 2.6 / 6.0 / 4.5 mm) can follow once 1-3 are decided.
+| Gate | Result |
+|---|---|
+| Printability | All 35 parts watertight and inside the 256 mm cube. |
+| Mass | **223.9 g** (87.7 g printed, palm at 55–60 % infill; 107.2 g servos; 29 g hardware). That is **+45.0 g** over the claw; rev A was +149 g. |
+| S2 (scaled estimate) | 3.27 N.m, SF 2.54: pass. |
+| Harness top pad (mass-proportional estimate) | 14.61 vs 14.7 kPa: **pass, margin about 0.6 %**. Confirm with `harness_loads.py`. |
+| Not run | Wrist sweep, whole-arm sweep and keep-out tables (the envelope changed), crank/rod synthesis for the rev B servo row, the abduction linkage, cover screw bosses. |
+
+## 6. Decisions for Forest
+1. Wrist-to-tip 214 mm against the 165 mm contract (human proportions at 0.8 scale). This needs the sweeps and keep-out tables re-run.
+2. Hand mass +45 g. The harness passes only by an estimated 0.6 %, so a real `harness_loads.py` run decides.
+3. The chuck is light duty (0.012–0.024 N.m). Real drilling would need locking jaws or bigger actuators.
+4. The 3-jaw / 4-jaw split by bit size is my proposal from the geometry.

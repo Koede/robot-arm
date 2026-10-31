@@ -1,32 +1,42 @@
 {
  "open": {
-  "max_bar_len_err_mm": 0.022,
-  "n_raw_hits": 24,
-  "collisions": []
+  "max_bar_len_err_mm": 0.136,
+  "interferences": [],
+  "cap_bit_compression_mm3": {}
  },
- "chuck": {
-  "max_bar_len_err_mm": 0.011,
-  "n_raw_hits": 26,
-  "collisions": [
+ "chuck4_d13": {
+  "max_bar_len_err_mm": 0.11,
+  "interferences": [],
+  "cap_bit_compression_mm3": {
+   "index_cap": 13.19,
+   "middle_cap": 2.74,
+   "ring_cap": 14.76
+  }
+ },
+ "chuck3_d6": {
+  "max_bar_len_err_mm": 0.076,
+  "interferences": [
    [
-    "middle_prox",
-    "ring_mid"
+    "pinky_cap",
+    "ring_cap",
+    0.04
    ]
-  ]
- },
- "point": {
-  "max_bar_len_err_mm": 0.017,
-  "n_raw_hits": 28,
-  "collisions": []
+  ],
+  "cap_bit_compression_mm3": {}
  },
  "thumbsup": {
-  "max_bar_len_err_mm": 0.005,
-  "n_raw_hits": 29,
-  "collisions": []
+  "max_bar_len_err_mm": 0.11,
+  "interferences": [],
+  "cap_bit_compression_mm3": {}
+ },
+ "point": {
+  "max_bar_len_err_mm": 0.11,
+  "interferences": [],
+  "cap_bit_compression_mm3": {}
  },
  "victory": {
-  "max_bar_len_err_mm": 0.017,
-  "n_raw_hits": 27,
-  "collisions": []
+  "max_bar_len_err_mm": 0.11,
+  "interferences": [],
+  "cap_bit_compression_mm3": {}
  }
 }
