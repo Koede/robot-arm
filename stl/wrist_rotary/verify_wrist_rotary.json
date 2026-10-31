@@ -1,0 +1,437 @@
+{
+ "w3_sweep_open_pose": {
+  "-35": {
+   "min_dist": 3.0,
+   "collisions": []
+  },
+  "-30": {
+   "min_dist": 3.01,
+   "collisions": []
+  },
+  "-25": {
+   "min_dist": 3.0,
+   "collisions": []
+  },
+  "-20": {
+   "min_dist": 3.0,
+   "collisions": []
+  },
+  "-15": {
+   "min_dist": 3.01,
+   "collisions": []
+  },
+  "-10": {
+   "min_dist": 3.0,
+   "collisions": []
+  },
+  "-5": {
+   "min_dist": 3.01,
+   "collisions": []
+  },
+  "0": {
+   "min_dist": 3.0,
+   "collisions": []
+  },
+  "5": {
+   "min_dist": 3.01,
+   "collisions": []
+  },
+  "10": {
+   "min_dist": 3.0,
+   "collisions": []
+  },
+  "15": {
+   "min_dist": 3.01,
+   "collisions": []
+  },
+  "20": {
+   "min_dist": 3.0,
+   "collisions": []
+  },
+  "25": {
+   "min_dist": 3.0,
+   "collisions": []
+  },
+  "30": {
+   "min_dist": 3.01,
+   "collisions": []
+  },
+  "35": {
+   "min_dist": 3.0,
+   "collisions": []
+  },
+  "40": {
+   "min_dist": 3.01,
+   "collisions": []
+  }
+ },
+ "R_sweep": {
+  "open": {
+   "free_psi_deg": [
+    -170,
+    -160,
+    -150,
+    -140,
+    -130,
+    -120,
+    -110,
+    -100,
+    -90,
+    -80,
+    -70,
+    -60,
+    -50,
+    -40,
+    -30,
+    -20,
+    -10,
+    0,
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    110,
+    120,
+    130,
+    140,
+    150,
+    160,
+    170
+   ],
+   "free_range": [
+    -170,
+    170
+   ],
+   "n_free": 35,
+   "at_0": [
+    0.2,
+    []
+   ],
+   "at_pm90": [
+    [
+     0.2,
+     []
+    ],
+    [
+     0.2,
+     []
+    ]
+   ]
+  },
+  "chuck": {
+   "free_psi_deg": [
+    -170,
+    -160,
+    -150,
+    -140,
+    -130,
+    -120,
+    -110,
+    -100,
+    -90,
+    -80,
+    -70,
+    -60,
+    -50,
+    -40,
+    -30,
+    -20,
+    -10,
+    0,
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    110,
+    120,
+    130,
+    140,
+    150,
+    160,
+    170
+   ],
+   "free_range": [
+    -170,
+    170
+   ],
+   "n_free": 35,
+   "at_0": [
+    0.2,
+    []
+   ],
+   "at_pm90": [
+    [
+     0.2,
+     []
+    ],
+    [
+     0.2,
+     []
+    ]
+   ]
+  },
+  "point": {
+   "free_psi_deg": [
+    -170,
+    -160,
+    -150,
+    -140,
+    -130,
+    -120,
+    -110,
+    -100,
+    -90,
+    -80,
+    -70,
+    -60,
+    -50,
+    -40,
+    -30,
+    -20,
+    -10,
+    0,
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    110,
+    120,
+    130,
+    140,
+    150,
+    160,
+    170
+   ],
+   "free_range": [
+    -170,
+    170
+   ],
+   "n_free": 35,
+   "at_0": [
+    0.2,
+    []
+   ],
+   "at_pm90": [
+    [
+     0.2,
+     []
+    ],
+    [
+     0.2,
+     []
+    ]
+   ]
+  },
+  "thumbsup": {
+   "free_psi_deg": [],
+   "free_range": null,
+   "n_free": 0,
+   "at_0": [
+    0.0,
+    [
+     "index_dist/carrier",
+     "index_mid/carrier"
+    ]
+   ],
+   "at_pm90": [
+    [
+     0.0,
+     [
+      "index_dist/carrier",
+      "index_mid/carrier"
+     ]
+    ],
+    [
+     0.0,
+     [
+      "index_dist/carrier",
+      "index_mid/carrier"
+     ]
+    ]
+   ]
+  },
+  "victory": {
+   "free_psi_deg": [
+    -170,
+    -160,
+    -150,
+    -140,
+    -130,
+    -120,
+    -110,
+    -100,
+    -90,
+    -80,
+    -70,
+    -60,
+    -50,
+    -40,
+    -30,
+    -20,
+    -10,
+    0,
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    110,
+    120,
+    130,
+    140,
+    150,
+    160,
+    170
+   ],
+   "free_range": [
+    -170,
+    170
+   ],
+   "n_free": 35,
+   "at_0": [
+    0.2,
+    []
+   ],
+   "at_pm90": [
+    [
+     0.2,
+     []
+    ],
+    [
+     0.2,
+     []
+    ]
+   ]
+  }
+ },
+ "index_curl_scan": {
+  "0": [],
+  "5": [],
+  "10": [],
+  "15": [],
+  "20": [],
+  "25": [],
+  "30": [],
+  "35": [],
+  "40": [],
+  "45": [],
+  "50": [],
+  "55": [],
+  "60": [],
+  "65": [],
+  "70": [
+   "index_dist/rotor"
+  ],
+  "75": [
+   "index_dist/rotor"
+  ],
+  "80": [
+   "index_dist/carrier",
+   "index_dist/rotor"
+  ],
+  "85": [
+   "index_dist/carrier",
+   "index_dist/rotor",
+   "index_mid/rotor"
+  ],
+  "90": [
+   "index_bar_dip/rotor",
+   "index_dist/carrier",
+   "index_dist/rotor",
+   "index_mid/carrier",
+   "index_mid/rotor"
+  ],
+  "95": [
+   "index_bar_dip/rotor",
+   "index_dist/carrier",
+   "index_dist/rotor",
+   "index_mid/carrier",
+   "index_mid/rotor",
+   "index_prox/rotor"
+  ]
+ },
+ "index_curl_free_up_to_deg": 65,
+ "hand_to_carrier_min_dist": {
+  "open": {
+   "-90": 5.77,
+   "0": 5.77,
+   "90": 5.77,
+   "180": 5.77
+  },
+  "chuck": {
+   "-90": 10.14,
+   "0": 10.14,
+   "90": 10.14,
+   "180": 10.14
+  },
+  "point": {
+   "-90": 5.77,
+   "0": 5.77,
+   "90": 5.77,
+   "180": 5.77
+  },
+  "thumbsup": {
+   "-90": 0.0,
+   "0": 0.0,
+   "90": 0.0,
+   "180": 0.0
+  },
+  "victory": {
+   "-90": 6.54,
+   "0": 6.54,
+   "90": 6.54,
+   "180": 6.54
+  }
+ },
+ "flexure": {
+  "leaf": "spring steel 0.1 x 12 x 8, 2 leaves at +-45 deg",
+  "k_theta_Nm_per_deg": 0.00083,
+  "strain_pct_at_35deg": 0.382,
+  "stress_MPa": 725.0,
+  "buckling_per_leaf_N": 117.0,
+  "axial_load_per_leaf_N_est": 9.8,
+  "tip_moment_Nm_2g": 1.96,
+  "couple_force_N": 39.2
+ },
+ "R_stage": {
+  "ratio": 3.25,
+  "servo_stall_Nm": 2.94,
+  "output_Nm_after_gear": 8.6,
+  "holding_load_Nm_est": 0.35
+ },
+ "mass_g": {
+  "carrier": 33.5,
+  "rotor": 22.9,
+  "pinion": 2.2,
+  "flex_anchor": 3.4,
+  "sts_R": 55.0,
+  "bearing_6808": 46.0,
+  "spindle_tube_brass": 4.0,
+  "leaves": 0.5,
+  "hardware": 8.0,
+  "total_added": 175.5
+ }
+}

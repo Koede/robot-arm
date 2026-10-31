@@ -146,3 +146,6 @@ See `specs/SPEC_hand.md`. Alternative end effector to the C3 claw (claw untouche
 - 2026-10-22: harness rebuild, collision method, collision_body, new elbow loop (see section 11).
 - 2026-10-23: pauldron lateral shelf replaced by the curved deltoid shell; meshes regenerated.
 - 2026-10-25: this file reconstructed from the repo.
+
+## Changelog addendum 2026-10-30 (WRIST + GRIPPER, hand-to-arm coupling)
+- Forest: replace the W3 H-yoke with a plane-to-plane coupling (wire-carrying perpendicular tubes), add an in-plane rotation R (8th powered DOF, one more STS3215; W3 kept, now compliant), no yoke. Draft v2 in `specs/SPEC_wrist_rotary.md`, `cad/wrist_rotary.py`, `cad/verify_wrist_rotary.py`. Hand lifted 24 mm (reach 243 mm). W3 sweep 3.0 mm clear; R +-170 clear for open/chuck/point/victory; fist pose collides (index limit 65 deg MCP); +176 g breaks the harness top pad estimate. This breaks the 7-DOF / actuator-count standing decision at Forest's request. Not locked.
