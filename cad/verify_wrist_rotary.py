@@ -10,8 +10,9 @@ def rot(axis, deg, pivot):
     if axis == "x": R[1, 1], R[1, 2], R[2, 1], R[2, 2] = c, -s, s, c
     else: R[0, 0], R[0, 1], R[1, 0], R[1, 1] = c, -s, s, c
     T1 = np.eye(4); T1[:3, 3] = -np.array(pivot); T2 = np.eye(4); T2[:3, 3] = pivot; return T2 @ R @ T1
-fixed = {k: L(p) for k, p in dict(forearm_dist="distal/forearm_dist_R.stl", w2_yoke="distal/w2_yoke_R.stl", sts_w2="distal/proxies/sts_w2_R.stl", sts_w3="distal/proxies/sts_w3_R.stl", flex_anchor="wrist_rotary/flex_anchor.stl").items()}
-carrier_grp = {k: L(p) for k, p in dict(carrier="wrist_rotary/carrier.stl", sts_R="wrist_rotary/proxies/sts_R.stl").items()}
+fixed = {k: L(p) for k, p in dict(forearm_dist="distal/forearm_dist_R.stl", w2_yoke="distal/w2_yoke_R.stl", sts_w2="distal/proxies/sts_w2_R.stl", sts_w3="distal/proxies/sts_w3_R.stl").items()}
+carrier_grp = {k: L(p) for k, p in dict(carrier="wrist_rotary/carrier.stl", sts_R="wrist_rotary/proxies/sts_R.stl", w3_crank="wrist_rotary/proxies/w3_crank.stl", w3_rod="wrist_rotary/proxies/w3_rod.stl").items()}
+flex_grp = {k: L(f"wrist_rotary/{k}.stl") for k in ("flexure_px", "flexure_nx")}
 stage = {k: L(p) for k, p in dict(pinion="wrist_rotary/pinion.stl", bearing="wrist_rotary/proxies/bearing_6808.stl").items()}
 rotor_grp = {"rotor": L("wrist_rotary/rotor.stl"), "palm": L("wrist_rotary/palm_tray_wrist.stl")}
 P = HP.make_poses()
@@ -28,13 +29,15 @@ def mgr(d, T=None):
     return cm
 res = {}
 # (1) W3 sweep: carrier group + stage + rotor + hand (open pose) rotate about x through (D, 455)
-hand_open = hand_meshes("open"); moving = {**carrier_grp, **stage, **rotor_grp, **hand_open}
+hand_open = hand_meshes("open"); moving = {**carrier_grp, **flex_grp, **stage, **rotor_grp, **hand_open}
 fx = mgr(fixed); w3 = {}
 for ang in range(-35, 45, 5):
     T = rot("x", ang, [0, D, ZW3]); mv = mgr(moving, T)
-    hit, names = mv.in_collision_other(fx, return_names=True); dmin = mv.min_distance_other(fx)
-    bad = sorted({(a, b) for a, b in names if not (b == "flex_anchor" and a == "carrier")})
-    w3[ang] = dict(min_dist=round(float(dmin), 2), collisions=[f"{a}/{b}" for a, b in bad])
+    hit, names = mv.in_collision_other(fx, return_names=True)
+    mv_nf = mgr({k: v for k, v in moving.items() if not k.startswith("flexure")}, T); dmin = mv_nf.min_distance_other(fx)             # bonded flexure brackets excluded
+    fl_nf = mgr(flex_grp, T); fx_nb = mgr({k: v for k, v in fixed.items() if k != "w2_yoke"}); fdist = fl_nf.min_distance_other(fx_nb)
+    bad = sorted({(a, b) for a, b in names if not (a.startswith("flexure") and b in ("w2_yoke",)) and not (a == "w3_crank" and b == "sts_w3")})
+    w3[ang] = dict(min_dist=round(float(dmin), 2), flexure_to_servo_forearm=round(float(fdist), 2), collisions=[f"{a}/{b}" for a, b in bad])
 res["w3_sweep_open_pose"] = w3
 # (2) R sweep per pose: rotor group + hand rotate about z through (0, D)
 stat = {**carrier_grp}; sm = mgr(stat); r_res = {}
@@ -71,15 +74,18 @@ for pose in P:
     dd[pose] = {psi: round(float(mgr(mv0, rot("z", psi, [0, D, 0])).min_distance_other(sm)), 2) for psi in (-90, 0, 90, 180)}
 res["hand_to_carrier_min_dist"] = dd; print("hand->carrier min dist", dd)
 # (3) flexure and loads
-E, t, b, Lf = 190e3, 0.1, 12.0, 8.0; I = b * t ** 3 / 12; kth = 2 * E * I / Lf            # N.mm/rad, two leaves
-th = math.radians(35); eps = t / 2 * th / Lf; sig = E * eps; Pcr = 4 * math.pi ** 2 * E * I / Lf ** 2
-m_hand = 0.328 + 0.17; F = (0.5 + m_hand) * 9.81 * 2.0                                         # dynamic 2 g
-M_tip = 0.5 * 9.81 * 0.2 * 2.0                                                                 # payload at 200 mm from the plane, 2 g
-res["flexure"] = dict(leaf="spring steel 0.1 x 12 x 8, 2 leaves at +-45 deg", k_theta_Nm_per_deg=round(kth / 1e3 * math.pi / 180, 5), strain_pct_at_35deg=round(eps * 100, 3), stress_MPa=round(sig, 0),
-                      buckling_per_leaf_N=round(Pcr, 0), axial_load_per_leaf_N_est=round((F / 2) , 1), tip_moment_Nm_2g=round(M_tip, 2), couple_force_N=round(M_tip / 0.050 * 1.0, 1))
+# two monolithic PA12 cross-strip flexures (concept C: 0.7 x 24 x 20 mm leaves, +-45 deg), one each side of the W3 servo, 68 mm apart in x
+k1 = 0.00141; res["flexure"] = dict(material="PA12 (SLS/MJF)", per_flexure_k_Nm_per_deg=k1, total_k_Nm_per_deg=round(2 * k1, 5), strain_pct_30deg=0.76, strain_pct_35deg=round(0.76 * 35 / 30, 2), static_limit_pct=3.0,
+    parasitic_axis_shift_mm=0.97, buckling_SF_axial_per_flexure=4.8, plate_buckling_SF_C_alone=1.49)
+m_pl = 0.5; M_y = 9.81 * 2.0 * (0.328 * 0.069 + 0.176 * 0.055 + m_pl * 0.034)          # tipping about y (hand + stage + payload at the chuck axis, 2 g), lever from the +x flexure centre ~ x 34
+F_cpl = M_y / 0.068                                                                    # couple over the 68 mm spacing
+ax = (m_pl + 0.328 + 0.176) * 9.81 * 2.0 / 2                                           # axial per flexure
+res["flexure"].update(M_y_Nm_2g=round(M_y, 2), couple_force_N=round(F_cpl, 1), axial_per_flexure_N=round(ax, 1), est_leaf_compression_N=round(ax / 2 + F_cpl / 2, 1),
+                      est_plate_buckling_SF=round(1.49 * 19.6 / (ax / 2 + F_cpl / 2) , 2), roll_stiff_Nm_per_deg_each=0.454, tip_moment_x_Nm_2g=1.96,
+                      drive="crank r15 + push-rod to a lug at r39: 2.6x, 78 deg servo for 30 deg hand, 7.6 N.m available vs 1.96 N.m (SF 3.9)")
 res["R_stage"] = dict(ratio=W.NG / W.NP, servo_stall_Nm=2.94, output_Nm_after_gear=round(2.94 * W.NG / W.NP * 0.9, 2), holding_load_Nm_est=0.35)
 meta = json.load(open(os.path.join(ST, "wrist_rotary", "wrist_rotary.json")))
-res["mass_g"] = dict(carrier=meta["carrier"]["g"], rotor=meta["rotor"]["g"], pinion=meta["pinion"]["g"], flex_anchor=meta["flex_anchor"]["g"], sts_R=55.0, bearing_6808=46.0, spindle_tube_brass=4.0, leaves=0.5, hardware=8.0)
+res["mass_g"] = dict(carrier=meta["carrier"]["g"], rotor=meta["rotor"]["g"], pinion=meta["pinion"]["g"], flexures_2x=round(meta["flexure_px"]["g"] + meta["flexure_nx"]["g"], 1), sts_R=55.0, bearing_6808=46.0, spindle_tube_brass=4.0, crank_rod_lug=2.0, hardware=8.0)
 res["mass_g"]["total_added"] = round(sum(res["mass_g"].values()), 1)
 json.dump(res, open(os.path.join(ST, "wrist_rotary", "verify_wrist_rotary.json"), "w"), indent=1)
 print(json.dumps(res["flexure"], indent=1)); print(json.dumps(res["mass_g"])); print(json.dumps(res["R_stage"]))

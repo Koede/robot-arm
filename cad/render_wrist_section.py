@@ -13,7 +13,8 @@ items = [("forearm_dist", L("distal/forearm_dist_R.stl"), "forearm"), ("w2_yoke"
          ("sts_w2", L("distal/proxies/sts_w2_R.stl"), "servo"), ("sts_w3 (W3)", L("distal/proxies/sts_w3_R.stl"), "servo"),
          ("carrier", L("wrist_rotary/carrier.stl"), "carrier"), ("rotor", L("wrist_rotary/rotor.stl"), "rotor"), ("pinion", L("wrist_rotary/pinion.stl"), "pinion"),
          ("bearing 6808", L("wrist_rotary/proxies/bearing_6808.stl"), "bearing"), ("sts_R (R)", L("wrist_rotary/proxies/sts_R.stl"), "servo"),
-         ("spindle tube", L("wrist_rotary/proxies/spindle_tube.stl"), "pcb"), ("flex leaf a", L("wrist_rotary/proxies/flex_leaf_a.stl"), "pogo"), ("flex leaf b", L("wrist_rotary/proxies/flex_leaf_b.stl"), "pogo"), ("flex anchor", L("wrist_rotary/flex_anchor.stl"), "yoke"), ("palm", L("wrist_rotary/palm_tray_wrist.stl"), "palm")]
+         ("spindle tube", L("wrist_rotary/proxies/spindle_tube.stl"), "pcb"), ("flexure +x", L("wrist_rotary/flexure_px.stl"), "pogo"), ("flexure -x", L("wrist_rotary/flexure_nx.stl"), "pogo"),
+         ("W3 crank", L("wrist_rotary/proxies/w3_crank.stl"), "pad"), ("W3 rod", L("wrist_rotary/proxies/w3_rod.stl"), "pad"), ("palm", L("wrist_rotary/palm_tray_wrist.stl"), "palm")]
 P = HP.make_poses(); scene, _ = HP.build("open", P["open"]); sc = HP.to_robot(scene)
 for n, m in sc:
     m = m.copy(); m.apply_translation([0, 0, W.DZ]); items.append((n, m, "pad" if n.endswith("pad") else ("thumb" if n.startswith("thumb") else "digit")))
@@ -48,11 +49,27 @@ def draw(plane, xlim, zlim, fn, title, notes, xcut=0.0):
     ax.set_xlim(*xlim); ax.set_ylim(*zlim); ax.set_aspect("equal"); ax.set_xlabel("x (mm)" if plane == "xz" else "y (mm)"); ax.set_ylabel("z (mm)"); ax.set_title(title); ax.grid(alpha=0.2)
     fig.tight_layout(); fig.savefig(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", fn)); plt.close(fig)
 if __name__ == "__main__":
-    draw("xz", (-95, 60), (425, 560), "wrist_section_xz.png", "Wrist v2, section y = D (XZ): horn paddle (-x), flexure (+x), R stage",
-         [((0, 520, -40, 548), 0, "hand floor / palm"), ((-42.5, 478, -85, 440), 0, "R servo STS3215 (vertical, outboard)"), ((-40, 499, -90, 513), 0, "pinion 16T"),
-          ((0, 499.5, 28, 535), 0, "rotor: 52T gear band + web + hollow neck"), ((0, 499, 30, 478), 0, "6808 bearing"), ((0, 465, 33, 440), 0, "W3 servo (fixed)"),
-          ((-25, 470, -92, 505), 0, "horn paddle (single arm, -x)"), ((31, 455, 36, 480), 0, "cross-flexure leaves + anchor (+x)"), ((0, 508, 22, 552), 0, "spindle tube = wire conduit")])
-    draw("yz", (0, 120), (425, 560), "wrist_section_yz.png", "Wrist v2, section x = 0 (YZ): hollow spindle tube through both planes, rotor neck, W3 servo, W2 yoke",
-         [((D, 505, 85, 548), 0, "spindle tube (wires inside)"), ((D, 500, 20, 520), 0, "hub + bearing seat"), ((D, 470, 82, 455), 0, "W3 servo"), ((D, 440, 90, 432), 0, "W2 yoke")])
-    draw("yz", (20, 95), (435, 505), "wrist_section_flexure.png", "Wrist v2, section x = +30 (YZ): cross-flexure leaves at +-45 deg on the W3 axis",
-         [((D, 455, 80, 475), 0, "two 0.1 mm leaves crossing on the W3 axis"), ((D, 449, 30, 440), 0, "fixed anchor")], xcut=30.0)
+    draw("xz", (-60, 62), (425, 560), "wrist_section_xz.png", "Unified wrist v3, section y = D (XZ): monolithic flexures at both sides of the W3 servo, crank + rod, hand base",
+         [((34, 465, 44, 500), 0, "PA12 cross-strip flexure (+x)"), ((-34, 465, -52, 500), 0, "flexure (-x)"), ((21.5, 475, 8, 531), 0, "crank + push-rod to plate A lug"),
+          ((0, 520, -30, 548), 0, "hand floor / palm"), ((0, 465, -8, 440), 0, "W3 servo (fixed)"), ((0, 499, -50, 520), 0, "rotor: 52T band + web + hollow neck"), ((0, 508, 20, 548), 0, "spindle tube = wire conduit")])
+    draw("yz", (0, 120), (425, 560), "wrist_section_yz.png", "Unified wrist v3, section x = 0 (YZ): R servo + pinion at -y, hollow spindle, W3 servo",
+         [((D, 505, 85, 548), 0, "spindle tube (wires inside)"), ((D - 42.5, 475, 2, 500), 0, "R servo STS3215 (-y side)"), ((D, 470, 82, 455), 0, "W3 servo"), ((D, 440, 90, 432), 0, "W2 yoke")])
+    draw("yz", (25, 95), (435, 500), "wrist_section_flexure.png", "Unified wrist v3, section x = +35 (YZ): crossed PA12 leaves 0.7 x 24 x 20 on the W3 axis",
+         [((D, 455, 80, 475), 0, "two 0.7 mm leaves at +-45 deg"), ((D, 447, 30, 440), 0, "base bar + bracket to the W2 cradle"), ((D, 485, 85, 497), 0, "top pad under plate A")], xcut=35.0)
+    # 3D views of the unified wrist (open hand)
+    import render_hand as RH, glob
+    ms = []
+    for n, m, c in items:
+        m = m.copy()
+        if len(m.faces) > 2500:
+            try: m = m.simplify_quadric_decimation(face_count=2500)
+            except Exception: pass
+        base = {"forearm": (150, 165, 190), "yoke": (120, 135, 165), "servo": (70, 70, 78), "carrier": (240, 140, 40), "rotor": (30, 170, 160), "pinion": (20, 120, 110), "bearing": (205, 205, 215),
+                "palm": (190, 195, 210), "digit": (215, 125, 65), "pad": (45, 45, 50), "pcb": (220, 190, 40), "pogo": (200, 80, 120), "thumb": (200, 90, 110)}[c]
+        ms.append((n, m, np.tile(np.array([*base, 255.0]), (len(m.faces), 1))))
+    import matplotlib.pyplot as plt2
+    fig = plt2.figure(figsize=(16, 7), dpi=110)
+    for j, (el, az, t) in enumerate([(22, -48, "3/4 view"), (8, -118, "rear-side view")]):
+        ax = fig.add_subplot(1, 2, j + 1, projection="3d"); RH.draw(ax, ms, el, az, t, dict(c=[10, 57, 500], r=95))
+    fig.suptitle("Unified wrist v3: carrier plate (orange) on two PA12 flexures (yellow/pink) + crank, R stage (teal), hand lifted 24 mm", fontsize=11); fig.tight_layout()
+    fig.savefig(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "wrist_v3_3d.png")); plt2.close(fig)

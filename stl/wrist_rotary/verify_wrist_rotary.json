@@ -1,68 +1,86 @@
 {
  "w3_sweep_open_pose": {
   "-35": {
-   "min_dist": 3.0,
+   "min_dist": 0.4,
+   "flexure_to_servo_forearm": 2.7,
    "collisions": []
   },
   "-30": {
-   "min_dist": 3.01,
+   "min_dist": 0.4,
+   "flexure_to_servo_forearm": 2.7,
    "collisions": []
   },
   "-25": {
-   "min_dist": 3.0,
+   "min_dist": 0.4,
+   "flexure_to_servo_forearm": 2.7,
    "collisions": []
   },
   "-20": {
-   "min_dist": 3.0,
+   "min_dist": 0.4,
+   "flexure_to_servo_forearm": 2.7,
    "collisions": []
   },
   "-15": {
-   "min_dist": 3.01,
+   "min_dist": 0.4,
+   "flexure_to_servo_forearm": 2.7,
    "collisions": []
   },
   "-10": {
-   "min_dist": 3.0,
+   "min_dist": 0.4,
+   "flexure_to_servo_forearm": 2.7,
    "collisions": []
   },
   "-5": {
-   "min_dist": 3.01,
+   "min_dist": 0.4,
+   "flexure_to_servo_forearm": 2.7,
    "collisions": []
   },
   "0": {
-   "min_dist": 3.0,
+   "min_dist": 0.4,
+   "flexure_to_servo_forearm": 2.7,
    "collisions": []
   },
   "5": {
-   "min_dist": 3.01,
+   "min_dist": 0.4,
+   "flexure_to_servo_forearm": 2.7,
    "collisions": []
   },
   "10": {
-   "min_dist": 3.0,
+   "min_dist": 0.4,
+   "flexure_to_servo_forearm": 2.7,
    "collisions": []
   },
   "15": {
-   "min_dist": 3.01,
+   "min_dist": 0.4,
+   "flexure_to_servo_forearm": 2.7,
    "collisions": []
   },
   "20": {
-   "min_dist": 3.0,
+   "min_dist": 0.4,
+   "flexure_to_servo_forearm": 2.7,
    "collisions": []
   },
   "25": {
-   "min_dist": 3.0,
+   "min_dist": 0.4,
+   "flexure_to_servo_forearm": 2.7,
    "collisions": []
   },
   "30": {
-   "min_dist": 3.01,
+   "min_dist": 0.4,
+   "flexure_to_servo_forearm": 2.7,
    "collisions": []
   },
   "35": {
-   "min_dist": 3.0,
+   "min_dist": 0.4,
+   "flexure_to_servo_forearm": 2.7,
    "collisions": []
   },
   "40": {
-   "min_dist": 3.01,
-   "collisions": []
+   "min_dist": -0.46,
+   "flexure_to_servo_forearm": 2.7,
+   "collisions": [
+    "sts_R/w2_yoke"
+   ]
   }
  },
  "R_sweep": {
@@ -407,14 +425,23 @@
   }
  },
  "flexure": {
-  "leaf": "spring steel 0.1 x 12 x 8, 2 leaves at +-45 deg",
-  "k_theta_Nm_per_deg": 0.00083,
-  "strain_pct_at_35deg": 0.382,
-  "stress_MPa": 725.0,
-  "buckling_per_leaf_N": 117.0,
-  "axial_load_per_leaf_N_est": 9.8,
-  "tip_moment_Nm_2g": 1.96,
-  "couple_force_N": 39.2
+  "material": "PA12 (SLS/MJF)",
+  "per_flexure_k_Nm_per_deg": 0.00141,
+  "total_k_Nm_per_deg": 0.00282,
+  "strain_pct_30deg": 0.76,
+  "strain_pct_35deg": 0.89,
+  "static_limit_pct": 3.0,
+  "parasitic_axis_shift_mm": 0.97,
+  "buckling_SF_axial_per_flexure": 4.8,
+  "plate_buckling_SF_C_alone": 1.49,
+  "M_y_Nm_2g": 0.97,
+  "couple_force_N": 14.2,
+  "axial_per_flexure_N": 9.8,
+  "est_leaf_compression_N": 12.0,
+  "est_plate_buckling_SF": 2.43,
+  "roll_stiff_Nm_per_deg_each": 0.454,
+  "tip_moment_x_Nm_2g": 1.96,
+  "drive": "crank r15 + push-rod to a lug at r39: 2.6x, 78 deg servo for 30 deg hand, 7.6 N.m available vs 1.96 N.m (SF 3.9)"
  },
  "R_stage": {
   "ratio": 3.25,
@@ -423,15 +450,15 @@
   "holding_load_Nm_est": 0.35
  },
  "mass_g": {
-  "carrier": 33.5,
+  "carrier": 25.9,
   "rotor": 22.9,
   "pinion": 2.2,
-  "flex_anchor": 3.4,
+  "flexures_2x": 30.0,
   "sts_R": 55.0,
   "bearing_6808": 46.0,
   "spindle_tube_brass": 4.0,
-  "leaves": 0.5,
+  "crank_rod_lug": 2.0,
   "hardware": 8.0,
-  "total_added": 175.5
+  "total_added": 196.0
  }
 }

@@ -1,24 +1,35 @@
 {
  "carrier": {
-  "vol_cm3": 25.751,
-  "g": 33.5,
+  "vol_cm3": 19.932,
+  "g": 25.9,
   "valid": true,
   "watertight": true,
   "bbox": [
-   107.3,
-   52.0,
-   63.4
+   92.0,
+   82.0,
+   12.6
   ]
  },
- "flex_anchor": {
-  "vol_cm3": 2.621,
-  "g": 3.4,
+ "flexure_px": {
+  "vol_cm3": 14.881,
+  "g": 15.0,
   "valid": true,
   "watertight": true,
   "bbox": [
-   18.4,
-   18.0,
-   22.0
+   26.8,
+   32.0,
+   51.3
+  ]
+ },
+ "flexure_nx": {
+  "vol_cm3": 14.881,
+  "g": 15.0,
+  "valid": true,
+  "watertight": true,
+  "bbox": [
+   26.8,
+   32.0,
+   51.3
   ]
  },
  "rotor": {
