@@ -68,10 +68,10 @@ COP_H = 3.0                     # the cop falls 3 mm from the bezel to the wall 
 BULGE = 0.0                     # rev b (flush): no mid-height bulge (was 2)
 A_R, A_F, B_W, N_SE = 76.0, 120.0, 83.0, 3.0         # crown plan superellipse: rear / front semi-axes, half width, exponent
 X_CUT = -77.0                   # crown and keel stop 3 mm short of the plate rear face (x -80)
-BANDS = [(-57.0, -79.0), (-77.0, -100.0)]               # crown lames; the keel continues the cascade below -100            # crown lames (z top, z hem); 2 mm riser overlap
+BANDS = [(-57.0, -79.0), (-77.0, -100.0)]   # crown lames (z top, z hem); 2 mm riser overlap; the keel starts below -100
 FLARE = 1.2                     # each lame steps 1.2 mm outward toward its hem (rev b: was 3)
 KEEL_C, KEEL_PX, KEEL_PY, KEEL_OFF = 14.0, 4.0, 4.0, 0.9     # rev b: a shallow dish under the motor (was a 60 mm keel bowl)
-KSTEP_W, KSTEP = 0.45, 0.0      # the keel is two lames: the upper one flares 3 mm by w = 0.45, the lower one restarts inside it   # keel depth below the hem; taper exponents rear (x) / width (y); lip offset
+KSTEP_W, KSTEP = 0.45, 0.0      # rev a two-lame keel step (off in rev b)
 PLATE_JS = json.load(open(os.path.join(SH, "plate.json")))
 FEET = PLATE_JS["pauldron_feet"]                 # [(y, z)] single M4 keel feet (chassis_axilla.py rev 2026-10-30b: clearance + csk)
 TOP_HOLES = PLATE_JS["spaulder_top_holes"]       # y of the 2 M3 tapped holes in the plate top edge (spaulder rear feet)
@@ -184,13 +184,6 @@ def voxelize(m, lo, n):
         zz = loc[ri == r, 2]; i, j = divmod(int(r), n[1])
         for a, b in zip(zz[0::2], zz[1::2]): occ[i, j, (zs >= a) & (zs <= b)] = True
     return occ
-def mesh_of(solid, lo, smooth=1.2):
-    s = np.pad(solid, 2); lo2 = lo - 2 * VOX
-    sdf = (ndimage.distance_transform_edt(~s) - ndimage.distance_transform_edt(s)).astype(np.float32) * VOX
-    if smooth: sdf = ndimage.gaussian_filter(sdf, smooth)
-    v, f, _, _ = measure.marching_cubes(sdf, 0.0, spacing=(VOX,) * 3)
-    m = trimesh.Trimesh(v + lo2 + VOX / 2, f[:, ::-1], process=True); m.fix_normals()
-    return m
 def cyl(p0, p1, r, sections=40):
     p0, p1 = np.asarray(p0, float), np.asarray(p1, float); v = p1 - p0; L_ = np.linalg.norm(v)
     c = trimesh.creation.cylinder(radius=r, height=L_, sections=sections)
@@ -447,7 +440,6 @@ lame_id = np.digitize(-Xs, [-LAME_X[1], -LAME_X[2]])           # 0 rear, 1 mid, 
 fr = np.zeros(n2, np.float32)
 for k in range(3):
     m_ = lame_id == k; fr[m_] = ((LAME_X[k] - Xs[m_]) / (LAME_X[k] - LAME_X[k + 1]))
-sm = lambda t: np.clip(t, 0, 1) ** 2 * (3 - 2 * np.clip(t, 0, 1))
 curl = 2.0 * np.clip(1.0 - din / 6.0, 0, 1) ** 2 * (Xs < X_R - 12.0)       # edges roll down 2 mm (visual only; the floor still governs)
 zm = env + T_S / 2 + 0.6 + STEP * fr - curl
 ceil_ = arm_floor(lo2, n2, VOX)
