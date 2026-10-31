@@ -26,6 +26,8 @@ Spec: `specs/SPEC_collision_method.md`. Report and keep out only the first-conta
 
 Scripts, specs and data referenced but not in the repo are listed in `DESIGN_STATE.md` section 12, item 7.
 
+6. HAND rev B is the project hand (2026-10-30, `specs/SPEC_hand.md`). Still to do: port it onto the wrist-v3 coupling (branch `claude/hand-coupling-2026-10-30`), re-run the sweeps and `harness_loads.py`.
+
 ## Working rules
 - Design decisions that change geometry, limits or firmware tables are Forest's call. Lay out the options and numbers; don't pick silently.
 - Record decisions and changelog entries in the design-state docs, dated.

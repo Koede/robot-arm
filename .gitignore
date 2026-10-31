@@ -2,3 +2,6 @@
 __pycache__/
 *.pyc
 .pytest_cache/
+cad/_three/node_modules/
+stl/hand/poses/*/
+stl/hand/scene_parts.json

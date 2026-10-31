@@ -1,0 +1,148 @@
+{
+ "printability": {
+  "n_parts": 35,
+  "all_watertight": true,
+  "all_fit_256": true
+ },
+ "mass": {
+  "printed_g": 87.7,
+  "hardware_g": {
+   "servos": 107.2,
+   "pins_d2_steel": 6.0,
+   "rods_and_ball_links": 6.0,
+   "cover_screws_inserts": 3.0,
+   "driver_board_and_6V_buck_PLACEHOLDER": 10.0,
+   "wiring": 4.0
+  },
+  "hand_g": 223.9,
+  "claw_g": 178.9,
+  "delta_g": 45.0,
+  "per_part_g": {
+   "index_prox": 3.27,
+   "index_mid": 1.42,
+   "index_dist": 1.2,
+   "index_cap": 0.85,
+   "index_bar_pip": 0.07,
+   "index_bar_dip": 0.04,
+   "index_carrier": 1.32,
+   "middle_prox": 3.87,
+   "middle_mid": 1.78,
+   "middle_dist": 1.35,
+   "middle_cap": 0.86,
+   "middle_bar_pip": 0.08,
+   "middle_bar_dip": 0.05,
+   "middle_carrier": 1.37,
+   "ring_prox": 3.14,
+   "ring_mid": 1.49,
+   "ring_dist": 1.14,
+   "ring_cap": 0.83,
+   "ring_bar_pip": 0.08,
+   "ring_bar_dip": 0.04,
+   "ring_carrier": 1.29,
+   "pinky_prox": 1.8,
+   "pinky_mid": 0.75,
+   "pinky_dist": 0.87,
+   "pinky_cap": 0.79,
+   "pinky_bar_pip": 0.06,
+   "pinky_bar_dip": 0.03,
+   "pinky_carrier": 1.1,
+   "thumb_meta": 9.65,
+   "thumb_prox": 2.56,
+   "thumb_dist": 2.39,
+   "thumb_cap": 0.91,
+   "thumb_bar": 0.2,
+   "palm_back": 29.24,
+   "palm_cover": 11.81
+  }
+ },
+ "chuck4_d13": {
+  "single_jaw_capacity_N": {
+   "index": 10.24,
+   "middle": 1.81,
+   "ring": 14.27,
+   "thumb": 15.52
+  },
+  "balanced_jaw_force_N": 1.81,
+  "hold_torque_Nm": 0.0235,
+  "axial_pull_N": 3.62,
+  "mu_assumed": 0.5,
+  "note": "virtual-work capacity per jaw at 70 % servo stall; balanced squeeze limited by the weakest jaw"
+ },
+ "chuck3_d6": {
+  "single_jaw_capacity_N": {
+   "index": 2.58,
+   "middle": 19.12,
+   "thumb": 11.82
+  },
+  "balanced_jaw_force_N": 2.58,
+  "hold_torque_Nm": 0.0116,
+  "axial_pull_N": 3.87,
+  "mu_assumed": 0.5,
+  "note": "virtual-work capacity per jaw at 70 % servo stall; balanced squeeze limited by the weakest jaw"
+ },
+ "open_envelope": {
+  "z_max": 624.3,
+  "wrist_to_tip_from_W2_mm": 214.3,
+  "contract_mm": 165.0,
+  "x_range": [
+   -26.8,
+   33.2
+  ],
+  "y_range": [
+   16.4,
+   132.5
+  ]
+ },
+ "S2": {
+  "worst_residual_Nm": 3.27,
+  "SF": 2.54,
+  "gate": "PASS"
+ },
+ "harness_top_pad": {
+  "est_kPa": 14.61,
+  "limit": 14.7,
+  "gate": "PASS"
+ },
+ "poses": {
+  "open": {
+   "max_bar_len_err_mm": 0.136,
+   "interferences": [],
+   "cap_bit_compression_mm3": {}
+  },
+  "chuck4_d13": {
+   "max_bar_len_err_mm": 0.11,
+   "interferences": [],
+   "cap_bit_compression_mm3": {
+    "index_cap": 13.19,
+    "middle_cap": 2.74,
+    "ring_cap": 14.76
+   }
+  },
+  "chuck3_d6": {
+   "max_bar_len_err_mm": 0.076,
+   "interferences": [
+    [
+     "pinky_cap",
+     "ring_cap",
+     0.04
+    ]
+   ],
+   "cap_bit_compression_mm3": {}
+  },
+  "thumbsup": {
+   "max_bar_len_err_mm": 0.11,
+   "interferences": [],
+   "cap_bit_compression_mm3": {}
+  },
+  "point": {
+   "max_bar_len_err_mm": 0.11,
+   "interferences": [],
+   "cap_bit_compression_mm3": {}
+  },
+  "victory": {
+   "max_bar_len_err_mm": 0.11,
+   "interferences": [],
+   "cap_bit_compression_mm3": {}
+  }
+ }
+}

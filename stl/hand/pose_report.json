@@ -1,0 +1,42 @@
+{
+ "open": {
+  "max_bar_len_err_mm": 0.136,
+  "interferences": [],
+  "cap_bit_compression_mm3": {}
+ },
+ "chuck4_d13": {
+  "max_bar_len_err_mm": 0.11,
+  "interferences": [],
+  "cap_bit_compression_mm3": {
+   "index_cap": 13.19,
+   "middle_cap": 2.74,
+   "ring_cap": 14.76
+  }
+ },
+ "chuck3_d6": {
+  "max_bar_len_err_mm": 0.076,
+  "interferences": [
+   [
+    "pinky_cap",
+    "ring_cap",
+    0.04
+   ]
+  ],
+  "cap_bit_compression_mm3": {}
+ },
+ "thumbsup": {
+  "max_bar_len_err_mm": 0.11,
+  "interferences": [],
+  "cap_bit_compression_mm3": {}
+ },
+ "point": {
+  "max_bar_len_err_mm": 0.11,
+  "interferences": [],
+  "cap_bit_compression_mm3": {}
+ },
+ "victory": {
+  "max_bar_len_err_mm": 0.11,
+  "interferences": [],
+  "cap_bit_compression_mm3": {}
+ }
+}
