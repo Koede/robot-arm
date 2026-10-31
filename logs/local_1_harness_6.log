@@ -1,0 +1,52 @@
+lead slot removed 199 mm3 from the wing
+half 12707 True mir 12707 True
+{
+ "wing_volume_cm3": 108.6,
+ "wing_mass_g_CFPA": 125,
+ "spine_volume_cm3": 24.8,
+ "spine_mass_g": 28,
+ "watertight": [
+  true,
+  true
+ ],
+ "rail_gap_mm": [
+  7.5,
+  15.8
+ ],
+ "bridge_gap_mm": [
+  14.0,
+  27.0
+ ],
+ "wing_bounds": [
+  [
+   -145.1,
+   -138.2,
+   -440.7
+  ],
+  [
+   -88.7,
+   -45.5,
+   -75.5
+  ]
+ ],
+ "spine_bounds": [
+  [
+   -115.5,
+   -175.7,
+   -240.7
+  ],
+  [
+   -95.5,
+   -124.3,
+   -111.8
+  ]
+ ],
+ "lead_slot": {
+  "y": -123.0,
+  "z": -320.0,
+  "wy": 2.5,
+  "hz": 14.0,
+  "removed_mm3": 199
+ },
+ "spine_y": -150.0
+}

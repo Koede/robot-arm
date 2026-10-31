@@ -1,0 +1,22 @@
+bases: 4 original + 30 random legal
+W2 anchors after swept keep-out (>= r + 2.0): (227900, 186055) -> (19764, 13300)
+W2 bundle {'area_mm2': 5.25, 'od_mm': 3.29, 'n_wires': 3, 'split': 1} Rmin 13.2 anchors 19764 13300
+ tried 25 good 0 12s
+ tried 50 good 0 39s
+ tried 75 good 0 58s
+ tried 100 good 0 71s
+ tried 125 good 0 83s
+ tried 150 good 0 117s
+ tried 175 good 0 132s
+ tried 179 good 1 {'A': [-43.0, 52.6, 380.0], 'tA': [0.0, 1.0, 0.0], 'B': [25.8, 83.0, 437.0], 'tB': [0.0, 1.0, 0.0], 'L': np.float64(131.4), 'clr': 0.8, 'minrad': 18.1} 226s
+ tried 200 good 1 236s
+ tried 219 good 2 {'A': [-43.0, 52.6, 380.0], 'tA': [0.0, 1.0, 0.0], 'B': [25.8, 83.0, 437.0], 'tB': [0.0, 1.0, 0.0], 'L': np.float64(131.4), 'clr': 0.8, 'minrad': 18.1} 344s
+ tried 225 good 2 347s
+ tried 250 good 2 362s
+ tried 275 good 2 378s
+ tried 300 good 2 390s
+ tried 325 good 2 402s
+ tried 350 good 2 461s
+ tried 375 good 2 480s
+ tried 400 good 2 545s
+W2 found 2

@@ -1889,7 +1889,7 @@
   },
   "n_restricted": 22,
   "min_E_max": 97.5,
-  "_runtime_s": 207
+  "_runtime_s": 195
  },
  "gates": {
   "skin_min_mm": 85.03,
@@ -1904,5 +1904,5 @@
   "two_arm_soft_S1_140_mm": 30.78,
   "two_arm_hard_S1_150_mm": 4.84
  },
- "_runtime_s": 459
+ "_runtime_s": 445
 }

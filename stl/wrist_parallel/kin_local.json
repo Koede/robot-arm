@@ -1,0 +1,34 @@
+{
+ "params": {
+  "az0": 270.958685383142,
+  "pol0": 83.74063302487586,
+  "az4": 90.39493074406496,
+  "pol4": 96.17553287498545,
+  "a1": 26.41293155725701,
+  "a2": 82.50784045480668,
+  "b1": 43.24381493055984,
+  "b2": 78.09917866240947
+ },
+ "cost": 12.237960593535597,
+ "detail": {
+  "cov_worst": 1.8623128843862795,
+  "cone_viol_mean": 1.8373740120324258,
+  "cone_viol_max": 17.77934370560225,
+  "roll_span_deg": 14.229057011441654,
+  "frac_ok": 0.779978263494747,
+  "frac_targets": 0.8541666666666666
+ },
+ "worst_angle_deg": 0.9793993927623025,
+ "frac_configs_well_conditioned": 0.7801654406153659,
+ "s_min": 0.15,
+ "n_targets": 341,
+ "baseline": {
+  "cov_worst": 2.254748271048564,
+  "cone_viol_mean": 16.071873202148435,
+  "cone_viol_max": 71.52913105268654,
+  "roll_span_deg": 350.9538345965173,
+  "frac_ok": 0.978021978021978,
+  "frac_targets": 0.8125
+ },
+ "note": "extra cost: cone clearance of ground axes / links around the claw axis, roll span; see wrist_parallel_search.py"
+}

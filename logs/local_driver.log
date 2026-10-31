@@ -1,0 +1,14 @@
+[2026-10-30T23:46:13] creating .venv and installing dependencies (Python 3.10-3.13 needed)
+[2026-10-30T23:46:48] stage 1: wearer + harness (about 15 min, one core)
+[2026-10-30T23:49:07] stage 2: SDF cache (about 5 min)
+[2026-10-30T23:49:24] stage 3: 9 jobs on 4 workers
+[2026-10-30T23:58:57] job wire_W2 exit 0 (573 s)
+[2026-10-31T00:03:18] job sweep_full_restricted exit 0 (834 s)
+[2026-10-31T00:06:15] job sweep_full exit 0 (1011 s)
+[2026-10-31T00:06:57] job collision exit 0 (480 s)
+[2026-10-31T00:09:54] job worst_full exit 0 (219 s)
+[2026-10-31T00:10:16] job worst_restricted exit 0 (199 s)
+[2026-10-31T00:10:52] job balancer exit 0 (454 s)
+[2026-10-31T00:11:15] job wrist_search exit 0 (81 s)
+[2026-10-31T00:29:52] job wire_W3 exit 0 (2428 s)
+[2026-10-31T00:29:52] ALL_DONE: wire_W2=ok, wire_W3=ok, sweep_full=ok, sweep_full_restricted=ok, collision=ok, balancer=ok, worst_full=ok, worst_restricted=ok, wrist_search=ok

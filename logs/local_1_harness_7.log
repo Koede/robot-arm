@@ -1,0 +1,113 @@
+assembly-draft voxels removed: 248
+free tab azimuths: [np.float64(250.0), np.float64(255.0), np.float64(260.0), np.float64(265.0), np.float64(270.0), np.float64(275.0), np.float64(280.0), np.float64(285.0), np.float64(290.0)]
+{
+ "cowl_thin_wall_frac": 0.0,
+ "cowl_wall_p5_mm": 3.2,
+ "cowl_bbox": [
+  [
+   -71.8,
+   -61.6,
+   -50.0
+  ],
+  [
+   77.9,
+   3.4,
+   60.1
+  ]
+ ],
+ "cowl_extents": [
+  149.7,
+  65.0,
+  110.1
+ ],
+ "cowl_volume_cm3": 91.9,
+ "cowl_mass_g_PETG": 117,
+ "cowl_watertight": true,
+ "halves": {
+  "a_posX": {
+   "volume_cm3": 50.5,
+   "watertight": true,
+   "extents": [
+    78.6,
+    65.0,
+    110.0
+   ]
+  },
+  "b_negX": {
+   "volume_cm3": 41.3,
+   "watertight": true,
+   "extents": [
+    71.1,
+    61.7,
+    106.4
+   ]
+  }
+ },
+ "dome_bbox": [
+  [
+   -45.6,
+   3.2,
+   -45.7
+  ],
+  [
+   45.6,
+   46.3,
+   36.0
+  ]
+ ],
+ "dome_volume_cm3": 17.4,
+ "dome_mass_g_PETG": 22,
+ "dome_watertight": true,
+ "tabs_deg": [
+  275.0,
+  250.0
+ ],
+ "laps": [
+  {
+   "at": [
+    -2.0,
+    -25.2,
+    55.6
+   ],
+   "normal": [
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "at": [
+    -2.0,
+    -58.0,
+    -10.8
+   ],
+   "normal": [
+    0.0,
+    -1.0,
+    0.0
+   ]
+  }
+ ],
+ "dome_ribs_deg": [
+  0.0,
+  180.0,
+  270.0
+ ],
+ "params": {
+  "G_IN": 4.0,
+  "T_WALL": 2.4,
+  "R_CLOSE": 20.0,
+  "LIP_GAP": 3.5,
+  "R_BORE": 50.0,
+  "Z_BOT": -49.6,
+  "DOME": [
+   43.8,
+   46.4,
+   3.4
+  ]
+ },
+ "old_ball": {
+  "diameter_mm": 188.0,
+  "mass_g": 146
+ }
+}
