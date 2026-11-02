@@ -1,0 +1,463 @@
+{
+ "id": "MJ1",
+ "harness_clearance_mm": {
+  "spar": {
+   "wing_rail": 4.7,
+   "spine_bridge": 0.8
+  },
+  "knee": {
+   "wing_rail": 1.5,
+   "spine_bridge": 22.2
+  },
+  "spar_standoffs": {
+   "wing_rail": 0.1,
+   "spine_bridge": 1.4
+  },
+  "bal_liner": {
+   "wing_rail": 7.6,
+   "spine_bridge": 10.1
+  },
+  "bal_sheaves": {
+   "wing_rail": Infinity,
+   "spine_bridge": Infinity
+  },
+  "cord_guide": {
+   "wing_rail": Infinity,
+   "spine_bridge": Infinity
+  },
+  "clasp_bracket": {
+   "wing_rail": 10.2,
+   "spine_bridge": Infinity
+  }
+ },
+ "title": "Spine spar, balancer inside",
+ "clasp": "feet re-seated on the knee corner",
+ "parts": {
+  "spar": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 95.5,
+   "watertight": true,
+   "bbox": [
+    72.4,
+    40.0,
+    205.3
+   ],
+   "fits_256": true,
+   "note": "straight closed PA-CF box 44 x 44 x 2.4, z -105..-300, on 4 standoffs to the rail lateral half"
+  },
+  "knee": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 147.5,
+   "watertight": true,
+   "bbox": [
+    57.8,
+    201.7,
+    156.2
+   ],
+   "fits_256": true,
+   "note": "pad + 2-segment box knee 50 x 16 x 2.4: medial out of the S2 sweep, down below the neck line, onto the spar head"
+  },
+  "spar_standoffs": {
+   "mat": "PETGCF",
+   "kind": "printed",
+   "mass_g": 9.7,
+   "watertight": true,
+   "bbox": [
+    34.4,
+    22.0,
+    190.0
+   ],
+   "fits_256": true,
+   "note": ""
+  },
+  "bal_liner": {
+   "mat": "PETGCF",
+   "kind": "printed",
+   "mass_g": 21.4,
+   "watertight": true,
+   "bbox": [
+    63.9,
+    40.4,
+    170.8
+   ],
+   "fits_256": true,
+   "note": "4:1 spring tube 151 + caps inside the spar (spring OD 39.5 -> liner 40.4)"
+  },
+  "bal_sheaves": {
+   "mat": "AL",
+   "kind": "bought",
+   "mass_g": 27.0,
+   "watertight": true,
+   "bbox": [
+    63.7,
+    100.3,
+    160.4
+   ],
+   "fits_256": true,
+   "note": ""
+  },
+  "bal_cord_fixed": {
+   "mat": "TPU",
+   "kind": "cord",
+   "mass_g": 1.0,
+   "watertight": true,
+   "bbox": [
+    59.4,
+    84.0,
+    143.8
+   ],
+   "fits_256": true,
+   "note": ""
+  },
+  "cord_guide": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 13.2,
+   "watertight": true,
+   "bbox": [
+    66.8,
+    93.4,
+    152.2
+   ],
+   "fits_256": true,
+   "note": "closed cord channel 10 x 10 on the knee and the pad rim"
+  },
+  "clasp_bracket": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 23.3,
+   "watertight": true,
+   "bbox": [
+    36.1,
+    131.9,
+    55.4
+   ],
+   "fits_256": true,
+   "note": "clasp feet (re-seated) to the knee corner"
+  }
+ },
+ "mount_mass_g": 338.6,
+ "balancer_fixed_g": 136.4,
+ "total_fixed_g": 475.0,
+ "frame": {
+  "park": {
+   "tip_mm": 5.58,
+   "tip_vec": [
+    0.24,
+    4.51,
+    -3.28
+   ],
+   "pad_rot_deg": 0.472,
+   "pad_trans_mm": 1.36,
+   "contact": {
+    "rail": {
+     "max_kPa": 0.99,
+     "min_kPa": -2.57,
+     "sum_N": -5.6
+    },
+    "top": {
+     "max_kPa": 1.95,
+     "min_kPa": 1.3,
+     "sum_N": 8.3
+    },
+    "front": {
+     "max_kPa": -0.31,
+     "min_kPa": -0.4,
+     "sum_N": -2.6
+    },
+    "axilla": {
+     "max_kPa": 0.93,
+     "min_kPa": 0.93,
+     "sum_N": 2.6
+    }
+   },
+   "iface": [
+    {
+     "n": 2,
+     "F_bolt_max_N": 75.3,
+     "N": -10.3,
+     "My_Nmm": 30.0,
+     "Mz_Nmm": -842.0
+    },
+    {
+     "n": 2,
+     "F_bolt_max_N": 70.4,
+     "N": -6.4,
+     "My_Nmm": -5.0,
+     "Mz_Nmm": -806.0
+    },
+    {
+     "n": 2,
+     "F_bolt_max_N": 11.2,
+     "N": 4.6,
+     "My_Nmm": -58.0,
+     "Mz_Nmm": 107.0
+    },
+    {
+     "n": 2,
+     "F_bolt_max_N": 49.4,
+     "N": 11.2,
+     "My_Nmm": -84.0,
+     "Mz_Nmm": 525.0
+    }
+   ],
+   "member_stress_MPa": {
+    "rail": 1.68,
+    "clasp_arm": 3.06,
+    "clasp_seat": 4.49,
+    "spine_bridge": 1.08,
+    "spar": 1.85,
+    "knee": 2.97
+   },
+   "tip_mm_body_only": 0.67
+  },
+  "reach": {
+   "tip_mm": 8.07,
+   "tip_vec": [
+    -1.29,
+    -0.12,
+    -7.96
+   ],
+   "pad_rot_deg": 0.69,
+   "pad_trans_mm": 1.77,
+   "contact": {
+    "rail": {
+     "max_kPa": 2.43,
+     "min_kPa": -4.44,
+     "sum_N": -4.0
+    },
+    "top": {
+     "max_kPa": 1.72,
+     "min_kPa": 1.53,
+     "sum_N": 8.3
+    },
+    "front": {
+     "max_kPa": -0.16,
+     "min_kPa": -0.4,
+     "sum_N": -1.9
+    },
+    "axilla": {
+     "max_kPa": 1.07,
+     "min_kPa": 1.07,
+     "sum_N": 3.0
+    }
+   },
+   "iface": [
+    {
+     "n": 2,
+     "F_bolt_max_N": 159.8,
+     "N": -17.9,
+     "My_Nmm": 39.0,
+     "Mz_Nmm": -1810.0
+    },
+    {
+     "n": 2,
+     "F_bolt_max_N": 90.3,
+     "N": -12.2,
+     "My_Nmm": 2.0,
+     "Mz_Nmm": -1010.0
+    },
+    {
+     "n": 2,
+     "F_bolt_max_N": 29.5,
+     "N": 9.1,
+     "My_Nmm": -67.0,
+     "Mz_Nmm": 299.0
+    },
+    {
+     "n": 2,
+     "F_bolt_max_N": 79.5,
+     "N": 22.6,
+     "My_Nmm": -104.0,
+     "Mz_Nmm": 819.0
+    }
+   ],
+   "member_stress_MPa": {
+    "rail": 2.2,
+    "clasp_arm": 3.66,
+    "clasp_seat": 4.26,
+    "spine_bridge": 1.49,
+    "spar": 2.44,
+    "knee": 4.28
+   },
+   "tip_mm_body_only": 1.09
+  }
+ },
+ "skin_gap_by_zone_mm": {
+  "spar": {
+   "rail": 19.7,
+   "blade": 16.9
+  },
+  "knee": {
+   "rail": 17.0,
+   "blade": 14.2
+  },
+  "spar_standoffs": {
+   "rail": 12.2
+  },
+  "bal_liner": {
+   "rail": 22.3,
+   "blade": 22.8
+  },
+  "bal_sheaves": {
+   "rail": 66.4,
+   "blade": 63.0
+  },
+  "cord_guide": {
+   "blade": 64.4
+  },
+  "clasp_bracket": {
+   "rail": 28.8,
+   "blade": 5.3
+  }
+ },
+ "skin_rule_violations": [
+  "spar: blade 16.9 mm < 20.0",
+  "knee: blade 14.2 mm < 20.0",
+  "clasp_bracket: blade 5.3 mm < 20.0"
+ ],
+ "stage_clearance": {
+  "M1_min_mm": 4.2,
+  "M1_at_S1p": -95.0,
+  "M2_arm_min_mm": 14.0,
+  "M2_at": [
+   -80.0,
+   80.0
+  ],
+  "by_part": {
+   "spar": {
+    "M1_min_mm": 37.2,
+    "M1_at_S1p": -95.0,
+    "M2_arm_min_mm": 35.6,
+    "M2_at": [
+     -95.0,
+     50.0
+    ]
+   },
+   "knee": {
+    "M1_min_mm": 5.0,
+    "M1_at_S1p": -95.0,
+    "M2_arm_min_mm": 28.8,
+    "M2_at": [
+     -95.0,
+     50.0
+    ]
+   },
+   "spar_standoffs": {
+    "M1_min_mm": 40.0,
+    "M1_at_S1p": null,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "bal_liner": {
+    "M1_min_mm": 38.0,
+    "M1_at_S1p": -95.0,
+    "M2_arm_min_mm": 37.5,
+    "M2_at": [
+     -95.0,
+     50.0
+    ]
+   },
+   "bal_sheaves": {
+    "M1_min_mm": 17.0,
+    "M1_at_S1p": 35.0,
+    "M2_arm_min_mm": 29.0,
+    "M2_at": [
+     35.0,
+     30.0
+    ]
+   },
+   "cord_guide": {
+    "M1_min_mm": 9.6,
+    "M1_at_S1p": 35.0,
+    "M2_arm_min_mm": 34.2,
+    "M2_at": [
+     35.0,
+     30.0
+    ]
+   },
+   "clasp_bracket": {
+    "M1_min_mm": 4.2,
+    "M1_at_S1p": -95.0,
+    "M2_arm_min_mm": 14.0,
+    "M2_at": [
+     -80.0,
+     80.0
+    ]
+   }
+  }
+ },
+ "wearer_rom_first_contact_deg": {
+  "arm abduction": null,
+  "arm flexion": null,
+  "arm scaption 30": null,
+  "neck lat flex R": null,
+  "neck rotation R": 87.5,
+  "neck flexion": null,
+  "neck extension": 67.5
+ },
+ "wearer_rom_by_part": {
+  "knee": {
+   "neck extension": 67.5
+  },
+  "bal_sheaves": {
+   "neck rotation R": 87.5
+  },
+  "cord_guide": {
+   "neck rotation R": 87.5
+  }
+ },
+ "fixed_depth_behind_back_mm": 69.8,
+ "head_neutral_mm": 33.2,
+ "balancer": {
+  "home": "spring + piston inside the spar bore (z -66..-298), cord up over a spar-head sheave to the pad sheave A",
+  "cord_vs_M1_min_mm": 15.2,
+  "cord_vs_arm_min_mm": 37.5,
+  "cord_vs_fixed_fairing_mm": 4.4,
+  "verdict": "spring off the shoulder entirely; fixed cord run 15.2 mm from the S1' group, 37.5 mm from the arm sweep, 4.4 mm from the fairing (needs a guide channel)"
+ },
+ "colours": {
+  "spar": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "knee": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "spar_standoffs": [
+   0.45,
+   0.47,
+   0.5
+  ],
+  "bal_liner": [
+   0.95,
+   0.45,
+   0.1
+  ],
+  "bal_sheaves": [
+   0.78,
+   0.8,
+   0.83
+  ],
+  "bal_cord_fixed": [
+   0.95,
+   0.45,
+   0.1
+  ],
+  "cord_guide": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "clasp_bracket": [
+   0.2,
+   0.34,
+   0.52
+  ]
+ }
+}

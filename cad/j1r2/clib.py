@@ -7,7 +7,7 @@ from scipy.spatial import cKDTree
 from scipy.interpolate import griddata
 from scipy.ndimage import gaussian_filter
 from trimesh.transformations import rotation_matrix as rot, translation_matrix as tr
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.environ.get("J1R2_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # work root holding stl/proxies (wearer), stl/j1r2, render/ (see docs/ENV_SETUP.md)
 DENS = dict(PACF=1.15, PETGCF=1.30, PETG=1.27, TPU=1.21, AL=2.70, STEEL=7.85, TI=4.43)   # g/cm3 (PA-CF 1.15 per SPEC_shoulder_housing)
 COL = dict(body=(0.86, 0.74, 0.66), stage=(0.55, 0.57, 0.60), motor=(0.20, 0.21, 0.23), al=(0.78, 0.80, 0.83), pacf=(0.16, 0.18, 0.24),
            accent=(0.95, 0.45, 0.10), teal=(0.10, 0.62, 0.62), tpu=(0.85, 0.20, 0.20), steel=(0.45, 0.47, 0.5), lime=(0.55, 0.80, 0.15))

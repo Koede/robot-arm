@@ -1,0 +1,296 @@
+{
+ "id": "MJ4",
+ "harness_clearance_mm": {
+  "pad": {
+   "wing_rail": Infinity,
+   "spine_bridge": Infinity
+  },
+  "tubes": {
+   "wing_rail": 0.0,
+   "spine_bridge": 5.9
+  },
+  "nodes": {
+   "wing_rail": 0.1,
+   "spine_bridge": 1.3
+  },
+  "clasp_bracket": {
+   "wing_rail": 6.3,
+   "spine_bridge": 24.1
+  }
+ },
+ "title": "Carbon K-truss",
+ "clasp": "feet to the K node",
+ "parts": {
+  "pad": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 94.4,
+   "watertight": true,
+   "bbox": [
+    6.0,
+    132.0,
+    132.0
+   ],
+   "fits_256": true,
+   "note": ""
+  },
+  "tubes": {
+   "mat": "CF",
+   "kind": "bought",
+   "mass_g": 26.3,
+   "watertight": true,
+   "bbox": [
+    26.7,
+    79.0,
+    199.9
+   ],
+   "fits_256": true,
+   "note": "4 pultruded CF tubes 14 x 1.5: 2 from the pad's medial rim to a node over the blade corner, 2 from it down to rail clamps (z -112, -215)"
+  },
+  "nodes": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 26.9,
+   "watertight": true,
+   "bbox": [
+    30.8,
+    87.6,
+    222.4
+   ],
+   "fits_256": true,
+   "note": "printed tube nodes; rail clamps 22 x 36 x 7 (3 x M4 each)"
+  },
+  "clasp_bracket": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 24.1,
+   "watertight": true,
+   "bbox": [
+    35.8,
+    136.6,
+    55.4
+   ],
+   "fits_256": true,
+   "note": "clasp feet to the K node"
+  }
+ },
+ "mount_mass_g": 171.7,
+ "balancer_fixed_g": 307.4,
+ "total_fixed_g": 479.1,
+ "frame": {
+  "park": {
+   "tip_mm": 2.36,
+   "tip_vec": [
+    -0.19,
+    1.77,
+    -1.55
+   ],
+   "pad_rot_deg": 0.251,
+   "pad_trans_mm": 0.8,
+   "contact": {
+    "rail": {
+     "max_kPa": 0.65,
+     "min_kPa": -2.27,
+     "sum_N": -4.6
+    },
+    "top": {
+     "max_kPa": 1.74,
+     "min_kPa": 0.52,
+     "sum_N": 5.9
+    },
+    "front": {
+     "max_kPa": -0.24,
+     "min_kPa": -0.47,
+     "sum_N": -2.4
+    },
+    "axilla": {
+     "max_kPa": 0.57,
+     "min_kPa": 0.57,
+     "sum_N": 1.6
+    }
+   },
+   "iface": [
+    {
+     "n": 3,
+     "F_bolt_max_N": 100.3,
+     "N": 59.5,
+     "My_Nmm": -1049.0,
+     "Mz_Nmm": 736.0
+    },
+    {
+     "n": 3,
+     "F_bolt_max_N": 257.7,
+     "N": -70.5,
+     "My_Nmm": 423.0,
+     "Mz_Nmm": -2812.0
+    }
+   ],
+   "member_stress_MPa": {
+    "rail": 4.14,
+    "clasp_arm": 1.85,
+    "clasp_seat": 3.28,
+    "spine_bridge": 1.5,
+    "tube": 38.25
+   },
+   "tip_mm_body_only": 0.76
+  },
+  "reach": {
+   "tip_mm": 5.27,
+   "tip_vec": [
+    -3.3,
+    0.25,
+    -4.1
+   ],
+   "pad_rot_deg": 0.491,
+   "pad_trans_mm": 1.06,
+   "contact": {
+    "rail": {
+     "max_kPa": 2.0,
+     "min_kPa": -4.9,
+     "sum_N": -2.2
+    },
+    "top": {
+     "max_kPa": 1.62,
+     "min_kPa": 0.58,
+     "sum_N": 5.7
+    },
+    "front": {
+     "max_kPa": -0.02,
+     "min_kPa": -0.46,
+     "sum_N": -1.5
+    },
+    "axilla": {
+     "max_kPa": 0.65,
+     "min_kPa": 0.65,
+     "sum_N": 1.8
+    }
+   },
+   "iface": [
+    {
+     "n": 3,
+     "F_bolt_max_N": 127.7,
+     "N": 94.9,
+     "My_Nmm": -1238.0,
+     "Mz_Nmm": 890.0
+    },
+    {
+     "n": 3,
+     "F_bolt_max_N": 321.6,
+     "N": -115.0,
+     "My_Nmm": 687.0,
+     "Mz_Nmm": -3600.0
+    }
+   ],
+   "member_stress_MPa": {
+    "rail": 5.32,
+    "clasp_arm": 1.94,
+    "clasp_seat": 2.59,
+    "spine_bridge": 2.41,
+    "tube": 61.99
+   },
+   "tip_mm_body_only": 1.22
+  }
+ },
+ "skin_gap_by_zone_mm": {
+  "pad": {
+   "blade": 34.8
+  },
+  "tubes": {
+   "rail": 10.7,
+   "blade": 13.4
+  },
+  "nodes": {
+   "rail": 8.7,
+   "blade": 16.6
+  },
+  "clasp_bracket": {
+   "rail": 23.6,
+   "blade": 5.7
+  }
+ },
+ "skin_rule_violations": [
+  "tubes: blade 13.4 mm < 20.0",
+  "nodes: blade 16.6 mm < 20.0",
+  "clasp_bracket: blade 5.7 mm < 20.0"
+ ],
+ "stage_clearance": {
+  "M1_min_mm": 4.2,
+  "M1_at_S1p": -95.0,
+  "M2_arm_min_mm": 14.0,
+  "M2_at": [
+   -80.0,
+   70.0
+  ],
+  "by_part": {
+   "pad": {
+    "M1_min_mm": 40.0,
+    "M1_at_S1p": null,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "tubes": {
+    "M1_min_mm": 10.8,
+    "M1_at_S1p": -95.0,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "nodes": {
+    "M1_min_mm": 12.9,
+    "M1_at_S1p": -60.0,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "clasp_bracket": {
+    "M1_min_mm": 4.2,
+    "M1_at_S1p": -95.0,
+    "M2_arm_min_mm": 14.0,
+    "M2_at": [
+     -80.0,
+     70.0
+    ]
+   }
+  }
+ },
+ "wearer_rom_first_contact_deg": {
+  "arm abduction": null,
+  "arm flexion": null,
+  "arm scaption 30": null,
+  "neck lat flex R": null,
+  "neck rotation R": null,
+  "neck flexion": null,
+  "neck extension": null
+ },
+ "wearer_rom_by_part": {},
+ "fixed_depth_behind_back_mm": 21.3,
+ "head_neutral_mm": 33.2,
+ "balancer": {
+  "home": "radial tube on the pad (J1 rev 2 unresolved option)",
+  "tube_top_z": 283.0,
+  "skin_mm": 93.1,
+  "head_neutral_mm": 93.0,
+  "arm_sweep_min_mm": 0.0,
+  "verdict": "tube rises to z 283 beside the head (93 mm at neutral) and the arm sweep reaches it (0.0 mm)"
+ },
+ "colours": {
+  "pad": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "tubes": [
+   0.1,
+   0.1,
+   0.11
+  ],
+  "nodes": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "clasp_bracket": [
+   0.2,
+   0.34,
+   0.52
+  ]
+ }
+}

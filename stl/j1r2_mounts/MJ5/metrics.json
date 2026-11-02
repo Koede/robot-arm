@@ -1,0 +1,335 @@
+{
+ "id": "MJ5",
+ "harness_clearance_mm": {
+  "receiver": {
+   "wing_rail": 0.1,
+   "spine_bridge": 1.4
+  },
+  "dovetail": {
+   "wing_rail": 0.2,
+   "spine_bridge": 2.6
+  },
+  "riser_dock": {
+   "wing_rail": 1.7,
+   "spine_bridge": 8.4
+  },
+  "cam_lever": {
+   "wing_rail": 9.1,
+   "spine_bridge": 25.0
+  },
+  "clasp_bracket": {
+   "wing_rail": 10.2,
+   "spine_bridge": Infinity
+  }
+ },
+ "title": "Quick-release dock",
+ "clasp": "stays on the harness (wing tongue)",
+ "parts": {
+  "receiver": {
+   "mat": "AL",
+   "kind": "bought",
+   "mass_g": 16.8,
+   "watertight": true,
+   "bbox": [
+    14.2,
+    20.0,
+    104.0
+   ],
+   "fits_256": true,
+   "note": "6061 receiver 40 x 105 x 3 on the rail lateral half, 6 x M4"
+  },
+  "dovetail": {
+   "mat": "AL",
+   "kind": "bought",
+   "mass_g": 27.5,
+   "watertight": true,
+   "bbox": [
+    10.0,
+    20.0,
+    60.0
+   ],
+   "fits_256": true,
+   "note": "6061 dovetail pair 60 long + over-centre cam (PLACEHOLDER part)"
+  },
+  "riser_dock": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 146.5,
+   "watertight": true,
+   "bbox": [
+    39.9,
+    214.8,
+    175.8
+   ],
+   "fits_256": false,
+   "note": "pad + knee (as MJ1) ending in the female dovetail"
+  },
+  "cam_lever": {
+   "mat": "AL",
+   "kind": "bought",
+   "mass_g": 22.0,
+   "watertight": true,
+   "bbox": [
+    6.0,
+    7.0,
+    50.0
+   ],
+   "fits_256": true,
+   "note": ""
+  },
+  "clasp_bracket": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 23.3,
+   "watertight": true,
+   "bbox": [
+    36.1,
+    131.9,
+    55.4
+   ],
+   "fits_256": true,
+   "note": "clasp feet to the module knee (they come off with the module)"
+  }
+ },
+ "mount_mass_g": 236.1,
+ "balancer_fixed_g": 307.4,
+ "total_fixed_g": 543.5,
+ "frame": {
+  "park": {
+   "tip_mm": 2.11,
+   "tip_vec": [
+    0.06,
+    1.59,
+    -1.4
+   ],
+   "pad_rot_deg": 0.241,
+   "pad_trans_mm": 0.73,
+   "contact": {
+    "rail": {
+     "max_kPa": 0.59,
+     "min_kPa": -2.48,
+     "sum_N": -4.3
+    },
+    "top": {
+     "max_kPa": 1.8,
+     "min_kPa": 0.46,
+     "sum_N": 5.8
+    },
+    "front": {
+     "max_kPa": -0.23,
+     "min_kPa": -0.43,
+     "sum_N": -2.3
+    },
+    "axilla": {
+     "max_kPa": 0.54,
+     "min_kPa": 0.54,
+     "sum_N": 1.5
+    }
+   },
+   "iface": [
+    {
+     "n": 0,
+     "contact": true,
+     "N": -2.2,
+     "My_Nmm": -137.0,
+     "Mz_Nmm": -1626.0
+    },
+    {
+     "n": 0,
+     "contact": true,
+     "N": 29.4,
+     "My_Nmm": -180.0,
+     "Mz_Nmm": -7267.0
+    }
+   ],
+   "member_stress_MPa": {
+    "rail": 1.4,
+    "clasp_arm": 1.87,
+    "clasp_seat": 2.83,
+    "spine_bridge": 1.23,
+    "knee": 2.93,
+    "receiver": 10.87
+   },
+   "tip_mm_body_only": 0.85
+  },
+  "reach": {
+   "tip_mm": 5.03,
+   "tip_vec": [
+    -2.84,
+    0.17,
+    -4.15
+   ],
+   "pad_rot_deg": 0.568,
+   "pad_trans_mm": 1.04,
+   "contact": {
+    "rail": {
+     "max_kPa": 1.82,
+     "min_kPa": -5.74,
+     "sum_N": -1.3
+    },
+    "top": {
+     "max_kPa": 1.3,
+     "min_kPa": 0.38,
+     "sum_N": 4.3
+    },
+    "front": {
+     "max_kPa": 0.06,
+     "min_kPa": -0.42,
+     "sum_N": -1.0
+    },
+    "axilla": {
+     "max_kPa": 0.54,
+     "min_kPa": 0.54,
+     "sum_N": 1.5
+    }
+   },
+   "iface": [
+    {
+     "n": 0,
+     "contact": true,
+     "N": 8.2,
+     "My_Nmm": -1292.0,
+     "Mz_Nmm": -1937.0
+    },
+    {
+     "n": 0,
+     "contact": true,
+     "N": 80.9,
+     "My_Nmm": 234.0,
+     "Mz_Nmm": -9131.0
+    }
+   ],
+   "member_stress_MPa": {
+    "rail": 3.16,
+    "clasp_arm": 1.61,
+    "clasp_seat": 1.42,
+    "spine_bridge": 1.57,
+    "knee": 4.25,
+    "receiver": 24.08
+   },
+   "tip_mm_body_only": 1.35
+  }
+ },
+ "skin_gap_by_zone_mm": {
+  "receiver": {
+   "rail": 12.4
+  },
+  "dovetail": {
+   "rail": 13.7
+  },
+  "riser_dock": {
+   "rail": 17.6,
+   "blade": 14.6
+  },
+  "cam_lever": {
+   "rail": 25.2,
+   "blade": 25.1
+  },
+  "clasp_bracket": {
+   "rail": 28.5,
+   "blade": 5.3
+  }
+ },
+ "skin_rule_violations": [
+  "riser_dock: blade 14.6 mm < 20.0",
+  "clasp_bracket: blade 5.3 mm < 20.0"
+ ],
+ "stage_clearance": {
+  "M1_min_mm": 4.2,
+  "M1_at_S1p": -95.0,
+  "M2_arm_min_mm": 14.0,
+  "M2_at": [
+   -80.0,
+   80.0
+  ],
+  "by_part": {
+   "receiver": {
+    "M1_min_mm": 40.0,
+    "M1_at_S1p": null,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "dovetail": {
+    "M1_min_mm": 40.0,
+    "M1_at_S1p": null,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "riser_dock": {
+    "M1_min_mm": 4.9,
+    "M1_at_S1p": -95.0,
+    "M2_arm_min_mm": 32.3,
+    "M2_at": [
+     -95.0,
+     50.0
+    ]
+   },
+   "cam_lever": {
+    "M1_min_mm": 40.0,
+    "M1_at_S1p": null,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "clasp_bracket": {
+    "M1_min_mm": 4.2,
+    "M1_at_S1p": -95.0,
+    "M2_arm_min_mm": 14.0,
+    "M2_at": [
+     -80.0,
+     80.0
+    ]
+   }
+  }
+ },
+ "wearer_rom_first_contact_deg": {
+  "arm abduction": null,
+  "arm flexion": null,
+  "arm scaption 30": null,
+  "neck lat flex R": null,
+  "neck rotation R": null,
+  "neck flexion": null,
+  "neck extension": 67.5
+ },
+ "wearer_rom_by_part": {
+  "riser_dock": {
+   "neck extension": 67.5
+  }
+ },
+ "fixed_depth_behind_back_mm": 30.6,
+ "head_neutral_mm": 33.2,
+ "balancer": {
+  "home": "radial tube on the pad (J1 rev 2 unresolved option)",
+  "tube_top_z": 283.0,
+  "skin_mm": 93.1,
+  "head_neutral_mm": 92.9,
+  "arm_sweep_min_mm": 0.2,
+  "verdict": "tube rises to z 283 beside the head (93 mm at neutral) and the arm sweep reaches it (0.2 mm)"
+ },
+ "colours": {
+  "receiver": [
+   0.78,
+   0.8,
+   0.83
+  ],
+  "dovetail": [
+   0.78,
+   0.8,
+   0.83
+  ],
+  "riser_dock": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "cam_lever": [
+   0.95,
+   0.45,
+   0.1
+  ],
+  "clasp_bracket": [
+   0.2,
+   0.34,
+   0.52
+  ]
+ }
+}

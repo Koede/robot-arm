@@ -1,0 +1,409 @@
+{
+ "id": "MJ2",
+ "harness_clearance_mm": {
+  "pad_riser": {
+   "wing_rail": 5.7,
+   "spine_bridge": 18.8
+  },
+  "standoffs": {
+   "wing_rail": 0.1,
+   "spine_bridge": 21.1
+  },
+  "fairing_lap": {
+   "wing_rail": 0.1,
+   "spine_bridge": 16.6
+  },
+  "strut_F4": {
+   "wing_rail": Infinity,
+   "spine_bridge": Infinity
+  },
+  "strut_F1": {
+   "wing_rail": Infinity,
+   "spine_bridge": Infinity
+  },
+  "lugs": {
+   "wing_rail": Infinity,
+   "spine_bridge": Infinity
+  },
+  "clasp_bracket": {
+   "wing_rail": 18.0,
+   "spine_bridge": Infinity
+  }
+ },
+ "title": "Shoulder-top truss to F1 / F4",
+ "clasp": "feet re-seated on the pad rim",
+ "parts": {
+  "pad_riser": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 115.3,
+   "watertight": true,
+   "bbox": [
+    15.5,
+    222.0,
+    132.0
+   ],
+   "fits_256": true,
+   "note": ""
+  },
+  "standoffs": {
+   "mat": "PETGCF",
+   "kind": "printed",
+   "mass_g": 5.7,
+   "watertight": true,
+   "bbox": [
+    24.4,
+    30.0,
+    28.0
+   ],
+   "fits_256": true,
+   "note": ""
+  },
+  "fairing_lap": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 9.0,
+   "watertight": true,
+   "bbox": [
+    29.4,
+    47.4,
+    43.4
+   ],
+   "fits_256": true,
+   "note": ""
+  },
+  "strut_F4": {
+   "mat": "CF",
+   "kind": "bought",
+   "mass_g": 4.0,
+   "watertight": true,
+   "bbox": [
+    76.3,
+    27.0,
+    21.7
+   ],
+   "fits_256": true,
+   "note": "pultruded CF tube 12 x 1 to a post on the F4 (acromion) top seat"
+  },
+  "strut_F1": {
+   "mat": "CF",
+   "kind": "bought",
+   "mass_g": 3.8,
+   "watertight": true,
+   "bbox": [
+    57.3,
+    59.3,
+    27.0
+   ],
+   "fits_256": true,
+   "note": "to the F1 (upper trapezius) top seat"
+  },
+  "lugs": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 17.8,
+   "watertight": true,
+   "bbox": [
+    91.4,
+    111.2,
+    38.6
+   ],
+   "fits_256": true,
+   "note": "printed lugs; seat posts 24 mm on the clasp seat bosses"
+  },
+  "clasp_bracket": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 23.0,
+   "watertight": true,
+   "bbox": [
+    23.1,
+    108.9,
+    77.9
+   ],
+   "fits_256": true,
+   "note": "clasp feet to the pad's medial-low rim (forward of the S2 stop posts)"
+  }
+ },
+ "mount_mass_g": 178.6,
+ "balancer_fixed_g": 307.4,
+ "total_fixed_g": 486.0,
+ "frame": {
+  "park": {
+   "tip_mm": 11.89,
+   "tip_vec": [
+    9.33,
+    6.7,
+    -3.08
+   ],
+   "pad_rot_deg": 1.161,
+   "pad_trans_mm": 2.33,
+   "contact": {
+    "rail": {
+     "max_kPa": 0.69,
+     "min_kPa": -9.72,
+     "sum_N": -10.4
+    },
+    "top": {
+     "max_kPa": 7.35,
+     "min_kPa": -1.21,
+     "sum_N": 15.4
+    },
+    "front": {
+     "max_kPa": -0.56,
+     "min_kPa": -1.2,
+     "sum_N": -6.9
+    },
+    "axilla": {
+     "max_kPa": 0.77,
+     "min_kPa": 0.77,
+     "sum_N": 2.1
+    }
+   },
+   "iface": [
+    {
+     "n": 4,
+     "F_bolt_max_N": 18.7,
+     "N": -5.8,
+     "My_Nmm": -400.0,
+     "Mz_Nmm": 245.0
+    }
+   ],
+   "member_stress_MPa": {
+    "rail": 7.5,
+    "clasp_arm": 4.02,
+    "clasp_seat": 2.12,
+    "spine_bridge": 3.47,
+    "riser": 7.57,
+    "strut": 20.02
+   },
+   "tip_mm_body_only": 8.01
+  },
+  "reach": {
+   "tip_mm": 14.77,
+   "tip_vec": [
+    -0.98,
+    -0.43,
+    -14.73
+   ],
+   "pad_rot_deg": 1.936,
+   "pad_trans_mm": 3.71,
+   "contact": {
+    "rail": {
+     "max_kPa": 0.61,
+     "min_kPa": -16.21,
+     "sum_N": -22.2
+    },
+    "top": {
+     "max_kPa": 6.62,
+     "min_kPa": -4.95,
+     "sum_N": 3.9
+    },
+    "front": {
+     "max_kPa": -1.02,
+     "min_kPa": -1.72,
+     "sum_N": -10.6
+    },
+    "axilla": {
+     "max_kPa": 0.91,
+     "min_kPa": 0.91,
+     "sum_N": 2.5
+    }
+   },
+   "iface": [
+    {
+     "n": 4,
+     "F_bolt_max_N": 22.2,
+     "N": -8.9,
+     "My_Nmm": -305.0,
+     "Mz_Nmm": 458.0
+    }
+   ],
+   "member_stress_MPa": {
+    "rail": 12.16,
+    "clasp_arm": 6.93,
+    "clasp_seat": 3.76,
+    "spine_bridge": 4.32,
+    "riser": 10.85,
+    "strut": 27.34
+   },
+   "tip_mm_body_only": 10.5
+  }
+ },
+ "skin_gap_by_zone_mm": {
+  "pad_riser": {
+   "rail": 20.5,
+   "blade": 21.7
+  },
+  "standoffs": {
+   "rail": 10.4
+  },
+  "fairing_lap": {
+   "rail": 2.7
+  },
+  "strut_F4": {
+   "blade": 21.2,
+   "top": 18.2,
+   "seat": 17.2
+  },
+  "strut_F1": {
+   "blade": 20.6,
+   "top": 21.5,
+   "seat": 18.5
+  },
+  "lugs": {
+   "blade": 26.1,
+   "top": 22.9,
+   "seat": -0.9
+  },
+  "clasp_bracket": {
+   "blade": 5.3
+  }
+ },
+ "skin_rule_violations": [
+  "fairing_lap: rail 2.7 mm < 5.0",
+  "clasp_bracket: blade 5.3 mm < 20.0"
+ ],
+ "stage_clearance": {
+  "M1_min_mm": 4.2,
+  "M1_at_S1p": -95.0,
+  "M2_arm_min_mm": 9.0,
+  "M2_at": [
+   -80.0,
+   80.0
+  ],
+  "by_part": {
+   "pad_riser": {
+    "M1_min_mm": 4.3,
+    "M1_at_S1p": -95.0,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "standoffs": {
+    "M1_min_mm": 40.0,
+    "M1_at_S1p": null,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "fairing_lap": {
+    "M1_min_mm": 40.0,
+    "M1_at_S1p": null,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "strut_F4": {
+    "M1_min_mm": 14.8,
+    "M1_at_S1p": -60.0,
+    "M2_arm_min_mm": 14.7,
+    "M2_at": [
+     -80.0,
+     80.0
+    ]
+   },
+   "strut_F1": {
+    "M1_min_mm": 15.4,
+    "M1_at_S1p": -75.0,
+    "M2_arm_min_mm": 27.9,
+    "M2_at": [
+     -95.0,
+     10.0
+    ]
+   },
+   "lugs": {
+    "M1_min_mm": 11.6,
+    "M1_at_S1p": -65.0,
+    "M2_arm_min_mm": 9.0,
+    "M2_at": [
+     -80.0,
+     80.0
+    ]
+   },
+   "clasp_bracket": {
+    "M1_min_mm": 4.2,
+    "M1_at_S1p": -95.0,
+    "M2_arm_min_mm": 14.0,
+    "M2_at": [
+     -80.0,
+     80.0
+    ]
+   }
+  }
+ },
+ "wearer_rom_first_contact_deg": {
+  "arm abduction": 110.0,
+  "arm flexion": null,
+  "arm scaption 30": 105.0,
+  "neck lat flex R": 47.5,
+  "neck rotation R": 90.0,
+  "neck flexion": null,
+  "neck extension": 30.0
+ },
+ "wearer_rom_by_part": {
+  "pad_riser": {
+   "neck rotation R": 90.0,
+   "neck extension": 50.0
+  },
+  "standoffs": {
+   "neck extension": 50.0
+  },
+  "fairing_lap": {
+   "neck rotation R": 90.0,
+   "neck extension": 30.0
+  },
+  "strut_F1": {
+   "neck lat flex R": 52.5
+  },
+  "lugs": {
+   "arm abduction": 110.0,
+   "arm scaption 30": 105.0,
+   "neck lat flex R": 47.5
+  }
+ },
+ "fixed_depth_behind_back_mm": 6.9,
+ "head_neutral_mm": 5.7,
+ "balancer": {
+  "home": "radial tube on the pad (J1 rev 2 unresolved option)",
+  "tube_top_z": 283.0,
+  "skin_mm": 93.0,
+  "head_neutral_mm": 93.0,
+  "arm_sweep_min_mm": 0.1,
+  "verdict": "tube rises to z 283 beside the head (93 mm at neutral) and the arm sweep reaches it (0.1 mm)"
+ },
+ "colours": {
+  "pad_riser": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "standoffs": [
+   0.45,
+   0.47,
+   0.5
+  ],
+  "fairing_lap": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "strut_F4": [
+   0.1,
+   0.1,
+   0.11
+  ],
+  "strut_F1": [
+   0.1,
+   0.1,
+   0.11
+  ],
+  "lugs": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "clasp_bracket": [
+   0.2,
+   0.34,
+   0.52
+  ]
+ }
+}

@@ -141,6 +141,17 @@ See `specs/SPEC_hand.md`. **Forest (2026-10-30): "Merge this as the new project 
 
 ## Changelog (dated entries recoverable from the repo)
 
+- **2026-11-02 (J1 mount alternatives, concept):** Forest: "Explore alternative designs for the shoulder mount" (J1 pancake mount).
+  - Seven mounts (REF + MJ1..MJ6), all on one harness frame model and checked against the J1 stage, your range of motion and the skin rules.
+  - REF findings:
+    - 18 mm hand-tip sag at reach;
+    - neck extension contact at 27.5 deg;
+    - clasp feet orphaned;
+    - the verified wing tongue clashes with the riser;
+    - the balancer still has no home.
+  - Recommended: MJ4 carbon K-truss with MJ1's in-tube balancer.
+  - See specs/SPEC_j1r2_mount_alternatives.md and specs/DESIGN_STATE_ADDENDUM_2026-11-02.md.
+
 - **2026-10-30c (decision):** Forest adopted HAND rev B as the project hand ("Merge this as the new project hand"). Squash-merged `claude/hand-chuck-2026-10-30` into `main`. The C3 claw is now the superseded alternate. The wrist-v3 branch (`claude/hand-coupling-2026-10-30`, rev-A based) still has to be re-integrated with rev B. The open gates from SPEC_hand section 6 carry over.
 
 - **2026-10-30b (HAND rev B):** rev A rejected by Forest ("this looks terrible"). Rebuilt with the human layout first: human knuckle arch, palm centred on the wrist, SDF organic phalanges with ball knuckles (restoring the standing ball-joint rule), hidden four-bars, TPU caps, sculpted palm. Chuck re-solved as a bunched-fingertip pinch: 4-jaw Ø13 (94/83/93/90 deg) and 3-jaw Ø6. New three.js renderer `cad/render_three.py`. Mass 328 -> 224 g; harness estimate now passes (0.6 % margin). Removed rev-A study scripts and outputs.
