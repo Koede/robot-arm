@@ -258,10 +258,10 @@ def mj6_frame(fr, side):
     clasp_bracket_frame(fr, side, a)
     return pad
 CONCEPTS = dict(
-    REF=dict(title="J1 rev 2 as built: rail-top lap", geo=ref_geo, frame=ref_frame, balancer="radial", clasp="none in the J1 rev 2 CAD; modelled with an assumed bracket to the wing tongue"),
+    REF=dict(title="J1 rev 2 as built: rail-top lap", geo=ref_geo, frame=ref_frame, balancer="radial", clasp="none in the J1 rev 2 CAD; modelled with an assumed bracket to the riser underside"),
     MJ1=dict(title="Spine spar, balancer inside", geo=mj1_geo, frame=mj1_frame, balancer="spar", clasp="feet re-seated on the knee corner"),
     MJ2=dict(title="Shoulder-top truss to F1 / F4", geo=mj2_geo, frame=mj2_frame, balancer="radial", clasp="feet re-seated on the pad rim"),
-    MJ3=dict(title="Bilateral yoke across T2", geo=mj3_geo, frame=mj3_frame, balancer="radial", clasp="as REF (wing tongue)"),
+    MJ3=dict(title="Bilateral yoke across T2", geo=mj3_geo, frame=mj3_frame, balancer="radial", clasp="feet to the yoke knee"),
     MJ4=dict(title="Carbon K-truss", geo=mj4_geo, frame=mj4_frame, balancer="radial", clasp="feet to the K node"),
-    MJ5=dict(title="Quick-release dock", geo=mj5_geo, frame=mj5_frame, balancer="radial", clasp="stays on the harness (wing tongue)"),
+    MJ5=dict(title="Quick-release dock", geo=mj5_geo, frame=mj5_frame, balancer="radial", clasp="feet to the module knee (come off with the module)"),
     MJ6=dict(title="Monocoque: the fairing is the structure", geo=mj6_geo, frame=mj6_frame, balancer="cassette", clasp="feet re-seated on the shell rim"))
