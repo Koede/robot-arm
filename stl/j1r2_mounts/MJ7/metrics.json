@@ -1,0 +1,333 @@
+{
+ "id": "MJ7",
+ "harness_clearance_mm": {
+  "knees": {
+   "wing_rail": 1.2,
+   "spine_bridge": 1.7
+  },
+  "pad": {
+   "wing_rail": Infinity,
+   "spine_bridge": Infinity
+  },
+  "spar": {
+   "wing_rail": 8.5,
+   "spine_bridge": 6.9
+  },
+  "rungs": {
+   "wing_rail": 0.1,
+   "spine_bridge": 0.1
+  },
+  "posts": {
+   "wing_rail": 7.0,
+   "spine_bridge": 0.0
+  },
+  "clasp_bracket": {
+   "wing_rail": 13.7,
+   "spine_bridge": Infinity
+  }
+ },
+ "title": "Spine ladder: midline spar + rungs",
+ "clasp": "feet to the knee corner",
+ "parts": {
+  "knees": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 69.9,
+   "watertight": true,
+   "bbox": [
+    52.7,
+    250.6,
+    132.6
+   ],
+   "fits_256": true,
+   "note": "2.4 mm PA-CF box knees 44/40 x 22, pad -> blade corner -> spar head, right + left drawn in the R file (mass: half = one side)"
+  },
+  "pad": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 94.4,
+   "watertight": true,
+   "bbox": [
+    6.0,
+    132.0,
+    132.0
+   ],
+   "fits_256": true,
+   "note": "R66 x 6 PA-CF pad disc, S1' AK70 on its rear face (flange PLACEHOLDER)"
+  },
+  "spar": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 21.5,
+   "watertight": true,
+   "bbox": [
+    41.3,
+    36.0,
+    216.0
+   ],
+   "fits_256": true,
+   "note": "closed PA-CF box 36 x 16 x 2.0 (drawn solid, mass at the hollow fill 0.30, half per side), z -112..-328, curved to follow the back; inner face 24 mm over the spine groove (no skin load on the spinous processes)"
+  },
+  "rungs": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 13.2,
+   "watertight": true,
+   "bbox": [
+    23.5,
+    72.0,
+    80.0
+   ],
+   "fits_256": true,
+   "note": "2 new rungs 40 x 4 PA-CF at z -260 / -300, rail to rail across the spine, 2 x M4 per rail; the existing spine bridge (z -241..-112) carries the upper three"
+  },
+  "posts": {
+   "mat": "PETGCF",
+   "kind": "printed",
+   "mass_g": 3.2,
+   "watertight": true,
+   "bbox": [
+    32.7,
+    10.0,
+    170.0
+   ],
+   "fits_256": true,
+   "note": "5 posts D10 from the rungs / bridge straps to the spar, 2 x M3"
+  },
+  "clasp_bracket": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 24.0,
+   "watertight": true,
+   "bbox": [
+    41.4,
+    131.7,
+    55.3
+   ],
+   "fits_256": true,
+   "note": "clasp feet (re-seated) to the knee corner"
+  }
+ },
+ "mount_mass_g": 226.2,
+ "balancer_fixed_g": 0.0,
+ "total_fixed_g": 226.2,
+ "frame": {
+  "park": {
+   "tip_mm": 3.07,
+   "tip_vec": [
+    0.53,
+    2.37,
+    -1.89
+   ],
+   "pad_rot_deg": 0.262,
+   "pad_trans_mm": 0.91,
+   "contact": {
+    "rail": {
+     "max_kPa": 0.69,
+     "min_kPa": -1.5,
+     "sum_N": -3.3
+    },
+    "top": {
+     "max_kPa": 2.14,
+     "min_kPa": 0.66,
+     "sum_N": 7.2
+    },
+    "front": {
+     "max_kPa": -0.24,
+     "min_kPa": -0.35,
+     "sum_N": -2.1
+    },
+    "axilla": {
+     "max_kPa": 0.66,
+     "min_kPa": 0.66,
+     "sum_N": 1.8
+    }
+   },
+   "iface": [],
+   "member_stress_MPa": {
+    "rail": 0.55,
+    "clasp_arm": 2.25,
+    "clasp_seat": 3.14,
+    "spine_bridge": 0.77,
+    "spar": 1.55,
+    "spar_post": 2.49,
+    "knee": 3.43
+   },
+   "tip_mm_body_only": 0.63
+  },
+  "reach": {
+   "tip_mm": 5.23,
+   "tip_vec": [
+    -0.72,
+    -0.13,
+    -5.18
+   ],
+   "pad_rot_deg": 0.484,
+   "pad_trans_mm": 1.28,
+   "contact": {
+    "rail": {
+     "max_kPa": 1.03,
+     "min_kPa": -1.86,
+     "sum_N": -1.5
+    },
+    "top": {
+     "max_kPa": 1.97,
+     "min_kPa": 0.78,
+     "sum_N": 7.1
+    },
+    "front": {
+     "max_kPa": -0.08,
+     "min_kPa": -0.28,
+     "sum_N": -1.2
+    },
+    "axilla": {
+     "max_kPa": 0.75,
+     "min_kPa": 0.75,
+     "sum_N": 2.1
+    }
+   },
+   "iface": [],
+   "member_stress_MPa": {
+    "rail": 0.58,
+    "clasp_arm": 2.26,
+    "clasp_seat": 2.34,
+    "spine_bridge": 1.5,
+    "spar": 3.01,
+    "spar_post": 2.09,
+    "knee": 4.03
+   },
+   "tip_mm_body_only": 0.95
+  }
+ },
+ "skin_gap_by_zone_mm": {
+  "knees": {
+   "rail": 16.6,
+   "blade": 16.5
+  },
+  "pad": {
+   "blade": 34.7
+  },
+  "spar": {
+   "rail": 27.3
+  },
+  "rungs": {
+   "rail": 15.0
+  },
+  "posts": {
+   "rail": 17.2
+  },
+  "clasp_bracket": {
+   "rail": 33.7,
+   "blade": 5.4
+  }
+ },
+ "skin_rule_violations": [
+  "knees: blade 16.5 mm < 20.0",
+  "clasp_bracket: blade 5.4 mm < 20.0"
+ ],
+ "stage_clearance": {
+  "M1_min_mm": 4.2,
+  "M1_at_S1p": -95.0,
+  "M2_arm_min_mm": 14.1,
+  "M2_at": [
+   -80.0,
+   70.0
+  ],
+  "by_part": {
+   "knees": {
+    "M1_min_mm": 7.8,
+    "M1_at_S1p": -95.0,
+    "M2_arm_min_mm": 32.1,
+    "M2_at": [
+     -95.0,
+     50.0
+    ]
+   },
+   "pad": {
+    "M1_min_mm": 40.0,
+    "M1_at_S1p": null,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "spar": {
+    "M1_min_mm": 40.0,
+    "M1_at_S1p": null,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "rungs": {
+    "M1_min_mm": 40.0,
+    "M1_at_S1p": null,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "posts": {
+    "M1_min_mm": 40.0,
+    "M1_at_S1p": null,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "clasp_bracket": {
+    "M1_min_mm": 4.2,
+    "M1_at_S1p": -95.0,
+    "M2_arm_min_mm": 14.1,
+    "M2_at": [
+     -80.0,
+     70.0
+    ]
+   }
+  }
+ },
+ "wearer_rom_first_contact_deg": {
+  "arm abduction": null,
+  "arm flexion": null,
+  "arm scaption 30": null,
+  "neck lat flex R": null,
+  "neck rotation R": 90.0,
+  "neck flexion": null,
+  "neck extension": null
+ },
+ "wearer_rom_by_part": {
+  "knees": {
+   "neck rotation R": 90.0
+  }
+ },
+ "fixed_depth_behind_back_mm": 40.1,
+ "head_neutral_mm": 33.2,
+ "balancer": {
+  "home": "none (no balancer)",
+  "verdict": "no balancer: shoulder motors carry the full gravity torque (SF 1.14 vs rated at the worst pose, gate waiver needed)"
+ },
+ "colours": {
+  "knees": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "pad": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "spar": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "rungs": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "posts": [
+   0.45,
+   0.47,
+   0.5
+  ],
+  "clasp_bracket": [
+   0.2,
+   0.34,
+   0.52
+  ]
+ }
+}

@@ -5,7 +5,7 @@ import os, sys, json, math, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np, trimesh
 from scipy.spatial import cKDTree
-import clib as L, j1r2_params as P, j1r2_geom as G, mj_frame as M, mj_concepts as C
+import clib as L, j1r2_params as P, j1r2_geom as G, mj_frame as M, mj_concepts as C, mj_concepts2   # noqa: F401  (registers MJ7..MJ9, no balancer)
 OUT = os.path.join(M.REPO, "stl", "j1r2_mounts"); os.makedirs(OUT, exist_ok=True)
 DENS = dict(L.DENS); DENS.update(CF=1.55, AL=2.70, TPU=1.21, STEEL=7.85)
 t0 = time.time(); log = lambda *a: print("[%5.0fs]" % (time.time() - t0), *a, flush=True)
@@ -120,6 +120,7 @@ def radial_tube():
     return C.tubebeam(a, a + r * 236.0, 44.5, 2.5)
 def balancer_check(cid, parts):
     kind = C.CONCEPTS[cid]["balancer"]
+    if kind == "none": return dict(home="none (no balancer)", verdict="no balancer: shoulder motors carry the full gravity torque (SF 1.14 vs rated at the worst pose, gate waiver needed)")
     if kind == "radial":
         t = radial_tube(); sk = L.skin_gap(t, 3000)[0]; hc = head_clear([t]); top = float(t.bounds[1][2])
         T = cKDTree(samp(t, 2.0)); best = 1e9
@@ -146,7 +147,7 @@ def evaluate(cid):
     rows = {k: dict(mat=p["mat"], kind=p["kind"], mass_g=round(mass_of(p), 1), watertight=bool(p["mesh"].is_watertight), bbox=np.round(p["mesh"].extents, 1).tolist(),
                     fits_256=bool(np.all(p["mesh"].bounding_box_oriented.extents <= 256)), note=p.get("note", "")) for k, p in parts.items()}
     if cid == "MJ3": rows["yoke_tube"]["mass_g"] = round(rows["yoke_tube"]["mass_g"] / 2, 1); rows["yoke_tube"]["note"] += " (mass: half per side)"
-    bal_fixed = dict(radial=307.4, spar=108.4 + 28.0, cassette=0.0)[Cc["balancer"]]          # REF radial: tube 96 + cap 31 + post 34 + spring 108 + piston 28 + sheave 9 + cord 1; spar: spring + piston (liner/sheaves counted as parts)
+    bal_fixed = dict(radial=307.4, spar=108.4 + 28.0, cassette=0.0, none=0.0)[Cc["balancer"]]          # REF radial: tube 96 + cap 31 + post 34 + spring 108 + piston 28 + sheave 9 + cord 1; spar: spring + piston (liner/sheaves counted as parts)
     mount_g = sum(r["mass_g"] for k, r in rows.items() if r["kind"] in ("printed", "bought", "cord"))
     fr_res = run_frame(cid, mount_g); fr_stiff = run_frame(cid, mount_g, stiff=True); fr_res["park"]["tip_mm_body_only"] = fr_stiff["park"]["tip_mm"]; fr_res["reach"]["tip_mm_body_only"] = fr_stiff["reach"]["tip_mm"]; sk = skin_zones(parts); viol = []
     for k, z in sk.items():

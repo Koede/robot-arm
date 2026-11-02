@@ -1,0 +1,293 @@
+{
+ "id": "MJ8",
+ "harness_clearance_mm": {
+  "pad": {
+   "wing_rail": Infinity,
+   "spine_bridge": Infinity
+  },
+  "tubes": {
+   "wing_rail": 0.1,
+   "spine_bridge": 10.0
+  },
+  "nodes": {
+   "wing_rail": 0.1,
+   "spine_bridge": 1.3
+  },
+  "clasp_bracket": {
+   "wing_rail": 6.3,
+   "spine_bridge": 24.1
+  }
+ },
+ "title": "K-truss, long leg to z -320",
+ "clasp": "feet to the K node",
+ "parts": {
+  "pad": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 94.4,
+   "watertight": true,
+   "bbox": [
+    6.0,
+    132.0,
+    132.0
+   ],
+   "fits_256": true,
+   "note": ""
+  },
+  "tubes": {
+   "mat": "CF",
+   "kind": "bought",
+   "mass_g": 35.8,
+   "watertight": true,
+   "bbox": [
+    27.6,
+    79.0,
+    304.7
+   ],
+   "fits_256": false,
+   "note": "4 pultruded CF tubes 14 x 1.5: 2 from the pad rim to the K node over the blade corner, the lower leg runs 208 mm down to a rail clamp at z -320"
+  },
+  "nodes": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 26.9,
+   "watertight": true,
+   "bbox": [
+    31.9,
+    87.6,
+    327.4
+   ],
+   "fits_256": false,
+   "note": "printed tube nodes; rail clamps 22 x 36 x 7 (3 x M4 each)"
+  },
+  "clasp_bracket": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 24.1,
+   "watertight": true,
+   "bbox": [
+    35.8,
+    136.6,
+    55.4
+   ],
+   "fits_256": true,
+   "note": "clasp feet to the K node"
+  }
+ },
+ "mount_mass_g": 181.2,
+ "balancer_fixed_g": 0.0,
+ "total_fixed_g": 181.2,
+ "frame": {
+  "park": {
+   "tip_mm": 2.48,
+   "tip_vec": [
+    0.16,
+    1.92,
+    -1.57
+   ],
+   "pad_rot_deg": 0.228,
+   "pad_trans_mm": 0.8,
+   "contact": {
+    "rail": {
+     "max_kPa": 0.53,
+     "min_kPa": -2.13,
+     "sum_N": -3.6
+    },
+    "top": {
+     "max_kPa": 1.75,
+     "min_kPa": 0.57,
+     "sum_N": 6.0
+    },
+    "front": {
+     "max_kPa": -0.19,
+     "min_kPa": -0.4,
+     "sum_N": -2.0
+    },
+    "axilla": {
+     "max_kPa": 0.59,
+     "min_kPa": 0.59,
+     "sum_N": 1.7
+    }
+   },
+   "iface": [
+    {
+     "n": 3,
+     "F_bolt_max_N": 94.8,
+     "N": 18.1,
+     "My_Nmm": -18.0,
+     "Mz_Nmm": 1008.0
+    },
+    {
+     "n": 3,
+     "F_bolt_max_N": 293.1,
+     "N": -36.0,
+     "My_Nmm": 162.0,
+     "Mz_Nmm": -3051.0
+    }
+   ],
+   "member_stress_MPa": {
+    "rail": 4.01,
+    "clasp_arm": 1.89,
+    "clasp_seat": 2.97,
+    "spine_bridge": 1.6,
+    "tube": 38.3
+   },
+   "tip_mm_body_only": 0.73
+  },
+  "reach": {
+   "tip_mm": 4.73,
+   "tip_vec": [
+    -2.34,
+    0.16,
+    -4.11
+   ],
+   "pad_rot_deg": 0.44,
+   "pad_trans_mm": 1.07,
+   "contact": {
+    "rail": {
+     "max_kPa": 1.54,
+     "min_kPa": -4.35,
+     "sum_N": -0.9
+    },
+    "top": {
+     "max_kPa": 1.65,
+     "min_kPa": 0.65,
+     "sum_N": 6.0
+    },
+    "front": {
+     "max_kPa": 0.02,
+     "min_kPa": -0.41,
+     "sum_N": -1.2
+    },
+    "axilla": {
+     "max_kPa": 0.69,
+     "min_kPa": 0.69,
+     "sum_N": 1.9
+    }
+   },
+   "iface": [
+    {
+     "n": 3,
+     "F_bolt_max_N": 120.5,
+     "N": 30.6,
+     "My_Nmm": -19.0,
+     "Mz_Nmm": 1306.0
+    },
+    {
+     "n": 3,
+     "F_bolt_max_N": 369.7,
+     "N": -62.0,
+     "My_Nmm": 349.0,
+     "Mz_Nmm": -3903.0
+    }
+   ],
+   "member_stress_MPa": {
+    "rail": 4.89,
+    "clasp_arm": 2.03,
+    "clasp_seat": 2.39,
+    "spine_bridge": 1.84,
+    "tube": 62.03
+   },
+   "tip_mm_body_only": 1.15
+  }
+ },
+ "skin_gap_by_zone_mm": {
+  "pad": {
+   "blade": 34.7
+  },
+  "tubes": {
+   "rail": 3.7,
+   "blade": 8.2
+  },
+  "nodes": {
+   "rail": 8.7,
+   "blade": 16.6
+  },
+  "clasp_bracket": {
+   "rail": 23.4,
+   "blade": 5.4
+  }
+ },
+ "skin_rule_violations": [
+  "tubes: rail 3.7 mm < 5.0",
+  "tubes: blade 8.2 mm < 20.0",
+  "nodes: blade 16.6 mm < 20.0",
+  "clasp_bracket: blade 5.4 mm < 20.0"
+ ],
+ "stage_clearance": {
+  "M1_min_mm": 4.2,
+  "M1_at_S1p": -95.0,
+  "M2_arm_min_mm": 14.0,
+  "M2_at": [
+   -80.0,
+   70.0
+  ],
+  "by_part": {
+   "pad": {
+    "M1_min_mm": 40.0,
+    "M1_at_S1p": null,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "tubes": {
+    "M1_min_mm": 10.8,
+    "M1_at_S1p": -95.0,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "nodes": {
+    "M1_min_mm": 12.8,
+    "M1_at_S1p": -95.0,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "clasp_bracket": {
+    "M1_min_mm": 4.2,
+    "M1_at_S1p": -95.0,
+    "M2_arm_min_mm": 14.0,
+    "M2_at": [
+     -80.0,
+     70.0
+    ]
+   }
+  }
+ },
+ "wearer_rom_first_contact_deg": {
+  "arm abduction": null,
+  "arm flexion": null,
+  "arm scaption 30": null,
+  "neck lat flex R": null,
+  "neck rotation R": null,
+  "neck flexion": null,
+  "neck extension": null
+ },
+ "wearer_rom_by_part": {},
+ "fixed_depth_behind_back_mm": 16.5,
+ "head_neutral_mm": 33.2,
+ "balancer": {
+  "home": "none (no balancer)",
+  "verdict": "no balancer: shoulder motors carry the full gravity torque (SF 1.14 vs rated at the worst pose, gate waiver needed)"
+ },
+ "colours": {
+  "pad": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "tubes": [
+   0.1,
+   0.1,
+   0.11
+  ],
+  "nodes": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "clasp_bracket": [
+   0.2,
+   0.34,
+   0.52
+  ]
+ }
+}

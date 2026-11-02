@@ -168,3 +168,4 @@ See `specs/SPEC_hand.md`. **Forest (2026-10-30): "Merge this as the new project 
 - 2026-10-22: harness rebuild, collision method, collision_body, new elbow loop (see section 11).
 - 2026-10-23: pauldron lateral shelf replaced by the curved deltoid shell; meshes regenerated.
 - 2026-10-25: this file reconstructed from the repo.
+- 2026-11-02b: J1 mount round 2 (spine-led, no balancer): MJ7/MJ8/MJ10 evaluated, see specs/SPEC_j1r2_spine_mounts.md and specs/DESIGN_STATE_ADDENDUM_2026-11-02b.md. Open: mount choice and the no-balancer torque-gate decision (Forest).
