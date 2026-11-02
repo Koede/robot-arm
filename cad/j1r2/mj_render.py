@@ -25,9 +25,8 @@ def scene(cid):
     for k, r in met["parts"].items():
         p_ = os.path.join(MD, cid, f"{cid}_{k}_R.stl"); c = cols.get(k, [0.2, 0.34, 0.52]); mat = r["mat"]
         parts.append(dict(stl=p_, color=rgb(c), metal=0.6 if mat in ("AL", "STEEL") else (0.15 if mat == "CF" else 0.05), rough=0.35 if mat in ("AL", "CF") else 0.5))
-    bt = os.path.join(MD, cid, f"{cid}_bal_tube_radial_R.stl")
-    if os.path.exists(bt): parts.append(dict(stl=bt, color=[240, 120, 30], rough=0.5))
-    title = f"{cid}: {met['title']}"
+    # the radial balancer tube (J1 rev 2 unresolved placeholder) is NOT drawn: it is not a design, only the unsolved problem (see metrics balancer.verdict)
+    title = f"{cid}: {met['title']}" + ("  (balancer: no home yet, not shown)" if met["balancer"].get("home", "").startswith("radial") else "")
     sc = dict(out_prefix=os.path.join(OUTD, cid), title=title, width=820, height=820, parts=parts, up=[0, 0, 1], time_budget=int(os.environ.get("TB", 50)), fill=0.86,
               views=[dict(name="rear34", dir=[1.0, 0.70, 0.55], label="rear-right 3/4"), dict(name="rear", dir=[1.0, -0.12, 0.18], label="from behind"),
                      dict(name="side", dir=[0.15, 1.0, 0.10], label="from the right"), dict(name="top", dir=[0.30, 0.10, 1.0], label="from above")])
