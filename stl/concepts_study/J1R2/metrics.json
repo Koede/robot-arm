@@ -1,0 +1,565 @@
+{
+ "id": "J1R2",
+ "title": "J1 rev 2 integrated (pad y=10 z=-30)",
+ "parts": [
+  {
+   "name": "rail",
+   "mat": "PACF",
+   "vol_cm3": 47.02,
+   "mass_g": 54.1,
+   "bbox_mm": [
+    47.0,
+    36.5,
+    360.0
+   ],
+   "watertight": true,
+   "fits_256": false,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 6.2,
+   "protrusion_mm": 4.4
+  },
+  {
+   "name": "pad_riser",
+   "mat": "PACF",
+   "vol_cm3": 80.14,
+   "mass_g": 92.2,
+   "bbox_mm": [
+    12.0,
+    218.0,
+    134.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 16.6,
+   "protrusion_mm": 3.4
+  },
+  {
+   "name": "standoffs",
+   "mat": "PETGCF",
+   "vol_cm3": 3.53,
+   "mass_g": 4.6,
+   "bbox_mm": [
+    21.1,
+    30.0,
+    28.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 10.9,
+   "protrusion_mm": -2.6
+  },
+  {
+   "name": "S1_AK70",
+   "mat": "AL",
+   "vol_cm3": 312.39,
+   "mass_g": 621.0,
+   "bbox_mm": [
+    50.2,
+    89.0,
+    89.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "bought",
+   "contact": false,
+   "skin_min_mm": 56.1,
+   "protrusion_mm": 53.7
+  },
+  {
+   "name": "S1_stop_posts",
+   "mat": "PETGCF",
+   "vol_cm3": 0.76,
+   "mass_g": 1.0,
+   "bbox_mm": [
+    4.2,
+    105.3,
+    65.9
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 78.5,
+   "protrusion_mm": 7.7
+  },
+  {
+   "name": "tpu_S1_bumpers",
+   "mat": "TPU",
+   "vol_cm3": 0.02,
+   "mass_g": 0.0,
+   "bbox_mm": [
+    4.2,
+    93.3,
+    54.5
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 87.8,
+   "protrusion_mm": 7.7
+  },
+  {
+   "name": "column_anchor",
+   "mat": "PETGCF",
+   "vol_cm3": 7.29,
+   "mass_g": 9.5,
+   "bbox_mm": [
+    77.2,
+    11.0,
+    11.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 104.0,
+   "protrusion_mm": 80.7
+  },
+  {
+   "name": "fairing_fixed",
+   "mat": "PACF",
+   "vol_cm3": 38.24,
+   "mass_g": 44.0,
+   "bbox_mm": [
+    93.3,
+    127.6,
+    127.6
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 33.0,
+   "protrusion_mm": 84.7
+  },
+  {
+   "name": "S1_yoke",
+   "mat": "PETGCF",
+   "vol_cm3": 80.65,
+   "mass_g": 104.8,
+   "bbox_mm": [
+    12.0,
+    99.0,
+    94.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 91.7,
+   "protrusion_mm": 65.7
+  },
+  {
+   "name": "S1_stop_collar",
+   "mat": "PETGCF",
+   "vol_cm3": 16.14,
+   "mass_g": 21.0,
+   "bbox_mm": [
+    50.3,
+    91.6,
+    103.1
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 57.3,
+   "protrusion_mm": 53.7
+  },
+  {
+   "name": "S2_AK70",
+   "mat": "AL",
+   "vol_cm3": 312.39,
+   "mass_g": 621.0,
+   "bbox_mm": [
+    89.0,
+    75.5,
+    100.2
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "bought",
+   "contact": false,
+   "skin_min_mm": 81.5,
+   "protrusion_mm": 104.2
+  },
+  {
+   "name": "S2_clamp",
+   "mat": "PETGCF",
+   "vol_cm3": 50.36,
+   "mass_g": 65.5,
+   "bbox_mm": [
+    97.0,
+    63.8,
+    103.2
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 57.8,
+   "protrusion_mm": 108.2
+  },
+  {
+   "name": "S2_sleeve",
+   "mat": "PACF",
+   "vol_cm3": 18.18,
+   "mass_g": 20.9,
+   "bbox_mm": [
+    97.0,
+    45.4,
+    97.1
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 83.0,
+   "protrusion_mm": 108.2
+  },
+  {
+   "name": "S2_stop_posts",
+   "mat": "PETGCF",
+   "vol_cm3": 1.56,
+   "mass_g": 2.0,
+   "bbox_mm": [
+    121.7,
+    32.0,
+    71.4
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 74.2,
+   "protrusion_mm": 112.4
+  },
+  {
+   "name": "tpu_S2_bumpers",
+   "mat": "TPU",
+   "vol_cm3": 0.04,
+   "mass_g": 0.0,
+   "bbox_mm": [
+    110.2,
+    28.8,
+    61.8
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 81.5,
+   "protrusion_mm": 104.0
+  },
+  {
+   "name": "S2_adapter",
+   "mat": "PETGCF",
+   "vol_cm3": 40.18,
+   "mass_g": 52.2,
+   "bbox_mm": [
+    80.0,
+    32.6,
+    78.5
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 96.8,
+   "protrusion_mm": 99.7
+  },
+  {
+   "name": "S3_bracket",
+   "mat": "PETGCF",
+   "vol_cm3": 87.4,
+   "mass_g": 113.6,
+   "bbox_mm": [
+    99.4,
+    69.6,
+    163.9
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 105.1,
+   "protrusion_mm": 94.6
+  },
+  {
+   "name": "S3_XM540",
+   "mat": "AL",
+   "vol_cm3": 86.23,
+   "mass_g": 165.0,
+   "bbox_mm": [
+    69.0,
+    50.4,
+    67.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "bought",
+   "contact": false,
+   "skin_min_mm": 147.6,
+   "protrusion_mm": 67.3
+  },
+  {
+   "name": "S2_stop_lug",
+   "mat": "PETGCF",
+   "vol_cm3": 1.09,
+   "mass_g": 1.4,
+   "bbox_mm": [
+    10.0,
+    16.4,
+    13.8
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 160.3,
+   "protrusion_mm": 44.9
+  },
+  {
+   "name": "arm_tube",
+   "mat": "PETG",
+   "vol_cm3": 247.31,
+   "mass_g": 314.1,
+   "bbox_mm": [
+    84.1,
+    84.0,
+    96.8
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "arm",
+   "contact": false,
+   "skin_min_mm": 181.6
+  },
+  {
+   "name": "arm_elbow_ball",
+   "mat": "PETG",
+   "vol_cm3": 353.75,
+   "mass_g": 449.3,
+   "bbox_mm": [
+    88.0,
+    87.7,
+    88.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "arm",
+   "contact": false,
+   "skin_min_mm": 228.5
+  },
+  {
+   "name": "cable_F_run",
+   "mat": "TPU",
+   "vol_cm3": 23.28,
+   "mass_g": 28.2,
+   "bbox_mm": [
+    60.0,
+    93.9,
+    92.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 5.7,
+   "protrusion_mm": 12.8
+  },
+  {
+   "name": "cable_F",
+   "mat": "TPU",
+   "vol_cm3": 14.57,
+   "mass_g": 17.6,
+   "bbox_mm": [
+    78.6,
+    29.9,
+    116.3
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 54.3,
+   "protrusion_mm": 62.0
+  },
+  {
+   "name": "cable_coil",
+   "mat": "TPU",
+   "vol_cm3": 1.04,
+   "mass_g": 1.3,
+   "bbox_mm": [
+    2.1,
+    63.0,
+    71.7
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 116.8,
+   "protrusion_mm": 75.2
+  },
+  {
+   "name": "cable_M1",
+   "mat": "TPU",
+   "vol_cm3": 4.77,
+   "mass_g": 5.8,
+   "bbox_mm": [
+    12.3,
+    60.7,
+    32.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 123.3,
+   "protrusion_mm": 78.2
+  },
+  {
+   "name": "cable_M2",
+   "mat": "TPU",
+   "vol_cm3": 8.94,
+   "mass_g": 10.8,
+   "bbox_mm": [
+    45.5,
+    38.3,
+    90.2
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 81.7,
+   "protrusion_mm": 47.7
+  },
+  {
+   "name": "dist_elbow_bridge",
+   "mat": "PETG",
+   "vol_cm3": 295.8,
+   "mass_g": 375.7,
+   "bbox_mm": [
+    79.2,
+    105.7,
+    102.6
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "arm",
+   "contact": false,
+   "skin_min_mm": 254.7
+  },
+  {
+   "name": "dist_forearm_a",
+   "mat": "PETG",
+   "vol_cm3": 172.19,
+   "mass_g": 218.7,
+   "bbox_mm": [
+    88.0,
+    65.5,
+    81.1
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "arm",
+   "contact": false,
+   "skin_min_mm": 291.3
+  },
+  {
+   "name": "dist_forearm_b",
+   "mat": "PETG",
+   "vol_cm3": 184.49,
+   "mass_g": 234.3,
+   "bbox_mm": [
+    92.4,
+    66.3,
+    83.3
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "arm",
+   "contact": false,
+   "skin_min_mm": 303.2
+  },
+  {
+   "name": "dist_wrist_ball",
+   "mat": "PETG",
+   "vol_cm3": 72.99,
+   "mass_g": 92.7,
+   "bbox_mm": [
+    51.9,
+    51.9,
+    51.9
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "arm",
+   "contact": false,
+   "skin_min_mm": 326.0
+  },
+  {
+   "name": "dist_w2_yoke",
+   "mat": "PETG",
+   "vol_cm3": 351.36,
+   "mass_g": 446.2,
+   "bbox_mm": [
+    114.3,
+    87.7,
+    112.2
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "arm",
+   "contact": false,
+   "skin_min_mm": 310.0
+  },
+  {
+   "name": "dist_hand",
+   "mat": "PETG",
+   "vol_cm3": 873.84,
+   "mass_g": 1109.8,
+   "bbox_mm": [
+    142.8,
+    148.4,
+    142.1
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "arm",
+   "contact": false,
+   "skin_min_mm": 330.8
+  }
+ ],
+ "mount_mass_g": 2057.5,
+ "notes": {},
+ "extra": {
+  "own_stage": true,
+  "derived": {
+   "y1": 10.0,
+   "z1": -30.0,
+   "x0": -110.55275474061348,
+   "XB": -104.55275474061348,
+   "XO": -54.30275474061348,
+   "PX": -48.30275474061348,
+   "xs_fp": -153.26427538919526,
+   "xs_sw": -112.85275474061348,
+   "standoff": 22.0
+  },
+  "kinds": [
+   "arm",
+   "bought",
+   "cable",
+   "env",
+   "printed"
+  ]
+ }
+}

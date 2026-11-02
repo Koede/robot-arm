@@ -1,0 +1,183 @@
+{
+ "id": "C1",
+ "title": "Monocoque saddle (plate-less)",
+ "parts": [
+  {
+   "name": "saddle_PACF",
+   "mat": "PACF",
+   "vol_cm3": 100.67,
+   "mass_g": 104.2,
+   "bbox_mm": [
+    12.0,
+    158.0,
+    100.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 22.4
+  },
+  {
+   "name": "steel_doubler_2mm",
+   "mat": "STEEL",
+   "vol_cm3": 12.15,
+   "mass_g": 95.4,
+   "bbox_mm": [
+    2.0,
+    140.0,
+    44.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 40.8
+  },
+  {
+   "name": "s1_base_block",
+   "mat": "PETGCF",
+   "vol_cm3": 214.07,
+   "mass_g": 125.2,
+   "bbox_mm": [
+    80.0,
+    136.0,
+    38.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 49.5
+  },
+  {
+   "name": "armour_crown",
+   "mat": "PACF",
+   "vol_cm3": 58.88,
+   "mass_g": 67.7,
+   "bbox_mm": [
+    157.5,
+    147.0,
+    49.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 45.7
+  },
+  {
+   "name": "armour_spaulder",
+   "mat": "PACF",
+   "vol_cm3": 24.5,
+   "mass_g": 28.2,
+   "bbox_mm": [
+    124.0,
+    140.0,
+    62.9
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 10.5
+  },
+  {
+   "name": "armour_keel",
+   "mat": "PACF",
+   "vol_cm3": 54.81,
+   "mass_g": 63.0,
+   "bbox_mm": [
+    156.6,
+    145.2,
+    18.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 40.0
+  }
+ ],
+ "mount_mass_g": 483.7,
+ "notes": {
+  "ref_mount_g": 565.6
+ },
+ "extra": {
+  "summary": "6061 plate replaced by a ribbed PA-CF saddle (6 mm skin + 6 mm ribs, x -92..-80) that is the wing's outboard end; 2 mm steel doubler (140x44) backs the 4 x M5 knurled brass inserts; armour keel feet re-seated on the saddle rear face.",
+  "mass_delta_g_vs_REF_proxy": -81.9,
+  "mount_mass_g": 483.7,
+  "ref_mount_g": 565.6,
+  "spec_basis": "spec plate 278 g -> saddle 104 g + doubler 95 g (proxy volumes)",
+  "contract_changes": [
+   "Plate part number removed: wing tongue seat, 4 x M5 base pattern, clasp-foot M4 pairs, keel M4 feet now land in/behind the saddle (inserts instead of tapped 6061); plate.json and chassis_axilla.py retired; wing/saddle become one print or a lap joint.",
+   "Clasp feet (front face) need M4 brass inserts in the saddle skin; skin must thicken to >=6 mm at those feet (done by 6 mm skin)."
+  ],
+  "decision_conflicts": [
+   "None of: no backplate, no hip belt, 270 deg clasp, 5 deg rule, ball-styled joints. Saddle outline equals the plate outline (158x100), so it is not a backplate. Rigid part sits at x >= -92, >= 26 mm off skin; nothing new on moving skin.",
+   "Touches 'plate 6061' choice made by Claude (not Forest)."
+  ],
+  "calcs": [
+   {
+    "name": "load case",
+    "formula": "W=(m_arm+m_stage) g; Mc=W*0.080 m; M_y=Mc+S2 cap",
+    "inputs": "m_arm 1.566 kg, m_stage 2.2 kg (assumed), cap 8.3 N.m",
+    "result": "W=36.9 N, Mc=2.96 N.m, M_y=11.26 N.m"
+   },
+   {
+    "name": "bolt group",
+    "formula": "T_pair=M_y/p (p=26 mm z pitch), per bolt=T_pair/2; dynamic x2; shear=sqrt((8.3/0.124)^2+W^2)/4 N",
+    "inputs": "p 0.026 m, y pitch 0.124 m",
+    "result": "per-bolt tension 216 N static, 433 N at x2; shear 19 N; conservative (ignores base-block bearing on the saddle face)"
+   },
+   {
+    "name": "insert pull-out",
+    "formula": "SF=F_pull/F_bolt",
+    "inputs": "~1000 N typical for knurled brass in PA-CF (UNVERIFIED vendor figure)",
+    "result": "SF 4.6 static, 2.3 at x2 (marginal at x2; doubler loads the inserts through the steel, so bench pull-test required)"
+   },
+   {
+    "name": "saddle section",
+    "formula": "I=sum(b h^3/12 + A d^2); sigma=M c/I",
+    "inputs": "skin 158x6, 7 cross ribs 3x6, centroid 3.70 mm, c 8.30 mm, PA-CF flexural strength ~100 MPa (UNVERIFIED), y-running ribs ignored",
+    "result": "I=7226 mm4, sigma=12.9 MPa -> SF 7.7 vs 100 MPa; mid-thickness assumed isotropic, layer lines across the 6 mm skin are the weak direction"
+   }
+  ],
+  "harness": {
+   "rule": "120 g per arm = 0.30 kPa",
+   "delta_g": -81.9,
+   "delta_top_pad_kPa": -0.2,
+   "top_pad_kPa_est": 14.08,
+   "limit": 14.7
+  },
+  "printability": "Saddle 158x100x12: fits 256 cube; print skin flat on bed (rear face -80 down) so layers run in the plane of the skin; ribs up, no supports; bolt tension then acts across layers in the skin only through the steel doubler. Wing lap or one-piece print needs rotation (wing ~ 62x105 as proxy) - keep as lap joint.",
+  "pros": [
+   "~79 g lighter per arm than the 6061 plate (spec 278 g)",
+   "no waterjet/tap step; wing and plate one design, re-fit (I7) is a re-run",
+   "top pad pressure margin improves"
+  ],
+  "cons": [
+   "load path now PA-CF across layers; inserts and doubler carry everything",
+   "loses the 6061 stiffness for the S2 8.3 N.m reaction",
+   "creep under sustained weight (PA-CF) not characterised"
+  ],
+  "risks": [
+   "insert pull-out figure unverified",
+   "PA-CF creep/anneal distortion of a 158x100 saddle",
+   "wing lap stiffness"
+  ],
+  "gates_to_rerun": [
+   "verify_harness / harness_loads (mass)",
+   "verify_armor (keel/spaulder seats)",
+   "verify_assembly",
+   "body_loads (stall limit uses plate stiffness assumptions)",
+   "print_table"
+  ],
+  "assumptions": [
+   "proxy geometry, not the verified STLs",
+   "stage mass 2.2 kg assumed",
+   "rib pattern/sizes are first-pass",
+   "proxy basis overstates armour mass (REF armour 161.6 g vs spec 110.6 g)"
+  ]
+ }
+}

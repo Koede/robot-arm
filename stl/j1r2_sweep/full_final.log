@@ -1,0 +1,96 @@
+scene 1.9 s ['rail', 'pad_riser', 'standoffs', 'S1_AK70', 'S1_stop_posts', 'tpu_S1_bumpers', 'fairing_fixed', 'wing'] ['M1', 'M2', 'M3', 'ME', 'MW1', 'MW2', 'MW3']
+J1r2 [j1r2_full_final] range=soft grid={'S1p': [-95.0, 35.0, 15], 'S2': [-30.0, 88.0, 14], 'S3': [-70.0, 90.0, 3], 'E': [0.0, 145.0, 10], 'W1': [-80.0, 80.0, 3], 'W2': [-70.0, 80.0, 3], 'W3': [-20.0, 30.0, 3]}
+cells 170100 contact 72517 reach-free 97583 frontier 43290 deep(dropped) 29227  time 530.1 s
+pair                                           MM   park_d min_free  d_front    nF    nD  status
+M1|rail                                         3     83.5     66.9 -     0     0  PASS
+M1|pad_riser                                    3      0.0 - -     0     0  EXCLUDED(designed contact at park)
+M1|standoffs                                    3     79.6     65.7 -     0     0  PASS
+M1|S1_AK70                                      3      0.0 - -     0     0  EXCLUDED(designed contact at park)
+M1|S1_stop_posts                                3      2.2 - -     0     0  EXCLUDED(designed contact at park)
+M1|tpu_S1_bumpers                               3      3.5      3.5 -     0     0  PASS
+M1|fairing_fixed                                3      2.2 - -     0     0  EXCLUDED(designed contact at park)
+M1|wing                                         3     18.2      3.2 -     0     0  PASS
+M1|wearer_skin                                  2     56.7     14.0 -     0     0  PASS
+M1|wearer_head                                 60     95.3     83.9 -     0     0  PASS
+M2|rail                                         3    152.1     69.7 -     0     0  PASS
+M2|pad_riser                                    3     36.7     23.6 -     0     0  PASS
+M2|standoffs                                    3    150.7     87.0 -     0     0  PASS
+M2|S1_AK70                                      3     53.3     41.3 -     0     0  PASS
+M2|S1_stop_posts                                3     40.3     26.2 -     0     0  PASS
+M2|tpu_S1_bumpers                               3     44.6     31.5 -     0     0  PASS
+M2|fairing_fixed                                3     34.3     21.8 -     0     0  PASS
+M2|wing                                         3    139.4     14.0 -     0     0  PASS
+M2|wearer_skin                                  2     96.4      5.7      0.0     4    11  FAIL(<1mm)
+M2|wearer_head                                 60    157.6    115.0 -     0     0  PASS
+M3|rail                                         3    198.0    134.3 -     0     0  PASS
+M3|pad_riser                                    3     41.6     14.8 -     0     0  PASS
+M3|standoffs                                    3    206.1    145.5 -     0     0  PASS
+M3|S1_AK70                                      3     53.0     33.3 -     0     0  PASS
+M3|S1_stop_posts                                3     66.6     19.0 -     0     0  PASS
+M3|tpu_S1_bumpers                               3     65.5     23.6 -     0     0  PASS
+M3|fairing_fixed                                3     38.0     12.6 -     0     0  PASS
+M3|wing                                         3    161.5     81.8 -     0     0  PASS
+M3|wearer_skin                                  2    147.6     10.2      0.0    12    33  FAIL(<1mm)
+M3|wearer_head                                 60    208.1     63.6     47.1     9     0  BELOW_GATE
+ME|rail                                         3    319.3    152.9 -     0     0  PASS
+ME|pad_riser                                    3    155.0     79.5 -     0     0  PASS
+ME|standoffs                                    3    332.4    164.4 -     0     0  PASS
+ME|S1_AK70                                      3    173.4     95.8 -     0     0  PASS
+ME|S1_stop_posts                                3    195.8     85.5 -     0     0  PASS
+ME|tpu_S1_bumpers                               3    194.8     88.9 -     0     0  PASS
+ME|fairing_fixed                                3    151.6     74.0 -     0     0  PASS
+ME|wing                                         3    281.6    150.3 -     0     0  PASS
+ME|wearer_skin                                  2    235.1     29.8      0.0    12   172  FAIL(<1mm)
+ME|wearer_head                                 60    234.9     60.9      0.0   112    49  FAIL(<1mm)
+MW1|rail                                        3    388.3    142.6 -     0     3  PASS(contact only in unreachable region, dropped)
+MW1|pad_riser                                   3    242.1     16.4      0.0   319   137  FAIL(<1mm)
+MW1|standoffs                                   3    404.6    152.7 -     0     0  PASS
+MW1|S1_AK70                                     3    260.5     26.6      2.7    36     9  BELOW_GATE
+MW1|S1_stop_posts                               3    282.1     25.1      2.2     3     9  BELOW_GATE
+MW1|tpu_S1_bumpers                              3    281.2     26.4      1.6     6     9  BELOW_GATE
+MW1|fairing_fixed                               3    237.4     11.4      0.0   430   137  FAIL(<1mm)
+MW1|wing                                        3    364.1    119.0 -     0     0  PASS
+MW1|wearer_skin                                 2    280.6      3.0      0.0   397   506  FAIL(<1mm)
+MW1|wearer_head                                60    280.7     60.2      0.0   819   432  FAIL(<1mm)
+MW2|rail                                        3    421.1     87.9      0.0    26   200  FAIL(<1mm)
+MW2|pad_riser                                   3    287.8      5.3      0.0  1719  1930  FAIL(<1mm)
+MW2|standoffs                                   3    439.0    124.3 -     0    47  PASS(contact only in unreachable region, dropped)
+MW2|S1_AK70                                     3    305.9     12.2      0.0  1372  1823  FAIL(<1mm)
+MW2|S1_stop_posts                               3    328.0     16.8      0.0   299   532  FAIL(<1mm)
+MW2|tpu_S1_bumpers                              3    327.1     17.9      0.0   172   282  FAIL(<1mm)
+MW2|fairing_fixed                               3    282.5      3.0      0.0  1627  1902  FAIL(<1mm)
+MW2|wing                                        3    405.1     88.9      0.0   106   386  FAIL(<1mm)
+MW2|wearer_skin                                 2    296.6      2.2      0.0  2362  2586  FAIL(<1mm)
+MW2|wearer_head                                60    296.4     60.1      0.0  3549  2519  FAIL(<1mm)
+MW3|rail                                        3    472.7      5.9      0.0  1335  2141  FAIL(<1mm)
+MW3|pad_riser                                   3    358.3      7.2      0.0  3573  5005  FAIL(<1mm)
+MW3|standoffs                                   3    492.6     84.0      0.0   942  1022  FAIL(<1mm)
+MW3|S1_AK70                                     3    375.7      8.5      0.0  3331  5519  FAIL(<1mm)
+MW3|S1_stop_posts                               3    398.1     12.5      0.0  1075  1743  FAIL(<1mm)
+MW3|tpu_S1_bumpers                              3    397.3     16.5      0.0   495   909  FAIL(<1mm)
+MW3|fairing_fixed                               3    352.6      3.0      0.0  4106  6683  FAIL(<1mm)
+MW3|wing                                        3    468.2      5.2      0.0  1883  2758  FAIL(<1mm)
+MW3|wearer_skin                                 2    324.6      2.0      0.0 12611 10038  FAIL(<1mm)
+MW3|wearer_head                                60    324.5     60.0      0.0 13720  9812  FAIL(<1mm)
+M1|M2                                           3      0.0 - -     0     0  EXCLUDED(designed contact at park)
+M1|M3                                           3     19.5      3.9      0.0     6     3  FAIL(<1mm)
+M1|ME                                           3    159.3     87.7 -     0     0  PASS
+M1|MW1                                          3    212.1     17.3      0.0    15     0  FAIL(<1mm)
+M1|MW2                                          3    261.5      8.2      0.0   142    69  FAIL(<1mm)
+M1|MW3                                          3    335.6      5.2      0.0   442   269  FAIL(<1mm)
+M2|M3                                           3      0.0 - -     0     0  EXCLUDED(designed contact at park)
+M2|ME                                           3     98.2     29.9 -     0     0  PASS
+M2|MW1                                          3    178.6     27.2 -     0     0  PASS
+M2|MW2                                          3    231.3     14.8 -     0     0  PASS
+M2|MW3                                          3    309.5      4.1      0.0    16     3  FAIL(<1mm)
+M3|ME                                           3      0.0 - -     0     0  EXCLUDED(designed contact at park)
+M3|MW1                                          3     60.2     23.5 -     0     0  PASS
+M3|MW2                                          3    123.2     24.5 -     0     0  PASS
+M3|MW3                                          3    174.9     18.1 -     0     0  PASS
+ME|MW1                                          3      0.0 - -     0     0  EXCLUDED(designed contact at park)
+ME|MW2                                          3     65.0     46.7 -     0     0  PASS
+ME|MW3                                          3    161.6     81.6 -     0     0  PASS
+MW1|MW2                                         3      0.0 - -     0     0  EXCLUDED(designed contact at park)
+MW1|MW3                                         3     55.6     48.6 -     0     0  PASS
+MW2|MW3                                         3      0.0 - -     0     0  EXCLUDED(designed contact at park)
+timing {'tabulate_s': 526.3, 'total_s': 530.1}

@@ -1,0 +1,497 @@
+{
+ "D": {
+  "y1": -70.0,
+  "z1": -35.0,
+  "x0": -107.27653940374621,
+  "XB": -101.27653940374621,
+  "XO": -51.02653940374621,
+  "PX": -45.02653940374621,
+  "xs_fp": -144.0139338062252,
+  "xs_sw": -109.57653940374621,
+  "standoff": 22.0
+ },
+ "tests": {
+  "FK_vs_nested_max_abs_err": 1.7053025658242404e-13,
+  "arm_frame_vs_P.shoulder_frames_max_abs_err": 2.842170943040401e-14,
+  "park_dir_err_deg": 0.04825528857698329,
+  "tip_park_xyz": [
+   -463.0,
+   210.2,
+   296.1
+  ],
+  "tip_home_check": true,
+  "coverage_soft_box": 0.963,
+  "groups_rigid": true,
+  "J_det_equals_minus_cos_phi": true,
+  "amplification_park": 1.048,
+  "omega_roundtrip_err": 0.0,
+  "dd_dth_eq_x_cross_d": true
+ },
+ "limits_study": [
+  {
+   "alpha_deg": 0.0,
+   "S2_max": 88,
+   "coverage": 0.963,
+   "S1p_range": [
+    -85,
+    30
+   ],
+   "pole_to_baseline_set_deg": [
+    10.2,
+    40.0
+   ],
+   "arm_to_pole_at_S2_max_deg": 2,
+   "depth_cost_mm": 0.0
+  },
+  {
+   "alpha_deg": 0.0,
+   "S2_max": 80,
+   "coverage": 0.963,
+   "S1p_range": [
+    -85,
+    30
+   ],
+   "pole_to_baseline_set_deg": [
+    10.2,
+    40.0
+   ],
+   "arm_to_pole_at_S2_max_deg": 10,
+   "depth_cost_mm": 0.0
+  },
+  {
+   "alpha_deg": 0.0,
+   "S2_max": 75,
+   "coverage": 0.9614,
+   "S1p_range": [
+    -85,
+    30
+   ],
+   "pole_to_baseline_set_deg": [
+    10.2,
+    40.0
+   ],
+   "arm_to_pole_at_S2_max_deg": 15,
+   "depth_cost_mm": 0.0
+  },
+  {
+   "alpha_deg": 0.0,
+   "S2_max": 70,
+   "coverage": 0.9583,
+   "S1p_range": [
+    -85,
+    30
+   ],
+   "pole_to_baseline_set_deg": [
+    10.2,
+    40.0
+   ],
+   "arm_to_pole_at_S2_max_deg": 20,
+   "depth_cost_mm": 0.0
+  },
+  {
+   "alpha_deg": 0.0,
+   "S2_max": 65,
+   "coverage": 0.9491,
+   "S1p_range": [
+    -85,
+    30
+   ],
+   "pole_to_baseline_set_deg": [
+    10.2,
+    40.0
+   ],
+   "arm_to_pole_at_S2_max_deg": 25,
+   "depth_cost_mm": 0.0
+  },
+  {
+   "alpha_deg": 0.0,
+   "S2_max": 60,
+   "coverage": 0.9414,
+   "S1p_range": [
+    -85,
+    30
+   ],
+   "pole_to_baseline_set_deg": [
+    10.2,
+    40.0
+   ],
+   "arm_to_pole_at_S2_max_deg": 30,
+   "depth_cost_mm": 0.0
+  },
+  {
+   "alpha_deg": 10.0,
+   "S2_max": 88,
+   "coverage": 0.9275,
+   "S1p_range": [
+    -90,
+    30
+   ],
+   "pole_to_baseline_set_deg": [
+    15.6,
+    39.3
+   ],
+   "arm_to_pole_at_S2_max_deg": 2,
+   "depth_cost_mm": 7.7
+  },
+  {
+   "alpha_deg": 10.0,
+   "S2_max": 80,
+   "coverage": 0.9275,
+   "S1p_range": [
+    -90,
+    30
+   ],
+   "pole_to_baseline_set_deg": [
+    15.6,
+    39.3
+   ],
+   "arm_to_pole_at_S2_max_deg": 10,
+   "depth_cost_mm": 7.7
+  },
+  {
+   "alpha_deg": 10.0,
+   "S2_max": 75,
+   "coverage": 0.9275,
+   "S1p_range": [
+    -90,
+    30
+   ],
+   "pole_to_baseline_set_deg": [
+    15.6,
+    39.3
+   ],
+   "arm_to_pole_at_S2_max_deg": 15,
+   "depth_cost_mm": 7.7
+  },
+  {
+   "alpha_deg": 10.0,
+   "S2_max": 70,
+   "coverage": 0.9275,
+   "S1p_range": [
+    -90,
+    30
+   ],
+   "pole_to_baseline_set_deg": [
+    15.6,
+    39.3
+   ],
+   "arm_to_pole_at_S2_max_deg": 20,
+   "depth_cost_mm": 7.7
+  },
+  {
+   "alpha_deg": 10.0,
+   "S2_max": 65,
+   "coverage": 0.9228,
+   "S1p_range": [
+    -90,
+    30
+   ],
+   "pole_to_baseline_set_deg": [
+    15.6,
+    39.3
+   ],
+   "arm_to_pole_at_S2_max_deg": 25,
+   "depth_cost_mm": 7.7
+  },
+  {
+   "alpha_deg": 10.0,
+   "S2_max": 60,
+   "coverage": 0.9182,
+   "S1p_range": [
+    -90,
+    30
+   ],
+   "pole_to_baseline_set_deg": [
+    15.6,
+    39.3
+   ],
+   "arm_to_pole_at_S2_max_deg": 30,
+   "depth_cost_mm": 7.7
+  }
+ ],
+ "speed": {
+  "lever_max_m": {
+   "S1p": 0.647,
+   "S2": 0.627,
+   "S3": 0.402,
+   "E": 0.394,
+   "W1": 0.211,
+   "W2": 0.214,
+   "W3": 0.169
+  },
+  "cap_deg_s": {
+   "S1p": 44.3,
+   "S2": 45.7,
+   "S3": 71.2,
+   "E": 72.7,
+   "W1": 136.0,
+   "W2": 133.9,
+   "W3": 169.5
+  },
+  "cap_with_project_hand_165": {
+   "S1p": 49.5,
+   "S2": 49.5,
+   "S3": 81.5,
+   "E": 81.5,
+   "W1": 90.0,
+   "W2": 90.0,
+   "W3": 90.0
+  }
+ },
+ "headneck_straight_arm": {
+  "min_clearance_mm": -12.7,
+  "at_S1p_S2": [
+   35.0,
+   50.0
+  ],
+  "n_below_60": 83,
+  "n": 648
+ },
+ "headneck_straight_arm_r60": {
+  "min_clearance_mm": -40.7,
+  "at_S1p_S2": [
+   35.0,
+   50.0
+  ],
+  "n_below_60": 179,
+  "n": 648
+ },
+ "workspace": {
+  "baseline_directions": 648,
+  "reachable_by_J1_soft_box": 619,
+  "fraction": 0.955,
+  "extended_tip_displacement_vs_baseline_mm": {
+   "mean": [
+    -88.0,
+    47.0,
+    -87.0
+   ],
+   "mean_norm": 153,
+   "p95_norm": 221,
+   "max_norm": 233
+  },
+  "arm_base_range_mm": [
+   [
+    -45.0,
+    -61.0,
+    -140.0
+   ],
+   [
+    -45.0,
+    36.0,
+    18.0
+   ]
+  ],
+  "baseline_P": [
+   0,
+   0,
+   0
+  ]
+ },
+ "baseline_levers_same_hand": {
+  "S1": 0.623,
+  "S2": 0.627,
+  "S3": 0.402,
+  "E": 0.394,
+  "W1": 0.211,
+  "W2": 0.214,
+  "W3": 0.169
+ },
+ "passive_box_study": [
+  {
+   "y1": -70,
+   "z1": -35,
+   "x0": -107.3,
+   "min_clr_full_soft_box": -12.7,
+   "best_passive_box_coverage": 0.736,
+   "best_box_S1p_max_S2_max": [
+    5.0,
+    55.0
+   ]
+  },
+  {
+   "y1": -70,
+   "z1": -70,
+   "x0": -98.8,
+   "min_clr_full_soft_box": -30.3,
+   "best_passive_box_coverage": 0.71,
+   "best_box_S1p_max_S2_max": [
+    0.0,
+    80.0
+   ]
+  },
+  {
+   "y1": -70,
+   "z1": -105,
+   "x0": -91.1,
+   "min_clr_full_soft_box": -31.2,
+   "best_passive_box_coverage": 0.71,
+   "best_box_S1p_max_S2_max": [
+    0.0,
+    80.0
+   ]
+  },
+  {
+   "y1": -50,
+   "z1": -35,
+   "x0": -107.1,
+   "min_clr_full_soft_box": 3.9,
+   "best_passive_box_coverage": 0.863,
+   "best_box_S1p_max_S2_max": [
+    15.0,
+    80.0
+   ]
+  },
+  {
+   "y1": -50,
+   "z1": -70,
+   "x0": -101.3,
+   "min_clr_full_soft_box": -16.4,
+   "best_passive_box_coverage": 0.821,
+   "best_box_S1p_max_S2_max": [
+    10.0,
+    80.0
+   ]
+  },
+  {
+   "y1": -50,
+   "z1": -105,
+   "x0": -91.2,
+   "min_clr_full_soft_box": -28.5,
+   "best_passive_box_coverage": 0.77,
+   "best_box_S1p_max_S2_max": [
+    5.0,
+    80.0
+   ]
+  },
+  {
+   "y1": -30,
+   "z1": -35,
+   "x0": -107.6,
+   "min_clr_full_soft_box": 20.0,
+   "best_passive_box_coverage": 0.903,
+   "best_box_S1p_max_S2_max": [
+    20.0,
+    80.0
+   ]
+  },
+  {
+   "y1": -30,
+   "z1": -70,
+   "x0": -104.1,
+   "min_clr_full_soft_box": 0.3,
+   "best_passive_box_coverage": 0.863,
+   "best_box_S1p_max_S2_max": [
+    15.0,
+    80.0
+   ]
+  },
+  {
+   "y1": -30,
+   "z1": -105,
+   "x0": -92.6,
+   "min_clr_full_soft_box": -19.5,
+   "best_passive_box_coverage": 0.863,
+   "best_box_S1p_max_S2_max": [
+    15.0,
+    80.0
+   ]
+  },
+  {
+   "y1": -10,
+   "z1": -35,
+   "x0": -108.3,
+   "min_clr_full_soft_box": 36.3,
+   "best_passive_box_coverage": 0.926,
+   "best_box_S1p_max_S2_max": [
+    25.0,
+    80.0
+   ]
+  },
+  {
+   "y1": -10,
+   "z1": -70,
+   "x0": -106.5,
+   "min_clr_full_soft_box": 16.5,
+   "best_passive_box_coverage": 0.903,
+   "best_box_S1p_max_S2_max": [
+    20.0,
+    80.0
+   ]
+  },
+  {
+   "y1": -10,
+   "z1": -105,
+   "x0": -94.5,
+   "min_clr_full_soft_box": -3.0,
+   "best_passive_box_coverage": 0.903,
+   "best_box_S1p_max_S2_max": [
+    20.0,
+    80.0
+   ]
+  },
+  {
+   "y1": 10,
+   "z1": -35,
+   "x0": -109.5,
+   "min_clr_full_soft_box": 52.9,
+   "best_passive_box_coverage": 0.94,
+   "best_box_S1p_max_S2_max": [
+    30.0,
+    80.0
+   ]
+  },
+  {
+   "y1": 10,
+   "z1": -70,
+   "x0": -107.2,
+   "min_clr_full_soft_box": 32.8,
+   "best_passive_box_coverage": 0.926,
+   "best_box_S1p_max_S2_max": [
+    25.0,
+    80.0
+   ]
+  },
+  {
+   "y1": 10,
+   "z1": -105,
+   "x0": -97.6,
+   "min_clr_full_soft_box": 12.9,
+   "best_passive_box_coverage": 0.903,
+   "best_box_S1p_max_S2_max": [
+    20.0,
+    80.0
+   ]
+  }
+ ],
+ "conditioning": {
+  "88": {
+   "sigma_min_J1": {
+    "min": 0.025,
+    "p5": 0.096,
+    "frac_below_0_3": 0.19
+   },
+   "sigma_min_baseline": {
+    "min": 0.0,
+    "p5": 0.036,
+    "frac_below_0_3": 0.4142
+   }
+  },
+  "75": {
+   "sigma_min_J1": {
+    "min": 0.185,
+    "p5": 0.247,
+    "frac_below_0_3": 0.091
+   },
+   "sigma_min_baseline": {
+    "min": 0.0,
+    "p5": 0.036,
+    "frac_below_0_3": 0.4142
+   }
+  }
+ },
+ "gravity_unbalanced_Nm": {
+  "S1p": 6.94,
+  "S2": 6.45
+ }
+}

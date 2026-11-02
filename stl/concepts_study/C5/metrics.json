@@ -1,0 +1,425 @@
+{
+ "id": "C5",
+ "title": "C5 Fit-adjustable cassette (serrated slot mount)",
+ "parts": [
+  {
+   "name": "plate_6061_slotted",
+   "mat": "AL",
+   "vol_cm3": 99.41,
+   "mass_g": 268.4,
+   "bbox_mm": [
+    8.0,
+    158.0,
+    100.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 26.5
+  },
+  {
+   "name": "backing_bars_x2",
+   "mat": "AL",
+   "vol_cm3": 3.89,
+   "mass_g": 10.5,
+   "bbox_mm": [
+    3.0,
+    136.0,
+    54.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": true,
+   "skin_min_mm": 36.5
+  },
+  {
+   "name": "adapter_strips_x2",
+   "mat": "AL",
+   "vol_cm3": 11.47,
+   "mass_g": 31.0,
+   "bbox_mm": [
+    5.8,
+    160.0,
+    232.0
+   ],
+   "watertight": true,
+   "fits_256": false,
+   "group": "mount",
+   "contact": true,
+   "skin_min_mm": 43.2
+  },
+  {
+   "name": "shim_packs_8mm_x2",
+   "mat": "AL",
+   "vol_cm3": 10.24,
+   "mass_g": 27.6,
+   "bbox_mm": [
+    8.0,
+    142.0,
+    38.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": true,
+   "skin_min_mm": 53.4
+  },
+  {
+   "name": "s1_base_block_short",
+   "mat": "PETGCF",
+   "vol_cm3": 185.17,
+   "mass_g": 108.3,
+   "bbox_mm": [
+    67.0,
+    136.0,
+    38.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 62.7
+  },
+  {
+   "name": "wedge_p5_spare",
+   "mat": "PACF",
+   "vol_cm3": 7.75,
+   "mass_g": 8.9,
+   "bbox_mm": [
+    7.3,
+    142.0,
+    38.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "spare",
+   "contact": true,
+   "skin_min_mm": 85.8
+  },
+  {
+   "name": "wedge_m5_spare",
+   "mat": "PACF",
+   "vol_cm3": 7.75,
+   "mass_g": 8.9,
+   "bbox_mm": [
+    7.3,
+    142.0,
+    38.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "spare",
+   "contact": true,
+   "skin_min_mm": 85.8
+  },
+  {
+   "name": "armour_crown",
+   "mat": "PACF",
+   "vol_cm3": 36.58,
+   "mass_g": 42.1,
+   "bbox_mm": [
+    131.5,
+    147.0,
+    49.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 69.7
+  },
+  {
+   "name": "armour_keel",
+   "mat": "PACF",
+   "vol_cm3": 45.47,
+   "mass_g": 52.3,
+   "bbox_mm": [
+    149.6,
+    145.2,
+    21.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": true,
+   "skin_min_mm": 45.7
+  },
+  {
+   "name": "gaiter_TPU",
+   "mat": "TPU",
+   "vol_cm3": 15.64,
+   "mass_g": 18.9,
+   "bbox_mm": [
+    32.0,
+    144.0,
+    62.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": true,
+   "skin_min_mm": 38.9
+  },
+  {
+   "name": "armour_spaulder",
+   "mat": "PACF",
+   "vol_cm3": 24.5,
+   "mass_g": 28.2,
+   "bbox_mm": [
+    124.0,
+    140.0,
+    62.9
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 10.4
+  }
+ ],
+ "mount_mass_g": 587.3,
+ "notes": {
+  "basis": "proxy volumes, same method as REF"
+ },
+ "extra": {
+  "summary": "Slotted 6061 plate + two serrated adapter strips + 8 mm shim packs + shortened S1 block: P re-fits +-10 z (1.5 mm teeth), +-8 x (shims 0.5/1/2/4), 3 wedge options (0/+-5 deg, fit only, lock at 0), same 4 x M5 columns; armour oversized to clear the range.",
+  "static_sweep_mm": [
+   {
+    "cfg": "nom",
+    "armour_crown_skin": 69.9,
+    "armour_crown->plate_6061_slotted": 22.0,
+    "armour_crown->armour_spaulder": 27.9,
+    "armour_crown->backing_bars_x2": 30.0,
+    "armour_keel_skin": 45.2,
+    "armour_keel->armour_spaulder": 51.4,
+    "armour_keel->backing_bars_x2": 11.2,
+    "s1_base_block_short_skin": 61.5,
+    "s1_base_block_short->armour_spaulder": 18.2,
+    "spaulder_skin": 10.5,
+    "crown_spaulder_interf_mm3": 0.0
+   },
+   {
+    "cfg": "dx-8dz-10",
+    "armour_crown_skin": 59.7,
+    "armour_crown->plate_6061_slotted": 14.0,
+    "armour_crown->armour_spaulder": 20.4,
+    "armour_crown->backing_bars_x2": 22.0,
+    "armour_keel_skin": 35.2,
+    "armour_keel->armour_spaulder": 55.0,
+    "armour_keel->backing_bars_x2": 12.5,
+    "s1_base_block_short_skin": 50.5,
+    "s1_base_block_short->armour_spaulder": 18.5,
+    "spaulder_skin": null,
+    "crown_spaulder_interf_mm3": 0.0
+   },
+   {
+    "cfg": "dx-8dz+10",
+    "armour_crown_skin": 67.0,
+    "armour_crown->plate_6061_slotted": 14.0,
+    "armour_crown->armour_spaulder": 24.2,
+    "armour_crown->backing_bars_x2": 22.0,
+    "armour_keel_skin": 42.4,
+    "armour_keel->armour_spaulder": 38.7,
+    "armour_keel->backing_bars_x2": 3.0,
+    "s1_base_block_short_skin": 58.7,
+    "s1_base_block_short->armour_spaulder": 9.1,
+    "spaulder_skin": null,
+    "crown_spaulder_interf_mm3": 0.0
+   },
+   {
+    "cfg": "dx+8dz-10",
+    "armour_crown_skin": 74.2,
+    "armour_crown->plate_6061_slotted": 30.0,
+    "armour_crown->armour_spaulder": 35.9,
+    "armour_crown->backing_bars_x2": 38.0,
+    "armour_keel_skin": 50.8,
+    "armour_keel->armour_spaulder": 64.2,
+    "armour_keel->backing_bars_x2": 22.6,
+    "s1_base_block_short_skin": 66.2,
+    "s1_base_block_short->armour_spaulder": 29.9,
+    "spaulder_skin": null,
+    "crown_spaulder_interf_mm3": 0.0
+   },
+   {
+    "cfg": "dx+8dz+10",
+    "armour_crown_skin": 82.0,
+    "armour_crown->plate_6061_slotted": 30.0,
+    "armour_crown->armour_spaulder": 38.5,
+    "armour_crown->backing_bars_x2": 38.0,
+    "armour_keel_skin": 56.0,
+    "armour_keel->armour_spaulder": 47.8,
+    "armour_keel->backing_bars_x2": 19.0,
+    "s1_base_block_short_skin": 72.9,
+    "s1_base_block_short->armour_spaulder": 25.0,
+    "spaulder_skin": null,
+    "crown_spaulder_interf_mm3": 0.0
+   },
+   {
+    "cfg": "tilt+5",
+    "armour_crown_skin": 67.4,
+    "armour_crown->plate_6061_slotted": 20.3,
+    "armour_crown->armour_spaulder": 30.1,
+    "armour_crown->backing_bars_x2": 28.3,
+    "armour_keel_skin": 42.0,
+    "armour_keel->armour_spaulder": 50.5,
+    "armour_keel->backing_bars_x2": 8.8,
+    "s1_base_block_short_skin": 60.2,
+    "s1_base_block_short->armour_spaulder": 20.8,
+    "spaulder_skin": null,
+    "crown_spaulder_interf_mm3": 0.0
+   },
+   {
+    "cfg": "tilt-5",
+    "armour_crown_skin": 72.0,
+    "armour_crown->plate_6061_slotted": 19.7,
+    "armour_crown->armour_spaulder": 26.1,
+    "armour_crown->backing_bars_x2": 27.6,
+    "armour_keel_skin": 48.5,
+    "armour_keel->armour_spaulder": 52.3,
+    "armour_keel->backing_bars_x2": 13.7,
+    "s1_base_block_short_skin": 64.1,
+    "s1_base_block_short->armour_spaulder": 16.4,
+    "spaulder_skin": null,
+    "crown_spaulder_interf_mm3": 0.0
+   },
+   {
+    "cfg": "tilt+5dz+10",
+    "armour_crown_skin": 72.3,
+    "armour_crown->plate_6061_slotted": 20.4,
+    "armour_crown->armour_spaulder": 32.5,
+    "armour_crown->backing_bars_x2": 28.4,
+    "armour_keel_skin": 46.1,
+    "armour_keel->armour_spaulder": 41.7,
+    "armour_keel->backing_bars_x2": 7.8,
+    "s1_base_block_short_skin": 63.3,
+    "s1_base_block_short->armour_spaulder": 18.4,
+    "spaulder_skin": null,
+    "crown_spaulder_interf_mm3": 0.0
+   },
+   {
+    "cfg": "tilt-5dz-10",
+    "armour_crown_skin": 68.4,
+    "armour_crown->plate_6061_slotted": 19.2,
+    "armour_crown->armour_spaulder": 26.4,
+    "armour_crown->backing_bars_x2": 27.2,
+    "armour_keel_skin": 45.8,
+    "armour_keel->armour_spaulder": 60.0,
+    "armour_keel->backing_bars_x2": 17.9,
+    "s1_base_block_short_skin": 60.4,
+    "s1_base_block_short->armour_spaulder": 21.9,
+    "spaulder_skin": null,
+    "crown_spaulder_interf_mm3": 0.0
+   }
+  ],
+  "ref_mount_mass_g_proxy": 565.6,
+  "pros": [
+   "re-fit to Forest's measured body (I7) by loosening 4 bolts, no new plate/wing/pipeline run for P offsets within +-10 z / +-8 x",
+   "wing, rail, clasp feet and plate outline unchanged",
+   "same 4 x M5 column pattern and S1 bore; stage, cowl, dome untouched",
+   "tilt wedges give a fit option without re-cutting anything"
+  ],
+  "cons": [
+   "adapter+shims+backing bars+gaiter add ~84 g; net +21.7 g on the proxy basis after the shorter block and trimmed armour (spares: 2 wedges 17.8 g not counted)",
+   "more joints: 3 more faces that can creep/loosen; PETG-CF block bearing on pad shims",
+   "tilt wedge moves P 7 mm and tilts the S1 axis: head keep-out/keepout tables must be re-run per wedge",
+   "armour needs a TPU gaiter and a bigger spaulder scallop (less flush by ~2 mm gap)"
+  ],
+  "risks": [
+   "serration y-slip is friction only (ridges run along y)",
+   "backing bars on plate front may collide with clasp feet locations (clasp_feet.json not available)",
+   "5 deg wedge breaks the 2026-10-12c 'mount tilt withdrawn' choice (Claude decision, not Forest's): option for FIT only, ships at 0, locked by omitting wedge"
+  ],
+  "contract_changes": [
+   "plate: 4 x M5 tapped holes -> 4 slots (5.5 x 25.5) + 2 serrated grooved strips (1.5 pitch x 0.8 deep, y +-9.5 about +-62, z -126..-54)",
+   "plate: 2 x M4 keel csk holes at (+-50,-109) deleted (keel now bolts to adapter tabs)",
+   "plate front: 2 backing bars (x -91..-88) tapped M5",
+   "S1 base block 80 -> 67 mm deep, bolt holes become through-clearance",
+   "spaulder rear edge scalloped around the swept crown",
+   "crown/keel rear edge x -84 -> -58, rear of the round plan cut off flat (the 73.5 mm radius would hit the plate at dx -8); TPU gaiter closes to the plate"
+  ],
+  "decision_conflicts": [
+   "'Mount tilt withdrawn' (Claude, 2026-10-12c): reintroduced only as selectable fit wedges, default 0 deg",
+   "no Forest-decision conflict: no backplate, no hip belt, 5 deg stop margin, DOF, actuators unchanged"
+  ],
+  "gates_to_rerun": [
+   "verify_armor + verify_shoulder at the adjustment extremes",
+   "harness_loads (net +~22 g proxy -> top pad ~+0.06 kPa est; verify vs 14.7)",
+   "keepout_map/elbow tables for any non-zero wedge",
+   "scapular_frame tongue/clasp feet vs backing bars",
+   "print/assembly sequence"
+  ],
+  "assumptions": [
+   "clasp F1/F4 seats assumed; ref plate outline from spec seeds",
+   "6061 adapter strips CNC (printing 0.8 mm teeth is not credible)",
+   "M5 8.8 bolts, usable preload 2 kN each (unverified; PETG-CF block creep not measured)",
+   "mu(Al-Al, serrated) 0.3 unverified"
+  ],
+  "calcs": [
+   {
+    "name": "joint separation moment",
+    "formula": "M_sep = F_c * a ; a = half bolt-column span 26 mm/2 + ~3 mm = 16 mm (pivot at block lower edge: a=34 mm lower bound uses 32)",
+    "inputs": {
+     "F_c_N": 8000.0,
+     "a_mm": 16
+    },
+    "result": {
+     "M_sep_Nm": 128.0,
+     "M_applied_Nm": 10.9,
+     "SF": 11.8
+    }
+   },
+   {
+    "name": "bolt tension from bending",
+    "formula": "M = 8.3 (S2 cap) + m g L ; T_top = M / 32 mm (pivot bottom edge to top bolts)",
+    "inputs": {
+     "m_kg": 3.3,
+     "L_m": 0.08
+    },
+    "result": {
+     "M_Nm": 10.9,
+     "T_top_total_N": 340,
+     "per_bolt_N": 170
+    }
+   },
+   {
+    "name": "z-shear vs tooth jack-up",
+    "formula": "F_slip = F_c * tan(alpha + atan(mu)) ; alpha 30 deg half-flank",
+    "inputs": {
+     "F_c_N": 8000.0,
+     "mu": 0.3
+    },
+    "result": {
+     "F_slip_N": 8489,
+     "F_applied_N": 97,
+     "SF": 87
+    }
+   },
+   {
+    "name": "y-shear (friction only)",
+    "formula": "F_slip = mu F_c ; F_y ~ 0.5 g * 3.8 kg + 8.3/0.578",
+    "inputs": {
+     "mu": 0.3
+    },
+    "result": {
+     "F_slip_N": 2400,
+     "F_applied_N": 33.0
+    }
+   },
+   {
+    "name": "P-position error budget",
+    "formula": "z quantisation +-pitch/2; x quantisation +-0.25 (0.5 mm leaf); tilt: dP = 80 sin(5 deg), tip = 580 sin(5 deg); slot clearance 0.25 -> angle 0.25/124 rad at 575 mm",
+    "result": {
+     "z_mm": 0.75,
+     "x_mm": 0.25,
+     "P_shift_per_5deg_mm": 7.0,
+     "tip_shift_per_5deg_mm": 50.6,
+     "tip_from_slot_slop_mm": 1.16
+    }
+   }
+  ],
+  "printability": "adapter strips and backing bars: CNC 6061 (or waterjet + tooth cut); shim leaves laser-cut; wedges PA-CF flat on bed; crown/keel/spaulder as REF (all < 256 mm); teeth must NOT be printed.",
+  "fitting_procedure": "1) wear the harness with arm at park; 2) Forest measures acromion-to-P height and the P-to-back standoff (tape against a rigid jig, or a scan); 3) loosen 4 M5 (arm weight supported), slide the block in z by the delta (snap to 1.5 mm teeth), add/remove shim leaves for x, retighten to the torque in the spec (target 5 N.m, unverified); 4) re-zero S2 if a wedge is used; about 10 minutes, no re-print."
+ }
+}

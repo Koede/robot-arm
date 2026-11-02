@@ -1,0 +1,322 @@
+{
+ "scene": "J1_selftest",
+ "label": "hint_test",
+ "range": "soft",
+ "park": {
+  "S1p": -18.2,
+  "S2": 17.4
+ },
+ "MM": {
+  "part": 3.0,
+  "skin": 2.0,
+  "head": 60.0
+ },
+ "grid": {
+  "S1p": [
+   -95.0,
+   35.0,
+   28
+  ],
+  "S2": [
+   -30.0,
+   88.0,
+   26
+  ]
+ },
+ "summary": {
+  "grid_shape": [
+   28,
+   26
+  ],
+  "park_free": true,
+  "n_cells": 728,
+  "n_contact": 338,
+  "n_reach_free": 390,
+  "n_frontier": 26,
+  "n_deep": 312
+ },
+ "pairs": {
+  "M1|pad": {
+   "pair": "M1|pad",
+   "MM": 3.0,
+   "dims": [
+    "S1p"
+   ],
+   "designed": false,
+   "d_min_table": 7.749996662139893,
+   "park_d": 7.749996662139893,
+   "n_contact_cells": 0,
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 7.749996662139893,
+   "worst_pose": {
+    "S1p": -30.0
+   },
+   "status": "PASS"
+  },
+  "M1|S1_AK70": {
+   "pair": "M1|S1_AK70",
+   "MM": 3.0,
+   "dims": [
+    "S1p"
+   ],
+   "designed": true,
+   "d_min_table": 5.548692456613935e-07,
+   "park_d": 5.548692456613935e-07,
+   "status": "EXCLUDED(designed contact at park)"
+  },
+  "M1|S1_ring": {
+   "pair": "M1|S1_ring",
+   "MM": 3.0,
+   "dims": [
+    "S1p"
+   ],
+   "designed": true,
+   "d_min_table": 0.0,
+   "park_d": 0.0,
+   "status": "EXCLUDED(designed contact at park)"
+  },
+  "M1|wing": {
+   "pair": "M1|wing",
+   "MM": 3.0,
+   "dims": [
+    "S1p"
+   ],
+   "designed": false,
+   "d_min_table": 0.0,
+   "park_d": 12.525436401367188,
+   "n_contact_cells": 13,
+   "n_frontier_cells": 1,
+   "n_deep_cells": 12,
+   "min_clear_reach_free": 4.8843278884887695,
+   "d_frontier_min": 2.0087013244628906,
+   "worst_contact_pose": {
+    "S1p": -35.0
+   },
+   "status": "BELOW_GATE",
+   "first_contact": {
+    "S1p": [
+     -33.28,
+     -33.28
+    ],
+    "S2": [
+     -30.0,
+     88.0
+    ]
+   },
+   "first_contact_example": {
+    "S1p": -33.28,
+    "S2": -30.0
+   },
+   "n_first_contact_points": 26
+  },
+  "M1|rail": {
+   "pair": "M1|rail",
+   "MM": 3.0,
+   "dims": [
+    "S1p"
+   ],
+   "designed": false,
+   "d_min_table": 18.12116813659668,
+   "park_d": 70.9023666381836,
+   "n_contact_cells": 0,
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 69.10696411132812,
+   "worst_pose": {
+    "S1p": -30.0
+   },
+   "status": "PASS"
+  },
+  "M1|wearer_skin": {
+   "pair": "M1|wearer_skin",
+   "MM": 2.0,
+   "dims": [
+    "S1p"
+   ],
+   "designed": false,
+   "d_min_table": 26.25640296936035,
+   "park_d": 59.7780876159668,
+   "n_contact_cells": 0,
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 50.86288833618164,
+   "worst_pose": {
+    "S1p": -30.0
+   },
+   "status": "PASS"
+  },
+  "M1|wearer_head": {
+   "pair": "M1|wearer_head",
+   "MM": 60.0,
+   "dims": [
+    "S1p"
+   ],
+   "designed": false,
+   "d_min_table": 60.54238510131836,
+   "park_d": 95.76513671875,
+   "n_contact_cells": 0,
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 91.9173355102539,
+   "worst_pose": {
+    "S1p": -30.0
+   },
+   "status": "PASS"
+  },
+  "M2|pad": {
+   "pair": "M2|pad",
+   "MM": 3.0,
+   "dims": [
+    "S1p",
+    "S2"
+   ],
+   "designed": false,
+   "d_min_table": 132.87611389160156,
+   "park_d": 140.9625244140625,
+   "n_contact_cells": 0,
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 132.87611389160156,
+   "worst_pose": {
+    "S1p": -30.0,
+    "S2": 88.0
+   },
+   "status": "PASS"
+  },
+  "M2|S1_AK70": {
+   "pair": "M2|S1_AK70",
+   "MM": 3.0,
+   "dims": [
+    "S1p",
+    "S2"
+   ],
+   "designed": false,
+   "d_min_table": 150.71141052246094,
+   "park_d": 158.2184600830078,
+   "n_contact_cells": 0,
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 150.71141052246094,
+   "worst_pose": {
+    "S1p": -30.0,
+    "S2": 88.0
+   },
+   "status": "PASS"
+  },
+  "M2|S1_ring": {
+   "pair": "M2|S1_ring",
+   "MM": 3.0,
+   "dims": [
+    "S1p",
+    "S2"
+   ],
+   "designed": false,
+   "d_min_table": 128.88003540039062,
+   "park_d": 136.73892211914062,
+   "n_contact_cells": 0,
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 128.88003540039062,
+   "worst_pose": {
+    "S1p": -30.0,
+    "S2": 88.0
+   },
+   "status": "PASS"
+  },
+  "M2|wing": {
+   "pair": "M2|wing",
+   "MM": 3.0,
+   "dims": [
+    "S1p",
+    "S2"
+   ],
+   "designed": false,
+   "d_min_table": 62.43913269042969,
+   "park_d": 160.1240234375,
+   "n_contact_cells": 0,
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 133.1448516845703,
+   "worst_pose": {
+    "S1p": -30.0,
+    "S2": 88.0
+   },
+   "status": "PASS"
+  },
+  "M2|rail": {
+   "pair": "M2|rail",
+   "MM": 3.0,
+   "dims": [
+    "S1p",
+    "S2"
+   ],
+   "designed": false,
+   "d_min_table": 0.0,
+   "park_d": 168.09963989257812,
+   "n_contact_cells": 4,
+   "n_frontier_cells": 0,
+   "n_deep_cells": 4,
+   "min_clear_reach_free": 150.23648071289062,
+   "status": "PASS(contact only in unreachable region, dropped)"
+  },
+  "M2|wearer_skin": {
+   "pair": "M2|wearer_skin",
+   "MM": 2.0,
+   "dims": [
+    "S1p",
+    "S2"
+   ],
+   "designed": false,
+   "d_min_table": 0.0,
+   "park_d": 98.63742065429688,
+   "n_contact_cells": 95,
+   "n_frontier_cells": 0,
+   "n_deep_cells": 95,
+   "min_clear_reach_free": 25.557748794555664,
+   "status": "PASS(contact only in unreachable region, dropped)"
+  },
+  "M2|wearer_head": {
+   "pair": "M2|wearer_head",
+   "MM": 60.0,
+   "dims": [
+    "S1p",
+    "S2"
+   ],
+   "designed": false,
+   "d_min_table": 141.46221923828125,
+   "park_d": 180.92718505859375,
+   "n_contact_cells": 0,
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 141.46221923828125,
+   "worst_pose": {
+    "S1p": 35.0,
+    "S2": 30.0
+   },
+   "status": "PASS"
+  },
+  "M1|M2": {
+   "pair": "M1|M2",
+   "MM": 3.0,
+   "dims": [
+    "S2"
+   ],
+   "designed": false,
+   "d_min_table": 99.2260513305664,
+   "park_d": 99.2347640991211,
+   "n_contact_cells": 0,
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 99.2260513305664,
+   "worst_pose": {
+    "S2": -30.0
+   },
+   "status": "PASS"
+  }
+ },
+ "timing": {
+  "tabulate_s": 3.8,
+  "total_s": 3.8
+ }
+}

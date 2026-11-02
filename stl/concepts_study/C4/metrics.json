@@ -1,0 +1,297 @@
+{
+ "id": "C4",
+ "title": "Bayonet dock-and-go (quick-release arm module)",
+ "parts": [
+  {
+   "name": "dock_ring_receptacle",
+   "mat": "AL",
+   "vol_cm3": 91.46,
+   "mass_g": 246.9,
+   "bbox_mm": [
+    18.0,
+    144.0,
+    120.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 41.5
+  },
+  {
+   "name": "plate_6061",
+   "mat": "AL",
+   "vol_cm3": 64.02,
+   "mass_g": 172.8,
+   "bbox_mm": [
+    8.0,
+    158.0,
+    100.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 26.3
+  },
+  {
+   "name": "connector_receptacle_PLACEHOLDER",
+   "mat": "PETGCF",
+   "vol_cm3": 16.51,
+   "mass_g": 12.9,
+   "bbox_mm": [
+    20.0,
+    88.0,
+    34.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 54.3
+  },
+  {
+   "name": "module_adapter_spigot",
+   "mat": "AL",
+   "vol_cm3": 94.28,
+   "mass_g": 254.6,
+   "bbox_mm": [
+    26.0,
+    116.0,
+    116.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 47.3
+  },
+  {
+   "name": "steel_pins_x4_PLACEHOLDER",
+   "mat": "STEEL",
+   "vol_cm3": 2.81,
+   "mass_g": 22.1,
+   "bbox_mm": [
+    8.0,
+    82.0,
+    82.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 50.0
+  },
+  {
+   "name": "s1_base_block_dockside",
+   "mat": "PETGCF",
+   "vol_cm3": 160.49,
+   "mass_g": 93.9,
+   "bbox_mm": [
+    54.0,
+    136.0,
+    38.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 73.2
+  },
+  {
+   "name": "latch_plunger_safety_PLACEHOLDER",
+   "mat": "STEEL",
+   "vol_cm3": 1.25,
+   "mass_g": 4.9,
+   "bbox_mm": [
+    10.0,
+    16.0,
+    14.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 115.4
+  },
+  {
+   "name": "latch_indicator",
+   "mat": "TPU",
+   "vol_cm3": 0.29,
+   "mass_g": 0.3,
+   "bbox_mm": [
+    8.0,
+    12.0,
+    3.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 127.5
+  },
+  {
+   "name": "armour_crown_module",
+   "mat": "PACF",
+   "vol_cm3": 51.54,
+   "mass_g": 59.3,
+   "bbox_mm": [
+    147.0,
+    147.0,
+    49.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 63.3
+  },
+  {
+   "name": "armour_keel_module",
+   "mat": "PACF",
+   "vol_cm3": 46.77,
+   "mass_g": 53.8,
+   "bbox_mm": [
+    145.2,
+    145.2,
+    18.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 57.3
+  },
+  {
+   "name": "armour_spaulder",
+   "mat": "PACF",
+   "vol_cm3": 24.5,
+   "mass_g": 28.2,
+   "bbox_mm": [
+    124.0,
+    140.0,
+    62.9
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 10.6
+  }
+ ],
+ "mount_mass_g": 949.7,
+ "notes": {
+  "spec_mass_g": {
+   "plate_REF": 278,
+   "armour_REF": 110.6
+  }
+ },
+ "extra": {
+  "summary": "Chassis plate + a 120 mm OD aluminium bayonet receptacle stay on the harness; S1 base, AK70 stage, crown and keel detach as one ~3 kg module with a 4-pin 23 deg twist-lock, spring-plunger + safety slide latch and a blind-mate connector (all PLACEHOLDER). Donning without the arm; hand swaps; field service.",
+  "twist_direction": "Module rotates -23 deg about +x (dock axis, +x rearward) to lock, i.e. the sense gravity drives it for a lateral (+y) arm weight (M_x = -W*y). Gravity roll therefore drives pins INTO the closed slot end; unlocking needs +23 deg against gravity PLUS retracting the plunger and the safety slide. Left arm is the mirror (+23). S1 torque (about z) and S2 pitch (about y) are bending moments on the spigot: reacted as axial pin/ramp loads (couple across the 4 pins, face r~50 mm), NOT as twist. Only S2 torque when S1 has swung the S2 axis onto x, and roll gravity, load the twist lock.",
+  "mass_vs_REF": {
+   "REF_proxy_mount_g": 565.6,
+   "note": "same proxy basis; REF = plate 278.8 + base block 125.2 + crown 67.7 + keel 65.7 + spaulder 28.2"
+  },
+  "contract_changes": [
+   "S1 base 4 x M5 on the plate (y +-62, z -94/-68) REPLACED by a D84 plate bore + 6 x M5 on PCD 104 holding the dock ring (plate loses 4 tapped holes)",
+   "S1 base block shortened 80 -> 54 mm (x -54..0) and bolted (6 x M5 PLACEHOLDER) to the dock-side adapter flange instead of the plate",
+   "keel feet (2 x M4 csk through the plate) deleted; keel hem now bolts to the crown only and travels with the module",
+   "crown rear edge moves from x -84 to -62 (ring occupies x -80..-62)",
+   "new electrical interface: blind-mate connector (S1 bundle, CAN, 12 V, plus 24 V) across the dock; AK70 cable port in the keel (PLACEHOLDER) must route to the plug",
+   "spaulder rear feet (2 x M3 into plate top edge, x -84) and F1/F4 seats UNCHANGED; ring (x>-80) clears them",
+   "dock axis is x at z -81: ring top reaches z -21 above the plate top (-54): re-run skin/clasp/neck ROM for the armour and head keep-out",
+   "assembly order (ASSEMBLY.md section B) changes: module assembled and tested off-body"
+  ],
+  "decision_conflicts": [
+   "none of the standing decisions broken (no backplate/hip belt, joints, stops, 5 deg rule); load path unchanged in kind; adds ~mass to the top pad (binding gate 14.28 of 14.7 kPa): must be checked",
+   "I1 shoulder geometry is LOCKED: this reopens it (new interface contract)"
+  ],
+  "calcs": {
+   "loads": {
+    "W_arm_N": 15.4,
+    "W_mod_N": 18.6,
+    "Mx_unlock_sense_Nm": 12.5,
+    "M_bend_Nm": 13.7,
+    "basis": "Mx=8.3(S2 cap onto x at S1 swing)+W_arm*0.25+W_mod*0.02; Mb=hypot(S1 cap 8.3, S2 8.3+W_mod*0.055+W_arm*0.10)"
+   },
+   "pin": {
+    "axial_N_max": 104,
+    "tangential_N": 67,
+    "shear_N": 9,
+    "pin_d_mm": 8,
+    "bending_stress_MPa": 10.3,
+    "shear_stress_MPa": 1.35,
+    "bearing_on_Al_slot_MPa": 1.72,
+    "formula": "F_ax=Mb*x/sum(x^2), x=r cos45, r=46.5 mm, 4 pins; F_t=Mx/(4 r); sigma=F*e/(pi d^3/32), e=5 mm; bearing=F/(d*9 mm)"
+   },
+   "release": {
+    "latch_pin_d_mm": 5,
+    "tau_allow_MPa": 150,
+    "latch_shear_N": 2945,
+    "release_resistance_Nm": 153.2,
+    "required_3p1xS1cap_Nm": 25.7,
+    "SF_vs_required": 6.0,
+    "SF_vs_Mx": 12.2,
+    "formula": "T=F_shear*0.052 m, F_shear=tau*pi d^2/4; friction/preload not counted"
+   },
+   "backlash": [
+    {
+     "slop_mm": 0.1,
+     "angle_deg": 0.123,
+     "tip_error_mm_at_575": 1.24
+    },
+    {
+     "slop_mm": 0.2,
+     "angle_deg": 0.246,
+     "tip_error_mm_at_575": 2.47
+    }
+   ],
+   "preload": {
+    "face_lift_check": "per-pin axial 'Fpin_ax' must be < preload per pin else the flange face lifts; need >= 110 N/pin (>= 440 N total) from the cam ramp + wave spring; ramp 3 deg, mu 0.15: lock torque ~ F*r*tan(3deg+8.5deg)=4.2 N.m",
+    "tilt_if_unpreloaded": "spigot radial clearance 0.1 / length 18 -> 0.64 deg -> 6.4 mm at the tip; hence a 5 deg tapered spigot seat or preloaded flange face is mandatory"
+   }
+  },
+  "printability": "ring and adapter spigot are turned 6061 (not printed); pins/latch bought; crown/keel PA-CF as before; block PETG-CF printed with a flat flange face down. All parts < 256 mm.",
+  "donning": [
+   "1 harness + plate + ring on the body, module off (arm-less, ~2.6 kg lighter on the shoulders)",
+   "2 line the module's red arrows at the entry slots, push -x until the flange seats",
+   "3 twist -23 deg (right arm) until the plunger snaps and the red indicator pops",
+   "4 push the safety slide; connector mates blind during the push",
+   "5 doffing: slide, pull plunger, +23 deg, pull; dead-man must trip when the connector unmates"
+  ],
+  "pros": [
+   "don/doff the harness without the 3 kg arm",
+   "hand rev B/C swap and arm service off body",
+   "module can be bench-tested and charged separately",
+   "keel feet and 4 M5 bolts go away"
+  ],
+  "cons": [
+   "more mass and parts: see mass delta",
+   "backlash / tilt error at P unless preloaded (tip error up to 6 mm uncorrected)",
+   "an unlatch failure drops 3 kg on the wearer: needs a double-action latch",
+   "connector adds a failure point in the E-stop / dead-man chain",
+   "ring sticks out 33 mm above the plate top: new ROM check"
+  ],
+  "risks": [
+   "preload loss under 13 N.m bending lifts the flange face",
+   "wave-spring/cam creep in the printed-free Al parts is minor; latch wear",
+   "cable bundle through the D66 spigot is tight with the 8.2 mm S1 bundle",
+   "ring top near neck/trapezius skin"
+  ],
+  "gates_to_rerun": [
+   "verify_shoulder, verify_armor (crown/keel new x extents), verify_assembly sequence",
+   "harness_loads top-pad pressure (mass added behind the plate)",
+   "torque/mount stiffness and tip pose error",
+   "body ROM (ring top z -21)",
+   "electronics connector + isolation, E-stop chain"
+  ],
+  "assumptions": [
+   "module mass 1.9 kg; arm beyond S2 1.566 kg (DESIGN_STATE)",
+   "dock axis z -81 at y 0; pin radius 46.5 mm; vendor items PLACEHOLDER",
+   "tau_allow 150 MPa steel latch pin; no vendor data for the plunger or connector",
+   "proxy armour masses are heavier than spec (REF 161.6 vs 110.6 g)"
+  ],
+  "mass_delta_vs_REF_g": 384.1
+ }
+}

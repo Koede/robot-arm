@@ -1,0 +1,346 @@
+{
+ "id": "J5",
+ "title": "Gimbal hoops in a flat bay",
+ "parts": [
+  {
+   "name": "plate_6061",
+   "mat": "AL",
+   "vol_cm3": 99.32,
+   "mass_g": 268.2,
+   "bbox_mm": [
+    6.0,
+    158.0,
+    107.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 17.5,
+   "protrusion_mm": 20.0
+  },
+  {
+   "name": "support_rib",
+   "mat": "AL",
+   "vol_cm3": 50.62,
+   "mass_g": 136.7,
+   "bbox_mm": [
+    57.0,
+    6.0,
+    148.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 60.2,
+   "protrusion_mm": 71.0
+  },
+  {
+   "name": "bearing_arc_fixed",
+   "mat": "AL",
+   "vol_cm3": 23.8,
+   "mass_g": 64.3,
+   "bbox_mm": [
+    14.0,
+    111.7,
+    133.7
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 109.6,
+   "protrusion_mm": 85.0
+  },
+  {
+   "name": "standoff0",
+   "mat": "AL",
+   "vol_cm3": 3.24,
+   "mass_g": 8.7,
+   "bbox_mm": [
+    51.0,
+    9.0,
+    9.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 69.4,
+   "protrusion_mm": 71.0
+  },
+  {
+   "name": "standoff1",
+   "mat": "AL",
+   "vol_cm3": 3.24,
+   "mass_g": 8.7,
+   "bbox_mm": [
+    51.0,
+    9.0,
+    9.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 91.5,
+   "protrusion_mm": 71.0
+  },
+  {
+   "name": "ring_S1",
+   "mat": "AL",
+   "vol_cm3": 69.28,
+   "mass_g": 187.0,
+   "bbox_mm": [
+    24.0,
+    124.0,
+    124.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 114.1,
+   "protrusion_mm": 93.0
+  },
+  {
+   "name": "ak70_S1",
+   "mat": "AL",
+   "vol_cm3": 312.22,
+   "mass_g": 621,
+   "bbox_mm": [
+    50.2,
+    89.0,
+    89.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "bought",
+   "contact": false,
+   "skin_min_mm": 32.2,
+   "protrusion_mm": 70.2
+  },
+  {
+   "name": "s1_shaft_pulley",
+   "mat": "AL",
+   "vol_cm3": 6.77,
+   "mass_g": 18.3,
+   "bbox_mm": [
+    22.8,
+    31.0,
+    31.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 90.7,
+   "protrusion_mm": 93.0
+  },
+  {
+   "name": "belt_S1",
+   "mat": "TPU",
+   "vol_cm3": 5.25,
+   "mass_g": 6.3,
+   "bbox_mm": [
+    7.0,
+    125.6,
+    197.1
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 102.3,
+   "protrusion_mm": 92.5
+  },
+  {
+   "name": "hoop_S2",
+   "mat": "AL",
+   "vol_cm3": 24.08,
+   "mass_g": 65.0,
+   "bbox_mm": [
+    87.9,
+    120.9,
+    94.4
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 114.9,
+   "protrusion_mm": 122.0
+  },
+  {
+   "name": "ak70_S2",
+   "mat": "AL",
+   "vol_cm3": 299.79,
+   "mass_g": 621,
+   "bbox_mm": [
+    88.9,
+    73.7,
+    99.6
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "bought",
+   "contact": false,
+   "skin_min_mm": 65.5,
+   "protrusion_mm": 122.5
+  },
+  {
+   "name": "xm540_S3",
+   "mat": "AL",
+   "vol_cm3": 86.23,
+   "mass_g": 165,
+   "bbox_mm": [
+    45.1,
+    71.8,
+    67.7
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "bought",
+   "contact": false,
+   "skin_min_mm": 123.9,
+   "protrusion_mm": 80.2
+  },
+  {
+   "name": "upper_arm",
+   "mat": "PACF",
+   "vol_cm3": 676.93,
+   "mass_g": 778.5,
+   "bbox_mm": [
+    116.4,
+    116.2,
+    184.4
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "arm",
+   "contact": false,
+   "skin_min_mm": 125.2
+  },
+  {
+   "name": "fairing_lower",
+   "mat": "PACF",
+   "vol_cm3": 148.63,
+   "mass_g": 170.9,
+   "bbox_mm": [
+    84.0,
+    164.0,
+    102.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 14.8,
+   "protrusion_mm": 96.0
+  }
+ ],
+ "mount_mass_g": 2341.1,
+ "notes": {},
+ "extra": {
+  "own_stage": true,
+  "summary": "Gimbal hoops lie in the back plane at rest: S1 = ring about +x (back normal) driven 4:1 by a flat AK70 and belt, S2 = inner hoop about an in-plane diameter driven direct by a second AK70 riding on the ring, S3 XM540 on the hoop, arm along the hoop plane. Flat at rest, but the tilting hoop sweeps a sphere of R 44 about P, so the real envelope is not much flatter than a 'dome <= 40 mm'.",
+  "axes": {
+   "S1": "ring axis +x (back normal) through P=(-30,0,0), AK70 #1 flat on the plate at (y 15, z -118), belt 4:1",
+   "S2": "in-plane diameter A2=(0,cos phi,-sin phi) through P, AK70 #2 on the ring, direct drive",
+   "S3": "arm axis (in the hoop plane), XM540 on the hoop"
+  },
+  "ranges_deg": {
+   "phi_S1": [
+    -40,
+    90
+   ],
+   "theta_S2": [
+    -50,
+    80
+   ],
+   "hard_stops": "5 deg beyond, passive (ring stop lugs on the fixed arc; hoop stop lugs on the ring)",
+   "display_pose": {
+    "phi": 18.2,
+    "theta": 17.4
+   }
+  },
+  "coverage_of_baseline_arm_directions_pct": 100.0,
+  "unreachable": "none inside the box; the box also reaches more directions than the baseline (forward-horizontal at theta 80, backward-down region is not needed)",
+  "depth_behind_back_mm": {
+   "displayed_pose": 122.5,
+   "swept_over_range": 157.7,
+   "baseline": 181
+  },
+  "P": {
+   "x": -30.0,
+   "off_back_mm": 78.0,
+   "vs_baseline": "P moves 30 mm toward the body (x 0 -> -30); head/neck keep-out tables shift"
+  },
+  "mass_baseline": {
+   "bought_g": 1407,
+   "mount_proxy_g": 565.6
+  },
+  "torque": {
+   "S2_unbalanced": "tau_S2 = M sin(theta) cos(phi), M = 6.49 N.m worst: 6.49 N.m vs 8.3 rated = SF 1.28 (same as baseline, FAIL < 2)",
+   "S2_balancer": "balancer fixed to the ring cannot know phi: K = M/2 = 3.25 N.m, residual max|M cos(phi) - K| sin(80) = 3.20 N.m -> SF 2.60 (PASS) over phi -40..90",
+   "S1": "arm horizontal, theta 0: 6.49 + S2 motor 0.621 kg x 9.81 x 0.085 m = 0.52 -> 7.0 N.m at the ring; motor torque = 7.0/(4.0 x 0.92) = 1.9 N.m -> SF 4.4; belt tension F = (7.0/4)/0.0155 m = 113 N (belt rating PLACEHOLDER)",
+   "speed": "S1 joint speed cap 49.5 deg/s -> 198 deg/s at the motor shaft (4:1), AK70 speed limit PLACEHOLDER"
+  },
+  "stops": "passive: S1 ring lugs on the fixed arc; S2 lugs between hoop pivot boss and ring; TPU bumpers at +5 deg beyond soft",
+  "balancer": "K sin(theta) cord/sheave or clockspring at the passive +A2 pivot between ring and hoop, K = 3.2 N.m (half the worst, see torque)",
+  "wiring": "S2 motor and S3 bundle (8.2 mm) leave the ring through a flex loop along the ring face; total phi travel 130 deg so no slip ring; the hoop pivot has no hollow shaft so S3/E cables run in a loop along the hoop edge",
+  "decision_conflicts": [
+   "ball-styled shoulder / concurrent axes: axes stay concurrent but the ball is gone (Forest override)",
+   "arm rest direction changes: rest is in the back plane, not up (control homology map and keep-out tables change)",
+   "S1 now carries gravity (baseline S1 was vertical, no load)"
+  ],
+  "contract_changes": [
+   "plate shrinks to 94-88 mm and moves 6 mm rearward, outline z -165..-58; S1 4 x M5 block pattern replaced by the rib/arc standoffs",
+   "clasp feet and wing tongue seats unchanged in y,z but the plate x face moves from -88 to -94 (wing lap +6 mm)"
+  ],
+  "pros": [
+   "flat at rest (ring plane 28 mm thick, fairing 82 mm incl. motors)",
+   "concurrent axes, same actuators, SF 4.4 on S1 via the belt",
+   "ranges cover 100 % of the baseline direction set"
+  ],
+  "cons": [
+   "swept hoop sphere R44 about P: no flat dome, depth to +158 mm behind back over the range",
+   "S2 SF 1.28 without a balancer, balancer cannot track phi (residual 3.25 N.m)",
+   "ring needs >= 180 deg of retention but the S2 motor orbit blocks 90..220 deg of the track: bearing is UNRESOLVED (a segmented race is a PLACEHOLDER)",
+   "exposed pinch points between hoop and ring (ISO 13857 4 mm rule) need a guard"
+  ],
+  "risks": [
+   "ring/hoop alignment tolerance, belt stretch (backlash at the tip: 0.5 deg ring = 5 mm at 575 mm)",
+   "S2 motor mass on the ring (0.52 N.m on S1)",
+   "head clearance with P 30 mm closer"
+  ],
+  "gates_to_rerun": [
+   "verify_shoulder",
+   "sweep_full + keep-out tables (kinematics changed)",
+   "control_map homology / task-space DLS",
+   "harness_loads (mass moves)",
+   "balancer design",
+   "firmware gravity model grav_model.h"
+  ],
+  "assumptions": [
+   "rated 8.3 N.m, belt efficiency 0.92, belt/bearing/pulley vendor parts PLACEHOLDER",
+   "F1/F4 seats assumed",
+   "arm stub = upper arm to the elbow ball only"
+  ],
+  "mass_table_g": {
+   "structure_joint": 763.2,
+   "bought": 1407,
+   "armour": 170.9,
+   "total_counted": 2341.1,
+   "baseline": {
+    "bought": 1407,
+    "mount_proxy": 565.6,
+    "total": 1972.6
+   },
+   "note": "structure+armour 934 g vs baseline mount proxy 565.6 g"
+  },
+  "skin_gap_note": "plate min skin gap 17.5 mm (< 20 mm over the moving blade rule: trim the plate lower edge or raise it 3 mm); all other parts >= 32 mm; hoop/S2 motor at the display pose >= 65 mm",
+  "depth_note": "depth at display pose 122 mm, swept over the S1/S2 box 158 mm (baseline 181, -13 % swept / -32 % displayed); the 40 mm dome is NOT achieved: the hoop sphere R44 about P needs P_x + 44 = +14 mm."
+ }
+}

@@ -1,0 +1,426 @@
+{
+ "id": "J6",
+ "title": "Differential bevel shoulder (flat)",
+ "parts": [
+  {
+   "name": "ak70_A",
+   "mat": "AL",
+   "vol_cm3": 312.22,
+   "mass_g": 621.0,
+   "bbox_mm": [
+    50.2,
+    89.0,
+    89.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "bought",
+   "contact": false,
+   "skin_min_mm": 43.2,
+   "protrusion_mm": 54.2
+  },
+  {
+   "name": "ak70_B",
+   "mat": "AL",
+   "vol_cm3": 312.22,
+   "mass_g": 621.0,
+   "bbox_mm": [
+    50.2,
+    89.0,
+    89.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "bought",
+   "contact": false,
+   "skin_min_mm": 91.1,
+   "protrusion_mm": 54.2
+  },
+  {
+   "name": "motor_pinion_A",
+   "mat": "STEEL",
+   "vol_cm3": 20.44,
+   "mass_g": 96.3,
+   "bbox_mm": [
+    15.5,
+    45.0,
+    45.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 97.1,
+   "protrusion_mm": 69.8
+  },
+  {
+   "name": "gear_in_A",
+   "mat": "STEEL",
+   "vol_cm3": 17.21,
+   "mass_g": 81.0,
+   "bbox_mm": [
+    45.0,
+    15.0,
+    45.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 125.4,
+   "protrusion_mm": 107.2
+  },
+  {
+   "name": "side_gear_A",
+   "mat": "STEEL",
+   "vol_cm3": 20.28,
+   "mass_g": 95.5,
+   "bbox_mm": [
+    45.0,
+    15.0,
+    45.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 135.8,
+   "protrusion_mm": 107.2
+  },
+  {
+   "name": "side_shaft_A",
+   "mat": "STEEL",
+   "vol_cm3": 2.01,
+   "mass_g": 15.8,
+   "bbox_mm": [
+    16.0,
+    10.0,
+    16.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 141.6,
+   "protrusion_mm": 92.8
+  },
+  {
+   "name": "motor_pinion_B",
+   "mat": "STEEL",
+   "vol_cm3": 20.44,
+   "mass_g": 96.3,
+   "bbox_mm": [
+    15.5,
+    45.0,
+    45.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 139.5,
+   "protrusion_mm": 69.8
+  },
+  {
+   "name": "gear_in_B",
+   "mat": "STEEL",
+   "vol_cm3": 17.21,
+   "mass_g": 81.0,
+   "bbox_mm": [
+    45.0,
+    15.0,
+    45.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 147.2,
+   "protrusion_mm": 107.2
+  },
+  {
+   "name": "side_gear_B",
+   "mat": "STEEL",
+   "vol_cm3": 20.28,
+   "mass_g": 95.5,
+   "bbox_mm": [
+    45.0,
+    15.0,
+    45.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 143.5,
+   "protrusion_mm": 107.2
+  },
+  {
+   "name": "side_shaft_B",
+   "mat": "STEEL",
+   "vol_cm3": 2.01,
+   "mass_g": 15.8,
+   "bbox_mm": [
+    16.0,
+    10.0,
+    16.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 159.2,
+   "protrusion_mm": 92.8
+  },
+  {
+   "name": "cross_shaft_pinions",
+   "mat": "STEEL",
+   "vol_cm3": 6.28,
+   "mass_g": 203.0,
+   "bbox_mm": [
+    79.1,
+    10.0,
+    34.6
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 126.8,
+   "protrusion_mm": 124.3
+  },
+  {
+   "name": "cage_plates",
+   "mat": "PACF",
+   "vol_cm3": 99.1,
+   "mass_g": 114.0,
+   "bbox_mm": [
+    113.8,
+    72.0,
+    78.2
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 98.3,
+   "protrusion_mm": 144.8
+  },
+  {
+   "name": "hub_boom",
+   "mat": "PACF",
+   "vol_cm3": 23.87,
+   "mass_g": 13.7,
+   "bbox_mm": [
+    46.9,
+    38.6,
+    83.1
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "arm",
+   "contact": false,
+   "skin_min_mm": 144.6
+  },
+  {
+   "name": "xm540_S3",
+   "mat": "AL",
+   "vol_cm3": 86.23,
+   "mass_g": 165.0,
+   "bbox_mm": [
+    50.5,
+    69.0,
+    67.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "bought",
+   "contact": false,
+   "skin_min_mm": 127.6,
+   "protrusion_mm": 82.5
+  },
+  {
+   "name": "upper_arm",
+   "mat": "PETGCF",
+   "vol_cm3": 231.33,
+   "mass_g": 90.2,
+   "bbox_mm": [
+    82.6,
+    82.6,
+    92.3
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "arm",
+   "contact": false,
+   "skin_min_mm": 130.8
+  },
+  {
+   "name": "elbow_ball",
+   "mat": "PETGCF",
+   "vol_cm3": 353.75,
+   "mass_g": 92.0,
+   "bbox_mm": [
+    87.8,
+    87.9,
+    87.9
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "arm",
+   "contact": false,
+   "skin_min_mm": 153.6
+  },
+  {
+   "name": "motor_saddle",
+   "mat": "PACF",
+   "vol_cm3": 133.63,
+   "mass_g": 76.8,
+   "bbox_mm": [
+    6.0,
+    232.0,
+    96.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "joint",
+   "contact": false,
+   "skin_min_mm": 27.0,
+   "protrusion_mm": 4.0
+  },
+  {
+   "name": "fairing",
+   "mat": "PACF",
+   "vol_cm3": 42.31,
+   "mass_g": 48.7,
+   "bbox_mm": [
+    87.1,
+    229.0,
+    88.9
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 44.5,
+   "protrusion_mm": 92.6
+  }
+ ],
+ "mount_mass_g": 2426.7,
+ "notes": {},
+ "extra": {
+  "own_stage": true,
+  "summary": "Two flat AK70s (x axis) at y -/+70 drive a miter-bevel differential (side-gear axis = lateral y through P, cross shaft along x); cage rotation phi = forward swing, cross-shaft spin psi = lateral tilt of the arm; S3 XM540 along the arm.",
+  "axes": {
+   "u_phi": "lateral y through P (motors A+B common mode), cage rotation, ~baseline S2 role",
+   "p_psi": "cross shaft, x at phi=0, rotates with the cage (motors A-B differential), arm tilt toward +y",
+   "S3": "XM540 along the arm axis, 70..114 mm from P",
+   "motors": "AK70-10 A at y=-70 and B at y=+70, axes along x, back faces at x=-104 on a 6 mm PA-CF saddle (x -110..-104)"
+  },
+  "kinematics": "d = (cos psi sin phi, sin psi, cos psi cos phi), phi = -s (s forward positive).  Gear angles alpha (A), beta (B) about +y: phi=(alpha+beta)/2, psi=(alpha-beta)/2 * Zg/Zp (=1, miter Z30/Z30).  Motor angles theta_A = sigma_A alpha, theta_B = sigma_B beta (k_in = 1; sign pattern sigma = +/-1 set at bench).  Torques: T_phi = tau_A+tau_B, T_psi = (Zp/Zg)(tau_A-tau_B); each motor tau = (T_phi +/- T_psi)/2.",
+  "soft_ranges": {
+   "s_forward_deg": [
+    -87.0,
+    88.0
+   ],
+   "psi_deg": [
+    -15.0,
+    50.0
+   ],
+   "hard_deg": {
+    "s": [
+     -92.0,
+     93.0
+    ],
+    "psi": [
+     -20.0,
+     55.0
+    ]
+   }
+  },
+  "coverage_baseline_dirs_3deg": 0.799,
+  "unreachable": "baseline directions with lateral latitude asin(d_y) > 50 deg (arm raised sideways, S2 > ~60 at S1 ~ 90) and < -15 deg (back-medial, S2 < ~-12): 20.1 % of the baseline set; psi range is capped by the sector-gear window (pinion mesh arc + boom window must not overlap: delta psi < ~65 deg for a 14 mm boom starting 70 mm from P, tube R32 beyond the gear radius)",
+  "full_baseline_psi_requirement_deg": [
+   -30,
+   87.5
+  ],
+  "depth_behind_back_mm": 144.8,
+  "depth_swept_bound_mm": 146.9,
+  "head_neck_note": "closest part to skin: motor A 42.5 mm (head/neck 60 mm rule not met statically at P_z = 0; drop P_z by ~20-30 mm or narrow)",
+  "baseline_depth_mm": 181,
+  "P_vs_back": "P at x = -23.25 (85 mm behind the back surface x -108... i.e. 85 mm), baseline 108 mm: P moves -23.25 mm toward the body; z and y unchanged (P_z 0, y 0)",
+  "torque": {
+   "G_Nm": 6.46,
+   "worst_motor_torque_unbalanced_Nm": 3.23,
+   "at": {
+    "s": -87.0,
+    "psi": -2.5,
+    "T_phi": 6.45,
+    "T_psi": 0.01,
+    "M": 6.45
+   },
+   "SF_vs_8p3_unbalanced": 2.57,
+   "worst_with_ideal_phi_balancer_Nm": 2.47,
+   "SF_with_balancer": 3.35,
+   "note": "tau_motor = (|T_phi|+|T_psi|)/2 with k_in = 1; baseline S2 alone 6.49 N.m on one motor (SF 1.28). Single-axis peak: 2 x 8.3 = 16.6 N.m on either axis if the other is unloaded. SF>=2 needs tau <= 4.15 N.m: unbalanced worst case inside the soft range passes (see SF); a phi balancer (zero-length spring, K ~3.8 N.m) fixes it; an option is k_in = 2 (motor pinion Z20 : gear Z40) halving motor torque (and speed range) at +gear size.",
+   "efficiency": "two bevel meshes in series per path (0.97 each, assumed) = 0.94"
+  },
+  "gears": {
+   "module": 1.5,
+   "side_gears": "Z30 miter (PD 45), 2",
+   "cross_pinions": "Z30 miter, 2 on a 10 mm shaft",
+   "motor_pairs": "Z30:Z30 miter, 2 (A_in/B_in + motor pinions)",
+   "vendor": "PLACEHOLDER: hardened steel bevel gears (e.g. KHK-class SB1.5-30), none selected; bearing sizes PLACEHOLDER"
+  },
+  "backlash": {
+   "assumed_arcmin_per_mesh": 10,
+   "at_output_arcmin": "10 (pinion/side-gear mesh) + 10/1 (motor mesh, k_in 1) = 20 worst, RSS 14",
+   "tip_mm_at_575": 3.3,
+   "tip_mm_rss": 2.3,
+   "note": "AK70 internal planetary backlash not included (unverified)"
+  },
+  "stops": "passive, 5 deg beyond soft: phi (cage) by TPU-bumped lug on the cage plate vs two posts on the saddle housing; psi by the hub boom hitting TPU bumpers on the cage plates at psi hard -15 / +55.  Stops sit at the OUTPUT, so they load the housing/cage and never the gear train.  Because motor angles couple both axes, the motor-side travel limit is the L-infinity box in (phi,psi); the firmware must clamp (phi,psi), not motor angles.",
+  "balancer": "a zero-length spring/cord on the cage about the lateral axis (u), mounted on the saddle above/behind motor A; it cancels T_phi only; the psi component of the arm weight (|T_psi|<= G sin(psi) cos(.)) stays on the motors.",
+  "wiring": "8.2 mm bundle: motors' CAN/power stay on the fixed saddle (no wire crosses a joint for the motors); the XM540 + elbow/hand wires cross the differential: route as a service loop through the hollow cross shaft (bore 10 mm needed, shaft shown solid: PLACEHOLDER) then along the boom; limited by psi/phi travel (clockspring not needed for +/-90).",
+  "decision_conflicts": "Overrides (per Forest, this study only): ball-styled shoulder and axes concurrent at P (they remain concurrent, but the S1/S2 roles are replaced by phi/psi; 'S1 vertical' no longer exists).  Keeps: 3 DOF + same actuators, passive stops, 5 deg margin, no backplate/hip belt.  Head/neck keep-out: medial motor B/A at y -115..-26 is at head height (P_z = 0); static skin gap reported - needs the 60 mm head/neck rule checked.",
+  "contract_changes": "S1 base block/plate 4xM5 pattern, keel/crown/spaulder, yoke, S2 clamp, balancer anchors, S1 stop posts and lug all retire; new 6 mm saddle (2 x motor pad) bolts to the wing tongue; wing tongue seat height/width must widen to y -116..+116.  ROM/keep-out tables, control homology map (S1/S2 -> phi/psi, differential decoupling) and firmware gravity model change.",
+  "pros": [
+   "max single-axis torque 16.6 N.m (SF 2.6 alone vs 1.28 today)",
+   "all heavy motors fixed on the wing (no motor mass on the moving arm base; low inertia at S1/S2)",
+   "no cables cross the first two joints for the motors",
+   "depth ~ 128 mm vs 181 mm"
+  ],
+  "cons": [
+   "both motors work on every move (differential); unbalanced SF 2.57 inside the range but 1.81 if gravity splits 45/45 between phi and psi (outside this range): balancer still advisable",
+   "psi range capped at 65 deg span (window): 20 % of baseline directions unreachable",
+   "gear train 8 steel bevel gears, backlash 14-20 arcmin ~ 2.4 mm at tip, noise, cost",
+   "230 mm wide (y -115..+115) at head height: neck/head clearance and shoulder-lateral overhang",
+   "pinion/cage loads and sector-gear windows are fragile"
+  ],
+  "risks": [
+   "sector-gear window geometry not proven (proxy only)",
+   "head/neck keep-out static gap",
+   "gear tooth stress with 16.6 N.m peaks (not calculated)",
+   "controls: coupling + singularity at psi = +/-90 (outside range)"
+  ],
+  "gates_to_rerun": [
+   "verify_shoulder/verify_armor replaced (new parts)",
+   "full sweep + keep-out tables (keepout_map, sweep_full, gen_tables)",
+   "control_map.py homology (S1/S2 -> phi/psi) + control.h + grav_model.h",
+   "harness_loads (top-pad margin 2 %: mass change)",
+   "S2 free-fall braking (T12) both motors, dual windings",
+   "print table"
+  ],
+  "assumptions": [
+   "miter gears Z30 module 1.5, 10 arcmin/mesh, 0.97 efficiency",
+   "arm weight moment G = 6.46 N.m worst (payload 0.5 kg at the claw tip)",
+   "P_z = 0 and y = 0 kept",
+   "AK70 length 50.25 and radius 44.5 (verified), flange pattern PLACEHOLDER",
+   "gear blanks modelled as stacked cylinders; mass = volume x 7.85 x 0.6"
+  ],
+  "mass_g": {
+   "bought": 1407,
+   "structure_and_gears": 1019.7
+  }
+ }
+}

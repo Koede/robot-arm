@@ -1,0 +1,167 @@
+{
+ "id": "C6",
+ "title": "Ventilated lattice cage",
+ "parts": [
+  {
+   "name": "plate_6061",
+   "mat": "AL",
+   "vol_cm3": 103.25,
+   "mass_g": 278.8,
+   "bbox_mm": [
+    8.0,
+    158.0,
+    100.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 26.4
+  },
+  {
+   "name": "s1_base_block",
+   "mat": "PETGCF",
+   "vol_cm3": 214.07,
+   "mass_g": 125.2,
+   "bbox_mm": [
+    80.0,
+    136.0,
+    38.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 49.4
+  },
+  {
+   "name": "cage_crown",
+   "mat": "PACF",
+   "vol_cm3": 48.67,
+   "mass_g": 56.0,
+   "bbox_mm": [
+    161.1,
+    150.6,
+    49.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 44.0
+  },
+  {
+   "name": "cage_keel",
+   "mat": "PACF",
+   "vol_cm3": 40.88,
+   "mass_g": 47.0,
+   "bbox_mm": [
+    160.6,
+    145.2,
+    18.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 39.5
+  },
+  {
+   "name": "cage_spaulder",
+   "mat": "PACF",
+   "vol_cm3": 23.85,
+   "mass_g": 27.4,
+   "bbox_mm": [
+    123.8,
+    139.6,
+    63.3
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 10.6
+  }
+ ],
+ "mount_mass_g": 534.4,
+ "notes": {
+  "basis": "proxy"
+ },
+ "extra": {
+  "summary": "Armour redone as an open rib cage (10 crown ribs + 2 hoops, 8 keel ribs + 2 rings, 7-rib spaulder fan with rim, 2 cross lames, 4 solid pads) with a solid 16 mm liner band at the top of the crown over the S2 yoke-disc / brim pinch zone.",
+  "open_areas": "OPEN (outer lattice): crown wall z -98.5..-66.5, keel dish, spaulder between ribs. CLOSED: crown liner band z -66..-50 incl. top brim (yoke disc rim z -56..-49.9), keel lip band z -103..-97, flange feet, spaulder rim/pads/lames.",
+  "mass": {
+   "armour_proxy_g": 130.4,
+   "ref_armour_proxy_g": 161.6,
+   "armour_delta_pct": -19.3,
+   "mount_proxy_g": 534.4,
+   "ref_mount_proxy_g": 565.6,
+   "delta_vs_ref_g": -31.2,
+   "note": "same proxy basis; spec armour 110.6 g -> scaled estimate 89 g"
+  },
+  "openings": {
+   "crown_open_frac": 0.703,
+   "crown_max_opening_mm": 22.0,
+   "keel_open_frac": 0.355,
+   "keel_max_opening_mm": 19.3,
+   "spaulder_open_frac": 0.202,
+   "spaulder_max_opening_mm": 20.3
+  },
+  "opening_check": "Largest inscribed through-opening (diameter, nearest rib sample distance x2): crown 22.0, keel 19.3, spaulder 20.3 mm. All exceed 4 mm, so the 4 mm fingertip rule is met ONLY by geometry, not openings: behind the open crown/keel walls is static hardware (AK70 S1 housing, fixed base block, clamp) with no relative motion (S1 rotor/yoke disc sits in the closed band). Spaulder is >= 12 mm from the stage. Burn/touch hazard at the AK70 housing is not removed.",
+  "contract_changes": [],
+  "decision_conflicts": [
+   "Crown ribs protrude 1.8 mm outward vs the baseline wall (envelope +3.6 mm in x/y; skin/clasp clearances only gained). 4 mm fingertip rule not met by openings (justified by static hardware) - needs Forest/safety sign-off."
+  ],
+  "calcs": [
+   {
+    "name": "open-area fraction",
+    "formula": "A_open / A_wall (sampled outer-wall points not inside the rib/hoop mask)",
+    "inputs": "10 crown ribs 5.5 mm, 2 hoops 4 mm; 8 keel ribs + 2 rings",
+    "result": "crown (z -98.5..-66.5) 70%, keel 36%, spaulder 20%"
+   },
+   {
+    "name": "AK70 S1 housing cooling (ASSUMED h)",
+    "formula": "Q = U_eff * A * dT ; U_eff = U_closed + f_open (U_open - U_closed)",
+    "inputs": "A = 203 cm2 (side 140 + bottom 62), dT 30.0 K, U_closed 3 W/m2K (enclosed, ASSUMED), U_open 7.5 W/m2K (free convection + radiation, ASSUMED 5-10), f_open 0.56",
+    "result": "closed 1.8 W -> cage 3.4 W (+85%); order-of-magnitude only"
+   },
+   {
+    "name": "rib bending, 100 N press at the rear rim (worst case, ribs alone)",
+    "formula": "sigma = (F/n * L) / (b t^2/6)",
+    "inputs": "F 100.0 N, n 3 ribs share, L 49.0 mm cantilever from the lower hoop, rib b 5.5 x t 3.6 mm (3.6 deep: 1.8 wall + 1.8 outward); spaulder ribs 2.2 deep",
+    "result": "M 1633 N.mm, S 11.9 mm3, sigma 137 MPa vs ~70 MPa PA-CF XY allowable (unverified): FAILS as isolated cantilevers; hoops/liner band (closed ring, hoop action) must carry it - needs FEA. Axial (down) press: 1.7 MPa, OK"
+   }
+  ],
+  "printability": "Crown: print -z up as baseline (ribs vertical, hoops 4 mm bridge <= 25 mm between ribs OK). Keel: dish bottom plate becomes radial ribs + 2 rings, bridging <= 30 mm between ribs, print +x up per baseline. Spaulder: ribs 3 mm deep, print +y up. All fit 256 cube; rib width 5.5 mm = 13 perimeters of 0.4 (use 3 perimeters + solid), wall >= 1.4 mm gate: thinnest section 1.8 mm.",
+  "pros": [
+   "~19 % less armour mass on the proxy basis",
+   "open path for AK70 S1 housing heat; more air to the shoulder-top skin",
+   "keeps every interface, fastener and assembly step of rev b",
+   "ribs follow the same floors so flush profile is kept"
+  ],
+  "cons": [
+   "rib-only bending failure case needs hoops/FEA",
+   "exposes the hot/rotating-adjacent hardware to touch and debris",
+   "dust/hair/cable snag path; loses the knight-armour closed read",
+   "4 mm rule not met by openings"
+  ],
+  "risks": [
+   "thin-rib print quality in PA-CF (layer adhesion across 5.5 mm ribs)",
+   "liner band transitions are stress risers",
+   "heat gain estimate rests on assumed h values"
+  ],
+  "gates_to_rerun": [
+   "verify_armor (static/interference/wall p5/print/assembly)",
+   "S1 and arm soft sweeps vs crown and spaulder",
+   "harness_loads (mass)",
+   "finger-access probe (ISO 13857) at crown liner edge",
+   "thermal on the AK70 S1 housing (bench)"
+  ],
+  "assumptions": [
+   "armour proxies from concept_ref (spec envelopes, not verified meshes)",
+   "h values and AK70 dissipation assumed",
+   "rib allowable ~70 MPa PA-CF XY (unverified)",
+   "seat F1/F4 positions assumed (clib.seats)"
+  ]
+ }
+}

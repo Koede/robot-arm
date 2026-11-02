@@ -1,0 +1,307 @@
+{
+ "id": "C3",
+ "title": "Spine column + outrigger beam",
+ "parts": [
+  {
+   "name": "column_pacf",
+   "mat": "PACF",
+   "vol_cm3": 98.14,
+   "mass_g": 56.4,
+   "bbox_mm": [
+    45.2,
+    100.0,
+    160.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 12.9
+  },
+  {
+   "name": "column_al_bar0",
+   "mat": "AL",
+   "vol_cm3": 8.88,
+   "mass_g": 12.0,
+   "bbox_mm": [
+    3.0,
+    20.0,
+    148.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 20.3
+  },
+  {
+   "name": "column_al_bar1",
+   "mat": "AL",
+   "vol_cm3": 8.88,
+   "mass_g": 12.0,
+   "bbox_mm": [
+    3.0,
+    20.0,
+    148.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 20.3
+  },
+  {
+   "name": "beam_pacf_channel",
+   "mat": "PACF",
+   "vol_cm3": 46.45,
+   "mass_g": 53.4,
+   "bbox_mm": [
+    17.0,
+    186.0,
+    62.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 19.6
+  },
+  {
+   "name": "beam_al_seat_plate",
+   "mat": "AL",
+   "vol_cm3": 37.16,
+   "mass_g": 100.3,
+   "bbox_mm": [
+    5.0,
+    144.0,
+    52.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 41.6
+  },
+  {
+   "name": "s1_base_block",
+   "mat": "PETGCF",
+   "vol_cm3": 214.07,
+   "mass_g": 125.2,
+   "bbox_mm": [
+    80.0,
+    136.0,
+    38.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 50.4
+  },
+  {
+   "name": "armour_crown",
+   "mat": "PACF",
+   "vol_cm3": 58.88,
+   "mass_g": 67.7,
+   "bbox_mm": [
+    157.5,
+    147.0,
+    49.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 46.5
+  },
+  {
+   "name": "armour_keel",
+   "mat": "PACF",
+   "vol_cm3": 57.12,
+   "mass_g": 65.7,
+   "bbox_mm": [
+    160.6,
+    145.2,
+    18.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 38.9
+  },
+  {
+   "name": "armour_spaulder",
+   "mat": "PACF",
+   "vol_cm3": 24.5,
+   "mass_g": 28.2,
+   "bbox_mm": [
+    124.0,
+    140.0,
+    62.9
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 10.4
+  },
+  {
+   "name": "ghost_left_beam",
+   "mat": "PACF",
+   "vol_cm3": 46.45,
+   "mass_g": 53.4,
+   "bbox_mm": [
+    17.0,
+    186.0,
+    62.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "ghost",
+   "contact": false,
+   "skin_min_mm": 19.8
+  }
+ ],
+ "mount_mass_g": 520.9,
+ "notes": {
+  "proxy": "REF-basis masses; column counted as half (one arm)"
+ },
+ "extra": {
+  "summary": "Short 160 mm hollow dorsal column (z -222..-62, y -200..-100) on the rail pads/spine bridge, with a 186 mm PA-CF/Al outrigger beam carrying the S1 base on the old x -80 face; replaces the lateral plate + wing tongue and routes both arms' symmetric gravity moments into each other across the spine.",
+  "mass_delta_vs_REF_g": -44.7,
+  "mount_mass_g": 520.9,
+  "ref_mount_mass_g": 565.6,
+  "column_length_mm": 160,
+  "column_length_reason": "z -62 (just below C7/T1, keeps the cervical/neck keel clear and avoids the occiput) to -222; only ~160 mm of thoracic spine is bridged by a rigid part (upper thoracic segments move least, ribcage-stiffened; ROM figures UNSOURCED this session) - a full-height column would stiffen trunk flexion, so it is kept short.",
+  "contract_changes": [
+   "Chassis plate + wing tongue (y -78..-46) deleted; the beam's Al seat plate keeps the x -80 rear face and the 4 x M5 pattern (y +-62, z -94/-68) but is 5 mm (was 8 mm) and 144 x 52 (was 158 x 100).",
+   "Clasp feet (bolt pairs on the plate front) lose their seats: need a new landing (beam front wall / column) - NOT designed.",
+   "Keel feet (2 x M4 at y +-50, z -109) land on the 62 mm tall channel, needs local solid bosses; spaulder rear feet (2 x M3 into the top edge) need solid lands in the 2.5 mm top wall.",
+   "Wing bolts and the wing tongue seat are gone; the wing (rail bridge) is replaced by the beam, so wing/spine-bridge interface re-drawn; left and right booms share one column."
+  ],
+  "decision_conflicts": [
+   "No big backplate: pass (column 100 x 160 is a spine-bridge-sized member, not a backplate) but judge it against Forest's intent.",
+   "No hip belt: pass. Load path still shoulder clasp + paraspinal pads.",
+   "Trunk ROM: a rigid 160 mm member over T1-T8 adds some flexion stiffness (unquantified).",
+   "Nerve-sensitive spine: column bridges the spinous line with >= 10 mm gap (17.8 mm over the highest back point per row, skin gap reported in metrics); centre relief required.",
+   "Nothing rigid on moving skin: beam front is >= 22 mm off the back surface over the medial scapular border (-102 vs -124.6 max back x in y -100..76, z -116..-54): pass."
+  ],
+  "calcs": [
+   {
+    "name": "boom vertical bending + tip deflection",
+    "formula": "M = W*L + M_S2cap ; delta = W L^3/(3 E I) + M_S2 L^2/(2 E I)",
+    "inputs": {
+     "W_N": 31.4,
+     "E_PACF_MPa": 6000.0,
+     "E_Al_MPa": 69000.0,
+     "I_eq_mm4": 798629,
+     "section": "U-channel 17 x 62 x 2.5 PA-CF + 5 x 52 Al plate (modular ratio 11.5)"
+    },
+    "result": {
+     "L100": {
+      "M_vert_Nm": 11.44,
+      "tip_defl_vert_mm": 0.011,
+      "M_horiz_Nm": 8.3,
+      "tip_defl_horiz_mm": 0.105,
+      "sigma_Al_flange_MPa": 5.11,
+      "sigma_PACF_flange_MPa": 0.44
+     },
+     "L150": {
+      "M_vert_Nm": 13.01,
+      "tip_defl_vert_mm": 0.027,
+      "M_horiz_Nm": 8.3,
+      "tip_defl_horiz_mm": 0.236,
+      "sigma_Al_flange_MPa": 5.81,
+      "sigma_PACF_flange_MPa": 0.5
+     }
+    }
+   },
+   {
+    "name": "boom horizontal bending (S1 cap reaction)",
+    "formula": "delta = M L^2/(2 E I_h)",
+    "inputs": {
+     "I_h_eq_mm4": 65881
+    },
+    "result": "in result above (M_horiz 8.3 N.m)"
+   },
+   {
+    "name": "boom torsion (S2 cap about the beam axis y)",
+    "formula": "J = 4 A^2 t / p ; tau = T/(2 A t) ; theta = T L/(G J)",
+    "inputs": {
+     "T_Nm": 8.3,
+     "L_mm": 100,
+     "G_PACF_MPa": 2000.0,
+     "A_mm2": 1160,
+     "p_mm": 158,
+     "t_mm": 2.5
+    },
+    "result": {
+     "J_mm4": 85201,
+     "tau_MPa": 1.43,
+     "twist_deg": 0.279,
+     "tip_error_at_575mm_mm": 2.8
+    }
+   },
+   {
+    "name": "column torsion, one arm vs two arms",
+    "formula": "T_z = S1 cap reaction; mirrored arms: pseudovector components parallel to the mirror plane (M_x, M_z) cancel in the column, M_y (S2 reaction) adds",
+    "inputs": {
+     "T_one_Nm": 8.3,
+     "J_col_mm4": 57670,
+     "G": 2000.0
+    },
+    "result": {
+     "one_arm_twist_deg_over_160mm": 0.66,
+     "two_arms_symmetric_Tz_Nm": 0.0,
+     "two_arms_symmetric_Mx_Nm": 0.0,
+     "M_y_two_arms_Nm": 16.6,
+     "column_Iy_mm4": 17095,
+     "note": "asymmetric (one arm moving) is the design case; gravity moment W*0.15 = 4.7 N.m cancels when both arms hang symmetric"
+    }
+   },
+   {
+    "name": "load path",
+    "formula": "W_arm_total ~ 2 x 31 N (assumed)",
+    "inputs": {},
+    "result": "Column front face rides on the rail pads (y -138..-100 and mirror) so the vertical load enters the paraspinal strips (rail model 12.7 kPa at 5.79 kg/side) and the top pad (C7/T1 + clasp top facet) sees the same N_top = W of the harness model; the boom changes where the moment enters, not the sum of vertical loads. Added S2-pitch reaction (16.6 N.m both arms at cap) now goes into the column as a x-z bending couple: rail pads +/- 104 N over a 160 mm lever (rail pad row spacing 100 mm). The top-pad margin (2.0 %) is NOT improved: the column adds mass at the top."
+   }
+  ],
+  "printability": {
+   "column": "190 x 100 x 14 hollow draped box prints in the 256 mm cube; lay it on its flat rear-ish side (x up) with layers along z, 2.5 mm walls = 6 perimeters, tree supports inside none needed if printed with the open ends sealed by caps",
+   "beam": "186 x 62 x 17 channel: print on its front face (open side up, no supports), Al plate bolts on; PA-CF, annealed"
+  },
+  "pros": [
+   "Symmetric gravity moment (W*0.15 = 4.7 N.m per arm) cancels in the shared column; plate (278.8 g) deleted",
+   "Lateral wing tongue and its wing-plate interface removed (wing-plate gap 0.65 mm, clasp-plate 0.2 mm are the tightest interfaces today)",
+   "Stiff closed box column: one-arm twist only 0.66 deg over 160 mm"
+  ],
+  "cons": [
+   "Clasp feet and keel/spaulder feet need new seats",
+   "Boom tip error from torsion at the S2 cap 2.8 mm at the 575 mm tip",
+   "Rigid midline member across the spine: fit, donning (left/right now coupled), comfort",
+   "Top-pad margin 2 % not improved"
+  ],
+  "risks": [
+   "PA-CF E and G are UNVERIFIED, deflections scale 1/E",
+   "Column fit to Forest's back (I7) is a draped part - re-run on his mesh",
+   "Spinal/nerve comfort and trunk ROM unmeasured",
+   "Left/right coupling: one failed pad loads both arms' stage"
+  ],
+  "gates_to_rerun": [
+   "verify_harness (pressures, new mass and moment path)",
+   "body_loads (stall limit with the column)",
+   "verify_shoulder/verify_armor (spaulder/keel seats)",
+   "sweep_full for the arm vs the beam/column",
+   "print table",
+   "assembly sequence (clasp, column, beams)"
+  ],
+  "assumptions": [
+   "Stage + arm mass beyond the base 3.2 kg (ASSUMED, not from harness_loads)",
+   "L = 100 mm from the column edge to the S1 axis (150 mm to the spine line gives the second result set)",
+   "REF proxy masses (armour proxy 161.6 g vs spec 110.6 g)",
+   "Rail pad stack top 13.5 mm off the skin; column front face at +17.8 mm over the highest back point of each row",
+   "Left boom ghost only; column counts as half"
+  ]
+ }
+}

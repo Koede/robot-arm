@@ -1,0 +1,160 @@
+{
+ "interfaces": [
+  {
+   "boundary": "pad_riser <-> paraspinal rail (top end)",
+   "type": "hollow PA-CF box-beam riser (9.5 deep, 1.8 walls, z (-93.0, -54.0), tapering to z -76 at the pad) lapped on 4 standoffs D10 to 4 bosses on the rail",
+   "where": "beam y (-146.0, -103.0); bolts (y, z) [(-132.0, -86.0), (-132.0, -68.0), (-112.0, -86.0), (-112.0, -68.0)]; standoff length [12.1, 20.4, 12.9, 24.4] mm",
+   "fasteners": "4 x ISO 7380 M4 (lengths in checks.fasteners) from the rear counterbore D8.8 x 2.4 through a D12 post inside the beam, the standoff and into an M4 heat-set 5.6 x 4.5 in the rail boss",
+   "checks": "shanks clean; riser skin gap over the blade 21.8 mm (rule 20), rail zone 20.7 mm (rule 5)"
+  },
+  {
+   "boundary": "pad <-> beam",
+   "type": "one printed body (the beam is fused to the R66 pad plate; sealed internal void, 5.9 mm bridging span, print with the front face on the bed)",
+   "checks": "2 shells (1 outer + internal void)"
+  },
+  {
+   "boundary": "S1' AK70 <-> pad",
+   "type": "flange on the pad rear face (x -104.6)",
+   "fasteners": "6 x M4 on 60 PCD (PLACEHOLDER, position only)",
+   "checks": "motor R44.5 inside pad R66"
+  },
+  {
+   "boundary": "fairing_fixed <-> pad_riser",
+   "type": "radial M3 into 2 front-rim bosses (psi 135, 215 deg); the beam passes the cup wall through a 0.4 mm window",
+   "fasteners": "2 x ISO 7380 M3 x 10, M3 heat-set 4.6 x 5.7",
+   "checks": "shanks clean"
+  },
+  {
+   "boundary": "fairing_lap <-> pad_riser / rail",
+   "type": "static U-skirt (1.8 mm walls) around the standoff cavity: rear edge on the beam front face, front edge follows the rail face with 1.5 mm gap (<= 4 mm); wraps the rail lap",
+   "checks": "no moving part within 40 mm"
+  },
+  {
+   "boundary": "S1' stop posts <-> pad",
+   "type": "2 low posts (top x -100.3 = 3.5 mm under the S2 motor inner face), bolted from the pad FRONT",
+   "fasteners": "2 x ISO 10642 M4 x 10, M4 insert 5.6 x 4 in the post foot",
+   "checks": "posts at [-116.0, 56.0] deg (hard limits + chord)"
+  },
+  {
+   "boundary": "stop collar <-> yoke disc",
+   "type": "flange",
+   "fasteners": "4 x M3 x 8 into inserts in the disc rim (position only)",
+   "checks": "collar R44.6..45.8 over the motor R44.5"
+  },
+  {
+   "boundary": "yoke <-> S1' motor output",
+   "type": "flange",
+   "fasteners": "6 x M4 on 60 PCD (PLACEHOLDER)",
+   "checks": "D20 centre hole"
+  },
+  {
+   "boundary": "yoke bar <-> S2 clamp collar",
+   "type": "bar end butts the clamp end face",
+   "fasteners": "4 x M4 x 12 (position only)",
+   "checks": "0 mm3 interference"
+  },
+  {
+   "boundary": "S2 AK70 <-> clamp",
+   "type": "split ring clamp; ears placed at +-x of the ring (position only)",
+   "fasteners": "2 x M4 x 16",
+   "checks": "bore R44.6"
+  },
+  {
+   "boundary": "S2 adapter <-> S3 cradle bracket <-> XM540",
+   "type": "plate on the adapter face, U-cradle 0.3 mm around the XM540 with a 14 x 10 cable notch in the -y wall at (x PX+22, z z1+100)",
+   "fasteners": "4 x M4 (PLACEHOLDER pattern) + M3 lid screws",
+   "checks": "contract unchanged: S3 horn / upper-arm flange"
+  },
+  {
+   "boundary": "cable F: trunk -> column",
+   "type": "round bundle OD 8.2, ONE planar run in the plane x = -94 (7 mm behind the beam): S-curve of two arcs R 50.2 ({'alpha1_deg': 76.3, 'alpha2_deg': 86.3, 'start_xy': [-119.0, -145.6], 'radius': 50.2}) from the assumed trunk exit E0 (y -119, z -145.6) up the rail side, through a grommeted D13 gland in the cup wall at psi 190 deg, then the ring R 54 to the hollow column clamp at psi 165 deg",
+   "checks": "min bend 50.2 mm >= 49.2 (6 x OD); length 156 mm"
+  },
+  {
+   "boundary": "cable: column -> clockspring",
+   "type": "bundle ends in a clamp block on the hollow column (x -94); 8 conductors run inside the D7 bore to the second clamp at x -39.8 where the ribbon coil starts (bundle -> ribbon transition, PLACEHOLDER)",
+   "checks": "coil mean R 27 mm >= 12.6"
+  },
+  {
+   "boundary": "cable M1: coil -> S2 motor",
+   "type": "ribbon, filleted polyline in the plane x = XO+17.8, final 11 mm straight lead along +y to the S2 motor inner face connector (position PLACEHOLDER)",
+   "checks": "min bend 12.8 mm >= 12.6"
+  },
+  {
+   "boundary": "cable M2: S2 wrap -> S3",
+   "type": "ribbon wrapped [0.0, 100.0] deg at r 54.3 around the sleeve, then up the +x side of the S2 clamp and through the cradle notch to the XM540 -y face (connector position PLACEHOLDER)",
+   "checks": "min bend 12.7 mm >= 12.6; wrap radius >= 49.2"
+  },
+  {
+   "boundary": "balancer anchors",
+   "type": "named points",
+   "anchors": {
+    "S1_balancer_base": [
+     -32.30275474061348,
+     -44.09184627218782,
+     -15.506133474258823
+    ],
+    "cable_outer_anchor": [
+     -39.80275474061348,
+     -44.09184627218782,
+     -15.506133474258823
+    ],
+    "cable_F_clamp": [
+     -94.0,
+     -44.09184627218782,
+     -15.506133474258823
+    ],
+    "S2_balancer_yoke": [
+     -48.30275474061348,
+     40.0,
+     2.0
+    ],
+    "S2_balancer_arm": [
+     -48.30275474061348,
+     91.75,
+     14.0
+    ]
+   }
+  },
+  {
+   "boundary": "harness seats F1/F4",
+   "type": "slim spaulder tie NOT kept in rev 2",
+   "why": "the integrated fairing + rail lap carries the load; a spaulder would add a shelf over the shoulder top (against 'flush'). Seats stay as free clasp nodes."
+  }
+ ],
+ "anchors": {
+  "S1_balancer_base": [
+   -32.30275474061348,
+   -44.09184627218782,
+   -15.506133474258823
+  ],
+  "cable_outer_anchor": [
+   -39.80275474061348,
+   -44.09184627218782,
+   -15.506133474258823
+  ],
+  "cable_F_clamp": [
+   -94.0,
+   -44.09184627218782,
+   -15.506133474258823
+  ],
+  "S2_balancer_yoke": [
+   -48.30275474061348,
+   40.0,
+   2.0
+  ],
+  "S2_balancer_arm": [
+   -48.30275474061348,
+   91.75,
+   14.0
+  ]
+ },
+ "placeholders": [
+  "AK70-10 output flange pattern (6 x M4 on 60 PCD assumed, NOT modelled)",
+  "AK70 connector location (inner end face assumed)",
+  "XM540 horn / S3 flange (contract unchanged, not modelled)",
+  "ribbon wire OD, flat-flex clockspring vendor",
+  "main-box cable entry (assumed at y -150, z -125)",
+  "rail boss + M4 inserts (rail contract change)"
+ ]
+}

@@ -1,0 +1,344 @@
+{
+ "AK70-10": {
+  "body_diameter": {
+   "value": 89,
+   "unit": "mm",
+   "source": "https://cubemars.com/goods-1031-AK70-10.html",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "length": {
+   "value": 50.25,
+   "unit": "mm",
+   "source": "https://cubemars.com/goods-1031-AK70-10.html",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": "also appears in the 2D drawing text"
+  },
+  "mass": {
+   "value": 621,
+   "unit": "g",
+   "source": "https://cubemars.com/goods-1031-AK70-10.html",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "rated_torque": {
+   "value": 8.3,
+   "unit": "N.m",
+   "source": "https://cubemars.com/goods-1031-AK70-10.html",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "peak_torque": {
+   "value": 24.8,
+   "unit": "N.m",
+   "source": "https://cubemars.com/goods-1031-AK70-10.html",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "ratio": {
+   "value": "10:1",
+   "unit": "",
+   "source": "https://cubemars.com/goods-1031-AK70-10.html",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "backlash": {
+   "value": 0.2,
+   "unit": "deg",
+   "source": "https://cubemars.com/goods-1031-AK70-10.html",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "bearing_load_C_C0": {
+   "value": [
+    2000,
+    2520
+   ],
+   "unit": "N dynamic, static",
+   "source": "https://cubemars.com/goods-1031-AK70-10.html",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "back_drive_torque": {
+   "value": 0.48,
+   "unit": "N.m",
+   "source": "https://cubemars.com/goods-1031-AK70-10.html",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "connectors": {
+   "value": {
+    "CAN": "A1257WR-S-4P",
+    "UART": "A1257WR-S-3P",
+    "power": "XT30PW-M"
+   },
+   "unit": "",
+   "source": "https://cubemars.com/goods-1031-AK70-10.html",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": "positions and cable exit direction NOT in the text"
+  },
+  "drawing_hole_callouts_text_only": {
+   "value": [
+    "6-M3",
+    "8-M3",
+    "8-M3",
+    "7",
+    "10",
+    "3.5",
+    "2 (+0.02/0)",
+    "0.5",
+    "11.2",
+    "50.25",
+    "6"
+   ],
+   "unit": "mixed (mm)",
+   "source": "https://www.cubemars.com/data/cms/202602/ak70-10-robotic-actuator-2d-drawing.pdf",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": "text layer of the 2D drawing PDF, labels unattributed: which callout is the output flange and which the rear/stator pattern is NOT readable from text"
+  },
+  "output_flange_pattern": {
+   "value": {
+    "count": null,
+    "thread": null,
+    "PCD": null,
+    "depth": null
+   },
+   "unit": "",
+   "source": "https://www.cubemars.com/data/cms/202602/ak70-10-robotic-actuator-2d-drawing.pdf",
+   "retrieved": "2026-11-02",
+   "status": "PLACEHOLDER",
+   "note": "counts/threads are among 6-M3 / 8-M3 but not assigned; PCD missing"
+  },
+  "rear_stator_pattern": {
+   "value": {
+    "count": null,
+    "thread": null,
+    "PCD": null
+   },
+   "unit": "",
+   "source": "https://www.cubemars.com/data/cms/202602/ak70-10-robotic-actuator-2d-drawing.pdf",
+   "retrieved": "2026-11-02",
+   "status": "PLACEHOLDER",
+   "note": "as above"
+  },
+  "output_protrusion": {
+   "value": null,
+   "unit": "mm",
+   "source": "https://www.cubemars.com/data/cms/202602/ak70-10-robotic-actuator-2d-drawing.pdf",
+   "retrieved": "2026-11-02",
+   "status": "PLACEHOLDER",
+   "note": "candidate numbers 0.5 / 2 / 3.5 / 7 / 10 / 11.2 in the drawing text, none attributable"
+  },
+  "drawing_files": {
+   "value": {
+    "2D_pdf": "https://www.cubemars.com/data/cms/202602/ak70-10-robotic-actuator-2d-drawing.pdf",
+    "STEP_zip": "https://www.cubemars.com/data/cms/202607/ak70-10-robotic-actuator-3d-drawing.zip"
+   },
+   "unit": "",
+   "source": "https://cubemars.com/goods-1031-AK70-10.html",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": "STEP not downloaded this session (CAD tool for STEP not run): open it to read the real PCDs"
+  }
+ },
+ "XM540-W270": {
+  "dimensions": {
+   "value": [
+    33.5,
+    58.5,
+    44.0
+   ],
+   "unit": "mm (W x H x D)",
+   "source": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w270/",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "mass": {
+   "value": 165,
+   "unit": "g",
+   "source": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w270/",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "stall_torque_12V": {
+   "value": 10.6,
+   "unit": "N.m",
+   "source": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w270/",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "gear_ratio": {
+   "value": 272.5,
+   "unit": "",
+   "source": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w270/",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "backlash": {
+   "value": 0.25,
+   "unit": "deg (15 arcmin)",
+   "source": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w270/",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "radial_load": {
+   "value": 40,
+   "unit": "N at 10 mm from horn",
+   "source": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w270/",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "axial_load": {
+   "value": 20,
+   "unit": "N",
+   "source": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w270/",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "horn_set_HN13_N101": {
+   "value": {
+    "horn_assembly_bolt": "WB M3x8 x1",
+    "frame_assembly_bolts": "WB M2.5x4 x10",
+    "thrust_washer": 1
+   },
+   "unit": "",
+   "source": "https://robotis.us/hn13-n101-set",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": "robotis.us says M2.5x4; project checklist says M2.5x3"
+  },
+  "horn_hole_pattern_PCD": {
+   "value": null,
+   "unit": "mm",
+   "source": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w270/",
+   "retrieved": "2026-11-02",
+   "status": "PLACEHOLDER",
+   "note": "emanual 'Drawings' / 'Connector Information' sections not returned by the fetch; GitHub raw source blocked"
+  },
+  "frame_mounting_holes": {
+   "value": null,
+   "unit": "mm",
+   "source": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w270/",
+   "retrieved": "2026-11-02",
+   "status": "PLACEHOLDER",
+   "note": ""
+  },
+  "output_axis_direction": {
+   "value": null,
+   "unit": "",
+   "source": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w270/",
+   "retrieved": "2026-11-02",
+   "status": "PLACEHOLDER",
+   "note": "the 44 mm side assumption is UNCONFIRMED"
+  },
+  "horn_offset_from_body": {
+   "value": null,
+   "unit": "mm",
+   "source": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w270/",
+   "retrieved": "2026-11-02",
+   "status": "PLACEHOLDER",
+   "note": ""
+  },
+  "connector_positions": {
+   "value": null,
+   "unit": "",
+   "source": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w270/",
+   "retrieved": "2026-11-02",
+   "status": "PLACEHOLDER",
+   "note": ""
+  }
+ },
+ "STS3215": {
+  "case_dimensions": {
+   "value": [
+    45.2,
+    24.7,
+    35.0
+   ],
+   "unit": "mm (L x W x H)",
+   "source": "https://servodatabase.com/servo/feetech/sts3215",
+   "retrieved": "2026-11-02",
+   "status": "DERIVED",
+   "note": "page lists 1.78 x 0.972 x 1.378 in; converted"
+  },
+  "mass": {
+   "value": 55,
+   "unit": "g",
+   "source": "https://servodatabase.com/servo/feetech/sts3215",
+   "retrieved": "2026-11-02",
+   "status": "DERIVED",
+   "note": "1.94 oz converted"
+  },
+  "horn_spline": {
+   "value": 25,
+   "unit": "teeth",
+   "source": "https://servodatabase.com/servo/feetech/sts3215",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "shaft_size": {
+   "value": 5.9,
+   "unit": "mm",
+   "source": "https://servodatabase.com/servo/feetech/sts3215",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": "as stated by the page; unverified against a drawing"
+  },
+  "variants": {
+   "value": "C001 7.4 V / 19 kg.cm; C018 and C047 12 V / 30 kg.cm, same housing",
+   "unit": "",
+   "source": "https://servodatabase.com/servo/feetech/sts3215",
+   "retrieved": "2026-11-02",
+   "status": "SOURCED",
+   "note": ""
+  },
+  "ear_holes": {
+   "value": null,
+   "unit": "mm",
+   "source": "https://servodatabase.com/servo/feetech/sts3215",
+   "retrieved": "2026-11-02",
+   "status": "PLACEHOLDER",
+   "note": ""
+  },
+  "shaft_offset_from_case_end": {
+   "value": null,
+   "unit": "mm",
+   "source": "https://servodatabase.com/servo/feetech/sts3215",
+   "retrieved": "2026-11-02",
+   "status": "PLACEHOLDER",
+   "note": ""
+  },
+  "horn_height": {
+   "value": null,
+   "unit": "mm",
+   "source": "https://servodatabase.com/servo/feetech/sts3215",
+   "retrieved": "2026-11-02",
+   "status": "PLACEHOLDER",
+   "note": ""
+  }
+ },
+ "blocked_or_unreadable": [
+  "https://raw.githubusercontent.com/ROBOTIS-GIT/emanual/master/docs/en/dxl/x/xm540-w270.md (permission not answered)",
+  "https://www.waveshare.com/wiki/ST3215_Servo (permission not answered)",
+  "AK70 STEP zip not downloaded; PDF read as text only"
+ ]
+}

@@ -1,0 +1,12 @@
+# SPEC: Shoulder mount alternatives study, 2026-11-01 (SHOULDER / WING, concept only)
+Request (Forest, 2026-11-01): "Without a full collision sweep show me some plausible alternatives to the shoulder mount design."
+Status: CONCEPT. No standing decision reversed, nothing locked or changed. All geometry is PROXY built from the specs (verified STLs live in the GitHub repo, not attachable this session; add_repo was denied, nothing pushed). Assumed: F1/F4 seat positions (clasp_sites.json not in project), wing/rail proxies, AK70/stage envelopes. No collision sweep; static skin gaps only (+ C5 static offset sweep). Mass is on the proxy basis (REF proxy mount 565.6 g: plate 278.8, S1 block 125.2, armour 161.6; spec armour is 110.6 g, so armour deltas are conservative).
+| ID | Concept | dMass vs REF (g) | Key numbers | Main risk |
+|---|---|---|---|---|
+| C1 | Monocoque PA-CF saddle replaces 6061 plate (+2 mm steel doubler) | -81.9 | top pad about -0.20 kPa (14.08); insert pull-out SF 4.6 static / 2.3 at x2 (1 kN unverified) | creep, wing lap stiffness |
+| C2 | Structural spaulder hoop, plate-F1-F4 triangle | -16.4 | top-pad headroom only about 1.7 N extra compression; skin 9.5 mm near seats (<10) | loads the binding top pad; 8 mm higher than REF (against "flush") |
+| C3 | Short spine column (y -200..-100, z -222..-62) + outrigger beam | -44.7 | tip deflection 0.03 mm at L150; torsion 0.28 deg (2.8 mm at tip); S2 pitch reactions add to 16.6 N.m in the column | clasp feet lose seats; top-pad margin not improved |
+| C4 | Bayonet dock, arm module detaches | +384 | slop 0.1-0.2 mm = 1.2-2.5 mm at tip; latch 6.0x release margin | mass on top pad; reopens locked I1 |
+| C5 | Fit-adjustable serrated cassette (z +-10, x +-8, wedge lockable at 0) | +21.7 | P error +-0.75 z, +-0.25 x; separation 11.7x; 5 deg wedge moves tip 50.6 mm | backing bars vs clasp feet unknown; wedge needs keep-out re-run |
+| C6 | Ventilated lattice cage armour | -31 (armour -19 %, target 40 % missed) | AK70 housing cooling about 1.8 -> 3.8 W (assumed h); largest opening 19-22 mm vs 4 mm rule | finger access to AK70 housing needs safety sign-off; rib bending fails as isolated cantilevers |
+Per-concept detail (contract changes, calcs, pros/cons, gates to re-run) is in stl/concepts/Cx/metrics.json `extra`. Any adopted concept must re-run: verify_shoulder, verify_armor, verify_harness/harness_loads (top pad margin 2 %), sweep_full + keep-out tables, print table.

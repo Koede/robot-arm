@@ -1,0 +1,678 @@
+{
+ "collision_census_radial_soft": {
+  "poses": 378,
+  "cord_vs_M1": 20,
+  "armside_vs_fixed": 4,
+  "fixed_vs_M1": 0,
+  "fixed_vs_M2": 0,
+  "th1_range_with_hits": {
+   "cord_vs_M1": [
+    -95.0,
+    -70.0
+   ],
+   "armside_vs_fixed": [
+    35.0,
+    35.0
+   ]
+  }
+ },
+ "rev": "J1r2",
+ "design": {
+  "A_world": [
+   -55.044539403746214,
+   -89.708,
+   38.434
+  ],
+  "A_off_from_S1p_axis_mm": [
+   -10.018,
+   -19.708,
+   73.434
+  ],
+  "B_arm_local": [
+   -15.629,
+   -42.256,
+   118.385
+  ],
+  "k_cord_N_per_mm": 0.752,
+  "L0_mm": 54.587,
+  "tackle": 2
+ },
+ "torque": {
+  "unbalanced_max_Nm": {
+   "S1p": 7.31,
+   "S2": 6.59
+  },
+  "balanced_max_Nm": {
+   "S1p": 2.95,
+   "S2": 2.94
+  },
+  "SF_vs_rated": {
+   "S1p": 2.81,
+   "S2": 2.82
+  },
+  "worst_pose_S1p": [
+   -95.0,
+   30.0,
+   0.0,
+   -70.0,
+   0.5
+  ],
+  "worst_pose_S2": [
+   15.0,
+   36.0,
+   45.0,
+   0.0,
+   0.5
+  ],
+  "payload0_range_Nm": {
+   "S1p": [
+    -1.47,
+    2.4
+   ],
+   "S2": [
+    -1.6,
+    2.22
+   ]
+  },
+  "payload05_range_Nm": {
+   "S1p": [
+    -2.95,
+    2.88
+   ],
+   "S2": [
+    -2.94,
+    2.46
+   ]
+  },
+  "n_poses": 12960,
+  "grid": "th1 -95..35 step 5, phi -30..88 step 6, E 0/45/90/145, S3 -70/0/90, payload 0/0.5 kg (12960 poses, straight wrist)",
+  "sensitivity_SF": {
+   "k -5 %": {
+    "S1p": 2.69,
+    "S2": 2.73
+   },
+   "k +5 %": {
+    "S1p": 2.68,
+    "S2": 2.9
+   },
+   "L0 +2 mm": {
+    "S1p": 2.73,
+    "S2": 2.74
+   },
+   "L0 -2 mm": {
+    "S1p": 2.83,
+    "S2": 2.9
+   }
+  },
+  "friction_5pct_hysteresis_SF": 2.64,
+  "cord": {
+   "F_cord_max_N": 109.2,
+   "F_spring_max_N": 218.3,
+   "cord_len_min_mm": 60.3,
+   "cord_len_max_mm": 199.8
+  },
+  "decoupled_alt": {
+   "S2_residual": 3.5525825248968674,
+   "K2": -2.9999999999999147,
+   "S1p_residual": 4.336296489847591,
+   "K1": 3.9000000000000004,
+   "phase_deg": -55.0
+  },
+  "spring_options_by_tackle": [
+   {
+    "tackle": 2,
+    "k_spring": 3.01,
+    "F_spring_max_N": 218.0,
+    "stroke_mm": 72.6,
+    "wire_d": 3.5,
+    "D": 36.0,
+    "L_free_mm": 198.0,
+    "tube_length_mm": 230.0,
+    "OD_tube": 49.5
+   },
+   {
+    "tackle": 3,
+    "k_spring": 6.77,
+    "F_spring_max_N": 328.0,
+    "stroke_mm": 48.4,
+    "wire_d": 4.0,
+    "D": 36.0,
+    "L_free_mm": 143.0,
+    "tube_length_mm": 175.0,
+    "OD_tube": 50.0
+   },
+   {
+    "tackle": 4,
+    "k_spring": 12.03,
+    "F_spring_max_N": 437.0,
+    "stroke_mm": 36.3,
+    "wire_d": 4.5,
+    "D": 36.0,
+    "L_free_mm": 119.0,
+    "tube_length_mm": 151.0,
+    "OD_tube": 50.5
+   }
+  ]
+ },
+ "spring": {
+  "wire_d": 3.5,
+  "D_mean": 36.0,
+  "OD": 39.5,
+  "N_active": 10.69,
+  "N_total": 12.69,
+  "k_spring_N_per_mm": 3.008,
+  "compression_min_mm": 2.9,
+  "compression_max_mm": 72.6,
+  "L_solid": 44.4,
+  "L_free": 198.3,
+  "F_max_N": 218.3,
+  "tau_max_MPa": 528.0,
+  "tau_over_Sut": 0.286,
+  "SF_vs_0p45Sut": 1.57,
+  "mass_g": 108.4,
+  "note": "PLACEHOLDER vendor: custom wound A228, squared+ground, shot-peened; same spec family as the baseline S2 spring (k 3.66, F 195 N). Cord Dyneema 1.5 mm: SF = 1156 N / 109 N = 10.6"
+ },
+ "free_fall": {
+  "energies": {
+   "balanced": {
+    "S1p": {
+     "+": {
+      "W_J": 4.51,
+      "start": [
+       -87.5,
+       -30,
+       90,
+       90,
+       0.5
+      ]
+     },
+     "-": {
+      "W_J": 5.61,
+      "start": [
+       40.0,
+       88,
+       90,
+       -70,
+       0.5
+      ]
+     }
+    },
+    "S2": {
+     "+": {
+      "W_J": 1.92,
+      "start": [
+       0,
+       -2.5,
+       145,
+       -70,
+       0.5
+      ]
+     },
+     "-": {
+      "W_J": 4.34,
+      "start": [
+       0,
+       90.0,
+       45,
+       0,
+       0.5
+      ]
+     }
+    }
+   },
+   "unbalanced": {
+    "S1p": {
+     "+": {
+      "W_J": 0.93,
+      "start": [
+       2.5,
+       0,
+       90,
+       90,
+       0.5
+      ]
+     },
+     "-": {
+      "W_J": 12.67,
+      "start": [
+       35.0,
+       0,
+       45,
+       -70,
+       0.5
+      ]
+     }
+    },
+    "S2": {
+     "+": {
+      "W_J": 0,
+      "start": null
+     },
+     "-": {
+      "W_J": 7.59,
+      "start": [
+       0,
+       90.0,
+       45,
+       0,
+       0.5
+      ]
+     }
+    }
+   }
+  },
+  "bumpers": {
+   "S2": "as built, unchanged geometry/angles (+91 / -35 first contact, bottomed +94 / -39): +22.1 N m 1.00 J, -16.8 N m 0.98 J",
+   "S1p_pos": {
+    "M_plateau_Nm": 20.0,
+    "F_N": 370.0,
+    "blade_t_mm": 1.29,
+    "usable_crush_mm": 4.0,
+    "energy_J": 1.33
+   },
+   "S1p_neg": {
+    "M_plateau_Nm": 20.0,
+    "F_N": 370.0,
+    "blade_t_mm": 1.29,
+    "usable_crush_mm": 4.0,
+    "energy_J": 1.33
+   },
+   "note": "S1' posts at r 54 -> 0.94 mm of arc per degree; first contact at the HARD limits (-100 / +40), 4 mm usable crush = ~4 deg of bottoming margin; plateau 20 N m must stay below M_allow(S1' stop) = NOT re-run (body_loads needs the project solver/mesh)"
+  },
+  "braking_need": {
+   "S1p+": {
+    "W_unbraked_J": 4.51,
+    "bumper_J": 1.33,
+    "Er_unbraked_J": 3.18,
+    "f_needed": 0.69
+   },
+   "S1p-": {
+    "W_unbraked_J": 5.61,
+    "bumper_J": 1.33,
+    "Er_unbraked_J": 4.28,
+    "f_needed": 0.75
+   },
+   "S2+": {
+    "W_unbraked_J": 1.92,
+    "bumper_J": 1.0,
+    "Er_unbraked_J": 0.92,
+    "f_needed": 0.443
+   },
+   "S2-": {
+    "W_unbraked_J": 4.34,
+    "bumper_J": 0.98,
+    "Er_unbraked_J": 3.36,
+    "f_needed": 0.758
+   }
+  },
+  "criterion": "Er = W(1-f) - E_bumper <= 0.07 J = the baseline's pass boundary (SPEC_balancer 15: f 0.772, W 4.69 J, bumper 1.0 J); pad pressure itself NOT re-run (body_loads solver + mesh are in the repo, not in the project knowledge)",
+  "plan": "unchanged: normally-closed phase-short on BOTH AK70s (hardware, MCU-independent); T12 must now measure f on S1' as well (S1' is gravity-loaded)"
+ },
+ "spring_failure": {
+  "snap_torque_max_Nm": {
+   "S1p": 5.11,
+   "S2": 4.37
+  },
+  "detect_coverage_full_payload_band": 0.338,
+  "detect_coverage_learned_payload": 0.936,
+  "consequence": "a snapped spring drops up to 5.1 N m onto S1' and 4.4 N m onto S2 at the same instant; both axes see the step, so detection can use either; the arm sags under gravity: at the 49.5 deg/s cap about 5.1 N m excess is inside the 8.3 N m AK70 cap",
+  "firmware": "grav_model.h: add s1p_grav_eval(th1, phi, E, S3, pay) and the pad-spring term (cord length |AB|(th1, phi) -> F = 0.7520 (|AB| - 54.59)); S2 model changes from K sin(S2) to the th1-coupled r x F; spring_check runs on both axes; BALANCER_FITTED constants: A ([-55.0, -89.7, 38.4]), B ([-15.629, -42.256, 118.385]), k, L0 in protocols.h; keep-out tables must be regenerated (the balancer cord/tube is in the lateral/up bay)"
+ },
+ "static_clearance_vs_J1_stage": {
+  "lateral": {
+   "soft_box": {
+    "fixed_vs_M1(yoke,S2 motor)": {
+     "min_mm": 0.0,
+     "at_th1_phi": [
+      25.0,
+      -30.0
+     ]
+    },
+    "fixed_vs_M2(arm)": {
+     "min_mm": 0.0,
+     "at_th1_phi": [
+      5.0,
+      -2.0
+     ]
+    },
+    "cord_vs_M1": {
+     "min_mm": 0.0,
+     "at_th1_phi": [
+      -95.0,
+      -30.0
+     ]
+    },
+    "cord_vs_M2": {
+     "min_mm": 115.6,
+     "at_th1_phi": [
+      25.0,
+      88.0
+     ]
+    },
+    "armside_vs_M1": {
+     "min_mm": 55.5,
+     "at_th1_phi": [
+      35.0,
+      -30.0
+     ]
+    },
+    "armside_vs_fixed": {
+     "min_mm": 0.0,
+     "at_th1_phi": [
+      -25.0,
+      -2.0
+     ]
+    },
+    "fixed_vs_S1motor": {
+     "min_mm": 3.5,
+     "at_th1_phi": [
+      -95.0,
+      -30.0
+     ]
+    }
+   },
+   "hard_corners": {
+    "fixed_vs_M1(yoke,S2 motor)": {
+     "min_mm": 0.0,
+     "at_th1_phi": [
+      40.0,
+      -35.0
+     ]
+    },
+    "fixed_vs_M2(arm)": {
+     "min_mm": 0.0,
+     "at_th1_phi": [
+      40.0,
+      -35.0
+     ]
+    },
+    "cord_vs_M1": {
+     "min_mm": 0.0,
+     "at_th1_phi": [
+      -100.0,
+      -35.0
+     ]
+    },
+    "cord_vs_M2": {
+     "min_mm": 115.6,
+     "at_th1_phi": [
+      40.0,
+      93.0
+     ]
+    },
+    "armside_vs_M1": {
+     "min_mm": 55.5,
+     "at_th1_phi": [
+      40.0,
+      -35.0
+     ]
+    },
+    "armside_vs_fixed": {
+     "min_mm": 45.6,
+     "at_th1_phi": [
+      40.0,
+      -35.0
+     ]
+    },
+    "fixed_vs_S1motor": {
+     "min_mm": 3.5,
+     "at_th1_phi": [
+      -100.0,
+      -35.0
+     ]
+    }
+   },
+   "skin_gap_mm": {
+    "bal_tube": 68.8,
+    "bal_tubecap": 59.4,
+    "bal_post": 41.4
+   }
+  },
+  "radial": {
+   "soft_box": {
+    "fixed_vs_M1(yoke,S2 motor)": {
+     "min_mm": 6.7,
+     "at_th1_phi": [
+      35.0,
+      88.0
+     ]
+    },
+    "fixed_vs_M2(arm)": {
+     "min_mm": 58.7,
+     "at_th1_phi": [
+      35.0,
+      -2.0
+     ]
+    },
+    "cord_vs_M1": {
+     "min_mm": 0.0,
+     "at_th1_phi": [
+      -95.0,
+      -30.0
+     ]
+    },
+    "cord_vs_M2": {
+     "min_mm": 115.6,
+     "at_th1_phi": [
+      25.0,
+      88.0
+     ]
+    },
+    "armside_vs_M1": {
+     "min_mm": 55.5,
+     "at_th1_phi": [
+      35.0,
+      -30.0
+     ]
+    },
+    "armside_vs_fixed": {
+     "min_mm": 0.0,
+     "at_th1_phi": [
+      35.0,
+      -2.0
+     ]
+    },
+    "fixed_vs_S1motor": {
+     "min_mm": 17.5,
+     "at_th1_phi": [
+      -95.0,
+      -30.0
+     ]
+    }
+   },
+   "hard_corners": {
+    "fixed_vs_M1(yoke,S2 motor)": {
+     "min_mm": 1.8,
+     "at_th1_phi": [
+      40.0,
+      93.0
+     ]
+    },
+    "fixed_vs_M2(arm)": {
+     "min_mm": 115.1,
+     "at_th1_phi": [
+      40.0,
+      -35.0
+     ]
+    },
+    "cord_vs_M1": {
+     "min_mm": 0.0,
+     "at_th1_phi": [
+      -100.0,
+      -35.0
+     ]
+    },
+    "cord_vs_M2": {
+     "min_mm": 115.6,
+     "at_th1_phi": [
+      40.0,
+      93.0
+     ]
+    },
+    "armside_vs_M1": {
+     "min_mm": 55.5,
+     "at_th1_phi": [
+      40.0,
+      -35.0
+     ]
+    },
+    "armside_vs_fixed": {
+     "min_mm": 32.7,
+     "at_th1_phi": [
+      40.0,
+      -35.0
+     ]
+    },
+    "fixed_vs_S1motor": {
+     "min_mm": 17.5,
+     "at_th1_phi": [
+      -100.0,
+      -35.0
+     ]
+    }
+   },
+   "skin_gap_mm": {
+    "bal_tube": 57.7,
+    "bal_tubecap": 61.6,
+    "bal_post": 41.5
+   }
+  },
+  "medial": {
+   "soft_box": {
+    "fixed_vs_M1(yoke,S2 motor)": {
+     "min_mm": 1.3,
+     "at_th1_phi": [
+      -95.0,
+      -30.0
+     ]
+    },
+    "fixed_vs_M2(arm)": {
+     "min_mm": 137.7,
+     "at_th1_phi": [
+      35.0,
+      12.0
+     ]
+    },
+    "cord_vs_M1": {
+     "min_mm": 0.0,
+     "at_th1_phi": [
+      -95.0,
+      -30.0
+     ]
+    },
+    "cord_vs_M2": {
+     "min_mm": 115.6,
+     "at_th1_phi": [
+      25.0,
+      88.0
+     ]
+    },
+    "armside_vs_M1": {
+     "min_mm": 55.5,
+     "at_th1_phi": [
+      35.0,
+      -30.0
+     ]
+    },
+    "armside_vs_fixed": {
+     "min_mm": 25.3,
+     "at_th1_phi": [
+      35.0,
+      -2.0
+     ]
+    },
+    "fixed_vs_S1motor": {
+     "min_mm": 3.5,
+     "at_th1_phi": [
+      -95.0,
+      -30.0
+     ]
+    }
+   },
+   "hard_corners": {
+    "fixed_vs_M1(yoke,S2 motor)": {
+     "min_mm": 1.3,
+     "at_th1_phi": [
+      -100.0,
+      -35.0
+     ]
+    },
+    "fixed_vs_M2(arm)": {
+     "min_mm": 141.6,
+     "at_th1_phi": [
+      40.0,
+      -35.0
+     ]
+    },
+    "cord_vs_M1": {
+     "min_mm": 0.0,
+     "at_th1_phi": [
+      -100.0,
+      -35.0
+     ]
+    },
+    "cord_vs_M2": {
+     "min_mm": 115.6,
+     "at_th1_phi": [
+      40.0,
+      93.0
+     ]
+    },
+    "armside_vs_M1": {
+     "min_mm": 55.5,
+     "at_th1_phi": [
+      40.0,
+      -35.0
+     ]
+    },
+    "armside_vs_fixed": {
+     "min_mm": 44.0,
+     "at_th1_phi": [
+      40.0,
+      -35.0
+     ]
+    },
+    "fixed_vs_S1motor": {
+     "min_mm": 3.5,
+     "at_th1_phi": [
+      -100.0,
+      -35.0
+     ]
+    }
+   },
+   "skin_gap_mm": {
+    "bal_tube": 58.6,
+    "bal_tubecap": 62.6,
+    "bal_post": 41.5
+   }
+  }
+ },
+ "masses_g": {
+  "bal_tube": 96.0,
+  "bal_tubecap": 31.0,
+  "bal_post": 34.0,
+  "bal_spring": 108.4,
+  "bal_piston": 28.0,
+  "bal_sheave": 9.0,
+  "bal_cord": 1.0,
+  "bal_collar": 40.0,
+  "bal_pin": 12.0
+ },
+ "fixed_side_g": 307.4,
+ "arm_side_g": 52.0,
+ "bom": {
+  "balancer_total_g": 406.5,
+  "note": "parts: 1 spring, 2 x sheave (fixed swivel + movable tackle pulley on the piston) with DU bush, 2 x 6800ZZ swivel bearings, ~0.9 m Dyneema 1.5 mm, collar + pin; hardware as baseline (+24 g bearings, +23 g fasteners)",
+  "baseline_two_balancers_g": 658,
+  "baseline_S2_balancer_g": 329,
+  "delta_vs_two_baseline_balancers_g": "-252",
+  "vendor_PLACEHOLDERS": [
+   "spring (custom A228)",
+   "Dyneema SK78/SK99 MBL + creep",
+   "sheave DU bush 0404DU + 4 mm pin",
+   "6800ZZ bearing ratings",
+   "AK70 S2 output-bearing tilt capacity (cord pull acts on the arm: radial 218 N)"
+  ]
+ },
+ "ax_note": "S2 and S1' both balanced by the single pad-anchored spring (cos th1 coupling is automatic); yoke-anchored S2 (baseline) would need the decoupled pair: see torque.decoupled_alt"
+}

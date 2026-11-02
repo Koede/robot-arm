@@ -1,0 +1,229 @@
+{
+ "id": "C2",
+ "title": "Triangulated spaulder truss",
+ "parts": [
+  {
+   "name": "plate_doubler_6061",
+   "mat": "AL",
+   "vol_cm3": 76.86,
+   "mass_g": 207.5,
+   "bbox_mm": [
+    8.0,
+    154.0,
+    65.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 36.2
+  },
+  {
+   "name": "s1_base_block",
+   "mat": "PETGCF",
+   "vol_cm3": 214.07,
+   "mass_g": 125.2,
+   "bbox_mm": [
+    80.0,
+    136.0,
+    38.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 49.8
+  },
+  {
+   "name": "armour_crown",
+   "mat": "PACF",
+   "vol_cm3": 58.88,
+   "mass_g": 67.7,
+   "bbox_mm": [
+    157.5,
+    147.0,
+    49.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 46.8
+  },
+  {
+   "name": "armour_keel",
+   "mat": "PACF",
+   "vol_cm3": 57.12,
+   "mass_g": 65.7,
+   "bbox_mm": [
+    160.6,
+    145.2,
+    18.0
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "armour",
+   "contact": false,
+   "skin_min_mm": 40.1
+  },
+  {
+   "name": "seat_pad_F1",
+   "mat": "PACF",
+   "vol_cm3": 5.08,
+   "mass_g": 5.3,
+   "bbox_mm": [
+    24.0,
+    24.0,
+    11.2
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": true,
+   "skin_min_mm": -2.3
+  },
+  {
+   "name": "seat_pad_F4",
+   "mat": "PACF",
+   "vol_cm3": 4.1,
+   "mass_g": 4.2,
+   "bbox_mm": [
+    24.0,
+    24.0,
+    9.1
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": true,
+   "skin_min_mm": 0.5
+  },
+  {
+   "name": "hoop_truss",
+   "mat": "PACF",
+   "vol_cm3": 116.3,
+   "mass_g": 73.6,
+   "bbox_mm": [
+    119.0,
+    131.0,
+    52.5
+   ],
+   "watertight": true,
+   "fits_256": true,
+   "group": "mount",
+   "contact": false,
+   "skin_min_mm": 9.7
+  }
+ ],
+ "mount_mass_g": 549.2,
+ "notes": {
+  "ref_mount_mass_g": 565.6
+ },
+ "extra": {
+  "summary": "PA-CF boxed hoop (22 x 10 mm legs, 2 mm walls) from the plate top edge to F1/F4 closes a plate-F1-F4 triangle; plate shrinks to a 153 x 65 doubler.",
+  "mass_delta_note": "same proxy basis as REF 565.6 g",
+  "assumptions": [
+   "F1 (-150,-62) and F4 (-178,14) are ASSUMED seat centres (clasp_sites.json not in the project)",
+   "wing/clasp/rail are generic proxies",
+   "stage+arm 3.0 kg at 80 mm; E 5 GPa; fill 0.55 for a boxed 2 mm wall section; A_top derived from the N_top = W model",
+   "REF proxy armour is ~50 g heavier than spec (161.6 vs 110.6 g); crown/keel reused unchanged"
+  ],
+  "contract_changes": [
+   "plate outline 158 x 100 -> 153 x 65: wing tongue seat truncated from z -76..-150 to z -76..-112 (wing lap/bolts must move up 38 mm; re-run scapular_frame)",
+   "spaulder rear feet (2 x M3 x 10 vertical into the plate top edge) kept as the hoop's roof screws, plus a U-clip capture",
+   "hoop becomes load-bearing on clasp seats F1/F4: seat M4 x 12 now carry structural load, pad/boss and insert pull-out need a re-check"
+  ],
+  "decision_conflicts": [
+   "Top pad is the binding harness gate (14.28 vs 14.7 kPa, 2.9 % margin): 1 N of extra seat compression = +0.25 kPa, so the headroom is only ~1.7 N (1.2 % of My). The hoop can carry the load only as tension/lift or a tiny compressive share; it is not a general load path into F1/F4.",
+   "Nothing rigid on moving skin: respected (seats and top only; static gap away from seats 11.0 mm, near seats 9.5 mm)",
+   "Flush request (2026-10-30): hoop top sits ~21 mm over skin (11 gap + 10 section), about 8 mm higher than the 1.8 mm REF spaulder"
+  ],
+  "calcs": [
+   {
+    "name": "Reaction moment at plate",
+    "formula": "My = 8.3 + m g l",
+    "inputs": "S2 cap 8.3 N.m; m_stage+arm 3.0 kg (assumed); l 0.080 m",
+    "result": "Fw 29.4 N, Mw 2.35 N.m, My 10.65 N.m"
+   },
+   {
+    "name": "REF top bolt pair",
+    "formula": "T = My / dz",
+    "inputs": "dz 26 mm (M5 pattern z -68/-94)",
+    "result": "410 N total on the top pair (all through the wing tongue)"
+   },
+   {
+    "name": "Hoop leg section",
+    "formula": "I = (b h^3 - b' h'^3)/12, A = b h - b' h'",
+    "inputs": "b 22, h 10, wall 2 mm",
+    "result": "I 1509 mm4, A 112 mm2"
+   },
+   {
+    "name": "Leg bending, vertical 50 N at the seat end",
+    "formula": "sigma = F L (h/2)/I ; delta = F L^3/(3 E I)",
+    "inputs": "F 50 N, L 67 mm, E 5000 MPa (annealed PA-CF XY, assumed)",
+    "result": "sigma 11.2 MPa (PA-CF ~80 MPa XY, interlayer lower -> SF ~7.2 in-plane), delta 0.68 mm"
+   },
+   {
+    "name": "Leg axial stiffness",
+    "formula": "k = 2 E A / L",
+    "inputs": "two legs",
+    "result": "13379 N/mm: far stiffer than the soft-tissue seat (tens of N/mm), so the seat/clasp compliance sets the share"
+   },
+   {
+    "name": "Top-pad headroom",
+    "formula": "dF = (14.7-14.28 kPa) * A_top ; A_top = W/p",
+    "inputs": "W 56.8 N, p 14.4 kPa -> A_top 3944 mm2 (derived)",
+    "result": "A_top 3944 mm2; dF 1.7 N extra compression allowed (0.25 kPa per N)"
+   },
+   {
+    "name": "Load shared to the seats",
+    "formula": "s = dF * l_seat / My",
+    "inputs": "l_seat 78 mm (mean plate-edge-to-seat x)",
+    "result": "compression share <= 1.2 % of My before the top-pad gate fails; tension (lift) share is limited by the strap preload, not computed"
+   }
+  ],
+  "static_checks": {
+   "skin_gap_far_from_seats_mm": 11.0,
+   "skin_gap_within_35mm_of_seats_mm": 9.5,
+   "gap_clip_zone_mm": 54.2,
+   "min_dist_to_neck_column_mm": 34.5,
+   "plate_envelope": [
+    153,
+    65,
+    8
+   ],
+   "hoop_bbox": [
+    119.0,
+    131.0,
+    52.5
+   ]
+  },
+  "printability": "hoop ~119 x 130 x 52 mm fits the 256 cube; print flat (z up) so leg bending stress lies in the layer plane; supports under the clip slot and the sloped underside (est. 10-15 cm2, not computed); 4 perimeters, 55 % effective fill",
+  "pros": [
+   "Triangulates the plate: lower tongue/wing bending demand in the sagittal plane (wing share not quantified)",
+   "Plate 278.8 g -> doubler; one structural PA-CF member replaces the shell spaulder",
+   "Gravity moment tends to put the legs in tension, which unloads the top pad slightly"
+  ],
+  "cons": [
+   "Can't take compressive load without breaking the 14.7 kPa top-pad gate",
+   "Higher profile than the flush REF spaulder",
+   "Truncated tongue forces a wing change",
+   "Open frame leaves the shoulder top uncovered unless a skin is added"
+  ],
+  "risks": [
+   "Clasp seat bosses/inserts not rated for structural loads",
+   "PA-CF interlayer strength and creep unmeasured",
+   "Hoop stiffness could act as a hard point on trapezius under strap tension",
+   "Neck lateral-flexion clearance only a static distance, not swept"
+  ],
+  "gates_to_rerun": [
+   "verify_harness / harness_loads (top pad)",
+   "body_loads (F1/F4 cell peaks)",
+   "verify_armor (skin 10 mm, ROM abduction/scaption/neck lateral flexion 50 deg)",
+   "scapular_frame (tongue seat)",
+   "chassis_axilla (plate outline)",
+   "print_table"
+  ],
+  "mass_delta_vs_REF_g": -16.4
+ }
+}
