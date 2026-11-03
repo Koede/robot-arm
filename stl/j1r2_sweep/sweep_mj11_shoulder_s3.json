@@ -37,10 +37,10 @@
   ],
   "park_free": true,
   "n_cells": 2184,
-  "n_contact": 1197,
-  "n_reach_free": 987,
-  "n_frontier": 177,
-  "n_deep": 1020
+  "n_contact": 1278,
+  "n_reach_free": 906,
+  "n_frontier": 171,
+  "n_deep": 1107
  },
  "pairs": {
   "M1|rail": {
@@ -55,9 +55,9 @@
    "n_contact_cells": 0,
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
-   "min_clear_reach_free": 14.256145477294922,
+   "min_clear_reach_free": 16.776046752929688,
    "worst_pose": {
-    "S1p": 35.0
+    "S1p": -95.0
    },
    "status": "PASS"
   },
@@ -142,9 +142,9 @@
    "n_contact_cells": 0,
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
-   "min_clear_reach_free": 17.64047622680664,
+   "min_clear_reach_free": 17.66706657409668,
    "worst_pose": {
-    "S1p": 15.0
+    "S1p": 10.0
    },
    "status": "PASS"
   },
@@ -172,10 +172,77 @@
    "dims": [
     "S1p"
    ],
-   "designed": true,
+   "designed": false,
    "d_min_table": 0.0,
-   "park_d": 2.0254669189453125,
-   "status": "EXCLUDED(designed contact at park)"
+   "park_d": 7.810735702514648,
+   "n_contact_cells": 5,
+   "n_frontier_cells": 1,
+   "n_deep_cells": 4,
+   "min_clear_reach_free": 4.82042121887207,
+   "d_frontier_min": 2.2078897953033447,
+   "worst_contact_pose": {
+    "S1p": 15.0
+   },
+   "status": "BELOW_GATE",
+   "first_contact": {
+    "S1p": [
+     13.48,
+     13.48
+    ],
+    "S2": [
+     -20.0,
+     20.0
+    ],
+    "S3": [
+     -70.0,
+     90.0
+    ]
+   },
+   "first_contact_example": {
+    "S1p": 13.48,
+    "S2": -20.0,
+    "S3": -70.0
+   },
+   "n_first_contact_points": 30
+  },
+  "M1|mj11_fairing": {
+   "pair": "M1|mj11_fairing",
+   "MM": 3.0,
+   "dims": [
+    "S1p"
+   ],
+   "designed": false,
+   "d_min_table": 0.0,
+   "park_d": 4.180710792541504,
+   "n_contact_cells": 5,
+   "n_frontier_cells": 1,
+   "n_deep_cells": 4,
+   "min_clear_reach_free": 3.2000045776367188,
+   "d_frontier_min": 1.0589370727539062,
+   "worst_contact_pose": {
+    "S1p": 15.0
+   },
+   "status": "BELOW_GATE",
+   "first_contact": {
+    "S1p": [
+     11.88,
+     11.88
+    ],
+    "S2": [
+     -20.0,
+     20.0
+    ],
+    "S3": [
+     -70.0,
+     90.0
+    ]
+   },
+   "first_contact_example": {
+    "S1p": 11.88,
+    "S2": -20.0,
+    "S3": -70.0
+   },
+   "n_first_contact_points": 30
   },
   "M1|wing": {
    "pair": "M1|wing",
@@ -189,9 +256,9 @@
    "n_contact_cells": 0,
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
-   "min_clear_reach_free": 10.681495666503906,
+   "min_clear_reach_free": 14.848262786865234,
    "worst_pose": {
-    "S1p": 35.0
+    "S1p": -18.2
    },
    "status": "PASS"
   },
@@ -207,9 +274,9 @@
    "n_contact_cells": 0,
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
-   "min_clear_reach_free": 21.6511173248291,
+   "min_clear_reach_free": 25.276445388793945,
    "worst_pose": {
-    "S1p": 35.0
+    "S1p": 10.0
    },
    "status": "PASS"
   },
@@ -225,9 +292,9 @@
    "n_contact_cells": 0,
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
-   "min_clear_reach_free": 83.84715270996094,
+   "min_clear_reach_free": 85.88973236083984,
    "worst_pose": {
-    "S1p": 25.0
+    "S1p": 10.0
    },
    "status": "PASS"
   },
@@ -403,6 +470,26 @@
    "min_clear_reach_free": 9.206738471984863,
    "status": "PASS(contact only in unreachable region, dropped)"
   },
+  "M2|mj11_fairing": {
+   "pair": "M2|mj11_fairing",
+   "MM": 3.0,
+   "dims": [
+    "S1p",
+    "S2"
+   ],
+   "designed": false,
+   "d_min_table": 23.933691024780273,
+   "park_d": 67.73623657226562,
+   "n_contact_cells": 0,
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 43.27602005004883,
+   "worst_pose": {
+    "S1p": 10.0,
+    "S2": 20.0
+   },
+   "status": "PASS"
+  },
   "M2|wing": {
    "pair": "M2|wing",
    "MM": 3.0,
@@ -473,10 +560,10 @@
    "n_contact_cells": 0,
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
-   "min_clear_reach_free": 108.6732406616211,
+   "min_clear_reach_free": 125.19544219970703,
    "worst_pose": {
-    "S1p": 30.0,
-    "S2": 0.0
+    "S1p": 10.0,
+    "S2": 20.0
    },
    "status": "PASS"
   },
@@ -699,6 +786,28 @@
    },
    "n_first_contact_points": 18
   },
+  "M3|mj11_fairing": {
+   "pair": "M3|mj11_fairing",
+   "MM": 3.0,
+   "dims": [
+    "S1p",
+    "S2",
+    "S3"
+   ],
+   "designed": false,
+   "d_min_table": 14.932807922363281,
+   "park_d": 61.13612747192383,
+   "n_contact_cells": 0,
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 34.90458679199219,
+   "worst_pose": {
+    "S1p": 10.0,
+    "S2": 20.0,
+    "S3": 90.0
+   },
+   "status": "PASS"
+  },
   "M3|wing": {
    "pair": "M3|wing",
    "MM": 3.0,
@@ -771,23 +880,23 @@
    "d_min_table": 0.0,
    "park_d": 164.1827392578125,
    "n_contact_cells": 219,
-   "n_frontier_cells": 24,
-   "n_deep_cells": 195,
-   "min_clear_reach_free": 61.9804573059082,
-   "d_frontier_min": 43.72101593017578,
+   "n_frontier_cells": 12,
+   "n_deep_cells": 207,
+   "min_clear_reach_free": 68.638671875,
+   "d_frontier_min": 50.252349853515625,
    "worst_contact_pose": {
-    "S1p": 30.0,
-    "S2": 5.0,
-    "S3": 0.0
+    "S1p": 15.0,
+    "S2": 20.0,
+    "S3": 90.0
    },
    "status": "BELOW_GATE",
    "first_contact": {
     "S1p": [
      9.43,
-     35.0
+     14.59
     ],
     "S2": [
-     -1.19,
+     15.0,
      25.0
     ],
     "S3": [
@@ -796,11 +905,11 @@
     ]
    },
    "first_contact_example": {
-    "S1p": 31.51,
-    "S2": 0.0,
-    "S3": 90.0
+    "S1p": 12.36,
+    "S2": 20.0,
+    "S3": 0.0
    },
-   "n_first_contact_points": 39
+   "n_first_contact_points": 15
   },
   "M1|M2": {
    "pair": "M1|M2",
@@ -836,7 +945,7 @@
    "first_contact": {
     "S1p": [
      -95.0,
-     35.0
+     10.0
     ],
     "S2": [
      -21.86,
@@ -852,7 +961,7 @@
     "S2": -21.86,
     "S3": -70.0
    },
-   "n_first_contact_points": 84
+   "n_first_contact_points": 69
   },
   "M2|M3": {
    "pair": "M2|M3",
@@ -868,6 +977,6 @@
  },
  "timing": {
   "tabulate_s": 11.0,
-  "total_s": 11.0
+  "total_s": 11.1
  }
 }

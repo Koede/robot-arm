@@ -3149,12 +3149,16 @@
     "spine_bridge": 29.7
    },
    "rail_spacers": {
-    "wing_rail": 0.0,
+    "wing_rail": 0.1,
     "spine_bridge": 6.3
    },
    "clasp_bracket": {
     "wing_rail": 5.1,
     "spine_bridge": 20.1
+   },
+   "fairing": {
+    "wing_rail": 9.7,
+    "spine_bridge": 5.8
    }
   },
   "title": "Blade-seated pancake: flat pad on a conformal foam dish, bolted to the rail",
@@ -3163,7 +3167,7 @@
    "pad": {
     "mat": "PACF",
     "kind": "printed",
-    "mass_g": 93.2,
+    "mass_g": 93.0,
     "watertight": true,
     "bbox": [
      6.0,
@@ -3224,11 +3228,24 @@
     ],
     "fits_256": true,
     "note": "clasp feet (re-seated) to the pad rim at psi 119, anchor r 66, hub bar 24 x 6, overhang 6"
+   },
+   "fairing": {
+    "mat": "PACF",
+    "kind": "printed",
+    "mass_g": 42.7,
+    "watertight": true,
+    "bbox": [
+     81.2,
+     94.0,
+     111.8
+    ],
+    "fits_256": true,
+    "note": "fixed fairing: 1.8 mm PA-CF C-shell on the pad rear face (outline = pad R66 trimmed y -121, flush with pad and dish), x XB..XO+31, closed end plate, swept slot for the S1' yoke bar / S2 clamp (gap 3.2), gland bore R6.6 at psi 190, 3 tabs M3 x 5 into the pad (inserts PLACEHOLDER); prints end plate down, no supports"
    }
   },
-  "mount_mass_g": 186.2,
+  "mount_mass_g": 228.7,
   "balancer_fixed_g": 0.0,
-  "total_fixed_g": 186.2,
+  "total_fixed_g": 228.7,
   "frame": {
    "park": {
     "tip_mm": 0.84,
@@ -3238,17 +3255,17 @@
      -0.67
     ],
     "pad_rot_deg": 0.074,
-    "pad_trans_mm": 0.41,
+    "pad_trans_mm": 0.42,
     "contact": {
      "rail": {
       "max_kPa": 0.74,
-      "min_kPa": -1.57,
+      "min_kPa": -1.58,
       "sum_N": -0.6
      },
      "top": {
-      "max_kPa": 1.46,
-      "min_kPa": 0.44,
-      "sum_N": 4.9
+      "max_kPa": 1.48,
+      "min_kPa": 0.45,
+      "sum_N": 5.0
      },
      "front": {
       "max_kPa": -0.01,
@@ -3261,7 +3278,7 @@
       "sum_N": 1.3
      },
      "liner": {
-      "max_kPa": 0.66,
+      "max_kPa": 0.67,
       "min_kPa": -0.69,
       "sum_N": 0.6
      }
@@ -3269,44 +3286,44 @@
     "iface": [
      {
       "n": 2,
-      "F_bolt_max_N": 230.0,
-      "N": -37.1,
+      "F_bolt_max_N": 230.6,
+      "N": -37.3,
       "My_Nmm": 85.0,
-      "Mz_Nmm": -1691.0
+      "Mz_Nmm": -1696.0
      },
      {
       "n": 2,
       "F_bolt_max_N": 44.1,
-      "N": 36.0,
-      "My_Nmm": -181.0,
-      "Mz_Nmm": -209.0
+      "N": 36.1,
+      "My_Nmm": -182.0,
+      "Mz_Nmm": -208.0
      }
     ],
     "member_stress_MPa": {
      "rail": 1.32,
-     "clasp_arm": 1.64,
-     "clasp_seat": 1.75,
+     "clasp_arm": 1.66,
+     "clasp_seat": 1.76,
      "spine_bridge": 0.99
     },
     "tip_mm_body_only": 0.64
    },
    "reach": {
-    "tip_mm": 1.8,
+    "tip_mm": 1.81,
     "tip_vec": [
      -0.59,
      -0.15,
-     -1.69
+     -1.7
     ],
     "pad_rot_deg": 0.156,
-    "pad_trans_mm": 0.5,
+    "pad_trans_mm": 0.51,
     "contact": {
      "rail": {
-      "max_kPa": 1.96,
-      "min_kPa": -3.15,
+      "max_kPa": 1.97,
+      "min_kPa": -3.17,
       "sum_N": 0.2
      },
      "top": {
-      "max_kPa": 1.64,
+      "max_kPa": 1.66,
       "min_kPa": 0.55,
       "sum_N": 5.7
      },
@@ -3318,34 +3335,34 @@
      "axilla": {
       "max_kPa": 0.59,
       "min_kPa": 0.59,
-      "sum_N": 1.6
+      "sum_N": 1.7
      },
      "liner": {
-      "max_kPa": 2.22,
-      "min_kPa": -2.02,
+      "max_kPa": 2.23,
+      "min_kPa": -2.03,
       "sum_N": 2.6
      }
     },
     "iface": [
      {
       "n": 2,
-      "F_bolt_max_N": 311.6,
-      "N": -60.0,
+      "F_bolt_max_N": 312.3,
+      "N": -60.2,
       "My_Nmm": 87.0,
-      "Mz_Nmm": -2253.0
+      "Mz_Nmm": -2257.0
      },
      {
       "n": 2,
       "F_bolt_max_N": 102.7,
-      "N": 60.0,
+      "N": 60.1,
       "My_Nmm": -225.0,
-      "Mz_Nmm": -582.0
+      "Mz_Nmm": -581.0
      }
     ],
     "member_stress_MPa": {
-     "rail": 2.34,
-     "clasp_arm": 2.0,
-     "clasp_seat": 1.82,
+     "rail": 2.35,
+     "clasp_arm": 2.02,
+     "clasp_seat": 1.83,
      "spine_bridge": 1.69
     },
     "tip_mm_body_only": 1.16
@@ -3354,30 +3371,34 @@
   "skin_gap_by_zone_mm": {
    "pad": {
     "rail": 18.3,
-    "blade": 10.7
+    "blade": 10.6
    },
    "seat_dish": {
-    "blade": 5.2
+    "blade": 5.3
    },
    "liner": {
-    "blade": -1.8
+    "blade": -1.7
    },
    "rail_spacers": {
     "rail": 13.1
    },
    "clasp_bracket": {
-    "rail": 21.8,
-    "blade": 5.4
+    "rail": 21.9,
+    "blade": 5.3
+   },
+   "fairing": {
+    "rail": 24.4,
+    "blade": 25.8
    }
   },
   "skin_rule_violations": [],
   "stage_clearance": {
-   "M1_min_mm": 7.5,
-   "M1_at_S1p": 30.0,
+   "M1_min_mm": 7.6,
+   "M1_at_S1p": 20.0,
    "M2_arm_min_mm": 0.1,
    "M2_at": [
-    25.0,
-    40.0
+    20.0,
+    60.0
    ],
    "by_part": {
     "pad": {
@@ -3387,11 +3408,11 @@
      "M2_at": null
     },
     "seat_dish": {
-     "M1_min_mm": 7.6,
+     "M1_min_mm": 7.8,
      "M1_at_S1p": 35.0,
      "M2_arm_min_mm": 5.7,
      "M2_at": [
-      -15.0,
+      0.0,
       80.0
      ]
     },
@@ -3400,24 +3421,30 @@
      "M1_at_S1p": 15.0,
      "M2_arm_min_mm": 7.1,
      "M2_at": [
-      20.0,
+      10.0,
       80.0
      ]
     },
     "rail_spacers": {
-     "M1_min_mm": 11.9,
-     "M1_at_S1p": -75.0,
+     "M1_min_mm": 11.8,
+     "M1_at_S1p": 35.0,
      "M2_arm_min_mm": 40.0,
      "M2_at": null
     },
     "clasp_bracket": {
      "M1_min_mm": 7.5,
-     "M1_at_S1p": 30.0,
-     "M2_arm_min_mm": 0.0,
+     "M1_at_S1p": 20.0,
+     "M2_arm_min_mm": 0.1,
      "M2_at": [
-      35.0,
+      20.0,
       60.0
      ]
+    },
+    "fairing": {
+     "M1_min_mm": 40.0,
+     "M1_at_S1p": null,
+     "M2_arm_min_mm": 40.0,
+     "M2_at": null
     }
    }
   },
@@ -3431,11 +3458,94 @@
    "neck extension": null
   },
   "wearer_rom_by_part": {},
-  "fixed_depth_behind_back_mm": 18.8,
-  "head_neutral_mm": 48.0,
+  "fixed_depth_behind_back_mm": 97.7,
+  "head_neutral_mm": 47.8,
   "balancer": {
    "home": "none (no balancer)",
    "verdict": "no balancer: shoulder motors carry the full gravity torque (SF 1.14 vs rated at the worst pose, gate waiver needed)"
+  },
+  "fairing_check": {
+   "moving_min_mm": {
+    "S1_yoke": {
+     "d": 12.2,
+     "S1p": -90.0,
+     "S2": 0.0
+    },
+    "S1_stop_collar": {
+     "d": 4.18,
+     "S1p": 10.0,
+     "S2": 0.0
+    },
+    "S2_AK70": {
+     "d": 10.92,
+     "S1p": 10.0,
+     "S2": 0.0
+    },
+    "S2_clamp": {
+     "d": 3.2,
+     "S1p": -97.5,
+     "S2": 0.0
+    },
+    "S2_sleeve": {
+     "d": 99.0,
+     "S1p": 0.0,
+     "S2": 0.0
+    },
+    "S2_stop_posts": {
+     "d": 99.0,
+     "S1p": 0.0,
+     "S2": 0.0
+    },
+    "tpu_S2_bumpers": {
+     "d": 99.0,
+     "S1p": 0.0,
+     "S2": 0.0
+    },
+    "S2_adapter": {
+     "d": 99.0,
+     "S1p": 0.0,
+     "S2": 0.0
+    },
+    "S3_bracket": {
+     "d": 99.0,
+     "S1p": 0.0,
+     "S2": 0.0
+    },
+    "S3_XM540": {
+     "d": 99.0,
+     "S1p": 0.0,
+     "S2": 0.0
+    },
+    "S2_stop_lug": {
+     "d": 99.0,
+     "S1p": 0.0,
+     "S2": 0.0
+    },
+    "arm_tube": {
+     "d": 99.0,
+     "S1p": 0.0,
+     "S2": 0.0
+    },
+    "arm_elbow_ball": {
+     "d": 99.0,
+     "S1p": 0.0,
+     "S2": 0.0
+    }
+   },
+   "moving_min_all_mm": 3.2,
+   "skin_min_mm": 24.4,
+   "rail_min_mm": 9.68,
+   "spine_bridge_min_mm": 5.81,
+   "fixed_parts_min_mm": {
+    "pad": 0.0,
+    "seat_dish": 6.0,
+    "liner": 18.45,
+    "rail_spacers": 5.8,
+    "clasp_bracket": 3.18,
+    "S1_AK70": 7.51,
+    "S1_stop_posts": 4.21,
+    "tpu_S1_bumpers": 9.44
+   }
   }
  }
 }

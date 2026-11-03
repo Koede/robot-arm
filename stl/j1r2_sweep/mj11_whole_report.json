@@ -1,39 +1,39 @@
 {
  "total": {
   "cells": 170100,
-  "contact": 114760,
-  "reach_free": 55340,
-  "frontier": 35073,
-  "deep_dropped": 79687
+  "contact": 118949,
+  "reach_free": 51151,
+  "frontier": 32094,
+  "deep_dropped": 86855
  },
  "groups": {
   "M1": {
-   "frontier_cells": 0,
-   "contact_cells": 0
+   "frontier_cells": 2979,
+   "contact_cells": 34020
   },
   "M2": {
    "frontier_cells": 3636,
    "contact_cells": 59940
   },
   "M3": {
-   "frontier_cells": 17311,
+   "frontier_cells": 14759,
    "contact_cells": 89910
   },
   "ME": {
-   "frontier_cells": 3930,
+   "frontier_cells": 2626,
    "contact_cells": 51057
   },
   "MW1": {
-   "frontier_cells": 6983,
-   "contact_cells": 39033
+   "frontier_cells": 5802,
+   "contact_cells": 39168
   },
   "MW2": {
-   "frontier_cells": 11360,
-   "contact_cells": 47400
+   "frontier_cells": 9606,
+   "contact_cells": 47520
   },
   "MW3": {
-   "frontier_cells": 16005,
-   "contact_cells": 53315
+   "frontier_cells": 14213,
+   "contact_cells": 53760
   }
  },
  "pairs": {
@@ -43,7 +43,7 @@
    "status": "PASS",
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
-   "min_clear_reach_free": 14.256145477294922
+   "min_clear_reach_free": 16.776046752929688
   },
   "M1|S1_AK70": {
    "MM": 3.0,
@@ -82,7 +82,7 @@
    "status": "PASS",
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
-   "min_clear_reach_free": 17.64047622680664
+   "min_clear_reach_free": 17.864564895629883
   },
   "M1|mj11_rail_spacers": {
    "MM": 3.0,
@@ -94,8 +94,21 @@
   },
   "M1|mj11_clasp_bracket": {
    "MM": 3.0,
-   "park_d": 2.0254669189453125,
-   "status": "EXCLUDED(designed contact at park)"
+   "park_d": 7.810735702514648,
+   "status": "BELOW_GATE",
+   "n_frontier_cells": 1,
+   "n_deep_cells": 2,
+   "d_frontier_min": 2.2078897953033447,
+   "min_clear_reach_free": 7.707521915435791
+  },
+  "M1|mj11_fairing": {
+   "MM": 3.0,
+   "park_d": 4.180710792541504,
+   "status": "BELOW_GATE",
+   "n_frontier_cells": 1,
+   "n_deep_cells": 2,
+   "d_frontier_min": 1.0589370727539062,
+   "min_clear_reach_free": 3.2000045776367188
   },
   "M1|wing": {
    "MM": 3.0,
@@ -103,7 +116,7 @@
    "status": "PASS",
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
-   "min_clear_reach_free": 10.681495666503906
+   "min_clear_reach_free": 14.848262786865234
   },
   "M1|wearer_skin": {
    "MM": 2.0,
@@ -111,7 +124,7 @@
    "status": "PASS",
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
-   "min_clear_reach_free": 21.6511173248291
+   "min_clear_reach_free": 25.341814041137695
   },
   "M1|wearer_head": {
    "MM": 60.0,
@@ -119,7 +132,7 @@
    "status": "PASS",
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
-   "min_clear_reach_free": 83.84715270996094
+   "min_clear_reach_free": 87.58951568603516
   },
   "M2|rail": {
    "MM": 3.0,
@@ -193,6 +206,14 @@
    "n_deep_cells": 15,
    "min_clear_reach_free": 17.198612213134766
   },
+  "M2|mj11_fairing": {
+   "MM": 3.0,
+   "park_d": 67.73623657226562,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 47.480831146240234
+  },
   "M2|wing": {
    "MM": 3.0,
    "park_d": 132.32472229003906,
@@ -216,7 +237,7 @@
    "status": "PASS",
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
-   "min_clear_reach_free": 116.06637573242188
+   "min_clear_reach_free": 134.08030700683594
   },
   "M3|rail": {
    "MM": 3.0,
@@ -291,6 +312,14 @@
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 5.201302528381348
   },
+  "M3|mj11_fairing": {
+   "MM": 3.0,
+   "park_d": 61.13612747192383,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 38.55335235595703
+  },
   "M3|wing": {
    "MM": 3.0,
    "park_d": 135.78273010253906,
@@ -312,22 +341,22 @@
    "MM": 60.0,
    "park_d": 164.1827392578125,
    "status": "BELOW_GATE",
-   "n_frontier_cells": 8,
-   "n_deep_cells": 55,
-   "d_frontier_min": 38.45436096191406,
-   "min_clear_reach_free": 69.23585510253906
+   "n_frontier_cells": 4,
+   "n_deep_cells": 59,
+   "d_frontier_min": 50.34394073486328,
+   "min_clear_reach_free": 84.31645965576172
   },
   "ME|rail": {
    "MM": 3.0,
-   "park_d": 190.6900177001953,
+   "park_d": 190.65496826171875,
    "status": "PASS(contact only in unreachable region, dropped)",
    "n_frontier_cells": 0,
    "n_deep_cells": 9,
-   "min_clear_reach_free": 77.67667388916016
+   "min_clear_reach_free": 116.07386779785156
   },
   "ME|S1_AK70": {
    "MM": 3.0,
-   "park_d": 173.54200744628906,
+   "park_d": 173.51637268066406,
    "status": "PASS",
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
@@ -335,7 +364,7 @@
   },
   "ME|S1_stop_posts": {
    "MM": 3.0,
-   "park_d": 195.75941467285156,
+   "park_d": 195.760009765625,
    "status": "PASS",
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
@@ -343,7 +372,7 @@
   },
   "ME|tpu_S1_bumpers": {
    "MM": 3.0,
-   "park_d": 194.794677734375,
+   "park_d": 194.7981719970703,
    "status": "PASS",
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
@@ -351,7 +380,7 @@
   },
   "ME|mj11_pad": {
    "MM": 3.0,
-   "park_d": 151.030029296875,
+   "park_d": 151.0172882080078,
    "status": "PASS",
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
@@ -375,11 +404,11 @@
   },
   "ME|mj11_rail_spacers": {
    "MM": 3.0,
-   "park_d": 230.35659790039062,
+   "park_d": 230.3477020263672,
    "status": "PASS",
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
-   "min_clear_reach_free": 132.54124450683594
+   "min_clear_reach_free": 151.9143524169922
   },
   "ME|mj11_clasp_bracket": {
    "MM": 3.0,
@@ -390,44 +419,52 @@
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 36.886619567871094
   },
-  "ME|wing": {
+  "ME|mj11_fairing": {
    "MM": 3.0,
-   "park_d": 194.88563537597656,
+   "park_d": 157.0847625732422,
    "status": "PASS",
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
-   "min_clear_reach_free": 78.927001953125
+   "min_clear_reach_free": 98.05198669433594
+  },
+  "ME|wing": {
+   "MM": 3.0,
+   "park_d": 194.95965576171875,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 114.29367065429688
   },
   "ME|wearer_skin": {
    "MM": 2.0,
    "park_d": 106.4049301147461,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 84,
-   "n_deep_cells": 1349,
+   "n_frontier_cells": 80,
+   "n_deep_cells": 1353,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 3.2331082820892334
   },
   "ME|wearer_head": {
    "MM": 60.0,
-   "park_d": 157.82054138183594,
+   "park_d": 157.514404296875,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 133,
-   "n_deep_cells": 559,
+   "n_frontier_cells": 65,
+   "n_deep_cells": 627,
    "d_frontier_min": 0.0,
-   "min_clear_reach_free": 61.20176696777344
+   "min_clear_reach_free": 70.69524383544922
   },
   "MW1|rail": {
    "MM": 3.0,
-   "park_d": 252.2924346923828,
+   "park_d": 252.40679931640625,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 60,
-   "n_deep_cells": 258,
+   "n_frontier_cells": 42,
+   "n_deep_cells": 276,
    "d_frontier_min": 0.0,
-   "min_clear_reach_free": 28.38943862915039
+   "min_clear_reach_free": 56.4545783996582
   },
   "MW1|S1_AK70": {
    "MM": 3.0,
-   "park_d": 260.2222595214844,
+   "park_d": 260.20660400390625,
    "status": "BELOW_GATE",
    "n_frontier_cells": 14,
    "n_deep_cells": 31,
@@ -436,7 +473,7 @@
   },
   "MW1|S1_stop_posts": {
    "MM": 3.0,
-   "park_d": 281.96832275390625,
+   "park_d": 281.9697265625,
    "status": "PASS(contact only in unreachable region, dropped)",
    "n_frontier_cells": 0,
    "n_deep_cells": 12,
@@ -444,7 +481,7 @@
   },
   "MW1|tpu_S1_bumpers": {
    "MM": 3.0,
-   "park_d": 281.0758972167969,
+   "park_d": 281.0767517089844,
    "status": "PASS(contact only in unreachable region, dropped)",
    "n_frontier_cells": 0,
    "n_deep_cells": 15,
@@ -452,290 +489,317 @@
   },
   "MW1|mj11_pad": {
    "MM": 3.0,
-   "park_d": 238.22869873046875,
+   "park_d": 238.21624755859375,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 176,
-   "n_deep_cells": 304,
+   "n_frontier_cells": 158,
+   "n_deep_cells": 322,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 12.68791389465332
   },
   "MW1|mj11_seat_dish": {
    "MM": 3.0,
-   "park_d": 230.67129516601562,
+   "park_d": 230.8247528076172,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 181,
-   "n_deep_cells": 554,
+   "n_frontier_cells": 163,
+   "n_deep_cells": 572,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 15.574630737304688
   },
   "MW1|mj11_liner": {
    "MM": 3.0,
-   "park_d": 227.53504943847656,
+   "park_d": 227.62911987304688,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 125,
-   "n_deep_cells": 722,
+   "n_frontier_cells": 113,
+   "n_deep_cells": 734,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 26.53760528564453
   },
   "MW1|mj11_rail_spacers": {
    "MM": 3.0,
-   "park_d": 308.67828369140625,
+   "park_d": 308.6462707519531,
    "status": "PASS(contact only in unreachable region, dropped)",
    "n_frontier_cells": 0,
    "n_deep_cells": 81,
-   "min_clear_reach_free": 36.977115631103516
+   "min_clear_reach_free": 90.4550552368164
   },
   "MW1|mj11_clasp_bracket": {
    "MM": 3.0,
-   "park_d": 166.3625030517578,
+   "park_d": 166.27442932128906,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 242,
-   "n_deep_cells": 130,
+   "n_frontier_cells": 217,
+   "n_deep_cells": 158,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 6.4061384201049805
   },
+  "MW1|mj11_fairing": {
+   "MM": 3.0,
+   "park_d": 244.34674072265625,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 149,
+   "n_deep_cells": 118,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 12.666497230529785
+  },
   "MW1|wing": {
    "MM": 3.0,
-   "park_d": 263.22161865234375,
+   "park_d": 263.05633544921875,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 63,
-   "n_deep_cells": 285,
+   "n_frontier_cells": 42,
+   "n_deep_cells": 306,
    "d_frontier_min": 0.0,
-   "min_clear_reach_free": 25.87184715270996
+   "min_clear_reach_free": 52.26248550415039
   },
   "MW1|wearer_skin": {
    "MM": 2.0,
    "park_d": 161.32496643066406,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 683,
-   "n_deep_cells": 2649,
+   "n_frontier_cells": 650,
+   "n_deep_cells": 2682,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 4.2144317626953125
   },
   "MW1|wearer_head": {
    "MM": 60.0,
-   "park_d": 186.86605834960938,
+   "park_d": 186.9841766357422,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 685,
-   "n_deep_cells": 1385,
+   "n_frontier_cells": 500,
+   "n_deep_cells": 1570,
    "d_frontier_min": 0.0,
-   "min_clear_reach_free": 61.10074996948242
+   "min_clear_reach_free": 61.59994125366211
   },
   "MW2|rail": {
    "MM": 3.0,
-   "park_d": 283.7733459472656,
+   "park_d": 283.8830871582031,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 377,
-   "n_deep_cells": 2586,
+   "n_frontier_cells": 280,
+   "n_deep_cells": 2683,
    "d_frontier_min": 0.0,
-   "min_clear_reach_free": 11.002358436584473
+   "min_clear_reach_free": 38.17509841918945
   },
   "MW2|S1_AK70": {
    "MM": 3.0,
-   "park_d": 305.8936462402344,
+   "park_d": 305.91265869140625,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 302,
-   "n_deep_cells": 2893,
+   "n_frontier_cells": 247,
+   "n_deep_cells": 2948,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 12.19711971282959
   },
   "MW2|S1_stop_posts": {
    "MM": 3.0,
-   "park_d": 327.998046875,
+   "park_d": 328.0013732910156,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 29,
-   "n_deep_cells": 802,
+   "n_frontier_cells": 16,
+   "n_deep_cells": 815,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 16.775272369384766
   },
   "MW2|tpu_S1_bumpers": {
    "MM": 3.0,
-   "park_d": 327.1302185058594,
+   "park_d": 327.1292724609375,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 16,
-   "n_deep_cells": 438,
+   "n_frontier_cells": 7,
+   "n_deep_cells": 447,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 17.853010177612305
   },
   "MW2|mj11_pad": {
    "MM": 3.0,
-   "park_d": 284.52911376953125,
+   "park_d": 284.5715637207031,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 466,
-   "n_deep_cells": 3224,
+   "n_frontier_cells": 386,
+   "n_deep_cells": 3304,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 3.82607364654541
   },
   "MW2|mj11_seat_dish": {
    "MM": 3.0,
-   "park_d": 275.15570068359375,
+   "park_d": 275.28955078125,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 457,
-   "n_deep_cells": 3221,
+   "n_frontier_cells": 386,
+   "n_deep_cells": 3292,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 4.864232540130615
   },
   "MW2|mj11_liner": {
    "MM": 3.0,
-   "park_d": 271.1827392578125,
+   "park_d": 271.1792297363281,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 411,
-   "n_deep_cells": 3132,
+   "n_frontier_cells": 346,
+   "n_deep_cells": 3197,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 8.12982177734375
   },
   "MW2|mj11_rail_spacers": {
    "MM": 3.0,
-   "park_d": 348.550048828125,
+   "park_d": 348.512939453125,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 27,
-   "n_deep_cells": 1158,
+   "n_frontier_cells": 12,
+   "n_deep_cells": 1173,
    "d_frontier_min": 0.0,
-   "min_clear_reach_free": 28.782224655151367
+   "min_clear_reach_free": 72.6669921875
   },
   "MW2|mj11_clasp_bracket": {
    "MM": 3.0,
-   "park_d": 212.61143493652344,
+   "park_d": 212.50904846191406,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 669,
-   "n_deep_cells": 1910,
+   "n_frontier_cells": 550,
+   "n_deep_cells": 1945,
    "d_frontier_min": 0.0,
-   "min_clear_reach_free": 3.6420183181762695
+   "min_clear_reach_free": 4.061769008636475
+  },
+  "MW2|mj11_fairing": {
+   "MM": 3.0,
+   "park_d": 290.2702331542969,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 339,
+   "n_deep_cells": 2395,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 3.8513505458831787
   },
   "MW2|wing": {
    "MM": 3.0,
-   "park_d": 298.01544189453125,
+   "park_d": 297.8464660644531,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 375,
-   "n_deep_cells": 2709,
+   "n_frontier_cells": 278,
+   "n_deep_cells": 2806,
    "d_frontier_min": 0.0,
-   "min_clear_reach_free": 8.124842643737793
+   "min_clear_reach_free": 34.97050857543945
   },
   "MW2|wearer_skin": {
    "MM": 2.0,
-   "park_d": 181.7891082763672,
+   "park_d": 181.49160766601562,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 2797,
-   "n_deep_cells": 9704,
+   "n_frontier_cells": 2562,
+   "n_deep_cells": 9939,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 2.002708911895752
   },
   "MW2|wearer_head": {
    "MM": 60.0,
-   "park_d": 202.05442810058594,
+   "park_d": 201.93540954589844,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 2416,
-   "n_deep_cells": 5751,
+   "n_frontier_cells": 1833,
+   "n_deep_cells": 6334,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 60.03834533691406
   },
   "MW3|rail": {
    "MM": 3.0,
-   "park_d": 336.5931701660156,
+   "park_d": 336.6924133300781,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 1234,
-   "n_deep_cells": 8260,
+   "n_frontier_cells": 1015,
+   "n_deep_cells": 8479,
    "d_frontier_min": 0.0,
-   "min_clear_reach_free": 6.725621223449707
+   "min_clear_reach_free": 14.226675033569336
   },
   "MW3|S1_AK70": {
    "MM": 3.0,
-   "park_d": 375.61370849609375,
+   "park_d": 375.8138732910156,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 783,
-   "n_deep_cells": 8067,
+   "n_frontier_cells": 598,
+   "n_deep_cells": 8252,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 13.146714210510254
   },
   "MW3|S1_stop_posts": {
    "MM": 3.0,
-   "park_d": 398.0962829589844,
+   "park_d": 398.10211181640625,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 275,
-   "n_deep_cells": 2543,
+   "n_frontier_cells": 227,
+   "n_deep_cells": 2591,
    "d_frontier_min": 0.0,
-   "min_clear_reach_free": 26.68027114868164
+   "min_clear_reach_free": 45.68539810180664
   },
   "MW3|tpu_S1_bumpers": {
    "MM": 3.0,
-   "park_d": 397.26708984375,
+   "park_d": 397.2674255371094,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 126,
-   "n_deep_cells": 1278,
+   "n_frontier_cells": 106,
+   "n_deep_cells": 1298,
    "d_frontier_min": 0.0,
-   "min_clear_reach_free": 34.4209098815918
+   "min_clear_reach_free": 45.135589599609375
   },
   "MW3|mj11_pad": {
    "MM": 3.0,
-   "park_d": 355.30938720703125,
+   "park_d": 355.26507568359375,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 842,
-   "n_deep_cells": 7160,
+   "n_frontier_cells": 672,
+   "n_deep_cells": 7330,
    "d_frontier_min": 0.0,
-   "min_clear_reach_free": 18.494314193725586
+   "min_clear_reach_free": 30.476972579956055
   },
   "MW3|mj11_seat_dish": {
    "MM": 3.0,
-   "park_d": 343.8912658691406,
+   "park_d": 343.7973937988281,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 1043,
-   "n_deep_cells": 6570,
+   "n_frontier_cells": 850,
+   "n_deep_cells": 6763,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 33.1485710144043
   },
   "MW3|mj11_liner": {
    "MM": 3.0,
-   "park_d": 338.8518371582031,
+   "park_d": 338.818115234375,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 1002,
-   "n_deep_cells": 5764,
+   "n_frontier_cells": 814,
+   "n_deep_cells": 5952,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 34.036930084228516
   },
   "MW3|mj11_rail_spacers": {
    "MM": 3.0,
-   "park_d": 410.35650634765625,
+   "park_d": 410.34576416015625,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 197,
-   "n_deep_cells": 2888,
+   "n_frontier_cells": 125,
+   "n_deep_cells": 2960,
    "d_frontier_min": 0.0,
-   "min_clear_reach_free": 21.255403518676758
+   "min_clear_reach_free": 68.09043884277344
   },
   "MW3|mj11_clasp_bracket": {
    "MM": 3.0,
-   "park_d": 284.86395263671875,
+   "park_d": 284.8927307128906,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 788,
-   "n_deep_cells": 4040,
+   "n_frontier_cells": 614,
+   "n_deep_cells": 4107,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 3.3163347244262695
   },
+  "MW3|mj11_fairing": {
+   "MM": 3.0,
+   "park_d": 360.6424560546875,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 597,
+   "n_deep_cells": 8254,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 3.0452921390533447
+  },
   "MW3|wing": {
    "MM": 3.0,
-   "park_d": 353.9523010253906,
+   "park_d": 354.3472595214844,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 1146,
-   "n_deep_cells": 8537,
+   "n_frontier_cells": 952,
+   "n_deep_cells": 8731,
    "d_frontier_min": 0.0,
-   "min_clear_reach_free": 3.4452309608459473
+   "min_clear_reach_free": 9.32993221282959
   },
   "MW3|wearer_skin": {
    "MM": 2.0,
-   "park_d": 223.99917602539062,
+   "park_d": 223.99647521972656,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 11638,
-   "n_deep_cells": 28122,
+   "n_frontier_cells": 10453,
+   "n_deep_cells": 29307,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 2.0409224033355713
   },
   "MW3|wearer_head": {
    "MM": 60.0,
-   "park_d": 223.99566650390625,
+   "park_d": 223.9960174560547,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 8803,
-   "n_deep_cells": 16216,
+   "n_frontier_cells": 7343,
+   "n_deep_cells": 17676,
    "d_frontier_min": 0.0,
-   "min_clear_reach_free": 60.01612854003906
+   "min_clear_reach_free": 60.03683853149414
   },
   "M1|M2": {
    "MM": 3.0,
@@ -772,8 +836,8 @@
    "MM": 3.0,
    "park_d": 261.5001525878906,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 65,
-   "n_deep_cells": 146,
+   "n_frontier_cells": 64,
+   "n_deep_cells": 147,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 9.945215225219727
   },
@@ -781,8 +845,8 @@
    "MM": 3.0,
    "park_d": 335.6201171875,
    "status": "FAIL(<1mm)",
-   "n_frontier_cells": 173,
-   "n_deep_cells": 538,
+   "n_frontier_cells": 171,
+   "n_deep_cells": 540,
    "d_frontier_min": 0.0,
    "min_clear_reach_free": 6.474303245544434
   },
@@ -851,7 +915,7 @@
    "status": "PASS",
    "n_frontier_cells": 0,
    "n_deep_cells": 0,
-   "min_clear_reach_free": 25.317142486572266
+   "min_clear_reach_free": 32.84011459350586
   },
   "ME|MW1": {
    "MM": 3.0,

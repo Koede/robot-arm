@@ -5,7 +5,7 @@
    -190.0,
    12.0
   ],
-  "reach_cov": 0.786,
+  "reach_cov": 0.706,
   "box": {
    "ranges": {
     "S1p": [
@@ -21,6 +21,14 @@
    "area": 176
   },
   "worst": [
+   [
+    "M1|mj11_clasp_bracket",
+    0.0
+   ],
+   [
+    "M1|mj11_fairing",
+    0.0
+   ],
    [
     "M2|mj11_clasp_bracket",
     0.0
@@ -52,19 +60,73 @@
    [
     "M3|wing",
     1.5
-   ],
-   [
-    "M2|rail",
-    1.6
-   ],
-   [
-    "M1|tpu_S1_bumpers",
-    3.5
    ]
   ],
-  "t": 12.7
+  "t": 12.8
  },
  "frontier_pairs": {
+  "M1|mj11_clasp_bracket": {
+   "MM": 3.0,
+   "park_d": 7.810735702514648,
+   "status": "BELOW_GATE",
+   "n_frontier_cells": 1,
+   "n_deep_cells": 4,
+   "d_frontier_min": 2.2078897953033447,
+   "first_contact": {
+    "S1p": [
+     13.48,
+     13.48
+    ],
+    "S2": [
+     -20.0,
+     20.0
+    ],
+    "S3": [
+     -70.0,
+     90.0
+    ]
+   },
+   "first_contact_example": {
+    "S1p": 13.48,
+    "S2": -20.0,
+    "S3": -70.0
+   },
+   "n_first_contact_points": 30,
+   "worst_contact_pose": {
+    "S1p": 15.0
+   }
+  },
+  "M1|mj11_fairing": {
+   "MM": 3.0,
+   "park_d": 4.180710792541504,
+   "status": "BELOW_GATE",
+   "n_frontier_cells": 1,
+   "n_deep_cells": 4,
+   "d_frontier_min": 1.0589370727539062,
+   "first_contact": {
+    "S1p": [
+     11.88,
+     11.88
+    ],
+    "S2": [
+     -20.0,
+     20.0
+    ],
+    "S3": [
+     -70.0,
+     90.0
+    ]
+   },
+   "first_contact_example": {
+    "S1p": 11.88,
+    "S2": -20.0,
+    "S3": -70.0
+   },
+   "n_first_contact_points": 30,
+   "worst_contact_pose": {
+    "S1p": 15.0
+   }
+  },
   "M2|wearer_skin": {
    "MM": 2.0,
    "park_d": 39.59162521362305,
@@ -167,16 +229,16 @@
    "MM": 60.0,
    "park_d": 164.1827392578125,
    "status": "BELOW_GATE",
-   "n_frontier_cells": 24,
-   "n_deep_cells": 195,
-   "d_frontier_min": 43.72101593017578,
+   "n_frontier_cells": 12,
+   "n_deep_cells": 207,
+   "d_frontier_min": 50.252349853515625,
    "first_contact": {
     "S1p": [
      9.43,
-     35.0
+     14.59
     ],
     "S2": [
-     -1.19,
+     15.0,
      25.0
     ],
     "S3": [
@@ -185,15 +247,15 @@
     ]
    },
    "first_contact_example": {
-    "S1p": 31.51,
-    "S2": 0.0,
-    "S3": 90.0
-   },
-   "n_first_contact_points": 39,
-   "worst_contact_pose": {
-    "S1p": 30.0,
-    "S2": 5.0,
+    "S1p": 12.36,
+    "S2": 20.0,
     "S3": 0.0
+   },
+   "n_first_contact_points": 15,
+   "worst_contact_pose": {
+    "S1p": 15.0,
+    "S2": 20.0,
+    "S3": 90.0
    }
   },
   "M1|M3": {
@@ -206,7 +268,7 @@
    "first_contact": {
     "S1p": [
      -95.0,
-     35.0
+     10.0
     ],
     "S2": [
      -21.86,
@@ -222,7 +284,7 @@
     "S2": -21.86,
     "S3": -70.0
    },
-   "n_first_contact_points": 84,
+   "n_first_contact_points": 69,
    "worst_contact_pose": {
     "S2": -25.0,
     "S3": -70.0
