@@ -1,0 +1,487 @@
+{
+ "inputs": {
+  "area_mm2": 7284,
+  "dp_max_kPa": 2.8,
+  "dp_min_kPa": -1.95,
+  "dyn": 2.0,
+  "p0_cases": [
+   2.0,
+   4.3,
+   8.0
+  ],
+  "mu_slip": [
+   0.05,
+   0.1,
+   0.2,
+   0.3
+  ],
+  "mu_skin": [
+   0.3,
+   0.52,
+   0.7
+  ],
+  "sweat_factor": 3.0,
+  "travel_mm": [
+   56.0,
+   96.0
+  ],
+  "v_skin_m_s": [
+   0.01,
+   0.037
+  ],
+  "k_LD33_kPa_per_mm": 33.0,
+  "k_model_kPa_per_mm": 18.75
+ },
+ "rows": [
+  {
+   "p0": 2.0,
+   "case": "static",
+   "p_kPa": 4.8,
+   "N": 35.0,
+   "mu_slip": 0.05,
+   "F_shear_N": 1.75,
+   "tau_kPa": 0.24,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": false,
+   "E_per_stroke_J": [
+    0.098,
+    0.168
+   ],
+   "P_W_worst": 0.065,
+   "q_W_m2_worst": 8.9
+  },
+  {
+   "p0": 2.0,
+   "case": "static",
+   "p_kPa": 4.8,
+   "N": 35.0,
+   "mu_slip": 0.1,
+   "F_shear_N": 3.5,
+   "tau_kPa": 0.48,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": false,
+   "E_per_stroke_J": [
+    0.196,
+    0.336
+   ],
+   "P_W_worst": 0.129,
+   "q_W_m2_worst": 17.8
+  },
+  {
+   "p0": 2.0,
+   "case": "static",
+   "p_kPa": 4.8,
+   "N": 35.0,
+   "mu_slip": 0.2,
+   "F_shear_N": 6.99,
+   "tau_kPa": 0.96,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": true,
+   "E_per_stroke_J": [
+    0.392,
+    0.671
+   ],
+   "P_W_worst": 0.259,
+   "q_W_m2_worst": 35.5
+  },
+  {
+   "p0": 2.0,
+   "case": "static",
+   "p_kPa": 4.8,
+   "N": 35.0,
+   "mu_slip": 0.3,
+   "F_shear_N": 10.49,
+   "tau_kPa": 1.44,
+   "slip_at_skin_dry": true,
+   "slip_at_skin_if_pair_x2_sweat": true,
+   "E_per_stroke_J": [
+    0.587,
+    1.007
+   ],
+   "P_W_worst": 0.388,
+   "q_W_m2_worst": 53.3
+  },
+  {
+   "p0": 2.0,
+   "case": "dynamic peak",
+   "p_kPa": 7.6,
+   "N": 55.4,
+   "mu_slip": 0.05,
+   "F_shear_N": 2.77,
+   "tau_kPa": 0.38,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": false,
+   "E_per_stroke_J": [
+    0.155,
+    0.266
+   ],
+   "P_W_worst": 0.102,
+   "q_W_m2_worst": 14.1
+  },
+  {
+   "p0": 2.0,
+   "case": "dynamic peak",
+   "p_kPa": 7.6,
+   "N": 55.4,
+   "mu_slip": 0.1,
+   "F_shear_N": 5.54,
+   "tau_kPa": 0.76,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": false,
+   "E_per_stroke_J": [
+    0.31,
+    0.531
+   ],
+   "P_W_worst": 0.205,
+   "q_W_m2_worst": 28.1
+  },
+  {
+   "p0": 2.0,
+   "case": "dynamic peak",
+   "p_kPa": 7.6,
+   "N": 55.4,
+   "mu_slip": 0.2,
+   "F_shear_N": 11.07,
+   "tau_kPa": 1.52,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": true,
+   "E_per_stroke_J": [
+    0.62,
+    1.063
+   ],
+   "P_W_worst": 0.41,
+   "q_W_m2_worst": 56.2
+  },
+  {
+   "p0": 2.0,
+   "case": "dynamic peak",
+   "p_kPa": 7.6,
+   "N": 55.4,
+   "mu_slip": 0.3,
+   "F_shear_N": 16.61,
+   "tau_kPa": 2.28,
+   "slip_at_skin_dry": true,
+   "slip_at_skin_if_pair_x2_sweat": true,
+   "E_per_stroke_J": [
+    0.93,
+    1.594
+   ],
+   "P_W_worst": 0.614,
+   "q_W_m2_worst": 84.4
+  },
+  {
+   "p0": 4.3,
+   "case": "static",
+   "p_kPa": 7.1,
+   "N": 51.7,
+   "mu_slip": 0.05,
+   "F_shear_N": 2.59,
+   "tau_kPa": 0.35,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": false,
+   "E_per_stroke_J": [
+    0.145,
+    0.248
+   ],
+   "P_W_worst": 0.096,
+   "q_W_m2_worst": 13.1
+  },
+  {
+   "p0": 4.3,
+   "case": "static",
+   "p_kPa": 7.1,
+   "N": 51.7,
+   "mu_slip": 0.1,
+   "F_shear_N": 5.17,
+   "tau_kPa": 0.71,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": false,
+   "E_per_stroke_J": [
+    0.29,
+    0.496
+   ],
+   "P_W_worst": 0.191,
+   "q_W_m2_worst": 26.3
+  },
+  {
+   "p0": 4.3,
+   "case": "static",
+   "p_kPa": 7.1,
+   "N": 51.7,
+   "mu_slip": 0.2,
+   "F_shear_N": 10.34,
+   "tau_kPa": 1.42,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": true,
+   "E_per_stroke_J": [
+    0.579,
+    0.993
+   ],
+   "P_W_worst": 0.383,
+   "q_W_m2_worst": 52.5
+  },
+  {
+   "p0": 4.3,
+   "case": "static",
+   "p_kPa": 7.1,
+   "N": 51.7,
+   "mu_slip": 0.3,
+   "F_shear_N": 15.51,
+   "tau_kPa": 2.13,
+   "slip_at_skin_dry": true,
+   "slip_at_skin_if_pair_x2_sweat": true,
+   "E_per_stroke_J": [
+    0.869,
+    1.489
+   ],
+   "P_W_worst": 0.574,
+   "q_W_m2_worst": 78.8
+  },
+  {
+   "p0": 4.3,
+   "case": "dynamic peak",
+   "p_kPa": 9.9,
+   "N": 72.1,
+   "mu_slip": 0.05,
+   "F_shear_N": 3.61,
+   "tau_kPa": 0.49,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": false,
+   "E_per_stroke_J": [
+    0.202,
+    0.346
+   ],
+   "P_W_worst": 0.133,
+   "q_W_m2_worst": 18.3
+  },
+  {
+   "p0": 4.3,
+   "case": "dynamic peak",
+   "p_kPa": 9.9,
+   "N": 72.1,
+   "mu_slip": 0.1,
+   "F_shear_N": 7.21,
+   "tau_kPa": 0.99,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": false,
+   "E_per_stroke_J": [
+    0.404,
+    0.692
+   ],
+   "P_W_worst": 0.267,
+   "q_W_m2_worst": 36.6
+  },
+  {
+   "p0": 4.3,
+   "case": "dynamic peak",
+   "p_kPa": 9.9,
+   "N": 72.1,
+   "mu_slip": 0.2,
+   "F_shear_N": 14.42,
+   "tau_kPa": 1.98,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": true,
+   "E_per_stroke_J": [
+    0.808,
+    1.385
+   ],
+   "P_W_worst": 0.534,
+   "q_W_m2_worst": 73.3
+  },
+  {
+   "p0": 4.3,
+   "case": "dynamic peak",
+   "p_kPa": 9.9,
+   "N": 72.1,
+   "mu_slip": 0.3,
+   "F_shear_N": 21.63,
+   "tau_kPa": 2.97,
+   "slip_at_skin_dry": true,
+   "slip_at_skin_if_pair_x2_sweat": true,
+   "E_per_stroke_J": [
+    1.211,
+    2.077
+   ],
+   "P_W_worst": 0.8,
+   "q_W_m2_worst": 109.9
+  },
+  {
+   "p0": 8.0,
+   "case": "static",
+   "p_kPa": 10.8,
+   "N": 78.7,
+   "mu_slip": 0.05,
+   "F_shear_N": 3.93,
+   "tau_kPa": 0.54,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": false,
+   "E_per_stroke_J": [
+    0.22,
+    0.378
+   ],
+   "P_W_worst": 0.146,
+   "q_W_m2_worst": 20.0
+  },
+  {
+   "p0": 8.0,
+   "case": "static",
+   "p_kPa": 10.8,
+   "N": 78.7,
+   "mu_slip": 0.1,
+   "F_shear_N": 7.87,
+   "tau_kPa": 1.08,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": false,
+   "E_per_stroke_J": [
+    0.441,
+    0.755
+   ],
+   "P_W_worst": 0.291,
+   "q_W_m2_worst": 40.0
+  },
+  {
+   "p0": 8.0,
+   "case": "static",
+   "p_kPa": 10.8,
+   "N": 78.7,
+   "mu_slip": 0.2,
+   "F_shear_N": 15.73,
+   "tau_kPa": 2.16,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": true,
+   "E_per_stroke_J": [
+    0.881,
+    1.51
+   ],
+   "P_W_worst": 0.582,
+   "q_W_m2_worst": 79.9
+  },
+  {
+   "p0": 8.0,
+   "case": "static",
+   "p_kPa": 10.8,
+   "N": 78.7,
+   "mu_slip": 0.3,
+   "F_shear_N": 23.6,
+   "tau_kPa": 3.24,
+   "slip_at_skin_dry": true,
+   "slip_at_skin_if_pair_x2_sweat": true,
+   "E_per_stroke_J": [
+    1.322,
+    2.266
+   ],
+   "P_W_worst": 0.873,
+   "q_W_m2_worst": 119.9
+  },
+  {
+   "p0": 8.0,
+   "case": "dynamic peak",
+   "p_kPa": 13.6,
+   "N": 99.1,
+   "mu_slip": 0.05,
+   "F_shear_N": 4.95,
+   "tau_kPa": 0.68,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": false,
+   "E_per_stroke_J": [
+    0.277,
+    0.475
+   ],
+   "P_W_worst": 0.183,
+   "q_W_m2_worst": 25.2
+  },
+  {
+   "p0": 8.0,
+   "case": "dynamic peak",
+   "p_kPa": 13.6,
+   "N": 99.1,
+   "mu_slip": 0.1,
+   "F_shear_N": 9.91,
+   "tau_kPa": 1.36,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": false,
+   "E_per_stroke_J": [
+    0.555,
+    0.951
+   ],
+   "P_W_worst": 0.367,
+   "q_W_m2_worst": 50.3
+  },
+  {
+   "p0": 8.0,
+   "case": "dynamic peak",
+   "p_kPa": 13.6,
+   "N": 99.1,
+   "mu_slip": 0.2,
+   "F_shear_N": 19.81,
+   "tau_kPa": 2.72,
+   "slip_at_skin_dry": false,
+   "slip_at_skin_if_pair_x2_sweat": true,
+   "E_per_stroke_J": [
+    1.109,
+    1.902
+   ],
+   "P_W_worst": 0.733,
+   "q_W_m2_worst": 100.6
+  },
+  {
+   "p0": 8.0,
+   "case": "dynamic peak",
+   "p_kPa": 13.6,
+   "N": 99.1,
+   "mu_slip": 0.3,
+   "F_shear_N": 29.72,
+   "tau_kPa": 4.08,
+   "slip_at_skin_dry": true,
+   "slip_at_skin_if_pair_x2_sweat": true,
+   "E_per_stroke_J": [
+    1.664,
+    2.853
+   ],
+   "P_W_worst": 1.1,
+   "q_W_m2_worst": 151.0
+  }
+ ],
+ "heat_worst_case": {
+  "row": {
+   "p0": 4.3,
+   "case": "dynamic peak",
+   "p_kPa": 9.9,
+   "N": 72.1,
+   "mu_slip": 0.3,
+   "F_shear_N": 21.63,
+   "tau_kPa": 2.97,
+   "slip_at_skin_dry": true,
+   "slip_at_skin_if_pair_x2_sweat": true,
+   "E_per_stroke_J": [
+    1.211,
+    2.077
+   ],
+   "P_W_worst": 0.8,
+   "q_W_m2_worst": 109.9
+  },
+  "stroke_s": 2.5945945945945947,
+  "dT_K": 0.17
+ },
+ "fit_sensitivity": {
+  "note": "the dish is rigid and spaced from the rail, so liner pressure is displacement-controlled: p = k * delta",
+  "per_mm_LD33_kPa": 33.0,
+  "per_mm_model_kPa": 18.75,
+  "mm_to_reach_4p3kPa_LD33": 0.13,
+  "mm_to_reach_4p3kPa_model": 0.229,
+  "precompression_in_mj_eval_mm": 1.9,
+  "p_at_1p9mm_LD33_kPa": 62.7,
+  "p_at_1p9mm_model_kPa": 35.6
+ },
+ "abrasion": {
+  "strokes_per_day_assumed": 500,
+  "sliding_m_per_day": [
+   28.0,
+   48.0
+  ],
+  "sliding_km_per_year": [
+   10.2,
+   17.5
+  ]
+ }
+}

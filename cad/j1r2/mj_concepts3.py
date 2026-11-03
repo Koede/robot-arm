@@ -5,12 +5,12 @@ Findings behind the geometry (mj11_scan.py): at the J1 rev 2 pad (+10, -30) the 
 so a flat pad can only lie on the back if the S1' axis is moved onto the blade itself.  MJ11 sits the pad at (y1, z1) = (-60, -190) (J1_PAD env, standoff 12 = liner 8 + 4 clearance over the ridge):
   * pad disc R66 x 6 (unchanged part), its FLAT front face x0 parallel to the S1' plane;
   * seat dish: a conformal PA-CF shell whose outer face is the flat plane x0 and whose inner face follows the skin + 8 mm liner (variable thickness, height field, prints flat face down, no supports);
-  * liner: 8 mm closed-cell foam with a PTFE-fabric slip face (the skin travels 56-96 mm under it) and 3 radial lead channels for the electrode flex leads;
+  * liner: 8 mm closed-cell foam with a PTFE-fabric slip face (the skin travels 56-96 mm under it) and skin-side electrode relief slots + lead corridors (2026-11-03, was 3 radial channels; mj11_leads.py);
   * the pad's medial 24 mm overlaps the paraspinal rail: 4 x M4 straight into the rail through 2 spacer pairs (no riser, no knee, no truss).
 Proxy geometry (CAD-as-code primitives).  PLACEHOLDER: AK70 flange pattern on the pad, rail boss positions (new M4 inserts), foam and slip-fabric grades."""
 import numpy as np, trimesh, os, sys, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import clib as L, mj_frame as M, mj_concepts as C
+import clib as L, mj_frame as M, mj_concepts as C, mj11_leads as LD
 from clib import U, D as DIFF, box as bx
 from mj_concepts import P_, pad_disc, pad_pt, link_bolts, rail_node_name, rail_x, clasp_bracket_geo, clasp_bracket_frame, boxbeam, BLUE, PAD_R
 Y1, Z1, X0, XB = M.Y1, M.Z1, M.X0, M.XB
@@ -21,7 +21,9 @@ PAD_TRIM_Y = -121.0                # pad disc trimmed flat on its medial side: c
 BOLT_Z = (-160.0, -220.0)          # rail node heights of the two bolt pairs (rail nodes are every 20 mm)
 BOLT_Y = (-113.0, -105.0)          # PLACEHOLDER positions of the new M4 bosses on the rail rear face
 CLASP_PSI = float(os.environ.get("MJ11_CLASP_PSI", "120"))     # clasp bracket anchor on the pad rim (deg from +y toward +z)
-LEAD_PSI = (225.0, 270.0, 315.0)   # lead channels through the liner (flex electrode leads, SPEC_flex_electrode_leads)
+LEAD_PSI = (225.0, 270.0, 315.0)   # REV 2026-11-02 radial channels (retired 2026-11-03: psi 225 is 90-104 deg off the skin-motion direction, psi 270 25-60 deg, and the pairs sit 33 mm off the psi 315 axis); kept only as the record
+JACK_PSI = LD.JACK_PSI            # jack plate on the lower-medial rim (psi 240): the lateral half of the rim is swept by the S1'/S2 stage (clearance 0.1 mm), jack_scan.json
+JACK_W, JACK_R0, JACK_R1, JACK_T = 26.0, 62.0, 74.0, 5.0   # tangential width, radial span (rim R66), thickness; PLACEHOLDER 16-way 1.27 mm-pitch header footprint
 FOAM_DENS = 0.12                   # g/cm3 closed-cell EVA / PE foam (assumption)
 _G = {}
 def _grid(step=3.0):
@@ -36,13 +38,21 @@ def seat_surfaces():
     return Y, Z, skin, inner, plane
 def dish_mesh():
     Y, Z, skin, inner, plane = seat_surfaces(); return L.I(L.height_solid(Y, Z, inner, plane, "x"), _domain())
+def _slot_cuts(Y, Z, skin):
+    """skin-side relief slots (mj11_leads.slot_polys): swept electrode footprint (atlas travel x1.25) + 8 mm lead corridor to the rim, RELIEF_DEPTH deep from the skin face.
+    Replaces the 3 radial through-channels of rev 2026-11-02 (SPEC_j1r2_mj11_leads_shear.md section 1)."""
+    cuts = []; slabs = L.height_solid(Y, Z, skin - 2.0, skin + LD.RELIEF_DEPTH, "x")
+    for k, poly in LD.slot_polys().items():
+        for g in (poly.geoms if poly.geom_type == "MultiPolygon" else [poly]):
+            cuts.append(L.I(slabs, L.prism([(float(a), float(b)) for a, b in g.exterior.coords], "x", X0 - 90.0, X0 + 5.0)))
+    return cuts
 def liner_mesh():
     Y, Z, skin, inner, plane = seat_surfaces(); ln = L.I(L.height_solid(Y, Z, skin - 0.0, inner, "x"), _domain())
-    cuts = []
-    for psi in LEAD_PSI:
-        a = math.radians(psi); p0 = np.array([X0 - 40.0, Y1 + 18.0 * math.cos(a), Z1 + 18.0 * math.sin(a)]); p1 = np.array([X0 - 40.0, Y1 + 80.0 * math.cos(a), Z1 + 80.0 * math.sin(a)])
-        cuts.append(boxbeam(p0, p1, 8.0, 60.0, None, up=(1, 0, 0), ext=0.0))
-    return DIFF(ln, *cuts)
+    return DIFF(ln, *_slot_cuts(Y, Z, skin))
+def jack_plate_mesh():
+    """PLACEHOLDER 16-way header plate on the dish rim at JACK_PSI, skin side of the pad plane (x X0-6..X0-1), PETG-CF, 2 M3 bosses on the dish rim (not modelled)."""
+    a = math.radians(JACK_PSI); u = np.array([math.cos(a), math.sin(a)])
+    return boxbeam(np.array([X0 - JACK_T / 2 - 1.0, Y1 + JACK_R0 * u[0], Z1 + JACK_R0 * u[1]]), np.array([X0 - JACK_T / 2 - 1.0, Y1 + JACK_R1 * u[0], Z1 + JACK_R1 * u[1]]), JACK_W, JACK_T, None, up=(1, 0, 0), ext=0.0)
 def rail_bolt_pts():
     """(x_pad_face, y, z) of the 4 M4 bolts on the pad plane and the rail rear face x at the same place."""
     return [(X0, y, z, rail_x(-119.0, z)) for z in BOLT_Z for y in BOLT_Y]
@@ -54,6 +64,7 @@ def mj11_geo(base):
     sp = U(*[L.cyl("x", 5.0, rail_x(-119.0, z) - 0.2, X0 + 0.2, c=(y, z), n=24) for (_, y, z, _) in [(0, y, z, 0) for z in BOLT_Z for y in BOLT_Y]])
     out["rail_spacers"] = P_("rail_spacers", sp, "PETGCF", C.COL["steel"], note="4 spacers D10 from the rail rear face to the pad plane (%.1f..%.1f mm), M4 x 20 SHCS into new M4 heat-set inserts (5.6 OD x 4) in the rail (PLACEHOLDER bosses)" % tuple(sorted((X0 - rail_x(-119.0, z)) for z in BOLT_Z)))
     out["liner"]["skin_contact"] = True
+    out["jack_plate"] = P_("jack_plate", jack_plate_mesh(), "PETGCF", C.COL["steel"], note="PLACEHOLDER 16-way keyed header plate (%.0f x %.0f x %.0f) on the dish rim at psi %.0f; the infraspinatus and teres major flex leads reach it along their -d corridors (mj11_leads.json); header part and pinout not selected" % (JACK_W, JACK_R1 - JACK_R0, JACK_T, JACK_PSI))
     out["clasp_bracket"] = P_("clasp_bracket", clasp_bracket_geo(pad_pt(CLASP_PSI, PAD_R - 8, x=XB - 3.0)), "PACF", BLUE, note="clasp feet (re-seated) to the pad rim at psi %.0f" % CLASP_PSI)
     return out
 def mj11_frame(fr, side):
@@ -63,10 +74,10 @@ def mj11_frame(fr, side):
         nb = f"{side}_pb{int(z)}"; fr.node(nb, mp(np.array([X0, np.mean(BOLT_Y), z]))); fr.rigid(pad, nb, tag="pad")
         link_bolts(fr, nb, rail_node_name(side, z), [(-4, 0), (4, 0)], tag="iface")
     # --- liner: normal foam springs over the dish footprint (shear free: slip face), a 16 mm lattice of rigid links to the pad body
-    pts = []; Dm = _domain(); step = 16.0
+    pts = []; Dm = _domain(); step = 16.0; from shapely.geometry import Point as _Pt; from shapely.ops import unary_union as _uu; _sl = _uu(list(LD.slot_polys().values()))
     for y in np.arange(Y1 - PAD_R + 8, Y1 + PAD_R - 7, step):
         for z in np.arange(Z1 - PAD_R + 8, Z1 + PAD_R - 7, step):
-            if math.hypot(y - Y1, z - Z1) <= PAD_R - 4 and y >= RAIL_EDGE_Y + 2: pts.append((y, z))
+            if math.hypot(y - Y1, z - Z1) <= PAD_R - 4 and y >= RAIL_EDGE_Y + 2 and not _sl.contains(_Pt(y, z)): pts.append((y, z))
     k_a = M.E_FOAM / LINER_T; A_i = step * step
     for i, (y, z) in enumerate(pts):
         xs = float(M.back_x(y, z))

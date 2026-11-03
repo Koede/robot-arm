@@ -1,0 +1,514 @@
+{
+ "units": "mm",
+ "pad": [
+  -60.0,
+  -190.0
+ ],
+ "R": 66.0,
+ "rail_edge_y": -96.0,
+ "assumptions": {
+  "lead_od": 1.6,
+  "bend_r_min": 16.0,
+  "loop_r": 18.0,
+  "elec_stack_h_PLACEHOLDER": 3.5,
+  "relief_depth": 5.5,
+  "design_margin": 1.25,
+  "skin_model": "muscle_atlas rigid-blade bound (PIV [14.75, -116.22]): direction; magnitude atlas travel_mm and SPEC s2.3 table"
+ },
+ "sites": {
+  "trap_mid": {
+   "carrier": "base layer (under the rail foam)",
+   "on_back_skin": true,
+   "x_skin": -119.9,
+   "centre_yz": [
+    -125.9,
+    -136.0
+   ],
+   "under_rail_flag": true,
+   "travel_atlas": 18.0,
+   "travel_spec": 56.0,
+   "d_dir": [
+    0.139,
+    -0.99
+   ],
+   "d_angle_psi": 278.0,
+   "sd_disc_to_liner_edge_park": [
+    -39.8,
+    -20.0
+   ],
+   "swept_atlas": {
+    "area_mm2": 1097,
+    "area_under_liner_mm2": 0,
+    "frac_under_liner": 0.0
+   },
+   "swept_spec": {
+    "area_mm2": 2396,
+    "area_under_liner_mm2": 0,
+    "frac_under_liner": 0.0
+   },
+   "travel_to_liner_contact": null,
+   "old_channel_misalign_deg": {
+    "225": 53.0,
+    "270": 8.0,
+    "315": 37.0
+   },
+   "slack_atlas": {
+    "slack_mm": 22.5,
+    "half_turns": 2,
+    "loop_axial_mm": 72,
+    "loop_width_mm": 36
+   },
+   "slack_spec": {
+    "slack_mm": 70.0,
+    "half_turns": 4,
+    "loop_axial_mm": 144,
+    "loop_width_mm": 36
+   }
+  },
+  "trap_low": {
+   "carrier": "base layer (under the rail foam)",
+   "on_back_skin": true,
+   "x_skin": -122.7,
+   "centre_yz": [
+    -130.0,
+    -232.9
+   ],
+   "under_rail_flag": true,
+   "travel_atlas": 16.7,
+   "travel_spec": 76.0,
+   "d_dir": [
+    0.628,
+    -0.779
+   ],
+   "d_angle_psi": 308.9,
+   "sd_disc_to_liner_edge_park": [
+    -38.8,
+    -29.2
+   ],
+   "swept_atlas": {
+    "area_mm2": 1020,
+    "area_under_liner_mm2": 0,
+    "frac_under_liner": 0.0
+   },
+   "swept_spec": {
+    "area_mm2": 2965,
+    "area_under_liner_mm2": 0,
+    "frac_under_liner": 0.0
+   },
+   "travel_to_liner_contact": null,
+   "old_channel_misalign_deg": {
+    "225": 83.9,
+    "270": 38.9,
+    "315": 6.1
+   },
+   "slack_atlas": {
+    "slack_mm": 20.9,
+    "half_turns": 2,
+    "loop_axial_mm": 72,
+    "loop_width_mm": 36
+   },
+   "slack_spec": {
+    "slack_mm": 95.0,
+    "half_turns": 5,
+    "loop_axial_mm": 180,
+    "loop_width_mm": 36
+   }
+  },
+  "rhomboid": {
+   "carrier": "base layer (under the rail foam)",
+   "on_back_skin": true,
+   "x_skin": -116.6,
+   "centre_yz": [
+    -121.0,
+    -185.6
+   ],
+   "under_rail_flag": true,
+   "travel_atlas": 26.0,
+   "travel_spec": 62.0,
+   "d_dir": [
+    0.455,
+    -0.89
+   ],
+   "d_angle_psi": 297.1,
+   "sd_disc_to_liner_edge_park": [
+    -33.7,
+    -16.2
+   ],
+   "swept_atlas": {
+    "area_mm2": 1143,
+    "area_under_liner_mm2": 25,
+    "frac_under_liner": 0.022
+   },
+   "swept_spec": {
+    "area_mm2": 2084,
+    "area_under_liner_mm2": 481,
+    "frac_under_liner": 0.231
+   },
+   "travel_to_liner_contact": 22.5,
+   "exit_plus_d": {
+    "yz": [
+     -88.2,
+     -249.7
+    ],
+    "psi": 244.7,
+    "run_in_liner_mm": 71.9
+   },
+   "old_channel_misalign_deg": {
+    "225": 72.1,
+    "270": 27.1,
+    "315": 17.9
+   },
+   "slack_atlas": {
+    "slack_mm": 32.5,
+    "half_turns": 2,
+    "loop_axial_mm": 72,
+    "loop_width_mm": 36
+   },
+   "slack_spec": {
+    "slack_mm": 77.5,
+    "half_turns": 4,
+    "loop_axial_mm": 144,
+    "loop_width_mm": 36
+   }
+  },
+  "infraspin": {
+   "carrier": "base layer",
+   "on_back_skin": true,
+   "x_skin": -115.5,
+   "centre_yz": [
+    -36.8,
+    -167.0
+   ],
+   "under_rail_flag": false,
+   "travel_atlas": 31.8,
+   "travel_spec": 70.0,
+   "d_dir": [
+    0.702,
+    -0.712
+   ],
+   "d_angle_psi": 314.6,
+   "sd_disc_to_liner_edge_park": [
+    41.3,
+    24.6
+   ],
+   "swept_atlas": {
+    "area_mm2": 1475,
+    "area_under_liner_mm2": 1475,
+    "frac_under_liner": 1.0
+   },
+   "swept_spec": {
+    "area_mm2": 2670,
+    "area_under_liner_mm2": 2034,
+    "frac_under_liner": 0.762
+   },
+   "travel_to_liner_contact": 0.0,
+   "exit_minus_d": {
+    "yz": [
+     -77.0,
+     -126.2
+    ],
+    "psi": 104.9,
+    "run_in_liner_mm": 57.2,
+    "boundary_to_jack_mm": 135.0,
+    "path_to_jack_mm": 210.3,
+    "path_yz": [
+     [
+      -36.8,
+      -167.0
+     ],
+     [
+      -77.0,
+      -126.2
+     ],
+     [
+      -78.1,
+      -126.5
+     ],
+     [
+      -80.2,
+      -127.2
+     ],
+     [
+      -82.2,
+      -127.9
+     ],
+     [
+      -84.3,
+      -128.6
+     ],
+     [
+      -86.3,
+      -129.4
+     ],
+     [
+      -88.2,
+      -130.3
+     ],
+     [
+      -90.2,
+      -131.3
+     ],
+     [
+      -92.1,
+      -132.3
+     ],
+     [
+      -93.9,
+      -133.4
+     ],
+     [
+      -95.8,
+      -134.5
+     ],
+     [
+      -96.0,
+      -245.3
+     ],
+     [
+      -94.9,
+      -246.0
+     ],
+     [
+      -93.0,
+      -247.1
+     ]
+    ]
+   },
+   "exit_plus_d": {
+    "yz": [
+     3.5,
+     -207.9
+    ],
+    "psi": 344.2,
+    "run_in_liner_mm": 57.5
+   },
+   "old_channel_misalign_deg": {
+    "225": 89.6,
+    "270": 44.6,
+    "315": 0.4
+   },
+   "slack_atlas": {
+    "slack_mm": 39.8,
+    "half_turns": 2,
+    "loop_axial_mm": 72,
+    "loop_width_mm": 36
+   },
+   "slack_spec": {
+    "slack_mm": 87.5,
+    "half_turns": 5,
+    "loop_axial_mm": 180,
+    "loop_width_mm": 36
+   }
+  },
+  "teres_maj": {
+   "carrier": "base layer",
+   "on_back_skin": true,
+   "x_skin": -116.9,
+   "centre_yz": [
+    -55.4,
+    -223.2
+   ],
+   "under_rail_flag": false,
+   "travel_atlas": 56.3,
+   "travel_spec": 96.0,
+   "d_dir": [
+    0.836,
+    -0.549
+   ],
+   "d_angle_psi": 326.7,
+   "sd_disc_to_liner_edge_park": [
+    28.9,
+    33.5
+   ],
+   "swept_atlas": {
+    "area_mm2": 2199,
+    "area_under_liner_mm2": 1425,
+    "frac_under_liner": 0.648
+   },
+   "swept_spec": {
+    "area_mm2": 3459,
+    "area_under_liner_mm2": 1425,
+    "frac_under_liner": 0.412
+   },
+   "travel_to_liner_contact": 0.0,
+   "exit_minus_d": {
+    "yz": [
+     -96.0,
+     -196.5
+    ],
+    "psi": 190.3,
+    "run_in_liner_mm": 48.5,
+    "boundary_to_jack_mm": 52.3,
+    "path_to_jack_mm": 118.8,
+    "path_yz": [
+     [
+      -55.4,
+      -223.2
+     ],
+     [
+      -96.0,
+      -196.5
+     ],
+     [
+      -96.0,
+      -196.5
+     ],
+     [
+      -96.0,
+      -245.3
+     ],
+     [
+      -95.8,
+      -245.5
+     ],
+     [
+      -94.9,
+      -246.0
+     ],
+     [
+      -93.9,
+      -246.6
+     ],
+     [
+      -93.0,
+      -247.1
+     ],
+     [
+      -91.5,
+      -244.6
+     ]
+    ]
+   },
+   "exit_plus_d": {
+    "yz": [
+     -22.9,
+     -244.6
+    ],
+    "psi": 304.3,
+    "run_in_liner_mm": 39.0
+   },
+   "old_channel_misalign_deg": {
+    "225": 101.7,
+    "270": 56.7,
+    "315": 11.7
+   },
+   "slack_atlas": {
+    "slack_mm": 70.4,
+    "half_turns": 4,
+    "loop_axial_mm": 144,
+    "loop_width_mm": 36
+   },
+   "slack_spec": {
+    "slack_mm": 120.0,
+    "half_turns": 6,
+    "loop_axial_mm": 216,
+    "loop_width_mm": 36
+   }
+  },
+  "lat_dorsi": {
+   "carrier": "base layer",
+   "on_back_skin": true,
+   "x_skin": -134.2,
+   "centre_yz": [
+    -83.6,
+    -282.2
+   ],
+   "under_rail_flag": false,
+   "travel_atlas": 44.5,
+   "travel_spec": 44.5,
+   "d_dir": [
+    0.86,
+    -0.51
+   ],
+   "d_angle_psi": 329.3,
+   "sd_disc_to_liner_edge_park": [
+    -37.9,
+    -20.8
+   ],
+   "swept_atlas": {
+    "area_mm2": 1969,
+    "area_under_liner_mm2": 0,
+    "frac_under_liner": 0.0
+   },
+   "swept_spec": {
+    "area_mm2": 1969,
+    "area_under_liner_mm2": 0,
+    "frac_under_liner": 0.0
+   },
+   "travel_to_liner_contact": null,
+   "old_channel_misalign_deg": {
+    "225": 104.3,
+    "270": 59.3,
+    "315": 14.3
+   },
+   "slack_atlas": {
+    "slack_mm": 55.6,
+    "half_turns": 3,
+    "loop_axial_mm": 108,
+    "loop_width_mm": 36
+   },
+   "slack_spec": {
+    "slack_mm": 55.6,
+    "half_turns": 3,
+    "loop_axial_mm": 108,
+    "loop_width_mm": 36
+   }
+  },
+  "serratus": {
+   "carrier": "base layer (flank panel)",
+   "on_back_skin": false,
+   "x_skin": -213.9,
+   "centre_yz": [
+    -10.0,
+    -239.4
+   ],
+   "under_rail_flag": false,
+   "travel_atlas": null,
+   "travel_spec": null,
+   "d_dir": [
+    0.98,
+    -0.197
+   ],
+   "d_angle_psi": 348.6,
+   "sd_disc_to_liner_edge_park": [
+    -7.9,
+    -1.6
+   ]
+  }
+ },
+ "slots": {
+  "infraspin": {
+   "area_mm2": 2120,
+   "bounds": [
+    -82.8,
+    -204.7,
+    7.6,
+    -123.5
+   ]
+  },
+  "teres_maj": {
+   "area_mm2": 1827,
+   "bounds": [
+    -98.0,
+    -253.9,
+    -9.0,
+    -190.4
+   ]
+  },
+  "rhomboid": {
+   "area_mm2": 116,
+   "bounds": [
+    -98.0,
+    -226.0,
+    -90.4,
+    -201.8
+   ]
+  }
+ },
+ "liner_area": {
+  "domain_mm2": 11347,
+  "slots_union_mm2": 4063,
+  "remaining_mm2": 7284,
+  "pressure_scale_same_load": 1.558
+ }
+}

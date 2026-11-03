@@ -1,0 +1,6 @@
+# DESIGN_STATE addendum 2026-11-03: MJ11 leads, liner shear, interfaces
+Mirrors the 2026-11-03 changelog line and DESIGN_STATE section 11b / open item 8 (the original DESIGN_STATE lives in the claude.ai Project; merge there).
+Subsystems: SENSING, HARNESS, WING (target); SHOULDER (liner and jack plate geometry). Status unchanged: SHOULDER + WING IN DESIGN.
+Findings: (1) only infraspinatus and teres major are under the liner at park; rhomboid slides into its medial edge; (2) radial channels retired, skin-side relief slots along the skin motion, 5.5 mm deep, 36 % of the liner area, liner increments 0.98 / 2.80 kPa; (3) the lateral half of the rim is swept by the arm stage, jack plate at psi 240, leads 119 / 210 mm; (4) shear 0.7 to 2.0 kPa at mu 0.1 to 0.2, heat negligible; liner pressure is displacement-controlled at 19 to 33 kPa per mm (D2); (5) WING contract: four rail bosses, spacers 4.82 / 8.26, S1' flange PLACEHOLDER list, M4 insert bench list; insert SF 1.6 dynamic on the unverified 1 kN.
+Decisions for Forest: D1 rail over the electrode zone, D2 preload mechanism, D3 service loop, D4 liner area, D5 insert SF.
+Files: specs/SPEC_j1r2_mj11_leads_shear.md, cad/interfaces.py, cad/j1r2/{mj11_leads,mj11_shear,mj11_jack_scan,mj11_leads_render,mj11_leads_plan}.py, stl/j1r2_mounts/MJ11/{leads,shear,jack_scan}.json, renders_j1r2/mounts/MJ11_leads_*.png.
