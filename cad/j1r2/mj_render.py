@@ -5,7 +5,7 @@ import numpy as np, trimesh
 import clib as L, j1r2_params as P, j1r2_geom as G, mj_frame as M, mj_concepts3   # noqa: F401
 REPO = M.REPO; ST = os.path.join(REPO, "stl"); MD = os.path.join(ST, "j1r2_mounts"); OUTD = os.path.join(REPO, "renders_j1r2", "mounts"); os.makedirs(OUTD, exist_ok=True)
 TAG = os.environ.get("J1_PAD", "default").replace(",", "_"); CACHE = os.path.join(MD, "_render_cache" + ("" if TAG == "default" else "_" + TAG)); os.makedirs(CACHE, exist_ok=True)
-SKIP = ("pad_riser", "standoffs", "fairing_lap", "rail") + (() if TAG == "default" else ("pad", "fairing_fixed", "column_anchor"))      # MJ11: own pad; the fairing is not re-fitted yet
+SKIP = ("pad_riser", "standoffs", "fairing_lap", "rail") + (() if TAG == "default" else ("pad", "fairing_fixed", "column_anchor"))      # MJ11: own pad and own fairing (mj11_fairing, from the concept parts); the J1 rev 2 riser-lap fairing_fixed stays out
 BASE, INFO = G.build(y1=M.Y1, z1=M.Z1, standoff=M.DER["standoff"], full=True); DER = INFO["derived"]; th, ph = P.PARK["S1p"], P.PARK["S2"]
 def rgb(c): return [int(255 * v) for v in c]
 def shared():

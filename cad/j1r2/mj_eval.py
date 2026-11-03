@@ -164,6 +164,8 @@ def evaluate(cid):
     met = dict(id=cid, harness_clearance_mm=hc, title=Cc["title"], clasp=Cc["clasp"], parts=rows, mount_mass_g=round(mount_g, 1), balancer_fixed_g=bal_fixed, total_fixed_g=round(mount_g + bal_fixed, 1),
                frame=fr_res, skin_gap_by_zone_mm=sk, skin_rule_violations=viol, stage_clearance=cl, wearer_rom_first_contact_deg=rom, wearer_rom_by_part={k: v for k, v in rom_by.items() if v}, fixed_depth_behind_back_mm=depth,
                head_neutral_mm=head_clear(fixed), balancer=bal)
+    if "fairing" in parts:
+        import mj11_fairing_check as FK; met["fairing_check"] = FK.run(parts=parts); log(cid, "fairing check", {k: v for k, v in met["fairing_check"].items() if k != "moving_min_mm"})
     d = os.path.join(OUT, cid); os.makedirs(d, exist_ok=True)
     for k, p in parts.items():
         p["mesh"].export(os.path.join(d, f"{cid}_{k}_R.stl")); G.mirror_L(p["mesh"]).export(os.path.join(d, f"{cid}_{k}_L.stl"))
