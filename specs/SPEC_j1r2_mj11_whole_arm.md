@@ -28,17 +28,19 @@ First-contact frontier cells per moving group (7-D cells; partner categories ove
 The distal groups dominate because the hand envelope is the +-60 mm box. Distal frontier cells by partner: MW3 vs skin 11,638 and vs head 8,803; MW2 vs skin 7,499 and head 6,721; MW1 vs head 4,454; ME vs head 2,648. Min clearance on the frontier is 0.0 at the first-contact cell (grid cell), 38.5 mm for M3 vs head (below the 60 mm gate, not touching). Pairs without any frontier cell and PASS: M1 vs rail / wing / seat dish / liner / spacers / bumpers / skin / head, M2 and M3 vs every MJ11 part except the clasp bracket (M2 min free clearance 23.3 mm to pad and dish, M3 22.3 mm), ME vs every fixed part except the clasp bracket and wearer. Full per-pair list: `mj11_whole_arm_report.json` (`pairs_with_frontier`, `per_group`).
 
 ## 3. Shoulder-level contacts to keep out (S3-independent on this grid)
-First-contact angles (sub-grid, linear zero crossing of d - gate). Constraints hold for S3 = -70, 0 and 90 alike.
+First-contact angles (sub-grid, linear zero crossing of d - gate) from the **5 deg shoulder grid** (`mj11_shoulder5`, `mj11_shoulder5_first_contacts.json`; the 10 deg whole-arm grid gives the same pairs but coarser crossings, e.g. M3 vs skin S2 35.7 instead of 32.9 at S1' -95, `mj11_shoulder_first_contacts.json`; use the 5 deg values). Constraints hold for S3 = -70, 0 and 90 alike.
 
-| pair | first contact | as a limit / table |
+| pair | first contact (S2 at given S1'; S1' at given S2) | as a limit / table |
 |---|---|---|
-| M1 vs M3 (yoke vs upper arm), 3 mm | S2 -22.3 for every S1' | S2 soft min -20 (grid) |
-| M3 vs skin, 2 mm | S2 35.7 at S1' -95, 38.6 at -85, 39.1 at -75, 46.6..48.1 for -65..-15; at S2 40 S1' >= -71.9 | S2 max 35 for S1' <= -85 (the S2 cap 45 of the old S1' -95 rule is not enough on MJ11), >= 46 elsewhere |
-| M2 vs skin, 2 mm | S2 41.5 at S1' -15, 44.4 at -18.2, 46.3 at -25, 47.6..48.1 at -35..-65 | S2 max 40 for S1' -65..-15 |
-| M3 vs clasp bracket (psi 120), 3 mm | S2 34.2 at S1' -5, 28.4 at S1' 5; at S2 30 S1' <= -0.8, at S2 40 S1' <= -6.7 | S2 max 30 for S1' >= -5; S1' max 5 at S2 30 |
-| M3 vs head/neck, 60 mm | S2 14.6 at S1' 15, 3.4 at 25, -1.2 at 35; at S2 0 S1' <= 32.0, S2 10 <= 18.0, S2 17.4 <= 13.5, S2 20 <= 12.2 (min 38.5 mm on the frontier cell) | S1' soft max 30 at S2 0, 18 at S2 10, 13 at S2 17.4 |
+| M1 vs M3 (yoke vs upper arm), 3 mm | S2 -21.9 for every S1' and S3 | S2 soft min -15 (box floor; hard stop -20 clears it by 1.9 deg); global S2 min -30 must not be used |
+| M3 vs skin, 2 mm | S1' -95: 32.9; -90: 33.9; -85: 34.9; -80: 38.4; -75: 39.1; -70: 41.4; -65: 43.4; -60..-10: 43.3..44.0; at S2 35 S1' >= -84.7, at S2 40 S1' >= -71.4 | S2 <= 31 for S1' <= -85 |
+| M2 vs skin, 2 mm | S1' -65: 44.7; -30: 44.3; -25: 43.1; -20: 42.6; -18.2: 42.2; -15: 40.7; -10: 42.3 | inside the M3 skin curve for S1' <= -75 only; S2 <= 39 for S1' -20..-10 |
+| M3 vs clasp bracket (psi 120), 3 mm | S1' 5: 28.2; 0: 28.4; -5: 32.3; at S2 30 S1' <= -2.9, S2 35 <= -6.5, S2 40 <= -6.9 (nothing for S1' < -7) | S2 <= 26 for S1' >= -5 |
+| M3 vs head/neck, 60 mm | S1' 10: 24.2; 15: 14.3; 20: 7.4; 25: 3.3; 30: 0.6; 35: -1.2; at S2 0 S1' <= 31.5, S2 5 <= 22.7, S2 10 <= 17.8, S2 17.4 <= 13.4, S2 20 <= 12.4, S2 25 <= 9.4 | S1' soft max 5 (box) keeps it out |
 
-Gate-free envelope for all of M1..M3 and every S3 (10 deg grid, `shoulder_ok_map_S3all` in the report): S2 from -20 up to 30 (S1' -95..-75), 40 (S1' -65..-15), 30 (-5), 20 (5), 10 (15), 0 (25), -10 (35). Soft S2 limits in the firmware (rom_limits S2 -30..88) therefore need the keep-out above; without it first contact with skin / clasp / head occurs inside the soft range.
+The M1|M3, clasp-bracket, head and M3-skin curves agree with the independent run of the same task on branch `claude/mj11-whole-arm-sweep-2026-11-03` (commit a24f6cb, see section 9).
+
+Gate-free envelope for all of M1..M3 and every S3 (10 deg grid, `shoulder_ok_map_S3all` in the report): S2 from -20 up to 30 (S1' -95..-75), 40 (S1' -65..-15), 30 (-5), 20 (5), 10 (15), 0 (25), -10 (35). Soft S2 limits in the firmware (rom_limits S2 -30..88) therefore need the keep-out above; without it first contact with skin / clasp / head occurs inside the soft range. Points other than M1|M3 lie outside the passive box (software keep-out only, not stops).
 
 ## 4. Passive-stop box
 Reproduced on the 5 deg shoulder grid with the whole-arm scene (`mj11_shoulder5`, S3 {-70,0,90}, straight distal arm): **S1' -95..5, S2 -15..17.4, coverage 0.466; reach-free 0.786** (identical to `mj11_sweep.py`, and identical for each S3 value). Hard stops at +-5 deg beyond the soft limits (S1' -100..10, S2 -20..22.4) are free of all gates. The 10 deg tier grid is coarser (one-cell expansion = 10 deg) and gives the conservative S1' -95..-5, S2 -10..17.4, coverage 0.343; use the 5 deg result. The distal groups do not constrain the shoulder box (they are handled by the tier tables).
@@ -55,9 +57,12 @@ Rule as `sweep_full.py`: from E = 0 upward, the first E at which any S3 x wrist 
 Done: the two headers that depend only on this sweep, written in the exact `gen_tables.py` format to `stl/j1r2_sweep/firmware_proposed/elbow_limits.h` (15 x 14, EL_F / EL_R on the S1' axis) and `keepout_table.h` (53 x 47, 2.5 deg lattice, KO_MM = straight-arm clearance to skin/head mm). They are proposals: they are not in `firmware/` (not in the repo), `control.h` indexes S1 not S1', and the tier / keep-out logic (NEUTRAL premise, section 5) needs a decision first.
 
 ## 7. Decisions for Forest (nothing was changed)
-1. Soft limits / keep-out lines of section 3 (S2 max by S1' row, S1' max by S2 column, S2 min -20) for the MJ11 shoulder, to enter `rom_limits.py` and `keepout_table.h`. Option A: adopt the lines as software keep-out inside the passive box S1' -95..5, S2 -15..17.4 (all hard stops free, nothing else needed). Option B: widen the passive box by moving CLASP_PSI (the clasp bracket stops S1' > 5 at S2 30) or shaving the bracket.
+1. Soft limits / keep-out lines of section 3 (S2 max by S1' row, S1' max by S2 column, S2 min -15) for the MJ11 shoulder, to enter `rom_limits.py` and `keepout_table.h`. Option A: adopt the lines as software keep-out inside the passive box S1' -95..5, S2 -15..17.4 (all hard stops free, nothing else needed). Option B: widen the passive box by moving CLASP_PSI (the clasp bracket stops S1' > 5 at S2 30) or shaving the bracket.
 2. Whether the firmware elbow tiers use the project gates (3 / 2 / 60 mm) as here or the old 15 mm body margin. With the rev B/C +-60 mm hand box the FULL tier is mostly 0-60 deg and 0 at park; HAND rev B on the wrist-v3 coupling (open item 6) will replace the box and should re-run this sweep (`mj11_whole_arm.py full`, ~11 min on 2 cores) before tables are fixed.
 3. NEUTRAL tier: keep it "always allowed" only together with the shoulder keep-out, or re-define it (E <= 5 plus a straight-arm map check).
 
 ## 8. Open / not covered
 Fairing re-fit, clasp bracket clearance past the first-contact table, harness_loads, balancer / torque gate, lead routing + liner shear (CLAUDE.md item 7); full 3 deg refinement of the hand-vs-head boundaries (sphere tracing) is not done; grid values at 10 deg are cell-wise and conservative (contact between grid points is possible for thin features, the 5 deg shoulder grid and the sub-grid first-contact angles of section 3 cover the shoulder).
+
+## 9. Duplicate run
+A second scheduled firing of this task pushed `claude/mj11-whole-arm-sweep-2026-11-03` (a24f6cb, 06:47 UTC) before this run pushed; this run is on `claude/mj11-whole-arm-sweep-2026-11-03-run2`. Cross-check: the whole-arm summary is identical (170,100 / 114,760 / 55,340 / 35,073 / 79,687), per-group frontier cells identical, shoulder first-contact curves and passive box identical. Differences: the other run applies the legacy 15 mm skin / harness margin to the arm groups (`elbow_limits_15mm_mj11*.json`, park FULL 0 / RESTRICT 120) and samples RESTRICT at S3 / W2 / W3 = 0 only; this run uses the project gates (3 / 2 / 60 mm), samples the RESTRICT box corners in its own 661 s sweep (park RESTRICT 45) and adds a 2.5 deg straight-arm map. Merge the two branches by hand (the spec and DESIGN_STATE lines collide); the numbers do not conflict.
