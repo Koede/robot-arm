@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np, trimesh
 import clib as L, j1r2_params as P, j1r2_geom as G, j1r2_kin as K, j1r2_sweep as S, j1r2_opt as O, mj_frame as M, mj_concepts3 as C3
 REPLACED = ("pad_riser", "standoffs", "fairing_lap", "fairing_fixed", "pad", "column_anchor")
-def scene(mj_parts, name="MJ11"):
+def scene(mj_parts, name="MJ11", joints_upto="S3"):
     parts, info = G.build(y1=M.Y1, z1=M.Z1, standoff=M.DER["standoff"], full=True); D = info["derived"]; fixed, m1, m2 = {}, [], []
     for k, p in parts.items():
         g = p["group"]
@@ -16,7 +16,7 @@ def scene(mj_parts, name="MJ11"):
         elif g == "M2": m2.append(p["mesh"])
     for k, p in mj_parts.items(): fixed["mj11_" + k] = p["mesh"]
     w = trimesh.load(os.path.join(M.REPO, "stl", "shoulder", "scapular", "wing_R.stl")); fixed["wing"] = L.I(w, L.box(-300, 100, -150, -100.0, -500, 100))      # rail strip only
-    sh = dict(M1=L.U(*m1), M2=L.U(*m2)); return S.scene_from_kin(sh, fixed, S.make_wearer_parts(), kin=K.Kin(D), name=name, joints_upto="S3"), info
+    sh = dict(M1=L.U(*m1), M2=L.U(*m2)); return S.scene_from_kin(sh, fixed, S.make_wearer_parts(), kin=K.Kin(D), name=name, joints_upto=joints_upto), info
 def run(mj_parts, steps=None, label="mj11"):
     t0 = time.time(); sc, info = scene(mj_parts); steps = steps or {"S1p": 5.0, "S2": 5.0, "S3": [0.0]}
     out = S.run_sweep(sc, dict(steps=steps, procs=2, label=label)); ok, vals, worst = O.allowed_map(out); box = O.best_box(ok, vals)

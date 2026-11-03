@@ -1,0 +1,74 @@
+{
+ "M1|rail": {
+  "first_contact_below_park": null,
+  "first_contact_above_park": null,
+  "margin_at_park": 13.8,
+  "min_margin_in_soft": 13.8
+ },
+ "M1|S1_AK70": {
+  "first_contact_below_park": -18.0,
+  "first_contact_above_park": -18.0,
+  "margin_at_park": -3.0,
+  "min_margin_in_soft": -3.0
+ },
+ "M1|S1_stop_posts": {
+  "first_contact_below_park": -18.0,
+  "first_contact_above_park": -18.0,
+  "margin_at_park": -0.8,
+  "min_margin_in_soft": -0.8
+ },
+ "M1|tpu_S1_bumpers": {
+  "first_contact_below_park": -98.5,
+  "first_contact_above_park": null,
+  "margin_at_park": 0.5,
+  "min_margin_in_soft": 0.5
+ },
+ "M1|mj11_pad": {
+  "first_contact_below_park": -18.0,
+  "first_contact_above_park": -18.0,
+  "margin_at_park": -2.5,
+  "min_margin_in_soft": -2.5
+ },
+ "M1|mj11_seat_dish": {
+  "first_contact_below_park": null,
+  "first_contact_above_park": null,
+  "margin_at_park": 3.5,
+  "min_margin_in_soft": 3.5
+ },
+ "M1|mj11_liner": {
+  "first_contact_below_park": null,
+  "first_contact_above_park": null,
+  "margin_at_park": 15.7,
+  "min_margin_in_soft": 14.6
+ },
+ "M1|mj11_rail_spacers": {
+  "first_contact_below_park": null,
+  "first_contact_above_park": null,
+  "margin_at_park": 7.6,
+  "min_margin_in_soft": 7.6
+ },
+ "M1|mj11_clasp_bracket": {
+  "first_contact_below_park": -18.0,
+  "first_contact_above_park": -18.0,
+  "margin_at_park": -1.0,
+  "min_margin_in_soft": -2.3
+ },
+ "M1|wing": {
+  "first_contact_below_park": null,
+  "first_contact_above_park": null,
+  "margin_at_park": 11.8,
+  "min_margin_in_soft": 11.8
+ },
+ "M1|wearer_skin": {
+  "first_contact_below_park": null,
+  "first_contact_above_park": null,
+  "margin_at_park": 24.4,
+  "min_margin_in_soft": 22.2
+ },
+ "M1|wearer_head": {
+  "first_contact_below_park": null,
+  "first_contact_above_park": null,
+  "margin_at_park": 37.0,
+  "min_margin_in_soft": 24.0
+ }
+}

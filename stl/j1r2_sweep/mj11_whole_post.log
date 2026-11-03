@@ -1,0 +1,394 @@
+{
+ "frontier_cells_by_group": {
+  "M1": 0,
+  "M2": 3636,
+  "M3": 17311,
+  "ME": 3930,
+  "MW1": 6983,
+  "MW2": 11360,
+  "MW3": 16005
+ },
+ "frontier_pair_cells_by_group_and_class": {
+  "M1": {
+   "other fixed (S1 stage/rail/bumpers)": 0,
+   "MJ11 fixed": 0,
+   "wing": 0,
+   "skin": 0,
+   "head": 0
+  },
+  "M2": {
+   "other fixed (S1 stage/rail/bumpers)": 0,
+   "MJ11 fixed": 0,
+   "wing": 0,
+   "skin": 7,
+   "head": 0
+  },
+  "M3": {
+   "other fixed (S1 stage/rail/bumpers)": 0,
+   "MJ11 fixed": 6,
+   "wing": 0,
+   "skin": 30,
+   "head": 8,
+   "group": 3
+  },
+  "ME": {
+   "other fixed (S1 stage/rail/bumpers)": 0,
+   "MJ11 fixed": 12,
+   "wing": 0,
+   "skin": 84,
+   "head": 133,
+   "group": 0
+  },
+  "MW1": {
+   "other fixed (S1 stage/rail/bumpers)": 74,
+   "MJ11 fixed": 724,
+   "wing": 63,
+   "skin": 683,
+   "head": 685,
+   "group": 15
+  },
+  "MW2": {
+   "other fixed (S1 stage/rail/bumpers)": 724,
+   "MJ11 fixed": 2030,
+   "wing": 375,
+   "skin": 2797,
+   "head": 2416,
+   "group": 65
+  },
+  "MW3": {
+   "other fixed (S1 stage/rail/bumpers)": 2418,
+   "MJ11 fixed": 3872,
+   "wing": 1146,
+   "skin": 11638,
+   "head": 8803,
+   "group": 187
+  }
+ }
+}
+{
+ "grid_step_deg": 10,
+ "reach_free_cov_S3_0": 0.813,
+ "box_S3_0": {
+  "ranges": {
+   "S1p": [
+    -95.0,
+    -5.0
+   ],
+   "S2": [
+    -10.0,
+    17.4
+   ]
+  },
+  "cov": 0.3431818181818182,
+  "area": 44
+ },
+ "box_all_S3": {
+  "S3=-70.0": {
+   "ranges": {
+    "S1p": [
+     -95.0,
+     -5.0
+    ],
+    "S2": [
+     -10.0,
+     17.4
+    ]
+   },
+   "cov": 0.3431818181818182,
+   "area": 44
+  },
+  "S3=0.0": {
+   "ranges": {
+    "S1p": [
+     -95.0,
+     -5.0
+    ],
+    "S2": [
+     -10.0,
+     17.4
+    ]
+   },
+   "cov": 0.3431818181818182,
+   "area": 44
+  },
+  "S3=90.0": {
+   "ranges": {
+    "S1p": [
+     -95.0,
+     -5.0
+    ],
+    "S2": [
+     -10.0,
+     17.4
+    ]
+   },
+   "cov": 0.3431818181818182,
+   "area": 44
+  }
+ },
+ "box_S3_all_three": {
+  "ranges": {
+   "S1p": [
+    -95.0,
+    -5.0
+   ],
+   "S2": [
+    -10.0,
+    17.4
+   ]
+  },
+  "cov": 0.3431818181818182,
+  "area": 44
+ },
+ "first_contacts": {
+  "M2|wearer_skin": {
+   "status": "FAIL(<1mm)",
+   "MM": 2.0,
+   "d_frontier_min": 0.0,
+   "worst_pose": {
+    "S1p": -65.0,
+    "S2": 50.0
+   },
+   "first_contact": {
+    "S1p": [
+     -65.0,
+     -15.0
+    ],
+    "S2": [
+     41.49,
+     48.05
+    ],
+    "S3": [
+     -70.0,
+     90.0
+    ],
+    "E": [
+     0.0,
+     145.0
+    ],
+    "W1": [
+     -80.0,
+     80.0
+    ],
+    "W2": [
+     -70.0,
+     80.0
+    ],
+    "W3": [
+     -20.0,
+     30.0
+    ]
+   },
+   "first_contact_example": {
+    "S1p": -15.0,
+    "S2": 41.49,
+    "S3": -70.0,
+    "E": 0.0,
+    "W1": -80.0,
+    "W2": -70.0,
+    "W3": -20.0
+   },
+   "n_frontier": 7
+  },
+  "M3|mj11_clasp_bracket": {
+   "status": "FAIL(<1mm)",
+   "MM": 3.0,
+   "d_frontier_min": 0.0,
+   "worst_pose": {
+    "S1p": -5.0,
+    "S2": 40.0,
+    "S3": -70.0
+   },
+   "first_contact": {
+    "S1p": [
+     -6.74,
+     5.0
+    ],
+    "S2": [
+     28.4,
+     40.0
+    ],
+    "S3": [
+     -70.0,
+     90.0
+    ],
+    "E": [
+     0.0,
+     145.0
+    ],
+    "W1": [
+     -80.0,
+     80.0
+    ],
+    "W2": [
+     -70.0,
+     80.0
+    ],
+    "W3": [
+     -20.0,
+     30.0
+    ]
+   },
+   "first_contact_example": {
+    "S1p": -0.77,
+    "S2": 30.0,
+    "S3": 90.0,
+    "E": 0.0,
+    "W1": -80.0,
+    "W2": -70.0,
+    "W3": -20.0
+   },
+   "n_frontier": 6
+  },
+  "M3|wearer_skin": {
+   "status": "FAIL(<1mm)",
+   "MM": 2.0,
+   "d_frontier_min": 0.0,
+   "worst_pose": {
+    "S1p": -95.0,
+    "S2": 40.0,
+    "S3": -70.0
+   },
+   "first_contact": {
+    "S1p": [
+     -95.0,
+     -15.0
+    ],
+    "S2": [
+     35.72,
+     48.05
+    ],
+    "S3": [
+     -70.0,
+     90.0
+    ],
+    "E": [
+     0.0,
+     145.0
+    ],
+    "W1": [
+     -80.0,
+     80.0
+    ],
+    "W2": [
+     -70.0,
+     80.0
+    ],
+    "W3": [
+     -20.0,
+     30.0
+    ]
+   },
+   "first_contact_example": {
+    "S1p": -95.0,
+    "S2": 35.72,
+    "S3": 90.0,
+    "E": 0.0,
+    "W1": -80.0,
+    "W2": -70.0,
+    "W3": -20.0
+   },
+   "n_frontier": 30
+  },
+  "M3|wearer_head": {
+   "status": "BELOW_GATE",
+   "MM": 60.0,
+   "d_frontier_min": 38.45436096191406,
+   "worst_pose": {
+    "S1p": 25.0,
+    "S2": 10.0,
+    "S3": 0.0
+   },
+   "first_contact": {
+    "S1p": [
+     12.16,
+     35.0
+    ],
+    "S2": [
+     -1.18,
+     20.0
+    ],
+    "S3": [
+     -70.0,
+     0.0
+    ],
+    "E": [
+     0.0,
+     145.0
+    ],
+    "W1": [
+     -80.0,
+     80.0
+    ],
+    "W2": [
+     -70.0,
+     80.0
+    ],
+    "W3": [
+     -20.0,
+     30.0
+    ]
+   },
+   "first_contact_example": {
+    "S1p": 18.0,
+    "S2": 10.0,
+    "S3": 0.0,
+    "E": 0.0,
+    "W1": -80.0,
+    "W2": -70.0,
+    "W3": -20.0
+   },
+   "n_frontier": 8
+  },
+  "M1|M3": {
+   "status": "FAIL(<1mm)",
+   "MM": 3.0,
+   "d_frontier_min": 0.0,
+   "worst_pose": {
+    "S2": -30.0,
+    "S3": -70.0
+   },
+   "first_contact": {
+    "S1p": [
+     -95.0,
+     35.0
+    ],
+    "S2": [
+     -22.26,
+     -22.26
+    ],
+    "S3": [
+     -70.0,
+     90.0
+    ],
+    "E": [
+     0.0,
+     145.0
+    ],
+    "W1": [
+     -80.0,
+     80.0
+    ],
+    "W2": [
+     -70.0,
+     80.0
+    ],
+    "W3": [
+     -20.0,
+     30.0
+    ]
+   },
+   "first_contact_example": {
+    "S1p": -95.0,
+    "S2": -22.26,
+    "S3": -70.0,
+    "E": 0.0,
+    "W1": -80.0,
+    "W2": -70.0,
+    "W3": -20.0
+   },
+   "n_frontier": 3
+  }
+ }
+}
+{"FULL": {"cells": 210, "unrestricted_145": 0, "minus1": 129, "mean_E_where_allowed": 29.8}, "RESTRICT": {"cells": 210, "unrestricted_145": 0, "minus1": 111, "mean_E_where_allowed": 108.9}, "NEUTRAL": {"cells": 210, "unrestricted_145": 0, "minus1": 111, "mean_E_where_allowed": 108.9}} 0 111
