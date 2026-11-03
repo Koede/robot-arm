@@ -1,0 +1,287 @@
+[
+ {
+  "psi": 90,
+  "tube_len": 120.0,
+  "skin_min": 27.4,
+  "tube_vs_S1p_group": 29.1,
+  "tube_vs_arm": 33.3,
+  "rail_min": 14.7,
+  "bridge_min": Infinity,
+  "mount_parts_min": 0.2,
+  "left_right_min": Infinity,
+  "head_mm": 66.4,
+  "wearer_rom_contacts": {
+   "neck extension": 42.5
+  },
+  "tube_end_yz": [
+   -80.0,
+   9.0
+  ]
+ },
+ {
+  "psi": 90,
+  "tube_len": 151.0,
+  "skin_min": 27.4,
+  "tube_vs_S1p_group": 29.1,
+  "tube_vs_arm": 20.1,
+  "rail_min": 14.7,
+  "bridge_min": Infinity,
+  "mount_parts_min": 0.3,
+  "left_right_min": Infinity,
+  "head_mm": 66.4,
+  "wearer_rom_contacts": {
+   "neck extension": 37.5
+  },
+  "tube_end_yz": [
+   -80.0,
+   40.0
+  ]
+ },
+ {
+  "psi": 90,
+  "tube_len": 175.0,
+  "skin_min": 27.4,
+  "tube_vs_S1p_group": 29.1,
+  "tube_vs_arm": 18.5,
+  "rail_min": 14.7,
+  "bridge_min": Infinity,
+  "mount_parts_min": 0.3,
+  "left_right_min": Infinity,
+  "head_mm": 66.4,
+  "wearer_rom_contacts": {
+   "neck extension": 32.5
+  },
+  "tube_end_yz": [
+   -80.0,
+   64.0
+  ]
+ },
+ {
+  "psi": 90,
+  "tube_len": 200.0,
+  "skin_min": 27.4,
+  "tube_vs_S1p_group": 29.1,
+  "tube_vs_arm": 18.4,
+  "rail_min": 14.7,
+  "bridge_min": Infinity,
+  "mount_parts_min": 0.3,
+  "left_right_min": Infinity,
+  "head_mm": 66.4,
+  "wearer_rom_contacts": {
+   "neck extension": 30.0
+  },
+  "tube_end_yz": [
+   -80.0,
+   89.0
+  ]
+ },
+ {
+  "psi": 90,
+  "tube_len": 230.0,
+  "skin_min": 27.4,
+  "tube_vs_S1p_group": 29.1,
+  "tube_vs_arm": 18.4,
+  "rail_min": 14.7,
+  "bridge_min": Infinity,
+  "mount_parts_min": 0.4,
+  "left_right_min": Infinity,
+  "head_mm": 66.4,
+  "wearer_rom_contacts": {
+   "neck extension": 30.0
+  },
+  "tube_end_yz": [
+   -80.0,
+   119.0
+  ]
+ },
+ {
+  "psi": 95,
+  "tube_len": 120.0,
+  "skin_min": 27.4,
+  "tube_vs_S1p_group": 29.5,
+  "tube_vs_arm": 40.0,
+  "rail_min": 14.7,
+  "bridge_min": Infinity,
+  "mount_parts_min": 0.4,
+  "left_right_min": 74.5,
+  "head_mm": 66.4,
+  "wearer_rom_contacts": {
+   "neck extension": 45.0
+  },
+  "tube_end_yz": [
+   -91.0,
+   9.0
+  ]
+ },
+ {
+  "psi": 95,
+  "tube_len": 151.0,
+  "skin_min": 27.4,
+  "tube_vs_S1p_group": 29.5,
+  "tube_vs_arm": 33.1,
+  "rail_min": 14.7,
+  "bridge_min": Infinity,
+  "mount_parts_min": 0.1,
+  "left_right_min": 69.1,
+  "head_mm": 66.4,
+  "wearer_rom_contacts": {
+   "neck extension": 32.5
+  },
+  "tube_end_yz": [
+   -93.0,
+   40.0
+  ]
+ },
+ {
+  "psi": 95,
+  "tube_len": 175.0,
+  "skin_min": 27.4,
+  "tube_vs_S1p_group": 29.5,
+  "tube_vs_arm": 32.9,
+  "rail_min": 14.7,
+  "bridge_min": Infinity,
+  "mount_parts_min": 0.3,
+  "left_right_min": 64.9,
+  "head_mm": 66.4,
+  "wearer_rom_contacts": {
+   "neck extension": 30.0
+  },
+  "tube_end_yz": [
+   -95.0,
+   64.0
+  ]
+ },
+ {
+  "psi": 95,
+  "tube_len": 200.0,
+  "skin_min": 27.4,
+  "tube_vs_S1p_group": 29.5,
+  "tube_vs_arm": 33.0,
+  "rail_min": 14.7,
+  "bridge_min": Infinity,
+  "mount_parts_min": 0.3,
+  "left_right_min": 60.5,
+  "head_mm": 66.4,
+  "wearer_rom_contacts": {
+   "neck extension": 25.0
+  },
+  "tube_end_yz": [
+   -98.0,
+   89.0
+  ]
+ },
+ {
+  "psi": 95,
+  "tube_len": 230.0,
+  "skin_min": 27.4,
+  "tube_vs_S1p_group": 29.5,
+  "tube_vs_arm": 32.9,
+  "rail_min": 14.7,
+  "bridge_min": Infinity,
+  "mount_parts_min": 0.1,
+  "left_right_min": 55.3,
+  "head_mm": 66.4,
+  "wearer_rom_contacts": {
+   "neck extension": 25.0
+  },
+  "tube_end_yz": [
+   -100.0,
+   119.0
+  ]
+ },
+ {
+  "psi": 100,
+  "tube_len": 120.0,
+  "skin_min": 27.4,
+  "tube_vs_S1p_group": 29.7,
+  "tube_vs_arm": 40.0,
+  "rail_min": 14.7,
+  "bridge_min": Infinity,
+  "mount_parts_min": 0.4,
+  "left_right_min": 53.0,
+  "head_mm": 66.4,
+  "wearer_rom_contacts": {
+   "neck extension": 37.5
+  },
+  "tube_end_yz": [
+   -102.0,
+   8.0
+  ]
+ },
+ {
+  "psi": 100,
+  "tube_len": 151.0,
+  "skin_min": 27.4,
+  "tube_vs_S1p_group": 29.7,
+  "tube_vs_arm": 40.0,
+  "rail_min": 14.7,
+  "bridge_min": Infinity,
+  "mount_parts_min": 0.4,
+  "left_right_min": 42.2,
+  "head_mm": 66.4,
+  "wearer_rom_contacts": {
+   "neck extension": 30.0
+  },
+  "tube_end_yz": [
+   -107.0,
+   38.0
+  ]
+ },
+ {
+  "psi": 100,
+  "tube_len": 175.0,
+  "skin_min": 27.4,
+  "tube_vs_S1p_group": 29.7,
+  "tube_vs_arm": 40.0,
+  "rail_min": 14.7,
+  "bridge_min": Infinity,
+  "mount_parts_min": 0.2,
+  "left_right_min": 33.9,
+  "head_mm": 66.1,
+  "wearer_rom_contacts": {
+   "neck extension": 25.0
+  },
+  "tube_end_yz": [
+   -111.0,
+   62.0
+  ]
+ },
+ {
+  "psi": 100,
+  "tube_len": 200.0,
+  "skin_min": 27.4,
+  "tube_vs_S1p_group": 29.7,
+  "tube_vs_arm": 40.0,
+  "rail_min": 14.7,
+  "bridge_min": Infinity,
+  "mount_parts_min": 0.5,
+  "left_right_min": 25.2,
+  "head_mm": 64.9,
+  "wearer_rom_contacts": {
+   "neck extension": 22.5
+  },
+  "tube_end_yz": [
+   -115.0,
+   86.0
+  ]
+ },
+ {
+  "psi": 100,
+  "tube_len": 230.0,
+  "skin_min": 27.4,
+  "tube_vs_S1p_group": 29.7,
+  "tube_vs_arm": 40.0,
+  "rail_min": 14.7,
+  "bridge_min": Infinity,
+  "mount_parts_min": 0.3,
+  "left_right_min": 14.8,
+  "head_mm": 64.9,
+  "wearer_rom_contacts": {
+   "neck extension": 22.5
+  },
+  "tube_end_yz": [
+   -121.0,
+   116.0
+  ]
+ }
+]

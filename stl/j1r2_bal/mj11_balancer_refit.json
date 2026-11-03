@@ -1,0 +1,171 @@
+{
+ "rev2_design_in_box": {
+  "S1p": 2.93,
+  "S2": 2.78,
+  "SF_S1p": 2.83,
+  "SF_S2": 2.98,
+  "cord_len": [
+   88.5,
+   199.3
+  ],
+  "F_cord_max_N": 108.8
+ },
+ "refit": {
+  "same_sector_105_230": {
+   "x": [
+    0.5921104536456352,
+    -18.117903415091405,
+    67.61507486102634,
+    -1.6181240305688067,
+    -51.97448480360417,
+    136.38965619659334,
+    0.5679239576075784,
+    28.11383189100536
+   ],
+   "A_off": [
+    0.59,
+    -18.12,
+    67.62
+   ],
+   "A_radius": 70.0,
+   "A_angle_deg": 105.0,
+   "B_loc": [
+    -1.62,
+    -51.97,
+    136.39
+   ],
+   "k_cord": 0.5679,
+   "L0": 28.11,
+   "S1p": 2.64,
+   "S2": 2.47,
+   "SF_S1p": 3.15,
+   "SF_S2": 3.36,
+   "penalty": 0.0,
+   "cord_len": [
+    94.4,
+    200.0
+   ],
+   "F_cord_max_N": 97.6,
+   "F_spring_2to1_N": 195.2,
+   "spring_options": [
+    {
+     "tackle": 2,
+     "k_spring": 2.27,
+     "F_spring_max_N": 195.0,
+     "stroke_mm": 85.9,
+     "wire_d": 3.25,
+     "D_mean": 30.0,
+     "tau_over_Sut": 0.267,
+     "L_free": 248.0,
+     "tube_len": 280.0,
+     "OD_tube": 43.2,
+     "spring_g": 124.0
+    },
+    {
+     "tackle": 3,
+     "k_spring": 5.11,
+     "F_spring_max_N": 293.0,
+     "stroke_mm": 57.3,
+     "wire_d": 3.75,
+     "D_mean": 30.0,
+     "tau_over_Sut": 0.272,
+     "L_free": 183.0,
+     "tube_len": 215.0,
+     "OD_tube": 43.8,
+     "spring_g": 133.0
+    },
+    {
+     "tackle": 4,
+     "k_spring": 9.09,
+     "F_spring_max_N": 390.0,
+     "stroke_mm": 43.0,
+     "wire_d": 4.0,
+     "D_mean": 30.0,
+     "tau_over_Sut": 0.305,
+     "L_free": 141.0,
+     "tube_len": 173.0,
+     "OD_tube": 44.0,
+     "spring_g": 116.0
+    }
+   ]
+  },
+  "wide_sector_40_250": {
+   "x": [
+    0.076436323891401,
+    -9.956461538985327,
+    69.30203005591947,
+    -1.6006147114658906,
+    -39.16444279592159,
+    131.7993001210775,
+    0.5294334103321877,
+    20.00977507716348
+   ],
+   "A_off": [
+    0.08,
+    -9.96,
+    69.3
+   ],
+   "A_radius": 70.0,
+   "A_angle_deg": 98.2,
+   "B_loc": [
+    -1.6,
+    -39.16,
+    131.8
+   ],
+   "k_cord": 0.5294,
+   "L0": 20.01,
+   "S1p": 2.62,
+   "S2": 2.49,
+   "SF_S1p": 3.17,
+   "SF_S2": 3.33,
+   "penalty": 0.0,
+   "cord_len": [
+    93.9,
+    200.0
+   ],
+   "F_cord_max_N": 95.3,
+   "F_spring_2to1_N": 190.6,
+   "spring_options": [
+    {
+     "tackle": 2,
+     "k_spring": 2.12,
+     "F_spring_max_N": 191.0,
+     "stroke_mm": 90.0,
+     "wire_d": 3.25,
+     "D_mean": 30.0,
+     "tau_over_Sut": 0.261,
+     "L_free": 261.0,
+     "tube_len": 293.0,
+     "OD_tube": 43.2,
+     "spring_g": 132.0
+    },
+    {
+     "tackle": 3,
+     "k_spring": 4.76,
+     "F_spring_max_N": 286.0,
+     "stroke_mm": 60.0,
+     "wire_d": 3.75,
+     "D_mean": 30.0,
+     "tau_over_Sut": 0.266,
+     "L_free": 192.0,
+     "tube_len": 224.0,
+     "OD_tube": 43.8,
+     "spring_g": 142.0
+    },
+    {
+     "tackle": 4,
+     "k_spring": 8.47,
+     "F_spring_max_N": 381.0,
+     "stroke_mm": 45.0,
+     "wire_d": 4.0,
+     "D_mean": 30.0,
+     "tau_over_Sut": 0.298,
+     "L_free": 148.0,
+     "tube_len": 180.0,
+     "OD_tube": 44.0,
+     "spring_g": 123.0
+    }
+   ]
+  }
+ }
+}

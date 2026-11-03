@@ -1,0 +1,223 @@
+{
+ "full_soft_range": {
+  "tag": "J1 rev 2 soft range (reproduces SPEC_j1r2_balancer 7.31 / 6.59)",
+  "n": 13608,
+  "S1p_max": 7.24,
+  "S2_max": 6.53,
+  "SF_S1p": 1.15,
+  "SF_S2": 1.27,
+  "worst_S1p_pose": [
+   -55.0,
+   0.0,
+   45.0,
+   -70.0,
+   0.5
+  ],
+  "worst_S2_pose": [
+   0.0,
+   84.0,
+   0.0,
+   90.0,
+   0.5
+  ]
+ },
+ "mj11_box": {
+  "tag": "MJ11 passive box S1' -95..5, S2 -15..17.4",
+  "n": 5292,
+  "S1p_max": 7.23,
+  "S2_max": 3.6,
+  "SF_S1p": 1.15,
+  "SF_S2": 2.3,
+  "worst_S1p_pose": [
+   -55.0,
+   -3.0,
+   45.0,
+   -70.0,
+   0.5
+  ],
+  "worst_S2_pose": [
+   0.0,
+   17.4,
+   90.0,
+   0.0,
+   0.5
+  ]
+ },
+ "mj11_box_by_payload": {
+  "0.0": {
+   "S1p": 4.34,
+   "S2": 1.65
+  },
+  "0.25": {
+   "S1p": 5.78,
+   "S2": 2.62
+  },
+  "0.5": {
+   "S1p": 7.23,
+   "S2": 3.6
+  }
+ },
+ "mj11_box_with_boots": {
+  "tag": "box + 99 g boot at the hand (not rotated with E: upper bound)",
+  "n": 5292,
+  "S1p_max": 7.71,
+  "S2_max": 3.74,
+  "SF_S1p": 1.08,
+  "SF_S2": 2.22,
+  "worst_S1p_pose": [
+   -55.0,
+   -3.0,
+   45.0,
+   -70.0,
+   0.5
+  ],
+  "worst_S2_pose": [
+   0.0,
+   17.4,
+   90.0,
+   0.0,
+   0.5
+  ]
+ },
+ "firmware_cap_4p15": {
+  "payload 0.0": {
+   "frac_poses_ok": 0.936,
+   "frac_th_phi_cells_ok_all_E_S3": 0.694,
+   "frac_cells_ok_with_E_floor": 1.0,
+   "E_floor_hist": {
+    "0": 102,
+    "45": 6,
+    "90": 39,
+    "145": 0,
+    "None": 0
+   }
+  },
+  "payload 0.25": {
+   "frac_poses_ok": 0.578,
+   "frac_th_phi_cells_ok_all_E_S3": 0.095,
+   "frac_cells_ok_with_E_floor": 1.0,
+   "E_floor_hist": {
+    "0": 14,
+    "45": 1,
+    "90": 28,
+    "145": 104,
+    "None": 0
+   }
+  },
+  "payload 0.5": {
+   "frac_poses_ok": 0.447,
+   "frac_th_phi_cells_ok_all_E_S3": 0.0,
+   "frac_cells_ok_with_E_floor": 0.571,
+   "E_floor_hist": {
+    "0": 0,
+    "45": 0,
+    "90": 12,
+    "145": 72,
+    "None": 63
+   }
+  }
+ },
+ "holding_fraction_of_rated": {
+  "worst_box": 0.871,
+  "copper_loss_rel": 0.759
+ },
+ "payload_for_SF2": {
+  "S1p_empty_arm_max_Nm": 4.34,
+  "S1p_per_kg_Nm": 5.79,
+  "max_payload_kg_all_poses": -1.0,
+  "note": "min over the box poses; negative = the empty arm alone is over the gate"
+ },
+ "link_scale_S1p_max_Nm": {
+  "1.0": {
+   "0.0": 4.34,
+   "0.25": 5.78,
+   "0.5": 7.23
+  },
+  "0.9": {
+   "0.0": 4.03,
+   "0.25": 5.35,
+   "0.5": 6.67
+  },
+  "0.8": {
+   "0.0": 3.73,
+   "0.25": 4.91,
+   "0.5": 6.11
+  },
+  "0.7": {
+   "0.0": 3.44,
+   "0.25": 4.49,
+   "0.5": 5.55
+  },
+  "0.6": {
+   "0.0": 3.15,
+   "0.25": 4.08,
+   "0.5": 5.01
+  },
+  "0.5": {
+   "0.0": 2.89,
+   "0.25": 3.69,
+   "0.5": 4.49
+  }
+ },
+ "payload_limit_kg_by_link_scale": {
+  "1.0": 0.0,
+  "0.9": 0.023,
+  "0.8": 0.089,
+  "0.7": 0.169,
+  "0.6": 0.269,
+  "0.5": 0.394
+ },
+ "link_scale_gate_4p15_ok_when_below": 4.15,
+ "th1_only_compensator": {
+  "ideal_cam_residual_Nm": 2.65,
+  "SF": 3.13,
+  "note": "ideal cam / arbitrary tau(th1): residual = max over th1 of half the spread over (phi, E, S3, payload); any cassette, clockspring, cam-cord on S1' cannot beat it",
+  "linear_torsion_spring": {
+   "coeff_const_Nm_and_slope_Nm_per_rad": [
+    3.105,
+    -0.847
+   ],
+   "residual_Nm": 3.4,
+   "SF": 2.44,
+   "torque_at_th_min_Nm": 4.51,
+   "torque_at_th_max_Nm": 3.03,
+   "energy_J": 6.58
+  },
+  "sinusoidal_K_sin": {
+   "coeff_c_cos_sin": [
+    0.292,
+    2.325,
+    -3.642
+   ],
+   "residual_Nm": 2.66,
+   "SF": 3.12
+  },
+  "ideal_cam_payload_0.0_only": {
+   "residual_Nm": 0.94,
+   "SF": 8.8
+  },
+  "ideal_cam_payload_0.5_only": {
+   "residual_Nm": 2.65,
+   "SF": 3.13
+  },
+  "with_boots": {
+   "linear": {
+    "coeff": [
+     3.322,
+     -1.026
+    ],
+    "residual_Nm": 3.49,
+    "SF": 2.38
+   },
+   "sinusoid": {
+    "coeff": [
+     0.315,
+     2.467,
+     -4.08
+    ],
+    "residual_Nm": 2.67,
+    "SF": 3.11
+   }
+  }
+ }
+}

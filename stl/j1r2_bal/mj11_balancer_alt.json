@@ -1,0 +1,208 @@
+{
+ "cord_clear_design": {
+  "A_off": [
+   -2.19,
+   -18.47,
+   67.74
+  ],
+  "B_loc": [
+   -20.11,
+   -39.52,
+   120.1
+  ],
+  "k_cord": 0.8415,
+  "L0": 59.21,
+  "S1p": 2.92,
+  "S2": 2.34,
+  "SF_S1p": 2.84,
+  "SF_S2": 3.54,
+  "cord_len": [
+   94.7,
+   197.0
+  ],
+  "F_cord_max_N": 116.0,
+  "cord_min_clear_to_S1p_group_mm": -1.0,
+  "poses_below_3mm": 85,
+  "poses": 258
+ },
+ "rev2_cord_for_reference": {
+  "min_clear_mm": -1.1376609300424665,
+  "poses_below_3mm": 73
+ },
+ "parts_near_S1p_axis": [
+  {
+   "part": "rail",
+   "group": "F",
+   "x_range": [
+    -114.7,
+    -103.6
+   ],
+   "r_range": [
+    42.0,
+    74.9
+   ]
+  },
+  {
+   "part": "pad_riser",
+   "group": "F",
+   "x_range": [
+    -103.5,
+    -91.5
+   ],
+   "r_range": [
+    0.0,
+    66.0
+   ]
+  },
+  {
+   "part": "S1_AK70",
+   "group": "F",
+   "x_range": [
+    -91.5,
+    -41.3
+   ],
+   "r_range": [
+    0.0,
+    44.5
+   ]
+  },
+  {
+   "part": "S1_stop_posts",
+   "group": "F",
+   "x_range": [
+    -91.5,
+    -87.3
+   ],
+   "r_range": [
+    48.0,
+    60.0
+   ]
+  },
+  {
+   "part": "tpu_S1_bumpers",
+   "group": "F",
+   "x_range": [
+    -91.5,
+    -87.3
+   ],
+   "r_range": [
+    53.2,
+    54.8
+   ]
+  },
+  {
+   "part": "column_anchor",
+   "group": "F",
+   "x_range": [
+    -91.5,
+    -14.3
+   ],
+   "r_range": [
+    50.5,
+    61.5
+   ]
+  },
+  {
+   "part": "S1_yoke",
+   "group": "M1",
+   "x_range": [
+    -41.3,
+    -29.3
+   ],
+   "r_range": [
+    10.0,
+    53.0
+   ]
+  },
+  {
+   "part": "S1_stop_collar",
+   "group": "M1",
+   "x_range": [
+    -91.0,
+    -41.3
+   ],
+   "r_range": [
+    44.6,
+    60.0
+   ]
+  },
+  {
+   "part": "S2_AK70",
+   "group": "M1",
+   "x_range": [
+    -79.8,
+    9.2
+   ],
+   "r_range": [
+    47.5,
+    65.1
+   ]
+  },
+  {
+   "part": "S2_clamp",
+   "group": "M1",
+   "x_range": [
+    -83.8,
+    13.2
+   ],
+   "r_range": [
+    46.2,
+    70.5
+   ]
+  },
+  {
+   "part": "cable_F",
+   "group": "F",
+   "x_range": [
+    -98.1,
+    -89.9
+   ],
+   "r_range": [
+    49.9,
+    75.0
+   ]
+  },
+  {
+   "part": "fairing_fixed",
+   "group": "F",
+   "x_range": [
+    -103.5,
+    -10.3
+   ],
+   "r_range": [
+    0.0,
+    67.8
+   ]
+  },
+  {
+   "part": "cable_coil",
+   "group": "F",
+   "x_range": [
+    -24.5,
+    -22.4
+   ],
+   "r_range": [
+    13.0,
+    41.0
+   ]
+  },
+  {
+   "part": "cable_M1",
+   "group": "M1",
+   "x_range": [
+    -27.6,
+    -19.4
+   ],
+   "r_range": [
+    12.4,
+    60.3
+   ]
+  }
+ ],
+ "geometry": {
+  "x0": -97.50047468178906,
+  "XB": -91.50047468178906,
+  "XO": -41.25047468178906,
+  "PX": -35.25047468178906
+ }
+}

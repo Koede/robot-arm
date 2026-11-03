@@ -1,0 +1,98 @@
+{
+ "L0 no balancer park x1": [
+  231,
+  -1.49,
+  -0.6,
+  1.47
+ ],
+ "L0 no balancer park x2": [
+  462,
+  -2.99,
+  -1.2,
+  2.93
+ ],
+ "L0 no balancer reach x1": [
+  312,
+  -3.12,
+  -1.98,
+  1.67
+ ],
+ "L0 no balancer reach x2": [
+  625,
+  -6.24,
+  -3.95,
+  3.33
+ ],
+ "L0 +rev2 balancer fixed side 355 g park x1": [
+  236,
+  -1.61,
+  -0.65,
+  1.61
+ ],
+ "L0 +rev2 balancer fixed side 355 g park x2": [
+  473,
+  -3.22,
+  -1.31,
+  3.23
+ ],
+ "L0 +rev2 balancer fixed side 355 g reach x1": [
+  318,
+  -3.24,
+  -2.03,
+  1.81
+ ],
+ "L0 +rev2 balancer fixed side 355 g reach x2": [
+  635,
+  -6.48,
+  -4.06,
+  3.63
+ ],
+ "L3 no balancer park x1": [
+  90,
+  -1.38,
+  -0.62,
+  1.52
+ ],
+ "L3 no balancer park x2": [
+  180,
+  -2.76,
+  -1.24,
+  3.03
+ ],
+ "L3 no balancer reach x1": [
+  121,
+  -2.96,
+  -1.97,
+  1.72
+ ],
+ "L3 no balancer reach x2": [
+  242,
+  -5.91,
+  -3.93,
+  3.44
+ ],
+ "L3 +rev2 balancer fixed side 355 g park x1": [
+  92,
+  -1.49,
+  -0.68,
+  1.67
+ ],
+ "L3 +rev2 balancer fixed side 355 g park x2": [
+  184,
+  -2.99,
+  -1.36,
+  3.33
+ ],
+ "L3 +rev2 balancer fixed side 355 g reach x1": [
+  123,
+  -3.07,
+  -2.02,
+  1.87
+ ],
+ "L3 +rev2 balancer fixed side 355 g reach x2": [
+  246,
+  -6.14,
+  -4.04,
+  3.74
+ ]
+}

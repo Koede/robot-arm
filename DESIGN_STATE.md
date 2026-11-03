@@ -134,12 +134,14 @@ See `specs/SPEC_hand.md`. **Forest (2026-10-30): "Merge this as the new project 
 1. **W2 / W3 loops.** The 30-base re-search (`run_local.sh`) did not finish: W2 stopped at 75/400 candidates with 1 marginal hit (clr 0.80, bend 13.2), W3 at 8/400 with 1 marginal hit (clr 0.80, bend 12.1). The `wire_search_W2_CB.json` / `W3_CB.json` in the repo are from a 12-base run. If it still fails: firmware limit W1 >= -30 deg when E < 60, or a rubbing sleeve. **Forest to decide.**
 2. In-link runs, arm_chain DP, hub link, clips and boot sizes for the new elbow anchors.
 3. `sweep_full.py` (both modes) on the current cowl / curved pauldron, then the firmware keep-out tables (`gen_tables.py`).
-4. Harness top-pad margin (2.0 %) vs boot mass (~99 g per arm at 0.7x TPU wall): `harness_loads.py` needs `sensor_pods.py` + `electronics_fit.py`.
+4. (MJ11 ported 2026-11-03: see SPEC_j1r2_mj11_loads_balancer.md; absolute top pad still needs the missing solver) Harness top-pad margin (2.0 %) vs boot mass (~99 g per arm at 0.7x TPU wall): `harness_loads.py` needs `sensor_pods.py` + `electronics_fit.py`.
 5. Pad stall cap: AK70 S1/S2 cap 8.3 -> 8.0 N m (pad stall limit 16.6 N m: 2.00x at 8.3, 2.075x at 8.0); S2 torque SF with the balancer stays 2.77. **Forest to decide.**
 6. Bench / parts items: S2 free fall T12 (phase-short braking f >= 0.80), relays, 1.10 s off-delay stage, main-box heat, bench test T-W1.
 7. Missing from the repo: `collision_body.py`, `gen_tables.py`, `gen_state_table.py`, `harness_loads.py`, `sensor_pods.py`, `electronics_fit.py`, `balancer_freefall.py`, `balancer_struct.py`, `arm_clips.py`, `control_map.py`; specs `SPEC_third_shoulder.md`, `SPEC_balancer.md`, `SPEC_ball_stops.md`; `stl/gates.json`; `stl/electronics/arm_vendor_data.json` and `arm_electrical.json`.
 
 ## Changelog (dated entries recoverable from the repo)
+
+- **2026-11-03 (MJ11 loads + torque-gate options, HARNESS/SHOULDER, analysis only):** harness_loads/body_loads absent, load cases ported to the MJ11 frame model (`mj11_loads.py`). Baseline rail bolts 231/312 N reproduced; x2 625 N, S1' stop 1038 N (insert SF 0.96 at 1 kN unverified); pad bolt ligament 2.85 mm; 4-row layout L3 cuts to 121/242/407 N. Strap preload needed 4.9 kPa rail / 3.1 liner (x2 9.7/6.2) = 102 N per side, 18 kPa on front pads if uniform (over 14.7). Torque: in the MJ11 box S2 is 3.60 N.m (SF 2.30, passes), only S1' fails (7.23, SF 1.15). Options laid out in `specs/SPEC_j1r2_mj11_loads_balancer.md` (rev 2 balancer has no home: neck-extension contact 22-45 deg and cord clash at th1 -100..-70; S1' torsion spring SF 2.44 unpackaged; cap/payload/links costed). Nothing chosen: Forest.
 
 - **2026-11-02 (J1 mount alternatives, concept):** Forest: "Explore alternative designs for the shoulder mount" (J1 pancake mount).
   - Seven mounts (REF + MJ1..MJ6), all on one harness frame model and checked against the J1 stage, your range of motion and the skin rules.
