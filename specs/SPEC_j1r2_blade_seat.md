@@ -25,3 +25,17 @@ Position trade (real parts, box cov / reach): (-60,-190) .47/.79; (-45,-140) .52
 3. Fairing not re-fitted (excluded from render and sweep). Cable run, firmware tables, harness_loads re-run, thermal not done.
 4. Rail bosses, AK70 flange, foam/fabric grades PLACEHOLDER. Normal-offset (not x-offset) liner would keep 8 mm on slopes.
 Code: cad/j1r2/mj_concepts3.py, mj11_scan.py, mj11_sweep.py, mj11_possweep.sh; mj_frame/mj_eval/mj_render patched (J1_PAD=y1,z1,standoff env). Run: J1R2_ROOT=<root> J1_PAD=-60,-190,12 python3 mj_eval.py MJ11.
+
+## Clasp bracket re-fit (2026-11-03, SHOULDER / CLASP)
+Problem: the 2026-11-02 bracket (hub -> pad-rim bar 24 x 6, anchor r 58, overhang 6, psi 120) was 2.03 mm from the S1' group over the whole passive box +-5 deg. Cause: the bar slopes rearward toward the pad (hub x -126, anchor x -94.5), so its tip reached x -89.3 while the S1' stop-ring front face (r 44.6..60) sits at x -87.3. The pair M1 | bracket was also "designed contact" at park (< 3 mm) and so silently excluded from the sweep gates.
+Search (cad/j1r2/mj11_bracket_search.py, log stl/j1r2_mounts/MJ11/bracket_search.jsonl, 220 candidates): width 14/18/20/24, psi 100..140, anchor radius 58..66, overhang 0..6, thickness 5/6, optional via. Feet F5/F4/F1 and the ~270 deg coverage unchanged (same foot bars).
+ * psi <= 110: bar hits the S1' stop ring (0..0.9 mm). psi >= 130: bar closes on the rail strip (< 1 mm). Window psi 116..124.
+ * Anchor radius is the lever on M1 (moving the tip off the ring face): r 58 -> 2.0 mm, r 66 -> 4.8..5.3 mm. Width and overhang barely matter; thinner t = 5 buys +0.5 mm but costs 42 % bending stiffness, so t stays 6 and width stays 24.
+Chosen: psi 119, anchor r 66 (pad rim), overhang 6, bar 24 x 6 PA-CF, via none (a via point never helped: the hub -> rim straight bar is already the shortest path clear of the blade). Defaults in mj_concepts3.py (MJ11_CLASP_PSI / _W / _T / _RA / _EXT / _VIA env override).
+Results (gate 3 mm parts, 5 mm skin MJ11 rule), passive box +-5 deg = S1' -100..10, S2 -20..22.4:
+ * bracket vs S1' group (M1) 4.82 mm (was 2.03; now a gated pair, no longer designed contact); vs arm (M2) 17.0; vs wrist/hand (M3) 18.8.
+ * vs wing rail strip 5.1 mm (was 4.1..4.2), vs spine bridge 20.1 mm; skin gap blade 5.4, rail 21.8 mm (rule 5 mm: no violation). Bracket to liner 5.6 mm.
+ * Real-parts passive box unchanged: S1' -95..5, S2 -15..17.4, coverage 0.466 (not below 0.466).
+ * Frame: mount mass 186.2 g (bracket 23.8 g), tip sag 0.84 / 1.80 mm, clasp_seat stress 1.75 / 1.82 MPa: unchanged.
+New finding (previously masked by the designed-contact exclusion): the S1' group first reaches the 3 mm gate on the bracket at S1' = +13.4 deg (1 mm at 17.6, touching at 19.6), i.e. 3.4 deg beyond the +10 deg hard stop. Reach-free coverage reads 0.706 (was 0.786 with the pair excluded). The firmware S1' keep-out must carry +13 deg (not the old soft 30) for this pad.
+Lap with the pad rim is 815 mm3 (was 1433): the bar tip now overhangs the rim; the bar-to-pad fastening (lap + 2 x M3, PLACEHOLDER) is not designed.
