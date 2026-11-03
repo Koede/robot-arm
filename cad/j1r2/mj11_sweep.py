@@ -1,11 +1,11 @@
-"""MJ11 shoulder-level collision sweep with the REAL MJ11 fixed parts (pad, seat dish, liner, rail spacers, clasp bracket) + the rail-only wing, in place of the J1 rev 2 riser / standoffs / fairing lap /
+"""MJ11 shoulder-level collision sweep with the REAL MJ11 fixed parts (pad, seat dish, liner, rail spacers, clasp bracket, fairing body + cover) + the rail-only wing, in place of the J1 rev 2 riser / standoffs / fairing lap /
 full wing (which the pad scan, mj11_scan.py, carried).  Same method as j1r2_opt.evaluate: first-contact frontier over S1' x S2 (5 deg), best passive-stop box whose +-5 deg hard-stop expansion is free.
 usage: J1R2_ROOT=<work root> J1_PAD=-60,-190,12 python3 mj11_sweep.py [S1p_step S2_step]  -> stl/j1r2_mounts/MJ11/sweep.json"""
 import os, sys, json, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np, trimesh
 import clib as L, j1r2_params as P, j1r2_geom as G, j1r2_kin as K, j1r2_sweep as S, j1r2_opt as O, mj_frame as M, mj_concepts3 as C3
-REPLACED = ("pad_riser", "standoffs", "fairing_lap", "fairing_fixed", "pad", "column_anchor")
+REPLACED = ("pad_riser", "standoffs", "fairing_lap", "fairing_fixed", "pad", "column_anchor")      # fairing_fixed (J1 rev 2 riser/lap cup) is replaced by the MJ11 fairing_body + fairing_cover (mj_concepts3, 2026-11-03), which enter as mj11_* fixed parts
 def scene(mj_parts, name="MJ11"):
     parts, info = G.build(y1=M.Y1, z1=M.Z1, standoff=M.DER["standoff"], full=True); D = info["derived"]; fixed, m1, m2 = {}, [], []
     for k, p in parts.items():

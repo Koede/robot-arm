@@ -157,6 +157,11 @@ def evaluate(cid):
             if zn in rule and v < rule[zn]: viol.append(f"{k}: {zn} {v} mm < {rule[zn]}")
     cl = stage_clearance(parts); log(cid, "stage clearance", cl); rom = wearer_rom(parts); log(cid, "rom", rom)
     cl["by_part"] = {k: stage_clearance({k: p}) for k, p in parts.items() if p["kind"] != "cord" and not k.startswith("bal_cassette")}
+    if "fairing_body" in parts:      # stage_clearance drops the pad-disc zone (r < 68.5, x > x0 - 1) as verified-in-rev-2: the MJ11 fairing lives exactly there, so measure it with no exclusion
+        fe = mj_concepts3.fairing_clearance(parts["fairing_body"]["mesh"], parts["fairing_cover"]["mesh"], BASE)                                    # hard ranges of the slot: S1' -100..10, S2 -25..40
+        fw = mj_concepts3.fairing_clearance(parts["fairing_body"]["mesh"], parts["fairing_cover"]["mesh"], BASE, lim_th=LIM["S1p"], lim_ph=LIM["S2"])   # the wide rev 2 hard ranges (reported; beyond the slot the frontier is the keep-out)
+        cl["fairing_exact"] = dict(slot_ranges=fe, rev2_wide_ranges=fw)
+        for k in ("fairing_body", "fairing_cover"): cl["by_part"][k] = dict(M1_min_mm=fe["M1"]["min_mm"], M2_arm_min_mm=fe["M2"]["min_mm"], note="exact, no pad-zone exclusion")
     rom_by = {k: {a: b for a, b in wearer_rom({k: p}).items() if b is not None} for k, p in parts.items() if p["kind"] != "cord" and not p.get("skin_contact")}
     fixed = [p["mesh"] for p in parts.values() if p["kind"] != "cord"]; depth = round(max(m.bounds[1][0] for m in fixed) + 108.0, 1)
     bal = balancer_check(cid, parts); bal_mesh = bal.pop("mesh", None)
