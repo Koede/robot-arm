@@ -136,6 +136,16 @@ See `specs/SPEC_hand.md`. **Forest (2026-10-30): "Merge this as the new project 
 - Holding torque 0.012-0.024 N.m.
 - **Not locked:** the contract change, unrun sweeps and harness confirmation.
 
+## 12-pre. MJ11 subsystem registry (2026-11-03)
+| subsystem | status | note |
+|---|---|---|
+| SHOULDER (J1 = MJ11 pad, fairing, S1'/S2/S3) | IN DESIGN | bracket + fairing re-fit merged; torque gate open (Forest) |
+| WING (rail + 4 M4 bosses) | IN DESIGN | bosses PLACEHOLDER; L3 layout proposed |
+| CLASP (bracket psi 119, r 66) | IN DESIGN | all gates met; lap fastening PLACEHOLDER |
+| SENSING (leads / liner shear) | IN DESIGN | rail-over-electrodes conflict and lead architecture: Forest |
+| CONTROL (tier tables, keep-outs) | candidate only | not adopted; headers not drop-in |
+See `specs/SPEC_j1r2_mj11_overnight_summary.md`.
+
 ## 12. Open items
 
 1. **W2 / W3 loops.** The 30-base re-search (`run_local.sh`) did not finish: W2 stopped at 75/400 candidates with 1 marginal hit (clr 0.80, bend 13.2), W3 at 8/400 with 1 marginal hit (clr 0.80, bend 12.1). The `wire_search_W2_CB.json` / `W3_CB.json` in the repo are from a 12-base run. If it still fails: firmware limit W1 >= -30 deg when E < 60, or a rubbing sleeve. **Forest to decide.**
@@ -190,3 +200,4 @@ See `specs/SPEC_hand.md`. **Forest (2026-10-30): "Merge this as the new project 
 - 2026-11-03: MJ11 fixed fairing re-fit (SHOULDER). New part `fairing` in cad/j1r2/mj_concepts3.py: 1.8 mm PA-CF C-shell on the pad rear face over the S1' AK70, outline = pad R66 trimmed y -121 (flush with pad and dish edge), swept slot for the S1' bar / S2 clamp as in j1r2_geom (gap 3.2), liner lead channels psi 225/270/315 open, gland bore psi 190, 3 tabs M3 x 5 into short inserts in the pad (pad got 3 holes, PLACEHOLDER). 42.7 g (mount 229 g). Clearance over the hard ranges: moving stage >= 3.2 mm (S2 clamp 3.2, collar 4.2), skin 24.4, rail 9.7, spine bridge 5.8, clasp bracket 3.0. Sweep: passive box unchanged (S1' -95..5, S2 -15..17.4, cov 0.466); free reach beyond stops 0.786 -> 0.706. Prints end plate down, 81 x 94 x 112 mm, no split. New check script mj11_fairing_check.py (called from mj_eval). Old J1 rev 2 fairing_fixed stays excluded. Open item 3 of the MJ11 to-do (fairing re-fit) closed; gland position and cable run remain. See specs/SPEC_j1r2_blade_seat.md.
 - 2026-11-03: MJ11 loads + torque gate options (`specs/SPEC_j1r2_mj11_loads_balancer.md`). Port of harness/body loads onto MJ11 frame; bolt tension (V0 620 N x2) governs, V4 3-pair layout recommended (SF 3.3); strap cannot supply lift-off preload (56-112 N/side). S1' fails SF gate (7.24 N.m, SF 1.15; empty 1.91), S2 passes in the MJ11 box (SF 2.30). Options a-d tabulated; balancer packaging scan incomplete (cord vs M1 0.3 mm). No geometry/firmware change; decisions pending Forest.
 - 2026-11-03: MJ11 whole-arm first-contact sweep (S1' x S2 10 deg, S3 {-70,0,90}, E 20, W1/W2/W3 3 values, 170,100 poses, 534 s): 32.5 % reach-free, 20.6 % frontier, 46.8 % deep dropped; passive box S1' -95..5 / S2 -15..17.4 (cov 0.466) unchanged. Shoulder keep-outs (M1-M3 S2 -21.9; M3 vs clasp bracket S2 28..40 at S1' 5..-7; M3 vs head 60 mm S1' 9.5..35; M3 vs skin S2 33..44) and candidate FULL / RESTRICT / NEUTRAL elbow tables + keep-out map in `stl/j1r2_sweep/` (park cell FULL 0 / RESTRICT 120 / NEUTRAL 0). Firmware headers NOT adopted: gen_tables.py inputs are legacy-geometry, balancer / grav tables not regenerable without a balancer, control.h axes still legacy S1. See `specs/SPEC_j1r2_mj11_whole_arm.md`. Branch claude/mj11-whole-arm-sweep-2026-11-03 (Forest to review).
+- 2026-11-03 (integration): merged clasp, fairing, leads/interfaces, loads/balancer and whole-arm branches into main (variant branches not merged); re-ran mj_eval MJ11, mj11_sweep and the whole-arm chain on the merged parts: passive box unchanged (S1' -95..5, S2 -15..17.4, cov 0.466), reach-free 0.706, whole-arm reach-free 30.1 %, new keep-outs M1|fairing +11.9 / M1|bracket +13.5 deg (beyond the hard stop). Torque gate (S1' SF 1.15) still fails without a balancer: Forest's decision. See `specs/SPEC_j1r2_mj11_overnight_summary.md`.
