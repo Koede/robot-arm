@@ -1,0 +1,946 @@
+{
+ "total": {
+  "cells": 170100,
+  "contact": 114760,
+  "reach_free": 55340,
+  "frontier": 35073,
+  "deep_dropped": 79687
+ },
+ "groups": {
+  "M1": {
+   "frontier_cells": 0,
+   "contact_cells": 0
+  },
+  "M2": {
+   "frontier_cells": 3636,
+   "contact_cells": 59940
+  },
+  "M3": {
+   "frontier_cells": 17311,
+   "contact_cells": 89910
+  },
+  "ME": {
+   "frontier_cells": 3930,
+   "contact_cells": 51057
+  },
+  "MW1": {
+   "frontier_cells": 6983,
+   "contact_cells": 39033
+  },
+  "MW2": {
+   "frontier_cells": 11360,
+   "contact_cells": 47400
+  },
+  "MW3": {
+   "frontier_cells": 16005,
+   "contact_cells": 53315
+  }
+ },
+ "pairs": {
+  "M1|rail": {
+   "MM": 3.0,
+   "park_d": 16.77714729309082,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 14.256145477294922
+  },
+  "M1|S1_AK70": {
+   "MM": 3.0,
+   "park_d": 1.6593280633969698e-06,
+   "status": "EXCLUDED(designed contact at park)"
+  },
+  "M1|S1_stop_posts": {
+   "MM": 3.0,
+   "park_d": 2.2171947956085205,
+   "status": "EXCLUDED(designed contact at park)"
+  },
+  "M1|tpu_S1_bumpers": {
+   "MM": 3.0,
+   "park_d": 3.5,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 3.5
+  },
+  "M1|mj11_pad": {
+   "MM": 3.0,
+   "park_d": 0.5,
+   "status": "EXCLUDED(designed contact at park)"
+  },
+  "M1|mj11_seat_dish": {
+   "MM": 3.0,
+   "park_d": 6.5,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 6.5
+  },
+  "M1|mj11_liner": {
+   "MM": 3.0,
+   "park_d": 18.70724105834961,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 17.64047622680664
+  },
+  "M1|mj11_rail_spacers": {
+   "MM": 3.0,
+   "park_d": 10.577643394470215,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 10.577643394470215
+  },
+  "M1|mj11_clasp_bracket": {
+   "MM": 3.0,
+   "park_d": 2.0254669189453125,
+   "status": "EXCLUDED(designed contact at park)"
+  },
+  "M1|wing": {
+   "MM": 3.0,
+   "park_d": 14.848262786865234,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 10.681495666503906
+  },
+  "M1|wearer_skin": {
+   "MM": 2.0,
+   "park_d": 26.444923400878906,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 21.6511173248291
+  },
+  "M1|wearer_head": {
+   "MM": 60.0,
+   "park_d": 97.03755187988281,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 83.84715270996094
+  },
+  "M2|rail": {
+   "MM": 3.0,
+   "park_d": 134.18028259277344,
+   "status": "PASS(contact only in unreachable region, dropped)",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 1,
+   "min_clear_reach_free": 45.91105270385742
+  },
+  "M2|S1_AK70": {
+   "MM": 3.0,
+   "park_d": 53.25204849243164,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 45.3665885925293
+  },
+  "M2|S1_stop_posts": {
+   "MM": 3.0,
+   "park_d": 40.25646209716797,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 30.281801223754883
+  },
+  "M2|tpu_S1_bumpers": {
+   "MM": 3.0,
+   "park_d": 44.64508056640625,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 35.27861404418945
+  },
+  "M2|mj11_pad": {
+   "MM": 3.0,
+   "park_d": 32.809749603271484,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 23.316879272460938
+  },
+  "M2|mj11_seat_dish": {
+   "MM": 3.0,
+   "park_d": 34.632991790771484,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 23.28324317932129
+  },
+  "M2|mj11_liner": {
+   "MM": 3.0,
+   "park_d": 46.003170013427734,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 29.008819580078125
+  },
+  "M2|mj11_rail_spacers": {
+   "MM": 3.0,
+   "park_d": 130.93014526367188,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 68.35897064208984
+  },
+  "M2|mj11_clasp_bracket": {
+   "MM": 3.0,
+   "park_d": 44.35149002075195,
+   "status": "PASS(contact only in unreachable region, dropped)",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 15,
+   "min_clear_reach_free": 17.198612213134766
+  },
+  "M2|wing": {
+   "MM": 3.0,
+   "park_d": 132.32472229003906,
+   "status": "PASS(contact only in unreachable region, dropped)",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 1,
+   "min_clear_reach_free": 42.93069839477539
+  },
+  "M2|wearer_skin": {
+   "MM": 2.0,
+   "park_d": 39.59162521362305,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 7,
+   "n_deep_cells": 62,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 2.349724292755127
+  },
+  "M2|wearer_head": {
+   "MM": 60.0,
+   "park_d": 174.0224609375,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 116.06637573242188
+  },
+  "M3|rail": {
+   "MM": 3.0,
+   "park_d": 138.48773193359375,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 78.65806579589844
+  },
+  "M3|S1_AK70": {
+   "MM": 3.0,
+   "park_d": 52.95845413208008,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 43.57971954345703
+  },
+  "M3|S1_stop_posts": {
+   "MM": 3.0,
+   "park_d": 66.58436584472656,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 28.137855529785156
+  },
+  "M3|tpu_S1_bumpers": {
+   "MM": 3.0,
+   "park_d": 65.5402603149414,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 33.65017318725586
+  },
+  "M3|mj11_pad": {
+   "MM": 3.0,
+   "park_d": 37.94580841064453,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 22.275482177734375
+  },
+  "M3|mj11_seat_dish": {
+   "MM": 3.0,
+   "park_d": 40.8612060546875,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 23.401926040649414
+  },
+  "M3|mj11_liner": {
+   "MM": 3.0,
+   "park_d": 52.24946975708008,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 31.61426544189453
+  },
+  "M3|mj11_rail_spacers": {
+   "MM": 3.0,
+   "park_d": 134.90420532226562,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 97.81866455078125
+  },
+  "M3|mj11_clasp_bracket": {
+   "MM": 3.0,
+   "park_d": 42.8243522644043,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 6,
+   "n_deep_cells": 60,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 5.201302528381348
+  },
+  "M3|wing": {
+   "MM": 3.0,
+   "park_d": 135.78273010253906,
+   "status": "PASS(contact only in unreachable region, dropped)",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 3,
+   "min_clear_reach_free": 75.67430877685547
+  },
+  "M3|wearer_skin": {
+   "MM": 2.0,
+   "park_d": 44.929786682128906,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 30,
+   "n_deep_cells": 216,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 4.670775413513184
+  },
+  "M3|wearer_head": {
+   "MM": 60.0,
+   "park_d": 164.1827392578125,
+   "status": "BELOW_GATE",
+   "n_frontier_cells": 8,
+   "n_deep_cells": 55,
+   "d_frontier_min": 38.45436096191406,
+   "min_clear_reach_free": 69.23585510253906
+  },
+  "ME|rail": {
+   "MM": 3.0,
+   "park_d": 190.6900177001953,
+   "status": "PASS(contact only in unreachable region, dropped)",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 9,
+   "min_clear_reach_free": 77.67667388916016
+  },
+  "ME|S1_AK70": {
+   "MM": 3.0,
+   "park_d": 173.54200744628906,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 106.13420104980469
+  },
+  "ME|S1_stop_posts": {
+   "MM": 3.0,
+   "park_d": 195.75941467285156,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 91.92639923095703
+  },
+  "ME|tpu_S1_bumpers": {
+   "MM": 3.0,
+   "park_d": 194.794677734375,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 96.19190979003906
+  },
+  "ME|mj11_pad": {
+   "MM": 3.0,
+   "park_d": 151.030029296875,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 83.83556365966797
+  },
+  "ME|mj11_seat_dish": {
+   "MM": 3.0,
+   "park_d": 154.91026306152344,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 80.73896026611328
+  },
+  "ME|mj11_liner": {
+   "MM": 3.0,
+   "park_d": 154.82383728027344,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 80.72834014892578
+  },
+  "ME|mj11_rail_spacers": {
+   "MM": 3.0,
+   "park_d": 230.35659790039062,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 132.54124450683594
+  },
+  "ME|mj11_clasp_bracket": {
+   "MM": 3.0,
+   "park_d": 89.75286865234375,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 12,
+   "n_deep_cells": 0,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 36.886619567871094
+  },
+  "ME|wing": {
+   "MM": 3.0,
+   "park_d": 194.88563537597656,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 78.927001953125
+  },
+  "ME|wearer_skin": {
+   "MM": 2.0,
+   "park_d": 106.4049301147461,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 84,
+   "n_deep_cells": 1349,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 3.2331082820892334
+  },
+  "ME|wearer_head": {
+   "MM": 60.0,
+   "park_d": 157.82054138183594,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 133,
+   "n_deep_cells": 559,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 61.20176696777344
+  },
+  "MW1|rail": {
+   "MM": 3.0,
+   "park_d": 252.2924346923828,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 60,
+   "n_deep_cells": 258,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 28.38943862915039
+  },
+  "MW1|S1_AK70": {
+   "MM": 3.0,
+   "park_d": 260.2222595214844,
+   "status": "BELOW_GATE",
+   "n_frontier_cells": 14,
+   "n_deep_cells": 31,
+   "d_frontier_min": 2.65566086769104,
+   "min_clear_reach_free": 26.634071350097656
+  },
+  "MW1|S1_stop_posts": {
+   "MM": 3.0,
+   "park_d": 281.96832275390625,
+   "status": "PASS(contact only in unreachable region, dropped)",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 12,
+   "min_clear_reach_free": 25.127744674682617
+  },
+  "MW1|tpu_S1_bumpers": {
+   "MM": 3.0,
+   "park_d": 281.0758972167969,
+   "status": "PASS(contact only in unreachable region, dropped)",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 15,
+   "min_clear_reach_free": 26.407047271728516
+  },
+  "MW1|mj11_pad": {
+   "MM": 3.0,
+   "park_d": 238.22869873046875,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 176,
+   "n_deep_cells": 304,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 12.68791389465332
+  },
+  "MW1|mj11_seat_dish": {
+   "MM": 3.0,
+   "park_d": 230.67129516601562,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 181,
+   "n_deep_cells": 554,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 15.574630737304688
+  },
+  "MW1|mj11_liner": {
+   "MM": 3.0,
+   "park_d": 227.53504943847656,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 125,
+   "n_deep_cells": 722,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 26.53760528564453
+  },
+  "MW1|mj11_rail_spacers": {
+   "MM": 3.0,
+   "park_d": 308.67828369140625,
+   "status": "PASS(contact only in unreachable region, dropped)",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 81,
+   "min_clear_reach_free": 36.977115631103516
+  },
+  "MW1|mj11_clasp_bracket": {
+   "MM": 3.0,
+   "park_d": 166.3625030517578,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 242,
+   "n_deep_cells": 130,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 6.4061384201049805
+  },
+  "MW1|wing": {
+   "MM": 3.0,
+   "park_d": 263.22161865234375,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 63,
+   "n_deep_cells": 285,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 25.87184715270996
+  },
+  "MW1|wearer_skin": {
+   "MM": 2.0,
+   "park_d": 161.32496643066406,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 683,
+   "n_deep_cells": 2649,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 4.2144317626953125
+  },
+  "MW1|wearer_head": {
+   "MM": 60.0,
+   "park_d": 186.86605834960938,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 685,
+   "n_deep_cells": 1385,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 61.10074996948242
+  },
+  "MW2|rail": {
+   "MM": 3.0,
+   "park_d": 283.7733459472656,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 377,
+   "n_deep_cells": 2586,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 11.002358436584473
+  },
+  "MW2|S1_AK70": {
+   "MM": 3.0,
+   "park_d": 305.8936462402344,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 302,
+   "n_deep_cells": 2893,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 12.19711971282959
+  },
+  "MW2|S1_stop_posts": {
+   "MM": 3.0,
+   "park_d": 327.998046875,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 29,
+   "n_deep_cells": 802,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 16.775272369384766
+  },
+  "MW2|tpu_S1_bumpers": {
+   "MM": 3.0,
+   "park_d": 327.1302185058594,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 16,
+   "n_deep_cells": 438,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 17.853010177612305
+  },
+  "MW2|mj11_pad": {
+   "MM": 3.0,
+   "park_d": 284.52911376953125,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 466,
+   "n_deep_cells": 3224,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 3.82607364654541
+  },
+  "MW2|mj11_seat_dish": {
+   "MM": 3.0,
+   "park_d": 275.15570068359375,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 457,
+   "n_deep_cells": 3221,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 4.864232540130615
+  },
+  "MW2|mj11_liner": {
+   "MM": 3.0,
+   "park_d": 271.1827392578125,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 411,
+   "n_deep_cells": 3132,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 8.12982177734375
+  },
+  "MW2|mj11_rail_spacers": {
+   "MM": 3.0,
+   "park_d": 348.550048828125,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 27,
+   "n_deep_cells": 1158,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 28.782224655151367
+  },
+  "MW2|mj11_clasp_bracket": {
+   "MM": 3.0,
+   "park_d": 212.61143493652344,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 669,
+   "n_deep_cells": 1910,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 3.6420183181762695
+  },
+  "MW2|wing": {
+   "MM": 3.0,
+   "park_d": 298.01544189453125,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 375,
+   "n_deep_cells": 2709,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 8.124842643737793
+  },
+  "MW2|wearer_skin": {
+   "MM": 2.0,
+   "park_d": 181.7891082763672,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 2797,
+   "n_deep_cells": 9704,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 2.002708911895752
+  },
+  "MW2|wearer_head": {
+   "MM": 60.0,
+   "park_d": 202.05442810058594,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 2416,
+   "n_deep_cells": 5751,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 60.03834533691406
+  },
+  "MW3|rail": {
+   "MM": 3.0,
+   "park_d": 336.5931701660156,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 1234,
+   "n_deep_cells": 8260,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 6.725621223449707
+  },
+  "MW3|S1_AK70": {
+   "MM": 3.0,
+   "park_d": 375.61370849609375,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 783,
+   "n_deep_cells": 8067,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 13.146714210510254
+  },
+  "MW3|S1_stop_posts": {
+   "MM": 3.0,
+   "park_d": 398.0962829589844,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 275,
+   "n_deep_cells": 2543,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 26.68027114868164
+  },
+  "MW3|tpu_S1_bumpers": {
+   "MM": 3.0,
+   "park_d": 397.26708984375,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 126,
+   "n_deep_cells": 1278,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 34.4209098815918
+  },
+  "MW3|mj11_pad": {
+   "MM": 3.0,
+   "park_d": 355.30938720703125,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 842,
+   "n_deep_cells": 7160,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 18.494314193725586
+  },
+  "MW3|mj11_seat_dish": {
+   "MM": 3.0,
+   "park_d": 343.8912658691406,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 1043,
+   "n_deep_cells": 6570,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 33.1485710144043
+  },
+  "MW3|mj11_liner": {
+   "MM": 3.0,
+   "park_d": 338.8518371582031,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 1002,
+   "n_deep_cells": 5764,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 34.036930084228516
+  },
+  "MW3|mj11_rail_spacers": {
+   "MM": 3.0,
+   "park_d": 410.35650634765625,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 197,
+   "n_deep_cells": 2888,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 21.255403518676758
+  },
+  "MW3|mj11_clasp_bracket": {
+   "MM": 3.0,
+   "park_d": 284.86395263671875,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 788,
+   "n_deep_cells": 4040,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 3.3163347244262695
+  },
+  "MW3|wing": {
+   "MM": 3.0,
+   "park_d": 353.9523010253906,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 1146,
+   "n_deep_cells": 8537,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 3.4452309608459473
+  },
+  "MW3|wearer_skin": {
+   "MM": 2.0,
+   "park_d": 223.99917602539062,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 11638,
+   "n_deep_cells": 28122,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 2.0409224033355713
+  },
+  "MW3|wearer_head": {
+   "MM": 60.0,
+   "park_d": 223.99566650390625,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 8803,
+   "n_deep_cells": 16216,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 60.01612854003906
+  },
+  "M1|M2": {
+   "MM": 3.0,
+   "park_d": 0.0,
+   "status": "EXCLUDED(designed contact at park)"
+  },
+  "M1|M3": {
+   "MM": 3.0,
+   "park_d": 19.513456344604492,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 3,
+   "n_deep_cells": 6,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 3.877200126647949
+  },
+  "M1|ME": {
+   "MM": 3.0,
+   "park_d": 159.32615661621094,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 92.42137145996094
+  },
+  "M1|MW1": {
+   "MM": 3.0,
+   "park_d": 211.78939819335938,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 15,
+   "n_deep_cells": 0,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 17.338390350341797
+  },
+  "M1|MW2": {
+   "MM": 3.0,
+   "park_d": 261.5001525878906,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 65,
+   "n_deep_cells": 146,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 9.945215225219727
+  },
+  "M1|MW3": {
+   "MM": 3.0,
+   "park_d": 335.6201171875,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 173,
+   "n_deep_cells": 538,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 6.474303245544434
+  },
+  "M2|M3": {
+   "MM": 3.0,
+   "park_d": 0.0,
+   "status": "EXCLUDED(designed contact at park)"
+  },
+  "M2|ME": {
+   "MM": 3.0,
+   "park_d": 98.20101165771484,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 29.92683982849121
+  },
+  "M2|MW1": {
+   "MM": 3.0,
+   "park_d": 178.60946655273438,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 27.23180389404297
+  },
+  "M2|MW2": {
+   "MM": 3.0,
+   "park_d": 231.29519653320312,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 14.79125690460205
+  },
+  "M2|MW3": {
+   "MM": 3.0,
+   "park_d": 309.45660400390625,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 14,
+   "n_deep_cells": 5,
+   "d_frontier_min": 0.0,
+   "min_clear_reach_free": 4.148286819458008
+  },
+  "M3|ME": {
+   "MM": 3.0,
+   "park_d": 0.0,
+   "status": "EXCLUDED(designed contact at park)"
+  },
+  "M3|MW1": {
+   "MM": 3.0,
+   "park_d": 60.18206024169922,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 23.479684829711914
+  },
+  "M3|MW2": {
+   "MM": 3.0,
+   "park_d": 123.19526672363281,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 24.50983428955078
+  },
+  "M3|MW3": {
+   "MM": 3.0,
+   "park_d": 174.87271118164062,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 25.317142486572266
+  },
+  "ME|MW1": {
+   "MM": 3.0,
+   "park_d": 0.0,
+   "status": "EXCLUDED(designed contact at park)"
+  },
+  "ME|MW2": {
+   "MM": 3.0,
+   "park_d": 65.0,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 46.67892074584961
+  },
+  "ME|MW3": {
+   "MM": 3.0,
+   "park_d": 161.60000610351562,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 81.5825424194336
+  },
+  "MW1|MW2": {
+   "MM": 3.0,
+   "park_d": 0.0,
+   "status": "EXCLUDED(designed contact at park)"
+  },
+  "MW1|MW3": {
+   "MM": 3.0,
+   "park_d": 55.599998474121094,
+   "status": "PASS",
+   "n_frontier_cells": 0,
+   "n_deep_cells": 0,
+   "min_clear_reach_free": 48.64209747314453
+  },
+  "MW2|MW3": {
+   "MM": 3.0,
+   "park_d": 0.0,
+   "status": "EXCLUDED(designed contact at park)"
+  }
+ },
+ "box_check_fw15": {
+  "FULL": {
+   "min": -1.0,
+   "max": 80.0,
+   "n_closed": 9,
+   "n": 72
+  },
+  "RESTRICT": {
+   "min": 60.0,
+   "max": 120.0,
+   "n_closed": 0,
+   "n": 72
+  },
+  "NEUTRAL": {
+   "min": 0.0,
+   "max": 0.0,
+   "n_closed": 0,
+   "n": 72
+  }
+ },
+ "park_cell_fw15": {
+  "FULL": 0.0,
+  "RESTRICT": 120.0,
+  "NEUTRAL": 0.0
+ },
+ "box_check_sweep": {
+  "FULL": {
+   "min": -1.0,
+   "max": 80.0,
+   "n_closed": 9,
+   "n": 72
+  },
+  "RESTRICT": {
+   "min": 60.0,
+   "max": 120.0,
+   "n_closed": 0,
+   "n": 72
+  },
+  "NEUTRAL": {
+   "min": 0.0,
+   "max": 0.0,
+   "n_closed": 0,
+   "n": 72
+  }
+ },
+ "park_cell_sweep": {
+  "FULL": 0.0,
+  "RESTRICT": 120.0,
+  "NEUTRAL": 0.0
+ }
+}
