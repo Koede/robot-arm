@@ -1,57 +1,65 @@
-"""MJ11 balancer packaging scan (2026-11-03): where can the J1 rev 2 pad-anchored spring tube (R22.25 + cap R28, anchor A on the pad rim) live on the LOWER BACK for pad (-60, -190)?  Scans tube direction (angle in the yz plane from +y toward +z)
-and tackle ratio (tube length 230 / 175 / 151 mm at 2:1 / 3:1 / 4:1, SPEC_j1r2_balancer section 3).  Checks: skin gap by zone (mj_eval rules rail 5, blade 5 (MJ11), top 10), head clearance + neck ROM, wing rail / spine bridge, MJ11 parts,
-arm-group (M1 yoke + S2 motor, M2 arm tube) sweep clearance over the passive-stop box +-5 deg and the reach-free cells, cord vs M1 (A -> B).  usage: J1R2_ROOT=<root> python3 mj11_bal_pack.py [x-offset-json]  -> stl/j1r2_mounts/MJ11/bal_pack.json"""
-import os, sys, json, math
+"""MJ11 balancer option (a): refit per anchor sector + packaging census (2026-11-03, CONCEPT).  Robot frame, mm.
+1. DE refit of the world-anchored zero-length spring (A on the pad, B on the upper arm) over the MJ11 soft free region, anchor pinned to a sector psi (deg from +y toward +z about the S1' axis), cord force capped.
+2. For each solution: cord clearance over the soft region (skin, S1' group, arm, fixed MJ11 parts) and tube homes:
+     T_rad  : radial tube from A (the J1 rev 2 geometry);  T_down : vertical tube below A on the lower back at y_t (cord redirected by a 2nd sheave, +friction PLACEHOLDER);
+   tube D44.5 x t2.5, length from spring_design (2:1).  Gates: part-part 3 mm, skin 5 mm (MJ11 rail rule), mirror tube 3 mm.
+usage: J1R2_ROOT=<root> python3 mj11_bal_pack.py  -> stl/j1r2_mounts/MJ11/balancer_pack.json"""
+import os, sys, json, math, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np, trimesh
 from scipy.spatial import cKDTree
-import mj_eval as E, mj_frame as M, mj_concepts as C, mj_concepts3 as C3, j1r2_geom as G, j1r2_params as P, clib as L
-A_OFF = np.array([-10.018, -19.708, 73.434]); B_LOC = np.array([-15.629, -42.256, 118.385]); DER = E.DER; P1 = np.array([DER["PX"], DER["y1"], DER["z1"]])
-mask = json.load(open(os.path.join(M.REPO, "stl", "j1r2_mounts", "MJ11", "workspace_mask.json")))
-BOXH = [(th, ph) for th in np.arange(-100.0, 10.1, 5.0) for ph in list(np.arange(-20.0, 20.1, 5.0)) + [22.4]]                                   # passive-stop box (-95..5, -15..17.4) + 5 deg hard-stop expansion
-REACH = [(mask["S1p"][i], mask["S2"][j]) for i in range(len(mask["S1p"])) for j in range(len(mask["S2"])) if mask["reach"][i][j]]
-def tube_parts(A, u, Lt):
-    u = u / np.linalg.norm(u); tube = trimesh.creation.cylinder(22.25, segment=[A, A + u * (Lt + 6.0)], sections=24); cap = trimesh.creation.cylinder(28.0, segment=[A - u * 14.0, A], sections=24)
-    post = trimesh.creation.cylinder(13.0, segment=[np.array([DER["XB"], A[1], A[2]]), np.array([A[0] - 14.0, A[1], A[2]])], sections=16)
-    return tube, cap, post
-def parts_dict(tube, cap, post): return {"tube": dict(mesh=tube, kind="printed", mat="PETGCF"), "cap": dict(mesh=cap, kind="printed", mat="PETGCF"), "post": dict(mesh=post, kind="printed", mat="PETGCF")}
-MJ = C3.mj11_geo(None); MJT = {k: cKDTree(E.samp(p["mesh"], 1.5)) for k, p in MJ.items()}
-_POSED = {}
-def posed(cells, key):
-    if key in _POSED: return _POSED[key]
-    out = []
-    for th, ph in cells:
-        Mx = G.pose_matrix("M1", DER, th, 0.0); Mm = G.pose_matrix("M2", DER, th, ph); F0, FA, s, a, d = P.shoulder_frames(DER, th, ph); B = (FA @ np.r_[B_LOC, 1.0])[:3]
-        out.append((th, ph, E.MOV1[::2] @ Mx[:3, :3].T + Mx[:3, 3], E.MOV2[::2] @ Mm[:3, :3].T + Mm[:3, 3], B))
-    _POSED[key] = out; return out
-def arm_clear(pts, cells, key):
-    T = cKDTree(pts); b1 = (1e9, None); b2 = (1e9, None)
-    for th, ph, p1, p2, B in posed(cells, key):
-        d1 = float(T.query(p1, distance_upper_bound=60)[0].min())
-        if d1 < b1[0]: b1 = (d1, (th, ph))
-        d2 = float(T.query(p2, distance_upper_bound=60)[0].min())
-        if d2 < b2[0]: b2 = (d2, (th, ph))
-    return dict(M1_min=round(min(b1[0], 60), 1), M1_at=b1[1], M2_min=round(min(b2[0], 60), 1), M2_at=b2[1])
-def cord_clear(A, cells, key):
-    best = (1e9, None); w = np.linspace(0.05, 0.95, 40)[:, None]
-    for th, ph, p1, p2, B in posed(cells, key):
-        q = A[None] + (B - A)[None] * w; d_ = float(cKDTree(p1).query(q)[0].min())
-        if d_ < best[0]: best = (d_, (th, ph))
-    return dict(cord_vs_M1_min=round(best[0], 1), at=best[1])
-def evaluate(A, ang, Lt, cells_arm=(("box_hard", BOXH), ("reach", REACH))):
-    u = np.array([0.0, math.cos(math.radians(ang)), math.sin(math.radians(ang))]); tube, cap, post = tube_parts(A, u, Lt); pd = parts_dict(tube, cap, post); pts = np.vstack([E.samp(m, 2.0) for m in (tube, cap, post)])
-    sk = E.skin_zones(pd); rule = dict(E.RULE, blade=5.0); viol = [f"{k}:{z} {v}<{rule[z]}" for k, zz in sk.items() for z, v in zz.items() if z in rule and v < rule[z]]
-    hc = E.head_clear([tube, cap, post]); hw = {h: round(float(T.query(pts, distance_upper_bound=30)[0].min()), 1) for h, T in E.HARN.items()}; tp = E.samp(tube, 2.0); mjd = {k: round(float(T.query(tp, distance_upper_bound=30)[0].min()), 1) for k, T in MJT.items()}          # tube only (cap + post are the designed attachment to the pad rim)
-    rom = {k: v for k, v in E.wearer_rom(pd).items() if v is not None and k.startswith("neck")} if (not viol and hc >= 60) else {"skipped": "stage-1 fail"}
-    ac = {n: arm_clear(pts, c, n) for n, c in cells_arm}; cc = cord_clear(A, BOXH, "box_hard")
-    return dict(angle=ang, L_tube=Lt, skin=sk, skin_violations=viol, head_mm=hc, neck_rom_first_contact=rom, harness=hw, mj11_parts=mjd, arm=ac, cord=cc, tube_end=[round(float(v), 0) for v in (A + u * Lt)], z_span=[round(float(pts[:, 2].min())), round(float(pts[:, 2].max()))], y_min=round(float(pts[:, 1].min())))
-def main():
-    off = A_OFF if len(sys.argv) < 2 else np.array(json.loads(sys.argv[1])); A = P1 + off; out = dict(A_world=A.tolist(), A_off=off.tolist(), rows=[])
-    for Lt in (230.0, 175.0, 151.0):
-        for ang in range(0, 360, 15):
-            r = evaluate(A, ang, Lt); out["rows"].append(r)
-            ok = (not r["skin_violations"]) and r["head_mm"] >= 60 and not r["neck_rom_first_contact"] and min(r["harness"].values()) >= 3 and min(r["mj11_parts"].values()) >= 3 and r["arm"]["box_hard"]["M1_min"] >= 3 and r["arm"]["box_hard"]["M2_min"] >= 3 and r["cord"]["cord_vs_M1_min"] >= 3
-            r["pass_box"] = bool(ok); r["pass_reach"] = bool(ok and r["arm"]["reach"]["M1_min"] >= 3 and r["arm"]["reach"]["M2_min"] >= 3)
-            print(Lt, ang, "box" if r["pass_box"] else "-", "reach" if r["pass_reach"] else "-", "viol", r["skin_violations"][:2], "head", r["head_mm"], "M1", r["arm"]["box_hard"]["M1_min"], "M2", r["arm"]["box_hard"]["M2_min"], "cord", r["cord"]["cord_vs_M1_min"], "harn", r["harness"], "mj", min(r["mj11_parts"].values()), flush=True)
-    json.dump(out, open(os.path.join(M.REPO, "stl", "j1r2_mounts", "MJ11", "bal_pack.json"), "w"), indent=1, default=float)
-if __name__ == "__main__": main()
+import mj11_balancer as MB, mj_eval as E, mj_concepts as C, mj_concepts3 as C3, mj_frame as M, j1r2_params as P, j1r2_geom as G, clib as L
+t0 = time.time(); log = lambda *a: print("[%4.0fs]" % (time.time() - t0), *a, flush=True)
+TD, TT = 44.5, 2.5
+FIXED = {k: p["mesh"] for k, p in C3.mj11_geo(None).items()}
+FIX_PTS = np.vstack([E.samp(m, 2.5) for k, m in FIXED.items() if k != "liner"])
+FIX_TREE = cKDTree(FIX_PTS)
+SOFT_CELLS = [(i, j) for i in range(len(MB.S1V)) for j in range(len(MB.S2V)) if MB.SOFT[i, j]]
+def skin_d(pts):
+    d, i = E.TK.query(pts); return np.sign(np.einsum("ij,ij->i", pts - E.TP[i], E.TN[i])) * d
+def tube_pts(s0, u, length):
+    u = np.asarray(u, float) / np.linalg.norm(u); n = int(length / 4) + 2; ax = np.asarray(s0) + np.outer(np.linspace(0, length, n), u)
+    e1 = np.cross(u, [1, 0, 0]); e1 = e1 / np.linalg.norm(e1) if np.linalg.norm(e1) > 1e-6 else np.array([0, 1.0, 0]); e2 = np.cross(u, e1); ring = [TD / 2 * (math.cos(a) * e1 + math.sin(a) * e2) for a in np.linspace(0, 2 * math.pi, 16, endpoint=False)]
+    return np.vstack([ax + r for r in ring]), ax
+def census_tube(s0, u, length, near_A=None):
+    pts, ax = tube_pts(s0, u, length); res = {}
+    res["skin_mm"] = round(float(skin_d(pts).min()), 1)
+    mir = pts.copy(); mir[:, 1] = 2 * M.SPINE_Y - mir[:, 1]; res["mirror_tube_mm"] = round(float(cKDTree(pts).query(mir)[0].min()), 1)
+    d = FIX_TREE.query(pts)[0]
+    if near_A is not None: d = d[np.linalg.norm(pts - near_A, axis=1) > 14.0] if (np.linalg.norm(pts - near_A, axis=1) > 14.0).any() else d
+    res["fixed_mj11_parts_mm"] = round(float(d.min()), 1)
+    for nm, T in E.HARN.items(): res[nm + "_mm"] = round(float(T.query(pts, distance_upper_bound=40)[0].min()), 1)
+    T = cKDTree(pts); b1 = b2 = 1e9
+    for (i, j) in SOFT_CELLS[::2]:
+        th, ph = MB.S1V[i], MB.S2V[j]
+        if j == SOFT_CELLS[0][1] or True:
+            Mx = G.pose_matrix("M1", E.DER, th, 0.0); b1 = min(b1, float(T.query(E.MOV1 @ Mx[:3, :3].T + Mx[:3, 3], distance_upper_bound=60)[0].min()))
+            Mm = G.pose_matrix("M2", E.DER, th, ph); b2 = min(b2, float(T.query(E.MOV2 @ Mm[:3, :3].T + Mm[:3, 3], distance_upper_bound=60)[0].min()))
+    res["S1p_group_mm"] = round(min(b1, 60.0), 1); res["arm_sweep_mm"] = round(min(b2, 60.0), 1)
+    res["top_z"] = round(float(pts[:, 2].max()), 0); res["bottom_z"] = round(float(pts[:, 2].min()), 0); res["head_mm"] = E.head_clear([trimesh.Trimesh(*[pts, []], process=False)]) if False else round(float(cKDTree(E.HEAD).query(pts)[0].min()), 0)
+    res["pass"] = bool(res["skin_mm"] >= 5 and res["mirror_tube_mm"] >= 3 and res["S1p_group_mm"] >= 3 and res["arm_sweep_mm"] >= 3 and res["fixed_mj11_parts_mm"] >= 3 and res["wing_rail_mm"] >= 3 and res["spine_bridge_mm"] >= 3)
+    return res
+def cord_census(x):
+    A = MB.P1 + np.array(x[0:3]); Bl = np.array(x[3:6]); worst = dict(skin=1e9, S1=1e9, arm=1e9, fixed=1e9)
+    for (i, j) in SOFT_CELLS:
+        th, ph = MB.S1V[i], MB.S2V[j]; F0, FA, s, a, d = P.shoulder_frames(MB.B.D0, th, ph); Bw = (FA @ np.r_[Bl, 1.0])[:3]; seg = A + np.outer(np.linspace(0, 1, 30), Bw - A)
+        worst["skin"] = min(worst["skin"], float(skin_d(seg[1:]).min()))
+        keep = np.linalg.norm(seg - A, axis=1) > 14.0; worst["fixed"] = min(worst["fixed"], float(FIX_TREE.query(seg[keep])[0].min()) if keep.any() else 99)
+        Mx = G.pose_matrix("M1", E.DER, th, 0.0); q1 = E.MOV1 @ Mx[:3, :3].T + Mx[:3, 3]; worst["S1"] = min(worst["S1"], float(cKDTree(q1).query(seg[2:])[0].min()))
+        Mm = G.pose_matrix("M2", E.DER, th, ph); q2 = E.MOV2 @ Mm[:3, :3].T + Mm[:3, 3]; far = np.linalg.norm(q2 - Bw, axis=1) > 18.0; worst["arm"] = min(worst["arm"], float(cKDTree(q2[far]).query(seg[1:-3])[0].min()))
+    return {k: round(v, 1) for k, v in worst.items()}
+if __name__ == "__main__":
+    pr = MB.make_problem(MB.SOFT); out = []
+    for fcap in (130.0, 90.0):
+        for psi in (100, 110, 120, 130, 140, 150):
+            r = MB.refit(pr, psi, fcap, rlim=(70.0, 100.0)); r["fcap"] = fcap; r["spring"] = MB.spring_design(r["x"][6], r["cord_min"], r["cord_max"], r["F_cord_max"], L0=r["x"][7])
+            A = MB.P1 + np.array(r["x"][0:3]); a = math.radians(psi); r["A_world"] = [round(float(v), 1) for v in A]
+            r["cord_census"] = cord_census(r["x"]); u = np.array([0.0, math.cos(a), math.sin(a)]); L_t = r["spring"]["tube_len_mm"]
+            r["tube_radial"] = census_tube(A + u * 6.0, u, L_t, near_A=A)
+            tdn = {}
+            for yt in (-128.0, -134.0, -140.0):
+                xs = max(float(M.back_x(yt, z)) for z in np.arange(A[2] - 230, A[2] + 1, 20)) + 8.0 + TD / 2
+                tdn[str(yt)] = dict(x_axis=round(xs, 1), **census_tube(np.array([xs, yt, A[2] - 20.0]), [0, 0, -1.0], L_t))
+            r["tube_down"] = tdn; out.append(r)
+            log("fcap", fcap, "psi", psi, "res", round(r["S1p_res"], 2), round(r["S2_res"], 2), "F", round(r["F_cord_max"], 1), "cord", r["cord_census"], "rad", {k: r["tube_radial"][k] for k in ("skin_mm", "arm_sweep_mm", "S1p_group_mm", "top_z", "pass")}, "down", {y: (v["skin_mm"], v["arm_sweep_mm"], v["pass"]) for y, v in tdn.items()})
+    json.dump(out, open(os.path.join(MB.OUTD, "balancer_pack.json"), "w"), indent=1, default=float); log("done")
