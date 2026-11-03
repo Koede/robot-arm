@@ -1,0 +1,29 @@
+{
+ "pad": [
+  -60.0,
+  -190.0,
+  12.0
+ ],
+ "clasp_psi": 120.0,
+ "summary": {
+  "grid_shape": [
+   15,
+   14,
+   3,
+   10,
+   3,
+   3,
+   3
+  ],
+  "park_free": true,
+  "n_cells": 170100,
+  "n_contact": 114760,
+  "n_reach_free": 55340,
+  "n_frontier": 35073,
+  "n_deep": 79687
+ },
+ "timing": {
+  "tabulate_s": 530.5,
+  "total_s": 533.7
+ }
+}

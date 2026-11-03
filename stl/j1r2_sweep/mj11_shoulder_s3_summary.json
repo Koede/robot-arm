@@ -1,0 +1,232 @@
+{
+ "result": {
+  "pad": [
+   -60.0,
+   -190.0,
+   12.0
+  ],
+  "reach_cov": 0.786,
+  "box": {
+   "ranges": {
+    "S1p": [
+     -95.0,
+     5.0
+    ],
+    "S2": [
+     -15.0,
+     17.4
+    ]
+   },
+   "cov": 0.46616161616161617,
+   "area": 176
+  },
+  "worst": [
+   [
+    "M2|mj11_clasp_bracket",
+    0.0
+   ],
+   [
+    "M2|wing",
+    0.0
+   ],
+   [
+    "M2|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|mj11_clasp_bracket",
+    0.0
+   ],
+   [
+    "M3|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_head",
+    0.0
+   ],
+   [
+    "M1|M3",
+    0.0
+   ],
+   [
+    "M3|wing",
+    1.5
+   ],
+   [
+    "M2|rail",
+    1.6
+   ],
+   [
+    "M1|tpu_S1_bumpers",
+    3.5
+   ]
+  ],
+  "t": 12.7
+ },
+ "frontier_pairs": {
+  "M2|wearer_skin": {
+   "MM": 2.0,
+   "park_d": 39.59162521362305,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 7,
+   "n_deep_cells": 239,
+   "d_frontier_min": 0.0,
+   "first_contact": {
+    "S1p": [
+     -65.0,
+     -10.0
+    ],
+    "S2": [
+     40.74,
+     44.72
+    ],
+    "S3": [
+     -70.0,
+     90.0
+    ]
+   },
+   "first_contact_example": {
+    "S1p": -15.0,
+    "S2": 40.74,
+    "S3": -70.0
+   },
+   "n_first_contact_points": 21,
+   "worst_contact_pose": {
+    "S1p": -25.0,
+    "S2": 45.0
+   }
+  },
+  "M3|mj11_clasp_bracket": {
+   "MM": 3.0,
+   "park_d": 42.8243522644043,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 12,
+   "n_deep_cells": 219,
+   "d_frontier_min": 0.0,
+   "first_contact": {
+    "S1p": [
+     -6.91,
+     5.0
+    ],
+    "S2": [
+     28.22,
+     40.0
+    ],
+    "S3": [
+     -70.0,
+     90.0
+    ]
+   },
+   "first_contact_example": {
+    "S1p": -2.87,
+    "S2": 30.0,
+    "S3": 90.0
+   },
+   "n_first_contact_points": 18,
+   "worst_contact_pose": {
+    "S1p": -5.0,
+    "S2": 40.0,
+    "S3": -70.0
+   }
+  },
+  "M3|wearer_skin": {
+   "MM": 2.0,
+   "park_d": 44.929786682128906,
+   "status": "FAIL(<1mm)",
+   "n_frontier_cells": 57,
+   "n_deep_cells": 825,
+   "d_frontier_min": 0.0,
+   "first_contact": {
+    "S1p": [
+     -95.0,
+     -10.0
+    ],
+    "S2": [
+     32.86,
+     44.03
+    ],
+    "S3": [
+     -70.0,
+     90.0
+    ]
+   },
+   "first_contact_example": {
+    "S1p": -71.4,
+    "S2": 40.0,
+    "S3": -70.0
+   },
+   "n_first_contact_points": 63,
+   "worst_contact_pose": {
+    "S1p": -95.0,
+    "S2": 35.0,
+    "S3": -70.0
+   }
+  },
+  "M3|wearer_head": {
+   "MM": 60.0,
+   "park_d": 164.1827392578125,
+   "status": "BELOW_GATE",
+   "n_frontier_cells": 24,
+   "n_deep_cells": 195,
+   "d_frontier_min": 43.72101593017578,
+   "first_contact": {
+    "S1p": [
+     9.43,
+     35.0
+    ],
+    "S2": [
+     -1.19,
+     25.0
+    ],
+    "S3": [
+     -70.0,
+     90.0
+    ]
+   },
+   "first_contact_example": {
+    "S1p": 31.51,
+    "S2": 0.0,
+    "S3": 90.0
+   },
+   "n_first_contact_points": 39,
+   "worst_contact_pose": {
+    "S1p": 30.0,
+    "S2": 5.0,
+    "S3": 0.0
+   }
+  },
+  "M1|M3": {
+   "MM": 3.0,
+   "park_d": 19.513456344604492,
+   "status": "BELOW_GATE",
+   "n_frontier_cells": 3,
+   "n_deep_cells": 12,
+   "d_frontier_min": 1.514745831489563,
+   "first_contact": {
+    "S1p": [
+     -95.0,
+     35.0
+    ],
+    "S2": [
+     -21.86,
+     -21.86
+    ],
+    "S3": [
+     -70.0,
+     90.0
+    ]
+   },
+   "first_contact_example": {
+    "S1p": -95.0,
+    "S2": -21.86,
+    "S3": -70.0
+   },
+   "n_first_contact_points": 84,
+   "worst_contact_pose": {
+    "S2": -25.0,
+    "S3": -70.0
+   }
+  }
+ }
+}
