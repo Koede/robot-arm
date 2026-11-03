@@ -1,5 +1,5 @@
 # SPEC: MJ11 loads + balancer / torque-gate options (SHOULDER / HARNESS / CONTROL), 2026-11-03
-Unattended run. Status: ANALYSIS, nothing adopted, no geometry changed. Decisions marked **FORREST** are Forest's call; this file lays out numbers only.
+Unattended run. Status: ANALYSIS, nothing adopted, no geometry changed. Decisions marked **Forest** are Forest's call; this file lays out numbers only.
 Units mm, N, N.m, kPa. Pad (-60,-190), standoff 12. Frame model `cad/j1r2/mj_frame.py` + `mj_concepts3.mj11_frame`; scripts `mj11_loads.py`, `mj11_loads_stall_layouts.py`, `mj11_free_region.py`, `mj11_balancer.py`, `mj11_bal_pack.py`, `mj11_bal_cordfix.py`, `mj11_bal_home*.py`, `mj11_bal_render.py`. Data `stl/j1r2_mounts/MJ11/{loads,loads_partA,loads_stall_layouts,free_region(.npz),balancer_options,balancer_pack,balancer_cordfix,balancer_home,balancer_home2}.json`. Render `renders_j1r2/mj11_balancer_a_sheet.png`.
 
 ## 0. What could not be run
