@@ -1,0 +1,44 @@
+shoulder S3 triple: {"pad": [-60.0, -190.0, 12.0], "reach_cov": 0.786, "box": {"ranges": {"S1p": [-95.0, 5.0], "S2": [-15.0, 17.4]}, "cov": 0.46616161616161617, "area": 176}, "worst": [["M2|mj11_clasp_bracket", 0.0], ["M2|wing", 0.0], ["M2|wearer_skin", 0.0], ["M3|mj11_clasp_bracket", 0.0], ["M3|wearer_skin", 0.0], ["M3|wearer_head", 0.0], ["M1|M3", 0.0], ["M3|wing", 1.5], ["M2|rail", 1.6], ["M1|tpu_S1_bumpers", 3.5]], "t": 12.3}
+MJ11 [mj11_shoulder_s3] range=soft grid={'S1p': [-95.0, 35.0, 28], 'S2': [-30.0, 88.0, 26], 'S3': [-70.0, 90.0, 3]}
+cells 2184 contact 1197 reach-free 987 frontier 177 deep(dropped) 1020  time 10.4 s
+pair                                           MM   park_d min_free  d_front    nF    nD  status
+M1|rail                                         3     16.8     14.3 -     0     0  PASS
+M1|S1_AK70                                      3      0.0 - -     0     0  EXCLUDED(designed contact at park)
+M1|S1_stop_posts                                3      2.2 - -     0     0  EXCLUDED(designed contact at park)
+M1|tpu_S1_bumpers                               3      3.5      3.5 -     0     0  PASS
+M1|mj11_pad                                     3      0.5 - -     0     0  EXCLUDED(designed contact at park)
+M1|mj11_seat_dish                               3      6.5      6.5 -     0     0  PASS
+M1|mj11_liner                                   3     18.7     17.6 -     0     0  PASS
+M1|mj11_rail_spacers                            3     10.6     10.6 -     0     0  PASS
+M1|mj11_clasp_bracket                           3      2.0 - -     0     0  EXCLUDED(designed contact at park)
+M1|wing                                         3     14.8     10.7 -     0     0  PASS
+M1|wearer_skin                                  2     26.4     21.7 -     0     0  PASS
+M1|wearer_head                                 60     97.0     83.8 -     0     0  PASS
+M2|rail                                         3    134.2     45.9 -     0     1  PASS(contact only in unreachable region, dropped)
+M2|S1_AK70                                      3     53.3     45.4 -     0     0  PASS
+M2|S1_stop_posts                                3     40.3     30.3 -     0     0  PASS
+M2|tpu_S1_bumpers                               3     44.6     35.3 -     0     0  PASS
+M2|mj11_pad                                     3     32.8     23.3 -     0     0  PASS
+M2|mj11_seat_dish                               3     34.6     23.3 -     0     0  PASS
+M2|mj11_liner                                   3     46.0     28.5 -     0     0  PASS
+M2|mj11_rail_spacers                            3    130.9     68.4 -     0     0  PASS
+M2|mj11_clasp_bracket                           3     44.4      9.2 -     0    59  PASS(contact only in unreachable region, dropped)
+M2|wing                                         3    132.3     42.9 -     0     1  PASS(contact only in unreachable region, dropped)
+M2|wearer_skin                                  2     39.6      2.3      0.0     7   239  FAIL(<1mm)
+M2|wearer_head                                 60    174.0    108.7 -     0     0  PASS
+M3|rail                                         3    138.5     78.7 -     0     0  PASS
+M3|S1_AK70                                      3     53.0     43.6 -     0     0  PASS
+M3|S1_stop_posts                                3     66.6     28.1 -     0     0  PASS
+M3|tpu_S1_bumpers                               3     65.5     33.3 -     0     0  PASS
+M3|mj11_pad                                     3     37.9     22.3 -     0     0  PASS
+M3|mj11_seat_dish                               3     40.9     23.4 -     0     0  PASS
+M3|mj11_liner                                   3     52.2     31.1 -     0     0  PASS
+M3|mj11_rail_spacers                            3    134.9     97.8 -     0     0  PASS
+M3|mj11_clasp_bracket                           3     42.8      5.2      0.0    12   219  FAIL(<1mm)
+M3|wing                                         3    135.8     75.7 -     0     3  PASS(contact only in unreachable region, dropped)
+M3|wearer_skin                                  2     44.9      2.8      0.0    57   825  FAIL(<1mm)
+M3|wearer_head                                 60    164.2     62.0     43.7    24   195  BELOW_GATE
+M1|M2                                           3      0.0 - -     0     0  EXCLUDED(designed contact at park)
+M1|M3                                           3     19.5      3.9      1.5     3    12  BELOW_GATE
+M2|M3                                           3      0.0 - -     0     0  EXCLUDED(designed contact at park)
+straight-arm map (54, 50) min skin 0.0 min head 0.0
