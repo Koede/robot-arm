@@ -1,0 +1,167 @@
+{
+ "watertight": true,
+ "volume_cm3": {
+  "fairing_ring": 6.08,
+  "fairing_hood": 36.47
+ },
+ "mass_g": {
+  "fairing_ring": 7.0,
+  "fairing_hood": 41.9,
+  "total": 48.9
+ },
+ "dens_PACF_g_cm3": 1.15,
+ "fill": 1.0,
+ "bbox_mm": {
+  "fairing_ring": [
+   10.5,
+   131.0,
+   136.0
+  ],
+  "fairing_hood": [
+   80.7,
+   95.2,
+   100.2
+  ]
+ },
+ "fits_256": true,
+ "M1_min_mm": {
+  "all": 3.2,
+  "at_S1p": -45.0,
+  "task_range_m85_10": 3.2
+ },
+ "M2_arm_min_mm": {
+  "all": 21.32,
+  "at": [
+   -50.0,
+   40.0
+  ],
+  "task_range": 21.32
+ },
+ "to_fixed_parts_mm": {
+  "pad": 0.2,
+  "seat_dish": 0.2,
+  "liner": 15.94,
+  "rail_spacers": 4.81,
+  "clasp_bracket": 3.5
+ },
+ "to_harness_mm": {
+  "wing_rail": 8.85,
+  "spine_bridge": 3.78
+ },
+ "skin_min_mm": 23.4,
+ "to_S1_AK70_mm": 16.7,
+ "to_S1_stop_posts_mm": 6.2,
+ "to_tpu_S1_bumpers_mm": 11.44,
+ "lead_channel_to_fairing_mm": {
+  "225.0": 11.2,
+  "270.0": 10.0,
+  "315.0": 10.0
+ },
+ "gland_hole_intersects_fairing_mm3": 0.0,
+ "gland_hole_to_parts_mm": {
+  "pad": 6.4,
+  "seat_dish": 22.7,
+  "liner": 32.1,
+  "rail_spacers": 16.4,
+  "clasp_bracket": 54.9,
+  "S1_AK70": 10.8
+ },
+ "gland_hole_to_bridge_mm": {
+  "wing_rail": 17.4,
+  "spine_bridge": 11.7
+ },
+ "print": {
+  "ring": {
+   "orientation": "stands on its rear edge (x = -87.0 on the bed), lip edge up",
+   "height_mm": 10.5,
+   "bed_contact_mm2": 646.0,
+   "overhang_mm2_gt45": 103.0,
+   "regions": [
+    [
+     103.0,
+     [
+      [
+       -96.0,
+       -121.0,
+       -258.0
+      ],
+      [
+       -91.0,
+       4.0,
+       -123.0
+      ]
+     ]
+    ]
+   ]
+  },
+  "hood": {
+   "orientation": "cap down (x = -10.3 on the bed), tongue up",
+   "height_mm": 80.7,
+   "bed_contact_mm2": 7611.0,
+   "overhang_mm2_gt45": 19.0,
+   "regions": [
+    [
+     19.0,
+     [
+      [
+       -87.0,
+       -123.0,
+       -221.0
+      ],
+      [
+       -83.0,
+       -29.0,
+       -131.0
+      ]
+     ]
+    ]
+   ]
+  },
+  "ring_front_down": {
+   "orientation": "ring on its lip edge (alternative)",
+   "height_mm": 10.5,
+   "bed_contact_mm2": 480.0,
+   "overhang_mm2_gt45": 270.0,
+   "regions": [
+    [
+     270.0,
+     [
+      [
+       -98.0,
+       -123.0,
+       -258.0
+      ],
+      [
+       -87.0,
+       4.0,
+       -123.0
+      ]
+     ]
+    ]
+   ]
+  },
+  "single_piece_capdown": {
+   "orientation": "ONE piece, cap down (ring hangs over the S2 window)",
+   "height_mm": 87.2,
+   "bed_contact_mm2": 7611.0,
+   "overhang_mm2_gt45": 486.0,
+   "regions": [
+    [
+     486.0,
+     [
+      [
+       -96.0,
+       -123.0,
+       -258.0
+      ],
+      [
+       -83.0,
+       8.0,
+       -130.0
+      ]
+     ]
+    ]
+   ]
+  }
+ }
+}

@@ -5,7 +5,7 @@ import numpy as np, trimesh
 import clib as L, j1r2_params as P, j1r2_geom as G, mj_frame as M, mj_concepts3   # noqa: F401
 REPO = M.REPO; ST = os.path.join(REPO, "stl"); MD = os.path.join(ST, "j1r2_mounts"); OUTD = os.path.join(REPO, "renders_j1r2", "mounts"); os.makedirs(OUTD, exist_ok=True)
 TAG = os.environ.get("J1_PAD", "default").replace(",", "_"); CACHE = os.path.join(MD, "_render_cache" + ("" if TAG == "default" else "_" + TAG)); os.makedirs(CACHE, exist_ok=True)
-SKIP = ("pad_riser", "standoffs", "fairing_lap", "rail") + (() if TAG == "default" else ("pad", "fairing_fixed", "column_anchor"))      # MJ11: own pad; the fairing is not re-fitted yet
+SKIP = ("pad_riser", "standoffs", "fairing_lap", "rail", "pad", "fairing_fixed", "column_anchor")      # J1 rev 2 riser parts; MJ11 has its own pad and its own fairing (fairing_ring + fairing_hood, re-fitted 2026-11-03: concept parts below)
 BASE, INFO = G.build(y1=M.Y1, z1=M.Z1, standoff=M.DER["standoff"], full=True); DER = INFO["derived"]; th, ph = P.PARK["S1p"], P.PARK["S2"]
 def rgb(c): return [int(255 * v) for v in c]
 def shared():
@@ -18,7 +18,7 @@ def shared():
     for k, v in BASE.items():
         if k in SKIP or v.get("kind") == "cable": continue
         m = v["mesh"].copy(); m.apply_transform(G.pose_matrix(v["group"], DER, th, ph)); p_ = os.path.join(CACHE, f"stage_{k}.stl"); m.export(p_)
-        col = [52, 54, 60] if v.get("kind") == "bought" else ([150, 158, 172] if k == "fairing_fixed" else [180, 184, 190])
+        col = [52, 54, 60] if v.get("kind") == "bought" else [180, 184, 190]
         parts.append(dict(stl=p_, color=col, metal=0.25 if v.get("kind") == "bought" else 0.0, rough=0.5))
     json.dump(parts, open(os.path.join(CACHE, "shared.json"), "w")); return parts
 def scene(cid):

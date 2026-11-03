@@ -11,7 +11,8 @@ DENS = dict(L.DENS); DENS.update(CF=1.55, AL=2.70, TPU=1.21, STEEL=7.85)
 t0 = time.time(); log = lambda *a: print("[%5.0fs]" % (time.time() - t0), *a, flush=True)
 BASE, INFO = G.build(y1=M.Y1, z1=M.Z1, standoff=M.DER["standoff"], full=True); DER = INFO["derived"]
 REPLACED = ("pad_riser", "standoffs", "fairing_lap")
-LIM = dict(S1p=(-95.0, 35.0), S2=(-30.0, 80.0))     # HARD ranges of the J1 rev 2 recommended soft limits (S1' -90..30, S2 -25..75; SPEC_j1r2_integration section 5)
+LIM_J1 = dict(S1p=(-95.0, 35.0), S2=(-30.0, 80.0)); LIM_MJ11 = dict(S1p=(-100.0, 10.0), S2=(-25.0, 40.0))     # MJ11 hard stops: passive boxes S1' -80..5 (task) / -95..5 (mj11_sweep) and S2 -20..35, each +-5 deg
+LIM = LIM_J1     # HARD ranges of the J1 rev 2 recommended soft limits (S1' -90..30, S2 -25..75; SPEC_j1r2_integration section 5)
 M1N = ("S1_yoke", "S1_stop_collar", "S2_AK70", "S2_clamp", "S2_sleeve", "S2_stop_posts", "tpu_S2_bumpers", "cable_M1")
 M2N = ("S2_adapter", "S3_bracket", "S3_XM540", "S2_stop_lug", "arm_tube", "arm_elbow_ball", "cable_M2")
 def samp(m, sp=1.2):
@@ -73,8 +74,13 @@ def skin_zones(parts):
     return out
 RULE = dict(rail=5.0, blade=20.0, top=10.0)
 def stage_clearance(parts):
-    pts = np.vstack([samp(p["mesh"], 1.2) for k, p in parts.items() if p["kind"] != "cord" and not k.startswith("bal_cassette")])
-    r = np.hypot(pts[:, 1] - DER["y1"], pts[:, 2] - DER["z1"]); keep = ~((r < 68.5) & (pts[:, 0] > DER["x0"] - 1.0)); pts = pts[keep]     # the pad disc / stop-post zone was verified in J1 rev 2 (designed proximity)
+    pts = []
+    for k, p in parts.items():
+        if p["kind"] == "cord" or k.startswith("bal_cassette"): continue
+        q = samp(p["mesh"], 1.2); r = np.hypot(q[:, 1] - DER["y1"], q[:, 2] - DER["z1"])
+        if not k.startswith("fairing"): q = q[~((r < 68.5) & (q[:, 0] > DER["x0"] - 1.0))]     # the pad disc / stop-post zone was verified in J1 rev 2 (designed proximity); the MJ11 fairing (R66..68, x >= x0) is checked in full
+        pts.append(q)
+    pts = np.vstack(pts)
     T = cKDTree(pts); best1, best2 = (1e9, None), (1e9, None)
     for th in np.arange(LIM["S1p"][0], LIM["S1p"][1] + 0.1, 5.0):
         Mx = G.pose_matrix("M1", DER, th, 0.0); q = MOV1 @ Mx[:3, :3].T + Mx[:3, 3]; d = float(T.query(q, distance_upper_bound=40)[0].min())
@@ -143,6 +149,8 @@ def balancer_check(cid, parts):
         cs = parts["bal_cassette"]["mesh"]; return dict(home="flat spiral spring + cam drum inside the shell (NEW balancer type, not designed)", skin_mm=round(L.skin_gap(cs, 2000)[0], 1),
                     verdict="fits the shell depth, but a cam-drum spiral balancer that reproduces the zero-length cord law over both axes is not designed (PLACEHOLDER)")
 def evaluate(cid):
+    global LIM
+    LIM = LIM_MJ11 if cid == "MJ11" else LIM_J1
     Cc = C.CONCEPTS[cid]; parts = Cc["geo"](BASE); log(cid, "geometry", len(parts), "parts")
     rows = {k: dict(mat=p["mat"], kind=p["kind"], mass_g=round(mass_of(p), 1), watertight=bool(p["mesh"].is_watertight), bbox=np.round(p["mesh"].extents, 1).tolist(),
                     fits_256=bool(np.all(p["mesh"].bounding_box_oriented.extents <= 256)), note=p.get("note", "")) for k, p in parts.items()}

@@ -12,7 +12,7 @@ import numpy as np, trimesh, os, sys, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import clib as L, mj_frame as M, mj_concepts as C
 from clib import U, D as DIFF, box as bx
-from mj_concepts import P_, pad_disc, pad_pt, link_bolts, rail_node_name, rail_x, clasp_bracket_geo, clasp_bracket_frame, boxbeam, BLUE, PAD_R
+from mj_concepts import feet_xyz, P_, pad_disc, pad_pt, link_bolts, rail_node_name, rail_x, clasp_bracket_geo, clasp_bracket_frame, boxbeam, BLUE, PAD_R
 Y1, Z1, X0, XB = M.Y1, M.Z1, M.X0, M.XB
 LINER_T = 8.0                      # foam liner thickness (compliance over the moving blade)
 PLATE_MIN = 3.0                    # minimum dish thickness at the ridge
@@ -46,6 +46,65 @@ def liner_mesh():
 def rail_bolt_pts():
     """(x_pad_face, y, z) of the 4 M4 bolts on the pad plane and the rail rear face x at the same place."""
     return [(X0, y, z, rail_x(-119.0, z)) for z in BOLT_Z for y in BOLT_Y]
+
+# ------------------------------------------------------------------ fixed fairing for MJ11 (2026-11-03): 1.8 mm PA-CF shell over the S1' AK70 + pad rear/sides (no riser, no lap)
+import shapely.geometry as sg, j1r2_params as PP, j1r2_geom as GG
+FAIR_T = 1.8                        # shell wall
+FAIR_GAP = 3.2                      # swept-clearance margin to the moving S1' group (gate 3.0)
+FAIR_S1 = (-100.0, 10.0)            # S1' range the slot is swept over: hard stops of both the task box (-80..5 +-5) and the MJ11 sweep box (-95..5 +-5)
+FAIR_X_END = M.DER["XO"] + 31.0     # rear face of the cap (as J1 rev 2: yoke + coil + 10 mm)
+FAIR_LIP = 0.2                      # radial clearance to the pad rim
+GLAND = dict(x=X0 + 19.0, dz=-12.0, d=13.2)      # cable gland hole through the flat medial wall (bundle OD 8.2 + grommet), PLACEHOLDER route
+FAIR_SCREW_PSI = (45.0, 270.0, 340.0)   # 3 x radial M3 x 8 thread-forming into the pad rim, at x0 + 3 (psi from +y toward +z); keeps off the medial setback (144..216) and the clasp-bracket window (103..137)
+FAIR_SETBACK_Y = -100.0             # setback region y < this (also lifts the lip 5.2 mm off the two rail-spacer ends)
+FAIR_BRIDGE_X = -92.5               # medial setback: the flat wall (y < -100) starts here, not at x0, so it clears the spine-bridge ears (y <= -124.3, x <= -95.5) by >= 3 mm
+FAIR_WIN_M = 3.5                    # window margin around the clasp bracket arm
+def _poly(c, r, ymin=None):
+    d = sg.Point(c).buffer(r, 64)
+    if ymin is not None: d = d.intersection(sg.box(ymin, c[1] - 2 * r, c[0] + 2 * r, c[1] + 2 * r))
+    return list(d.exterior.coords)[:-1]
+def fairing_mesh(bracket=None):
+    c = (Y1, Z1); Ro = PAD_R + FAIR_LIP + FAIR_T; Ri = PAD_R + FAIR_LIP; xe = FAIR_X_END
+    out = L.prism(_poly(c, Ro, PAD_TRIM_Y - FAIR_LIP - FAIR_T), "x", X0, xe)
+    inn = L.prism(_poly(c, Ri, PAD_TRIM_Y - FAIR_LIP), "x", X0 - 1.0, xe - FAIR_T)
+    fair = DIFF(out, inn); cut = []; TS, AKR = PP.TS, PP.AKR
+    for th in np.arange(FAIR_S1[0] - 2.5, FAIR_S1[1] + 2.6, 5.0):
+        Mx = L.tr([0, Y1, Z1]) @ GG.Rx(th) @ L.tr([0, -Y1, -Z1]); g = FAIR_GAP
+        sl = L.cyl("y", 48.5 + g, 30.0 + Y1, 130.0 + Y1, c=(M.PX, Z1), n=48); sl.apply_transform(Mx); cut.append(sl)
+        bar = bx(M.PX - 6.0 - g, M.PX + 6.0 + g, Y1 + 0.0, Y1 + TS + 3.0, Z1 - 26.0 - g, Z1 + 26.0 + g); bar.apply_transform(Mx); cut.append(bar)
+        pl_ = bx(M.PX - 48.5 - g, M.PX + 48.5 + g, Y1 + TS - 1.3 - g, Y1 + TS + 3.7 + g, Z1 - 48.5 - g, Z1 + 48.5 + g); pl_.apply_transform(Mx); cut.append(pl_)
+    fair = DIFF(fair, L.U(*cut))
+    fair = DIFF(fair, bx(X0 - 2.0, FAIR_BRIDGE_X, PAD_TRIM_Y - 10.0, FAIR_SETBACK_Y, Z1 - 100.0, Z1 + 100.0))                                  # medial setback (spine-bridge ears)
+    if bracket is not None:
+        hub, anc = bracket; _G["win"] = boxbeam(hub, anc, 24.0 + 2 * FAIR_WIN_M, 6.0 + 2 * FAIR_WIN_M, None, up=(1, 0, 0), ext=6.0 + FAIR_WIN_M); fair = DIFF(fair, _G["win"])          # window for the clasp bracket arm
+    gx, gz = GLAND["x"], Z1 + GLAND["dz"]; fair = DIFF(fair, L.cyl("y", GLAND["d"] / 2, PAD_TRIM_Y - 12.0, PAD_TRIM_Y + 6.0, c=(gx, gz), n=40))       # cable gland through the flat medial wall
+    for psi in FAIR_SCREW_PSI: fair = DIFF(fair, GG._radial_cyl(Y1, Z1, psi, PAD_R + FAIR_LIP + FAIR_T + 1.0, PAD_R - 1.0, 1.7, X0 + 3.0))                       # M3 clearance holes in the lip
+    return fair
+FAIR_XS = M.PX - 48.5 - FAIR_GAP    # print split plane = start of the S2 slot (x -86.95): ring (lip band, all round) | hood (rear shell + cap)
+FAIR_TONGUE = 4.0                   # hood tongue length forward into the ring (inner half of the wall), bonded
+FAIR_TG = 0.15                      # glue gap of the lap
+def fairing_split(F):
+    """cut the fairing at x = FAIR_XS into ring (x < XS: lip band all round) and hood (x > XS: rear shell + cap) so that neither needs supports (the lip arc over the S2 window cannot be printed cap-down;
+    mouth-down the cap roof cannot).  Lap joint: the hood carries a 4 mm tongue (inner half of the wall) forward into a matching rebate of the ring, 0.15 mm glue gap, bonded (2-part epoxy / MMA)."""
+    XS, tl = FAIR_XS, FAIR_TONGUE; c = (Y1, Z1); Ri = PAD_R + FAIR_LIP
+    hood = L.I(F, bx(XS, 0.0, -400, 400, -600, 0.0)); ring = L.I(F, bx(-200, XS, -400, 400, -600, 0.0))
+    sec = F.section(plane_origin=[XS + 3.0, 0, 0], plane_normal=[1, 0, 0]); fp = None
+    for d in sec.discrete:
+        pl = sg.Polygon(np.asarray(d)[:, 1:3]).buffer(0)
+        if pl.area > 1.0: fp = pl if fp is None else fp.union(pl)
+    half = sg.Polygon(_poly(c, Ri + FAIR_T / 2 - FAIR_TG, PAD_TRIM_Y - FAIR_LIP)).difference(sg.Polygon(_poly(c, Ri, PAD_TRIM_Y - FAIR_LIP)))
+    tong = half.intersection(fp.buffer(0.3)); tg = []
+    for pl in ([tong] if tong.geom_type == "Polygon" else list(tong.geoms)):
+        if pl.area > 2.0: tg.append(L.prism(list(pl.exterior.coords)[:-1], "x", XS - tl, XS + 0.3))
+    tongue = L.U(*tg)
+    if "win" in _G: tongue = DIFF(tongue, _G["win"])                      # the tongue must not enter the clasp-bracket window either
+    hood = L.U(hood, tongue)
+    # rebate in the ring: the tongue + glue gap, inner half only; the ring keeps its outer half and the rear edge on the bed
+    hf = []
+    for pl in ([tong] if tong.geom_type == "Polygon" else list(tong.geoms)):
+        if pl.area > 2.0: hf.append(L.prism(list(pl.buffer(FAIR_TG, join_style=2).exterior.coords)[:-1], "x", XS - tl - FAIR_TG, XS + 0.5))
+    ring = DIFF(ring, L.I(L.U(*hf), L.prism(_poly(c, Ri + FAIR_T / 2 + 0.0, PAD_TRIM_Y - FAIR_LIP), "x", XS - tl - 1.0, XS + 1.0)))
+    return ring, hood
 def mj11_geo(base):
     out = {}; padm = L.I(pad_disc(), bx(X0 - 10.0, XB + 10.0, PAD_TRIM_Y, Y1 + 100.0, Z1 - 100.0, Z1 + 100.0))
     out["pad"] = P_("pad", padm, "PACF", BLUE, note="R66 x 6 PA-CF pad disc trimmed flat at y %.0f (spine-bridge ears), S1' AK70 on its rear face (flange PLACEHOLDER); its flat front face lies on the seat dish and, medially, on the rail spacers" % PAD_TRIM_Y)
@@ -55,6 +114,10 @@ def mj11_geo(base):
     out["rail_spacers"] = P_("rail_spacers", sp, "PETGCF", C.COL["steel"], note="4 spacers D10 from the rail rear face to the pad plane (%.1f..%.1f mm), M4 x 20 SHCS into new M4 heat-set inserts (5.6 OD x 4) in the rail (PLACEHOLDER bosses)" % tuple(sorted((X0 - rail_x(-119.0, z)) for z in BOLT_Z)))
     out["liner"]["skin_contact"] = True
     out["clasp_bracket"] = P_("clasp_bracket", clasp_bracket_geo(pad_pt(CLASP_PSI, PAD_R - 8, x=XB - 3.0)), "PACF", BLUE, note="clasp feet (re-seated) to the pad rim at psi %.0f" % CLASP_PSI)
+    fm = fairing_mesh((feet_xyz()["F1_upper_trap"], pad_pt(CLASP_PSI, PAD_R - 8, x=XB - 3.0)))
+    ring, hood = fairing_split(fm)
+    out["fairing_ring"] = P_("fairing_ring", ring, "PACF", (0.80, 0.55, 0.20), note="fixed fairing, front lip ring (x %.1f..%.1f): R66.2 lip around the pad rim, flush with the dish plane x0, trimmed flat at y %.1f with a medial setback to x %.1f (spine-bridge ears), clasp-bracket window, 3 x M3 radial into the pad rim; prints standing on its rear edge, no supports" % (X0, FAIR_XS, PAD_TRIM_Y - FAIR_LIP - FAIR_T, FAIR_BRIDGE_X))
+    out["fairing_hood"] = P_("fairing_hood", hood, "PACF", (0.86, 0.62, 0.26), note="fixed fairing, rear hood (x %.1f..%.1f): 1.8 mm shell over the S1' AK70 medial/top side + cap; S2 slot swept over S1' %.0f..%.0f with %.1f mm margin; cable gland D%.1f; 4 mm inner-half tongue bonded into the ring; prints cap down, no supports" % (FAIR_XS, FAIR_X_END, FAIR_S1[0], FAIR_S1[1], FAIR_GAP, GLAND["d"]))
     return out
 def mj11_frame(fr, side):
     mp = (lambda p: np.asarray(p, float)) if side == "R" else M.mirror; pad = C.pad_nodes(fr, side); Y, Z, skin, inner, plane = seat_surfaces()

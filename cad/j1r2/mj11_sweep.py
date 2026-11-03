@@ -5,7 +5,7 @@ import os, sys, json, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np, trimesh
 import clib as L, j1r2_params as P, j1r2_geom as G, j1r2_kin as K, j1r2_sweep as S, j1r2_opt as O, mj_frame as M, mj_concepts3 as C3
-REPLACED = ("pad_riser", "standoffs", "fairing_lap", "fairing_fixed", "pad", "column_anchor")
+REPLACED = ("pad_riser", "standoffs", "fairing_lap", "fairing_fixed", "pad", "column_anchor")      # J1 rev 2 parts; fairing_fixed is superseded by the MJ11 fairing (mj_concepts3: fairing_ring + fairing_hood, added below via mj_parts)
 def scene(mj_parts, name="MJ11"):
     parts, info = G.build(y1=M.Y1, z1=M.Z1, standoff=M.DER["standoff"], full=True); D = info["derived"]; fixed, m1, m2 = {}, [], []
     for k, p in parts.items():
