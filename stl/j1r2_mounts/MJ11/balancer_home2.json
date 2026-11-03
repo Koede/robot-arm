@@ -1,0 +1,159 @@
+[
+ {
+  "y_axis": -126.0,
+  "z_top": -240.0,
+  "pass_none": true
+ },
+ {
+  "y_axis": -122.0,
+  "z_top": -240.0,
+  "pass_none": true
+ },
+ {
+  "y_axis": -118.0,
+  "z_top": -240.0,
+  "pass_none": true
+ },
+ {
+  "y_axis": -112.0,
+  "z_top": -240.0,
+  "pass_none": true
+ },
+ {
+  "skin_mm": 21.3,
+  "mirror_tube_mm": 3.5,
+  "fixed_mj11_parts_mm": 26.0,
+  "wing_rail_mm": 6.6,
+  "spine_bridge_mm": 29.4,
+  "S1p_group_mm": 5.0,
+  "arm_sweep_mm": 6.4,
+  "top_z": -270.0,
+  "bottom_z": -461.0,
+  "head_mm": 195.0,
+  "pass": true,
+  "x_axis": -84.0,
+  "y_axis": -126.0,
+  "z_top": -270.0
+ },
+ {
+  "y_axis": -122.0,
+  "z_top": -270.0,
+  "pass_none": true
+ },
+ {
+  "y_axis": -118.0,
+  "z_top": -270.0,
+  "pass_none": true
+ },
+ {
+  "y_axis": -112.0,
+  "z_top": -270.0,
+  "pass_none": true
+ },
+ {
+  "skin_mm": 20.1,
+  "mirror_tube_mm": 3.5,
+  "fixed_mj11_parts_mm": 52.9,
+  "wing_rail_mm": 12.5,
+  "spine_bridge_mm": Infinity,
+  "S1p_group_mm": 16.7,
+  "arm_sweep_mm": 6.1,
+  "top_z": -300.0,
+  "bottom_z": -491.0,
+  "head_mm": 224.0,
+  "pass": true,
+  "x_axis": -84.0,
+  "y_axis": -126.0,
+  "z_top": -300.0
+ },
+ {
+  "skin_mm": 19.9,
+  "mirror_tube_mm": 11.5,
+  "fixed_mj11_parts_mm": 51.5,
+  "wing_rail_mm": 11.7,
+  "spine_bridge_mm": Infinity,
+  "S1p_group_mm": 14.9,
+  "arm_sweep_mm": 3.8,
+  "top_z": -300.0,
+  "bottom_z": -491.0,
+  "head_mm": 225.0,
+  "pass": true,
+  "x_axis": -84.0,
+  "y_axis": -122.0,
+  "z_top": -300.0
+ },
+ {
+  "y_axis": -118.0,
+  "z_top": -300.0,
+  "pass_none": true
+ },
+ {
+  "y_axis": -112.0,
+  "z_top": -300.0,
+  "pass_none": true
+ },
+ {
+  "skin_mm": 11.7,
+  "mirror_tube_mm": 3.5,
+  "fixed_mj11_parts_mm": 81.1,
+  "wing_rail_mm": 16.1,
+  "spine_bridge_mm": Infinity,
+  "S1p_group_mm": 43.4,
+  "arm_sweep_mm": 26.1,
+  "top_z": -330.0,
+  "bottom_z": -521.0,
+  "head_mm": 254.0,
+  "pass": true,
+  "x_axis": -84.0,
+  "y_axis": -126.0,
+  "z_top": -330.0
+ },
+ {
+  "skin_mm": 11.8,
+  "mirror_tube_mm": 11.5,
+  "fixed_mj11_parts_mm": 79.9,
+  "wing_rail_mm": 16.6,
+  "spine_bridge_mm": Infinity,
+  "S1p_group_mm": 42.0,
+  "arm_sweep_mm": 24.5,
+  "top_z": -330.0,
+  "bottom_z": -521.0,
+  "head_mm": 254.0,
+  "pass": true,
+  "x_axis": -84.0,
+  "y_axis": -122.0,
+  "z_top": -330.0
+ },
+ {
+  "skin_mm": 11.8,
+  "mirror_tube_mm": 19.5,
+  "fixed_mj11_parts_mm": 78.9,
+  "wing_rail_mm": 16.5,
+  "spine_bridge_mm": Infinity,
+  "S1p_group_mm": 40.9,
+  "arm_sweep_mm": 23.4,
+  "top_z": -330.0,
+  "bottom_z": -521.0,
+  "head_mm": 254.0,
+  "pass": true,
+  "x_axis": -84.0,
+  "y_axis": -118.0,
+  "z_top": -330.0
+ },
+ {
+  "skin_mm": 12.0,
+  "mirror_tube_mm": 31.5,
+  "fixed_mj11_parts_mm": 77.5,
+  "wing_rail_mm": 16.0,
+  "spine_bridge_mm": Infinity,
+  "S1p_group_mm": 39.3,
+  "arm_sweep_mm": 22.1,
+  "top_z": -330.0,
+  "bottom_z": -521.0,
+  "head_mm": 254.0,
+  "pass": true,
+  "x_axis": -84.0,
+  "y_axis": -112.0,
+  "z_top": -330.0
+ }
+]

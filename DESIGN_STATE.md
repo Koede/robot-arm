@@ -135,11 +135,13 @@ See `specs/SPEC_hand.md`. **Forest (2026-10-30): "Merge this as the new project 
 2. In-link runs, arm_chain DP, hub link, clips and boot sizes for the new elbow anchors.
 3. `sweep_full.py` (both modes) on the current cowl / curved pauldron, then the firmware keep-out tables (`gen_tables.py`).
 4. Harness top-pad margin (2.0 %) vs boot mass (~99 g per arm at 0.7x TPU wall): `harness_loads.py` needs `sensor_pods.py` + `electronics_fit.py`.
-5. Pad stall cap: AK70 S1/S2 cap 8.3 -> 8.0 N m (pad stall limit 16.6 N m: 2.00x at 8.3, 2.075x at 8.0); S2 torque SF with the balancer stays 2.77. **Forest to decide.**
+5. MJ11 torque gate / balancer (2026-11-03 options in specs/SPEC_j1r2_mj11_loads_balancer.md) and pad stall cap: AK70 S1/S2 cap 8.3 -> 8.0 N m (pad stall limit 16.6 N m: 2.00x at 8.3, 2.075x at 8.0); S2 torque SF with the balancer stays 2.77. **Forest to decide.**
 6. Bench / parts items: S2 free fall T12 (phase-short braking f >= 0.80), relays, 1.10 s off-delay stage, main-box heat, bench test T-W1.
 7. Missing from the repo: `collision_body.py`, `gen_tables.py`, `gen_state_table.py`, `harness_loads.py`, `sensor_pods.py`, `electronics_fit.py`, `balancer_freefall.py`, `balancer_struct.py`, `arm_clips.py`, `control_map.py`; specs `SPEC_third_shoulder.md`, `SPEC_balancer.md`, `SPEC_ball_stops.md`; `stl/gates.json`; `stl/electronics/arm_vendor_data.json` and `arm_electrical.json`.
 
 ## Changelog (dated entries recoverable from the repo)
+
+- **2026-11-03 (MJ11 loads + balancer options, analysis):** harness_loads/body_loads not in repo, cases ported to the MJ11 frame (`cad/j1r2/mj11_loads.py`). Bolt worst 228/310 N park/reach (327 scan, 707 stall, x2 SF 1.4-1.6 vs 1 kN UNVERIFIED); 3rd bolt pair z -150/-190/-230 gives 184 / 413 N (SF 2.7 / 2.4). Strap cannot preload rail/liner (needs ~110 N vs ~15 N allowed): unload 0.2-0.3 mm accepted unless donning squeeze. Top pad: 14.4 kPa (2.0 %) unchanged without balancer, balancer (a) fails (-3.4 %, needs +3.8 % area). Gravity torque over the REAL MJ11 workspace: S1' 7.24 (SF 1.15), S2 4.61 (SF 1.80, 3.60 in the passive box). Options (a) refit spring psi 100-130 SF 2.5-3.0 with a lower-back tube home, (b) cap 4.15 keeps 49 % of poses at 0.5 kg, (c) no payload reaches SF 2, (d) ideal cams 2.8 / 2.2. **Forest to decide.** `specs/SPEC_j1r2_mj11_loads_balancer.md`.
 
 - **2026-11-02 (J1 mount alternatives, concept):** Forest: "Explore alternative designs for the shoulder mount" (J1 pancake mount).
   - Seven mounts (REF + MJ1..MJ6), all on one harness frame model and checked against the J1 stage, your range of motion and the skin rules.
