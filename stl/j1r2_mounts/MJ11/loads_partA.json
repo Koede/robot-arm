@@ -1,0 +1,664 @@
+{
+ "A_frame": {
+  "park": {
+   "tip_mm": 0.836,
+   "rail": {
+    "max": 0.673,
+    "min": -1.43,
+    "sumN": -0.559
+   },
+   "top": {
+    "max": 1.387,
+    "min": 0.4,
+    "sumN": 4.614
+   },
+   "front": {
+    "max": 0.02,
+    "min": -0.164,
+    "sumN": -0.405
+   },
+   "axilla": {
+    "max": 0.454,
+    "min": 0.454,
+    "sumN": 1.265
+   },
+   "liner": {
+    "max": 0.626,
+    "min": -0.57,
+    "sumN": 0.823
+   },
+   "rail_shear_Fz_N": 30.949,
+   "bolts": {
+    "n": 4,
+    "tension_max_N": 7.259,
+    "shear_max_N": 47.677,
+    "Fx_N": -0.758,
+    "Fy_N": -1.9,
+    "Fz_N": -31.041,
+    "Mx_Nmm": -5516.382,
+    "My_Nmm": 141.189,
+    "Mz_Nmm": 94.281
+   },
+   "bolt_pair_tension_N": 228.089,
+   "bolt_pair_each_N": [
+    228.089,
+    42.833
+   ],
+   "member_stress_MPa": {
+    "rail": 1.31,
+    "clasp_arm": 1.57,
+    "clasp_seat": 1.62,
+    "spine_bridge": 0.97
+   }
+  },
+  "reach": {
+   "tip_mm": 1.784,
+   "rail": {
+    "max": 1.907,
+    "min": -3.058,
+    "sumN": 0.101
+   },
+   "top": {
+    "max": 1.588,
+    "min": 0.507,
+    "sumN": 5.407
+   },
+   "front": {
+    "max": 0.291,
+    "min": -0.09,
+    "sumN": 0.998
+   },
+   "axilla": {
+    "max": 0.57,
+    "min": 0.57,
+    "sumN": 1.587
+   },
+   "liner": {
+    "max": 2.168,
+    "min": -1.948,
+    "sumN": 2.75
+   },
+   "rail_shear_Fz_N": 32.965,
+   "bolts": {
+    "n": 4,
+    "tension_max_N": 21.788,
+    "shear_max_N": 63.828,
+    "Fx_N": -2.523,
+    "Fy_N": -2.517,
+    "Fz_N": -30.482,
+    "Mx_Nmm": -7476.615,
+    "My_Nmm": 1509.731,
+    "Mz_Nmm": 137.212
+   },
+   "bolt_pair_tension_N": 309.527,
+   "bolt_pair_each_N": [
+    309.527,
+    101.897
+   ],
+   "member_stress_MPa": {
+    "rail": 2.3,
+    "clasp_arm": 1.95,
+    "clasp_seat": 1.85,
+    "spine_bridge": 1.67
+   }
+  },
+  "scan": [
+   {
+    "th": -95,
+    "phi": -15,
+    "rail_min": -4.239,
+    "rail_max": 3.165,
+    "liner_min": -2.998,
+    "liner_max": 3.775,
+    "front_min": 0.155,
+    "top_max": 1.789,
+    "top_sumN": 5.79,
+    "bolt": 296.867,
+    "shear": 61.428,
+    "Fz_rail": 32.904
+   },
+   {
+    "th": -95,
+    "phi": 0,
+    "rail_min": -3.033,
+    "rail_max": 1.917,
+    "liner_min": -1.933,
+    "liner_max": 2.181,
+    "front_min": -0.07,
+    "top_max": 1.591,
+    "top_sumN": 5.375,
+    "bolt": 300.576,
+    "shear": 62.061,
+    "Fz_rail": 32.77
+   },
+   {
+    "th": -95,
+    "phi": 17.4,
+    "rail_min": -1.587,
+    "rail_max": 0.664,
+    "liner_min": -0.669,
+    "liner_max": 0.711,
+    "front_min": -0.288,
+    "top_max": 1.368,
+    "top_sumN": 4.822,
+    "bolt": 285.003,
+    "shear": 58.874,
+    "Fz_rail": 32.185
+   },
+   {
+    "th": -95,
+    "phi": 35,
+    "rail_min": -0.831,
+    "rail_max": 0.385,
+    "liner_min": -1.414,
+    "liner_max": 0.963,
+    "front_min": -0.44,
+    "top_max": 1.171,
+    "top_sumN": 4.235,
+    "bolt": 248.99,
+    "shear": 51.672,
+    "Fz_rail": 31.176
+   },
+   {
+    "th": -80,
+    "phi": -15,
+    "rail_min": -4.298,
+    "rail_max": 3.14,
+    "liner_min": -3.035,
+    "liner_max": 3.745,
+    "front_min": 0.109,
+    "top_max": 1.782,
+    "top_sumN": 5.869,
+    "bolt": 318.41,
+    "shear": 65.68,
+    "Fz_rail": 33.371
+   },
+   {
+    "th": -80,
+    "phi": 0,
+    "rail_min": -3.092,
+    "rail_max": 1.892,
+    "liner_min": -1.97,
+    "liner_max": 2.151,
+    "front_min": -0.117,
+    "top_max": 1.583,
+    "top_sumN": 5.453,
+    "bolt": 322.032,
+    "shear": 66.298,
+    "Fz_rail": 33.236
+   },
+   {
+    "th": -80,
+    "phi": 17.4,
+    "rail_min": -1.645,
+    "rail_max": 0.666,
+    "liner_min": -0.706,
+    "liner_max": 0.744,
+    "front_min": -0.334,
+    "top_max": 1.361,
+    "top_sumN": 4.901,
+    "bolt": 306.579,
+    "shear": 63.132,
+    "Fz_rail": 32.653
+   },
+   {
+    "th": -80,
+    "phi": 35,
+    "rail_min": -0.866,
+    "rail_max": 0.394,
+    "liner_min": -1.463,
+    "liner_max": 0.98,
+    "front_min": -0.488,
+    "top_max": 1.164,
+    "top_sumN": 4.315,
+    "bolt": 270.925,
+    "shear": 55.991,
+    "Fz_rail": 31.652
+   },
+   {
+    "th": -65,
+    "phi": -15,
+    "rail_min": -4.312,
+    "rail_max": 3.133,
+    "liner_min": -3.044,
+    "liner_max": 3.738,
+    "front_min": 0.097,
+    "top_max": 1.78,
+    "top_sumN": 5.888,
+    "bolt": 323.676,
+    "shear": 66.721,
+    "Fz_rail": 33.486
+   },
+   {
+    "th": -65,
+    "phi": 0,
+    "rail_min": -3.105,
+    "rail_max": 1.886,
+    "liner_min": -1.978,
+    "liner_max": 2.144,
+    "front_min": -0.127,
+    "top_max": 1.582,
+    "top_sumN": 5.47,
+    "bolt": 326.67,
+    "shear": 67.215,
+    "Fz_rail": 33.337
+   },
+   {
+    "th": -65,
+    "phi": 17.4,
+    "rail_min": -1.66,
+    "rail_max": 0.666,
+    "liner_min": -0.715,
+    "liner_max": 0.752,
+    "front_min": -0.346,
+    "top_max": 1.359,
+    "top_sumN": 4.921,
+    "bolt": 312.063,
+    "shear": 64.215,
+    "Fz_rail": 32.772
+   },
+   {
+    "th": -65,
+    "phi": 35,
+    "rail_min": -0.878,
+    "rail_max": 0.397,
+    "liner_min": -1.48,
+    "liner_max": 0.987,
+    "front_min": -0.505,
+    "top_max": 1.161,
+    "top_sumN": 4.344,
+    "bolt": 278.891,
+    "shear": 57.562,
+    "Fz_rail": 31.825
+   },
+   {
+    "th": -50,
+    "phi": -15,
+    "rail_min": -4.281,
+    "rail_max": 3.147,
+    "liner_min": -3.025,
+    "liner_max": 3.754,
+    "front_min": 0.122,
+    "top_max": 1.784,
+    "top_sumN": 5.847,
+    "bolt": 312.31,
+    "shear": 64.476,
+    "Fz_rail": 33.239
+   },
+   {
+    "th": -50,
+    "phi": 0,
+    "rail_min": -3.071,
+    "rail_max": 1.901,
+    "liner_min": -1.957,
+    "liner_max": 2.162,
+    "front_min": -0.1,
+    "top_max": 1.586,
+    "top_sumN": 5.424,
+    "bolt": 314.184,
+    "shear": 64.748,
+    "Fz_rail": 33.066
+   },
+   {
+    "th": -50,
+    "phi": 17.4,
+    "rail_min": -1.63,
+    "rail_max": 0.665,
+    "liner_min": -0.696,
+    "liner_max": 0.736,
+    "front_min": -0.323,
+    "top_max": 1.363,
+    "top_sumN": 4.881,
+    "bolt": 301.075,
+    "shear": 62.045,
+    "Fz_rail": 32.534
+   },
+   {
+    "th": -50,
+    "phi": 35,
+    "rail_min": -0.868,
+    "rail_max": 0.395,
+    "liner_min": -1.466,
+    "liner_max": 0.982,
+    "front_min": -0.491,
+    "top_max": 1.163,
+    "top_sumN": 4.321,
+    "bolt": 272.345,
+    "shear": 56.271,
+    "Fz_rail": 31.683
+   },
+   {
+    "th": -35,
+    "phi": -15,
+    "rail_min": -4.207,
+    "rail_max": 3.179,
+    "liner_min": -2.978,
+    "liner_max": 3.792,
+    "front_min": 0.181,
+    "top_max": 1.793,
+    "top_sumN": 5.747,
+    "bolt": 285.08,
+    "shear": 59.105,
+    "Fz_rail": 32.648
+   },
+   {
+    "th": -35,
+    "phi": 0,
+    "rail_min": -2.992,
+    "rail_max": 1.935,
+    "liner_min": -1.907,
+    "liner_max": 2.202,
+    "front_min": -0.037,
+    "top_max": 1.596,
+    "top_sumN": 5.319,
+    "bolt": 285.417,
+    "shear": 59.07,
+    "Fz_rail": 32.441
+   },
+   {
+    "th": -35,
+    "phi": 17.4,
+    "rail_min": -1.557,
+    "rail_max": 0.666,
+    "liner_min": -0.65,
+    "liner_max": 0.695,
+    "front_min": -0.265,
+    "top_max": 1.372,
+    "top_sumN": 4.783,
+    "bolt": 274.37,
+    "shear": 56.778,
+    "Fz_rail": 31.954
+   },
+   {
+    "th": -35,
+    "phi": 35,
+    "rail_min": -0.836,
+    "rail_max": 0.387,
+    "liner_min": -1.42,
+    "liner_max": 0.965,
+    "front_min": -0.446,
+    "top_max": 1.17,
+    "top_sumN": 4.245,
+    "bolt": 251.732,
+    "shear": 52.212,
+    "Fz_rail": 31.236
+   },
+   {
+    "th": -20,
+    "phi": -15,
+    "rail_min": -4.094,
+    "rail_max": 3.228,
+    "liner_min": -2.906,
+    "liner_max": 3.849,
+    "front_min": 0.271,
+    "top_max": 1.806,
+    "top_sumN": 5.597,
+    "bolt": 243.845,
+    "shear": 51.306,
+    "Fz_rail": 31.752
+   },
+   {
+    "th": -20,
+    "phi": 0,
+    "rail_min": -2.874,
+    "rail_max": 1.986,
+    "liner_min": -1.833,
+    "liner_max": 2.262,
+    "front_min": 0.056,
+    "top_max": 1.61,
+    "top_sumN": 5.162,
+    "bolt": 242.335,
+    "shear": 50.594,
+    "Fz_rail": 31.506
+   },
+   {
+    "th": -20,
+    "phi": 17.4,
+    "rail_min": -1.446,
+    "rail_max": 0.672,
+    "liner_min": -0.58,
+    "liner_max": 0.635,
+    "front_min": -0.176,
+    "top_max": 1.385,
+    "top_sumN": 4.635,
+    "bolt": 233.771,
+    "shear": 48.792,
+    "Fz_rail": 31.073
+   },
+   {
+    "th": -20,
+    "phi": 35,
+    "rail_min": -0.784,
+    "rail_max": 0.373,
+    "liner_min": -1.345,
+    "liner_max": 0.939,
+    "front_min": -0.374,
+    "top_max": 1.181,
+    "top_sumN": 4.124,
+    "bolt": 218.454,
+    "shear": 45.677,
+    "Fz_rail": 30.513
+   },
+   {
+    "th": -5,
+    "phi": -15,
+    "rail_min": -3.95,
+    "rail_max": 3.29,
+    "liner_min": -2.816,
+    "liner_max": 3.923,
+    "front_min": 0.384,
+    "top_max": 1.824,
+    "top_sumN": 5.406,
+    "bolt": 191.414,
+    "shear": 41.728,
+    "Fz_rail": 30.614
+   },
+   {
+    "th": -5,
+    "phi": 0,
+    "rail_min": -2.725,
+    "rail_max": 2.051,
+    "liner_min": -1.739,
+    "liner_max": 2.338,
+    "front_min": 0.175,
+    "top_max": 1.628,
+    "top_sumN": 4.964,
+    "bolt": 187.87,
+    "shear": 40.32,
+    "Fz_rail": 30.323
+   },
+   {
+    "th": -5,
+    "phi": 17.4,
+    "rail_min": -1.305,
+    "rail_max": 0.679,
+    "liner_min": -0.491,
+    "liner_max": 0.58,
+    "front_min": -0.064,
+    "top_max": 1.402,
+    "top_sumN": 4.446,
+    "bolt": 182.037,
+    "shear": 38.684,
+    "Fz_rail": 29.95
+   },
+   {
+    "th": -5,
+    "phi": 35,
+    "rail_min": -0.715,
+    "rail_max": 0.356,
+    "liner_min": -1.248,
+    "liner_max": 0.905,
+    "front_min": -0.279,
+    "top_max": 1.196,
+    "top_sumN": 3.965,
+    "bolt": 174.784,
+    "shear": 37.155,
+    "Fz_rail": 29.565
+   },
+   {
+    "th": 5,
+    "phi": -15,
+    "rail_min": -3.842,
+    "rail_max": 3.336,
+    "liner_min": -2.748,
+    "liner_max": 3.978,
+    "front_min": 0.357,
+    "top_max": 1.837,
+    "top_sumN": 5.262,
+    "bolt": 151.98,
+    "shear": 34.588,
+    "Fz_rail": 29.758
+   },
+   {
+    "th": 5,
+    "phi": 0,
+    "rail_min": -2.613,
+    "rail_max": 2.099,
+    "liner_min": -1.668,
+    "liner_max": 2.396,
+    "front_min": 0.171,
+    "top_max": 1.642,
+    "top_sumN": 4.815,
+    "bolt": 147.045,
+    "shear": 32.94,
+    "Fz_rail": 29.437
+   },
+   {
+    "th": 5,
+    "phi": 17.4,
+    "rail_min": -1.198,
+    "rail_max": 0.696,
+    "liner_min": -0.424,
+    "liner_max": 0.565,
+    "front_min": -0.043,
+    "top_max": 1.415,
+    "top_sumN": 4.304,
+    "bolt": 143.078,
+    "shear": 31.351,
+    "Fz_rail": 29.104
+   },
+   {
+    "th": 5,
+    "phi": 35,
+    "rail_min": -0.663,
+    "rail_max": 0.343,
+    "liner_min": -1.173,
+    "liner_max": 0.879,
+    "front_min": -0.238,
+    "top_max": 1.207,
+    "top_sumN": 3.843,
+    "bolt": 141.343,
+    "shear": 30.701,
+    "Fz_rail": 28.839
+   }
+  ],
+  "scan_worst": {
+   "rail_min": -4.312,
+   "rail_max": 3.336,
+   "liner_min": -3.044,
+   "liner_max": 3.978,
+   "front_min": -0.505,
+   "top_max": 1.837,
+   "bolt_tension": 326.67,
+   "bolt_shear": 67.215,
+   "at_bolt": [
+    -65,
+    0
+   ]
+  }
+ },
+ "B_stall": {
+  "cap 8.3/8.3/4.8": {
+   "p_rail": 14.056,
+   "p_liner": 24.239,
+   "p_top": 2.871,
+   "p_front": 1.744,
+   "p_axilla": 1.268,
+   "bolt_t": 706.721,
+   "bolt_s": 137.762,
+   "rail_min": -15.299,
+   "liner_min": -22.438,
+   "case": [
+    [
+     -50.0,
+     17.4,
+     0.5
+    ],
+    [
+     -1,
+     -1,
+     1
+    ]
+   ]
+  },
+  "cap 8.0/8.0/4.8 (proposal)": {
+   "p_rail": 13.731,
+   "p_liner": 23.513,
+   "p_top": 2.845,
+   "p_front": 1.681,
+   "p_axilla": 1.244,
+   "bolt_t": 694.916,
+   "bolt_s": 135.54,
+   "rail_min": -14.921,
+   "liner_min": -21.843,
+   "case": [
+    [
+     -50.0,
+     17.4,
+     0.5
+    ],
+    [
+     -1,
+     -1,
+     1
+    ]
+   ]
+  }
+ },
+ "C_strap_per_N_kPa": {
+  "front strap pair cradle<->F3, per N": {
+   "rail": {
+    "max_per_N": 0.0,
+    "min_per_N": -0.0
+   },
+   "top": {
+    "max_per_N": -0.0,
+    "min_per_N": -0.0
+   },
+   "front": {
+    "max_per_N": -0.0,
+    "min_per_N": 0.0
+   },
+   "axilla": {
+    "max_per_N": 0.0,
+    "min_per_N": 0.0
+   },
+   "liner": {
+    "max_per_N": -0.0,
+    "min_per_N": -0.0
+   }
+  },
+  "hub pull -x on both clasp hubs, per N per side": {
+   "rail": {
+    "max_per_N": -0.018,
+    "min_per_N": 0.05
+   },
+   "top": {
+    "max_per_N": 0.029,
+    "min_per_N": 0.01
+   },
+   "front": {
+    "max_per_N": -0.026,
+    "min_per_N": -0.034
+   },
+   "axilla": {
+    "max_per_N": 0.005,
+    "min_per_N": 0.005
+   },
+   "liner": {
+    "max_per_N": -0.005,
+    "min_per_N": 0.052
+   }
+  }
+ }
+}

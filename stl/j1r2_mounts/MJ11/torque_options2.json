@@ -1,0 +1,258 @@
+{
+ "S2_at_box_hard_stops": {
+  "tau_S2_max": 3.85,
+  "SF": 2.15,
+  "tau_S1p_max": 6.98
+ },
+ "BOX_by_th1": [
+  {
+   "th1": -95.0,
+   "S1p_pay0": 3.51,
+   "S1p_pay05": 6.29,
+   "S2_pay05": 0.31
+  },
+  {
+   "th1": -90.0,
+   "S1p_pay0": 3.7,
+   "S1p_pay05": 6.53,
+   "S2_pay05": 0.0
+  },
+  {
+   "th1": -85.0,
+   "S1p_pay0": 3.87,
+   "S1p_pay05": 6.75,
+   "S2_pay05": 0.31
+  },
+  {
+   "th1": -80.0,
+   "S1p_pay0": 4.03,
+   "S1p_pay05": 6.94,
+   "S2_pay05": 0.63
+  },
+  {
+   "th1": -75.0,
+   "S1p_pay0": 4.15,
+   "S1p_pay05": 7.08,
+   "S2_pay05": 0.93
+  },
+  {
+   "th1": -70.0,
+   "S1p_pay0": 4.25,
+   "S1p_pay05": 7.17,
+   "S2_pay05": 1.23
+  },
+  {
+   "th1": -65.0,
+   "S1p_pay0": 4.31,
+   "S1p_pay05": 7.2,
+   "S2_pay05": 1.52
+  },
+  {
+   "th1": -60.0,
+   "S1p_pay0": 4.34,
+   "S1p_pay05": 7.18,
+   "S2_pay05": 1.8
+  },
+  {
+   "th1": -55.0,
+   "S1p_pay0": 4.34,
+   "S1p_pay05": 7.24,
+   "S2_pay05": 2.07
+  },
+  {
+   "th1": -50.0,
+   "S1p_pay0": 4.34,
+   "S1p_pay05": 7.24,
+   "S2_pay05": 2.31
+  },
+  {
+   "th1": -45.0,
+   "S1p_pay0": 4.31,
+   "S1p_pay05": 7.18,
+   "S2_pay05": 2.55
+  },
+  {
+   "th1": -40.0,
+   "S1p_pay0": 4.24,
+   "S1p_pay05": 7.07,
+   "S2_pay05": 2.76
+  },
+  {
+   "th1": -35.0,
+   "S1p_pay0": 4.14,
+   "S1p_pay05": 6.9,
+   "S2_pay05": 2.95
+  },
+  {
+   "th1": -30.0,
+   "S1p_pay0": 4.01,
+   "S1p_pay05": 6.68,
+   "S2_pay05": 3.12
+  },
+  {
+   "th1": -25.0,
+   "S1p_pay0": 3.86,
+   "S1p_pay05": 6.41,
+   "S2_pay05": 3.26
+  },
+  {
+   "th1": -20.0,
+   "S1p_pay0": 3.68,
+   "S1p_pay05": 6.14,
+   "S2_pay05": 3.38
+  },
+  {
+   "th1": -15.0,
+   "S1p_pay0": 3.52,
+   "S1p_pay05": 5.94,
+   "S2_pay05": 3.48
+  },
+  {
+   "th1": -10.0,
+   "S1p_pay0": 3.33,
+   "S1p_pay05": 5.7,
+   "S2_pay05": 3.55
+  },
+  {
+   "th1": -5.0,
+   "S1p_pay0": 3.12,
+   "S1p_pay05": 5.41,
+   "S2_pay05": 3.59
+  },
+  {
+   "th1": 0.0,
+   "S1p_pay0": 2.88,
+   "S1p_pay05": 5.09,
+   "S2_pay05": 3.6
+  },
+  {
+   "th1": 5.0,
+   "S1p_pay0": 2.63,
+   "S1p_pay05": 4.74,
+   "S2_pay05": 3.59
+  }
+ ],
+ "ideal_pose_only_floor_BOX_Nm": {
+  "S1p": 2.56,
+  "S2": 1.82
+ },
+ "ideal_pose_only_floor_BOX_SF": {
+  "S1p": 3.24,
+  "S2": 4.56
+ },
+ "ideal_pose_only_floor_REACH_Nm": {
+  "S1p": 2.56,
+  "S2": 1.92
+ },
+ "ideal_pose_only_floor_REACH_SF": {
+  "S1p": 3.24,
+  "S2": 4.32
+ },
+ "spiral_S1p_BOX": {
+  "k_Nm_per_rad": 0.032,
+  "th0_deg": -6266.1,
+  "residual_Nm": 3.82,
+  "SF": 2.17,
+  "torque_at_ends_Nm": [
+   3.39,
+   3.45
+  ],
+  "note": "spring torque on the arm = k (th1 - th0); sign chosen to oppose gravity",
+  "sizing_b25_t1": {
+   "strip": "25.0 x 1.0 mm",
+   "length_mm": 81812,
+   "sigma_MPa": 828,
+   "mass_g": 16056.0
+  },
+  "sizing_b25_t0p8": {
+   "strip": "25.0 x 0.8 mm",
+   "length_mm": 41888,
+   "sigma_MPa": 1294,
+   "mass_g": 6576.0
+  }
+ },
+ "cam_th1_only_floor_BOX": {
+  "residual_Nm": 2.65,
+  "SF": 3.13
+ },
+ "arm_mass_scale_for_SF2": {
+  "BOX_pay0.5": 0.239,
+  "BOX_pay0.35": 0.453,
+  "BOX_pay0.25": 0.596,
+  "BOX_pay0.0": 0.954,
+  "REACH_pay0.5": 0.239,
+  "REACH_pay0.35": 0.453,
+  "REACH_pay0.25": 0.596,
+  "REACH_pay0.0": 0.954
+ },
+ "coverage_under_cap_by_payload": {
+  "BOX": {
+   "0.0": {
+    "config4D_fraction": 0.936,
+    "cell_fraction_any_config": 1.0
+   },
+   "0.1": {
+    "config4D_fraction": 0.742,
+    "cell_fraction_any_config": 1.0
+   },
+   "0.2": {
+    "config4D_fraction": 0.616,
+    "cell_fraction_any_config": 1.0
+   },
+   "0.25": {
+    "config4D_fraction": 0.575,
+    "cell_fraction_any_config": 1.0
+   },
+   "0.3": {
+    "config4D_fraction": 0.553,
+    "cell_fraction_any_config": 1.0
+   },
+   "0.35": {
+    "config4D_fraction": 0.53,
+    "cell_fraction_any_config": 1.0
+   },
+   "0.4": {
+    "config4D_fraction": 0.496,
+    "cell_fraction_any_config": 1.0
+   },
+   "0.5": {
+    "config4D_fraction": 0.445,
+    "cell_fraction_any_config": 1.0
+   }
+  },
+  "REACH": {
+   "0.0": {
+    "config4D_fraction": 0.966,
+    "cell_fraction_any_config": 1.0
+   },
+   "0.1": {
+    "config4D_fraction": 0.815,
+    "cell_fraction_any_config": 1.0
+   },
+   "0.2": {
+    "config4D_fraction": 0.694,
+    "cell_fraction_any_config": 1.0
+   },
+   "0.25": {
+    "config4D_fraction": 0.656,
+    "cell_fraction_any_config": 1.0
+   },
+   "0.3": {
+    "config4D_fraction": 0.63,
+    "cell_fraction_any_config": 1.0
+   },
+   "0.35": {
+    "config4D_fraction": 0.608,
+    "cell_fraction_any_config": 1.0
+   },
+   "0.4": {
+    "config4D_fraction": 0.572,
+    "cell_fraction_any_config": 1.0
+   },
+   "0.5": {
+    "config4D_fraction": 0.514,
+    "cell_fraction_any_config": 1.0
+   }
+  }
+ }
+}

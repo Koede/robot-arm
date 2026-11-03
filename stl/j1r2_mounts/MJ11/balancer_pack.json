@@ -1,0 +1,1190 @@
+[
+ {
+  "psi": 100,
+  "x": [
+   -10.021396947306105,
+   -2.5112005660622465,
+   70.67262107729773,
+   -14.392864380863909,
+   -29.987130521643085,
+   124.93524888347262,
+   0.5214402777329028,
+   15.121309812698371
+  ],
+  "S1p_res": 2.6399685340729593,
+  "S2_res": 2.638905334477856,
+  "SF": 3.1439768667222374,
+  "cord_min": 77.69326627662957,
+  "cord_max": 199.54085756134762,
+  "F_cord_max": 96.16378019743199,
+  "F_cord_min": 32.62753835684339,
+  "cost": 2.6399685340729593,
+  "fcap": 130.0,
+  "spring": {
+   "k_spring": 2.086,
+   "Na": 15.42,
+   "L_free": 256.5,
+   "F_spring_max": 192.3,
+   "tau_over_Sut": 0.252,
+   "mass_g": 148.8,
+   "tube_len_mm": 268.0
+  },
+  "A_world": [
+   -45.3,
+   -62.5,
+   -119.3
+  ],
+  "cord_census": {
+   "skin": -128.6,
+   "S1": 0.3,
+   "arm": 13.4,
+   "fixed": 4.4
+  },
+  "tube_radial": {
+   "skin_mm": 56.1,
+   "mirror_tube_mm": 36.0,
+   "fixed_mj11_parts_mm": 26.3,
+   "wing_rail_mm": Infinity,
+   "spine_bridge_mm": Infinity,
+   "S1p_group_mm": 7.6,
+   "arm_sweep_mm": 0.1,
+   "top_z": 154.0,
+   "bottom_z": -117.0,
+   "head_mm": 68.0,
+   "pass": false
+  },
+  "tube_down": {
+   "-128.0": {
+    "x_axis": -86.6,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.2,
+    "wing_rail_mm": 0.1,
+    "spine_bridge_mm": 0.5,
+    "S1p_group_mm": 0.2,
+    "arm_sweep_mm": 8.7,
+    "top_z": -139.0,
+    "bottom_z": -407.0,
+    "head_mm": 71.0,
+    "pass": false
+   },
+   "-134.0": {
+    "x_axis": -87.0,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.6,
+    "wing_rail_mm": 0.1,
+    "spine_bridge_mm": 0.3,
+    "S1p_group_mm": 1.2,
+    "arm_sweep_mm": 13.5,
+    "top_z": -139.0,
+    "bottom_z": -407.0,
+    "head_mm": 70.0,
+    "pass": false
+   },
+   "-140.0": {
+    "x_axis": -87.5,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 3.0,
+    "fixed_mj11_parts_mm": 1.3,
+    "wing_rail_mm": 0.1,
+    "spine_bridge_mm": 0.3,
+    "S1p_group_mm": 6.3,
+    "arm_sweep_mm": 18.8,
+    "top_z": -139.0,
+    "bottom_z": -407.0,
+    "head_mm": 70.0,
+    "pass": false
+   }
+  }
+ },
+ {
+  "psi": 110,
+  "x": [
+   -10.018556422706236,
+   -14.735502314252654,
+   69.02802744231475,
+   -13.15544118434319,
+   -29.93843202924807,
+   115.99735335019258,
+   0.8696343333469737,
+   63.987993552710265
+  ],
+  "S1p_res": 2.9181360204918527,
+  "S2_res": 2.918157989218908,
+  "SF": 2.8442599854648822,
+  "cord_min": 72.68100515258733,
+  "cord_max": 199.53812733841468,
+  "F_cord_max": 117.87905022982416,
+  "F_cord_min": 7.559741347436603,
+  "cost": 2.918157989218908,
+  "fcap": 130.0,
+  "spring": {
+   "k_spring": 3.479,
+   "Na": 9.25,
+   "L_free": 183.0,
+   "F_spring_max": 235.8,
+   "tau_over_Sut": 0.309,
+   "mass_g": 96.1,
+   "tube_len_mm": 195.0
+  },
+  "A_world": [
+   -45.3,
+   -74.7,
+   -121.0
+  ],
+  "cord_census": {
+   "skin": -127.3,
+   "S1": 0.2,
+   "arm": 17.6,
+   "fixed": 3.2
+  },
+  "tube_radial": {
+   "skin_mm": 54.4,
+   "mirror_tube_mm": 0.2,
+   "fixed_mj11_parts_mm": 26.3,
+   "wing_rail_mm": Infinity,
+   "spine_bridge_mm": Infinity,
+   "S1p_group_mm": 16.6,
+   "arm_sweep_mm": 0.4,
+   "top_z": 76.0,
+   "bottom_z": -123.0,
+   "head_mm": 62.0,
+   "pass": false
+  },
+  "tube_down": {
+   "-128.0": {
+    "x_axis": -86.5,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.6,
+    "wing_rail_mm": 0.2,
+    "spine_bridge_mm": 0.5,
+    "S1p_group_mm": 0.2,
+    "arm_sweep_mm": 8.7,
+    "top_z": -141.0,
+    "bottom_z": -336.0,
+    "head_mm": 72.0,
+    "pass": false
+   },
+   "-134.0": {
+    "x_axis": -86.9,
+    "skin_mm": 8.0,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.5,
+    "wing_rail_mm": 0.2,
+    "spine_bridge_mm": 0.2,
+    "S1p_group_mm": 1.2,
+    "arm_sweep_mm": 13.5,
+    "top_z": -141.0,
+    "bottom_z": -336.0,
+    "head_mm": 72.0,
+    "pass": false
+   },
+   "-140.0": {
+    "x_axis": -87.5,
+    "skin_mm": 8.0,
+    "mirror_tube_mm": 3.0,
+    "fixed_mj11_parts_mm": 0.8,
+    "wing_rail_mm": 0.2,
+    "spine_bridge_mm": 0.3,
+    "S1p_group_mm": 6.2,
+    "arm_sweep_mm": 18.8,
+    "top_z": -141.0,
+    "bottom_z": -336.0,
+    "head_mm": 71.0,
+    "pass": false
+   }
+  }
+ },
+ {
+  "psi": 120,
+  "x": [
+   -10.017072128985031,
+   -24.67209783471285,
+   65.59226580087112,
+   -0.14079881815480366,
+   -29.996563303976068,
+   111.99694601119921,
+   0.9670554452518216,
+   65.59227224920565
+  ],
+  "S1p_res": 3.2910602221824696,
+  "S2_res": 3.289399515373813,
+  "SF": 2.521983628271575,
+  "cord_min": 77.87680981262564,
+  "cord_max": 200.00566902161512,
+  "F_cord_max": 129.9852072635522,
+  "F_cord_min": 11.879828943105844,
+  "cost": 3.429997797022819,
+  "fcap": 130.0,
+  "spring": {
+   "k_spring": 3.868,
+   "Na": 8.31,
+   "L_free": 178.6,
+   "F_spring_max": 260.0,
+   "tau_over_Sut": 0.341,
+   "mass_g": 88.1,
+   "tube_len_mm": 191.0
+  },
+  "A_world": [
+   -45.3,
+   -84.7,
+   -124.4
+  ],
+  "cord_census": {
+   "skin": -136.3,
+   "S1": 0.3,
+   "arm": 18.7,
+   "fixed": 10.5
+  },
+  "tube_radial": {
+   "skin_mm": 52.9,
+   "mirror_tube_mm": 0.0,
+   "fixed_mj11_parts_mm": 26.0,
+   "wing_rail_mm": 37.0,
+   "spine_bridge_mm": Infinity,
+   "S1p_group_mm": 24.3,
+   "arm_sweep_mm": 23.8,
+   "top_z": 57.0,
+   "bottom_z": -130.0,
+   "head_mm": 67.0,
+   "pass": false
+  },
+  "tube_down": {
+   "-128.0": {
+    "x_axis": -86.5,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.1,
+    "wing_rail_mm": 0.3,
+    "spine_bridge_mm": 0.4,
+    "S1p_group_mm": 0.1,
+    "arm_sweep_mm": 8.8,
+    "top_z": -144.0,
+    "bottom_z": -335.0,
+    "head_mm": 75.0,
+    "pass": false
+   },
+   "-134.0": {
+    "x_axis": -87.0,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.5,
+    "wing_rail_mm": 0.2,
+    "spine_bridge_mm": 0.6,
+    "S1p_group_mm": 1.4,
+    "arm_sweep_mm": 13.5,
+    "top_z": -144.0,
+    "bottom_z": -335.0,
+    "head_mm": 75.0,
+    "pass": false
+   },
+   "-140.0": {
+    "x_axis": -87.5,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 3.0,
+    "fixed_mj11_parts_mm": 0.6,
+    "wing_rail_mm": 0.3,
+    "spine_bridge_mm": 0.3,
+    "S1p_group_mm": 6.3,
+    "arm_sweep_mm": 18.8,
+    "top_z": -144.0,
+    "bottom_z": -335.0,
+    "head_mm": 74.0,
+    "pass": false
+   }
+  }
+ },
+ {
+  "psi": 130,
+  "x": [
+   -10.018623109805798,
+   -24.682859100803007,
+   65.52757858242222,
+   -0.13832477394160048,
+   -29.997801236794558,
+   112.07510103292441,
+   0.9672780213893248,
+   65.62221442831546
+  ],
+  "S1p_res": 3.29267187043632,
+  "S2_res": 3.2905302286721705,
+  "SF": 2.5207492050825424,
+  "cord_min": 77.98415406140198,
+  "cord_max": 200.01947214557856,
+  "F_cord_max": 129.9995135249054,
+  "F_cord_min": 11.957432508826207,
+  "cost": 4.429611957239072,
+  "fcap": 130.0,
+  "spring": {
+   "k_spring": 3.869,
+   "Na": 8.31,
+   "L_free": 178.6,
+   "F_spring_max": 260.0,
+   "tau_over_Sut": 0.341,
+   "mass_g": 88.1,
+   "tube_len_mm": 191.0
+  },
+  "A_world": [
+   -45.3,
+   -84.7,
+   -124.5
+  ],
+  "cord_census": {
+   "skin": -136.3,
+   "S1": 0.3,
+   "arm": 18.7,
+   "fixed": 10.5
+  },
+  "tube_radial": {
+   "skin_mm": 52.7,
+   "mirror_tube_mm": 0.1,
+   "fixed_mj11_parts_mm": 25.9,
+   "wing_rail_mm": 36.6,
+   "spine_bridge_mm": Infinity,
+   "S1p_group_mm": 25.1,
+   "arm_sweep_mm": 42.1,
+   "top_z": 41.0,
+   "bottom_z": -134.0,
+   "head_mm": 77.0,
+   "pass": false
+  },
+  "tube_down": {
+   "-128.0": {
+    "x_axis": -86.5,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.2,
+    "wing_rail_mm": 0.3,
+    "spine_bridge_mm": 0.5,
+    "S1p_group_mm": 0.2,
+    "arm_sweep_mm": 8.8,
+    "top_z": -144.0,
+    "bottom_z": -335.0,
+    "head_mm": 75.0,
+    "pass": false
+   },
+   "-134.0": {
+    "x_axis": -87.0,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.5,
+    "wing_rail_mm": 0.1,
+    "spine_bridge_mm": 0.5,
+    "S1p_group_mm": 1.4,
+    "arm_sweep_mm": 13.5,
+    "top_z": -144.0,
+    "bottom_z": -335.0,
+    "head_mm": 75.0,
+    "pass": false
+   },
+   "-140.0": {
+    "x_axis": -87.5,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 3.0,
+    "fixed_mj11_parts_mm": 0.6,
+    "wing_rail_mm": 0.3,
+    "spine_bridge_mm": 0.3,
+    "S1p_group_mm": 6.3,
+    "arm_sweep_mm": 18.8,
+    "top_z": -144.0,
+    "bottom_z": -335.0,
+    "head_mm": 74.0,
+    "pass": false
+   }
+  }
+ },
+ {
+  "psi": 140,
+  "x": [
+   -10.01436947753167,
+   -35.34927727563304,
+   60.47532336511094,
+   -0.8145909730187606,
+   -29.99760244626256,
+   107.78485476042789,
+   0.8956821271776595,
+   54.883629704125134
+  ],
+  "S1p_res": 4.359141076539368,
+  "S2_res": 3.4387931156384264,
+  "SF": 1.9040448231120795,
+  "cord_min": 83.74637754677784,
+  "cord_max": 200.03643998096442,
+  "F_cord_max": 130.01077787457464,
+  "F_cord_min": 25.851847383899575,
+  "cost": 5.530555375617499,
+  "fcap": 130.0,
+  "spring": {
+   "k_spring": 3.583,
+   "Na": 8.98,
+   "L_free": 192.3,
+   "F_spring_max": 260.0,
+   "tau_over_Sut": 0.341,
+   "mass_g": 93.8,
+   "tube_len_mm": 204.0
+  },
+  "A_world": [
+   -45.3,
+   -95.3,
+   -129.5
+  ],
+  "cord_census": {
+   "skin": -133.8,
+   "S1": 0.1,
+   "arm": 18.9,
+   "fixed": 9.9
+  },
+  "tube_radial": {
+   "skin_mm": 51.1,
+   "mirror_tube_mm": 0.1,
+   "fixed_mj11_parts_mm": 23.8,
+   "wing_rail_mm": 34.5,
+   "spine_bridge_mm": 35.3,
+   "S1p_group_mm": 25.0,
+   "arm_sweep_mm": 53.2,
+   "top_z": 23.0,
+   "bottom_z": -143.0,
+   "head_mm": 78.0,
+   "pass": false
+  },
+  "tube_down": {
+   "-128.0": {
+    "x_axis": -86.6,
+    "skin_mm": 7.8,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.2,
+    "wing_rail_mm": 0.3,
+    "spine_bridge_mm": 0.5,
+    "S1p_group_mm": 0.1,
+    "arm_sweep_mm": 8.8,
+    "top_z": -150.0,
+    "bottom_z": -354.0,
+    "head_mm": 79.0,
+    "pass": false
+   },
+   "-134.0": {
+    "x_axis": -87.1,
+    "skin_mm": 7.8,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.5,
+    "wing_rail_mm": 0.2,
+    "spine_bridge_mm": 0.4,
+    "S1p_group_mm": 1.2,
+    "arm_sweep_mm": 13.6,
+    "top_z": -150.0,
+    "bottom_z": -354.0,
+    "head_mm": 79.0,
+    "pass": false
+   },
+   "-140.0": {
+    "x_axis": -87.7,
+    "skin_mm": 7.8,
+    "mirror_tube_mm": 3.0,
+    "fixed_mj11_parts_mm": 1.1,
+    "wing_rail_mm": 0.2,
+    "spine_bridge_mm": 0.4,
+    "S1p_group_mm": 6.4,
+    "arm_sweep_mm": 18.9,
+    "top_z": -150.0,
+    "bottom_z": -354.0,
+    "head_mm": 79.0,
+    "pass": false
+   }
+  }
+ },
+ {
+  "psi": 150,
+  "x": [
+   -10.002019276319885,
+   -55.16153033230023,
+   43.09743517904416,
+   -1.3496852971685946,
+   -29.999225358434785,
+   104.79043403891099,
+   0.35759068125075855,
+   24.83593144205114
+  ],
+  "S1p_res": 6.480601285315137,
+  "S2_res": 4.388039420807013,
+  "SF": 1.280745355960653,
+  "cord_min": 106.35396834985119,
+  "cord_max": 199.99757423493412,
+  "F_cord_max": 62.636171175309045,
+  "F_cord_min": 29.1500903520847,
+  "cost": 6.480635107883009,
+  "fcap": 130.0,
+  "spring": {
+   "k_spring": 1.43,
+   "Na": 22.49,
+   "L_free": 271.4,
+   "F_spring_max": 125.3,
+   "tau_over_Sut": 0.164,
+   "mass_g": 209.2,
+   "tube_len_mm": 283.0
+  },
+  "A_world": [
+   -45.3,
+   -115.2,
+   -146.9
+  ],
+  "cord_census": {
+   "skin": -132.1,
+   "S1": 0.2,
+   "arm": 19.0,
+   "fixed": 8.9
+  },
+  "tube_radial": {
+   "skin_mm": 49.8,
+   "mirror_tube_mm": 0.9,
+   "fixed_mj11_parts_mm": 26.0,
+   "wing_rail_mm": 35.1,
+   "spine_bridge_mm": 29.7,
+   "S1p_group_mm": 28.6,
+   "arm_sweep_mm": 60.0,
+   "top_z": 17.0,
+   "bottom_z": -163.0,
+   "head_mm": 81.0,
+   "pass": false
+  },
+  "tube_down": {
+   "-128.0": {
+    "x_axis": -86.5,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.6,
+    "wing_rail_mm": 0.2,
+    "spine_bridge_mm": 0.4,
+    "S1p_group_mm": 0.1,
+    "arm_sweep_mm": 8.8,
+    "top_z": -167.0,
+    "bottom_z": -450.0,
+    "head_mm": 95.0,
+    "pass": false
+   },
+   "-134.0": {
+    "x_axis": -87.0,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.6,
+    "wing_rail_mm": 0.2,
+    "spine_bridge_mm": 0.3,
+    "S1p_group_mm": 1.3,
+    "arm_sweep_mm": 13.6,
+    "top_z": -167.0,
+    "bottom_z": -450.0,
+    "head_mm": 95.0,
+    "pass": false
+   },
+   "-140.0": {
+    "x_axis": -87.6,
+    "skin_mm": 7.8,
+    "mirror_tube_mm": 3.0,
+    "fixed_mj11_parts_mm": 1.5,
+    "wing_rail_mm": 0.6,
+    "spine_bridge_mm": 0.4,
+    "S1p_group_mm": 6.5,
+    "arm_sweep_mm": 18.9,
+    "top_z": -167.0,
+    "bottom_z": -450.0,
+    "head_mm": 94.0,
+    "pass": false
+   }
+  }
+ },
+ {
+  "psi": 100,
+  "x": [
+   -10.003388559428355,
+   -2.7079300258487002,
+   77.56215067414685,
+   -9.626260970195748,
+   -29.99804158504603,
+   117.31836248066028,
+   0.46118777264923905,
+   4.84896200919497
+  ],
+  "S1p_res": 2.7193031588297147,
+  "S2_res": 2.7194862184899824,
+  "SF": 3.0520470902068575,
+  "cord_min": 65.37661351035595,
+  "cord_max": 200.00121233624276,
+  "F_cord_max": 90.00183165581791,
+  "F_cord_min": 27.914612779509802,
+  "cost": 2.7196460504680147,
+  "fcap": 90.0,
+  "spring": {
+   "k_spring": 1.845,
+   "Na": 17.44,
+   "L_free": 274.9,
+   "F_spring_max": 180.0,
+   "tau_over_Sut": 0.236,
+   "mass_g": 166.0,
+   "tube_len_mm": 287.0
+  },
+  "A_world": [
+   -45.3,
+   -62.7,
+   -112.4
+  ],
+  "cord_census": {
+   "skin": -130.9,
+   "S1": 0.1,
+   "arm": 16.2,
+   "fixed": 7.5
+  },
+  "tube_radial": {
+   "skin_mm": 58.7,
+   "mirror_tube_mm": 29.0,
+   "fixed_mj11_parts_mm": 29.8,
+   "wing_rail_mm": Infinity,
+   "spine_bridge_mm": Infinity,
+   "S1p_group_mm": 13.4,
+   "arm_sweep_mm": 0.2,
+   "top_z": 180.0,
+   "bottom_z": -110.0,
+   "head_mm": 69.0,
+   "pass": false
+  },
+  "tube_down": {
+   "-128.0": {
+    "x_axis": -86.7,
+    "skin_mm": 7.8,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.2,
+    "wing_rail_mm": 0.3,
+    "spine_bridge_mm": 0.4,
+    "S1p_group_mm": 0.3,
+    "arm_sweep_mm": 8.8,
+    "top_z": -132.0,
+    "bottom_z": -419.0,
+    "head_mm": 65.0,
+    "pass": false
+   },
+   "-134.0": {
+    "x_axis": -87.2,
+    "skin_mm": 7.7,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.6,
+    "wing_rail_mm": 0.2,
+    "spine_bridge_mm": 0.3,
+    "S1p_group_mm": 1.3,
+    "arm_sweep_mm": 13.6,
+    "top_z": -132.0,
+    "bottom_z": -419.0,
+    "head_mm": 64.0,
+    "pass": false
+   },
+   "-140.0": {
+    "x_axis": -87.8,
+    "skin_mm": 7.7,
+    "mirror_tube_mm": 3.0,
+    "fixed_mj11_parts_mm": 0.6,
+    "wing_rail_mm": 0.3,
+    "spine_bridge_mm": 0.3,
+    "S1p_group_mm": 6.4,
+    "arm_sweep_mm": 18.9,
+    "top_z": -132.0,
+    "bottom_z": -419.0,
+    "head_mm": 64.0,
+    "pass": false
+   }
+  }
+ },
+ {
+  "psi": 110,
+  "x": [
+   -10.021771252685358,
+   -14.959660798372969,
+   70.56408394754081,
+   -1.1385499481627148,
+   -29.996053896169254,
+   115.05003894188735,
+   0.6056505796532422,
+   38.2013187786632
+  ],
+  "S1p_res": 3.263736554369401,
+  "S2_res": 3.2200315274543634,
+  "SF": 2.5430974166368263,
+  "cord_min": 72.89355047605379,
+  "cord_max": 199.99792621283453,
+  "F_cord_max": 97.99220907843394,
+  "F_cord_min": 21.011370236989194,
+  "cost": 3.5065483614667614,
+  "fcap": 90.0,
+  "spring": {
+   "k_spring": 2.423,
+   "Na": 13.28,
+   "L_free": 225.0,
+   "F_spring_max": 196.0,
+   "tau_over_Sut": 0.257,
+   "mass_g": 130.5,
+   "tube_len_mm": 237.0
+  },
+  "A_world": [
+   -45.3,
+   -75.0,
+   -119.4
+  ],
+  "cord_census": {
+   "skin": -136.8,
+   "S1": 0.2,
+   "arm": 17.4,
+   "fixed": 10.6
+  },
+  "tube_radial": {
+   "skin_mm": 54.8,
+   "mirror_tube_mm": 0.1,
+   "fixed_mj11_parts_mm": 26.9,
+   "wing_rail_mm": Infinity,
+   "spine_bridge_mm": Infinity,
+   "S1p_group_mm": 18.0,
+   "arm_sweep_mm": 0.3,
+   "top_z": 117.0,
+   "bottom_z": -121.0,
+   "head_mm": 62.0,
+   "pass": false
+  },
+  "tube_down": {
+   "-128.0": {
+    "x_axis": -86.6,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.4,
+    "wing_rail_mm": 0.1,
+    "spine_bridge_mm": 0.5,
+    "S1p_group_mm": 0.2,
+    "arm_sweep_mm": 8.8,
+    "top_z": -139.0,
+    "bottom_z": -376.0,
+    "head_mm": 71.0,
+    "pass": false
+   },
+   "-134.0": {
+    "x_axis": -87.0,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.6,
+    "wing_rail_mm": 0.1,
+    "spine_bridge_mm": 0.3,
+    "S1p_group_mm": 1.2,
+    "arm_sweep_mm": 13.5,
+    "top_z": -139.0,
+    "bottom_z": -376.0,
+    "head_mm": 71.0,
+    "pass": false
+   },
+   "-140.0": {
+    "x_axis": -87.5,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 3.0,
+    "fixed_mj11_parts_mm": 1.2,
+    "wing_rail_mm": 0.2,
+    "spine_bridge_mm": 0.2,
+    "S1p_group_mm": 6.4,
+    "arm_sweep_mm": 18.8,
+    "top_z": -139.0,
+    "bottom_z": -376.0,
+    "head_mm": 70.0,
+    "pass": false
+   }
+  }
+ },
+ {
+  "psi": 120,
+  "x": [
+   -10.012046121068792,
+   -26.227212088297826,
+   64.91450666306429,
+   -2.147844561400043,
+   -29.998387371472035,
+   111.3358812395718,
+   0.5266244465207409,
+   29.099233252423
+  ],
+  "S1p_res": 4.311711128822466,
+  "S2_res": 3.4960094877633185,
+  "SF": 1.9249898130969505,
+  "cord_min": 78.03157258741284,
+  "cord_max": 199.9972515111229,
+  "F_cord_max": 89.9990742769793,
+  "F_cord_min": 25.768966119254102,
+  "cost": 4.311711128822466,
+  "fcap": 90.0,
+  "spring": {
+   "k_spring": 2.106,
+   "Na": 15.27,
+   "L_free": 241.6,
+   "F_spring_max": 180.0,
+   "tau_over_Sut": 0.236,
+   "mass_g": 147.5,
+   "tube_len_mm": 254.0
+  },
+  "A_world": [
+   -45.3,
+   -86.2,
+   -125.1
+  ],
+  "cord_census": {
+   "skin": -134.2,
+   "S1": 0.1,
+   "arm": 19.1,
+   "fixed": 9.0
+  },
+  "tube_radial": {
+   "skin_mm": 52.6,
+   "mirror_tube_mm": 0.3,
+   "fixed_mj11_parts_mm": 26.0,
+   "wing_rail_mm": 36.7,
+   "spine_bridge_mm": Infinity,
+   "S1p_group_mm": 25.1,
+   "arm_sweep_mm": 25.2,
+   "top_z": 111.0,
+   "bottom_z": -131.0,
+   "head_mm": 67.0,
+   "pass": false
+  },
+  "tube_down": {
+   "-128.0": {
+    "x_axis": -86.5,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.5,
+    "wing_rail_mm": 0.3,
+    "spine_bridge_mm": 0.4,
+    "S1p_group_mm": 0.2,
+    "arm_sweep_mm": 8.7,
+    "top_z": -145.0,
+    "bottom_z": -399.0,
+    "head_mm": 76.0,
+    "pass": false
+   },
+   "-134.0": {
+    "x_axis": -87.0,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.5,
+    "wing_rail_mm": 0.2,
+    "spine_bridge_mm": 0.3,
+    "S1p_group_mm": 1.2,
+    "arm_sweep_mm": 13.5,
+    "top_z": -145.0,
+    "bottom_z": -399.0,
+    "head_mm": 75.0,
+    "pass": false
+   },
+   "-140.0": {
+    "x_axis": -87.5,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 3.0,
+    "fixed_mj11_parts_mm": 0.9,
+    "wing_rail_mm": 0.1,
+    "spine_bridge_mm": 0.3,
+    "S1p_group_mm": 6.3,
+    "arm_sweep_mm": 18.8,
+    "top_z": -145.0,
+    "bottom_z": -399.0,
+    "head_mm": 75.0,
+    "pass": false
+   }
+  }
+ },
+ {
+  "psi": 130,
+  "x": [
+   -10.000545738691883,
+   -37.10076445031757,
+   59.3672091147117,
+   -2.2955104242459257,
+   -29.999544123436735,
+   107.21805636474096,
+   0.6070964477335645,
+   51.79950538537123
+  ],
+  "S1p_res": 5.084525535029024,
+  "S2_res": 3.801055042436514,
+  "SF": 1.6324040351097622,
+  "cord_min": 84.81308678259244,
+  "cord_max": 199.9950585637823,
+  "F_cord_max": 89.9689939045239,
+  "F_cord_min": 20.04242799321588,
+  "cost": 5.084525535029024,
+  "fcap": 90.0,
+  "spring": {
+   "k_spring": 2.428,
+   "Na": 13.24,
+   "L_free": 210.4,
+   "F_spring_max": 179.9,
+   "tau_over_Sut": 0.236,
+   "mass_g": 130.2,
+   "tube_len_mm": 222.0
+  },
+  "A_world": [
+   -45.3,
+   -97.1,
+   -130.6
+  ],
+  "cord_census": {
+   "skin": -132.3,
+   "S1": 0.2,
+   "arm": 20.1,
+   "fixed": 8.7
+  },
+  "tube_radial": {
+   "skin_mm": 51.1,
+   "mirror_tube_mm": 0.1,
+   "fixed_mj11_parts_mm": 23.7,
+   "wing_rail_mm": 34.5,
+   "spine_bridge_mm": 35.8,
+   "S1p_group_mm": 25.5,
+   "arm_sweep_mm": 53.5,
+   "top_z": 58.0,
+   "bottom_z": -140.0,
+   "head_mm": 78.0,
+   "pass": false
+  },
+  "tube_down": {
+   "-128.0": {
+    "x_axis": -86.6,
+    "skin_mm": 7.8,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.3,
+    "wing_rail_mm": 0.2,
+    "spine_bridge_mm": 0.5,
+    "S1p_group_mm": 0.2,
+    "arm_sweep_mm": 8.8,
+    "top_z": -151.0,
+    "bottom_z": -373.0,
+    "head_mm": 80.0,
+    "pass": false
+   },
+   "-134.0": {
+    "x_axis": -87.1,
+    "skin_mm": 7.8,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.6,
+    "wing_rail_mm": 0.2,
+    "spine_bridge_mm": 0.4,
+    "S1p_group_mm": 1.4,
+    "arm_sweep_mm": 13.6,
+    "top_z": -151.0,
+    "bottom_z": -373.0,
+    "head_mm": 80.0,
+    "pass": false
+   },
+   "-140.0": {
+    "x_axis": -87.7,
+    "skin_mm": 7.7,
+    "mirror_tube_mm": 3.0,
+    "fixed_mj11_parts_mm": 1.2,
+    "wing_rail_mm": 0.3,
+    "spine_bridge_mm": 0.3,
+    "S1p_group_mm": 6.5,
+    "arm_sweep_mm": 18.9,
+    "top_z": -151.0,
+    "bottom_z": -373.0,
+    "head_mm": 80.0,
+    "pass": false
+   }
+  }
+ },
+ {
+  "psi": 140,
+  "x": [
+   -10.011582311159675,
+   -46.84005462105543,
+   52.020196842111936,
+   -3.841687956856994,
+   -29.998932103176898,
+   105.10164096669507,
+   0.467655717378175,
+   7.558685719229743
+  ],
+  "S1p_res": 5.824701438576569,
+  "S2_res": 3.958041109119064,
+  "SF": 1.4249657407381795,
+  "cord_min": 94.37373200126734,
+  "cord_max": 199.99836104801716,
+  "F_cord_max": 89.99551441790717,
+  "F_cord_min": 40.599552748245756,
+  "cost": 5.824701438576569,
+  "fcap": 90.0,
+  "spring": {
+   "k_spring": 1.871,
+   "Na": 17.19,
+   "L_free": 271.2,
+   "F_spring_max": 180.0,
+   "tau_over_Sut": 0.236,
+   "mass_g": 164.0,
+   "tube_len_mm": 283.0
+  },
+  "A_world": [
+   -45.3,
+   -106.8,
+   -138.0
+  ],
+  "cord_census": {
+   "skin": -130.1,
+   "S1": 0.2,
+   "arm": 21.6,
+   "fixed": 7.6
+  },
+  "tube_radial": {
+   "skin_mm": 49.8,
+   "mirror_tube_mm": 0.3,
+   "fixed_mj11_parts_mm": 24.2,
+   "wing_rail_mm": 35.1,
+   "spine_bridge_mm": 32.2,
+   "S1p_group_mm": 26.4,
+   "arm_sweep_mm": 60.0,
+   "top_z": 65.0,
+   "bottom_z": -151.0,
+   "head_mm": 77.0,
+   "pass": false
+  },
+  "tube_down": {
+   "-128.0": {
+    "x_axis": -86.7,
+    "skin_mm": 7.8,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.4,
+    "wing_rail_mm": 0.2,
+    "spine_bridge_mm": 0.6,
+    "S1p_group_mm": 0.2,
+    "arm_sweep_mm": 8.8,
+    "top_z": -158.0,
+    "bottom_z": -441.0,
+    "head_mm": 87.0,
+    "pass": false
+   },
+   "-134.0": {
+    "x_axis": -87.0,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.7,
+    "wing_rail_mm": 0.2,
+    "spine_bridge_mm": 0.4,
+    "S1p_group_mm": 1.3,
+    "arm_sweep_mm": 13.6,
+    "top_z": -158.0,
+    "bottom_z": -441.0,
+    "head_mm": 87.0,
+    "pass": false
+   },
+   "-140.0": {
+    "x_axis": -87.5,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 3.0,
+    "fixed_mj11_parts_mm": 1.2,
+    "wing_rail_mm": 0.4,
+    "spine_bridge_mm": 0.3,
+    "S1p_group_mm": 6.3,
+    "arm_sweep_mm": 18.8,
+    "top_z": -158.0,
+    "bottom_z": -441.0,
+    "head_mm": 86.0,
+    "pass": false
+   }
+  }
+ },
+ {
+  "psi": 150,
+  "x": [
+   -10.01584605583471,
+   -55.16164290879061,
+   43.09638268532597,
+   -1.3888791849782622,
+   -29.999691571695625,
+   104.79070067497884,
+   0.41132411242402456,
+   47.606796727372405
+  ],
+  "S1p_res": 6.480669938714825,
+  "S2_res": 4.398914529288587,
+  "SF": 1.28073178830119,
+  "cord_min": 106.35063145477983,
+  "cord_max": 199.99904605660677,
+  "F_cord_max": 62.68260669564798,
+  "F_cord_min": 24.16275567963445,
+  "cost": 6.480669938714825,
+  "fcap": 90.0,
+  "spring": {
+   "k_spring": 1.645,
+   "Na": 19.55,
+   "L_free": 237.0,
+   "F_spring_max": 125.4,
+   "tau_over_Sut": 0.164,
+   "mass_g": 184.1,
+   "tube_len_mm": 249.0
+  },
+  "A_world": [
+   -45.3,
+   -115.2,
+   -146.9
+  ],
+  "cord_census": {
+   "skin": -132.1,
+   "S1": 0.2,
+   "arm": 19.0,
+   "fixed": 8.9
+  },
+  "tube_radial": {
+   "skin_mm": 49.8,
+   "mirror_tube_mm": 0.3,
+   "fixed_mj11_parts_mm": 26.0,
+   "wing_rail_mm": 35.0,
+   "spine_bridge_mm": 29.7,
+   "S1p_group_mm": 28.6,
+   "arm_sweep_mm": 60.0,
+   "top_z": -0.0,
+   "bottom_z": -163.0,
+   "head_mm": 81.0,
+   "pass": false
+  },
+  "tube_down": {
+   "-128.0": {
+    "x_axis": -86.5,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.9,
+    "wing_rail_mm": 0.2,
+    "spine_bridge_mm": 0.4,
+    "S1p_group_mm": 0.2,
+    "arm_sweep_mm": 8.8,
+    "top_z": -167.0,
+    "bottom_z": -416.0,
+    "head_mm": 95.0,
+    "pass": false
+   },
+   "-134.0": {
+    "x_axis": -87.0,
+    "skin_mm": 7.9,
+    "mirror_tube_mm": 0.5,
+    "fixed_mj11_parts_mm": 0.6,
+    "wing_rail_mm": 0.1,
+    "spine_bridge_mm": 0.5,
+    "S1p_group_mm": 1.3,
+    "arm_sweep_mm": 13.6,
+    "top_z": -167.0,
+    "bottom_z": -416.0,
+    "head_mm": 95.0,
+    "pass": false
+   },
+   "-140.0": {
+    "x_axis": -87.6,
+    "skin_mm": 7.8,
+    "mirror_tube_mm": 3.0,
+    "fixed_mj11_parts_mm": 1.5,
+    "wing_rail_mm": 0.6,
+    "spine_bridge_mm": 0.3,
+    "S1p_group_mm": 6.4,
+    "arm_sweep_mm": 18.8,
+    "top_z": -167.0,
+    "bottom_z": -416.0,
+    "head_mm": 94.0,
+    "pass": false
+   }
+  }
+ }
+]
