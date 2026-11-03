@@ -1,0 +1,334 @@
+{
+ "A_liner_mm2": 9771,
+ "inc_range_kPa": {
+  "park": [
+   -0.6,
+   0.92
+  ],
+  "reach": [
+   -1.93,
+   2.73
+  ]
+ },
+ "inc_sumN": {
+  "park": 0.7,
+  "reach": 1.61
+ },
+ "mu": {
+  "PTFE_film_best": 0.05,
+  "slip_fabric_design": 0.15,
+  "slip_fabric_degraded_wet": 0.3,
+  "skin_textile_dry_nylon": 0.37,
+  "skin_dry_mean": 0.46,
+  "silicone_liner_dry": 0.61
+ },
+ "rows": [
+  {
+   "p0": 0.5,
+   "lc": "park",
+   "N_total": 5.6,
+   "p_peak_kPa": 1.42,
+   "p_min_kPa": -0.1,
+   "liftoff": true,
+   "F": {
+    "PTFE_film_best": 0.28,
+    "slip_fabric_design": 0.84,
+    "slip_fabric_degraded_wet": 1.68,
+    "skin_textile_dry_nylon": 2.07,
+    "skin_dry_mean": 2.57,
+    "silicone_liner_dry": 3.41
+   },
+   "tau_peak_kPa": {
+    "PTFE_film_best": 0.071,
+    "slip_fabric_design": 0.213,
+    "slip_fabric_degraded_wet": 0.426,
+    "skin_textile_dry_nylon": 0.525,
+    "skin_dry_mean": 0.653,
+    "silicone_liner_dry": 0.866
+   }
+  },
+  {
+   "p0": 0.5,
+   "lc": "reach",
+   "N_total": 6.5,
+   "p_peak_kPa": 3.23,
+   "p_min_kPa": -1.43,
+   "liftoff": true,
+   "F": {
+    "PTFE_film_best": 0.32,
+    "slip_fabric_design": 0.97,
+    "slip_fabric_degraded_wet": 1.95,
+    "skin_textile_dry_nylon": 2.4,
+    "skin_dry_mean": 2.99,
+    "silicone_liner_dry": 3.96
+   },
+   "tau_peak_kPa": {
+    "PTFE_film_best": 0.161,
+    "slip_fabric_design": 0.484,
+    "slip_fabric_degraded_wet": 0.969,
+    "skin_textile_dry_nylon": 1.195,
+    "skin_dry_mean": 1.485,
+    "silicone_liner_dry": 1.97
+   }
+  },
+  {
+   "p0": 1.0,
+   "lc": "park",
+   "N_total": 10.5,
+   "p_peak_kPa": 1.92,
+   "p_min_kPa": 0.4,
+   "liftoff": false,
+   "F": {
+    "PTFE_film_best": 0.52,
+    "slip_fabric_design": 1.57,
+    "slip_fabric_degraded_wet": 3.14,
+    "skin_textile_dry_nylon": 3.87,
+    "skin_dry_mean": 4.82,
+    "silicone_liner_dry": 6.39
+   },
+   "tau_peak_kPa": {
+    "PTFE_film_best": 0.096,
+    "slip_fabric_design": 0.288,
+    "slip_fabric_degraded_wet": 0.576,
+    "skin_textile_dry_nylon": 0.71,
+    "skin_dry_mean": 0.883,
+    "silicone_liner_dry": 1.171
+   }
+  },
+  {
+   "p0": 1.0,
+   "lc": "reach",
+   "N_total": 11.4,
+   "p_peak_kPa": 3.73,
+   "p_min_kPa": -0.93,
+   "liftoff": true,
+   "F": {
+    "PTFE_film_best": 0.57,
+    "slip_fabric_design": 1.71,
+    "slip_fabric_degraded_wet": 3.42,
+    "skin_textile_dry_nylon": 4.21,
+    "skin_dry_mean": 5.24,
+    "silicone_liner_dry": 6.94
+   },
+   "tau_peak_kPa": {
+    "PTFE_film_best": 0.186,
+    "slip_fabric_design": 0.559,
+    "slip_fabric_degraded_wet": 1.119,
+    "skin_textile_dry_nylon": 1.38,
+    "skin_dry_mean": 1.715,
+    "silicone_liner_dry": 2.275
+   }
+  },
+  {
+   "p0": 1.5,
+   "lc": "park",
+   "N_total": 15.4,
+   "p_peak_kPa": 2.42,
+   "p_min_kPa": 0.9,
+   "liftoff": false,
+   "F": {
+    "PTFE_film_best": 0.77,
+    "slip_fabric_design": 2.3,
+    "slip_fabric_degraded_wet": 4.61,
+    "skin_textile_dry_nylon": 5.68,
+    "skin_dry_mean": 7.06,
+    "silicone_liner_dry": 9.37
+   },
+   "tau_peak_kPa": {
+    "PTFE_film_best": 0.121,
+    "slip_fabric_design": 0.363,
+    "slip_fabric_degraded_wet": 0.726,
+    "skin_textile_dry_nylon": 0.895,
+    "skin_dry_mean": 1.113,
+    "silicone_liner_dry": 1.476
+   }
+  },
+  {
+   "p0": 1.5,
+   "lc": "reach",
+   "N_total": 16.3,
+   "p_peak_kPa": 4.23,
+   "p_min_kPa": -0.43,
+   "liftoff": true,
+   "F": {
+    "PTFE_film_best": 0.81,
+    "slip_fabric_design": 2.44,
+    "slip_fabric_degraded_wet": 4.88,
+    "skin_textile_dry_nylon": 6.02,
+    "skin_dry_mean": 7.48,
+    "silicone_liner_dry": 9.92
+   },
+   "tau_peak_kPa": {
+    "PTFE_film_best": 0.211,
+    "slip_fabric_design": 0.634,
+    "slip_fabric_degraded_wet": 1.269,
+    "skin_textile_dry_nylon": 1.565,
+    "skin_dry_mean": 1.945,
+    "silicone_liner_dry": 2.58
+   }
+  },
+  {
+   "p0": 2.0,
+   "lc": "park",
+   "N_total": 20.2,
+   "p_peak_kPa": 2.92,
+   "p_min_kPa": 1.4,
+   "liftoff": false,
+   "F": {
+    "PTFE_film_best": 1.01,
+    "slip_fabric_design": 3.04,
+    "slip_fabric_degraded_wet": 6.07,
+    "skin_textile_dry_nylon": 7.49,
+    "skin_dry_mean": 9.31,
+    "silicone_liner_dry": 12.35
+   },
+   "tau_peak_kPa": {
+    "PTFE_film_best": 0.146,
+    "slip_fabric_design": 0.438,
+    "slip_fabric_degraded_wet": 0.876,
+    "skin_textile_dry_nylon": 1.08,
+    "skin_dry_mean": 1.343,
+    "silicone_liner_dry": 1.781
+   }
+  },
+  {
+   "p0": 2.0,
+   "lc": "reach",
+   "N_total": 21.2,
+   "p_peak_kPa": 4.73,
+   "p_min_kPa": 0.07,
+   "liftoff": false,
+   "F": {
+    "PTFE_film_best": 1.06,
+    "slip_fabric_design": 3.17,
+    "slip_fabric_degraded_wet": 6.35,
+    "skin_textile_dry_nylon": 7.83,
+    "skin_dry_mean": 9.73,
+    "silicone_liner_dry": 12.9
+   },
+   "tau_peak_kPa": {
+    "PTFE_film_best": 0.236,
+    "slip_fabric_design": 0.709,
+    "slip_fabric_degraded_wet": 1.419,
+    "skin_textile_dry_nylon": 1.75,
+    "skin_dry_mean": 2.175,
+    "silicone_liner_dry": 2.885
+   }
+  }
+ ],
+ "heat": {
+  "slip_fabric_design|travel56|t1s": {
+   "F_N": 2.44,
+   "W_J": 0.137,
+   "v_mm_s": 56.0,
+   "q_W_m2": 14.0,
+   "P_W": 0.137,
+   "dT_skin_K": 0.0066
+  },
+  "slip_fabric_design|travel56|t3s": {
+   "F_N": 2.44,
+   "W_J": 0.137,
+   "v_mm_s": 18.7,
+   "q_W_m2": 4.7,
+   "P_W": 0.046,
+   "dT_skin_K": 0.0038
+  },
+  "slip_fabric_design|travel96|t1s": {
+   "F_N": 2.44,
+   "W_J": 0.234,
+   "v_mm_s": 96.0,
+   "q_W_m2": 24.0,
+   "P_W": 0.234,
+   "dT_skin_K": 0.0113
+  },
+  "slip_fabric_design|travel96|t3s": {
+   "F_N": 2.44,
+   "W_J": 0.234,
+   "v_mm_s": 32.0,
+   "q_W_m2": 8.0,
+   "P_W": 0.078,
+   "dT_skin_K": 0.0065
+  },
+  "slip_fabric_degraded_wet|travel56|t1s": {
+   "F_N": 4.88,
+   "W_J": 0.273,
+   "v_mm_s": 56.0,
+   "q_W_m2": 28.0,
+   "P_W": 0.273,
+   "dT_skin_K": 0.0132
+  },
+  "slip_fabric_degraded_wet|travel56|t3s": {
+   "F_N": 4.88,
+   "W_J": 0.273,
+   "v_mm_s": 18.7,
+   "q_W_m2": 9.3,
+   "P_W": 0.091,
+   "dT_skin_K": 0.0076
+  },
+  "slip_fabric_degraded_wet|travel96|t1s": {
+   "F_N": 4.88,
+   "W_J": 0.469,
+   "v_mm_s": 96.0,
+   "q_W_m2": 48.0,
+   "P_W": 0.469,
+   "dT_skin_K": 0.0227
+  },
+  "slip_fabric_degraded_wet|travel96|t3s": {
+   "F_N": 4.88,
+   "W_J": 0.469,
+   "v_mm_s": 32.0,
+   "q_W_m2": 16.0,
+   "P_W": 0.156,
+   "dT_skin_K": 0.0131
+  },
+  "skin_dry_mean|travel56|t1s": {
+   "F_N": 7.48,
+   "W_J": 0.419,
+   "v_mm_s": 56.0,
+   "q_W_m2": 42.9,
+   "P_W": 0.419,
+   "dT_skin_K": 0.0203
+  },
+  "skin_dry_mean|travel56|t3s": {
+   "F_N": 7.48,
+   "W_J": 0.419,
+   "v_mm_s": 18.7,
+   "q_W_m2": 14.3,
+   "P_W": 0.14,
+   "dT_skin_K": 0.0117
+  },
+  "skin_dry_mean|travel96|t1s": {
+   "F_N": 7.48,
+   "W_J": 0.718,
+   "v_mm_s": 96.0,
+   "q_W_m2": 73.5,
+   "P_W": 0.718,
+   "dT_skin_K": 0.0348
+  },
+  "skin_dry_mean|travel96|t3s": {
+   "F_N": 7.48,
+   "W_J": 0.718,
+   "v_mm_s": 32.0,
+   "q_W_m2": 24.5,
+   "P_W": 0.239,
+   "dT_skin_K": 0.0201
+  }
+ },
+ "wear": {
+  "strokes_day": 400,
+  "slide_m_day": {
+   "56mm": 22.4,
+   "96mm": 38.4
+  },
+  "slide_km_90day": {
+   "56mm": 2.02,
+   "96mm": 3.46
+  },
+  "energy_J_day_design": 93.7
+ },
+ "skin_attach_margin": {
+  "slip_fabric_design": 2.47,
+  "slip_fabric_degraded_wet": 1.23,
+  "PTFE_film_best": 7.4
+ }
+}

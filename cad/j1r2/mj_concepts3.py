@@ -22,6 +22,9 @@ BOLT_Z = (-160.0, -220.0)          # rail node heights of the two bolt pairs (ra
 BOLT_Y = (-113.0, -105.0)          # PLACEHOLDER positions of the new M4 bosses on the rail rear face
 CLASP_PSI = float(os.environ.get("MJ11_CLASP_PSI", "120"))     # clasp bracket anchor on the pad rim (deg from +y toward +z)
 LEAD_PSI = (225.0, 270.0, 315.0)   # lead channels through the liner (flex electrode leads, SPEC_flex_electrode_leads)
+LEAD_W = 8.0                       # trench width (two 3 mm flex tails + 2 mm)
+RIM_R, RIM_PSI = 56.0, (315.0, 218.0)   # rev 2026-11-03: rim collector trench r 56 from the psi-315 channel round to the rail-side exit (psi 218 meets the y = -96 cut at z -224); all lead trenches end in ONE fixed exit at the rail edge
+CH_R0 = 18.0
 FOAM_DENS = 0.12                   # g/cm3 closed-cell EVA / PE foam (assumption)
 _G = {}
 def _grid(step=3.0):
@@ -38,11 +41,24 @@ def dish_mesh():
     Y, Z, skin, inner, plane = seat_surfaces(); return L.I(L.height_solid(Y, Z, inner, plane, "x"), _domain())
 def liner_mesh():
     Y, Z, skin, inner, plane = seat_surfaces(); ln = L.I(L.height_solid(Y, Z, skin - 0.0, inner, "x"), _domain())
-    cuts = []
-    for psi in LEAD_PSI:
-        a = math.radians(psi); p0 = np.array([X0 - 40.0, Y1 + 18.0 * math.cos(a), Z1 + 18.0 * math.sin(a)]); p1 = np.array([X0 - 40.0, Y1 + 80.0 * math.cos(a), Z1 + 80.0 * math.sin(a)])
-        cuts.append(boxbeam(p0, p1, 8.0, 60.0, None, up=(1, 0, 0), ext=0.0))
+    cuts = [boxbeam(np.array([X0 - 40.0, a[0], a[1]]), np.array([X0 - 40.0, b[0], b[1]]), LEAD_W, 60.0, None, up=(1, 0, 0), ext=0.0) for a, b in trench_segments()]
     return DIFF(ln, *cuts)
+def trench_segments():
+    """2-D (y, z) centre-line segments of the lead trenches: 3 radial channels (r 18..80) + the rim collector arc (r 56, psi 315 -> 218, 8 deg steps)."""
+    seg = []
+    for psi in LEAD_PSI:
+        a = math.radians(psi); seg.append(((Y1 + CH_R0 * math.cos(a), Z1 + CH_R0 * math.sin(a)), (Y1 + 80.0 * math.cos(a), Z1 + 80.0 * math.sin(a))))
+    ps = np.linspace(RIM_PSI[0], RIM_PSI[1], int(abs(RIM_PSI[0] - RIM_PSI[1]) / 8.0) + 2)
+    for p0, p1 in zip(ps[:-1], ps[1:]):
+        a0, a1 = math.radians(p0), math.radians(p1); seg.append(((Y1 + RIM_R * math.cos(a0), Z1 + RIM_R * math.sin(a0)), (Y1 + RIM_R * math.cos(a1), Z1 + RIM_R * math.sin(a1))))
+    return seg
+def in_trench(y, z, buf=0.0):
+    """True if (y, z) lies within a lead trench (+ buf mm)."""
+    p = np.array([y, z]); 
+    for a, b in trench_segments():
+        a, b = np.array(a), np.array(b); t = np.clip(np.dot(p - a, b - a) / np.dot(b - a, b - a), 0, 1)
+        if np.linalg.norm(p - (a + t * (b - a))) <= LEAD_W / 2 + buf: return True
+    return False
 def rail_bolt_pts():
     """(x_pad_face, y, z) of the 4 M4 bolts on the pad plane and the rail rear face x at the same place."""
     return [(X0, y, z, rail_x(-119.0, z)) for z in BOLT_Z for y in BOLT_Y]
@@ -50,9 +66,9 @@ def mj11_geo(base):
     out = {}; padm = L.I(pad_disc(), bx(X0 - 10.0, XB + 10.0, PAD_TRIM_Y, Y1 + 100.0, Z1 - 100.0, Z1 + 100.0))
     out["pad"] = P_("pad", padm, "PACF", BLUE, note="R66 x 6 PA-CF pad disc trimmed flat at y %.0f (spine-bridge ears), S1' AK70 on its rear face (flange PLACEHOLDER); its flat front face lies on the seat dish and, medially, on the rail spacers" % PAD_TRIM_Y)
     dish = dish_mesh(); out["seat_dish"] = P_("seat_dish", dish, "PACF", BLUE, fill=0.30, note="conformal PA-CF shell: outer face the flat plane x0, inner face the skin + %.0f mm liner; variable thickness %.1f..%.1f mm (drawn solid, mass at the hollow fill 0.30: 2.4 mm walls + ribs); prints flat face down, no supports" % (LINER_T, PLATE_MIN, float((X0 - seat_surfaces()[3]).max())))
-    ln = liner_mesh(); out["liner"] = P_("liner", ln, "TPU", (0.85, 0.85, 0.88), kind="bought", mass_g=round(abs(ln.volume) / 1000.0 * FOAM_DENS, 1), note="8 mm closed-cell foam (0.12 g/cm3 assumed) + PTFE-fabric slip face toward the plate side of the base layer; 3 radial lead channels 8 mm wide (psi 225/270/315)")
+    ln = liner_mesh(); out["liner"] = P_("liner", ln, "TPU", (0.85, 0.85, 0.88), kind="bought", mass_g=round(abs(ln.volume) / 1000.0 * FOAM_DENS, 1), note="8 mm closed-cell foam (0.12 g/cm3 assumed) + PTFE-fabric slip face toward the plate side of the base layer; 3 radial lead channels 8 mm wide (psi 225/270/315) + rim collector trench r 56 to one fixed exit at the rail edge (rev 2026-11-03)")
     sp = U(*[L.cyl("x", 5.0, rail_x(-119.0, z) - 0.2, X0 + 0.2, c=(y, z), n=24) for (_, y, z, _) in [(0, y, z, 0) for z in BOLT_Z for y in BOLT_Y]])
-    out["rail_spacers"] = P_("rail_spacers", sp, "PETGCF", C.COL["steel"], note="4 spacers D10 from the rail rear face to the pad plane (%.1f..%.1f mm), M4 x 20 SHCS into new M4 heat-set inserts (5.6 OD x 4) in the rail (PLACEHOLDER bosses)" % tuple(sorted((X0 - rail_x(-119.0, z)) for z in BOLT_Z)))
+    out["rail_spacers"] = P_("rail_spacers", sp, "PETGCF", C.COL["steel"], note="4 spacers D10 from the rail rear face to the pad plane (%.1f..%.1f mm), M4 x 16 (4.8 mm spacers) / M4 x 20 (8.3 mm) SHCS into new M4 heat-set inserts (5.6 OD x 4) in the rail (PLACEHOLDER bosses)" % tuple(sorted((X0 - rail_x(-119.0, z)) for z in BOLT_Z)))
     out["liner"]["skin_contact"] = True
     out["clasp_bracket"] = P_("clasp_bracket", clasp_bracket_geo(pad_pt(CLASP_PSI, PAD_R - 8, x=XB - 3.0)), "PACF", BLUE, note="clasp feet (re-seated) to the pad rim at psi %.0f" % CLASP_PSI)
     return out
@@ -66,7 +82,7 @@ def mj11_frame(fr, side):
     pts = []; Dm = _domain(); step = 16.0
     for y in np.arange(Y1 - PAD_R + 8, Y1 + PAD_R - 7, step):
         for z in np.arange(Z1 - PAD_R + 8, Z1 + PAD_R - 7, step):
-            if math.hypot(y - Y1, z - Z1) <= PAD_R - 4 and y >= RAIL_EDGE_Y + 2: pts.append((y, z))
+            if math.hypot(y - Y1, z - Z1) <= PAD_R - 4 and y >= RAIL_EDGE_Y + 2 and not in_trench(y, z, 5.0): pts.append((y, z))      # rev 2026-11-03: lattice cells over the lead trenches carry no liner load
     k_a = M.E_FOAM / LINER_T; A_i = step * step
     for i, (y, z) in enumerate(pts):
         xs = float(M.back_x(y, z))
