@@ -2,10 +2,11 @@
 import os, sys, json, subprocess
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np, trimesh
-import clib as L, j1r2_params as P, j1r2_geom as G, mj_frame as M
+import clib as L, j1r2_params as P, j1r2_geom as G, mj_frame as M, mj_concepts3   # noqa: F401
 REPO = M.REPO; ST = os.path.join(REPO, "stl"); MD = os.path.join(ST, "j1r2_mounts"); OUTD = os.path.join(REPO, "renders_j1r2", "mounts"); os.makedirs(OUTD, exist_ok=True)
-CACHE = os.path.join(MD, "_render_cache"); os.makedirs(CACHE, exist_ok=True)
-BASE, INFO = G.build(full=True); DER = INFO["derived"]; th, ph = P.PARK["S1p"], P.PARK["S2"]
+TAG = os.environ.get("J1_PAD", "default").replace(",", "_"); CACHE = os.path.join(MD, "_render_cache" + ("" if TAG == "default" else "_" + TAG)); os.makedirs(CACHE, exist_ok=True)
+SKIP = ("pad_riser", "standoffs", "fairing_lap", "rail") + (() if TAG == "default" else ("pad", "fairing_fixed", "column_anchor"))      # MJ11: own pad; the fairing is not re-fitted yet
+BASE, INFO = G.build(y1=M.Y1, z1=M.Z1, standoff=M.DER["standoff"], full=True); DER = INFO["derived"]; th, ph = P.PARK["S1p"], P.PARK["S2"]
 def rgb(c): return [int(255 * v) for v in c]
 def shared():
     if os.path.exists(os.path.join(CACHE, "shared.json")): return json.load(open(os.path.join(CACHE, "shared.json")))
@@ -15,7 +16,7 @@ def shared():
     w = trimesh.load(os.path.join(ST, "shoulder", "scapular", "wing_R.stl")); w = L.I(w, L.box(-300, 100, -150, -100.0, -500, 100)); p_ = os.path.join(CACHE, "wing_rail.stl"); w.export(p_); parts.append(dict(stl=p_, color=[70, 74, 82], rough=0.6))
     for f, col in (("scapular/spine_bridge.stl", [70, 74, 82]), ("clasp_frame_R.stl", [62, 66, 74])): parts.append(dict(stl=os.path.join(ST, "shoulder", f), color=col, rough=0.6))
     for k, v in BASE.items():
-        if k in ("pad_riser", "standoffs", "fairing_lap", "rail") or v.get("kind") == "cable": continue
+        if k in SKIP or v.get("kind") == "cable": continue
         m = v["mesh"].copy(); m.apply_transform(G.pose_matrix(v["group"], DER, th, ph)); p_ = os.path.join(CACHE, f"stage_{k}.stl"); m.export(p_)
         col = [52, 54, 60] if v.get("kind") == "bought" else ([150, 158, 172] if k == "fairing_fixed" else [180, 184, 190])
         parts.append(dict(stl=p_, color=col, metal=0.25 if v.get("kind") == "bought" else 0.0, rough=0.5))

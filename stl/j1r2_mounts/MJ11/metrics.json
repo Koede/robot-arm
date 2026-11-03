@@ -1,0 +1,332 @@
+{
+ "id": "MJ11",
+ "harness_clearance_mm": {
+  "pad": {
+   "wing_rail": 3.7,
+   "spine_bridge": 3.3
+  },
+  "seat_dish": {
+   "wing_rail": 4.0,
+   "spine_bridge": 28.3
+  },
+  "liner": {
+   "wing_rail": 4.0,
+   "spine_bridge": 29.7
+  },
+  "rail_spacers": {
+   "wing_rail": 0.0,
+   "spine_bridge": 6.3
+  },
+  "clasp_bracket": {
+   "wing_rail": 4.2,
+   "spine_bridge": 22.3
+  }
+ },
+ "title": "Blade-seated pancake: flat pad on a conformal foam dish, bolted to the rail",
+ "clasp": "feet to the pad's top rim",
+ "parts": {
+  "pad": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 93.2,
+   "watertight": true,
+   "bbox": [
+    6.0,
+    127.0,
+    132.0
+   ],
+   "fits_256": true,
+   "note": "R66 x 6 PA-CF pad disc trimmed flat at y -121 (spine-bridge ears), S1' AK70 on its rear face (flange PLACEHOLDER); its flat front face lies on the seat dish and, medially, on the rail spacers"
+  },
+  "seat_dish": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 56.6,
+   "watertight": true,
+   "bbox": [
+    36.6,
+    102.0,
+    132.0
+   ],
+   "fits_256": true,
+   "note": "conformal PA-CF shell: outer face the flat plane x0, inner face the skin + 8 mm liner; variable thickness 3.0..65.4 mm (drawn solid, mass at the hollow fill 0.30: 2.4 mm walls + ribs); prints flat face down, no supports"
+  },
+  "liner": {
+   "mat": "TPU",
+   "kind": "bought",
+   "mass_g": 9.9,
+   "watertight": true,
+   "bbox": [
+    41.5,
+    102.0,
+    131.9
+   ],
+   "fits_256": true,
+   "note": "8 mm closed-cell foam (0.12 g/cm3 assumed) + PTFE-fabric slip face toward the plate side of the base layer; 3 radial lead channels 8 mm wide (psi 225/270/315)"
+  },
+  "rail_spacers": {
+   "mat": "PETGCF",
+   "kind": "printed",
+   "mass_g": 2.7,
+   "watertight": true,
+   "bbox": [
+    8.7,
+    18.0,
+    70.0
+   ],
+   "fits_256": true,
+   "note": "4 spacers D10 from the rail rear face to the pad plane (4.8..8.3 mm), M4 x 20 SHCS into new M4 heat-set inserts (5.6 OD x 4) in the rail (PLACEHOLDER bosses)"
+  },
+  "clasp_bracket": {
+   "mat": "PACF",
+   "kind": "printed",
+   "mass_g": 24.3,
+   "watertight": true,
+   "bbox": [
+    41.9,
+    126.7,
+    78.6
+   ],
+   "fits_256": true,
+   "note": "clasp feet (re-seated) to the pad rim at psi 120"
+  }
+ },
+ "mount_mass_g": 186.7,
+ "balancer_fixed_g": 0.0,
+ "total_fixed_g": 186.7,
+ "frame": {
+  "park": {
+   "tip_mm": 0.85,
+   "tip_vec": [
+    0.07,
+    0.51,
+    -0.68
+   ],
+   "pad_rot_deg": 0.074,
+   "pad_trans_mm": 0.41,
+   "contact": {
+    "rail": {
+     "max_kPa": 0.71,
+     "min_kPa": -1.49,
+     "sum_N": -0.5
+    },
+    "top": {
+     "max_kPa": 1.47,
+     "min_kPa": 0.41,
+     "sum_N": 4.8
+    },
+    "front": {
+     "max_kPa": 0.02,
+     "min_kPa": -0.16,
+     "sum_N": -0.4
+    },
+    "axilla": {
+     "max_kPa": 0.47,
+     "min_kPa": 0.47,
+     "sum_N": 1.3
+    },
+    "liner": {
+     "max_kPa": 0.66,
+     "min_kPa": -0.6,
+     "sum_N": 0.9
+    }
+   },
+   "iface": [
+    {
+     "n": 2,
+     "F_bolt_max_N": 230.9,
+     "N": -37.0,
+     "My_Nmm": 87.0,
+     "Mz_Nmm": -1699.0
+    },
+    {
+     "n": 2,
+     "F_bolt_max_N": 42.8,
+     "N": 35.8,
+     "My_Nmm": -183.0,
+     "Mz_Nmm": -199.0
+    }
+   ],
+   "member_stress_MPa": {
+    "rail": 1.33,
+    "clasp_arm": 1.66,
+    "clasp_seat": 1.66,
+    "spine_bridge": 0.99
+   },
+   "tip_mm_body_only": 0.64
+  },
+  "reach": {
+   "tip_mm": 1.81,
+   "tip_vec": [
+    -0.6,
+    -0.15,
+    -1.7
+   ],
+   "pad_rot_deg": 0.155,
+   "pad_trans_mm": 0.5,
+   "contact": {
+    "rail": {
+     "max_kPa": 1.94,
+     "min_kPa": -3.12,
+     "sum_N": 0.2
+    },
+    "top": {
+     "max_kPa": 1.67,
+     "min_kPa": 0.52,
+     "sum_N": 5.6
+    },
+    "front": {
+     "max_kPa": 0.29,
+     "min_kPa": -0.09,
+     "sum_N": 1.0
+    },
+    "axilla": {
+     "max_kPa": 0.59,
+     "min_kPa": 0.59,
+     "sum_N": 1.6
+    },
+    "liner": {
+     "max_kPa": 2.21,
+     "min_kPa": -1.98,
+     "sum_N": 2.8
+    }
+   },
+   "iface": [
+    {
+     "n": 2,
+     "F_bolt_max_N": 312.3,
+     "N": -60.0,
+     "My_Nmm": 88.0,
+     "Mz_Nmm": -2259.0
+    },
+    {
+     "n": 2,
+     "F_bolt_max_N": 101.9,
+     "N": 59.9,
+     "My_Nmm": -226.0,
+     "Mz_Nmm": -575.0
+    }
+   ],
+   "member_stress_MPa": {
+    "rail": 2.32,
+    "clasp_arm": 2.03,
+    "clasp_seat": 1.9,
+    "spine_bridge": 1.69
+   },
+   "tip_mm_body_only": 1.16
+  }
+ },
+ "skin_gap_by_zone_mm": {
+  "pad": {
+   "rail": 18.4,
+   "blade": 10.5
+  },
+  "seat_dish": {
+   "blade": 5.2
+  },
+  "liner": {
+   "blade": -1.8
+  },
+  "rail_spacers": {
+   "rail": 13.1
+  },
+  "clasp_bracket": {
+   "rail": 21.5,
+   "blade": 5.3
+  }
+ },
+ "skin_rule_violations": [],
+ "stage_clearance": {
+  "M1_min_mm": 7.5,
+  "M1_at_S1p": 35.0,
+  "M2_arm_min_mm": 0.0,
+  "M2_at": [
+   25.0,
+   40.0
+  ],
+  "by_part": {
+   "pad": {
+    "M1_min_mm": 40.0,
+    "M1_at_S1p": null,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "seat_dish": {
+    "M1_min_mm": 7.6,
+    "M1_at_S1p": 35.0,
+    "M2_arm_min_mm": 5.7,
+    "M2_at": [
+     30.0,
+     80.0
+    ]
+   },
+   "liner": {
+    "M1_min_mm": 17.6,
+    "M1_at_S1p": 15.0,
+    "M2_arm_min_mm": 7.1,
+    "M2_at": [
+     10.0,
+     80.0
+    ]
+   },
+   "rail_spacers": {
+    "M1_min_mm": 11.9,
+    "M1_at_S1p": 35.0,
+    "M2_arm_min_mm": 40.0,
+    "M2_at": null
+   },
+   "clasp_bracket": {
+    "M1_min_mm": 7.5,
+    "M1_at_S1p": 10.0,
+    "M2_arm_min_mm": 0.0,
+    "M2_at": [
+     20.0,
+     70.0
+    ]
+   }
+  }
+ },
+ "wearer_rom_first_contact_deg": {
+  "arm abduction": null,
+  "arm flexion": null,
+  "arm scaption 30": null,
+  "neck lat flex R": null,
+  "neck rotation R": null,
+  "neck flexion": null,
+  "neck extension": null
+ },
+ "wearer_rom_by_part": {},
+ "fixed_depth_behind_back_mm": 18.7,
+ "head_neutral_mm": 48.4,
+ "balancer": {
+  "home": "none (no balancer)",
+  "verdict": "no balancer: shoulder motors carry the full gravity torque (SF 1.14 vs rated at the worst pose, gate waiver needed)"
+ },
+ "colours": {
+  "pad": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "seat_dish": [
+   0.2,
+   0.34,
+   0.52
+  ],
+  "liner": [
+   0.85,
+   0.85,
+   0.88
+  ],
+  "rail_spacers": [
+   0.45,
+   0.47,
+   0.5
+  ],
+  "clasp_bracket": [
+   0.2,
+   0.34,
+   0.52
+  ]
+ }
+}

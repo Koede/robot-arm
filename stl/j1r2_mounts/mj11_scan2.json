@@ -1,0 +1,674 @@
+[
+ {
+  "y1": -75.0,
+  "z1": -135.0,
+  "x0": -97.6,
+  "driver": "footprint",
+  "gap_min": 11.0,
+  "gap_mean": 28.8,
+  "gap_max": 70.2,
+  "tilt_deg": 20.2,
+  "plane_rms": 6.6,
+  "reach_cov": 0.702,
+  "box_cov": 0.434,
+  "box": {
+   "S1p": [
+    -85.0,
+    0.0
+   ],
+   "S2": [
+    -15.0,
+    20.0
+   ]
+  },
+  "park_ok": true,
+  "worst": [
+   [
+    "M2|rail",
+    0.0
+   ],
+   [
+    "M2|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|rail",
+    0.0
+   ],
+   [
+    "M3|wearer_skin",
+    0.0
+   ]
+  ]
+ },
+ {
+  "y1": -60.0,
+  "z1": -135.0,
+  "x0": -97.6,
+  "driver": "footprint",
+  "gap_min": 11.0,
+  "gap_mean": 30.2,
+  "gap_max": 76.4,
+  "tilt_deg": 22.3,
+  "plane_rms": 7.0,
+  "reach_cov": 0.79,
+  "box_cov": 0.47,
+  "box": {
+   "S1p": [
+    -95.0,
+    0.0
+   ],
+   "S2": [
+    -15.0,
+    25.0
+   ]
+  },
+  "park_ok": true,
+  "worst": [
+   [
+    "M2|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_head",
+    0.0
+   ],
+   [
+    "M1|M3",
+    0.0
+   ]
+  ]
+ },
+ {
+  "y1": -45.0,
+  "z1": -135.0,
+  "x0": -97.6,
+  "driver": "footprint",
+  "gap_min": 10.9,
+  "gap_mean": 32.2,
+  "gap_max": 72.7,
+  "tilt_deg": 24.0,
+  "plane_rms": 6.9,
+  "reach_cov": 0.828,
+  "box_cov": 0.524,
+  "box": {
+   "S1p": [
+    -95.0,
+    5.0
+   ],
+   "S2": [
+    -15.0,
+    25.0
+   ]
+  },
+  "park_ok": true,
+  "worst": [
+   [
+    "M2|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_head",
+    0.0
+   ],
+   [
+    "M1|M3",
+    0.0
+   ]
+  ]
+ },
+ {
+  "y1": -30.0,
+  "z1": -135.0,
+  "x0": -97.6,
+  "driver": "footprint",
+  "gap_min": 10.9,
+  "gap_mean": 34.8,
+  "gap_max": 80.7,
+  "tilt_deg": 25.4,
+  "plane_rms": 7.2,
+  "reach_cov": 0.852,
+  "box_cov": 0.586,
+  "box": {
+   "S1p": [
+    -85.0,
+    5.0
+   ],
+   "S2": [
+    -15.0,
+    35.0
+   ]
+  },
+  "park_ok": true,
+  "worst": [
+   [
+    "M2|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_head",
+    0.0
+   ],
+   [
+    "M1|M3",
+    0.0
+   ]
+  ]
+ },
+ {
+  "y1": -75.0,
+  "z1": -165.0,
+  "x0": -97.6,
+  "driver": "footprint",
+  "gap_min": 10.9,
+  "gap_mean": 21.5,
+  "gap_max": 58.4,
+  "tilt_deg": 5.7,
+  "plane_rms": 4.7,
+  "reach_cov": 0.757,
+  "box_cov": 0.434,
+  "box": {
+   "S1p": [
+    -95.0,
+    0.0
+   ],
+   "S2": [
+    -15.0,
+    20.0
+   ]
+  },
+  "park_ok": true,
+  "worst": [
+   [
+    "M2|rail",
+    0.0
+   ],
+   [
+    "M2|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|rail",
+    0.0
+   ],
+   [
+    "M3|pad_riser",
+    0.0
+   ]
+  ]
+ },
+ {
+  "y1": -60.0,
+  "z1": -165.0,
+  "x0": -97.6,
+  "driver": "footprint",
+  "gap_min": 11.0,
+  "gap_mean": 22.6,
+  "gap_max": 61.1,
+  "tilt_deg": 7.5,
+  "plane_rms": 5.5,
+  "reach_cov": 0.792,
+  "box_cov": 0.47,
+  "box": {
+   "S1p": [
+    -95.0,
+    0.0
+   ],
+   "S2": [
+    -15.0,
+    25.0
+   ]
+  },
+  "park_ok": true,
+  "worst": [
+   [
+    "M2|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_head",
+    0.0
+   ],
+   [
+    "M1|M3",
+    0.0
+   ]
+  ]
+ },
+ {
+  "y1": -45.0,
+  "z1": -165.0,
+  "x0": -97.6,
+  "driver": "footprint",
+  "gap_min": 10.9,
+  "gap_mean": 24.3,
+  "gap_max": 59.6,
+  "tilt_deg": 9.6,
+  "plane_rms": 6.3,
+  "reach_cov": 0.822,
+  "box_cov": 0.518,
+  "box": {
+   "S1p": [
+    -95.0,
+    10.0
+   ],
+   "S2": [
+    -15.0,
+    17.4
+   ]
+  },
+  "park_ok": true,
+  "worst": [
+   [
+    "M2|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_head",
+    0.0
+   ],
+   [
+    "M1|M3",
+    0.0
+   ]
+  ]
+ },
+ {
+  "y1": -30.0,
+  "z1": -165.0,
+  "x0": -97.6,
+  "driver": "footprint",
+  "gap_min": 11.0,
+  "gap_mean": 26.5,
+  "gap_max": 60.5,
+  "tilt_deg": 11.9,
+  "plane_rms": 6.9,
+  "reach_cov": 0.849,
+  "box_cov": 0.586,
+  "box": {
+   "S1p": [
+    -85.0,
+    5.0
+   ],
+   "S2": [
+    -15.0,
+    35.0
+   ]
+  },
+  "park_ok": true,
+  "worst": [
+   [
+    "M2|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_head",
+    0.0
+   ],
+   [
+    "M1|M3",
+    0.0
+   ]
+  ]
+ },
+ {
+  "y1": -75.0,
+  "z1": -190.0,
+  "x0": -97.6,
+  "driver": "footprint",
+  "gap_min": 11.0,
+  "gap_mean": 20.9,
+  "gap_max": 32.5,
+  "tilt_deg": 3.1,
+  "plane_rms": 3.7,
+  "reach_cov": 0.752,
+  "box_cov": 0.434,
+  "box": {
+   "S1p": [
+    -95.0,
+    0.0
+   ],
+   "S2": [
+    -15.0,
+    20.0
+   ]
+  },
+  "park_ok": true,
+  "worst": [
+   [
+    "M2|rail",
+    0.0
+   ],
+   [
+    "M2|pad_riser",
+    0.0
+   ],
+   [
+    "M2|wing",
+    0.0
+   ],
+   [
+    "M2|wearer_skin",
+    0.0
+   ]
+  ]
+ },
+ {
+  "y1": -60.0,
+  "z1": -190.0,
+  "x0": -97.5,
+  "driver": "footprint",
+  "gap_min": 11.1,
+  "gap_mean": 22.2,
+  "gap_max": 43.8,
+  "tilt_deg": 5.4,
+  "plane_rms": 4.7,
+  "reach_cov": 0.786,
+  "box_cov": 0.478,
+  "box": {
+   "S1p": [
+    -75.0,
+    0.0
+   ],
+   "S2": [
+    -15.0,
+    30.0
+   ]
+  },
+  "park_ok": true,
+  "worst": [
+   [
+    "M2|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|pad_riser",
+    0.0
+   ],
+   [
+    "M3|wing",
+    0.0
+   ],
+   [
+    "M3|wearer_skin",
+    0.0
+   ]
+  ]
+ },
+ {
+  "y1": -45.0,
+  "z1": -190.0,
+  "x0": -97.6,
+  "driver": "footprint",
+  "gap_min": 11.0,
+  "gap_mean": 24.2,
+  "gap_max": 62.1,
+  "tilt_deg": 9.7,
+  "plane_rms": 5.9,
+  "reach_cov": 0.819,
+  "box_cov": 0.524,
+  "box": {
+   "S1p": [
+    -95.0,
+    5.0
+   ],
+   "S2": [
+    -15.0,
+    25.0
+   ]
+  },
+  "park_ok": true,
+  "worst": [
+   [
+    "M2|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_head",
+    0.0
+   ],
+   [
+    "M1|M3",
+    0.0
+   ]
+  ]
+ },
+ {
+  "y1": -30.0,
+  "z1": -190.0,
+  "x0": -97.5,
+  "driver": "footprint",
+  "gap_min": 11.0,
+  "gap_mean": 26.5,
+  "gap_max": 70.6,
+  "tilt_deg": 13.7,
+  "plane_rms": 6.3,
+  "reach_cov": 0.849,
+  "box_cov": 0.572,
+  "box": {
+   "S1p": [
+    -80.0,
+    5.0
+   ],
+   "S2": [
+    -15.0,
+    35.0
+   ]
+  },
+  "park_ok": true,
+  "worst": [
+   [
+    "M2|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wearer_head",
+    0.0
+   ],
+   [
+    "M1|M3",
+    0.0
+   ]
+  ]
+ },
+ {
+  "y1": -75.0,
+  "z1": -215.0,
+  "x0": -97.5,
+  "driver": "footprint",
+  "gap_min": 11.1,
+  "gap_mean": 23.9,
+  "gap_max": 46.5,
+  "tilt_deg": 9.8,
+  "plane_rms": 4.2,
+  "reach_cov": 0.751,
+  "box_cov": 0.47,
+  "box": {
+   "S1p": [
+    -85.0,
+    0.0
+   ],
+   "S2": [
+    -15.0,
+    25.0
+   ]
+  },
+  "park_ok": true,
+  "worst": [
+   [
+    "M2|rail",
+    0.0
+   ],
+   [
+    "M2|pad_riser",
+    0.0
+   ],
+   [
+    "M2|wing",
+    0.0
+   ],
+   [
+    "M2|wearer_skin",
+    0.0
+   ]
+  ]
+ },
+ {
+  "y1": -60.0,
+  "z1": -215.0,
+  "x0": -97.5,
+  "driver": "footprint",
+  "gap_min": 11.1,
+  "gap_mean": 26.0,
+  "gap_max": 66.5,
+  "tilt_deg": 13.7,
+  "plane_rms": 5.8,
+  "reach_cov": 0.781,
+  "box_cov": 0.488,
+  "box": {
+   "S1p": [
+    -95.0,
+    5.0
+   ],
+   "S2": [
+    -15.0,
+    20.0
+   ]
+  },
+  "park_ok": true,
+  "worst": [
+   [
+    "M2|wing",
+    0.0
+   ],
+   [
+    "M2|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|pad_riser",
+    0.0
+   ],
+   [
+    "M3|wing",
+    0.0
+   ]
+  ]
+ },
+ {
+  "y1": -45.0,
+  "z1": -215.0,
+  "x0": -97.5,
+  "driver": "footprint",
+  "gap_min": 11.0,
+  "gap_mean": 29.3,
+  "gap_max": 111.8,
+  "tilt_deg": 20.1,
+  "plane_rms": 8.9,
+  "reach_cov": 0.496,
+  "box_cov": 0.33,
+  "box": {
+   "S1p": [
+    -85.0,
+    -15.0
+   ],
+   "S2": [
+    -15.0,
+    30.0
+   ]
+  },
+  "park_ok": true,
+  "worst": [
+   [
+    "M1|wing",
+    0.0
+   ],
+   [
+    "M2|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|pad_riser",
+    0.0
+   ],
+   [
+    "M3|wing",
+    0.0
+   ]
+  ]
+ },
+ {
+  "y1": -30.0,
+  "z1": -215.0,
+  "x0": -97.5,
+  "driver": "footprint",
+  "gap_min": 11.0,
+  "gap_mean": 31.3,
+  "gap_max": 109.1,
+  "tilt_deg": 21.1,
+  "plane_rms": 7.5,
+  "reach_cov": 0.702,
+  "box_cov": 0.518,
+  "box": {
+   "S1p": [
+    -80.0,
+    0.0
+   ],
+   "S2": [
+    -15.0,
+    35.0
+   ]
+  },
+  "park_ok": true,
+  "worst": [
+   [
+    "M1|wing",
+    0.0
+   ],
+   [
+    "M2|wearer_skin",
+    0.0
+   ],
+   [
+    "M3|wing",
+    0.0
+   ],
+   [
+    "M3|wearer_skin",
+    0.0
+   ]
+  ]
+ }
+]

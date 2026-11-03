@@ -5,11 +5,11 @@ import os, sys, json, math, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np, trimesh
 from scipy.spatial import cKDTree
-import clib as L, j1r2_params as P, j1r2_geom as G, mj_frame as M, mj_concepts as C, mj_concepts2   # noqa: F401  (registers MJ7..MJ9, no balancer)
+import clib as L, j1r2_params as P, j1r2_geom as G, mj_frame as M, mj_concepts as C, mj_concepts2, mj_concepts3   # noqa: F401  (registers MJ7..MJ10 no balancer; MJ11 blade-seated pad)
 OUT = os.path.join(M.REPO, "stl", "j1r2_mounts"); os.makedirs(OUT, exist_ok=True)
 DENS = dict(L.DENS); DENS.update(CF=1.55, AL=2.70, TPU=1.21, STEEL=7.85)
 t0 = time.time(); log = lambda *a: print("[%5.0fs]" % (time.time() - t0), *a, flush=True)
-BASE, INFO = G.build(full=True); DER = INFO["derived"]
+BASE, INFO = G.build(y1=M.Y1, z1=M.Z1, standoff=M.DER["standoff"], full=True); DER = INFO["derived"]
 REPLACED = ("pad_riser", "standoffs", "fairing_lap")
 LIM = dict(S1p=(-95.0, 35.0), S2=(-30.0, 80.0))     # HARD ranges of the J1 rev 2 recommended soft limits (S1' -90..30, S2 -25..75; SPEC_j1r2_integration section 5)
 M1N = ("S1_yoke", "S1_stop_collar", "S2_AK70", "S2_clamp", "S2_sleeve", "S2_stop_posts", "tpu_S2_bumpers", "cable_M1")
@@ -34,7 +34,7 @@ def run_frame(cid, mount_g=0.0, stiff=False):
         u = fr.solve(); i = fr.idx["R_pad"]; pn = fr.nodes[i]; th, ph, pay = sides["right"]
         tip = M.hand_tip(th, ph); dtip = u[i, :3] + np.cross(u[i, 3:], tip - pn)
         sp = fr.spring_forces(); rows = {}
-        for kind in ("rail", "top", "front", "axilla"):
+        for kind in ("rail", "top", "front", "axilla", "liner"):
             ps = [s_ for s_ in sp if s_["kind"] == kind and s_["label"].startswith("R_")]
             if ps: rows[kind] = dict(max_kPa=round(max(s_["p_kPa"] for s_ in ps), 2), min_kPa=round(min(s_["p_kPa"] for s_ in ps), 2), sum_N=round(sum(s_["F"] for s_ in ps), 1))
         bolts = []
@@ -101,7 +101,7 @@ def _rot(axis, ang, piv, P_, w=None):
     if np.ndim(c): c, s = c[:, None], s[:, None]
     return Q * c + np.cross(axis[None, :], Q) * s + axis[None, :] * (Q @ axis)[:, None] * (1 - c) + piv
 def wearer_rom(parts):
-    pts = np.vstack([samp(p["mesh"], 1.5) for p in parts.values() if p["kind"] != "cord"]); T = cKDTree(pts); out = {}
+    pts = np.vstack([samp(p["mesh"], 1.5) for p in parts.values() if p["kind"] != "cord" and not p.get("skin_contact")]); T = cKDTree(pts); out = {}
     for nm, tgt in (("arm abduction", [0, 1.0, 0]), ("arm flexion", [-1.0, 0, 0]), ("arm scaption 30", [-0.5, 0.866, 0])):
         ax = np.cross([0, 0, -1.0], tgt); out[nm] = None
         for a in np.arange(0, 110.1, 2.5):
@@ -150,12 +150,14 @@ def evaluate(cid):
     bal_fixed = dict(radial=307.4, spar=108.4 + 28.0, cassette=0.0, none=0.0)[Cc["balancer"]]          # REF radial: tube 96 + cap 31 + post 34 + spring 108 + piston 28 + sheave 9 + cord 1; spar: spring + piston (liner/sheaves counted as parts)
     mount_g = sum(r["mass_g"] for k, r in rows.items() if r["kind"] in ("printed", "bought", "cord"))
     fr_res = run_frame(cid, mount_g); fr_stiff = run_frame(cid, mount_g, stiff=True); fr_res["park"]["tip_mm_body_only"] = fr_stiff["park"]["tip_mm"]; fr_res["reach"]["tip_mm_body_only"] = fr_stiff["reach"]["tip_mm"]; sk = skin_zones(parts); viol = []
+    rule = dict(RULE, **Cc.get("rule", {}))
     for k, z in sk.items():
+        if parts[k].get("skin_contact"): continue                       # designed skin interface (foam liner): reported in skin_gap_by_zone_mm, not a rule violation
         for zn, v in z.items():
-            if zn in RULE and v < RULE[zn]: viol.append(f"{k}: {zn} {v} mm < {RULE[zn]}")
+            if zn in rule and v < rule[zn]: viol.append(f"{k}: {zn} {v} mm < {rule[zn]}")
     cl = stage_clearance(parts); log(cid, "stage clearance", cl); rom = wearer_rom(parts); log(cid, "rom", rom)
     cl["by_part"] = {k: stage_clearance({k: p}) for k, p in parts.items() if p["kind"] != "cord" and not k.startswith("bal_cassette")}
-    rom_by = {k: {a: b for a, b in wearer_rom({k: p}).items() if b is not None} for k, p in parts.items() if p["kind"] != "cord"}
+    rom_by = {k: {a: b for a, b in wearer_rom({k: p}).items() if b is not None} for k, p in parts.items() if p["kind"] != "cord" and not p.get("skin_contact")}
     fixed = [p["mesh"] for p in parts.values() if p["kind"] != "cord"]; depth = round(max(m.bounds[1][0] for m in fixed) + 108.0, 1)
     bal = balancer_check(cid, parts); bal_mesh = bal.pop("mesh", None)
     hc = harness_clear(parts)
