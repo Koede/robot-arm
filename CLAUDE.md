@@ -20,7 +20,7 @@ Spec: `specs/SPEC_collision_method.md`. Report and keep out only the first-conta
 ## Open items (summary; full list in `DESIGN_STATE.md` section 12)
 1. W2 / W3 cable-loop re-search with 30 combined-pose bases (`run_local.sh`). If it still fails: firmware limit W1 >= -30 deg when E < 60 deg, or a rubbing sleeve. Needs Forest's decision.
 2. In-link runs, arm_chain DP, hub link, clips and boot sizes not redone for the new elbow anchors.
-3. `sweep_full.py` and `--restricted` not rerun after the cowl / pauldron rebuild; the firmware keep-out tables (`gen_tables.py`) follow from them.
+3. `sweep_full.py` and `--restricted` not rerun after the cowl / pauldron rebuild; the firmware keep-out tables (`gen_tables.py`) follow from them. 2026-11-03: MJ11 whole-arm sweep + tier tables done (`specs/SPEC_j1r2_mj11_whole_arm.md`); proposed headers in `stl/j1r2_sweep/firmware_proposed/`; Forest's decisions pending (spec section 7).
 4. Harness top-pad margin vs boot mass: `harness_loads.py` needs `sensor_pods.py` + `electronics_fit.py`.
 5. Pad stall cap proposal (AK70 S1/S2 cap 8.3 to 8.0 N.m). Needs Forest's decision.
 
