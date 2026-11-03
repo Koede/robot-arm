@@ -119,6 +119,13 @@ From `docs/DESIGN_STATE_ADDENDUM_2026-10-22.md` and `specs/SPEC_collision_method
 - Arm vs wearer / harness (`collision_body.py`, not in the repo): 10,368 poses, 1099 contact, 802 frontier, 297 deep. By body: head 526, harness 221, skin 55. Nearest at park M1 -> harness 5.4 mm. Worst frontier: S1 10 / S2 30-45 / S3 50 / E 100-120, claw 29-30 mm from the head.
 - Restricted full sweep (`stl/sweep_full_restricted.json`, 2592 poses, 1601 s; predates the curved pauldron meshes): min body -13.0, harness -8.4, head -4.3 mm; 181 contact poses, 179 inside the 60 mm head zone. The unrestricted `sweep_full.py` has not completed (`logs/sweep_full.log` empty).
 
+## 13. Interface contracts (cad/interfaces.py, started 2026-11-03)
+
+- **WING rail <-> J1 pad (MJ11), CHANGED:** bridge, tongue, 8 mm chassis plate and the J1 rev 2 riser are retired. Four new M4 heat-set (5.6 OD x 4) bosses on the rail rear face at z -160 / -220, y -113 / -105 (PLACEHOLDER positions); D10 PETG-CF spacers 4.8 mm (z -160) / 8.3 mm (z -220) to the pad plane x -97.5; 4 x M4 x 20 SHCS. Bolt load 231 N park / 312 N reach, insert pull-out 1 kN UNVERIFIED (bench T-W-INS). Open: trap_low electrode is 1.9 mm from the z -220 spacer and three pairs lie under the rail (`specs/SPEC_j1r2_mj11_leads_shear.md` s1).
+- **S1' AK70 <-> pad:** flange pattern PLACEHOLDER (6 x M4 on 60 PCD position-only, other candidates listed in `cad/interfaces.py`); never print.
+- **Electrode leads <-> jack:** PROPOSED, not built: ASSUMED 16-way keyed header on the rail rear face at (y -108, z -272), lead OD 2.2 mm, R_min 22 mm.
+- Left-over: `stl/j1r2/interfaces_j1r2.json` still describes J1 rev 2 (riser) and is superseded for the WING boundary.
+
 ## 12a. HAND rev B: the project hand (adopted by Forest 2026-10-30; IN DESIGN, not locked)
 See `specs/SPEC_hand.md`. **Forest (2026-10-30): "Merge this as the new project hand".** The hand replaces the C3 claw as the arm's end effector. The claw scripts and STLs stay in the repo as the superseded alternate.
 - **Wrist integration open:** branch `claude/hand-coupling-2026-10-30` holds Forest's plane-to-plane wrist (wrist v3: compliant W3, powered R roll, `specs/SPEC_wrist_rotary.md`). It is built on the rev-A hand and not merged. Rev B still mounts on the old W3-ear contract, so porting rev B onto plane B is the next integration step.
@@ -135,11 +142,17 @@ See `specs/SPEC_hand.md`. **Forest (2026-10-30): "Merge this as the new project 
 2. In-link runs, arm_chain DP, hub link, clips and boot sizes for the new elbow anchors.
 3. `sweep_full.py` (both modes) on the current cowl / curved pauldron, then the firmware keep-out tables (`gen_tables.py`).
 4. Harness top-pad margin (2.0 %) vs boot mass (~99 g per arm at 0.7x TPU wall): `harness_loads.py` needs `sensor_pods.py` + `electronics_fit.py`.
+0. **(2026-11-03) Forest decisions from MJ11 leads study:** (a) rail over trap_mid / rhomboid / trap_low vs flex-lead decision (A windowed rail / B move pairs / C keep stack); (b) lead architecture under the liner (L1 flat trace / L2 aligned channels / L3 coiled); (c) accept lift-off at reach given the 0.11 kPa preload window.
 5. Pad stall cap: AK70 S1/S2 cap 8.3 -> 8.0 N m (pad stall limit 16.6 N m: 2.00x at 8.3, 2.075x at 8.0); S2 torque SF with the balancer stays 2.77. **Forest to decide.**
 6. Bench / parts items: S2 free fall T12 (phase-short braking f >= 0.80), relays, 1.10 s off-delay stage, main-box heat, bench test T-W1.
 7. Missing from the repo: `collision_body.py`, `gen_tables.py`, `gen_state_table.py`, `harness_loads.py`, `sensor_pods.py`, `electronics_fit.py`, `balancer_freefall.py`, `balancer_struct.py`, `arm_clips.py`, `control_map.py`; specs `SPEC_third_shoulder.md`, `SPEC_balancer.md`, `SPEC_ball_stops.md`; `stl/gates.json`; `stl/electronics/arm_vendor_data.json` and `arm_electrical.json`.
 
 ## Changelog (dated entries recoverable from the repo)
+
+- **2026-11-03 (MJ11 leads, shear, interfaces; unattended, branch claude/mj11-leads-interfaces-2026-11-03):** nothing adopted, no geometry changed by default.
+  - Leads: only infraspinatus and teres major lie under the liner; trap_mid, rhomboid, trap_low (6 discs) lie under the rail that MJ11 now bolts to (conflicts with the 2026-10-23 flex-lead decision); trap_low is 1.9 mm from a spacer. The 8 mm radial channels cannot carry a lead that rides on the base layer (across-axis follow 22..55 mm vs 2.9 mm allowed); the spec's R18 serpentine violates the 22 mm bend rule; one R22 loop per lead is needed. Options L1/L2/L3 and A/B/C for Forest.
+  - Shear: preload window to avoid lift-off and stay under 4.3 kPa is only 1.98..2.09 kPa; skin shear 0.4..1.7 kPa with a working slip face (mu 0.1..0.4 ASSUMED), 2.5..4.2 kPa without; flash heat +0.04..0.16 K/stroke.
+  - New cad/interfaces.py, section 13 here, bench list T-W-INS / T-L-SHEAR / T-L-RIDGE. See specs/SPEC_j1r2_mj11_leads_shear.md.
 
 - **2026-11-02 (J1 mount alternatives, concept):** Forest: "Explore alternative designs for the shoulder mount" (J1 pancake mount).
   - Seven mounts (REF + MJ1..MJ6), all on one harness frame model and checked against the J1 stage, your range of motion and the skin rules.

@@ -29,7 +29,8 @@ CLASP_T = float(os.environ.get("MJ11_CLASP_T", "6"))           # hub -> anchor b
 CLASP_RA = float(os.environ.get("MJ11_CLASP_RA", str(PAD_R)))   # anchor radius on the pad (mm from the S1' axis)
 CLASP_EXT = float(os.environ.get("MJ11_CLASP_EXT", "6"))       # bar overhang past the anchor (mm)
 CLASP_VIA = None if os.environ.get("MJ11_CLASP_VIA", "") == "" else np.array([float(v) for v in os.environ["MJ11_CLASP_VIA"].split(",")])   # optional via point x,y,z
-LEAD_PSI = (225.0, 270.0, 315.0)   # lead channels through the liner (flex electrode leads, SPEC_flex_electrode_leads)
+LEAD_PSI = tuple(float(v) for v in os.environ.get("MJ11_LEAD_PSI", "225,270,315").split(","))   # lead channels through the liner (default 225/270/315; MJ11_LEAD_PSI e.g. "315" = motion-aligned variant, SPEC_j1r2_mj11_leads_shear s3)
+LEAD_W = float(os.environ.get("MJ11_LEAD_W", "8"))         # channel width (default 8 mm)
 FOAM_DENS = 0.12                   # g/cm3 closed-cell EVA / PE foam (assumption)
 _G = {}
 def _grid(step=3.0):
@@ -49,7 +50,7 @@ def liner_mesh():
     cuts = []
     for psi in LEAD_PSI:
         a = math.radians(psi); p0 = np.array([X0 - 40.0, Y1 + 18.0 * math.cos(a), Z1 + 18.0 * math.sin(a)]); p1 = np.array([X0 - 40.0, Y1 + 80.0 * math.cos(a), Z1 + 80.0 * math.sin(a)])
-        cuts.append(boxbeam(p0, p1, 8.0, 60.0, None, up=(1, 0, 0), ext=0.0))
+        cuts.append(boxbeam(p0, p1, LEAD_W, 60.0, None, up=(1, 0, 0), ext=0.0))
     return DIFF(ln, *cuts)
 def rail_bolt_pts():
     """(x_pad_face, y, z) of the 4 M4 bolts on the pad plane and the rail rear face x at the same place."""
