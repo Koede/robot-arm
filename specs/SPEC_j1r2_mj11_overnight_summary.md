@@ -25,7 +25,7 @@ Whole-arm sweep (S1' x S2 10 deg, S3 3, E 20, W1/W2/W3 3 each = 170,100 poses, 5
 | collision, parts (3 mm) | passive box + 5 deg hard stops free; fairing to moving stage 3.2 mm (S2 clamp), stop collar 4.2, bracket vs fairing 3.18, bracket vs S1' group 4.82, rail spacers 5.8, bridge 5.8 | PASS |
 | collision, hard-stop margins | M1|fairing 11.9 deg and M1|bracket 13.5 deg vs hard stop 10 | PASS (1.9 / 3.5 deg) |
 | skin gap | pad 18.3 rail / 10.6 blade; seat dish 5.3 blade; bracket 5.3 blade / 21.9 rail; fairing 24.4 / 25.8; liner -1.7 on blade (accepted design contact, slip face); rule violations: none | PASS (liner exception per Forest 2026-11-02d) |
-| head / neck 60 mm | head_neutral 47.8 mm reported by mj_eval (park clearance as before); M3 first-contact at S1' >= 9.4 stays outside the box | PASS inside box, firmware keep-out needed |
+| head / neck 60 mm | moving groups: first contact S1' >= 9.4 (outside the box). Fixed-parts clearance to the head at neutral (mj_eval `head_neutral_mm`) is 47.8 mm (48.4 before the merge; the fairing costs 0.6 mm), BELOW the 60 mm convention; the sweep does not gate fixed parts against the head. Forest to say whether 60 mm applies to fixed hardware | OPEN |
 | frame stiffness / stress | tip sag 0.84 / 1.81 mm; rail 1.3, clasp seat 1.8, bridge 1.0 MPa; liner +-2 kPa, <= 14.7 kPa sustained | PASS |
 | bolts | reach 312 N, scan 327, stall 707 N at L0 (SF 1.4 at 1 kN UNVERIFIED); L3 proposal SF 2.4 | CONDITIONAL (L3 not in default geometry) |
 | printability (256 mm cube) | fairing 81 x 94 x 112 mm one piece; bracket, pad, dish unchanged; supports only for tab undersides / gland bore (teardrop to do) | PASS |
