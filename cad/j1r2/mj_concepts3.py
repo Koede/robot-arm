@@ -12,7 +12,7 @@ import numpy as np, trimesh, os, sys, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import clib as L, mj_frame as M, mj_concepts as C
 from clib import U, D as DIFF, box as bx
-from mj_concepts import P_, pad_disc, pad_pt, link_bolts, rail_node_name, rail_x, clasp_bracket_geo, clasp_bracket_frame, boxbeam, BLUE, PAD_R
+from mj_concepts import P_, pad_disc, pad_pt, link_bolts, rail_node_name, rail_x, clasp_bracket_geo, clasp_bracket_frame, boxbeam, node_ball, BLUE, PAD_R
 Y1, Z1, X0, XB = M.Y1, M.Z1, M.X0, M.XB
 LINER_T = 8.0                      # foam liner thickness (compliance over the moving blade)
 PLATE_MIN = 3.0                    # minimum dish thickness at the ridge
@@ -20,7 +20,13 @@ RAIL_EDGE_Y = -96.0                # dish and liner stop 4 mm lateral of the rai
 PAD_TRIM_Y = -121.0                # pad disc trimmed flat on its medial side: clears the real spine-bridge ears by >= 3 mm
 BOLT_Z = (-160.0, -220.0)          # rail node heights of the two bolt pairs (rail nodes are every 20 mm)
 BOLT_Y = (-113.0, -105.0)          # PLACEHOLDER positions of the new M4 bosses on the rail rear face
-CLASP_PSI = float(os.environ.get("MJ11_CLASP_PSI", "120"))     # clasp bracket anchor on the pad rim (deg from +y toward +z)
+CLASP_PSI = float(os.environ.get("MJ11_CLASP_PSI", "119"))     # clasp bracket anchor on the pad rim (deg from +y toward +z)
+# clasp bracket hub -> pad-rim bar (2026-11-03 search, mj11_bracket_search.py): the 2026-11-02 bar (24 x 6, anchor r 58, ext 6) climbed to x -89.3 at its tip and sat 2.0 mm from the S1' stop-ring front face (x -87.3, r 44.6..60)
+CLASP_W = float(os.environ.get("MJ11_CLASP_W", "24"))          # hub -> anchor bar width (mm, in the pad plane)
+CLASP_T = float(os.environ.get("MJ11_CLASP_T", "6"))           # hub -> anchor bar thickness (mm, along x)
+CLASP_RA = float(os.environ.get("MJ11_CLASP_RA", str(PAD_R)))   # anchor radius on the pad (mm from the S1' axis)
+CLASP_EXT = float(os.environ.get("MJ11_CLASP_EXT", "6"))       # bar overhang past the anchor (mm)
+CLASP_VIA = None if os.environ.get("MJ11_CLASP_VIA", "") == "" else np.array([float(v) for v in os.environ["MJ11_CLASP_VIA"].split(",")])   # optional via point x,y,z
 LEAD_PSI = (225.0, 270.0, 315.0)   # lead channels through the liner (flex electrode leads, SPEC_flex_electrode_leads)
 FOAM_DENS = 0.12                   # g/cm3 closed-cell EVA / PE foam (assumption)
 _G = {}
@@ -46,6 +52,16 @@ def liner_mesh():
 def rail_bolt_pts():
     """(x_pad_face, y, z) of the 4 M4 bolts on the pad plane and the rail rear face x at the same place."""
     return [(X0, y, z, rail_x(-119.0, z)) for z in BOLT_Z for y in BOLT_Y]
+def mj11_anchor(psi=None, ra=None):
+    return pad_pt(CLASP_PSI if psi is None else psi, CLASP_RA if ra is None else ra, x=XB - 3.0)
+def mj11_bracket(psi=None, w=None, t=None, ra=None, ext=None, via=None):
+    """feet bars F5 / F4 -> hub (16 x 6, unchanged) and hub -> (via) -> pad-rim anchor bar (w x t); the anchor end overhangs by ext."""
+    w = CLASP_W if w is None else w; t = CLASP_T if t is None else t; ext = CLASP_EXT if ext is None else ext; via = CLASP_VIA if via is None else via
+    f = C.feet_xyz(); h = f["F1_upper_trap"]; bars = [boxbeam(f[k], h, 16.0, 6.0, None, up=(1, 0, 0), ext=4.0) for k in ("F5_mid_trap", "F4_acromion")]
+    pts = [h] + ([np.asarray(via, float)] if via is not None else []) + [mj11_anchor(psi, ra)]
+    segs = list(zip(pts[:-1], pts[1:]))
+    for i, (a, b) in enumerate(segs): bars.append(boxbeam(a, b, w, t, None, up=(1, 0, 0), ext=(ext if i == len(segs) - 1 else 6.0)))
+    return U(*bars, *[node_ball(f[k], 5.0) for k in ("F5_mid_trap", "F4_acromion", "F1_upper_trap")])
 def mj11_geo(base):
     out = {}; padm = L.I(pad_disc(), bx(X0 - 10.0, XB + 10.0, PAD_TRIM_Y, Y1 + 100.0, Z1 - 100.0, Z1 + 100.0))
     out["pad"] = P_("pad", padm, "PACF", BLUE, note="R66 x 6 PA-CF pad disc trimmed flat at y %.0f (spine-bridge ears), S1' AK70 on its rear face (flange PLACEHOLDER); its flat front face lies on the seat dish and, medially, on the rail spacers" % PAD_TRIM_Y)
@@ -54,7 +70,7 @@ def mj11_geo(base):
     sp = U(*[L.cyl("x", 5.0, rail_x(-119.0, z) - 0.2, X0 + 0.2, c=(y, z), n=24) for (_, y, z, _) in [(0, y, z, 0) for z in BOLT_Z for y in BOLT_Y]])
     out["rail_spacers"] = P_("rail_spacers", sp, "PETGCF", C.COL["steel"], note="4 spacers D10 from the rail rear face to the pad plane (%.1f..%.1f mm), M4 x 20 SHCS into new M4 heat-set inserts (5.6 OD x 4) in the rail (PLACEHOLDER bosses)" % tuple(sorted((X0 - rail_x(-119.0, z)) for z in BOLT_Z)))
     out["liner"]["skin_contact"] = True
-    out["clasp_bracket"] = P_("clasp_bracket", clasp_bracket_geo(pad_pt(CLASP_PSI, PAD_R - 8, x=XB - 3.0)), "PACF", BLUE, note="clasp feet (re-seated) to the pad rim at psi %.0f" % CLASP_PSI)
+    out["clasp_bracket"] = P_("clasp_bracket", mj11_bracket(), "PACF", BLUE, note="clasp feet (re-seated) to the pad rim at psi %.0f, anchor r %.0f, hub bar %.0f x %.0f, overhang %.0f%s" % (CLASP_PSI, CLASP_RA, CLASP_W, CLASP_T, CLASP_EXT, "" if CLASP_VIA is None else ", via %s" % np.round(CLASP_VIA, 1).tolist()))
     return out
 def mj11_frame(fr, side):
     mp = (lambda p: np.asarray(p, float)) if side == "R" else M.mirror; pad = C.pad_nodes(fr, side); Y, Z, skin, inner, plane = seat_surfaces()
@@ -71,5 +87,8 @@ def mj11_frame(fr, side):
     for i, (y, z) in enumerate(pts):
         xs = float(M.back_x(y, z))
         n = f"{side}_ln{i}"; fr.node(n, mp(np.array([xs + LINER_T / 2, y, z]))); fr.rigid(pad, n, tag="pad"); fr.spring(n, [1.0, 0, 0], k_a * A_i, area=A_i, label=f"{side}_liner{i}", kind="liner")
-    an = f"{side}_clasp_anchor"; fr.node(an, mp(pad_pt(CLASP_PSI, PAD_R - 8, x=XB - 3.0))); fr.rigid(pad, an, tag="pad"); clasp_bracket_frame(fr, side, an); return pad
+    an = f"{side}_clasp_anchor"; fr.node(an, mp(mj11_anchor())); fr.rigid(pad, an, tag="pad"); hub = f"{side}_clasp_hub"; sec = M.rect(CLASP_W, CLASP_T)
+    if CLASP_VIA is None: fr.beam(hub, an, sec, "PACF", up=(1, 0, 0), tag="clasp_seat")
+    else: v = f"{side}_clasp_via"; fr.node(v, mp(CLASP_VIA)); fr.beam(hub, v, sec, "PACF", up=(1, 0, 0), tag="clasp_seat"); fr.beam(v, an, sec, "PACF", up=(1, 0, 0), tag="clasp_seat")
+    return pad
 C.CONCEPTS.update(MJ11=dict(rule=dict(blade=5.0), title="Blade-seated pancake: flat pad on a conformal foam dish, bolted to the rail", geo=mj11_geo, frame=mj11_frame, balancer="none", clasp="feet to the pad's top rim"))
