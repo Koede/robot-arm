@@ -21,7 +21,8 @@ PAD_TRIM_Y = -121.0                # pad disc trimmed flat on its medial side: c
 BOLT_Z = (-160.0, -220.0)          # rail node heights of the two bolt pairs (rail nodes are every 20 mm)
 BOLT_Y = (-113.0, -105.0)          # PLACEHOLDER positions of the new M4 bosses on the rail rear face
 CLASP_PSI = float(os.environ.get("MJ11_CLASP_PSI", "120"))     # clasp bracket anchor on the pad rim (deg from +y toward +z)
-LEAD_PSI = (225.0, 270.0, 315.0)   # lead channels through the liner (flex electrode leads, SPEC_flex_electrode_leads)
+LEAD_PSI = tuple(float(v) for v in os.environ.get("MJ11_LEAD_PSI", "225,270,315").split(","))   # lead channels through the liner (default 225/270/315; MJ11_LEAD_PSI e.g. "315" = motion-aligned variant, SPEC_j1r2_mj11_leads_shear s3)
+LEAD_W = float(os.environ.get("MJ11_LEAD_W", "8"))         # channel width (default 8 mm)
 FOAM_DENS = 0.12                   # g/cm3 closed-cell EVA / PE foam (assumption)
 _G = {}
 def _grid(step=3.0):
@@ -41,7 +42,7 @@ def liner_mesh():
     cuts = []
     for psi in LEAD_PSI:
         a = math.radians(psi); p0 = np.array([X0 - 40.0, Y1 + 18.0 * math.cos(a), Z1 + 18.0 * math.sin(a)]); p1 = np.array([X0 - 40.0, Y1 + 80.0 * math.cos(a), Z1 + 80.0 * math.sin(a)])
-        cuts.append(boxbeam(p0, p1, 8.0, 60.0, None, up=(1, 0, 0), ext=0.0))
+        cuts.append(boxbeam(p0, p1, LEAD_W, 60.0, None, up=(1, 0, 0), ext=0.0))
     return DIFF(ln, *cuts)
 def rail_bolt_pts():
     """(x_pad_face, y, z) of the 4 M4 bolts on the pad plane and the rail rear face x at the same place."""
