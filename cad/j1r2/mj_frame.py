@@ -97,7 +97,7 @@ def back_x(y, z):
         from scipy.interpolate import RegularGridInterpolator
         Y, Z, X = L_.rear_surface(-330.0, 70.0, -470.0, 70.0, 4.0, 1.0); _RS["f"] = RegularGridInterpolator((Y[:, 0], Z[0, :]), X, bounds_error=False, fill_value=None)
     return float(_RS["f"]([[y, z]])[0])
-_PAD = [float(v) for v in os.environ.get("J1_PAD", "10,-30,22").split(",")]          # S1' pad (y1, z1, standoff); default = J1 rev 2 (10, -30, 22); MJ11 uses J1_PAD=-60,-190,12
+_PAD = [float(v) for v in os.environ.get("J1_PAD", "-60,-190,12").split(",")]          # S1' pad (y1, z1, standoff); default = MJ11 blade-seated pad (-60, -190, 12), adopted 2026-11-02; J1 rev 2 = J1_PAD=10,-30,22
 DER = P.derive(*_PAD); PX, Y1, Z1, X0, XB = DER["PX"], DER["y1"], DER["z1"], DER["x0"], DER["XB"]
 SPINE_Y = -150.0
 def mirror(p): p = np.asarray(p, float).copy(); p[1] = 2 * SPINE_Y - p[1]; return p
