@@ -67,12 +67,12 @@ def clasp_bracket_geo(anchor, via=None):
     pts = [h] + ([np.asarray(via, float)] if via is not None else []) + ([np.asarray(anchor, float)] if anchor is not None else [])
     bars += [boxbeam(a, b, 24.0, 6.0, None, up=(1, 0, 0), ext=6.0) for a, b in zip(pts[:-1], pts[1:])]
     return U(*bars, *[node_ball(f[k], 5.0) for k in ("F5_mid_trap", "F4_acromion", "F1_upper_trap")])
-def clasp_bracket_frame(fr, side, anchor_node, via_xyz=None):
+def clasp_bracket_frame(fr, side, anchor_node, via_xyz=None, w=24.0, t=6.0):
     mp = (lambda p: p) if side == "R" else M.mirror; hub = f"{side}_clasp_hub"
     if anchor_node is None: return
     if via_xyz is not None:
-        v = f"{side}_clasp_via"; fr.node(v, mp(np.asarray(via_xyz, float))); fr.beam(hub, v, M.rect(24.0, 6.0), "PACF", up=(1, 0, 0), tag="clasp_seat"); fr.beam(v, anchor_node, M.rect(24.0, 6.0), "PACF", up=(1, 0, 0), tag="clasp_seat")
-    else: fr.beam(hub, anchor_node, M.rect(24.0, 6.0), "PACF", up=(1, 0, 0), tag="clasp_seat")
+        v = f"{side}_clasp_via"; fr.node(v, mp(np.asarray(via_xyz, float))); fr.beam(hub, v, M.rect(w, t), "PACF", up=(1, 0, 0), tag="clasp_seat"); fr.beam(v, anchor_node, M.rect(w, t), "PACF", up=(1, 0, 0), tag="clasp_seat")
+    else: fr.beam(hub, anchor_node, M.rect(w, t), "PACF", up=(1, 0, 0), tag="clasp_seat")
 KNEE_A = lambda: pad_pt(180, PAD_R - 8, x=X0 + 2)     # leaves the pad medially (outside the S2 motor / stop-post sweep)
 KNEE_B = np.array([-101.0, -98.0, -96.0])             # blade corner crossed at x -101 (back bulges to -127 here; outside the S2 sweep, r 122 from the S1' axis)
 CLASP_VIA = np.array([-124.0, -72.0, -78.0])          # hub -> concept anchor path, forward of the stop-post band, >= 20 mm over the blade
