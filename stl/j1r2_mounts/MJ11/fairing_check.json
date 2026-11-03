@@ -1,0 +1,83 @@
+{
+ "moving_min_mm": {
+  "S1_yoke": {
+   "d": 12.21,
+   "S1p": -97.5,
+   "S2": 0.0
+  },
+  "S1_stop_collar": {
+   "d": 4.17,
+   "S1p": -12.5,
+   "S2": 0.0
+  },
+  "S2_AK70": {
+   "d": 10.92,
+   "S1p": 10.0,
+   "S2": 0.0
+  },
+  "S2_clamp": {
+   "d": 3.2,
+   "S1p": -100.0,
+   "S2": 0.0
+  },
+  "S2_sleeve": {
+   "d": 99.0,
+   "S1p": 0.0,
+   "S2": 0.0
+  },
+  "S2_stop_posts": {
+   "d": 99.0,
+   "S1p": 0.0,
+   "S2": 0.0
+  },
+  "tpu_S2_bumpers": {
+   "d": 99.0,
+   "S1p": 0.0,
+   "S2": 0.0
+  },
+  "S2_adapter": {
+   "d": 99.0,
+   "S1p": 0.0,
+   "S2": 0.0
+  },
+  "S3_bracket": {
+   "d": 99.0,
+   "S1p": 0.0,
+   "S2": 0.0
+  },
+  "S3_XM540": {
+   "d": 99.0,
+   "S1p": 0.0,
+   "S2": 0.0
+  },
+  "S2_stop_lug": {
+   "d": 99.0,
+   "S1p": 0.0,
+   "S2": 0.0
+  },
+  "arm_tube": {
+   "d": 99.0,
+   "S1p": 0.0,
+   "S2": 0.0
+  },
+  "arm_elbow_ball": {
+   "d": 99.0,
+   "S1p": 0.0,
+   "S2": 0.0
+  }
+ },
+ "moving_min_all_mm": 3.2,
+ "skin_min_mm": 24.4,
+ "rail_min_mm": 9.68,
+ "spine_bridge_min_mm": 5.81,
+ "fixed_parts_min_mm": {
+  "pad": 0.0,
+  "seat_dish": 6.0,
+  "liner": 19.33,
+  "rail_spacers": 5.8,
+  "clasp_bracket": 3.0,
+  "S1_AK70": 7.52,
+  "S1_stop_posts": 4.19,
+  "tpu_S1_bumpers": 9.44
+ }
+}

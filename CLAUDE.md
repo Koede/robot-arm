@@ -32,4 +32,4 @@ Scripts, specs and data referenced but not in the repo are listed in `DESIGN_STA
 - Design decisions that change geometry, limits or firmware tables are Forest's call. Lay out the options and numbers; don't pick silently.
 - Record decisions and changelog entries in the design-state docs, dated.
 
-7. SHOULDER J1 = MJ11 blade-seated pancake (adopted 2026-11-02, `specs/SPEC_j1r2_blade_seat.md`): pad (-60, -190, 12), default in `cad/j1r2/mj_frame.py` (`J1_PAD` env overrides). To do: fairing re-fit, clasp bracket clearance, full sweep + firmware tables, harness_loads, balancer / torque-gate decision (Forest), lead routing + liner shear.
+7. SHOULDER J1 = MJ11 blade-seated pancake (adopted 2026-11-02, `specs/SPEC_j1r2_blade_seat.md`): pad (-60, -190, 12), default in `cad/j1r2/mj_frame.py` (`J1_PAD` env overrides). To do: (fairing re-fit done 2026-11-03), clasp bracket clearance, full sweep + firmware tables, harness_loads, balancer / torque-gate decision (Forest), lead routing + liner shear.
